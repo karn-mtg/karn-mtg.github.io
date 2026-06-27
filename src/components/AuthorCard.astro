@@ -1,0 +1,41 @@
+---
+interface Props {
+  id: string
+  name: string
+  bio: string
+  role: string
+  avatar?: string
+  lang?: string
+}
+
+const { id, name, bio, role, avatar, lang = 'en' } = Astro.props
+const initial = name[0].toUpperCase()
+const authorHref = lang === 'pt-br' ? `/pt-br/blog/authors/${id}` : `/blog/authors/${id}`
+---
+
+<div class="flex items-start gap-4 p-5 rounded-2xl glass-panel">
+  <a href={authorHref} class="flex-shrink-0">
+    {avatar ? (
+      <img
+        src={avatar}
+        alt={name}
+        class="w-12 h-12 rounded-full object-cover border-2 border-primary/30"
+      />
+    ) : (
+      <div class="w-12 h-12 rounded-full bg-primary/20 border-2 border-primary/30 flex items-center justify-center">
+        <span class="text-primary text-lg font-bold">{initial}</span>
+      </div>
+    )}
+  </a>
+  <div class="flex-1 min-w-0">
+    <div class="flex items-center gap-2 flex-wrap">
+      <a href={authorHref} class="font-semibold text-on-surface hover:text-primary transition-colors text-sm">
+        {name}
+      </a>
+      <span class="text-xs text-on-surface-variant/50 font-medium px-2 py-0.5 rounded-full border border-white/10">
+        {role}
+      </span>
+    </div>
+    <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">{bio}</p>
+  </div>
+</div>

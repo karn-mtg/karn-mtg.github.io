@@ -1,0 +1,121 @@
+---
+import { getCollection, getEntry, render } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import SiteNav from '../../../components/SiteNav.astro'
+import TagBadge from '../../../components/TagBadge.astro'
+import AuthorCard from '../../../components/AuthorCard.astro'
+import { locales, contentPrefix, blogBase, docsBase, t } from '../../../i18n'
+
+export async function getStaticPaths() {
+  const paths = []
+  for (const { locale, lang } of locales) {
+    const prefix = contentPrefix(lang)
+    const posts = await getCollection('blog', ({ id }) => id.startsWith(prefix))
+    for (const post of posts) {
+      paths.push({
+        params: { locale, slug: post.id.replace(prefix, '').replace(/\.md$/, '') },
+        props: { post, lang },
+      })
+    }
+  }
+  return paths
+}
+
+const { post, lang } = Astro.props
+const { Content } = await render(post)
+const i18n = t(lang)
+
+const formattedDate = new Date(post.data.date).toLocaleDateString(i18n.dateLocale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+
+const authorEntry = post.data.author ? await getEntry('authors', post.data.author) : null
+---
+
+<BaseLayout title={`${post.data.title} — Karn Forge Blog`} description={post.data.description} lang={lang}>
+  <SiteNav lang={lang} activePage="blog" />
+
+  <main class="pt-28 pb-24 px-6 max-w-2xl mx-auto">
+    <a
+      href={blogBase(lang)}
+      class="inline-flex items-center gap-1 text-xs font-semibold text-on-surface-variant/60 hover:text-primary transition-colors mb-10"
+    >
+      {i18n.backToBlog}
+    </a>
+
+    {post.data.image && (
+      <div class="rounded-2xl overflow-hidden mb-10 border border-white/5">
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="w-full aspect-[16/7] object-cover"
+        />
+      </div>
+    )}
+
+    <time class="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant/60 mb-2">
+      {formattedDate}
+    </time>
+    <h1 class="text-4xl font-bold text-on-surface mb-4">{post.data.title}</h1>
+    <p class="text-on-surface-variant mb-6 text-lg leading-relaxed">{post.data.description}</p>
+
+    {post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-8">
+        {post.data.tags.map(tag => <TagBadge tag={tag} lang={lang} />)}
+      </div>
+    )}
+
+    {authorEntry && (
+      <div class="mb-10 pb-10 border-b border-white/5">
+        <AuthorCard
+          id={authorEntry.id}
+          name={authorEntry.data.name}
+          bio={
+            lang === 'pt-br' ? (authorEntry.data.bioPtBr ?? authorEntry.data.bio) :
+            lang === 'de'    ? (authorEntry.data.bioDe   ?? authorEntry.data.bio) :
+            lang === 'es'    ? (authorEntry.data.bioEs   ?? authorEntry.data.bio) :
+            authorEntry.data.bio
+          }
+          role={
+            lang === 'pt-br' ? (authorEntry.data.rolePtBr ?? authorEntry.data.role) :
+            lang === 'de'    ? (authorEntry.data.roleDe   ?? authorEntry.data.role) :
+            lang === 'es'    ? (authorEntry.data.roleEs   ?? authorEntry.data.role) :
+            authorEntry.data.role
+          }
+          avatar={authorEntry.data.avatar}
+          lang={lang}
+        />
+      </div>
+    )}
+
+    <div
+      class="prose prose-invert prose-lg max-w-none
+        prose-headings:text-on-surface prose-headings:font-bold prose-headings:tracking-tight
+        prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
+        prose-p:text-on-surface-variant prose-p:leading-relaxed
+        prose-a:text-[#7eb8f7] prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-on-surface
+        prose-code:text-[#86efac] prose-code:bg-[rgba(134,239,172,0.08)] prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+        prose-pre:bg-surface prose-pre:border prose-pre:border-white/5 prose-pre:rounded-xl
+        prose-li:text-on-surface-variant prose-ul:text-on-surface-variant prose-ol:text-on-surface-variant
+        prose-blockquote:border-primary/40 prose-blockquote:text-on-surface-variant
+        prose-hr:border-white/10
+        prose-table:text-on-surface-variant
+        prose-th:text-on-surface prose-th:border-white/10
+        prose-td:border-white/5"
+    >
+      <Content />
+    </div>
+
+    <div class="mt-16 pt-10 border-t border-white/5">
+      <a
+        href={blogBase(lang)}
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 text-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-200"
+      >
+        {i18n.backToBlog}
+      </a>
+    </div>
+  </main>
+</BaseLayout>

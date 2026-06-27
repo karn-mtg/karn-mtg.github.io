@@ -1,0 +1,110 @@
+---
+import { getCollection, getEntry } from 'astro:content'
+import BaseLayout from '../../../../layouts/BaseLayout.astro'
+import SiteNav from '../../../../components/SiteNav.astro'
+import BlogCard from '../../../../components/BlogCard.astro'
+import { locales, contentPrefix, blogBase, docsBase, t } from '../../../../i18n'
+
+export async function getStaticPaths() {
+  const authors = await getCollection('authors')
+  const paths = []
+  for (const { locale, lang } of locales) {
+    for (const author of authors) {
+      paths.push({
+        params: { locale, author: author.id },
+        props: { authorId: author.id, lang },
+      })
+    }
+  }
+  return paths
+}
+
+const { authorId, lang } = Astro.props
+const i18n = t(lang)
+const prefix = contentPrefix(lang)
+
+const author = await getEntry('authors', authorId)
+const posts = (await getCollection('blog', ({ id }) => id.startsWith(prefix)))
+  .filter(p => p.data.author === authorId)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+
+const initial = author.data.name[0].toUpperCase()
+const bio =
+  lang === 'pt-br' ? (author.data.bioPtBr ?? author.data.bio) :
+  lang === 'de'    ? (author.data.bioDe   ?? author.data.bio) :
+  lang === 'es'    ? (author.data.bioEs   ?? author.data.bio) :
+  author.data.bio
+
+const role =
+  lang === 'pt-br' ? (author.data.rolePtBr ?? author.data.role) :
+  lang === 'de'    ? (author.data.roleDe   ?? author.data.role) :
+  lang === 'es'    ? (author.data.roleEs   ?? author.data.role) :
+  author.data.role
+---
+
+<BaseLayout title={`${author.data.name} — Karn Forge Blog`} description={bio} lang={lang}>
+  <SiteNav lang={lang} activePage="blog" />
+
+  <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
+    <a
+      href={blogBase(lang)}
+      class="inline-flex items-center gap-1 text-xs font-semibold text-on-surface-variant/60 hover:text-primary transition-colors mb-10"
+    >
+      {i18n.backToBlog}
+    </a>
+
+    <div class="flex items-start gap-6 mb-12 p-8 glass-panel rounded-2xl">
+      {author.data.avatar ? (
+        <img
+          src={author.data.avatar}
+          alt={author.data.name}
+          class="w-20 h-20 rounded-full object-cover border-2 border-primary/30 flex-shrink-0"
+        />
+      ) : (
+        <div class="w-20 h-20 rounded-full bg-primary/20 border-2 border-primary/30 flex items-center justify-center flex-shrink-0">
+          <span class="text-primary text-3xl font-bold">{initial}</span>
+        </div>
+      )}
+      <div>
+        <div class="flex items-center gap-3 flex-wrap mb-2">
+          <h1 class="text-3xl font-bold text-on-surface">{author.data.name}</h1>
+          <span class="text-xs text-on-surface-variant/60 font-medium px-2.5 py-1 rounded-full border border-white/10">
+            {role}
+          </span>
+        </div>
+        <p class="text-on-surface-variant leading-relaxed">{bio}</p>
+      </div>
+    </div>
+
+    <h2 class="text-xl font-bold text-on-surface mb-6">{i18n.authorCount(posts.length)}</h2>
+
+    <div class="grid gap-6">
+      {posts.map((post) => {
+        const slug = post.id.replace(prefix, '').replace(/\.md$/, '')
+        return (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date}
+            slug={slug}
+            lang={lang}
+            image={post.data.image}
+            tags={post.data.tags}
+            authorName={author.data.name}
+            authorId={authorId}
+          />
+        )
+      })}
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 px-6 py-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant/40">
+      <span>{i18n.footerCopy}</span>
+      <div class="flex gap-6">
+        <a href={docsBase(lang)} class="hover:text-on-surface-variant transition-colors">{i18n.footerDocs}</a>
+        <a href="https://github.com/karn-mtg/forge" class="hover:text-on-surface-variant transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

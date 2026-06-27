@@ -1,0 +1,70 @@
+---
+import { t, docsBase, type Lang } from '../../i18n'
+import { getComponentVersions } from '../../data/versions'
+
+interface Props {
+  lang?: Lang
+}
+
+const { lang = 'en' } = Astro.props
+const i18n = t(lang)
+const componentVersions = await getComponentVersions()
+---
+
+<section class="relative min-h-screen flex items-center justify-center px-6 py-32 overflow-hidden">
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse 80% 50% at 50% 10%, rgba(242,202,131,0.08) 0%, transparent 60%);"
+  ></div>
+  <div
+    class="absolute inset-0 opacity-25 pointer-events-none"
+    style="background-image: radial-gradient(circle, #2B2E33 1px, transparent 1px); background-size: 24px 24px;"
+  ></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <!-- App icon -->
+    <div class="flex justify-center mb-8">
+      <img
+        src="/icon.png"
+        alt="Karn Forge"
+        class="w-28 h-28 rounded-3xl shadow-2xl shadow-primary/20 ring-1 ring-primary/20"
+      />
+    </div>
+
+    <!-- Component version badges -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+      {componentVersions.map((c) => (
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-on-surface-variant text-xs font-medium select-none">
+          {c.pulse && <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse flex-shrink-0"></span>}
+          <span class="text-on-surface font-semibold">{c.label}</span>
+          <span class="text-primary/80 font-mono">{c.version === '—' ? '—' : `v${c.version}`}</span>
+        </div>
+      ))}
+    </div>
+
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08]">
+      <span class="block text-on-surface">{i18n.heroHeadlineTop}</span>
+      <span class="block text-primary">{i18n.heroHeadlineBottom}</span>
+    </h1>
+
+    <p class="mt-6 text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+      {i18n.heroSub}
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="https://github.com/karn-mtg/forge/releases"
+        class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-all duration-200 shadow-lg shadow-primary/20"
+      >
+        {i18n.heroCta}
+      </a>
+      <a
+        href={docsBase(lang)}
+        class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 text-on-surface-variant font-bold text-sm hover:bg-white/5 hover:text-on-surface transition-all duration-200"
+      >
+        {i18n.heroDocs}
+      </a>
+    </div>
+    <p class="mt-4 text-xs text-on-surface-variant/40">{i18n.heroCtaSub}</p>
+  </div>
+</section>

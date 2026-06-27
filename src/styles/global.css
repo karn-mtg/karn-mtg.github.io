@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force dark color scheme */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: #0D0D0D;
+  color: #e5e2e1;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0D0D0D; }
+::-webkit-scrollbar-thumb { background: #2B2E33; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4e4639; }
+
+/* ── Glass utilities ──────────────────────────────────── */
+@layer components {
+  .glass-panel {
+    background: rgba(26, 29, 34, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 106, 0.1);
+  }
+
+  .glass-nav {
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ── Starlight theme overrides ────────────────────────── */
+:root {
+  --sl-color-accent-low: #412d00;
+  --sl-color-accent: #f2ca83;
+  --sl-color-accent-high: #ffdea5;
+  --sl-color-white: #e5e2e1;
+  --sl-color-gray-1: #d1c5b4;
+  --sl-color-gray-2: #9a8f80;
+  --sl-color-gray-3: #4e4639;
+  --sl-color-gray-4: #2a2a2a;
+  --sl-color-gray-5: #202329;
+  --sl-color-gray-6: #1A1D22;
+  --sl-color-black: #0D0D0D;
+  --sl-font: 'Inter', sans-serif;
+  --sl-sidebar-width: 18rem;
+  --sl-nav-height: 5rem;
+
+  /* Dark mode colors applied at root since we're always dark */
+  --sl-color-bg: #0D0D0D;
+  --sl-color-bg-nav: rgba(13, 13, 13, 0.85);
+  --sl-color-bg-sidebar: #1A1D22;
+  --sl-color-hairline: rgba(255, 255, 255, 0.05);
+  --sl-color-hairline-light: rgba(255, 255, 255, 0.05);
+  --sl-color-text: #e5e2e1;
+  --sl-color-text-accent: #f2ca83;
+  --sl-color-bg-inline-code: rgba(134, 239, 172, 0.08);
+  --sl-color-text-invert: #0D0D0D;
+}
+
+/* Starlight header — ensure our glass-nav styles win */
+header.header {
+  padding: 0 !important;
+  background: rgba(13, 13, 13, 0.85) !important;
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Starlight sidebar */
+.sidebar-pane {
+  background: #1A1D22 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Starlight content links */
+.sl-markdown-content a {
+  color: #7eb8f7;
+}
+
+.sl-markdown-content code {
+  color: #86efac;
+  background: rgba(134, 239, 172, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+/* Hide theme toggle — always dark */
+starlight-theme-select {
+  display: none !important;
+}

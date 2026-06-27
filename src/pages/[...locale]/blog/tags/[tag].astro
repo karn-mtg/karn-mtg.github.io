@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../../../layouts/BaseLayout.astro'
+import SiteNav from '../../../../components/SiteNav.astro'
+import BlogCard from '../../../../components/BlogCard.astro'
+import TagBadge from '../../../../components/TagBadge.astro'
+import { locales, contentPrefix, blogBase, docsBase, t } from '../../../../i18n'
+
+export async function getStaticPaths() {
+  const paths = []
+  for (const { locale, lang } of locales) {
+    const prefix = contentPrefix(lang)
+    const posts = await getCollection('blog', ({ id }) => id.startsWith(prefix))
+    const tags = [...new Set(posts.flatMap(p => p.data.tags))]
+    for (const tag of tags) {
+      paths.push({ params: { locale, tag }, props: { tag, lang, posts } })
+    }
+  }
+  return paths
+}
+
+const { tag, lang, posts } = Astro.props
+const i18n = t(lang)
+
+const allAuthors = await getCollection('authors')
+const getAuthor = (slug?: string) => slug ? allAuthors.find(a => a.id === slug) : undefined
+
+const prefix = contentPrefix(lang)
+const filtered = posts
+  .filter(p => p.data.tags.includes(tag))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+---
+
+<BaseLayout title={`#${tag} — Karn Forge Blog`} description={i18n.tagCount(filtered.length, tag)} lang={lang}>
+  <SiteNav lang={lang} activePage="blog" />
+
+  <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
+    <a
+      href={blogBase(lang)}
+      class="inline-flex items-center gap-1 text-xs font-semibold text-on-surface-variant/60 hover:text-primary transition-colors mb-10"
+    >
+      {i18n.allPosts}
+    </a>
+
+    <div class="flex items-center gap-3 mb-2">
+      <h1 class="text-4xl font-bold text-on-surface">{i18n.tagPrefix}</h1>
+      <TagBadge tag={tag} lang={lang} active />
+    </div>
+    <p class="text-on-surface-variant mb-12">{i18n.tagCount(filtered.length, tag)}</p>
+
+    <div class="grid gap-6">
+      {filtered.map((post) => {
+        const author = getAuthor(post.data.author)
+        const slug = post.id.replace(prefix, '').replace(/\.md$/, '')
+        return (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date}
+            slug={slug}
+            lang={lang}
+            image={post.data.image}
+            tags={post.data.tags}
+            authorName={author?.data.name}
+            authorId={post.data.author}
+          />
+        )
+      })}
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 px-6 py-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant/40">
+      <span>{i18n.footerCopy}</span>
+      <div class="flex gap-6">
+        <a href={docsBase(lang)} class="hover:text-on-surface-variant transition-colors">{i18n.footerDocs}</a>
+        <a href="https://github.com/karn-mtg/forge" class="hover:text-on-surface-variant transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

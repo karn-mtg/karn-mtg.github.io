@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import SiteNav from '../../../components/SiteNav.astro'
+import BlogCard from '../../../components/BlogCard.astro'
+import { locales, getLang, contentPrefix, docsBase, t } from '../../../i18n'
+
+export function getStaticPaths() {
+  return locales.map(({ locale, lang }) => ({ params: { locale }, props: { lang } }))
+}
+
+const { lang } = Astro.props
+const i18n = t(lang)
+const prefix = contentPrefix(lang)
+
+const posts = (await getCollection('blog', ({ id }) => id.startsWith(prefix)))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+
+const allAuthors = await getCollection('authors')
+const getAuthor = (slug?: string) => slug ? allAuthors.find(a => a.id === slug) : undefined
+
+const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort()
+---
+
+<BaseLayout title="Blog — Karn Forge" description={i18n.blogSubtitle} lang={lang}>
+  <SiteNav lang={lang} activePage="blog" />
+
+  <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-on-surface mb-2">Blog</h1>
+    <p class="text-on-surface-variant mb-10">{i18n.blogSubtitle}</p>
+
+    {allTags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-10" id="tag-filter">
+        <button
+          data-tag="all"
+          class="tag-filter-btn inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-150 bg-primary text-on-primary active"
+        >
+          {i18n.filterAll}
+        </button>
+        {allTags.map(tag => (
+          <button
+            data-tag={tag}
+            class="tag-filter-btn inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-150 bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20"
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+    )}
+
+    <div class="grid gap-6" id="posts-grid">
+      {posts.map((post) => {
+        const author = getAuthor(post.data.author)
+        const slug = post.id.replace(prefix, '').replace(/\.md$/, '')
+        return (
+          <div class="post-item" data-tags={post.data.tags.join(',')}>
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              slug={slug}
+              lang={lang}
+              image={post.data.image}
+              tags={post.data.tags}
+              authorName={author?.data.name}
+              authorId={post.data.author}
+            />
+          </div>
+        )
+      })}
+    </div>
+
+    <div id="no-results" class="hidden text-center py-16 text-on-surface-variant/50">
+      {i18n.noResults}
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 px-6 py-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant/40">
+      <span>{i18n.footerCopy}</span>
+      <div class="flex gap-6">
+        <a href={docsBase(lang)} class="hover:text-on-surface-variant transition-colors">{i18n.footerDocs}</a>
+        <a href="https://github.com/karn-mtg/forge" class="hover:text-on-surface-variant transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.tag-filter-btn')
+  const items = document.querySelectorAll<HTMLElement>('.post-item')
+  const noResults = document.getElementById('no-results')
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag!
+      btns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'active')
+        b.classList.add('bg-primary/10', 'text-primary', 'hover:bg-primary/20', 'border', 'border-primary/20')
+      })
+      btn.classList.add('bg-primary', 'text-on-primary', 'active')
+      btn.classList.remove('bg-primary/10', 'text-primary', 'hover:bg-primary/20', 'border', 'border-primary/20')
+
+      let visibleCount = 0
+      items.forEach(item => {
+        const tags = item.dataset.tags?.split(',') ?? []
+        const show = tag === 'all' || tags.includes(tag)
+        item.style.display = show ? '' : 'none'
+        if (show) visibleCount++
+      })
+      if (noResults) noResults.classList.toggle('hidden', visibleCount > 0)
+    })
+  })
+</script>
