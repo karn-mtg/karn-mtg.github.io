@@ -18,25 +18,28 @@ const downloads = [
     label: i18n.downloadMacLabel,
     desc: i18n.downloadMacDesc,
     icon: 'mac',
+    notice: { title: i18n.downloadMacGatekeeperTitle, body: i18n.downloadMacGatekeeperBody },
     buttons: [
-      { label: i18n.downloadMacIntel, href: `${BASE}/Karn%20Forge-1.1.0.dmg`, primary: true },
-      { label: i18n.downloadMacSilicon, href: `${BASE}/Karn%20Forge-1.1.0-arm64.dmg`, primary: false },
+      { label: i18n.downloadMacIntel, href: `${BASE}/Karn-Forge-1.1.0.dmg`, primary: true },
+      { label: i18n.downloadMacSilicon, href: `${BASE}/Karn-Forge-1.1.0-arm64.dmg`, primary: false },
     ],
   },
   {
     label: i18n.downloadWinLabel,
     desc: i18n.downloadWinDesc,
     icon: 'win',
+    notice: undefined,
     buttons: [
-      { label: i18n.downloadWinBtn, href: `${BASE}/Karn%20Forge%20Setup%201.1.0.exe`, primary: true },
+      { label: i18n.downloadWinBtn, href: `${BASE}/Karn-Forge-Setup-1.1.0.exe`, primary: true },
     ],
   },
   {
     label: i18n.downloadLinuxLabel,
     desc: i18n.downloadLinuxDesc,
     icon: 'linux',
+    notice: undefined,
     buttons: [
-      { label: i18n.downloadLinuxBtn, href: `${BASE}/Karn%20Forge-1.1.0.AppImage`, primary: true },
+      { label: i18n.downloadLinuxBtn, href: `${BASE}/Karn-Forge-1.1.0.AppImage`, primary: true },
     ],
   },
 ]
@@ -110,6 +113,12 @@ const downloads = [
                   {btn.label}
                 </a>
               ))}
+              {os.notice && (
+                <div class="mt-1 rounded-xl border border-amber-500/20 bg-amber-500/5 px-4 py-3 text-left">
+                  <p class="text-xs font-semibold text-amber-400 mb-1">{os.notice.title}</p>
+                  <p class="text-xs text-on-surface-variant/70 leading-relaxed">{os.notice.body}</p>
+                </div>
+              )}
             </div>
           </div>
         ))}

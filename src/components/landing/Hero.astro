@@ -1,5 +1,5 @@
 ---
-import { t, docsBase, blogBase, type Lang } from '../../i18n'
+import { t, docsBase, blogBase, downloadBase, type Lang } from '../../i18n'
 
 interface Props {
   lang?: Lang
@@ -71,7 +71,7 @@ const badges = [
       </div>
       <!-- Big download button -->
       <a
-        href="https://github.com/karn-mtg/forge/releases"
+        href={downloadBase(lang)}
         class="w-full text-center py-4 rounded-xl bg-primary text-on-primary font-bold text-base hover:bg-primary-container transition-all duration-200 shadow-xl shadow-primary/25"
       >
         {i18n.heroCta}
