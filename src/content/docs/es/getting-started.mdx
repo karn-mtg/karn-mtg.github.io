@@ -1,52 +1,81 @@
 ---
-title: Primeros Pasos
-description: Cómo instalar y ejecutar Karn Forge en tu ordenador.
+title: Instalación
+description: Cómo descargar e instalar Karn Forge en Windows, macOS y Linux.
 ---
 
-# Primeros Pasos
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components'
 
-## Instalación
+# Instalación
 
-### Windows
+Karn Forge se distribuye como un instalador de escritorio nativo para Windows, macOS y Linux.
 
-1. Descarga el instalador `.exe` más reciente desde la [página de Releases](https://github.com/karn-mtg/forge/releases)
-2. Ejecuta el instalador — no se requieren derechos de administrador
-3. Lanza **Karn Forge** desde el menú de inicio o el acceso directo del escritorio
+## Descarga
 
-### macOS
+Ve a la [página de Releases](https://github.com/karn-mtg/forge/releases) y descarga el instalador para tu plataforma:
 
-1. Descarga el archivo `.dmg` desde la [página de Releases](https://github.com/karn-mtg/forge/releases)
-2. Abre el `.dmg` y arrastra Karn Forge a tu carpeta de Aplicaciones
-3. En el primer inicio, clic derecho → Abrir para evitar Gatekeeper
+| Plataforma | Archivo |
+|---|---|
+| Windows | Instalador `.exe` |
+| macOS | Imagen de disco `.dmg` |
+| Linux | `.AppImage` |
+
+<Tabs>
+  <TabItem label="Windows">
+    <Steps>
+      1. Descarga el instalador `.exe` desde la página de Releases.
+      2. Ejecuta el instalador. No se requieren derechos de administrador.
+      3. Inicia **Karn Forge** desde el menú de inicio o el acceso directo del escritorio.
+    </Steps>
+  </TabItem>
+  <TabItem label="macOS">
+    <Steps>
+      1. Descarga el archivo `.dmg` desde la página de Releases.
+      2. Abre el `.dmg` y arrastra Karn Forge a tu carpeta de Aplicaciones.
+      3. En el primer inicio, haz clic derecho en el ícono de la app → **Abrir** para omitir Gatekeeper.
+    </Steps>
+
+    <Aside type="note">
+      macOS puede mostrar una advertencia de seguridad porque la app no está notarizada. Hacer clic derecho y elegir **Abrir** evita esta advertencia y solo necesitas hacerlo una vez.
+    </Aside>
+  </TabItem>
+  <TabItem label="Linux">
+    <Steps>
+      1. Descarga el archivo `.AppImage` desde la página de Releases.
+      2. Márcalo como ejecutable: `chmod +x KarnForge-*.AppImage`
+      3. Ejecútalo: `./KarnForge-*.AppImage`
+    </Steps>
+
+    <Aside type="note">
+      Algunas distribuciones de Linux requieren `libfuse2` para ejecutar AppImages. Instálalo con tu gestor de paquetes si la app no se inicia (por ejemplo, `sudo apt install libfuse2` en Ubuntu).
+    </Aside>
+  </TabItem>
+</Tabs>
 
 ## Primer inicio
 
-En el primer inicio, Karn Forge descarga la base de datos de cartas de Scryfall (~50 MB). Esto tarda unos 30 segundos con una conexión típica. Después, todo funciona completamente sin conexión.
+En el primer inicio, Karn Forge abre el asistente de configuración de **Arsenal**. Arsenal es el servicio de datos local que gestiona la base de datos de cartas y la base de datos de reglas.
 
-## Creando tu primer mazo
+<Steps>
+  1. Haz clic en **Configurar Arsenal** en el mensaje que aparece.
+  2. Espera a que se descarguen los tres componentes: el binario del servidor, la base de datos de cartas (~50 MB) y la base de datos de reglas.
+  3. Una vez completada la configuración, la app se recarga y está lista para usar.
+</Steps>
 
-1. Haz clic en **Nuevo Mazo** en la barra lateral izquierda
-2. Dale un nombre a tu mazo y elige un formato
-3. Usa el panel de **Búsqueda de Cartas** en la derecha para encontrar cartas
-4. Arrastra cartas al canvas o haz clic en el botón **+** para añadirlas
-5. Pulsa `Ctrl+S` / `Cmd+S` para guardar
+<Aside type="tip">
+  Tras la configuración inicial, todo funciona completamente offline. Puedes actualizar las bases de datos más adelante desde el panel de Arsenal cuando haya actualizaciones disponibles.
+</Aside>
 
-## Importar un mazo
+## Requisitos del sistema
 
-1. Abre **Archivo → Importar** desde la barra de menú
-2. Elige tu fuente:
-   - **Pegar texto** — cualquier formato de lista de mazos estándar (una carta por línea)
-   - **URL de Moxfield** — pega una URL de mazo público
-   - **URL de Archidekt** — pega una URL de mazo público
-   - **Archivo CSV** — importa desde una hoja de cálculo
-3. Karn Forge obtiene los datos de las cartas automáticamente
+| | Mínimo |
+|---|---|
+| Sistema operativo | Windows 10, macOS 12, Ubuntu 20.04 |
+| RAM | 4 GB |
+| Disco | 500 MB libres (para la base de datos de cartas y datos de la app) |
+| Red | Requerida solo para la configuración inicial y actualizaciones opcionales de la base de datos |
 
-## Atajos de teclado
+## Actualizar
 
-| Acción | Windows | macOS |
-|---|---|---|
-| Nuevo Mazo | `Ctrl+N` | `Cmd+N` |
-| Guardar | `Ctrl+S` | `Cmd+S` |
-| Buscar Cartas | `Ctrl+F` | `Cmd+F` |
-| Exportar Mazo | `Ctrl+E` | `Cmd+E` |
-| Alternar Barra lateral | `Ctrl+B` | `Cmd+B` |
+Karn Forge busca actualizaciones de la app automáticamente unos segundos después de iniciarse. Cuando hay una nueva versión disponible, aparece una notificación en **Ajustes → Actualizaciones** con un botón de descarga. Una vez completada la descarga, haz clic en **Instalar** para reiniciar la app y aplicar la actualización.
+
+La base de datos de cartas y la base de datos de reglas pueden actualizarse de forma independiente desde el panel de **Arsenal** sin reinstalar la app.

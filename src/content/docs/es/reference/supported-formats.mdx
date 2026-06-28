@@ -1,0 +1,94 @@
+---
+title: Formatos soportados
+description: Formatos de MTG soportados por Karn Forge para la construcción de mazos y verificación de legalidad.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Formatos soportados
+
+Karn Forge admite la construcción de mazos y verificación de legalidad para los siguientes formatos de Magic: The Gathering. Cuando creas un mazo, eliges un formato — el formato se usa en las comparaciones de la pestaña **Faltantes** y se muestra en la tarjeta del mazo.
+
+## Formatos
+
+### Commander (EDH)
+
+**Tamaño del mazo:** 100 cartas (incluyendo el commander)
+**Copias permitidas:** 1 de cada carta (excepto tierras básicas)
+**Reglas especiales:** Exactamente 1 criatura legendaria o planeswalker designado como commander; el mazo debe estar dentro de la identidad de color del commander; 40 puntos de vida iniciales en multijugador.
+
+Commander es el formato casual más popular y tiene la mayor libertad para construir mazos.
+
+---
+
+### Modern
+
+**Tamaño del mazo:** Mínimo 60 cartas (sideboard opcional de 15 cartas)
+**Copias permitidas:** Hasta 4 de cada carta (excepto tierras básicas)
+**Reserva de cartas:** Expansiones desde 8th Edition y Mirrodin (2003) en adelante, excluyendo cartas prohibidas.
+
+Un formato competitivo no rotativo con una gran reserva de cartas.
+
+---
+
+### Standard
+
+**Tamaño del mazo:** Mínimo 60 cartas (sideboard opcional de 15 cartas)
+**Copias permitidas:** Hasta 4 de cada carta (excepto tierras básicas)
+**Reserva de cartas:** Expansiones de los últimos dos años (rotación anual en otoño). Consulta el [calendario oficial de rotación de Standard](https://magic.wizards.com/en/formats/standard) para ver la reserva de cartas actual.
+
+El formato rotativo principal, usado en la mayoría de tiendas de juego locales y torneos importantes.
+
+---
+
+### Pioneer
+
+**Tamaño del mazo:** Mínimo 60 cartas (sideboard opcional de 15 cartas)
+**Copias permitidas:** Hasta 4 de cada carta (excepto tierras básicas)
+**Reserva de cartas:** Expansiones desde Return to Ravnica (octubre de 2012) en adelante, excluyendo cartas prohibidas.
+
+Un formato no rotativo entre Standard y Modern en términos de tamaño de reserva de cartas.
+
+---
+
+### Legacy
+
+**Tamaño del mazo:** Mínimo 60 cartas (sideboard opcional de 15 cartas)
+**Copias permitidas:** Hasta 4 de cada carta (excepto tierras básicas)
+**Reserva de cartas:** Todas las cartas impresas (excepto la Lista de Reserva y las cartas prohibidas).
+
+Un formato competitivo de alto poder con acceso a toda la historia de Magic.
+
+---
+
+### Vintage
+
+**Tamaño del mazo:** Mínimo 60 cartas (sideboard opcional de 15 cartas)
+**Copias permitidas:** Hasta 4 de cada carta (excepto tierras básicas y cartas restringidas, que están limitadas a 1)
+**Reserva de cartas:** Todas las cartas impresas excepto la pequeña lista de prohibidas.
+
+El formato sancionado más poderoso. Muchas cartas fuertes están restringidas a 1 copia en lugar de prohibidas directamente.
+
+---
+
+### Pauper
+
+**Tamaño del mazo:** Mínimo 60 cartas (sideboard opcional de 15 cartas)
+**Copias permitidas:** Hasta 4 de cada carta (excepto tierras básicas)
+**Reserva de cartas:** Cartas que han sido impresas con rareza común en cualquier lanzamiento de Magic Online, excluyendo cartas prohibidas.
+
+Un formato económico limitado a cartas de rareza común.
+
+---
+
+## Datos de legalidad
+
+La legalidad de formatos en Karn Forge proviene de la base de datos de cartas de Scryfall, mantenida por el servicio Arsenal. La legalidad se verifica carta por carta y se muestra en el panel de **Detalle de carta**.
+
+<Aside type="note">
+  Karn Forge no hace cumplir las reglas de legalidad del mazo durante la construcción — es una herramienta creativa, no un validador. La visualización de legalidad es informativa. Siempre verifica la legalidad con las reglas oficiales del formato antes de jugar en un evento sancionado.
+</Aside>
+
+## Formatos personalizados
+
+Karn Forge actualmente no admite definiciones de formatos personalizados (por ejemplo, Cube, Brawl, Historic). Puedes construir mazos para estos formatos sin seleccionar un formato, o usar cualquier formato existente como aproximación.

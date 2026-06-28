@@ -1,0 +1,154 @@
+---
+title: Architektur
+description: Technischer Überblick über Karn Forges Domain-Driven Design, das Electron-Prozessmodell und das IPC-Kommunikationsmuster.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Architektur
+
+Karn Forge folgt einer **Domain-Driven Design (DDD)**-Architektur, angepasst für Electron. Die wichtigste Einschränkung ist, dass die gesamte Business-Logik im **Main-Prozess** läuft und der Renderer ausschließlich über benannte IPC-Kanäle mit ihm kommuniziert.
+
+## Schichtstruktur
+
+```
+src/
+├── domain/          Entitäten, Wertobjekte, IRepository-Interfaces
+├── application/     Use Cases, DTOs
+├── infrastructure/  Repository-Implementierungen (SQLite, Scryfall API)
+├── main/            Electron-Main-Prozess + IPC-Handler
+└── renderer/        React-UI (Views, Komponenten, Hooks, Stores)
+```
+
+## Prozessmodell
+
+Electron-Anwendungen haben zwei Prozesstypen:
+
+- **Main-Prozess** — ein vollständiger Node.js-Prozess. Hat Zugriff auf das Dateisystem, SQLite, native APIs und das Netzwerk.
+- **Renderer-Prozess** — ein Chromium-basierter Prozess, der die React-UI ausführt. Hat in der Produktion keinen direkten Node.js-Zugriff.
+
+Karn Forge erzwingt eine strikte Grenze: **Der Renderer importiert niemals aus `domain/`, `application/` oder `infrastructure/`**. Alle Daten fließen durch IPC.
+
+```
+Renderer (React)  →  IPC  →  Main-Prozess  →  Use Case  →  Repository
+```
+
+## IPC-Verdrahtungsmuster
+
+Jede Renderer→Main-Operation folgt demselben Muster:
+
+```ts
+// src/main/ipc/deckHandlers.ts
+ipcMain.handle('deck:create', (_, dto) =>
+  new CreateDeck(deckRepo).execute(dto)
+)
+
+// src/renderer/hooks/useDeck.ts
+const deck = await window.electron.ipcRenderer.invoke('deck:create', { name })
+```
+
+Das Preload-Skript exponiert eine typisierte API-Oberfläche:
+
+```ts
+// preload.ts
+contextBridge.exposeInMainWorld('libraryAPI', {
+  createDeck: (dto) => ipcRenderer.invoke('deck:create', dto),
+  getDeck: (dto) => ipcRenderer.invoke('deck:get', dto),
+  // ...
+})
+```
+
+Die TypeScript-Typen des Renderers für die Bridge befinden sich in `src/renderer/types/electron.d.ts`.
+
+## Schichtverantwortlichkeiten
+
+| Schicht | Enthält | Hängt ab von |
+|---|---|---|
+| `domain` | Entität, Wertobjekt, IRepository (nur Interface) | Nichts |
+| `application` | UseCase, DTO | `domain` |
+| `infrastructure` | Repository-Implementierung (SQLite, Scryfall usw.) | `domain` |
+| `main/ipc` | IPC-Handler, Dependency-Injection-Verdrahtung | `application` |
+| `renderer` | React-Views, Komponenten, Hooks | Nur IPC-Bridge |
+
+## Domain-Schicht
+
+Entitäten repräsentieren die Kernkonzepte: `Deck`, `DeckCard`, `CollectionEntry`, `WishlistEntry`, `Arrangement`.
+
+Wertobjekte (unveränderlich, identitätslos) werden für Dinge wie `CardOracleId`, `ManaCost` und `FormatLegality` verwendet.
+
+Repositories sind **Interfaces**, die in `domain/` definiert sind — keine konkrete Implementierung lebt hier. Das hält die Domain ohne Datenbank testbar.
+
+## Anwendungsschicht
+
+Use Cases sind Single-Responsibility-Klassen mit einer öffentlichen `execute()`-Methode. Jeder Use Case erhält Repository-Interfaces per Konstruktor-Injektion.
+
+```ts
+class CreateDeck {
+  constructor(private deckRepo: IDeckRepository) {}
+
+  async execute(dto: CreateDeckDto): Promise<Deck> {
+    const deck = Deck.create(dto.name, dto.format);
+    return this.deckRepo.save(deck);
+  }
+}
+```
+
+DTOs (Data Transfer Objects) sind einfache Objekte, die die IPC-Grenze überschreiten. Sie enthalten nur serialisierbare Daten — keine Methoden oder Klasseninstanzen.
+
+## Infrastrukturschicht
+
+Konkrete Repository-Implementierungen leben hier. Der primäre Speicher ist SQLite über `better-sqlite3`. Alle Abfragen sind synchron (SQLites synchrone API ist für eine Desktop-App ohne gleichzeitige Benutzer geeignet).
+
+Die Scryfall-Integration befindet sich ebenfalls in dieser Schicht: Sie ruft Kartendaten vom Arsenal-Dienst ab (der die lokale SQLite-Kartendatenbank als Proxy nutzt) und ordnet die Ergebnisse Domain-`Card`-Entitäten zu.
+
+## Renderer-Schicht
+
+Der Renderer ist eine React-18-Anwendung. Zustandsverwaltung verwendet Zustand-Stores in `src/renderer/store/`.
+
+### Canvas (DeckView)
+
+Das Deck-Canvas (`src/renderer/pages/DeckView.tsx`) ist die komplexeste Komponente in der Codebasis. Es verwaltet ein imperatives DOM-basiertes Canvas (kein React-Virtual-DOM-Canvas) für Performance:
+
+- Karten, Gruppen, Haftnotizen und Widgets werden als rohe DOM-Elemente erstellt und an ein Container-Div angehängt.
+- React-Zustand wird nur für UI-Overlays (Modals, Kontextmenüs, die Tab-Leiste) und Datenladen verwendet.
+- Das Canvas serialisiert sich zu JSON für die Persistenz über `saveArrangementCanvas`.
+
+<Aside type="note">
+  Dieser imperative Ansatz wurde gewählt, weil ein Canvas mit 100+ Karten mit Drag, Zoom und Schwenk-Operationen mit 60 fps laufen muss. React-Re-Renders bei jedem Mausereignis wären zu langsam.
+</Aside>
+
+### Widget-System
+
+Widgets werden in `src/renderer/widgets/registry.ts` mit `WidgetRegistry.register()` registriert. Jede Widget-Definition hat:
+
+- `id` — eindeutiger String-Bezeichner
+- `name`, `description`, `icon` — Anzeige-Metadaten
+- `width` — Standard-Canvas-Breite in Pixeln
+- `params` — konfigurierbare Parameterdefinitionen
+- `code` — ein JavaScript-String, der mit `data` und `params` im Geltungsbereich `eval`'d wird und einen HTML-String zurückgibt
+
+Dasselbe Registry-Muster wird für **Karten-Dekoratoren** (`src/renderer/widgets/overlayRegistry.ts`) verwendet, die Abzeichen über Canvas-Kartenbilder rendern.
+
+## Arsenal (Datendienst)
+
+Arsenal ist ein separater Hintergrundprozess (eine gebündelte Binärdatei), der einen lokalen HTTP-Server betreibt. Er bietet:
+
+- Volltextsuche über die Scryfall-Karten-SQLite-Datenbank
+- Regeltext-Abfragen
+- Datenbankversions-Informationen
+
+Der Main-Prozess kommuniziert mit Arsenal über `window.arsenalAPI` (eine IPC-Bridge zum Main-Prozess, der wiederum Arsenals lokale HTTP-API aufruft).
+
+## MCP-Integration
+
+Karn Forge enthält einen MCP-Server (Model Context Protocol) in `src/mcp/`. Dies ermöglicht es KI-Tools, die MCP unterstützen (wie Claude), programmatisch mit den Deck-Daten zu interagieren — Deck-Listen lesen, Kartendaten abfragen und strukturierten Deck-Kontext empfangen.
+
+Der MCP-Server läuft als Seitenprozess und ist vom In-App-KI-Assistenten-Chat getrennt.
+
+## Tests
+
+Unit-Tests decken Domain-Entitäten und Use Cases ab. Use-Case-Tests verwenden In-Memory-Repository-Implementierungen (kein SQLite), damit sie schnell und ohne I/O laufen.
+
+Integrationstests, die eine echte Datenbank benötigen, verwenden eine Test-SQLite-Datei, die für jeden Test-Lauf neu erstellt wird.
+
+Der Renderer hat derzeit keine automatisierten Tests — UI-Verhalten wird manuell überprüft.

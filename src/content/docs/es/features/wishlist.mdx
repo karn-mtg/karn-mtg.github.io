@@ -1,0 +1,61 @@
+---
+title: Lista de deseos
+description: Mantén una lista priorizada de cartas de Magic que quieres adquirir y añádelas directamente a cualquiera de tus mazos.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components'
+
+# Lista de deseos
+
+La Lista de deseos es una lista priorizada de cartas que quieres adquirir. Es independiente de tu [Colección](/features/collection) (las cartas que ya tienes) y funciona como una herramienta de compra y planificación.
+
+## Añadir una carta a tu lista de deseos
+
+<Steps>
+  1. Navega a **Lista de deseos** en la barra lateral izquierda.
+  2. Usa el panel de **Búsqueda de cartas** en la derecha para encontrar una carta.
+  3. Haz clic en la carta en los resultados para seleccionarla.
+  4. Define la **Cantidad** y la **Prioridad**.
+  5. Haz clic en **Añadir a la lista de deseos**.
+</Steps>
+
+## Niveles de prioridad
+
+Cada entrada de la lista de deseos tiene un nivel de prioridad:
+
+| Prioridad | Caso de uso |
+|---|---|
+| **Baja** | Mejoras opcionales; sin urgencia |
+| **Normal** | Cartas que conseguirás cuando sea conveniente |
+| **Alta** | Cartas que necesitas activamente pronto |
+| **Crítica** | Cartas que impiden que puedas jugar un mazo |
+
+La prioridad se muestra con codificación de colores en la tabla para que las cartas más importantes destaquen.
+
+## Reordenar entradas
+
+Arrastra cualquier fila por su controlador de arrastre en la izquierda para reordenar la lista de deseos. Tu orden personalizado se guarda automáticamente en el almacenamiento local.
+
+<Aside type="tip">
+  Ordena tu lista de deseos por prioridad primero, luego arrastra dentro de los grupos de prioridad para establecer tu orden de adquisición preferido.
+</Aside>
+
+## Añadir una carta de la lista directamente a un mazo
+
+Cada fila tiene un botón **Añadir al mazo**. Haz clic en él para abrir un selector de mazo, luego haz clic en cualquier mazo para añadir la carta a la lista de ese mazo. La carta se añade con una cantidad de 1.
+
+Esto es útil cuando has decidido que una carta de la lista de deseos pertenece a un mazo específico y quieres rastrearla allí como carta faltante.
+
+## Eliminar una carta
+
+Pasa el cursor sobre una fila y haz clic en el ícono de **Eliminar** a la derecha, o selecciona múltiples filas y usa la opción de eliminación masiva.
+
+## Lista de deseos vs. Colección
+
+| | Colección | Lista de deseos |
+|---|---|---|
+| Propósito | Cartas que tienes | Cartas que quieres |
+| Rastrea condición | Sí | No |
+| Rastrea precio pagado | Sí | No |
+| Rastrea prioridad | No | Sí |
+| Funciona con la pestaña Faltantes del mazo | Sí (cartas que tienes) | No |

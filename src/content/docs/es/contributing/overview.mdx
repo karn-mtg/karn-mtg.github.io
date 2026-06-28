@@ -1,0 +1,79 @@
+---
+title: Contribuir
+description: Cómo contribuir a Karn Forge — reportes de errores, solicitudes de funciones, pull requests y pautas de la comunidad.
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components'
+
+# Contribuir
+
+Karn Forge es de código abierto y acepta contribuciones de todo tipo — reportes de errores, mejoras en la documentación, nuevas funciones y revisiones de código.
+
+## Formas de contribuir
+
+<CardGrid>
+  <LinkCard
+    title="Reportar un error"
+    href="https://github.com/karn-mtg/forge/issues/new?template=bug_report.md"
+    description="¿Encontraste algo roto? Abre un issue con los pasos para reproducirlo."
+  />
+  <LinkCard
+    title="Solicitar una función"
+    href="https://github.com/karn-mtg/forge/issues/new?template=feature_request.md"
+    description="¿Tienes una idea? Abre una solicitud de función y describe lo que te gustaría."
+  />
+  <LinkCard
+    title="Ver issues abiertos"
+    href="https://github.com/karn-mtg/forge/issues"
+    description="Mira qué ya está siendo rastreado y encuentra algo en qué trabajar."
+  />
+  <LinkCard
+    title="Enviar un pull request"
+    href="https://github.com/karn-mtg/forge/pulls"
+    description="¿Tienes código listo? Abre un PR contra la rama main."
+  />
+</CardGrid>
+
+## Antes de empezar
+
+Para cualquier cosa más allá de pequeñas correcciones, abre primero un issue o una discusión para alinear el enfoque. Esto ahorra tiempo tanto para ti como para los mantenedores.
+
+Para correcciones de errores y mejoras en la documentación, puedes ir directamente a un pull request — no es necesario abrir un issue primero.
+
+## Cómo presentar un buen reporte de error
+
+Incluye lo siguiente:
+
+1. **Pasos para reproducir** — la secuencia exacta de acciones que desencadena el error.
+2. **Comportamiento esperado** — lo que esperabas que ocurriera.
+3. **Comportamiento real** — lo que realmente ocurrió. Las capturas de pantalla ayudan.
+4. **Entorno** — tu sistema operativo, versión del sistema operativo y versión de Karn Forge (visible en Configuración → Acerca de).
+5. **Registros** — si la app crasheó, copia el error desde **Configuración → Registros** o la consola del sistema.
+
+## Pautas para pull requests
+
+- Mantén los cambios enfocados — un PR por cambio lógico.
+- Escribe una descripción clara del PR explicando *qué* cambió y *por qué*.
+- Sigue el estilo de código existente. El proyecto usa ESLint y TypeScript en modo estricto — asegúrate de que `npm run lint` y `npm run type-check` pasen antes de enviar.
+- Añade tests si estás cambiando lógica en `domain/` o `application/`. Los cambios de UI no requieren tests pero deben verificarse manualmente.
+- El canvas (`DeckView.tsx`) es la parte más compleja del código base. Si lo vas a modificar, lee primero la guía de [Arquitectura](/contributing/architecture).
+
+## Código de conducta
+
+Este proyecto sigue un estándar simple: sé respetuoso, sé útil y actúa de buena fe. Las contribuciones de todos son bienvenidas sin importar el nivel de experiencia.
+
+## Qué está dentro del alcance
+
+| Dentro del alcance | Fuera del alcance |
+|---|---|
+| Correcciones de errores | Cambios que requieren un backend siempre activo |
+| Mejoras de rendimiento | Funciones de monetización |
+| Nuevos tipos de widgets | Funciones específicas de plataforma que solo funcionan en un sistema operativo |
+| Mejoras en el detalle de cartas | Scraping o redistribución de datos de cartas |
+| Pulido de interfaz | |
+| Mejoras de accesibilidad | |
+| Nuevos formatos de importación soportados | |
+
+## Ejecutar el código localmente
+
+Consulta la guía de [Configuración de desarrollo](/contributing/dev-setup) para poner el proyecto en funcionamiento en tu máquina.

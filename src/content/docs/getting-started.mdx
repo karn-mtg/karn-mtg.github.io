@@ -1,52 +1,81 @@
 ---
-title: Getting Started
-description: How to install and run Karn Forge on your machine.
+title: Installation
+description: How to download and install Karn Forge on Windows, macOS, and Linux.
 ---
 
-# Getting Started
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components'
 
-## Installation
+# Installation
 
-### Windows
+Karn Forge is distributed as a native desktop installer for Windows, macOS, and Linux.
 
-1. Download the latest `.exe` installer from the [Releases page](https://github.com/karn-mtg/forge/releases)
-2. Run the installer — no admin rights required
-3. Launch **Karn Forge** from the Start menu or desktop shortcut
+## Download
 
-### macOS
+Go to the [Releases page](https://github.com/karn-mtg/forge/releases) and download the installer for your platform:
 
-1. Download the `.dmg` file from the [Releases page](https://github.com/karn-mtg/forge/releases)
-2. Open the `.dmg` and drag Karn Forge to your Applications folder
-3. On first launch, right-click → Open to bypass Gatekeeper
+| Platform | File |
+|---|---|
+| Windows | `.exe` installer |
+| macOS | `.dmg` disk image |
+| Linux | `.AppImage` |
 
-## First Launch
+<Tabs>
+  <TabItem label="Windows">
+    <Steps>
+      1. Download the `.exe` installer from the Releases page.
+      2. Run the installer. No administrator rights are required.
+      3. Launch **Karn Forge** from the Start menu or the desktop shortcut.
+    </Steps>
+  </TabItem>
+  <TabItem label="macOS">
+    <Steps>
+      1. Download the `.dmg` file from the Releases page.
+      2. Open the `.dmg` and drag Karn Forge to your Applications folder.
+      3. On first launch, right-click the app icon → **Open** to bypass Gatekeeper.
+    </Steps>
 
-On first launch, Karn Forge downloads the Scryfall card database (~50 MB). This takes about 30 seconds on a typical connection. After that, everything works fully offline.
+    <Aside type="note">
+      macOS may show a security warning because the app is not notarized. Right-clicking and choosing **Open** bypasses this warning and only needs to be done once.
+    </Aside>
+  </TabItem>
+  <TabItem label="Linux">
+    <Steps>
+      1. Download the `.AppImage` file from the Releases page.
+      2. Mark it as executable: `chmod +x KarnForge-*.AppImage`
+      3. Run it: `./KarnForge-*.AppImage`
+    </Steps>
 
-## Creating Your First Deck
+    <Aside type="note">
+      Some Linux distributions require `libfuse2` to run AppImages. Install it with your package manager if the app does not launch (e.g., `sudo apt install libfuse2` on Ubuntu).
+    </Aside>
+  </TabItem>
+</Tabs>
 
-1. Click **New Deck** in the left sidebar
-2. Give your deck a name and choose a format
-3. Use the **Card Search** panel on the right to find cards
-4. Drag cards onto the canvas or click the **+** button to add them
-5. Press `Ctrl+S` / `Cmd+S` to save
+## First launch
 
-## Importing a Deck
+On first launch, Karn Forge opens the **Arsenal** setup wizard. Arsenal is the local data service that manages the card database and rules database.
 
-1. Open **File → Import** from the menu bar
-2. Choose your source:
-   - **Paste text** — any standard decklist format (one card per line)
-   - **Moxfield URL** — paste a public deck URL
-   - **Archidekt URL** — paste a public deck URL
-   - **CSV file** — import from a spreadsheet
-3. Karn Forge fetches card data automatically
+<Steps>
+  1. Click **Set Up Arsenal** in the prompt that appears.
+  2. Wait for the three components to download: the server binary, the cards database (~50 MB), and the rules database.
+  3. Once setup is complete, the app reloads and is ready to use.
+</Steps>
 
-## Keyboard Shortcuts
+<Aside type="tip">
+  After the initial setup, everything works fully offline. You can refresh the databases later from the Arsenal panel whenever updates are available.
+</Aside>
 
-| Action | Windows | macOS |
-|---|---|---|
-| New Deck | `Ctrl+N` | `Cmd+N` |
-| Save | `Ctrl+S` | `Cmd+S` |
-| Search Cards | `Ctrl+F` | `Cmd+F` |
-| Export Deck | `Ctrl+E` | `Cmd+E` |
-| Toggle Sidebar | `Ctrl+B` | `Cmd+B` |
+## System requirements
+
+| | Minimum |
+|---|---|
+| OS | Windows 10, macOS 12, Ubuntu 20.04 |
+| RAM | 4 GB |
+| Disk | 500 MB free (for card database and app data) |
+| Network | Required only for first setup and optional database updates |
+
+## Updating
+
+Karn Forge checks for app updates automatically a few seconds after launch. When a new version is available, a notification appears in **Settings → Updates** with a download button. Once the download completes, click **Install** to restart and apply the update.
+
+The card database and rules database can be updated independently from the **Arsenal** panel without reinstalling the app.

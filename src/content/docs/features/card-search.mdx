@@ -1,0 +1,69 @@
+---
+title: Card Search
+description: How to use Karn Forge's card search panel to find cards from the full Scryfall database and add them to your deck.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Card Search
+
+The Card Search panel lets you search the full Scryfall card database — all cards, all printings — directly from within Karn Forge, without an internet connection (after the first Arsenal setup).
+
+## Opening the search panel
+
+The Card Search panel lives on the right side of the **Deck Workshop**. Open it with:
+
+- `Ctrl+F` / `Cmd+F`
+- The magnifier icon in the right sidebar
+
+## Searching for cards
+
+Type any part of a card name into the search box. Results appear as you type, ranked by relevance. The search is case-insensitive and matches partial names.
+
+**Examples:**
+
+| Query | Matches |
+|---|---|
+| `lightning` | Lightning Bolt, Chain Lightning, Lightning Helix, … |
+| `sol ring` | Sol Ring |
+| `teferi` | All Teferi planeswalkers and creatures |
+
+<Aside type="tip">
+  The search returns up to 50 results. If you don't see what you're looking for, try a more specific query.
+</Aside>
+
+## Adding cards to your deck
+
+From the search results, you can add a card to the deck in two ways:
+
+- **Click the `+` button** on the result card to add one copy at the deck's center viewport position.
+- **Drag the result card** onto the canvas to place it exactly where you want it.
+
+Both actions add the card to the deck list and place it on the canvas simultaneously.
+
+## Card detail panel
+
+Click any card in the search results (or any card on the canvas) to open the **Card Detail** panel. It shows:
+
+- **Full card image** — click the image to cycle through available printings
+- **Mana cost and mana symbols** — rendered with official mana pip icons
+- **Type line** — full type including supertypes, card types, and subtypes
+- **Oracle text** — the authoritative rules text for the card
+- **Power / Toughness / Loyalty** — for creatures and planeswalkers
+- **Format legality** — a grid showing the card's legality in Commander, Modern, Standard, Pioneer, Legacy, Vintage, and Pauper
+- **EDHREC rank** — how popular the card is in Commander decks on EDHREC
+- **Price** — current market price data (requires network connection to update)
+
+### Changing the printing
+
+The detail panel shows the currently selected printing and an art thumbnail strip for alternate printings. Click any thumbnail to switch the art used on the canvas for this card.
+
+<Aside type="note">
+  Art selections are per-deck and per-arrangement. Two arrangements of the same deck can show different printings of the same card.
+</Aside>
+
+## Global Search
+
+In addition to the in-deck Card Search panel, Karn Forge has a **Global Search** accessible from the top bar. Global Search searches across your decks and library by deck name, card name, or format.
+
+Open Global Search with `Ctrl+K` / `Cmd+K`.

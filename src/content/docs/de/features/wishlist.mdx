@@ -1,0 +1,61 @@
+---
+title: Wunschliste
+description: Führe eine priorisierte Liste von Magic-Karten, die du erwerben möchtest, und füge sie direkt zu beliebigen Decks hinzu.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components'
+
+# Wunschliste
+
+Die Wunschliste ist eine priorisierte Liste von Karten, die du erwerben möchtest. Sie ist getrennt von deiner [Sammlung](/features/collection) (Karten, die du besitzt) und dient als Einkaufs- und Planungswerkzeug.
+
+## Eine Karte zur Wunschliste hinzufügen
+
+<Steps>
+  1. Navigiere in der linken Seitenleiste zu **Wunschliste**.
+  2. Verwende das **Kartensuche**-Panel auf der rechten Seite, um eine Karte zu finden.
+  3. Klicke auf die Karte in den Ergebnissen, um sie auszuwählen.
+  4. Lege **Menge** und **Priorität** fest.
+  5. Klicke auf **Zur Wunschliste hinzufügen**.
+</Steps>
+
+## Prioritätsstufen
+
+Jeder Wunschlisten-Eintrag hat eine Prioritätsstufe:
+
+| Priorität | Verwendungszweck |
+|---|---|
+| **Niedrig** | Schöne Ergänzungen; keine Eile |
+| **Normal** | Karten, die du kaufst, wenn es sich ergibt |
+| **Hoch** | Karten, die du bald aktiv benötigst |
+| **Kritisch** | Karten, die ein Deck am Spielen hindern |
+
+Priorität wird mit Farbkodierung in der Tabelle angezeigt, damit die wichtigsten Karten hervorstechen.
+
+## Einträge neu anordnen
+
+Ziehe eine beliebige Zeile am Zieh-Handle auf der linken Seite, um die Wunschliste neu zu ordnen. Deine benutzerdefinierte Reihenfolge wird automatisch im lokalen Speicher gespeichert.
+
+<Aside type="tip">
+  Sortiere deine Wunschliste zuerst nach Priorität, dann ziehe innerhalb der Prioritätsgruppen, um deine bevorzugte Erwerbsreihenfolge festzulegen.
+</Aside>
+
+## Eine Wunschlisten-Karte direkt zu einem Deck hinzufügen
+
+Jede Zeile hat eine **Zum Deck hinzufügen**-Schaltfläche. Klicke darauf, um eine Deck-Auswahl zu öffnen, und klicke dann auf ein beliebiges Deck, um die Karte zur Deck-Liste hinzuzufügen. Die Karte wird mit einer Menge von 1 hinzugefügt.
+
+Das ist nützlich, wenn du entschieden hast, dass eine Wunschlisten-Karte in ein bestimmtes Deck gehört, und sie dort als fehlende Karte verfolgen möchtest.
+
+## Eine Karte entfernen
+
+Fahre mit der Maus über eine Zeile und klicke auf das **Entfernen**-Symbol auf der rechten Seite, oder wähle mehrere Zeilen aus und verwende die Massen-Lösch-Option.
+
+## Wunschliste vs. Sammlung
+
+| | Sammlung | Wunschliste |
+|---|---|---|
+| Zweck | Karten, die du besitzt | Karten, die du willst |
+| Verfolgt Zustand | Ja | Nein |
+| Verfolgt gezahlten Preis | Ja | Nein |
+| Verfolgt Priorität | Nein | Ja |
+| Funktioniert mit dem „Fehlend"-Tab | Ja (Karten, die du hast) | Nein |

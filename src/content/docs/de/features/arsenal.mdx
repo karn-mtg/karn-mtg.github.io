@@ -1,0 +1,80 @@
+---
+title: Arsenal
+description: Arsenal ist Karn Forges lokaler Datendienst, der die Scryfall-Kartendatenbank und die Regeldatenbank verwaltet, um Offline-Kartensuche und Regelabfragen zu ermöglichen.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Arsenal
+
+Arsenal ist der lokale Datendienst, der Karn Forges Offline-Fähigkeiten antreibt. Er läuft als Hintergrunddienst auf deinem Rechner und verwaltet zwei Datenbanken:
+
+- **Kartendatenbank** — der vollständige Scryfall-Kartenkatalog (~50 MB), verwendet für Kartensuche und Detailabfragen in der App.
+- **Regeldatenbank** — das umfassende MTG-Regelwerk, verwendet für Regelabfragen und KI-Assistenten-Kontext.
+
+## Ersteinrichtung
+
+Beim ersten Start fordert Karn Forge dich auf, Arsenal einzurichten. Dabei werden drei Komponenten heruntergeladen:
+
+1. Die Arsenal-Server-Binärdatei
+2. Die Kartendatenbank
+3. Die Regeldatenbank
+
+Dies erfordert eine Internetverbindung und dauert bei einer typischen Verbindung etwa 30–60 Sekunden. Nach der Einrichtung funktioniert die App vollständig offline.
+
+## Das Arsenal-Panel öffnen
+
+Klicke auf das **Arsenal**-Symbol in der linken Seitenleiste (Zahnrad-/Server-Symbol), um das Arsenal-Panel zu öffnen. Es zeigt:
+
+- Installationsstatus (installiert / nicht installiert)
+- Die Version jeder installierten Komponente
+- Ob Updates für jede Komponente verfügbar sind
+
+## Nach Updates suchen
+
+<Steps>
+  1. Öffne das **Arsenal**-Panel.
+  2. Klicke auf **Nach Updates suchen**.
+  3. Wenn eine Komponente ein verfügbares Update hat, erscheint eine Download-Schaltfläche daneben.
+  4. Klicke auf die Download-Schaltfläche für jede Komponente, die du aktualisieren möchtest.
+</Steps>
+
+Du kannst jede Komponente unabhängig aktualisieren:
+
+| Komponente | Wann aktualisieren |
+|---|---|
+| Server | Wenn der Arsenal-Server selbst eine neue Version mit Bugfixes oder neuen Funktionen hat |
+| Kartendatenbank | Wenn neue MTG-Sets erscheinen und du die neuesten Karten haben möchtest |
+| Regeldatenbank | Wenn ein neues umfassendes Regelwerk veröffentlicht wird |
+
+<Aside type="tip">
+  Neue MTG-Sets sind in der Regel innerhalb von 24–48 Stunden nach Erscheinen des Sets in der Scryfall-Datenbank verfügbar. Aktualisiere die Kartendatenbank nach einem neuen Set, um die neuen Karten zu suchen und hinzuzufügen.
+</Aside>
+
+## Arsenal neu installieren
+
+Wenn Arsenal nicht mehr antwortet oder Fehler anzeigt, kannst du es neu installieren:
+
+<Steps>
+  1. Öffne das **Arsenal**-Panel.
+  2. Klicke auf **Arsenal neu installieren**.
+  3. Der Einrichtungsprozess läuft erneut und lädt frische Kopien aller drei Komponenten herunter.
+</Steps>
+
+<Aside type="caution">
+  Eine Neuinstallation von Arsenal löscht nicht deine Decks oder Sammlungsdaten. Nur die Arsenal-Dienstdateien (Server-Binärdatei und Datenbanken) werden ersetzt.
+</Aside>
+
+## Wie Arsenal funktioniert
+
+Arsenal ist ein in Electron eingebetteter Hintergrundprozess, der startet, wenn Karn Forge geöffnet wird. Er stellt eine interne API bereit, die der Renderer-Prozess für Kartenabfragen und Datenabfragen aufruft. Die gesamte Kommunikation bleibt auf deinem lokalen Rechner.
+
+Die Kartendatenbank wird als SQLite-Datei gespeichert. Der Dienst indiziert Karten nach Name, Orakel-ID und verschiedenen Metadatenfeldern, um schnelle Teilübereinstimmungssuche im gesamten Scryfall-Katalog zu unterstützen.
+
+## Offline-Nutzung
+
+Sobald Arsenal eingerichtet ist, ist Karn Forge vollständig offline nutzbar. Die einzigen Funktionen, die eine Netzwerkverbindung erfordern, sind:
+
+- **Arsenal-Updates** — Herunterladen neuer Datenbankversionen
+- **KI-Assistent** — wenn ein Cloud-Anbieter wie OpenAI verwendet wird (der Claude CLI-Anbieter kann offline funktionieren, wenn die CLI mit lokalen Modellen konfiguriert ist)
+- **Preisdaten** — Live-Kartenpreise erfordern einen Scryfall-API-Aufruf

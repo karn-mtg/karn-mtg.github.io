@@ -1,0 +1,82 @@
+---
+title: KI-Assistent
+description: Hol dir Deck-Ratschläge, Kartenvorschläge und Strategiehilfe von einem KI-Assistenten direkt im Karn Forge Deck Workshop.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# KI-Assistent
+
+Karn Forge enthält einen KI-Assistenten, mit dem du direkt im Deck Workshop sprechen kannst. Du kannst ihn nach Deck-Ratschlägen, Kartenvorschlägen, Siegbedingungs-Analysen, Budget-Empfehlungen oder allem anderen rund um dein Deck fragen.
+
+Der Assistent hat vollständigen Kontext über dein aktuelles Deck — Kartenliste, Format, Farbidentität und Canvas-Gruppen — und kann daher relevante, spezifische Antworten geben.
+
+## Den Assistenten öffnen
+
+<Steps>
+  1. Öffne ein beliebiges Deck im **Deck Workshop**.
+  2. Klicke auf die **KI**-Schaltfläche in der oberen Werkzeugleiste, oder drücke `Ctrl+I` / `Cmd+I`.
+  3. Das KI-Panel gleitet von rechts herein.
+</Steps>
+
+## Anbieter
+
+Der Assistent unterstützt mehrere KI-Anbieter. Konfiguriere deinen bevorzugten Anbieter unter **Einstellungen → KI**:
+
+| Anbieter | Hinweise |
+|---|---|
+| **Claude (via Claude Code CLI)** | Verwendet eine lokal laufende Claude CLI. Kein API-Schlüssel erforderlich, wenn Claude Code bereits installiert ist. |
+| **OpenAI** | Erfordert einen OpenAI API-Schlüssel. In den Einstellungen konfigurieren. |
+
+<Aside type="note">
+  Wenn kein Anbieter konfiguriert ist, zeigt das KI-Panel eine Einrichtungsaufforderung. Folge den Anweisungen in den Einstellungen, um einen Anbieter zu verbinden.
+</Aside>
+
+## Mit dem Assistenten sprechen
+
+Gib deine Frage oder Anfrage in das Chat-Eingabefeld am unteren Rand des Panels ein und drücke **Enter** oder klicke auf **Senden**.
+
+**Beispiel-Anfragen:**
+
+- „Welche Länder sollte ich zu diesem Commander-Deck hinzufügen?"
+- „Ich habe zu viele Karten mit 5+ CMC — welche sollte ich rausschneiden?"
+- „Schlage 5 Synergiekarten für mein Atraxa Superfriends Deck vor."
+- „Ist dieses Deck in Modern legal?"
+- „Wie hoch sind die durchschnittlichen CMC meiner Nicht-Land-Karten?"
+
+Der Assistent streamt seine Antwort in Echtzeit. Du kannst eine Folgefrage senden, während er noch antwortet.
+
+## Antworttypen
+
+Der Assistent verwendet strukturierte Antwortblöcke je nach Art der Antwort:
+
+### Karten-Showcase
+
+Wenn der Assistent spezifische Karten vorschlägt, zeigt er sie als interaktive Kartenvorschauen mit Kartenbild, Name, Typ und Manakosten an. Beim Hovern über eine Karte erscheint der vollständige Orakeltext als Tooltip.
+
+### Auswahlprompt
+
+Bei mehrstufigen Entscheidungen kann der Assistent eine Reihe von Optionen als Schaltflächen präsentieren. Klicke auf eine Option, um das Gespräch mit deiner Wahl fortzusetzen.
+
+### Vorschläge
+
+Eine Liste von Schnellaktions-Vorschlägen (z. B. „Zeig mir die Manakurve", „Welche Karten überschreiten das Budget"), die du anklicken kannst, um sie als Nachricht zu senden.
+
+## Gesprächsverlauf
+
+Jedes Deck hat seinen eigenen Gesprächsverlauf. Wenn du das KI-Panel schließt und wieder öffnest, bleibt das vorherige Gespräch erhalten. Du kannst ein neues Gespräch über das Menü des Panels starten, ohne das alte zu verlieren.
+
+## Kontext, der an den Assistenten gesendet wird
+
+Der Assistent erhält mit jeder Nachricht folgenden Kontext:
+
+- Name und Format des Decks
+- Die vollständige Kartenliste mit Mengen, Typen und Manakosten
+- Die Farbidentität des Decks
+- Deine Canvas-Gruppennamen und deren Kartenzuweisungen (falls vorhanden)
+
+Der Assistent erhält keine persönlichen Kontoinformationen oder Daten aus anderen Decks.
+
+<Aside type="tip">
+  Wenn du dein Canvas in Strategiegruppen organisiert hast (Ramp, Karten ziehen, Siegbedingungen usw.), kann der Assistent diese Gruppen namentlich referenzieren und gezieltere Ratschläge geben.
+</Aside>

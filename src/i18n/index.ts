@@ -7,11 +7,11 @@ export const locales: Array<{ locale: string | undefined; lang: Lang }> = [
   { locale: 'es', lang: 'es' },
 ]
 
-export const languages: Record<Lang, { label: string; flag: string }> = {
-  en: { label: 'English', flag: '🇬🇧' },
-  'pt-br': { label: 'Português', flag: '🇧🇷' },
-  de: { label: 'Deutsch', flag: '🇩🇪' },
-  es: { label: 'Español', flag: '🇪🇸' },
+export const languages: Record<Lang, { label: string; flagCode: string }> = {
+  en: { label: 'English', flagCode: 'gb' },
+  'pt-br': { label: 'Português', flagCode: 'br' },
+  de: { label: 'Deutsch', flagCode: 'de' },
+  es: { label: 'Español', flagCode: 'es' },
 }
 
 export function getLang(locale: string | undefined): Lang {
@@ -64,6 +64,7 @@ const ui = {
       { icon: '🌐', title: 'Live Card Data', desc: 'Always up-to-date with the Scryfall database. Every card, every printing, every format.' },
       { icon: '✈️', title: 'Works Offline', desc: 'Build and edit decks without internet. Everything syncs automatically when you come back online.' },
       { icon: '🔓', title: 'Open Source', desc: 'Completely free. No subscriptions, no locked features. Built by the community, for the community.' },
+      { icon: '🤖', title: 'Magic-Native AI', desc: 'Your AI tools learn the language of Magic. Rules, synergies, and metagame — Karn\'s AI grows more specialized in MTG with every conversation.' },
     ],
     // Download CTA
     ctaHeading: 'Ready to get started?',
@@ -110,6 +111,7 @@ const ui = {
       { icon: '🌐', title: 'Dados de Cartas ao Vivo', desc: 'Sempre atualizado com o banco de dados Scryfall. Todas as cartas, todas as edições, todos os formatos.' },
       { icon: '✈️', title: 'Funciona Offline', desc: 'Construa e edite decks sem internet. Sincronize quando voltar online.' },
       { icon: '🔓', title: 'Código Aberto', desc: 'Totalmente gratuito. Sem assinaturas, sem recursos travados. Feito pela comunidade, para a comunidade.' },
+      { icon: '🤖', title: 'IA Especializada em Magic', desc: 'Suas ferramentas de IA aprendem a linguagem do Magic. Regras, sinergias e metagame — a IA do Karn fica mais especializada a cada conversa.' },
     ],
     ctaHeading: 'Pronto para começar?',
     ctaSub: 'Baixe Karn Forge gratuitamente e leve a sua construção de decks ao próximo nível.',
@@ -153,6 +155,7 @@ const ui = {
       { icon: '🌐', title: 'Live-Kartendaten', desc: 'Immer aktuell mit der Scryfall-Datenbank. Jede Karte, jeder Druck, jedes Format.' },
       { icon: '✈️', title: 'Funktioniert offline', desc: 'Decks ohne Internet bauen und bearbeiten. Alles synchronisiert automatisch, wenn du wieder online bist.' },
       { icon: '🔓', title: 'Open Source', desc: 'Komplett kostenlos. Keine Abonnements, keine gesperrten Funktionen. Von der Community, für die Community.' },
+      { icon: '🤖', title: 'Magic-spezialisierte KI', desc: 'Deine KI-Tools lernen die Sprache von Magic. Regeln, Synergien und Meta — Karns KI wird mit jedem Gespräch spezialisierter auf MTG.' },
     ],
     ctaHeading: 'Bereit loszulegen?',
     ctaSub: 'Lade Karn Forge kostenlos herunter und bringe deinen Deckbau auf das nächste Level.',
@@ -196,6 +199,7 @@ const ui = {
       { icon: '🌐', title: 'Datos de cartas en vivo', desc: 'Siempre actualizado con la base de datos de Scryfall. Cada carta, cada edición, cada formato.' },
       { icon: '✈️', title: 'Funciona sin conexión', desc: 'Construye y edita mazos sin internet. Todo se sincroniza automáticamente cuando vuelves a estar en línea.' },
       { icon: '🔓', title: 'Código abierto', desc: 'Completamente gratuito. Sin suscripciones, sin funciones bloqueadas. Construido por la comunidad, para la comunidad.' },
+      { icon: '🤖', title: 'IA nativa de Magic', desc: 'Tus herramientas de IA aprenden el idioma de Magic. Reglas, sinergias y metagame — la IA de Karn se especializa más en MTG con cada conversación.' },
     ],
     ctaHeading: '¿Listo para empezar?',
     ctaSub: 'Descarga Karn Forge gratis y lleva tu construcción de mazos al siguiente nivel.',

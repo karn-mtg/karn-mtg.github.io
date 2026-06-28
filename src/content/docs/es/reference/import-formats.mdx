@@ -1,0 +1,122 @@
+---
+title: Formatos de importación
+description: Formatos de importación de mazos soportados en Karn Forge — listas de mazos en texto plano, URLs de Moxfield, URLs de Archidekt y archivos CSV.
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Formatos de importación
+
+Karn Forge puede importar mazos desde varias fuentes. Para importar, abre un mazo y ve a **Archivo → Importar** en la barra de menú, o presiona `Ctrl+Shift+I` / `Cmd+Shift+I`.
+
+## Lista de mazo en texto plano
+
+El formato más universal — una carta por línea, opcionalmente precedida por una cantidad.
+
+```
+4 Lightning Bolt
+4 Monastery Swiftspear
+4 Goblin Guide
+2 Light Up the Stage
+```
+
+**Reglas:**
+- Cada línea es una entrada de carta.
+- Opcionalmente, precede con un número y un espacio: `4 Lightning Bolt` o `Lightning Bolt` (por defecto 1 copia).
+- Las líneas que empiezan con `//` se tratan como comentarios y se ignoran.
+- Una línea que contiene solo `Sideboard` o `SB:` al inicio señala el comienzo de la sección de sideboard.
+
+<Tabs>
+  <TabItem label="Con cantidades">
+    ```
+    4 Lightning Bolt
+    4 Monastery Swiftspear
+    4 Goblin Guide
+    2 Light Up the Stage
+    20 Mountain
+
+    Sideboard
+    4 Searing Blood
+    3 Smash to Smithereens
+    ```
+  </TabItem>
+  <TabItem label="Sin cantidades">
+    ```
+    Lightning Bolt
+    Monastery Swiftspear
+    Mountain
+    ```
+    Cada carta tiene 1 copia por defecto.
+  </TabItem>
+  <TabItem label="Formato MTGO">
+    ```
+    4 Lightning Bolt (M11) 149
+    4 Monastery Swiftspear (KTK) 120a
+    ```
+    Los códigos de expansión y números de coleccionista se reconocen y se usan para seleccionar la edición correcta.
+  </TabItem>
+</Tabs>
+
+<Aside type="tip">
+  La mayoría de sitios de mazos (Moxfield, Archidekt, MTGO, MTGGoldfish) ofrecen una opción "copiar lista de texto" o "exportar como texto" que produce una salida compatible.
+</Aside>
+
+## URL de Moxfield
+
+Pega una URL de mazo público de Moxfield y Karn Forge obtendrá el mazo directamente.
+
+**Ejemplo:** `https://www.moxfield.com/decks/abc123`
+
+El mazo debe tener visibilidad **pública** en Moxfield. Karn Forge obtiene la lista del mazo por la red e importa todas las cartas incluyendo el sideboard.
+
+## URL de Archidekt
+
+Pega una URL de mazo público de Archidekt y Karn Forge obtendrá el mazo directamente.
+
+**Ejemplo:** `https://archidekt.com/decks/1234567`
+
+El mazo debe ser accesible públicamente en Archidekt.
+
+## Archivo CSV
+
+Importa una hoja de cálculo donde cada fila es una entrada de carta.
+
+**Columnas requeridas:**
+
+| Columna | Descripción |
+|---|---|
+| `name` | Nombre de la carta (sin distinción de mayúsculas) |
+
+**Columnas opcionales:**
+
+| Columna | Descripción |
+|---|---|
+| `quantity` o `qty` o `count` | Número de copias (por defecto 1) |
+| `board` | `main`, `sideboard`, `commander` o `partner` |
+| `set` | Código de expansión (por ejemplo, `M21`) para seleccionar una edición específica |
+| `collector_number` | Número de coleccionista dentro de la expansión |
+| `foil` | `true` / `false` o `1` / `0` |
+
+**CSV de ejemplo:**
+```csv
+name,quantity,board,foil
+Lightning Bolt,4,main,false
+Monastery Swiftspear,4,main,false
+Mountain,20,main,false
+Searing Blood,4,sideboard,false
+```
+
+<Aside type="note">
+  Los nombres de columna no distinguen mayúsculas de minúsculas. La primera fila debe ser una fila de encabezado. Las columnas adicionales se ignoran.
+</Aside>
+
+## Después de importar
+
+Tras una importación exitosa, Karn Forge:
+
+1. Busca cada nombre de carta en la base de datos local de Arsenal.
+2. Añade las cartas encontradas a la lista del mazo con las cantidades y asignaciones de tablero correctas.
+3. Coloca todas las cartas en el canvas en posiciones escalonadas.
+4. Informa sobre las cartas que no pudieron coincidir en una notificación emergente.
+
+Las cartas no encontradas se omiten. Esto puede ocurrir si el nombre de la carta está mal escrito o si la carta no está en la base de datos de Scryfall (muy poco frecuente).

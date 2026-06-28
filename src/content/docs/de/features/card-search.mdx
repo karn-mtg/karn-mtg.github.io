@@ -1,0 +1,69 @@
+---
+title: Kartensuche
+description: So verwendest du das Kartensuche-Panel von Karn Forge, um Karten aus der vollständigen Scryfall-Datenbank zu finden und zu deinem Deck hinzuzufügen.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Kartensuche
+
+Das Kartensuche-Panel ermöglicht es dir, die vollständige Scryfall-Kartendatenbank — alle Karten, alle Drucke — direkt in Karn Forge zu durchsuchen, ohne eine Internetverbindung (nach der ersten Arsenal-Einrichtung).
+
+## Das Suchpanel öffnen
+
+Das Kartensuche-Panel befindet sich auf der rechten Seite des **Deck Workshops**. Öffne es mit:
+
+- `Ctrl+F` / `Cmd+F`
+- Das Lupensymbol in der rechten Seitenleiste
+
+## Nach Karten suchen
+
+Gib einen beliebigen Teil eines Kartennamens in das Suchfeld ein. Ergebnisse erscheinen während der Eingabe, nach Relevanz sortiert. Die Suche unterscheidet keine Groß-/Kleinschreibung und findet auch Teilnamen.
+
+**Beispiele:**
+
+| Suchanfrage | Treffer |
+|---|---|
+| `lightning` | Lightning Bolt, Chain Lightning, Lightning Helix, … |
+| `sol ring` | Sol Ring |
+| `teferi` | Alle Teferi-Planeswalker und -Kreaturen |
+
+<Aside type="tip">
+  Die Suche gibt bis zu 50 Ergebnisse zurück. Wenn du nicht findest, was du suchst, versuche eine spezifischere Anfrage.
+</Aside>
+
+## Karten zum Deck hinzufügen
+
+Aus den Suchergebnissen kannst du eine Karte auf zwei Wegen zum Deck hinzufügen:
+
+- **Klicke auf die `+`-Schaltfläche** der Ergebniskarte, um eine Kopie in der Mitte des sichtbaren Canvas-Bereichs hinzuzufügen.
+- **Ziehe die Ergebniskarte** auf das Canvas, um sie genau dort zu platzieren, wo du sie haben möchtest.
+
+Beide Aktionen fügen die Karte gleichzeitig zur Deck-Liste hinzu und platzieren sie auf dem Canvas.
+
+## Kartendetail-Panel
+
+Klicke auf eine beliebige Karte in den Suchergebnissen (oder auf eine Karte auf dem Canvas), um das **Kartendetail**-Panel zu öffnen. Es zeigt:
+
+- **Vollständiges Kartenbild** — klicke auf das Bild, um durch verfügbare Drucke zu blättern
+- **Manakosten und Manasymbole** — gerendert mit offiziellen Mana-Pip-Symbolen
+- **Typzeile** — vollständiger Typ einschließlich Supertypen, Kartentypen und Subtypen
+- **Orakeltext** — der maßgebliche Regeltext der Karte
+- **Stärke / Widerstandskraft / Loyalität** — für Kreaturen und Planeswalker
+- **Format-Legalität** — ein Raster, das die Legalität der Karte in Commander, Modern, Standard, Pioneer, Legacy, Vintage und Pauper zeigt
+- **EDHREC-Rang** — wie beliebt die Karte in Commander-Decks auf EDHREC ist
+- **Preis** — aktuelle Marktpreisdaten (erfordert Netzwerkverbindung zur Aktualisierung)
+
+### Den Druck wechseln
+
+Das Detailpanel zeigt den aktuell ausgewählten Druck und eine Kunstwerk-Thumbnail-Leiste für alternative Drucke. Klicke auf ein Thumbnail, um das auf dem Canvas für diese Karte verwendete Kunstwerk zu wechseln.
+
+<Aside type="note">
+  Kunstwerkauswahlen sind pro Deck und pro Anordnung. Zwei Anordnungen desselben Decks können verschiedene Drucke derselben Karte anzeigen.
+</Aside>
+
+## Globale Suche
+
+Zusätzlich zum Kartensuche-Panel im Deck bietet Karn Forge eine **Globale Suche**, die über die obere Leiste zugänglich ist. Die Globale Suche durchsucht deine Decks und Bibliothek nach Deck-Name, Kartenname oder Format.
+
+Öffne die Globale Suche mit `Ctrl+K` / `Cmd+K`.

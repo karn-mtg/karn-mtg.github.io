@@ -1,0 +1,94 @@
+---
+title: Supported Formats
+description: MTG formats supported by Karn Forge for deck building and legality checking.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Supported Formats
+
+Karn Forge supports deck building and legality checking for the following Magic: The Gathering formats. When you create a deck, you choose a format — the format is used for the **Missing** tab comparisons and displayed on the deck card.
+
+## Formats
+
+### Commander (EDH)
+
+**Deck size:** 100 cards (including the commander)
+**Copies allowed:** 1 of each card (except basic lands)
+**Special rules:** Exactly 1 legendary creature or planeswalker designated as commander; deck must be within the commander's color identity; 40 life starting total in multiplayer.
+
+Commander is the most popular casual format and has the broadest deck building latitude.
+
+---
+
+### Modern
+
+**Deck size:** 60 cards minimum (15-card sideboard optional)
+**Copies allowed:** Up to 4 of each card (except basic lands)
+**Card pool:** Sets from 8th Edition and Mirrodin (2003) onward, excluding banned cards.
+
+A competitive non-rotating format with a large card pool.
+
+---
+
+### Standard
+
+**Deck size:** 60 cards minimum (15-card sideboard optional)
+**Copies allowed:** Up to 4 of each card (except basic lands)
+**Card pool:** Sets from the last two years (rotates annually in fall). Check the [official Standard rotation schedule](https://magic.wizards.com/en/formats/standard) for the current card pool.
+
+The primary rotating format, used at most local game stores and major tournaments.
+
+---
+
+### Pioneer
+
+**Deck size:** 60 cards minimum (15-card sideboard optional)
+**Copies allowed:** Up to 4 of each card (except basic lands)
+**Card pool:** Sets from Return to Ravnica (October 2012) onward, excluding banned cards.
+
+A non-rotating format between Standard and Modern in terms of card pool size.
+
+---
+
+### Legacy
+
+**Deck size:** 60 cards minimum (15-card sideboard optional)
+**Copies allowed:** Up to 4 of each card (except basic lands)
+**Card pool:** All cards ever printed (except the Reserve List and banned cards).
+
+A high-power competitive format with access to the full Magic history.
+
+---
+
+### Vintage
+
+**Deck size:** 60 cards minimum (15-card sideboard optional)
+**Copies allowed:** Up to 4 of each card (except basic lands and restricted cards, which are limited to 1)
+**Card pool:** All cards ever printed except the small banned list.
+
+The most powerful sanctioned format. Many strong cards are restricted to 1 copy rather than banned outright.
+
+---
+
+### Pauper
+
+**Deck size:** 60 cards minimum (15-card sideboard optional)
+**Copies allowed:** Up to 4 of each card (except basic lands)
+**Card pool:** Cards that have been printed at common rarity in any Magic Online release, excluding banned cards.
+
+A budget-friendly format limited to common rarity cards.
+
+---
+
+## Legality data
+
+Format legality in Karn Forge comes from the Scryfall card database, maintained by the Arsenal service. Legality is checked per-card and displayed in the **Card Detail** panel.
+
+<Aside type="note">
+  Karn Forge does not enforce deck legality rules during deck building — it's a creative tool, not a validator. The legality display is informational. Always verify legality with the official format rules before playing in a sanctioned event.
+</Aside>
+
+## Custom formats
+
+Karn Forge does not currently support custom format definitions (e.g., Cube, Brawl, Historic). You can build decks for these formats without selecting a format, or use any existing format as a loose approximation.

@@ -1,33 +1,62 @@
 ---
 title: Introduction
-description: Welcome to Karn Forge — a free, open-source Magic The Gathering deck builder.
+description: An overview of Karn Forge — a free, open-source Magic The Gathering deck builder with visual canvas, collection management, analytics, and AI assistance.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components'
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components'
 
 # Welcome to Karn Forge
 
-Karn Forge is a free, open-source desktop application for building and managing Magic: The Gathering decks.
+Karn Forge is a free, open-source desktop application for building, managing, and analyzing Magic: The Gathering decks. It combines a visual canvas builder with collection tracking, live card data, and an AI assistant — all in a fast, offline-capable app.
 
-## What is Karn Forge?
-
-Karn Forge combines a powerful visual deck builder with collection management, deep analytics, and live card data — all in a fast, offline-capable desktop app.
+## What you can do with Karn Forge
 
 <CardGrid>
-  <Card title="Visual Canvas" icon="pencil">
-    Arrange cards on an infinite canvas. Group by strategy, add sticky notes, and visualize your deck like a designer.
+  <Card title="Dashboard" icon="rocket">
+    Get an instant overview of your library: activity charts, color distribution, format breakdown, and your most-used cards across all decks.
   </Card>
-  <Card title="Collection Tracker" icon="document">
-    Import from Moxfield, Archidekt, or CSV. Track prices in real time.
+  <Card title="Deck Workshop" icon="pencil">
+    Build decks on an infinite visual canvas. Arrange cards into groups, add sticky notes, place analytics widgets, and save multiple named arrangements of the same deck.
   </Card>
-  <Card title="Analytics" icon="information">
-    Mana curve, color distribution, type breakdown — optimize with data.
+  <Card title="Card Search" icon="magnifier">
+    Search the full Scryfall card database. Filter by name, type, color, format legality, and more. Click any result to see full card details and add it directly to your deck.
   </Card>
-  <Card title="Live Data" icon="star">
-    Powered by Scryfall. Every card, every printing, always up-to-date.
+  <Card title="Collection" icon="document">
+    Track your physical card collection with condition grades (NM, LP, MP, HP, DMG), foil flags, and per-card prices. Assign cards to recipients to manage trades and orders.
+  </Card>
+  <Card title="Wishlist" icon="star">
+    Keep a prioritized list of cards you want to acquire. Set priorities from Low to Critical, reorder by drag, and add cards directly to any of your decks.
+  </Card>
+  <Card title="AI Assistant" icon="comment">
+    Ask an AI assistant for deck advice, card suggestions, and strategy help. The assistant can show card previews, offer choice menus, and maintain a conversation history per deck.
+  </Card>
+  <Card title="Arsenal" icon="setting">
+    The Arsenal is Karn Forge's local data service. It manages the Scryfall card database and comprehensive rules database so the app works fully offline after the first setup.
+  </Card>
+  <Card title="Widgets" icon="bars">
+    Embed live analytics directly on the deck canvas. Built-in widgets include Mana Curve, Color Distribution, Type Breakdown, Deck Stats, Land Ratio, Draw Odds, and EDHREC Ranks — or build your own with JavaScript.
   </Card>
 </CardGrid>
 
+## Supported formats
+
+Karn Forge supports deck building and validation for all major MTG formats:
+
+- **Commander** (EDH)
+- **Modern**
+- **Standard**
+- **Pioneer**
+- **Legacy**
+- **Vintage**
+- **Pauper**
+
+## Offline-first
+
+After the first launch, Karn Forge downloads the Scryfall card database via the Arsenal service. All card lookups, search, and deck validation then work fully offline. The database is updated independently and can be refreshed whenever you like from the Arsenal panel.
+
 ## Next steps
 
-Head over to [Getting Started](/getting-started) to install and run the app.
+<CardGrid>
+  <LinkCard title="Installation" href="/getting-started" description="Download and install Karn Forge on Windows, macOS, or Linux." />
+  <LinkCard title="Quick Start" href="/quick-start" description="Create your first deck in under five minutes." />
+</CardGrid>

@@ -1,52 +1,81 @@
 ---
-title: Primeiros Passos
-description: Como instalar e executar o Karn Forge na sua máquina.
+title: Instalação
+description: Como baixar e instalar o Karn Forge no Windows, macOS e Linux.
 ---
 
-# Primeiros Passos
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components'
 
-## Instalação
+# Instalação
 
-### Windows
+O Karn Forge é distribuído como um instalador nativo para Windows, macOS e Linux.
 
-1. Baixe o último instalador `.exe` na [página de Releases](https://github.com/karn-mtg/forge/releases)
-2. Execute o instalador — sem necessidade de direitos de administrador
-3. Abra o **Karn Forge** pelo Menu Iniciar ou atalho na área de trabalho
+## Download
 
-### macOS
+Acesse a [página de Releases](https://github.com/karn-mtg/forge/releases) e baixe o instalador para sua plataforma:
 
-1. Baixe o arquivo `.dmg` na [página de Releases](https://github.com/karn-mtg/forge/releases)
-2. Abra o `.dmg` e arraste o Karn Forge para a pasta Aplicativos
-3. Na primeira abertura, clique com o botão direito → Abrir para ignorar o Gatekeeper
+| Plataforma | Arquivo |
+|---|---|
+| Windows | Instalador `.exe` |
+| macOS | Imagem de disco `.dmg` |
+| Linux | `.AppImage` |
 
-## Primeira Inicialização
+<Tabs>
+  <TabItem label="Windows">
+    <Steps>
+      1. Baixe o instalador `.exe` da página de Releases.
+      2. Execute o instalador. Não é necessário ter direitos de administrador.
+      3. Abra o **Karn Forge** pelo Menu Iniciar ou pelo atalho na área de trabalho.
+    </Steps>
+  </TabItem>
+  <TabItem label="macOS">
+    <Steps>
+      1. Baixe o arquivo `.dmg` da página de Releases.
+      2. Abra o `.dmg` e arraste o Karn Forge para sua pasta Aplicativos.
+      3. Na primeira abertura, clique com o botão direito no ícone do app → **Abrir** para ignorar o Gatekeeper.
+    </Steps>
 
-Na primeira inicialização, o Karn Forge baixa o banco de dados de cartas do Scryfall (~50 MB). Isso leva cerca de 30 segundos em uma conexão típica. Depois disso, tudo funciona totalmente offline.
+    <Aside type="note">
+      O macOS pode exibir um aviso de segurança porque o app não é notarizado. Clicar com o botão direito e escolher **Abrir** ignora esse aviso e só precisa ser feito uma vez.
+    </Aside>
+  </TabItem>
+  <TabItem label="Linux">
+    <Steps>
+      1. Baixe o arquivo `.AppImage` da página de Releases.
+      2. Marque como executável: `chmod +x KarnForge-*.AppImage`
+      3. Execute: `./KarnForge-*.AppImage`
+    </Steps>
 
-## Criando Seu Primeiro Deck
+    <Aside type="note">
+      Algumas distribuições Linux precisam do `libfuse2` para rodar AppImages. Instale com seu gerenciador de pacotes caso o app não abra (ex.: `sudo apt install libfuse2` no Ubuntu).
+    </Aside>
+  </TabItem>
+</Tabs>
 
-1. Clique em **Novo Deck** na barra lateral esquerda
-2. Dê um nome ao deck e escolha um formato
-3. Use o painel de **Busca de Cartas** à direita para encontrar cartas
-4. Arraste as cartas para o canvas ou clique no botão **+** para adicioná-las
-5. Pressione `Ctrl+S` / `Cmd+S` para salvar
+## Primeiro lançamento
 
-## Importando um Deck
+No primeiro lançamento, o Karn Forge abre o assistente de configuração do **Arsenal**. O Arsenal é o serviço de dados local que gerencia o banco de dados de cartas e de regras.
 
-1. Abra **Arquivo → Importar** na barra de menu
-2. Escolha a origem:
-   - **Colar texto** — qualquer formato de lista padrão (uma carta por linha)
-   - **URL do Moxfield** — cole a URL de um deck público
-   - **URL do Archidekt** — cole a URL de um deck público
-   - **Arquivo CSV** — importe de uma planilha
-3. O Karn Forge busca os dados das cartas automaticamente
+<Steps>
+  1. Clique em **Configurar Arsenal** na janela que aparecer.
+  2. Aguarde o download dos três componentes: o binário do servidor, o banco de dados de cartas (~50 MB) e o banco de dados de regras.
+  3. Quando a configuração estiver concluída, o app recarrega e está pronto para uso.
+</Steps>
 
-## Atalhos de Teclado
+<Aside type="tip">
+  Após a configuração inicial, tudo funciona totalmente offline. Você pode atualizar os bancos de dados mais tarde, pelo painel do Arsenal, quando houver atualizações disponíveis.
+</Aside>
 
-| Ação | Windows | macOS |
-|---|---|---|
-| Novo Deck | `Ctrl+N` | `Cmd+N` |
-| Salvar | `Ctrl+S` | `Cmd+S` |
-| Buscar Cartas | `Ctrl+F` | `Cmd+F` |
-| Exportar Deck | `Ctrl+E` | `Cmd+E` |
-| Alternar Sidebar | `Ctrl+B` | `Cmd+B` |
+## Requisitos de sistema
+
+| | Mínimo |
+|---|---|
+| SO | Windows 10, macOS 12, Ubuntu 20.04 |
+| RAM | 4 GB |
+| Disco | 500 MB livres (para o banco de dados de cartas e dados do app) |
+| Rede | Necessária apenas na configuração inicial e em atualizações opcionais do banco de dados |
+
+## Atualizações
+
+O Karn Forge verifica atualizações do app automaticamente alguns segundos após a inicialização. Quando uma nova versão está disponível, uma notificação aparece em **Configurações → Atualizações** com um botão de download. Após o download, clique em **Instalar** para reiniciar o app e aplicar a atualização.
+
+O banco de dados de cartas e o banco de dados de regras podem ser atualizados de forma independente pelo painel do **Arsenal**, sem reinstalar o app.

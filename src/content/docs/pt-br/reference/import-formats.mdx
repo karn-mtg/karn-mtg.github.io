@@ -1,0 +1,122 @@
+---
+title: Formatos de Importação
+description: Formatos de importação de decks suportados no Karn Forge — listas de texto simples, URLs do Moxfield, URLs do Archidekt e arquivos CSV.
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Formatos de Importação
+
+O Karn Forge pode importar decks de várias fontes. Para importar, abra um deck e vá em **Arquivo → Importar** na barra de menu, ou pressione `Ctrl+Shift+I` / `Cmd+Shift+I`.
+
+## Lista de texto simples
+
+O formato mais universal — uma carta por linha, opcionalmente prefixada com uma quantidade.
+
+```
+4 Lightning Bolt
+4 Monastery Swiftspear
+4 Goblin Guide
+2 Light Up the Stage
+```
+
+**Regras:**
+- Cada linha é uma entrada de carta.
+- Opcionalmente, prefixe com um número e um espaço: `4 Lightning Bolt` ou `Lightning Bolt` (padrão: 1 cópia).
+- Linhas começando com `//` são tratadas como comentários e ignoradas.
+- Uma linha contendo apenas `Sideboard` ou `SB:` no início sinaliza o início da seção do sideboard.
+
+<Tabs>
+  <TabItem label="Com quantidades">
+    ```
+    4 Lightning Bolt
+    4 Monastery Swiftspear
+    4 Goblin Guide
+    2 Light Up the Stage
+    20 Mountain
+
+    Sideboard
+    4 Searing Blood
+    3 Smash to Smithereens
+    ```
+  </TabItem>
+  <TabItem label="Sem quantidades">
+    ```
+    Lightning Bolt
+    Monastery Swiftspear
+    Mountain
+    ```
+    Cada carta tem como padrão 1 cópia.
+  </TabItem>
+  <TabItem label="Formato MTGO">
+    ```
+    4 Lightning Bolt (M11) 149
+    4 Monastery Swiftspear (KTK) 120a
+    ```
+    Códigos de set e números de colecionador são reconhecidos e usados para selecionar a edição correta.
+  </TabItem>
+</Tabs>
+
+<Aside type="tip">
+  A maioria dos sites de deck (Moxfield, Archidekt, MTGO, MTGGoldfish) oferece uma opção de "copiar lista de texto" ou "exportar como texto" que produz uma saída compatível.
+</Aside>
+
+## URL do Moxfield
+
+Cole uma URL pública de deck do Moxfield e o Karn Forge vai buscar o deck diretamente.
+
+**Exemplo:** `https://www.moxfield.com/decks/abc123`
+
+O deck deve estar com visibilidade **pública** no Moxfield. O Karn Forge busca a lista de deck pela rede e importa todas as cartas incluindo o sideboard.
+
+## URL do Archidekt
+
+Cole uma URL pública de deck do Archidekt e o Karn Forge vai buscar o deck diretamente.
+
+**Exemplo:** `https://archidekt.com/decks/1234567`
+
+O deck deve estar publicamente acessível no Archidekt.
+
+## Arquivo CSV
+
+Importe uma planilha onde cada linha é uma entrada de carta.
+
+**Colunas obrigatórias:**
+
+| Coluna | Descrição |
+|---|---|
+| `name` | Nome da carta (não diferencia maiúsculas de minúsculas) |
+
+**Colunas opcionais:**
+
+| Coluna | Descrição |
+|---|---|
+| `quantity` ou `qty` ou `count` | Número de cópias (padrão: 1) |
+| `board` | `main`, `sideboard`, `commander` ou `partner` |
+| `set` | Código do set (ex.: `M21`) para selecionar uma edição específica |
+| `collector_number` | Número de colecionador dentro do set |
+| `foil` | `true` / `false` ou `1` / `0` |
+
+**Exemplo de CSV:**
+```csv
+name,quantity,board,foil
+Lightning Bolt,4,main,false
+Monastery Swiftspear,4,main,false
+Mountain,20,main,false
+Searing Blood,4,sideboard,false
+```
+
+<Aside type="note">
+  Os nomes das colunas não diferenciam maiúsculas de minúsculas. A primeira linha deve ser uma linha de cabeçalho. Colunas extras são ignoradas.
+</Aside>
+
+## Após a importação
+
+Após uma importação bem-sucedida, o Karn Forge:
+
+1. Busca cada nome de carta no banco de dados local do Arsenal.
+2. Adiciona as cartas correspondidas à lista do deck com as quantidades e atribuições de board corretas.
+3. Posiciona todas as cartas no canvas em posições escalonadas.
+4. Reporta quaisquer cartas que não puderam ser correspondidas em uma notificação de aviso.
+
+Cartas sem correspondência são ignoradas. Isso pode acontecer se o nome da carta estiver com erro de digitação ou se a carta não estiver no banco de dados do Scryfall (muito raro).

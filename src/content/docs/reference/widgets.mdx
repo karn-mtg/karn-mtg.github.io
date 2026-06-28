@@ -1,0 +1,203 @@
+---
+title: Widgets Reference
+description: Complete reference for all built-in canvas widgets in Karn Forge and a guide to creating custom widgets.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Widgets Reference
+
+Widgets are live analytics panels you embed on the deck canvas. They receive your deck's card data and re-render automatically as you add or remove cards. All built-in widgets are read-only — they display information without modifying your deck.
+
+## Adding and placing widgets
+
+<Steps>
+  1. In the Deck Workshop, press **W** or click the **Widget** button in the canvas toolbar.
+  2. The widget picker opens with a preview of each available widget.
+  3. Click a widget to place it on the canvas at the current viewport center.
+  4. Drag the widget by its header to reposition it.
+  5. Resize it by dragging the left or right edge handles.
+</Steps>
+
+## Configuring widget parameters
+
+Widgets with configurable parameters show a **tune** (⚙) icon in their header. Click it to open a parameter popover. Changes apply immediately and are saved with the arrangement.
+
+---
+
+## Built-in widgets
+
+### Mana Curve
+
+A bar chart showing card counts by converted mana value (CMC). Each bar displays the number of cards at that mana value above it.
+
+**Parameters:**
+
+| Parameter | Default | Description |
+|---|---|---|
+| Max CMC bucket | 6 | Cards with CMC above this value are grouped into the last bucket (shown as "6+"). Range: 4–10. |
+| Exclude lands | Yes | When enabled, land cards are excluded from the chart (since they have CMC 0 but aren't castable spells). |
+
+---
+
+### Color Distribution
+
+A horizontal bar chart showing how many cards (by pip count) belong to each color. Colorless cards appear under **C**.
+
+**Parameters:**
+
+| Parameter | Default | Description |
+|---|---|---|
+| Show % | Yes | Displays the percentage of total cards next to each bar. |
+| Include sideboard | No | When enabled, sideboard cards are included in the counts. |
+
+---
+
+### Type Breakdown
+
+A horizontal bar chart showing card counts by card type: Creature, Instant, Sorcery, Enchantment, Artifact, Planeswalker, Land, Other.
+
+**Parameters:**
+
+| Parameter | Default | Description |
+|---|---|---|
+| Include sideboard | No | When enabled, sideboard cards are included. |
+
+---
+
+### Deck Stats
+
+A quick summary panel with the most important numbers at a glance.
+
+**Shows:** Total cards, Creatures, Lands, Non-Lands (optional), Average CMC (optional).
+
+**Parameters:**
+
+| Parameter | Default | Description |
+|---|---|---|
+| Show avg CMC | Yes | Displays the average converted mana cost of non-land cards. |
+| Show non-lands | Yes | Displays the count of non-land cards. |
+
+---
+
+### Land Ratio
+
+A visual gauge comparing your actual land count to a configurable target percentage.
+
+**Parameters:**
+
+| Parameter | Default | Description |
+|---|---|---|
+| Target % | 37 | The target land percentage. The gauge turns green when your land count is close to the target. Range: 20–50. |
+
+---
+
+### Draw Odds
+
+Uses the hypergeometric distribution to calculate the probability of drawing at least one card from each group (or card type) in your opening hand and by turn 5.
+
+**Parameters:**
+
+| Parameter | Default | Description |
+|---|---|---|
+| Opening hand | 7 | The number of cards in the opening hand. Range: 1–10. |
+| Show Turn 5 | Yes | Displays an additional column showing the odds by turn 5 (hand + 5 draws). |
+
+<Aside type="tip">
+  Draw Odds uses your canvas **groups** if you've created any. If your arrangement has groups named "Ramp," "Draw," and "Win Con," the widget will show draw odds for each group, making it a powerful tool for evaluating how consistent your strategy is.
+</Aside>
+
+---
+
+### EDHREC Rank
+
+A ranked list of the cards in your deck sorted by their EDHREC popularity rank (lower rank = more popular in Commander).
+
+**Parameters:**
+
+| Parameter | Default | Description |
+|---|---|---|
+| Show count | 10 | How many cards to display. Range: 3–20. |
+| Reverse (show least popular) | No | When enabled, shows the least popular cards first — useful for finding budget cuts or unique tech. |
+
+---
+
+## Custom widgets
+
+You can create your own widgets in **Widgets → New Widget**. Custom widgets are written in JavaScript and have access to the full deck data object.
+
+### Widget data API
+
+Your widget code receives a `data` object with the following shape:
+
+```ts
+interface WidgetData {
+  cards: CardEntry[];      // main deck cards only
+  allCards: CardEntry[];   // main + sideboard
+  deckSize: number;        // total main deck card count
+  groups: GroupEntry[];    // canvas groups (if any)
+}
+
+interface CardEntry {
+  oracleId: string;
+  name: string;
+  qty: number;
+  board: 'main' | 'commander' | 'partner' | 'sideboard';
+  typeLine: string;
+  manaCost: string;
+  cmc: number;
+  colorIdentity: string[]; // e.g. ['W', 'U']
+  edhrecRank?: number;
+}
+
+interface GroupEntry {
+  name: string;
+  color: string;
+  cards: CardEntry[];
+  totalQty: number;
+}
+```
+
+Your widget code also receives a `params` object containing the current values of any parameters you define, and must return an **HTML string**.
+
+### Widget parameters
+
+Define parameters in the widget editor. Each parameter has:
+
+| Field | Type | Description |
+|---|---|---|
+| `key` | `string` | Internal key used in `params.key` |
+| `label` | `string` | Display label shown in the configure popover |
+| `type` | `'number'` \| `'boolean'` \| `'string'` | Parameter type |
+| `default` | any | Default value |
+| `min` / `max` / `step` | number | For number types |
+
+### Example custom widget
+
+```js
+// Counts cards by color identity and returns a simple list
+const colors = { W: 0, U: 0, B: 0, R: 0, G: 0, C: 0 };
+data.cards.forEach(({ colorIdentity, qty }) => {
+  if (!colorIdentity.length) { colors.C += qty; return; }
+  colorIdentity.forEach(c => { if (c in colors) colors[c] += qty; });
+});
+const rows = Object.entries(colors)
+  .filter(([, v]) => v > 0)
+  .map(([col, v]) => `<div>${col}: ${v}</div>`)
+  .join('');
+return `<div style="font-family:sans-serif;font-size:12px;">${rows}</div>`;
+```
+
+### Async widgets
+
+Custom widgets can fetch external data using the `asyncWidgetData` callback. If defined, the widget renders synchronously first, then re-renders once the async data resolves.
+
+<Aside type="caution">
+  Async widgets that call external APIs require a network connection. Keep async operations fast to avoid a long blank state in the widget body.
+</Aside>
+
+### Card decorators
+
+In addition to panel widgets, you can create **card decorators** — overlay badges that appear on top of canvas card images. Decorators are defined similarly to widgets but render HTML for a small overlay element attached to each card.
+
+Use decorators to add custom badges like "In Collection," "Over Budget," or "Synergy Rating."

@@ -1,0 +1,82 @@
+---
+title: Assistente de IA
+description: Receba conselhos de deck, sugestões de cartas e ajuda com estratégia de um assistente de IA diretamente dentro do Deck Workshop do Karn Forge.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Assistente de IA
+
+O Karn Forge inclui um assistente de IA com o qual você pode conversar diretamente no Deck Workshop. Você pode pedir conselhos de deck, sugestões de cartas, análise de condições de vitória, recomendações de orçamento ou qualquer outra coisa relacionada ao seu deck.
+
+O assistente tem contexto completo sobre seu deck atual — lista de cartas, formato, identidade de cor e grupos do canvas — para que possa dar respostas relevantes e específicas.
+
+## Abrindo o assistente
+
+<Steps>
+  1. Abra qualquer deck no **Deck Workshop**.
+  2. Clique no botão **IA** na barra de ferramentas superior, ou pressione `Ctrl+I` / `Cmd+I`.
+  3. O painel de IA desliza a partir da direita.
+</Steps>
+
+## Provedores
+
+O assistente suporta múltiplos provedores de IA. Configure seu provedor preferido em **Configurações → IA**:
+
+| Provedor | Observações |
+|---|---|
+| **Claude (via Claude Code CLI)** | Usa um Claude CLI rodando localmente. Não precisa de chave de API se o Claude Code já estiver instalado. |
+| **OpenAI** | Requer uma chave de API da OpenAI. Configure em Configurações. |
+
+<Aside type="note">
+  Se nenhum provedor estiver configurado, o painel de IA mostrará um prompt de configuração. Siga as instruções em Configurações para conectar um provedor.
+</Aside>
+
+## Conversando com o assistente
+
+Digite sua pergunta ou pedido no campo de chat na parte inferior do painel e pressione **Enter** ou clique em **Enviar**.
+
+**Exemplos de prompts:**
+
+- "Quais terrenos devo adicionar a este deck de Commander?"
+- "Tenho cartas demais com custo 5+ — quais devo cortar?"
+- "Sugira 5 cartas com sinergia para meu deck Atraxa Superfriends."
+- "Este deck é legal em Modern?"
+- "Qual é o CMC médio das minhas cartas que não são terrenos?"
+
+O assistente transmite sua resposta em tempo real. Você pode enviar uma mensagem de acompanhamento enquanto ele ainda está respondendo.
+
+## Tipos de resposta
+
+O assistente usa blocos de resposta estruturados dependendo do tipo de resposta:
+
+### Vitrine de cartas
+
+Quando o assistente sugere cartas específicas, ele as exibe como prévias interativas com a imagem da carta, nome, tipo e custo de mana. Passar o mouse sobre uma carta mostra o tooltip com o texto de oráculo completo.
+
+### Prompt de escolha
+
+Para decisões com múltiplas etapas, o assistente pode apresentar um conjunto de opções como botões. Clique em uma para continuar a conversa com sua escolha.
+
+### Sugestões
+
+Uma lista de sugestões de ação rápida (ex.: "Mostrar a curva de mana", "Quais cartas estão acima do orçamento") que você pode clicar para enviar como uma mensagem.
+
+## Histórico de conversa
+
+Cada deck tem seu próprio histórico de conversa. Quando você fecha e reabre o painel de IA, a conversa anterior é preservada. Você pode iniciar uma nova conversa pelo menu do painel sem perder a antiga.
+
+## Contexto enviado ao assistente
+
+O assistente recebe o seguinte contexto com cada mensagem:
+
+- O nome e formato do deck
+- A lista completa de cartas com quantidades, tipos e custos de mana
+- A identidade de cor do deck
+- Os nomes dos grupos do canvas e suas atribuições de cartas (se houver)
+
+O assistente não recebe suas informações pessoais de conta nem dados de outros decks.
+
+<Aside type="tip">
+  Se você organizou seu canvas em grupos de estratégia (Ramp, Compra, Condições de Vitória, etc.), o assistente pode referenciar esses grupos pelo nome e dar conselhos mais direcionados.
+</Aside>

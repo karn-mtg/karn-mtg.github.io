@@ -1,0 +1,94 @@
+---
+title: Formatos Suportados
+description: Formatos de MTG suportados pelo Karn Forge para construção de decks e verificação de legalidade.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Formatos Suportados
+
+O Karn Forge suporta construção de decks e verificação de legalidade para os seguintes formatos de Magic: The Gathering. Quando você cria um deck, escolhe um formato — ele é usado nas comparações da aba **Ausentes** e é exibido no cartão do deck.
+
+## Formatos
+
+### Commander (EDH)
+
+**Tamanho do deck:** 100 cartas (incluindo o commander)
+**Cópias permitidas:** 1 de cada carta (exceto terrenos básicos)
+**Regras especiais:** Exatamente 1 criatura lendária ou planeswalker designado como commander; o deck deve estar dentro da identidade de cor do commander; 40 pontos de vida iniciais no multiplayer.
+
+Commander é o formato casual mais popular e tem a maior liberdade na construção de decks.
+
+---
+
+### Modern
+
+**Tamanho do deck:** Mínimo 60 cartas (sideboard de 15 cartas opcional)
+**Cópias permitidas:** Até 4 de cada carta (exceto terrenos básicos)
+**Pool de cartas:** Sets a partir da 8ª Edição e Mirrodin (2003) em diante, excluindo cartas banidas.
+
+Um formato competitivo não-rotativo com um grande pool de cartas.
+
+---
+
+### Standard
+
+**Tamanho do deck:** Mínimo 60 cartas (sideboard de 15 cartas opcional)
+**Cópias permitidas:** Até 4 de cada carta (exceto terrenos básicos)
+**Pool de cartas:** Sets dos últimos dois anos (rotaciona anualmente no outono). Confira o [calendário oficial de rotação do Standard](https://magic.wizards.com/en/formats/standard) para o pool atual.
+
+O principal formato rotativo, usado na maioria das lojas locais de jogos e grandes torneios.
+
+---
+
+### Pioneer
+
+**Tamanho do deck:** Mínimo 60 cartas (sideboard de 15 cartas opcional)
+**Cópias permitidas:** Até 4 de cada carta (exceto terrenos básicos)
+**Pool de cartas:** Sets a partir de Return to Ravnica (outubro de 2012) em diante, excluindo cartas banidas.
+
+Um formato não-rotativo entre o Standard e o Modern em termos de tamanho do pool de cartas.
+
+---
+
+### Legacy
+
+**Tamanho do deck:** Mínimo 60 cartas (sideboard de 15 cartas opcional)
+**Cópias permitidas:** Até 4 de cada carta (exceto terrenos básicos)
+**Pool de cartas:** Todas as cartas já impressas (exceto a Lista Reservada e cartas banidas).
+
+Um formato competitivo de alto poder com acesso a toda a história do Magic.
+
+---
+
+### Vintage
+
+**Tamanho do deck:** Mínimo 60 cartas (sideboard de 15 cartas opcional)
+**Cópias permitidas:** Até 4 de cada carta (exceto terrenos básicos e cartas restritas, limitadas a 1)
+**Pool de cartas:** Todas as cartas já impressas exceto a pequena lista de banidas.
+
+O formato sanctioned mais poderoso. Muitas cartas fortes são restritas a 1 cópia em vez de banidas.
+
+---
+
+### Pauper
+
+**Tamanho do deck:** Mínimo 60 cartas (sideboard de 15 cartas opcional)
+**Cópias permitidas:** Até 4 de cada carta (exceto terrenos básicos)
+**Pool de cartas:** Cartas que foram impressas na raridade comum em qualquer lançamento do Magic Online, excluindo cartas banidas.
+
+Um formato econômico limitado a cartas de raridade comum.
+
+---
+
+## Dados de legalidade
+
+A legalidade de formatos no Karn Forge vem do banco de dados de cartas do Scryfall, mantido pelo serviço Arsenal. A legalidade é verificada por carta e exibida no painel de **Detalhes da Carta**.
+
+<Aside type="note">
+  O Karn Forge não impõe regras de legalidade durante a construção de decks — é uma ferramenta criativa, não um validador. A exibição de legalidade é informativa. Sempre verifique a legalidade com as regras oficiais do formato antes de jogar em um evento sanctioned.
+</Aside>
+
+## Formatos personalizados
+
+O Karn Forge não suporta atualmente definições de formatos personalizados (ex.: Cube, Brawl, Historic). Você pode montar decks para esses formatos sem selecionar um formato, ou usar qualquer formato existente como uma aproximação.

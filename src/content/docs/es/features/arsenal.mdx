@@ -1,0 +1,80 @@
+---
+title: Arsenal
+description: Arsenal es el servicio de datos local de Karn Forge que gestiona la base de datos de cartas de Scryfall y la base de datos de reglas para permitir la búsqueda de cartas y consulta de reglas sin conexión.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Arsenal
+
+Arsenal es el servicio de datos local que impulsa las capacidades offline de Karn Forge. Se ejecuta como un servicio en segundo plano en tu máquina y gestiona dos bases de datos:
+
+- **Base de datos de cartas** — el catálogo completo de cartas de Scryfall (~50 MB), usado para la búsqueda de cartas y consultas de detalles en la app.
+- **Base de datos de reglas** — el documento completo de reglas de MTG, usado para la consulta de reglas y el contexto del asistente de IA.
+
+## Configuración inicial
+
+En el primer inicio, Karn Forge te pide que configures Arsenal. Esto descarga tres componentes:
+
+1. El binario del servidor de Arsenal
+2. La base de datos de cartas
+3. La base de datos de reglas
+
+Requiere una conexión a internet y tarda entre 30 y 60 segundos con una conexión típica. Tras la configuración, la app funciona completamente offline.
+
+## Acceder al panel de Arsenal
+
+Haz clic en el ícono de **Arsenal** en la barra lateral izquierda (ícono de engranaje/servidor) para abrir el panel de Arsenal. Muestra:
+
+- Estado de instalación (instalado / no instalado)
+- La versión de cada componente instalado
+- Si hay actualizaciones disponibles para cada componente
+
+## Buscar actualizaciones
+
+<Steps>
+  1. Abre el panel de **Arsenal**.
+  2. Haz clic en **Buscar actualizaciones**.
+  3. Si algún componente tiene una actualización disponible, aparece un botón de descarga junto a él.
+  4. Haz clic en el botón de descarga de cada componente que quieras actualizar.
+</Steps>
+
+Puedes actualizar cada componente de forma independiente:
+
+| Componente | Cuándo actualizar |
+|---|---|
+| Servidor | Cuando el servidor de Arsenal tiene una nueva versión con correcciones de errores o nuevas funciones |
+| Base de datos de cartas | Cuando se lanzan nuevas expansiones de MTG y quieres las cartas más recientes |
+| Base de datos de reglas | Cuando se publica un nuevo documento de reglas completo |
+
+<Aside type="tip">
+  Las nuevas expansiones de MTG suelen estar disponibles en la base de datos de Scryfall dentro de las 24-48 horas posteriores al lanzamiento. Actualiza la base de datos de cartas tras el lanzamiento de una nueva expansión para buscar y añadir las nuevas cartas.
+</Aside>
+
+## Reinstalar Arsenal
+
+Si Arsenal deja de responder o muestra errores, puedes reinstalarlo:
+
+<Steps>
+  1. Abre el panel de **Arsenal**.
+  2. Haz clic en **Reinstalar Arsenal**.
+  3. El proceso de configuración se ejecuta de nuevo, descargando copias nuevas de los tres componentes.
+</Steps>
+
+<Aside type="caution">
+  Reinstalar Arsenal no elimina tus mazos ni los datos de tu colección. Solo se reemplazan los archivos del servicio Arsenal (binario del servidor y bases de datos).
+</Aside>
+
+## Cómo funciona Arsenal
+
+Arsenal es un proceso en segundo plano incluido en Electron que se inicia cuando se abre Karn Forge. Expone una API interna que el proceso de renderizado llama para búsquedas de cartas y consultas de datos. Toda la comunicación permanece en tu máquina local.
+
+La base de datos de cartas se almacena como un archivo SQLite. El servicio indexa las cartas por nombre, ID de oracle y varios campos de metadatos para admitir búsquedas de coincidencia parcial rápidas en todo el catálogo de Scryfall.
+
+## Uso offline
+
+Una vez que Arsenal está configurado, Karn Forge funciona completamente offline. Las únicas funciones que requieren conexión de red son:
+
+- **Actualizaciones de Arsenal** — descarga de nuevas versiones de la base de datos
+- **Asistente de IA** — si se usa un proveedor en la nube como OpenAI (el proveedor de Claude CLI puede funcionar offline si el CLI está configurado con modelos locales)
+- **Datos de precios** — los precios de cartas en vivo requieren una llamada a la API de Scryfall

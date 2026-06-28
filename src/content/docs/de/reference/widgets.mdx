@@ -1,0 +1,203 @@
+---
+title: Widgets-Referenz
+description: Vollständige Referenz für alle integrierten Canvas-Widgets in Karn Forge und eine Anleitung zur Erstellung benutzerdefinierter Widgets.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Widgets-Referenz
+
+Widgets sind Live-Analyse-Panels, die du auf dem Deck-Canvas einbettest. Sie empfangen die Kartendaten deines Decks und rendern sich automatisch neu, wenn du Karten hinzufügst oder entfernst. Alle integrierten Widgets sind schreibgeschützt — sie zeigen Informationen an, ohne dein Deck zu verändern.
+
+## Widgets hinzufügen und platzieren
+
+<Steps>
+  1. Drücke im Deck Workshop **W** oder klicke auf die **Widget**-Schaltfläche in der Canvas-Werkzeugleiste.
+  2. Die Widget-Auswahl öffnet sich mit einer Vorschau jedes verfügbaren Widgets.
+  3. Klicke auf ein Widget, um es auf dem Canvas in der Mitte des aktuellen Viewports zu platzieren.
+  4. Ziehe das Widget an seiner Kopfzeile, um es neu zu positionieren.
+  5. Verändere die Größe durch Ziehen an den linken oder rechten Rand-Griffen.
+</Steps>
+
+## Widget-Parameter konfigurieren
+
+Widgets mit konfigurierbaren Parametern zeigen ein **Einstellungen** (⚙)-Symbol in ihrer Kopfzeile. Klicke darauf, um ein Parameter-Popover zu öffnen. Änderungen werden sofort angewendet und mit der Anordnung gespeichert.
+
+---
+
+## Integrierte Widgets
+
+### Manakurve
+
+Ein Balkendiagramm, das Kartenanzahlen nach umgewandelten Manakosten (CMC) anzeigt. Jeder Balken zeigt die Anzahl der Karten mit diesem Manawert darüber an.
+
+**Parameter:**
+
+| Parameter | Standard | Beschreibung |
+|---|---|---|
+| Max. CMC-Bereich | 6 | Karten mit CMC über diesem Wert werden im letzten Bereich zusammengefasst (angezeigt als „6+"). Bereich: 4–10. |
+| Länder ausschließen | Ja | Wenn aktiviert, werden Länderkarten aus dem Diagramm ausgeschlossen (da sie CMC 0 haben, aber keine Zaubersprüche sind). |
+
+---
+
+### Farbverteilung
+
+Ein horizontales Balkendiagramm, das zeigt, wie viele Karten (nach Pip-Anzahl) zu jeder Farbe gehören. Farblose Karten erscheinen unter **C**.
+
+**Parameter:**
+
+| Parameter | Standard | Beschreibung |
+|---|---|---|
+| % anzeigen | Ja | Zeigt den Prozentsatz der Gesamtkarten neben jedem Balken an. |
+| Sideboard einbeziehen | Nein | Wenn aktiviert, werden Sideboard-Karten in die Zählung einbezogen. |
+
+---
+
+### Typ-Aufschlüsselung
+
+Ein horizontales Balkendiagramm, das Kartenanzahlen nach Kartentyp zeigt: Kreatur, Spontanzauber, Hexerei, Verzauberung, Artefakt, Planeswalker, Land, Sonstige.
+
+**Parameter:**
+
+| Parameter | Standard | Beschreibung |
+|---|---|---|
+| Sideboard einbeziehen | Nein | Wenn aktiviert, werden Sideboard-Karten einbezogen. |
+
+---
+
+### Deck-Statistiken
+
+Ein kompaktes Übersichtspanel mit den wichtigsten Zahlen auf einen Blick.
+
+**Zeigt:** Gesamtkarten, Kreaturen, Länder, Nicht-Länder (optional), Durchschnittliche CMC (optional).
+
+**Parameter:**
+
+| Parameter | Standard | Beschreibung |
+|---|---|---|
+| Durchschn. CMC anzeigen | Ja | Zeigt die durchschnittlichen umgewandelten Manakosten von Nicht-Land-Karten an. |
+| Nicht-Länder anzeigen | Ja | Zeigt die Anzahl der Nicht-Land-Karten an. |
+
+---
+
+### Länderverhältnis
+
+Ein visueller Messer, der deine tatsächliche Länderanzahl mit einem konfigurierbaren Zielprozentsatz vergleicht.
+
+**Parameter:**
+
+| Parameter | Standard | Beschreibung |
+|---|---|---|
+| Ziel-% | 37 | Der Ziel-Länderprozentsatz. Der Messer wird grün, wenn deine Länderanzahl nahe am Ziel ist. Bereich: 20–50. |
+
+---
+
+### Ziehwahrscheinlichkeit
+
+Verwendet die hypergeometrische Verteilung, um die Wahrscheinlichkeit zu berechnen, mindestens eine Karte aus jeder Gruppe (oder jedem Kartentyp) in deiner Anfangshand und bis Runde 5 zu ziehen.
+
+**Parameter:**
+
+| Parameter | Standard | Beschreibung |
+|---|---|---|
+| Anfangshand | 7 | Die Anzahl der Karten in der Anfangshand. Bereich: 1–10. |
+| Runde 5 anzeigen | Ja | Zeigt eine zusätzliche Spalte mit den Wahrscheinlichkeiten bis Runde 5 (Hand + 5 Züge). |
+
+<Aside type="tip">
+  Ziehwahrscheinlichkeit verwendet deine Canvas-**Gruppen**, wenn du welche erstellt hast. Wenn deine Anordnung Gruppen namens „Ramp", „Karten ziehen" und „Siegbedingung" hat, zeigt das Widget Ziehwahrscheinlichkeiten für jede Gruppe — ein leistungsstarkes Werkzeug zur Bewertung der Konsistenz deiner Strategie.
+</Aside>
+
+---
+
+### EDHREC-Rang
+
+Eine Rangliste der Karten in deinem Deck, sortiert nach ihrem EDHREC-Popularitätsrang (niedrigerer Rang = beliebter in Commander).
+
+**Parameter:**
+
+| Parameter | Standard | Beschreibung |
+|---|---|---|
+| Anzahl anzeigen | 10 | Wie viele Karten angezeigt werden. Bereich: 3–20. |
+| Umkehren (unbeliebteste zuerst) | Nein | Wenn aktiviert, werden die unbeliebtesten Karten zuerst angezeigt — nützlich zum Finden von Budget-Kürzungen oder einzigartiger Technik. |
+
+---
+
+## Benutzerdefinierte Widgets
+
+Du kannst eigene Widgets unter **Widgets → Neues Widget** erstellen. Benutzerdefinierte Widgets werden in JavaScript geschrieben und haben Zugriff auf das vollständige Deck-Datenobjekt.
+
+### Widget-Daten-API
+
+Dein Widget-Code erhält ein `data`-Objekt mit folgender Struktur:
+
+```ts
+interface WidgetData {
+  cards: CardEntry[];      // nur Hauptdeck-Karten
+  allCards: CardEntry[];   // Hauptdeck + Sideboard
+  deckSize: number;        // Gesamtanzahl der Hauptdeck-Karten
+  groups: GroupEntry[];    // Canvas-Gruppen (falls vorhanden)
+}
+
+interface CardEntry {
+  oracleId: string;
+  name: string;
+  qty: number;
+  board: 'main' | 'commander' | 'partner' | 'sideboard';
+  typeLine: string;
+  manaCost: string;
+  cmc: number;
+  colorIdentity: string[]; // z. B. ['W', 'U']
+  edhrecRank?: number;
+}
+
+interface GroupEntry {
+  name: string;
+  color: string;
+  cards: CardEntry[];
+  totalQty: number;
+}
+```
+
+Dein Widget-Code erhält außerdem ein `params`-Objekt mit den aktuellen Werten aller von dir definierten Parameter und muss einen **HTML-String** zurückgeben.
+
+### Widget-Parameter
+
+Definiere Parameter im Widget-Editor. Jeder Parameter hat:
+
+| Feld | Typ | Beschreibung |
+|---|---|---|
+| `key` | `string` | Interner Schlüssel, verwendet als `params.key` |
+| `label` | `string` | Anzeigebezeichnung im Konfigurierungs-Popover |
+| `type` | `'number'` \| `'boolean'` \| `'string'` | Parametertyp |
+| `default` | beliebig | Standardwert |
+| `min` / `max` / `step` | Zahl | Für Zahlentypen |
+
+### Beispiel für ein benutzerdefiniertes Widget
+
+```js
+// Zählt Karten nach Farbidentität und gibt eine einfache Liste zurück
+const colors = { W: 0, U: 0, B: 0, R: 0, G: 0, C: 0 };
+data.cards.forEach(({ colorIdentity, qty }) => {
+  if (!colorIdentity.length) { colors.C += qty; return; }
+  colorIdentity.forEach(c => { if (c in colors) colors[c] += qty; });
+});
+const rows = Object.entries(colors)
+  .filter(([, v]) => v > 0)
+  .map(([col, v]) => `<div>${col}: ${v}</div>`)
+  .join('');
+return `<div style="font-family:sans-serif;font-size:12px;">${rows}</div>`;
+```
+
+### Asynchrone Widgets
+
+Benutzerdefinierte Widgets können externe Daten mit dem `asyncWidgetData`-Callback abrufen. Wenn definiert, rendert das Widget zuerst synchron und re-rendert sobald die asynchronen Daten aufgelöst sind.
+
+<Aside type="caution">
+  Asynchrone Widgets, die externe APIs aufrufen, benötigen eine Netzwerkverbindung. Halte asynchrone Operationen schnell, um einen langen leeren Zustand im Widget-Bereich zu vermeiden.
+</Aside>
+
+### Karten-Dekoratoren
+
+Zusätzlich zu Panel-Widgets kannst du **Karten-Dekoratoren** erstellen — Overlay-Abzeichen, die über Canvas-Kartenbilder erscheinen. Dekoratoren werden ähnlich wie Widgets definiert, rendern aber HTML für ein kleines Overlay-Element, das an jede Karte angehängt wird.
+
+Verwende Dekoratoren, um benutzerdefinierte Abzeichen wie „In der Sammlung", „Über Budget" oder „Synergie-Bewertung" hinzuzufügen.

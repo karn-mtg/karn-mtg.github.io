@@ -1,0 +1,203 @@
+---
+title: Referência de Widgets
+description: Referência completa de todos os widgets de canvas integrados no Karn Forge e um guia para criar widgets personalizados.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Referência de Widgets
+
+Widgets são painéis de análise ao vivo que você incorpora no canvas do deck. Eles recebem os dados das cartas do seu deck e se re-renderizam automaticamente conforme você adiciona ou remove cartas. Todos os widgets integrados são somente leitura — eles exibem informações sem modificar seu deck.
+
+## Adicionando e posicionando widgets
+
+<Steps>
+  1. No Deck Workshop, pressione **W** ou clique no botão **Widget** na barra de ferramentas do canvas.
+  2. O seletor de widgets abre com uma prévia de cada widget disponível.
+  3. Clique em um widget para posicioná-lo no canvas no centro da viewport atual.
+  4. Arraste o widget pelo cabeçalho para reposicioná-lo.
+  5. Redimensione-o arrastando as alças das bordas esquerda ou direita.
+</Steps>
+
+## Configurando parâmetros de widgets
+
+Widgets com parâmetros configuráveis mostram um ícone de **ajuste** (⚙) no cabeçalho. Clique nele para abrir um popover de parâmetros. As alterações são aplicadas imediatamente e salvas com o layout.
+
+---
+
+## Widgets integrados
+
+### Curva de Mana
+
+Um gráfico de barras mostrando a quantidade de cartas por valor de mana convertido (CMC). Cada barra exibe o número de cartas naquele valor de mana acima dela.
+
+**Parâmetros:**
+
+| Parâmetro | Padrão | Descrição |
+|---|---|---|
+| Bucket máximo de CMC | 6 | Cartas com CMC acima deste valor são agrupadas no último bucket (mostrado como "6+"). Intervalo: 4–10. |
+| Excluir terrenos | Sim | Quando ativado, cartas de terreno são excluídas do gráfico (já que têm CMC 0 mas não são feitiços jogáveis). |
+
+---
+
+### Distribuição de Cores
+
+Um gráfico de barras horizontal mostrando quantas cartas (por contagem de pip) pertencem a cada cor. Cartas incolores aparecem sob **C**.
+
+**Parâmetros:**
+
+| Parâmetro | Padrão | Descrição |
+|---|---|---|
+| Mostrar % | Sim | Exibe a porcentagem do total de cartas ao lado de cada barra. |
+| Incluir sideboard | Não | Quando ativado, cartas do sideboard são incluídas nas contagens. |
+
+---
+
+### Divisão por Tipo
+
+Um gráfico de barras horizontal mostrando a quantidade de cartas por tipo: Criatura, Instântaneo, Feitiço, Encantamento, Artefato, Planeswalker, Terreno, Outros.
+
+**Parâmetros:**
+
+| Parâmetro | Padrão | Descrição |
+|---|---|---|
+| Incluir sideboard | Não | Quando ativado, cartas do sideboard são incluídas. |
+
+---
+
+### Estatísticas do Deck
+
+Um painel de resumo rápido com os números mais importantes de um jeito fácil.
+
+**Mostra:** Total de cartas, Criaturas, Terrenos, Não-Terrenos (opcional), CMC Médio (opcional).
+
+**Parâmetros:**
+
+| Parâmetro | Padrão | Descrição |
+|---|---|---|
+| Mostrar CMC médio | Sim | Exibe o custo de mana convertido médio das cartas que não são terrenos. |
+| Mostrar não-terrenos | Sim | Exibe a contagem de cartas que não são terrenos. |
+
+---
+
+### Proporção de Terrenos
+
+Um medidor visual comparando sua contagem real de terrenos a uma porcentagem-alvo configurável.
+
+**Parâmetros:**
+
+| Parâmetro | Padrão | Descrição |
+|---|---|---|
+| Alvo % | 37 | A porcentagem-alvo de terrenos. O medidor fica verde quando sua contagem de terrenos está próxima do alvo. Intervalo: 20–50. |
+
+---
+
+### Probabilidade de Compra
+
+Usa a distribuição hipergeométrica para calcular a probabilidade de comprar pelo menos uma carta de cada grupo (ou tipo de carta) na sua mão inicial e até o turno 5.
+
+**Parâmetros:**
+
+| Parâmetro | Padrão | Descrição |
+|---|---|---|
+| Mão inicial | 7 | O número de cartas na mão inicial. Intervalo: 1–10. |
+| Mostrar Turno 5 | Sim | Exibe uma coluna adicional mostrando as probabilidades até o turno 5 (mão + 5 compras). |
+
+<Aside type="tip">
+  A Probabilidade de Compra usa seus **grupos** do canvas se você tiver criado algum. Se o seu layout tiver grupos chamados "Ramp", "Compra" e "Condição de Vitória", o widget vai mostrar as probabilidades de compra para cada grupo, tornando-o uma ferramenta poderosa para avaliar a consistência da sua estratégia.
+</Aside>
+
+---
+
+### Ranking EDHREC
+
+Uma lista classificada das cartas do seu deck ordenadas pelo ranking de popularidade no EDHREC (ranking menor = mais popular em Commander).
+
+**Parâmetros:**
+
+| Parâmetro | Padrão | Descrição |
+|---|---|---|
+| Mostrar quantidade | 10 | Quantas cartas exibir. Intervalo: 3–20. |
+| Inverter (mostrar menos populares) | Não | Quando ativado, mostra as cartas menos populares primeiro — útil para encontrar cortes de orçamento ou techs únicos. |
+
+---
+
+## Widgets personalizados
+
+Você pode criar seus próprios widgets em **Widgets → Novo Widget**. Widgets personalizados são escritos em JavaScript e têm acesso ao objeto de dados completo do deck.
+
+### API de dados do widget
+
+O código do seu widget recebe um objeto `data` com o seguinte formato:
+
+```ts
+interface WidgetData {
+  cards: CardEntry[];      // cartas do deck principal apenas
+  allCards: CardEntry[];   // principal + sideboard
+  deckSize: number;        // contagem total de cartas do deck principal
+  groups: GroupEntry[];    // grupos do canvas (se houver)
+}
+
+interface CardEntry {
+  oracleId: string;
+  name: string;
+  qty: number;
+  board: 'main' | 'commander' | 'partner' | 'sideboard';
+  typeLine: string;
+  manaCost: string;
+  cmc: number;
+  colorIdentity: string[]; // ex.: ['W', 'U']
+  edhrecRank?: number;
+}
+
+interface GroupEntry {
+  name: string;
+  color: string;
+  cards: CardEntry[];
+  totalQty: number;
+}
+```
+
+O código do seu widget também recebe um objeto `params` contendo os valores atuais de quaisquer parâmetros que você definir, e deve retornar uma **string HTML**.
+
+### Parâmetros de widgets
+
+Defina parâmetros no editor de widgets. Cada parâmetro tem:
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `key` | `string` | Chave interna usada em `params.key` |
+| `label` | `string` | Rótulo de exibição mostrado no popover de configuração |
+| `type` | `'number'` \| `'boolean'` \| `'string'` | Tipo do parâmetro |
+| `default` | qualquer | Valor padrão |
+| `min` / `max` / `step` | number | Para tipos numéricos |
+
+### Exemplo de widget personalizado
+
+```js
+// Conta cartas por identidade de cor e retorna uma lista simples
+const colors = { W: 0, U: 0, B: 0, R: 0, G: 0, C: 0 };
+data.cards.forEach(({ colorIdentity, qty }) => {
+  if (!colorIdentity.length) { colors.C += qty; return; }
+  colorIdentity.forEach(c => { if (c in colors) colors[c] += qty; });
+});
+const rows = Object.entries(colors)
+  .filter(([, v]) => v > 0)
+  .map(([col, v]) => `<div>${col}: ${v}</div>`)
+  .join('');
+return `<div style="font-family:sans-serif;font-size:12px;">${rows}</div>`;
+```
+
+### Widgets assíncronos
+
+Widgets personalizados podem buscar dados externos usando o callback `asyncWidgetData`. Se definido, o widget renderiza de forma síncrona primeiro, depois re-renderiza assim que os dados assíncronos forem resolvidos.
+
+<Aside type="caution">
+  Widgets assíncronos que chamam APIs externas requerem conexão de rede. Mantenha as operações assíncronas rápidas para evitar um estado em branco prolongado no corpo do widget.
+</Aside>
+
+### Decoradores de cartas
+
+Além dos widgets de painel, você pode criar **decoradores de cartas** — emblemas sobrepostos que aparecem em cima das imagens das cartas no canvas. Os decoradores são definidos de forma similar aos widgets, mas renderizam HTML para um pequeno elemento de sobreposição anexado a cada carta.
+
+Use decoradores para adicionar emblemas personalizados como "Na Coleção", "Acima do Orçamento" ou "Avaliação de Sinergia".

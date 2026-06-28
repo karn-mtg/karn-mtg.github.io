@@ -1,0 +1,90 @@
+---
+title: Colección
+description: Rastrea tu colección física de cartas de Magic en Karn Forge con grados de condición, indicadores de foil, precios y asignaciones de destinatarios.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Colección
+
+La página de Colección te permite rastrear tus cartas físicas de Magic: The Gathering. Puedes registrar la condición, cantidad, estado de foil y precio de mercado de cada carta, y asignar cartas a destinatarios para la gestión de intercambios y pedidos.
+
+## Añadir una carta a tu colección
+
+<Steps>
+  1. Navega a **Colección** en la barra lateral izquierda.
+  2. Usa el panel de **Búsqueda de cartas** en la derecha para encontrar una carta.
+  3. Haz clic en la carta en los resultados de búsqueda para seleccionarla.
+  4. Completa el formulario de entrada:
+     - **Cantidad** — cuántas copias tienes
+     - **Condición** — consulta la guía de condiciones más abajo
+     - **Foil** — marca si la copia es foil
+     - **Precio** — precio de mercado opcional por copia
+  5. Haz clic en **Añadir** para registrar la entrada.
+</Steps>
+
+## Grados de condición de cartas
+
+Karn Forge usa los grados de condición estándar de TCGPlayer:
+
+| Grado | Nombre completo | Descripción |
+|---|---|---|
+| **NM** | Near Mint | La carta no muestra desgaste visible. Las esquinas están afiladas, la superficie está limpia. |
+| **LP** | Lightly Played | Desgaste superficial menor, leve desgaste en los bordes. Puede ponerse en fundas sin preocupación. |
+| **MP** | Moderately Played | Desgaste visible — pliegues, marcas o esquinas rayadas. Aún es legal en torneos. |
+| **HP** | Heavily Played | Desgaste significativo — pliegues profundos, desgaste mayor en bordes, posible daño por agua. |
+| **DMG** | Damaged | Daño severo — rasgaduras, escritura o problemas estructurales. |
+
+## Gestionar tu colección
+
+### Editar una entrada
+
+Haz clic en cualquier fila de la tabla de colección para expandir la edición en línea. Puedes cambiar la cantidad, condición, estado de foil, precio y destinatario sin abrir un diálogo separado.
+
+### Eliminar una carta
+
+Pasa el cursor sobre una fila y haz clic en el ícono de **Eliminar** que aparece a la derecha.
+
+### Ordenar y filtrar
+
+Haz clic en cualquier encabezado de columna para ordenar la tabla por esa columna. Haz clic de nuevo para invertir el orden. Columnas de ordenación disponibles:
+
+- Nombre
+- Cantidad
+- Condición
+- Precio
+- Foil
+
+Usa la barra de **Búsqueda** en la parte superior de la app para filtrar la colección por nombre de carta en tiempo real.
+
+## Seguimiento de foil
+
+Cada entrada de la colección puede marcarse como foil. Las entradas foil se muestran con un distintivo especial en la tabla. El estado de foil se rastrea por separado de la condición y la cantidad — puedes tener copias NM foil y NM no-foil de la misma carta como entradas separadas.
+
+## Seguimiento de precios
+
+Puedes ingresar manualmente un precio por copia para cada entrada de la colección. Los precios se almacenan localmente y no se actualizan automáticamente. Para actualizar los precios, edita la entrada e ingresa el valor de mercado actual.
+
+<Aside type="tip">
+  Los precios se muestran en la columna total de la tabla de colección como `cantidad × precio por copia`. Úsalo para estimar el valor total de tu colección de un vistazo.
+</Aside>
+
+## Destinatarios
+
+Los destinatarios te permiten asignar cartas de la colección a personas específicas — útil para gestionar intercambios, ventas o pedidos grupales organizados.
+
+### Crear un destinatario
+
+<Steps>
+  1. Haz clic en **Gestionar destinatarios** en el encabezado de la colección.
+  2. Haz clic en **Nuevo destinatario** e ingresa un nombre.
+  3. Guarda.
+</Steps>
+
+### Asignar una carta a un destinatario
+
+Edita una entrada de la colección y selecciona un destinatario del desplegable **Destinatario**. La fila de la carta mostrará el nombre del destinatario, lo que facilita ver qué cartas están reservadas.
+
+## Integración con mazos
+
+La pestaña **Faltantes** en el **Deck Workshop** compara la lista de tu mazo con tu colección y muestra cada carta que no tienes (o de la que no tienes suficientes copias). Úsala para crear una lista de compras para un mazo.

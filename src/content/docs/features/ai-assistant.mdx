@@ -1,0 +1,82 @@
+---
+title: AI Assistant
+description: Get deck advice, card suggestions, and strategy help from an AI assistant directly inside the Karn Forge Deck Workshop.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# AI Assistant
+
+Karn Forge includes an AI assistant that you can talk to directly from the Deck Workshop. You can ask it for deck advice, card suggestions, win condition analysis, budget recommendations, or anything else related to your deck.
+
+The assistant has full context about your current deck — card list, format, color identity, and canvas groups — so it can give relevant, specific answers.
+
+## Opening the assistant
+
+<Steps>
+  1. Open any deck in the **Deck Workshop**.
+  2. Click the **AI** button in the top toolbar, or press `Ctrl+I` / `Cmd+I`.
+  3. The AI panel slides in from the right.
+</Steps>
+
+## Providers
+
+The assistant supports multiple AI providers. Configure your preferred provider in **Settings → AI**:
+
+| Provider | Notes |
+|---|---|
+| **Claude (via Claude Code CLI)** | Uses a locally running Claude CLI. No API key needed if Claude Code is already installed. |
+| **OpenAI** | Requires an OpenAI API key. Configure in Settings. |
+
+<Aside type="note">
+  If no provider is configured, the AI panel will show a setup prompt. Follow the instructions in Settings to connect a provider.
+</Aside>
+
+## Talking to the assistant
+
+Type your question or request in the chat input at the bottom of the panel and press **Enter** or click **Send**.
+
+**Example prompts:**
+
+- "What lands should I add to this Commander deck?"
+- "I have too many 5+ CMC cards — which ones should I cut?"
+- "Suggest 5 synergy cards for my Atraxa Superfriends deck."
+- "Is this deck legal in Modern?"
+- "What's the average CMC of my non-land cards?"
+
+The assistant streams its response in real time. You can send a follow-up message while it's still responding.
+
+## Response types
+
+The assistant uses structured response blocks depending on the type of answer:
+
+### Card showcase
+
+When the assistant suggests specific cards, it displays them as interactive card previews with the card image, name, type, and mana cost. Hovering a card shows the full oracle text tooltip.
+
+### Choice prompt
+
+For multi-step decisions, the assistant may present a set of options as buttons. Click one to continue the conversation with your choice.
+
+### Suggestions
+
+A list of quick-action suggestions (e.g., "Show me the mana curve", "Which cards are over budget") that you can click to send as a message.
+
+## Conversation history
+
+Each deck has its own conversation history. When you close and reopen the AI panel, the previous conversation is preserved. You can start a new conversation from the panel's menu without losing the old one.
+
+## Context sent to the assistant
+
+The assistant receives the following context with each message:
+
+- The deck's name and format
+- The full card list with quantities, types, and mana costs
+- The color identity of the deck
+- Your canvas group names and their card assignments (if any)
+
+The assistant does not receive your personal account information or any data from other decks.
+
+<Aside type="tip">
+  If you've organized your canvas into strategy groups (Ramp, Draw, Win Conditions, etc.), the assistant can reference those groups by name and give more targeted advice.
+</Aside>

@@ -1,0 +1,79 @@
+---
+title: Contributing
+description: How to contribute to Karn Forge — bug reports, feature requests, pull requests, and community guidelines.
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components'
+
+# Contributing
+
+Karn Forge is open-source and welcomes contributions of all kinds — bug reports, documentation improvements, new features, and code reviews.
+
+## Ways to contribute
+
+<CardGrid>
+  <LinkCard
+    title="Report a bug"
+    href="https://github.com/karn-mtg/forge/issues/new?template=bug_report.md"
+    description="Found something broken? Open an issue with reproduction steps."
+  />
+  <LinkCard
+    title="Request a feature"
+    href="https://github.com/karn-mtg/forge/issues/new?template=feature_request.md"
+    description="Have an idea? Open a feature request and describe what you'd like."
+  />
+  <LinkCard
+    title="Browse open issues"
+    href="https://github.com/karn-mtg/forge/issues"
+    description="See what's already being tracked and find something to work on."
+  />
+  <LinkCard
+    title="Submit a pull request"
+    href="https://github.com/karn-mtg/forge/pulls"
+    description="Have code ready? Open a PR against the main branch."
+  />
+</CardGrid>
+
+## Before you start
+
+For anything beyond small fixes, please open an issue or discussion first to align on the approach. This saves time for both you and the maintainers.
+
+For bug fixes and documentation improvements, you can go straight to a pull request — no need to open an issue first.
+
+## Filing a good bug report
+
+Include the following:
+
+1. **Steps to reproduce** — the exact sequence of actions that triggers the bug.
+2. **Expected behavior** — what you expected to happen.
+3. **Actual behavior** — what actually happened. Screenshots help.
+4. **Environment** — your OS, OS version, and Karn Forge version (visible in Settings → About).
+5. **Logs** — if the app crashed, copy the error from **Settings → Logs** or the system console.
+
+## Pull request guidelines
+
+- Keep changes focused — one PR per logical change.
+- Write a clear PR description explaining *what* changed and *why*.
+- Follow the existing code style. The project uses ESLint and TypeScript strict mode — make sure `npm run lint` and `npm run type-check` pass before submitting.
+- Add tests if you're changing logic in `domain/` or `application/`. UI changes don't require tests but should be manually verified.
+- The canvas (`DeckView.tsx`) is the most complex part of the codebase. If you're touching it, read the [Architecture](/contributing/architecture) guide first.
+
+## Code of conduct
+
+This project follows a simple standard: be respectful, be helpful, and assume good faith. Contributions from everyone are welcome regardless of experience level.
+
+## What's in scope
+
+| In scope | Out of scope |
+|---|---|
+| Bug fixes | Changes that require an always-on backend |
+| Performance improvements | Monetization features |
+| New widget types | Platform-specific features that only work on one OS |
+| Card detail enhancements | Scraping or redistributing card data |
+| UI polish | |
+| Accessibility improvements | |
+| New supported import formats | |
+
+## Getting the code running locally
+
+See the [Development Setup](/contributing/dev-setup) guide to get the project running on your machine.

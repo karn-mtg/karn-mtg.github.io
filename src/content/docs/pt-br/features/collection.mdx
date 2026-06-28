@@ -1,0 +1,90 @@
+---
+title: Coleção
+description: Rastreie sua coleção física de cartas de Magic no Karn Forge com notas de condição, marcação de foil, preços e atribuição de destinatários.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Coleção
+
+A página de Coleção permite rastrear suas cartas físicas de Magic: The Gathering. Você pode registrar a condição, quantidade, status de foil e preço de mercado de cada carta — e atribuir cartas a destinatários para gerenciamento de trocas e pedidos.
+
+## Adicionando uma carta à sua coleção
+
+<Steps>
+  1. Navegue até **Coleção** na barra lateral esquerda.
+  2. Use o painel de **Busca de Cartas** à direita para encontrar uma carta.
+  3. Clique na carta nos resultados da busca para selecioná-la.
+  4. Preencha o formulário de entrada:
+     - **Quantidade** — quantas cópias
+     - **Condição** — veja o guia de condições abaixo
+     - **Foil** — marque se a cópia é foil
+     - **Preço** — preço de mercado opcional por cópia
+  5. Clique em **Adicionar** para registrar a entrada.
+</Steps>
+
+## Notas de condição das cartas
+
+O Karn Forge usa as notas de condição padrão do TCGPlayer:
+
+| Nota | Nome completo | Descrição |
+|---|---|---|
+| **NM** | Near Mint | A carta não mostra desgaste visível. Cantos afiados, superfície limpa. |
+| **LP** | Lightly Played | Desgaste superficial leve, desgaste nas bordas. Pode ser sleevada sem preocupação. |
+| **MP** | Moderately Played | Desgaste visível — vincos, arranhões ou cantos riscados. Ainda é válida em torneios. |
+| **HP** | Heavily Played | Desgaste significativo — vincos profundos, desgaste acentuado nas bordas, possível dano por água. |
+| **DMG** | Damaged | Dano grave — rasgos, escritas ou problemas estruturais. |
+
+## Gerenciando sua coleção
+
+### Editando uma entrada
+
+Clique em qualquer linha da tabela de coleção para expandir a edição inline. Você pode alterar a quantidade, condição, marcação de foil, preço e destinatário sem abrir uma janela separada.
+
+### Removendo uma carta
+
+Passe o mouse sobre uma linha e clique no ícone **Deletar** que aparece à direita.
+
+### Ordenando e filtrando
+
+Clique em qualquer cabeçalho de coluna para ordenar a tabela por aquela coluna. Clique novamente para inverter a ordem. Colunas disponíveis para ordenação:
+
+- Nome
+- Quantidade
+- Condição
+- Preço
+- Foil
+
+Use a barra de **Busca** no topo do app para filtrar a coleção por nome de carta em tempo real.
+
+## Rastreamento de foil
+
+Cada entrada da coleção pode ser marcada como foil. Entradas foil são mostradas com um emblema distinto na tabela. O status de foil é rastreado separadamente da condição e quantidade — você pode ter cópias NM foil e NM não-foil da mesma carta como entradas separadas.
+
+## Rastreamento de preços
+
+Você pode inserir manualmente um preço por cópia para cada entrada da coleção. Os preços são armazenados localmente e não são atualizados automaticamente. Para atualizar os preços, edite a entrada e insira o valor de mercado atual.
+
+<Aside type="tip">
+  Os preços são mostrados na coluna de total da tabela de coleção como `quantidade × preço por cópia`. Use isso para estimar o valor total da sua coleção rapidamente.
+</Aside>
+
+## Destinatários
+
+Destinatários permitem atribuir cartas da coleção a pessoas específicas — útil para gerenciar trocas, vendas ou pedidos em grupo.
+
+### Criando um destinatário
+
+<Steps>
+  1. Clique em **Gerenciar Destinatários** no cabeçalho da coleção.
+  2. Clique em **Novo Destinatário** e insira um nome.
+  3. Salve.
+</Steps>
+
+### Atribuindo uma carta a um destinatário
+
+Edite uma entrada da coleção e selecione um destinatário no menu suspenso **Destinatário**. A linha da carta vai mostrar o nome do destinatário, facilitando a visualização de quais cartas estão reservadas.
+
+## Integração com decks
+
+A aba **Ausentes** no **Deck Workshop** compara sua lista de deck com sua coleção e mostra todas as cartas que você não possui (ou não tem cópias suficientes). Use isso para montar uma lista de compras para um deck.

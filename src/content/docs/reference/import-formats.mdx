@@ -1,0 +1,122 @@
+---
+title: Import Formats
+description: Supported deck import formats in Karn Forge — plain text decklists, Moxfield URLs, Archidekt URLs, and CSV files.
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Import Formats
+
+Karn Forge can import decks from several sources. To import, open a deck and go to **File → Import** in the menu bar, or press `Ctrl+Shift+I` / `Cmd+Shift+I`.
+
+## Plain text decklist
+
+The most universal format — one card per line, optionally prefixed with a quantity.
+
+```
+4 Lightning Bolt
+4 Monastery Swiftspear
+4 Goblin Guide
+2 Light Up the Stage
+```
+
+**Rules:**
+- Each line is one card entry.
+- Optionally prefix with a number and a space: `4 Lightning Bolt` or `Lightning Bolt` (defaults to 1 copy).
+- Lines starting with `//` are treated as comments and ignored.
+- A line containing only `Sideboard` or `SB:` at the start of a line signals the beginning of the sideboard section.
+
+<Tabs>
+  <TabItem label="With quantities">
+    ```
+    4 Lightning Bolt
+    4 Monastery Swiftspear
+    4 Goblin Guide
+    2 Light Up the Stage
+    20 Mountain
+
+    Sideboard
+    4 Searing Blood
+    3 Smash to Smithereens
+    ```
+  </TabItem>
+  <TabItem label="Without quantities">
+    ```
+    Lightning Bolt
+    Monastery Swiftspear
+    Mountain
+    ```
+    Each card defaults to 1 copy.
+  </TabItem>
+  <TabItem label="MTGO format">
+    ```
+    4 Lightning Bolt (M11) 149
+    4 Monastery Swiftspear (KTK) 120a
+    ```
+    Set codes and collector numbers are recognized and used to select the correct printing.
+  </TabItem>
+</Tabs>
+
+<Aside type="tip">
+  Most deck sites (Moxfield, Archidekt, MTGO, MTGGoldfish) offer a "copy text list" or "export as text" option that produces compatible output.
+</Aside>
+
+## Moxfield URL
+
+Paste a public Moxfield deck URL and Karn Forge will fetch the deck directly.
+
+**Example:** `https://www.moxfield.com/decks/abc123`
+
+The deck must be set to **public** visibility on Moxfield. Karn Forge fetches the decklist over the network and imports all cards including the sideboard.
+
+## Archidekt URL
+
+Paste a public Archidekt deck URL and Karn Forge will fetch the deck directly.
+
+**Example:** `https://archidekt.com/decks/1234567`
+
+The deck must be publicly accessible on Archidekt.
+
+## CSV file
+
+Import a spreadsheet where each row is a card entry.
+
+**Required columns:**
+
+| Column | Description |
+|---|---|
+| `name` | Card name (case-insensitive) |
+
+**Optional columns:**
+
+| Column | Description |
+|---|---|
+| `quantity` or `qty` or `count` | Number of copies (defaults to 1) |
+| `board` | `main`, `sideboard`, `commander`, or `partner` |
+| `set` | Set code (e.g., `M21`) to select a specific printing |
+| `collector_number` | Collector number within the set |
+| `foil` | `true` / `false` or `1` / `0` |
+
+**Example CSV:**
+```csv
+name,quantity,board,foil
+Lightning Bolt,4,main,false
+Monastery Swiftspear,4,main,false
+Mountain,20,main,false
+Searing Blood,4,sideboard,false
+```
+
+<Aside type="note">
+  Column names are case-insensitive. The first row must be a header row. Extra columns are ignored.
+</Aside>
+
+## After importing
+
+After a successful import, Karn Forge:
+
+1. Looks up every card name in the local Arsenal database.
+2. Adds matched cards to the deck list with the correct quantities and board assignments.
+3. Places all cards on the canvas at staggered positions.
+4. Reports any cards that could not be matched in a toast notification.
+
+Unmatched cards are skipped. This can happen if the card name is misspelled or if the card is not in the Scryfall database (very rare).

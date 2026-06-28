@@ -1,0 +1,203 @@
+---
+title: Referencia de widgets
+description: Referencia completa de todos los widgets de canvas integrados en Karn Forge y una guía para crear widgets personalizados.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Referencia de widgets
+
+Los widgets son paneles de análisis en vivo que integras en el canvas del mazo. Reciben los datos de las cartas de tu mazo y se vuelven a renderizar automáticamente cuando añades o eliminas cartas. Todos los widgets integrados son de solo lectura — muestran información sin modificar tu mazo.
+
+## Añadir y colocar widgets
+
+<Steps>
+  1. En el Deck Workshop, presiona **W** o haz clic en el botón **Widget** en la barra de herramientas del canvas.
+  2. Se abre el selector de widgets con una vista previa de cada widget disponible.
+  3. Haz clic en un widget para colocarlo en el canvas en el centro del viewport actual.
+  4. Arrastra el widget por su encabezado para reposicionarlo.
+  5. Redimensiónalo arrastrando los controladores del borde izquierdo o derecho.
+</Steps>
+
+## Configurar parámetros de widgets
+
+Los widgets con parámetros configurables muestran un ícono de **ajuste** (⚙) en su encabezado. Haz clic en él para abrir un popover de parámetros. Los cambios se aplican de inmediato y se guardan con la disposición.
+
+---
+
+## Widgets integrados
+
+### Curva de maná
+
+Un gráfico de barras que muestra el número de cartas por valor de maná convertido (CMC). Cada barra muestra el número de cartas con ese valor de maná encima.
+
+**Parámetros:**
+
+| Parámetro | Predeterminado | Descripción |
+|---|---|---|
+| Cubo máximo de CMC | 6 | Las cartas con CMC superior a este valor se agrupan en el último cubo (mostrado como "6+"). Rango: 4–10. |
+| Excluir tierras | Sí | Cuando está activado, las tierras se excluyen del gráfico (ya que tienen CMC 0 pero no son hechizos lanzables). |
+
+---
+
+### Distribución de colores
+
+Un gráfico de barras horizontal que muestra cuántas cartas (por conteo de pip) pertenecen a cada color. Las cartas incoloras aparecen bajo **C**.
+
+**Parámetros:**
+
+| Parámetro | Predeterminado | Descripción |
+|---|---|---|
+| Mostrar % | Sí | Muestra el porcentaje del total de cartas junto a cada barra. |
+| Incluir sideboard | No | Cuando está activado, las cartas del sideboard se incluyen en los conteos. |
+
+---
+
+### Desglose por tipo
+
+Un gráfico de barras horizontal que muestra el número de cartas por tipo: Criatura, Instantáneo, Conjuro, Encantamiento, Artefacto, Planeswalker, Tierra, Otro.
+
+**Parámetros:**
+
+| Parámetro | Predeterminado | Descripción |
+|---|---|---|
+| Incluir sideboard | No | Cuando está activado, las cartas del sideboard se incluyen. |
+
+---
+
+### Estadísticas del mazo
+
+Un panel de resumen rápido con los números más importantes de un vistazo.
+
+**Muestra:** Total de cartas, Criaturas, Tierras, No-tierras (opcional), CMC promedio (opcional).
+
+**Parámetros:**
+
+| Parámetro | Predeterminado | Descripción |
+|---|---|---|
+| Mostrar CMC promedio | Sí | Muestra el coste de maná convertido promedio de las cartas que no son tierras. |
+| Mostrar no-tierras | Sí | Muestra el conteo de cartas que no son tierras. |
+
+---
+
+### Ratio de tierras
+
+Un medidor visual que compara tu número actual de tierras con un porcentaje objetivo configurable.
+
+**Parámetros:**
+
+| Parámetro | Predeterminado | Descripción |
+|---|---|---|
+| Objetivo % | 37 | El porcentaje objetivo de tierras. El medidor se vuelve verde cuando tu número de tierras está cerca del objetivo. Rango: 20–50. |
+
+---
+
+### Probabilidades de robo
+
+Usa la distribución hipergeométrica para calcular la probabilidad de robar al menos una carta de cada grupo (o tipo de carta) en tu mano inicial y para el turno 5.
+
+**Parámetros:**
+
+| Parámetro | Predeterminado | Descripción |
+|---|---|---|
+| Mano inicial | 7 | El número de cartas en la mano inicial. Rango: 1–10. |
+| Mostrar turno 5 | Sí | Muestra una columna adicional con las probabilidades para el turno 5 (mano + 5 robos). |
+
+<Aside type="tip">
+  Las Probabilidades de robo usan tus **grupos** del canvas si has creado alguno. Si tu disposición tiene grupos llamados "Ramp", "Robo" y "Condición de victoria", el widget mostrará las probabilidades de robo para cada grupo, lo que lo convierte en una poderosa herramienta para evaluar la consistencia de tu estrategia.
+</Aside>
+
+---
+
+### Ranking de EDHREC
+
+Una lista ordenada de las cartas de tu mazo clasificadas por su popularidad en EDHREC (rango más bajo = más popular en Commander).
+
+**Parámetros:**
+
+| Parámetro | Predeterminado | Descripción |
+|---|---|---|
+| Número a mostrar | 10 | Cuántas cartas mostrar. Rango: 3–20. |
+| Invertir (mostrar las menos populares) | No | Cuando está activado, muestra primero las cartas menos populares — útil para encontrar recortes económicos o tecnología única. |
+
+---
+
+## Widgets personalizados
+
+Puedes crear tus propios widgets en **Widgets → Nuevo widget**. Los widgets personalizados se escriben en JavaScript y tienen acceso al objeto de datos completo del mazo.
+
+### API de datos del widget
+
+Tu código de widget recibe un objeto `data` con la siguiente estructura:
+
+```ts
+interface WidgetData {
+  cards: CardEntry[];      // solo cartas del mazo principal
+  allCards: CardEntry[];   // principal + sideboard
+  deckSize: number;        // total de cartas del mazo principal
+  groups: GroupEntry[];    // grupos del canvas (si los hay)
+}
+
+interface CardEntry {
+  oracleId: string;
+  name: string;
+  qty: number;
+  board: 'main' | 'commander' | 'partner' | 'sideboard';
+  typeLine: string;
+  manaCost: string;
+  cmc: number;
+  colorIdentity: string[]; // e.g. ['W', 'U']
+  edhrecRank?: number;
+}
+
+interface GroupEntry {
+  name: string;
+  color: string;
+  cards: CardEntry[];
+  totalQty: number;
+}
+```
+
+Tu código de widget también recibe un objeto `params` con los valores actuales de los parámetros que definas, y debe devolver una **cadena HTML**.
+
+### Parámetros del widget
+
+Define parámetros en el editor de widgets. Cada parámetro tiene:
+
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `key` | `string` | Clave interna usada en `params.key` |
+| `label` | `string` | Etiqueta de visualización que se muestra en el popover de configuración |
+| `type` | `'number'` \| `'boolean'` \| `'string'` | Tipo del parámetro |
+| `default` | any | Valor predeterminado |
+| `min` / `max` / `step` | number | Para tipos numéricos |
+
+### Ejemplo de widget personalizado
+
+```js
+// Cuenta cartas por identidad de color y devuelve una lista simple
+const colors = { W: 0, U: 0, B: 0, R: 0, G: 0, C: 0 };
+data.cards.forEach(({ colorIdentity, qty }) => {
+  if (!colorIdentity.length) { colors.C += qty; return; }
+  colorIdentity.forEach(c => { if (c in colors) colors[c] += qty; });
+});
+const rows = Object.entries(colors)
+  .filter(([, v]) => v > 0)
+  .map(([col, v]) => `<div>${col}: ${v}</div>`)
+  .join('');
+return `<div style="font-family:sans-serif;font-size:12px;">${rows}</div>`;
+```
+
+### Widgets asíncronos
+
+Los widgets personalizados pueden obtener datos externos usando el callback `asyncWidgetData`. Si se define, el widget se renderiza sincrónicamente primero, luego se vuelve a renderizar una vez que los datos asíncronos se resuelven.
+
+<Aside type="caution">
+  Los widgets asíncronos que llaman a APIs externas requieren conexión de red. Mantén las operaciones asíncronas rápidas para evitar un estado en blanco prolongado en el cuerpo del widget.
+</Aside>
+
+### Decoradores de cartas
+
+Además de los widgets de panel, puedes crear **decoradores de cartas** — insignias superpuestas que aparecen sobre las imágenes de las cartas del canvas. Los decoradores se definen de forma similar a los widgets pero renderizan HTML para un pequeño elemento superpuesto adjunto a cada carta.
+
+Usa decoradores para añadir insignias personalizadas como "En colección", "Fuera del presupuesto" o "Puntuación de sinergia".

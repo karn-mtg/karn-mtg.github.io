@@ -1,0 +1,213 @@
+---
+title: Deck Workshop
+description: Der Deck Workshop ist Karn Forges visueller Deck-Builder — ein unendliches Canvas, auf dem du Karten anordnest, Gruppen erstellst, Notizen hinzufügst und Live-Analyse-Widgets platzierst.
+---
+
+import { Aside, Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Deck Workshop
+
+Der Deck Workshop ist das Herzstück von Karn Forge. Es ist ein unendliches Canvas, auf dem du deine Karten visuell anordnen, in beschriftete Gruppen organisieren, Strategienotizen hinzufügen und Live-Analyse-Widgets einbetten kannst — alles neben einer klassischen Listenansicht für präzises Bearbeiten.
+
+## Canvas
+
+Das Canvas ist der zentrale Arbeitsbereich. Jede Karte in deinem Deck kann beliebig darauf platziert werden. Karten auf dem Canvas sind rein visuell — du kannst sie frei bewegen, ohne die Deck-Liste zu beeinflussen.
+
+### Auf dem Canvas navigieren
+
+| Aktion | Wie |
+|---|---|
+| Schwenken | `Space` gedrückt halten und ziehen, oder Mittelklick und ziehen |
+| Hinein-/Herauszoomen | Mausrad, oder `+` / `-` Tasten |
+| Zoom zurücksetzen | `Ctrl+0` / `Cmd+0` |
+| An Inhalt anpassen | `Ctrl+Shift+0` / `Cmd+Shift+0` |
+
+Der aktuelle Zoomgrad wird in der unteren Werkzeugleiste angezeigt.
+
+### Canvas-Modi
+
+Verwende die Werkzeugleiste am unteren Rand des Canvas, um zwischen zwei Interaktionsmodi zu wechseln:
+
+- **Auswahlmodus** (Standard) — klicken und ziehen zum Bewegen von Elementen; Auswahlrahmen ziehen, um mehrere Elemente gleichzeitig auszuwählen.
+- **Handmodus** — klicken und ziehen, um das Canvas zu schwenken. Nützlich auf Trackpads.
+
+Drücke `H`, um zwischen den Modi zu wechseln, oder klicke auf die Modus-Schaltflächen in der Werkzeugleiste.
+
+## Karten hinzufügen
+
+Öffne das **Kartensuche**-Panel mit `Ctrl+F` / `Cmd+F` oder dem Suchsymbol in der rechten Seitenleiste. Ziehe eine Ergebniskarte auf das Canvas, oder klicke auf die **+**-Schaltfläche, um sie in der Mitte des sichtbaren Bereichs zu platzieren.
+
+Wenn du eine Karte hinzufügst, erscheint sie auf dem Canvas und wird auch zur Deck-Liste hinzugefügt. Beide bleiben synchron — das Entfernen einer Karte aus der Liste entfernt sie vom Canvas und umgekehrt.
+
+<Aside type="tip">
+  Du kannst mehrere Kopien einer Karte hinzufügen. Klicke auf das Mengenabzeichen auf einer Canvas-Karte, um die Anzahl direkt zu bearbeiten.
+</Aside>
+
+## Gruppen
+
+Gruppen sind beschriftete Container, die du auf dem Canvas platzieren kannst, um verwandte Karten zu bündeln — zum Beispiel eine „Ramp"-Gruppe, eine „Siegbedingungen"-Gruppe oder eine „Karten ziehen"-Gruppe.
+
+### Eine Gruppe erstellen
+
+<Steps>
+  1. Drücke **G** oder klicke auf die **Gruppe**-Schaltfläche in der Canvas-Werkzeugleiste.
+  2. Gib einen Gruppennamen ein und wähle eine Farbe.
+  3. Verwende optional **Vorauswahl**, um die Gruppe automatisch zu befüllen:
+     - **Nach Typ** — füge alle Karten hinzu, die einem Typ-Tag entsprechen (z. B. `Creature`, `Land` oder `Enchantment`). Kombiniere mehrere Tags mit UND/ODER.
+     - **Nach Orakeltext** — füge Karten hinzu, deren Orakeltext Schlüsselwörter enthält, die du eingibst.
+  4. Klicke auf **Gruppe erstellen**.
+</Steps>
+
+### Gruppen-Layout-Modi
+
+Jede Gruppe hat drei Layout-Modi, die über das `⋮`-Menü der Gruppe zugänglich sind:
+
+| Modus | Beschreibung |
+|---|---|
+| **Raster** | Karten werden in Reihen angeordnet. Konfiguriere Spalten pro Reihe. |
+| **Horizontaler Stapel** | Karten fächern nach rechts in Stapeln mit konfigurierbarer Tiefe auf. |
+| **Vertikaler Stapel** | Karten fächern nach unten in Stapeln mit konfigurierbarer Tiefe auf. |
+
+### Karten zwischen Gruppen verschieben
+
+Ziehe eine Karte aus einer Gruppe heraus, um sie als freie Karte auf dem Canvas zu platzieren. Ziehe eine freie Canvas-Karte auf eine Gruppe, um sie zu dieser Gruppe hinzuzufügen.
+
+### Gruppen-Kontextmenü
+
+Rechtsklick auf einen Gruppenheader öffnet das Kontextmenü:
+
+- Gruppe umbenennen oder Farbe ändern
+- Layout-Modus wechseln
+- Gruppe auflösen (gibt Karten ans Canvas zurück)
+- Gruppe und ihre Karten löschen
+
+## Haftnotizen
+
+Notizen ermöglichen es dir, dein Canvas mit Strategiegedanken, Karteninteraktionen oder Erinnerungen zu kommentieren.
+
+<Steps>
+  1. Drücke **N** oder klicke auf die **Notiz**-Schaltfläche in der Werkzeugleiste.
+  2. Eine Notiz erscheint in der Mitte des sichtbaren Bereichs. Klicke sie an, um in den Bearbeitungsmodus zu wechseln.
+  3. Gib deinen Inhalt ein. Notizen unterstützen **Markdown**: Überschriften (`#`, `##`), fett (`**Text**`), kursiv (`_Text_`) und Listen (`- Element`).
+  4. Klicke außerhalb der Notiz oder drücke `Escape`, um zu speichern.
+</Steps>
+
+Notizen können durch Ziehen an ihren linken, rechten oder unteren rechten Griffen in der Größe verändert werden. Ziehe die Notiz selbst, um sie neu zu positionieren.
+
+## Widgets
+
+Widgets sind Live-Analyse-Panels, die du beliebig auf dem Canvas einbetten kannst. Sie aktualisieren sich automatisch, wenn du Karten hinzufügst oder entfernst.
+
+### Ein Widget hinzufügen
+
+<Steps>
+  1. Klicke auf die **Widget**-Schaltfläche in der Canvas-Werkzeugleiste (oder drücke **W**).
+  2. Die Widget-Auswahl öffnet sich mit allen verfügbaren Widgets.
+  3. Klicke auf ein Widget, um es auf dem Canvas zu platzieren.
+</Steps>
+
+### Ein Widget konfigurieren
+
+Widgets mit konfigurierbaren Parametern zeigen ein **Einstellungen**-Symbol in ihrer Kopfzeile. Klicke darauf, um ein Parameter-Popover zu öffnen, in dem du Dinge wie den maximalen CMC-Bereich eines Manakurven-Diagramms oder ob das Sideboard in einer Farbverteilung enthalten sein soll, anpassen kannst.
+
+### Integrierte Widgets
+
+Siehe [Widgets-Referenz](/reference/widgets) für eine vollständige Liste der integrierten Widgets und ihrer Parameter.
+
+### Benutzerdefinierte Widgets
+
+Du kannst eigene Widgets im Bereich **Widgets** der App erstellen. Benutzerdefinierte Widgets werden in JavaScript geschrieben und haben Zugriff auf alle Deck-Daten. Siehe [Widgets-Referenz](/reference/widgets) für Details.
+
+## Kartendetail-Panel
+
+Klicke auf eine beliebige Karte auf dem Canvas, um das **Kartendetail**-Panel auf der rechten Seite zu öffnen. Es zeigt:
+
+- Vollständiges Kartenbild (mit Kunstwerk-Variationsauswahl, wenn mehrere Drucke vorhanden sind)
+- Orakeltext, Typzeile, Manakosten und Stärke/Widerstandskraft
+- Legalität in allen Formaten
+- EDHREC-Rang und Preisdaten
+
+### Kartenkunstwerk ändern
+
+Das Detailpanel zeigt alle verfügbaren Drucke einer Karte. Klicke auf einen Druck, um das Kunstwerk auf der Canvas-Karte für dieses Deck zu verwenden.
+
+## Deck-Tabs
+
+Die obere Werkzeugleiste hat vier Tabs für verschiedene Ansichten desselben Decks:
+
+### Workshop
+
+Das visuelle Canvas (Standardansicht). Alles auf dieser Seite Beschriebene befindet sich hier.
+
+### Liste
+
+Eine klassische Textlistenansicht aller Karten im Deck, nach Typkategorie gruppiert:
+
+- Commanders (falls zutreffend)
+- Kreaturen
+- Spontanzauber
+- Hexerei
+- Verzauberungen
+- Artefakte
+- Planeswalker
+- Länder
+- Sonstige
+- Sideboard
+
+In der Listenansicht kannst du Mengen direkt durch Klicken auf die Mengenangabe bearbeiten.
+
+### Fehlend
+
+Zeigt Karten im Deck, die nicht in deiner [Sammlung](/features/collection) vorhanden sind. Verwende dies, um schnell zu sehen, was du für das physische Deck noch erwerben musst.
+
+### Combos
+
+*(Demnächst verfügbar)* — Automatische Combo-Erkennung mit der Commander Spellbook-Datenbank.
+
+## Anordnungen
+
+Eine Anordnung ist ein gespeicherter Schnappschuss des Canvas-Layouts: die Position jeder Karte, Gruppe, Notiz und jedes Widgets. Die Deck-Liste selbst wird über alle Anordnungen geteilt, aber jede Anordnung kann ihr eigenes visuelles Layout haben.
+
+Anwendungsfälle:
+- Eine Anordnung für eine detaillierte Strategieübersicht, eine für eine kompakte Schnellübersicht
+- Separate Anordnungen für Hauptdeck- und Sideboard-Planung
+- Verschiedene Gruppen-Konfigurationen für unterschiedliche Meta-Kontexte
+
+### Anordnungen verwalten
+
+Die Anordnungsauswahl befindet sich in der oberen Werkzeugleiste. Klicke darauf, um:
+
+- Zwischen gespeicherten Anordnungen zu wechseln
+- Eine neue Anordnung zu erstellen
+- Eine Anordnung umzubenennen oder zu löschen
+
+<Aside type="note">
+  Anordnungen werden automatisch 1,5 Sekunden nach jeder Änderung gespeichert. Du kannst auch manuell mit `Ctrl+S` / `Cmd+S` speichern.
+</Aside>
+
+## Rückgängig / Wiederholen
+
+Das Canvas unterstützt Rückgängig und Wiederholen für alle Canvas-Operationen (Verschieben, Gruppenänderungen, Hinzufügen, Löschen).
+
+| Aktion | Windows/Linux | macOS |
+|---|---|---|
+| Rückgängig | `Ctrl+Z` | `Cmd+Z` |
+| Wiederholen | `Ctrl+Shift+Z` | `Cmd+Shift+Z` |
+
+Der Rückgängig-Verlauf ist auf 50 Canvas-Zustände oder 2 MB Snapshot-Daten begrenzt, je nachdem, was zuerst erreicht wird.
+
+## Commander- und Partner-Zuweisung
+
+Rechtsklick auf eine beliebige Karte auf dem Canvas öffnet das Karten-Kontextmenü. Von dort kannst du eine Karte festlegen als:
+
+- **Commander** — wird mit einem goldenen Schild-Abzeichen angezeigt
+- **Partner** — wird mit einem blauen Schild-Abzeichen angezeigt
+- **Hauptdeck** — entfernt jede spezielle Bezeichnung
+
+## Sideboard
+
+Karten können über das Karten-Kontextmenü dem **Sideboard**-Bereich zugewiesen werden. Sideboard-Karten erscheinen in der Listenansicht unter „Sideboard" und werden standardmäßig aus Canvas-Widget-Berechnungen ausgeschlossen.
+
+## Tastaturkürzel
+
+Siehe die vollständige [Tastaturkürzel](/reference/keyboard-shortcuts)-Referenz.

@@ -1,0 +1,123 @@
+---
+title: Entwicklungsumgebung einrichten
+description: So richtest du eine lokale Entwicklungsumgebung für Karn Forge ein.
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Entwicklungsumgebung einrichten
+
+Diese Anleitung erklärt alles, was du brauchst, um Karn Forge lokal für die Entwicklung zu betreiben.
+
+## Voraussetzungen
+
+- **Node.js 20+** — [nodejs.org](https://nodejs.org)
+- **npm 10+** — mit Node.js 20 enthalten
+- **Git**
+- **Arsenal** (für die Entwicklung optional — siehe unten)
+
+## Klonen und installieren
+
+<Steps>
+  1. Forke das Repository auf GitHub, dann klone deinen Fork:
+     ```sh
+     git clone https://github.com/<your-username>/forge.git
+     cd forge
+     ```
+  2. Abhängigkeiten installieren:
+     ```sh
+     npm install
+     ```
+</Steps>
+
+## Im Entwicklungsmodus starten
+
+```sh
+npm run dev
+```
+
+Dies startet Vite (für den Renderer) und Electron gleichzeitig. Die App öffnet sich automatisch. Hot Module Replacement (HMR) ist für den Renderer aktiviert — die meisten UI-Änderungen werden sofort ohne Neuladen sichtbar.
+
+<Aside type="note">
+  Beim ersten Start der App im Entwicklungsmodus erscheint die Arsenal-Einrichtungsaufforderung. Du kannst Arsenal entweder normal einrichten (erfordert das Herunterladen der Datenbanken) oder es überspringen und die App ohne Kartensuche für UI-Arbeit verwenden.
+</Aside>
+
+## Projektstruktur
+
+```
+forge/
+├── src/
+│   ├── domain/         Entitäten und Wertobjekte; IRepository-Interfaces
+│   ├── application/    Use Cases und DTOs
+│   ├── infrastructure/ Repository-Implementierungen (SQLite, Scryfall API)
+│   ├── main/           Electron-Main-Prozess und IPC-Handler
+│   └── renderer/       React-UI (Seiten, Komponenten, Hooks, Stores)
+├── db/                 Datenbank-Seed und Migrations-Skripte
+├── ipc/                Legacy-IPC-Handler (vor dem DDD-Refactoring)
+├── mcp/                MCP-Server (KI-Tool-Integrationen)
+├── resources/          Gebündelte Assets (Arsenal-Binärdatei kommt hier beim Build hin)
+└── .claude/            Projektspezifischer KI-Assistenten-Kontext
+```
+
+Siehe [Architektur](/contributing/architecture) für eine detaillierte Erklärung, wie die Schichten interagieren.
+
+## Verfügbare Skripte
+
+| Befehl | Beschreibung |
+|---|---|
+| `npm run dev` | Im Entwicklungsmodus starten (Vite + Electron) |
+| `npm run build` | Das Vite-Frontend für die Produktion bauen |
+| `npm run dist:win` | Den Windows-Installer bauen |
+| `npm run dist:mac` | Den macOS-Installer bauen |
+| `npm run dist:linux` | Das Linux-AppImage bauen |
+| `npm run lint` | ESLint ausführen |
+| `npm run type-check` | TypeScript-Typprüfung ausführen (kein Emit) |
+
+## Umgebung und Konfiguration
+
+Für die lokale Entwicklung ist keine `.env`-Datei erforderlich. Konfiguration, die zwischen Dev und Prod variiert (wie der Arsenal-Binärpfad), wird über Electrons `app.isPackaged`-Flag gehandhabt.
+
+## Am Renderer arbeiten
+
+Der Renderer ist eine Standard-React-18-+-Vite-App. Komponentendateien befinden sich in `src/renderer/components/`, Seitenkomponenten in `src/renderer/pages/` und globaler Zustand in `src/renderer/store/` (mit Zustand).
+
+Der Renderer kommuniziert mit dem Main-Prozess ausschließlich über die IPC-Bridge, die auf `window.libraryAPI`, `window.cardsAPI`, `window.arsenalAPI` und `window.aiAPI` verfügbar ist. Importiere niemals aus `domain/`, `application/` oder `infrastructure/` im Renderer-Code.
+
+## Am Main-Prozess arbeiten
+
+Der Main-Prozess führt die gesamte Business-Logik und den Datenzugriff aus. IPC-Handler in `src/main/` empfangen Aufrufe vom Renderer und delegieren an Use Cases in `src/application/`.
+
+Wenn du einen neuen IPC-Handler hinzufügst:
+1. Füge einen Use Case in `src/application/` hinzu
+2. Füge den IPC-Handler in `src/main/ipc/` hinzu
+3. Exponiere den Handler auf der `contextBridge` im Preload-Skript
+4. Füge den TypeScript-Typ zu `src/renderer/types/electron.d.ts` hinzu
+
+## Mit der Datenbank arbeiten
+
+Karn Forge verwendet SQLite für alle persistenten Daten (Decks, Sammlung, Wunschliste, Anordnungen). Die Datenbank wird über `better-sqlite3` verwaltet.
+
+Schema-Migrationen werden beim Start aus `db/` angewendet. Um eine Migration hinzuzufügen:
+1. Erstelle eine neue Datei in `db/` mit einer aufsteigenden Versionsnummer.
+2. Die Migration wird automatisch beim nächsten App-Start ausgeführt.
+
+<Aside type="caution">
+  Schreibe immer abwärtskompatible Migrationen. Ein Benutzer, der von einer älteren Version aktualisiert, sollte keine Daten verlieren.
+</Aside>
+
+## Ein Release bauen
+
+Die CI-Pipeline (`.github/workflows/release.yml`) baut Releases automatisch, wenn ein `v*`-Tag gepusht wird.
+
+Um ein Release auszulösen:
+
+<Steps>
+  1. Aktualisiere die Version in `package.json`.
+  2. Commit und push.
+  3. Tagge den Commit: `git tag v1.2.3 && git push origin v1.2.3`
+  4. GitHub Actions baut Installer für Windows, macOS und Linux und fügt sie automatisch dem Release hinzu.
+</Steps>
+
+<Aside type="note">
+  Der Release-Workflow lädt außerdem die neueste Arsenal-Binärdatei für jede Plattform herunter und bündelt sie mit dem Installer. Die Umgebungsvariable `ARSENAL_REPO` im Workflow muss auf das Arsenal-Repository zeigen.
+</Aside>

@@ -1,0 +1,61 @@
+---
+title: Wishlist
+description: Keep a prioritized list of Magic cards you want to acquire and add them directly to any of your decks.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components'
+
+# Wishlist
+
+The Wishlist is a prioritized list of cards you want to acquire. It's separate from your [Collection](/features/collection) (cards you own) and works as a shopping and planning tool.
+
+## Adding a card to your wishlist
+
+<Steps>
+  1. Navigate to **Wishlist** in the left sidebar.
+  2. Use the **Card Search** panel on the right to find a card.
+  3. Click the card in the results to select it.
+  4. Set the **Quantity** and **Priority**.
+  5. Click **Add to Wishlist**.
+</Steps>
+
+## Priority levels
+
+Each wishlist entry has a priority level:
+
+| Priority | Use case |
+|---|---|
+| **Low** | Nice-to-have upgrades; no rush |
+| **Normal** | Cards you'll pick up when convenient |
+| **High** | Cards you actively need soon |
+| **Critical** | Cards blocking a deck from being played |
+
+Priority is shown with color coding in the table so the most important cards stand out.
+
+## Reordering entries
+
+Drag any row by its drag handle on the left to reorder the wishlist. Your custom order is saved automatically in local storage.
+
+<Aside type="tip">
+  Sort your wishlist by priority first, then drag within priority groups to set your preferred acquisition order.
+</Aside>
+
+## Adding a wishlist card directly to a deck
+
+Each row has an **Add to Deck** button. Click it to open a deck picker, then click any deck to add the card to that deck's list. The card is added with a quantity of 1.
+
+This is useful when you've decided a wishlist card belongs in a specific deck and want to track it there as a missing card.
+
+## Removing a card
+
+Hover a row and click the **Remove** icon on the right, or select multiple rows and use the bulk delete option.
+
+## Wishlist vs Collection
+
+| | Collection | Wishlist |
+|---|---|---|
+| Purpose | Cards you own | Cards you want |
+| Tracks condition | Yes | No |
+| Tracks price paid | Yes | No |
+| Tracks priority | No | Yes |
+| Works with deck Missing tab | Yes (cards you have) | No |

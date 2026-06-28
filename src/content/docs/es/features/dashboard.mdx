@@ -1,0 +1,77 @@
+---
+title: Dashboard
+description: El Dashboard de Karn Forge te da una visión instantánea de toda tu biblioteca de mazos con gráficos, mazos recientes e información de la colección.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Dashboard
+
+El Dashboard es la pantalla principal de Karn Forge. Te ofrece una vista de alto nivel de toda tu biblioteca y muestra la información más útil de un vistazo.
+
+## Sección de resumen
+
+La parte superior del Dashboard muestra tres gráficos de análisis que se actualizan automáticamente a medida que crece tu biblioteca:
+
+### Gráfico de actividad
+
+Una línea de tiempo de tu actividad de construcción de mazos. Cada barra representa un período de actividad y muestra cuántos mazos has creado o modificado a lo largo del tiempo.
+
+### Donut de colores
+
+Un gráfico de donut que desglosa toda tu biblioteca por identidad de color. Pasa el cursor sobre cada segmento para ver el conteo exacto. Esto te da una idea rápida de con qué colores construyes más.
+
+### Medidor de poder
+
+Una medida relativa de la complejidad promedio de los mazos de tu biblioteca, basada en factores como el coste de maná convertido promedio, el número de cartas y el formato.
+
+## Mazos recientes
+
+Debajo de los gráficos, el Dashboard muestra hasta 8 de tus mazos actualizados más recientemente. Desde aquí puedes:
+
+- Hacer clic en cualquier tarjeta de mazo para abrir el **Deck Workshop**
+- Hacer clic en **Nuevo Mazo** (tarjeta `+`) para crear un nuevo mazo
+- Usar el botón **Filtrar** para filtrar por formato
+- Usar el botón **Ordenar** o el desplegable de ordenación para ordenar por Última actualización, Nombre o Número de cartas
+
+Si tienes más de 8 mazos, aparece un botón **Ver todos los N mazos** al final de la sección.
+
+<Aside type="tip">
+  La barra de búsqueda en la parte superior de la app filtra la cuadrícula de mazos en tiempo real. Empieza a escribir el nombre de un mazo para ir directamente a él.
+</Aside>
+
+## Mazos por formato
+
+Un gráfico de barras horizontal que muestra cuántos mazos tienes en cada formato. Los colores son específicos de cada formato:
+
+| Formato | Color |
+|---|---|
+| Commander | Dorado |
+| Modern | Azul |
+| Standard | Verde |
+| Pioneer | Morado |
+| Legacy | Rojo |
+| Pauper | Ámbar |
+
+## Cartas más usadas
+
+Una lista ordenada de las cartas que aparecen en más mazos de toda tu biblioteca, con su miniatura de ilustración y el número de mazos. Esto es útil para identificar las cartas indispensables de tu colección.
+
+<Aside type="note">
+  El panel de Cartas más usadas solo aparece cuando tienes al menos un mazo con cartas.
+</Aside>
+
+## Navegar desde el Dashboard
+
+Usa la barra lateral izquierda para navegar a otras secciones:
+
+| Sección | Contenido |
+|---|---|
+| Dashboard | Esta página |
+| Todos los mazos | Lista paginada completa de todos los mazos con búsqueda y filtro |
+| Recientes | Mazos que has abierto recientemente |
+| Favoritos | Mazos que has marcado con estrella |
+| Colección | Tu inventario físico de cartas |
+| Lista de deseos | Cartas que quieres adquirir |
+| Widgets | Biblioteca de widgets y editor de widgets personalizados |
+| Configuración | Ajustes y preferencias de la app |

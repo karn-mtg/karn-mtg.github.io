@@ -1,0 +1,69 @@
+---
+title: Busca de Cartas
+description: Como usar o painel de busca de cartas do Karn Forge para encontrar cartas no banco de dados completo do Scryfall e adicioná-las ao seu deck.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Busca de Cartas
+
+O painel de Busca de Cartas permite pesquisar o banco de dados completo do Scryfall — todas as cartas, todas as edições — diretamente dentro do Karn Forge, sem precisar de conexão com a internet (após a configuração inicial do Arsenal).
+
+## Abrindo o painel de busca
+
+O painel de Busca de Cartas fica no lado direito do **Deck Workshop**. Abra-o com:
+
+- `Ctrl+F` / `Cmd+F`
+- O ícone de lupa na barra lateral direita
+
+## Buscando cartas
+
+Digite qualquer parte do nome de uma carta na caixa de busca. Os resultados aparecem enquanto você digita, classificados por relevância. A busca não diferencia maiúsculas de minúsculas e encontra nomes parciais.
+
+**Exemplos:**
+
+| Consulta | Resultados |
+|---|---|
+| `lightning` | Lightning Bolt, Chain Lightning, Lightning Helix, … |
+| `sol ring` | Sol Ring |
+| `teferi` | Todos os planeswalkers e criaturas Teferi |
+
+<Aside type="tip">
+  A busca retorna até 50 resultados. Se não encontrar o que procura, tente uma consulta mais específica.
+</Aside>
+
+## Adicionando cartas ao seu deck
+
+Nos resultados da busca, você pode adicionar uma carta ao deck de duas formas:
+
+- **Clique no botão `+`** no cartão de resultado para adicionar uma cópia na posição central da viewport do deck.
+- **Arraste o cartão de resultado** para o canvas para posicioná-lo exatamente onde quiser.
+
+Ambas as ações adicionam a carta à lista do deck e a posicionam no canvas simultaneamente.
+
+## Painel de detalhes da carta
+
+Clique em qualquer carta nos resultados da busca (ou em qualquer carta no canvas) para abrir o painel de **Detalhes da Carta**. Ele mostra:
+
+- **Imagem completa da carta** — clique na imagem para ciclar pelas edições disponíveis
+- **Custo de mana e símbolos de mana** — renderizados com os ícones oficiais de pip de mana
+- **Linha de tipo** — tipo completo incluindo supertipos, tipos de carta e subtipos
+- **Texto de oráculo** — o texto de regras oficial da carta
+- **Força / Resistência / Lealdade** — para criaturas e planeswalkers
+- **Legalidade por formato** — uma grade mostrando a legalidade da carta em Commander, Modern, Standard, Pioneer, Legacy, Vintage e Pauper
+- **Ranking no EDHREC** — o quão popular a carta é em decks de Commander no EDHREC
+- **Preço** — dados de preço de mercado atual (requer conexão de rede para atualizar)
+
+### Mudando a edição
+
+O painel de detalhes mostra a edição atualmente selecionada e uma faixa de miniaturas de arte para edições alternativas. Clique em qualquer miniatura para mudar a arte usada no canvas para essa carta.
+
+<Aside type="note">
+  As seleções de arte são por deck e por layout. Dois layouts do mesmo deck podem mostrar edições diferentes da mesma carta.
+</Aside>
+
+## Busca Global
+
+Além do painel de Busca de Cartas dentro do deck, o Karn Forge tem uma **Busca Global** acessível pela barra superior. A Busca Global pesquisa em seus decks e biblioteca por nome do deck, nome da carta ou formato.
+
+Abra a Busca Global com `Ctrl+K` / `Cmd+K`.

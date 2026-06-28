@@ -1,0 +1,61 @@
+---
+title: Lista de Desejos
+description: Mantenha uma lista priorizada de cartas de Magic que você quer adquirir e adicione-as diretamente a qualquer um dos seus decks.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components'
+
+# Lista de Desejos
+
+A Lista de Desejos é uma lista priorizada de cartas que você quer adquirir. É separada da sua [Coleção](/pt-br/features/collection) (cartas que você possui) e funciona como uma ferramenta de compras e planejamento.
+
+## Adicionando uma carta à sua lista de desejos
+
+<Steps>
+  1. Navegue até **Lista de Desejos** na barra lateral esquerda.
+  2. Use o painel de **Busca de Cartas** à direita para encontrar uma carta.
+  3. Clique na carta nos resultados para selecioná-la.
+  4. Defina a **Quantidade** e a **Prioridade**.
+  5. Clique em **Adicionar à Lista de Desejos**.
+</Steps>
+
+## Níveis de prioridade
+
+Cada entrada da lista de desejos tem um nível de prioridade:
+
+| Prioridade | Caso de uso |
+|---|---|
+| **Baixa** | Melhorias desejadas; sem pressa |
+| **Normal** | Cartas que você vai pegar quando for conveniente |
+| **Alta** | Cartas que você precisa em breve |
+| **Crítica** | Cartas que impedem um deck de ser jogado |
+
+A prioridade é mostrada com código de cores na tabela para que as cartas mais importantes se destaquem.
+
+## Reordenando entradas
+
+Arraste qualquer linha pela alça de arrastar à esquerda para reordenar a lista de desejos. Sua ordem personalizada é salva automaticamente no armazenamento local.
+
+<Aside type="tip">
+  Ordene sua lista de desejos por prioridade primeiro, depois arraste dentro dos grupos de prioridade para definir sua ordem de aquisição preferida.
+</Aside>
+
+## Adicionando uma carta da lista de desejos diretamente a um deck
+
+Cada linha tem um botão **Adicionar ao Deck**. Clique nele para abrir um seletor de decks, depois clique em qualquer deck para adicionar a carta à lista desse deck. A carta é adicionada com uma quantidade de 1.
+
+Isso é útil quando você decidiu que uma carta da lista de desejos pertence a um deck específico e quer rastreá-la lá como uma carta ausente.
+
+## Removendo uma carta
+
+Passe o mouse sobre uma linha e clique no ícone **Remover** à direita, ou selecione múltiplas linhas e use a opção de exclusão em lote.
+
+## Lista de Desejos vs Coleção
+
+| | Coleção | Lista de Desejos |
+|---|---|---|
+| Objetivo | Cartas que você possui | Cartas que você quer |
+| Rastreia condição | Sim | Não |
+| Rastreia preço pago | Sim | Não |
+| Rastreia prioridade | Não | Sim |
+| Funciona com a aba Ausentes do deck | Sim (cartas que você tem) | Não |

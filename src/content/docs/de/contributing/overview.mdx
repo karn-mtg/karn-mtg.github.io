@@ -1,0 +1,79 @@
+---
+title: Mitmachen
+description: Wie du zu Karn Forge beitragen kannst — Fehlermeldungen, Feature-Anfragen, Pull Requests und Community-Richtlinien.
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components'
+
+# Mitmachen
+
+Karn Forge ist Open-Source und freut sich über Beiträge aller Art — Fehlermeldungen, Dokumentationsverbesserungen, neue Funktionen und Code-Reviews.
+
+## Möglichkeiten zum Mitmachen
+
+<CardGrid>
+  <LinkCard
+    title="Einen Fehler melden"
+    href="https://github.com/karn-mtg/forge/issues/new?template=bug_report.md"
+    description="Etwas funktioniert nicht? Öffne ein Issue mit Schritten zur Reproduktion."
+  />
+  <LinkCard
+    title="Eine Funktion anfragen"
+    href="https://github.com/karn-mtg/forge/issues/new?template=feature_request.md"
+    description="Hast du eine Idee? Öffne eine Feature-Anfrage und beschreibe, was du dir wünschst."
+  />
+  <LinkCard
+    title="Offene Issues durchsuchen"
+    href="https://github.com/karn-mtg/forge/issues"
+    description="Sieh, was bereits verfolgt wird, und finde etwas, woran du arbeiten möchtest."
+  />
+  <LinkCard
+    title="Einen Pull Request einreichen"
+    href="https://github.com/karn-mtg/forge/pulls"
+    description="Code fertig? Öffne einen PR gegen den main-Branch."
+  />
+</CardGrid>
+
+## Bevor du anfängst
+
+Für alles, was über kleine Korrekturen hinausgeht, öffne bitte zuerst ein Issue oder eine Diskussion, um den Ansatz abzustimmen. Das spart Zeit für dich und die Maintainer.
+
+Bei Bugfixes und Dokumentationsverbesserungen kannst du direkt mit einem Pull Request einsteigen — kein Issue nötig.
+
+## Eine gute Fehlermeldung verfassen
+
+Füge Folgendes ein:
+
+1. **Schritte zur Reproduktion** — die genaue Abfolge von Aktionen, die den Fehler auslöst.
+2. **Erwartetes Verhalten** — was du erwartet hast zu sehen.
+3. **Tatsächliches Verhalten** — was tatsächlich passiert ist. Screenshots helfen.
+4. **Umgebung** — dein Betriebssystem, die OS-Version und die Karn Forge-Version (sichtbar unter Einstellungen → Über).
+5. **Logs** — wenn die App abgestürzt ist, kopiere den Fehler aus **Einstellungen → Logs** oder der Systemkonsole.
+
+## Pull Request-Richtlinien
+
+- Halte Änderungen fokussiert — ein PR pro logischer Änderung.
+- Schreibe eine klare PR-Beschreibung, die erklärt, *was* sich geändert hat und *warum*.
+- Folge dem vorhandenen Code-Stil. Das Projekt verwendet ESLint und TypeScript strict mode — stelle sicher, dass `npm run lint` und `npm run type-check` bestehen, bevor du einreichst.
+- Füge Tests hinzu, wenn du Logik in `domain/` oder `application/` änderst. UI-Änderungen erfordern keine Tests, sollten aber manuell überprüft werden.
+- Das Canvas (`DeckView.tsx`) ist der komplexeste Teil der Codebasis. Wenn du es anfasst, lies zuerst die [Architektur](/contributing/architecture)-Anleitung.
+
+## Verhaltenskodex
+
+Dieses Projekt folgt einem einfachen Standard: Sei respektvoll, sei hilfsbereit und gehe von guten Absichten aus. Beiträge von allen sind willkommen, unabhängig vom Erfahrungsstand.
+
+## Was im Umfang liegt
+
+| Im Umfang | Außerhalb des Umfangs |
+|---|---|
+| Bugfixes | Änderungen, die ein immer laufendes Backend erfordern |
+| Performance-Verbesserungen | Monetarisierungs-Funktionen |
+| Neue Widget-Typen | Plattformspezifische Funktionen, die nur auf einem OS funktionieren |
+| Kartendetail-Erweiterungen | Kartendaten scrapen oder weiterverteilen |
+| UI-Verbesserungen | |
+| Verbesserungen der Barrierefreiheit | |
+| Neue unterstützte Import-Formate | |
+
+## Den Code lokal zum Laufen bringen
+
+Lies die [Entwicklungsumgebung einrichten](/contributing/dev-setup)-Anleitung, um das Projekt auf deinem Rechner zum Laufen zu bringen.

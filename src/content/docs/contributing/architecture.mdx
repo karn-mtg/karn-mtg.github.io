@@ -1,0 +1,154 @@
+---
+title: Architecture
+description: Technical overview of Karn Forge's domain-driven design, Electron process model, and IPC communication pattern.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Architecture
+
+Karn Forge follows a **Domain-Driven Design (DDD)** architecture adapted for Electron. The key constraint is that all business logic runs in the **main process**, and the renderer communicates with it exclusively through named IPC channels.
+
+## Layer structure
+
+```
+src/
+├── domain/          Entities, Value Objects, IRepository interfaces
+├── application/     Use Cases, DTOs
+├── infrastructure/  Repository implementations (SQLite, Scryfall API)
+├── main/            Electron main process + IPC handlers
+└── renderer/        React UI (views, components, hooks, stores)
+```
+
+## Process model
+
+Electron applications have two types of processes:
+
+- **Main process** — a full Node.js process. Has access to the filesystem, SQLite, native APIs, and the network.
+- **Renderer process** — a Chromium-based process running the React UI. Has no direct Node.js access in production.
+
+Karn Forge enforces a strict boundary: **the renderer never imports from `domain/`, `application/`, or `infrastructure/`**. All data flows through IPC.
+
+```
+Renderer (React)  →  IPC  →  Main process  →  Use Case  →  Repository
+```
+
+## IPC wiring pattern
+
+Every renderer→main operation follows the same pattern:
+
+```ts
+// src/main/ipc/deckHandlers.ts
+ipcMain.handle('deck:create', (_, dto) =>
+  new CreateDeck(deckRepo).execute(dto)
+)
+
+// src/renderer/hooks/useDeck.ts
+const deck = await window.electron.ipcRenderer.invoke('deck:create', { name })
+```
+
+The preload script exposes a typed API surface:
+
+```ts
+// preload.ts
+contextBridge.exposeInMainWorld('libraryAPI', {
+  createDeck: (dto) => ipcRenderer.invoke('deck:create', dto),
+  getDeck: (dto) => ipcRenderer.invoke('deck:get', dto),
+  // ...
+})
+```
+
+The renderer's TypeScript types for the bridge live in `src/renderer/types/electron.d.ts`.
+
+## Layer responsibilities
+
+| Layer | Contains | Depends on |
+|---|---|---|
+| `domain` | Entity, ValueObject, IRepository (interface only) | Nothing |
+| `application` | UseCase, DTO | `domain` |
+| `infrastructure` | Repository impl (SQLite, Scryfall, etc.) | `domain` |
+| `main/ipc` | IPC handlers, dependency injection wiring | `application` |
+| `renderer` | React views, components, hooks | IPC bridge only |
+
+## Domain layer
+
+Entities represent the core concepts: `Deck`, `DeckCard`, `CollectionEntry`, `WishlistEntry`, `Arrangement`.
+
+Value objects (immutable, identity-less) are used for things like `CardOracleId`, `ManaCost`, and `FormatLegality`.
+
+Repositories are **interfaces** defined in `domain/` — no concrete implementation lives here. This keeps the domain testable without a database.
+
+## Application layer
+
+Use cases are single-responsibility classes with one public `execute()` method. Each use case receives repository interfaces via constructor injection.
+
+```ts
+class CreateDeck {
+  constructor(private deckRepo: IDeckRepository) {}
+
+  async execute(dto: CreateDeckDto): Promise<Deck> {
+    const deck = Deck.create(dto.name, dto.format);
+    return this.deckRepo.save(deck);
+  }
+}
+```
+
+DTOs (Data Transfer Objects) are plain objects that cross the IPC boundary. They contain only serializable data — no methods or class instances.
+
+## Infrastructure layer
+
+Concrete repository implementations live here. The primary storage is SQLite via `better-sqlite3`. All queries are synchronous (SQLite's sync API is appropriate for a desktop app with no concurrent users).
+
+The Scryfall integration is also in this layer: it fetches card data from the Arsenal service (which proxies the local SQLite card database) and maps the results to domain `Card` entities.
+
+## Renderer layer
+
+The renderer is a React 18 application. State management uses Zustand stores in `src/renderer/store/`.
+
+### Canvas (DeckView)
+
+The deck canvas (`src/renderer/pages/DeckView.tsx`) is the most complex component in the codebase. It manages an imperative DOM-based canvas (not a React virtual DOM canvas) for performance:
+
+- Cards, groups, sticky notes, and widgets are created as raw DOM elements and appended to a container div.
+- React state is used only for UI overlays (modals, context menus, the tab bar) and data loading.
+- The canvas serializes to JSON for persistence via `saveArrangementCanvas`.
+
+<Aside type="note">
+  This imperative approach was chosen because a 100+ card canvas with drag, zoom, and pan operations needs to run at 60 fps. React re-renders on every mouse event would be too slow.
+</Aside>
+
+### Widget system
+
+Widgets are registered in `src/renderer/widgets/registry.ts` using `WidgetRegistry.register()`. Each widget definition has:
+
+- `id` — unique string identifier
+- `name`, `description`, `icon` — display metadata
+- `width` — default canvas width in pixels
+- `params` — configurable parameter definitions
+- `code` — a JavaScript string that is `eval`'d with `data` and `params` in scope, returning an HTML string
+
+The same registry pattern is used for **card decorators** (`src/renderer/widgets/overlayRegistry.ts`), which render badges overlaid on canvas card images.
+
+## Arsenal (data service)
+
+Arsenal is a separate background process (a bundled binary) that runs a local HTTP server. It provides:
+
+- Full-text search over the Scryfall card SQLite database
+- Rules text lookup
+- Database version information
+
+The main process communicates with Arsenal via `window.arsenalAPI` (an IPC bridge to the main process, which in turn calls Arsenal's local HTTP API).
+
+## MCP integration
+
+Karn Forge includes an MCP (Model Context Protocol) server in `src/mcp/`. This allows AI tools that support MCP (like Claude) to interact with the deck data programmatically — reading deck lists, querying card data, and receiving structured deck context.
+
+The MCP server runs as a side process and is separate from the in-app AI assistant chat.
+
+## Testing
+
+Unit tests cover domain entities and use cases. Use case tests use in-memory repository implementations (not SQLite) so they run fast and without I/O.
+
+Integration tests that need a real database use a test SQLite file, created fresh for each test run.
+
+The renderer has no automated tests currently — UI behavior is verified manually.

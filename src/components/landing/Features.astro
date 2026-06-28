@@ -7,23 +7,139 @@ interface Props {
 
 const { lang = 'en' } = Astro.props
 const i18n = t(lang)
+
+const widgetIcons = [
+  'auto_awesome_mosaic',
+  'inventory_2',
+  'bar_chart',
+  'playing_cards',
+  'wifi_off',
+  'code',
+  'smart_toy',
+]
+
+// Roughly clock positions but with intentional asymmetry to avoid a mirrored look
+const widgetPositions = [
+  'lg:absolute lg:left-[calc(50%-120px)] lg:top-[1%]    lg:-rotate-2',        // 12, nudged left
+  'lg:absolute lg:right-[9%]             lg:top-[4%]    lg:rotate-[2.5deg]',  // ~2, higher & more rotated
+  'lg:absolute lg:right-[2%]             lg:top-[33%]   lg:rotate-[1deg]',    // ~3, mid-right
+  'lg:absolute lg:left-[22%]             lg:bottom-[4%] lg:-rotate-[1deg]',  // ~7, bottom-left (off-center)
+  'lg:absolute lg:left-[3%]              lg:top-[53%]   lg:-rotate-[2.5deg]', // ~8, higher than mirror
+  'lg:absolute lg:left-[12%]             lg:top-[9%]    lg:-rotate-[0.5deg]', // ~10, lower than mirror
+  'lg:absolute lg:right-[30%]            lg:bottom-[4%] lg:rotate-[2deg]',   // ~5, bottom-right
+]
+
+const GROUP_CARDS = [
+  { name: 'Sol Ring',       url: 'https://cards.scryfall.io/normal/front/4/c/4cbc6901-6a4a-4d0a-83ea-7eefa3b35021.jpg?1632893059', rotate: '-rotate-2' },
+  { name: 'Command Tower',  url: 'https://cards.scryfall.io/normal/front/0/5/0548fb60-c843-4f8f-a029-6f10efc63a41.jpg?1780930249', rotate: 'rotate-1' },
+  { name: 'Counterspell',   url: 'https://cards.scryfall.io/normal/front/2/6/26334142-e9a2-4bf0-983e-dca4b4d817d7.jpg?1562433898', rotate: '-rotate-1' },
+  { name: 'Llanowar Elves', url: 'https://cards.scryfall.io/normal/front/7/6/76ceff1d-9e83-41cc-b54b-8bf90d985da9.jpg?1562302734', rotate: 'rotate-2' },
+]
 ---
 
-<section class="px-6 py-24">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-on-surface">{i18n.featuresHeading}</h2>
-      <p class="mt-3 text-on-surface-variant">{i18n.featuresSubheading}</p>
+<section class="px-6 pt-10 pb-16 lg:pt-20 lg:pb-32 mt-0 relative overflow-hidden">
+
+  <!-- Canvas viewport: stack on mobile, absolute canvas on lg+ -->
+  <div class="relative mx-auto max-w-6xl
+              flex flex-col gap-3
+              sm:grid sm:grid-cols-2
+              lg:block lg:h-[760px]">
+
+    <!-- Soft edge fade (desktop only) — blends canvas into page bg -->
+    <div
+      class="hidden lg:block absolute inset-0 pointer-events-none z-10"
+      style="background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 38%, rgba(13,13,13,0.96) 100%);"
+    ></div>
+
+    <!-- 6 feature widgets -->
+    {i18n.features.map((f, idx) => (
+      <div
+        class={`canvas-widget w-full lg:w-[210px] z-20
+                transition-all duration-200
+                hover:-translate-y-1 hover:border-white/[0.14] hover:shadow-2xl hover:shadow-black/60
+                ${widgetPositions[idx]}`}
+        data-scroll
+        data-scroll-delay={String(idx + 1)}
+        data-scroll-type="scale"
+      >
+        <div class="canvas-widget-header">
+          <span
+            class="material-symbols-outlined text-[13px] flex-shrink-0 select-none"
+            style="color: rgba(242,202,131,0.55); font-variation-settings: 'FILL' 1;"
+          >{widgetIcons[idx]}</span>
+          <span class="text-[10px] font-bold uppercase tracking-[0.07em] text-white/45 truncate">{f.title}</span>
+        </div>
+        <div class="p-3.5">
+          <p class="text-xs text-on-surface-variant/70 leading-relaxed">{f.desc}</p>
+        </div>
+      </div>
+    ))}
+
+    <!-- Sticky notes at 9 and 3 o'clock (desktop only) -->
+    <div
+      class="canvas-sticker hidden lg:block absolute z-20 lg:left-[-5%] lg:top-[32%] lg:-rotate-2 w-[165px] p-3
+             transition-all duration-200 hover:rotate-0 hover:scale-[1.03] hover:border-primary/40 cursor-default"
+      data-scroll
+      data-scroll-delay="4"
+      data-scroll-type="scale"
+    >
+      <p class="text-[10px] font-bold uppercase tracking-[0.07em] text-primary/60 mb-1.5">Ramp Package</p>
+      <hr class="border-t border-primary/15 mb-2" />
+      <p class="text-[11px] text-white/70 leading-relaxed"><span class="text-white/90 font-semibold">Target:</span> 8–10 pieces</p>
+      <ul class="mt-1.5 space-y-0.5">
+        <li class="text-[11px] text-white/55">· Sol Ring ✓</li>
+        <li class="text-[11px] text-white/55">· Arcane Signet</li>
+        <li class="text-[11px] text-white/55">· Command Tower</li>
+      </ul>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {i18n.features.map((f) => (
-        <div class="glass-panel rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5">
-          <div class="text-3xl mb-4 select-none">{f.icon}</div>
-          <h3 class="font-bold text-on-surface mb-2">{f.title}</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed">{f.desc}</p>
-        </div>
-      ))}
+    <div
+      class="canvas-sticker hidden lg:block absolute z-20 lg:right-[-5%] lg:top-[58%] lg:rotate-[1.5deg] w-[165px] p-3
+             transition-all duration-200 hover:rotate-0 hover:scale-[1.03] hover:border-primary/40 cursor-default"
+      data-scroll
+      data-scroll-delay="3"
+      data-scroll-type="scale"
+    >
+      <p class="text-[10px] font-bold uppercase tracking-[0.07em] text-primary/60 mb-1.5">Win Conditions</p>
+      <hr class="border-t border-primary/15 mb-2" />
+      <ul class="space-y-1">
+        <li class="text-[11px] text-white/70">· Commander damage</li>
+        <li class="text-[11px] text-white/70">· <span class="text-white/90 font-semibold">Combo</span> via Karn AI</li>
+        <li class="text-[11px] text-white/70">· Board control</li>
+      </ul>
+      <p class="mt-2 text-[10px] text-primary/50 italic">Tutor priority: High</p>
     </div>
+
+    <!-- Canvas group with MTG cards (desktop only, centered) -->
+    <!-- Outer div owns position; inner owns scroll-reveal so transform override doesn't break centering -->
+    <div class="hidden lg:block absolute z-20" style="left: calc(50% - 230px); top: calc(50% - 99px);">
+    <div
+      class="canvas-group w-[460px] transition-all duration-300 hover:border-primary/40"
+      data-scroll
+      data-scroll-delay="2"
+      data-scroll-type="scale"
+    >
+      <!-- Header mirrors forge group-container structure -->
+      <div class="flex items-center gap-2.5 px-5 pt-5 pb-4 select-none">
+        <span class="w-3 h-3 rounded-full flex-shrink-0" style="background:#f2ca83; box-shadow: 0 0 8px rgba(242,202,131,0.4);"></span>
+        <h3 class="text-[11px] font-bold uppercase tracking-widest" style="color:#f2ca83;">
+          Commander Staples <span class="opacity-40 font-normal ml-1">(4)</span>
+        </h3>
+      </div>
+      <div class="px-5 pb-5 flex gap-3 items-end justify-center">
+        {GROUP_CARDS.map(card => (
+          <img
+            src={card.url}
+            alt={card.name}
+            class="h-[130px] w-auto rounded-xl shadow-xl ring-1 ring-white/10 flex-shrink-0
+                   transition-all duration-200 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/60 hover:ring-primary/30
+                   cursor-pointer"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+    </div>
+
   </div>
 </section>

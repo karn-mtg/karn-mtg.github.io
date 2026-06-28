@@ -1,52 +1,81 @@
 ---
-title: Erste Schritte
-description: So installierst und startest du Karn Forge auf deinem Computer.
+title: Installation
+description: So lädst du Karn Forge herunter und installierst es auf Windows, macOS und Linux.
 ---
 
-# Erste Schritte
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components'
 
-## Installation
+# Installation
 
-### Windows
+Karn Forge wird als nativer Desktop-Installer für Windows, macOS und Linux bereitgestellt.
 
-1. Lade den neuesten `.exe`-Installer von der [Releases-Seite](https://github.com/karn-mtg/forge/releases) herunter
-2. Führe den Installer aus — keine Administratorrechte erforderlich
-3. Starte **Karn Forge** über das Startmenü oder die Desktop-Verknüpfung
+## Download
 
-### macOS
+Besuche die [Releases-Seite](https://github.com/karn-mtg/forge/releases) und lade den Installer für deine Plattform herunter:
 
-1. Lade die `.dmg`-Datei von der [Releases-Seite](https://github.com/karn-mtg/forge/releases) herunter
-2. Öffne die `.dmg`-Datei und ziehe Karn Forge in deinen Programme-Ordner
-3. Beim ersten Start: Rechtsklick → Öffnen, um Gatekeeper zu umgehen
+| Plattform | Datei |
+|---|---|
+| Windows | `.exe`-Installer |
+| macOS | `.dmg`-Disk-Image |
+| Linux | `.AppImage` |
+
+<Tabs>
+  <TabItem label="Windows">
+    <Steps>
+      1. Lade den `.exe`-Installer von der Releases-Seite herunter.
+      2. Führe den Installer aus. Administratorrechte sind nicht erforderlich.
+      3. Starte **Karn Forge** über das Startmenü oder die Desktop-Verknüpfung.
+    </Steps>
+  </TabItem>
+  <TabItem label="macOS">
+    <Steps>
+      1. Lade die `.dmg`-Datei von der Releases-Seite herunter.
+      2. Öffne die `.dmg`-Datei und ziehe Karn Forge in deinen Programme-Ordner.
+      3. Beim ersten Start: Rechtsklick auf das App-Symbol → **Öffnen**, um Gatekeeper zu umgehen.
+    </Steps>
+
+    <Aside type="note">
+      macOS zeigt möglicherweise eine Sicherheitswarnung an, da die App nicht notarisiert ist. Ein Rechtsklick und die Auswahl von **Öffnen** umgeht diese Warnung — das muss nur einmal gemacht werden.
+    </Aside>
+  </TabItem>
+  <TabItem label="Linux">
+    <Steps>
+      1. Lade die `.AppImage`-Datei von der Releases-Seite herunter.
+      2. Markiere sie als ausführbar: `chmod +x KarnForge-*.AppImage`
+      3. Starte sie: `./KarnForge-*.AppImage`
+    </Steps>
+
+    <Aside type="note">
+      Einige Linux-Distributionen benötigen `libfuse2`, um AppImages auszuführen. Installiere es mit deinem Paketmanager, falls die App nicht startet (z. B. `sudo apt install libfuse2` unter Ubuntu).
+    </Aside>
+  </TabItem>
+</Tabs>
 
 ## Erster Start
 
-Beim ersten Start lädt Karn Forge die Scryfall-Kartendatenbank herunter (~50 MB). Das dauert bei einer typischen Verbindung etwa 30 Sekunden. Danach funktioniert alles vollständig offline.
+Beim ersten Start öffnet Karn Forge den **Arsenal**-Einrichtungsassistenten. Arsenal ist der lokale Datendienst, der die Kartendatenbank und die Regeldatenbank verwaltet.
 
-## Dein erstes Deck erstellen
+<Steps>
+  1. Klicke auf **Arsenal einrichten** in der erscheinenden Meldung.
+  2. Warte, bis die drei Komponenten heruntergeladen wurden: die Server-Binärdatei, die Kartendatenbank (~50 MB) und die Regeldatenbank.
+  3. Sobald die Einrichtung abgeschlossen ist, lädt die App neu und ist einsatzbereit.
+</Steps>
 
-1. Klicke auf **Neues Deck** in der linken Seitenleiste
-2. Gib deinem Deck einen Namen und wähle ein Format
-3. Nutze das **Kartensuche**-Panel auf der rechten Seite, um Karten zu finden
-4. Ziehe Karten auf das Canvas oder klicke auf die **+**-Schaltfläche
-5. Drücke `Strg+S` / `Cmd+S` zum Speichern
+<Aside type="tip">
+  Nach der ersten Einrichtung funktioniert alles vollständig offline. Du kannst die Datenbanken später jederzeit über das Arsenal-Panel aktualisieren, wenn Updates verfügbar sind.
+</Aside>
 
-## Ein Deck importieren
+## Systemanforderungen
 
-1. Öffne **Datei → Importieren** aus der Menüleiste
-2. Wähle deine Quelle:
-   - **Text einfügen** — jedes Standard-Decklisten-Format (eine Karte pro Zeile)
-   - **Moxfield-URL** — füge eine öffentliche Deck-URL ein
-   - **Archidekt-URL** — füge eine öffentliche Deck-URL ein
-   - **CSV-Datei** — aus einer Tabellenkalkulation importieren
-3. Karn Forge ruft automatisch Kartendaten ab
+| | Minimum |
+|---|---|
+| Betriebssystem | Windows 10, macOS 12, Ubuntu 20.04 |
+| RAM | 4 GB |
+| Speicher | 500 MB frei (für Kartendatenbank und App-Daten) |
+| Netzwerk | Nur für die erste Einrichtung und optionale Datenbankupdates erforderlich |
 
-## Tastenkürzel
+## Aktualisierung
 
-| Aktion | Windows | macOS |
-|---|---|---|
-| Neues Deck | `Strg+N` | `Cmd+N` |
-| Speichern | `Strg+S` | `Cmd+S` |
-| Karten suchen | `Strg+F` | `Cmd+F` |
-| Deck exportieren | `Strg+E` | `Cmd+E` |
-| Seitenleiste umschalten | `Strg+B` | `Cmd+B` |
+Karn Forge prüft einige Sekunden nach dem Start automatisch auf App-Updates. Wenn eine neue Version verfügbar ist, erscheint eine Benachrichtigung unter **Einstellungen → Updates** mit einem Download-Button. Nach Abschluss des Downloads auf **Installieren** klicken, um die App neu zu starten und das Update anzuwenden.
+
+Die Kartendatenbank und die Regeldatenbank können unabhängig voneinander über das **Arsenal**-Panel aktualisiert werden, ohne die App neu zu installieren.

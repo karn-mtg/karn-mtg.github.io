@@ -1,0 +1,90 @@
+---
+title: Sammlung
+description: Verfolge deine physische Magic-Kartensammlung in Karn Forge mit Zustandsbewertungen, Foil-Kennzeichnung, Preisen und Empfängerzuweisungen.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Sammlung
+
+Die Sammlungsseite ermöglicht es dir, deine physischen Magic: The Gathering Karten zu verwalten. Du kannst den Zustand, die Menge, den Foil-Status und den Marktpreis jeder Karte erfassen — und Karten Empfängern für Tausch- und Bestellungsverwaltung zuweisen.
+
+## Eine Karte zur Sammlung hinzufügen
+
+<Steps>
+  1. Navigiere in der linken Seitenleiste zu **Sammlung**.
+  2. Verwende das **Kartensuche**-Panel auf der rechten Seite, um eine Karte zu finden.
+  3. Klicke auf die Karte in den Suchergebnissen, um sie auszuwählen.
+  4. Fülle das Eingabeformular aus:
+     - **Menge** — wie viele Kopien
+     - **Zustand** — siehe die Zustandsbeschreibung unten
+     - **Foil** — anhaken, wenn die Kopie foil ist
+     - **Preis** — optionaler Marktpreis pro Kopie
+  5. Klicke auf **Hinzufügen**, um den Eintrag zu speichern.
+</Steps>
+
+## Kartenzustandsbewertungen
+
+Karn Forge verwendet die Standard-TCGPlayer-Zustandsbewertungen:
+
+| Bewertung | Vollständiger Name | Beschreibung |
+|---|---|---|
+| **NM** | Near Mint | Karte zeigt keinen sichtbaren Verschleiß. Ecken sind scharf, Oberfläche ist sauber. |
+| **LP** | Lightly Played | Leichter Oberflächenverschleiß, geringfügiger Kantenverschleiß. Problemlos einhüllbar. |
+| **MP** | Moderately Played | Sichtbarer Verschleiß — Knicke, Kratzer oder beschädigte Ecken. Immer noch turniertauglich. |
+| **HP** | Heavily Played | Erheblicher Verschleiß — tiefe Knicke, starker Kantenverschleiß, mögliche Wasserschäden. |
+| **DMG** | Damaged | Schwere Beschädigungen — Risse, Beschriftungen oder strukturelle Probleme. |
+
+## Deine Sammlung verwalten
+
+### Einen Eintrag bearbeiten
+
+Klicke auf eine beliebige Zeile in der Sammlung-Tabelle, um die inline-Bearbeitung zu öffnen. Du kannst Menge, Zustand, Foil-Kennzeichnung, Preis und Empfänger ändern, ohne einen separaten Dialog zu öffnen.
+
+### Eine Karte entfernen
+
+Fahre mit der Maus über eine Zeile und klicke auf das **Löschen**-Symbol, das auf der rechten Seite erscheint.
+
+### Sortieren und Filtern
+
+Klicke auf eine beliebige Spaltenüberschrift, um die Tabelle nach dieser Spalte zu sortieren. Klicke erneut, um die Sortierreihenfolge umzukehren. Verfügbare Sortierspalten:
+
+- Name
+- Menge
+- Zustand
+- Preis
+- Foil
+
+Verwende die **Suche**-Leiste oben in der App, um die Sammlung in Echtzeit nach Kartenname zu filtern.
+
+## Foil-Tracking
+
+Jeder Sammlungseintrag kann als Foil markiert werden. Foil-Einträge werden mit einem eigenen Abzeichen in der Tabelle angezeigt. Der Foil-Status wird separat von Zustand und Menge verfolgt — du kannst sowohl NM-Foil- als auch NM-Nicht-Foil-Kopien derselben Karte als separate Einträge haben.
+
+## Preis-Tracking
+
+Du kannst manuell einen Preis pro Kopie für jeden Sammlungseintrag eingeben. Preise werden lokal gespeichert und nicht automatisch aktualisiert. Um Preise zu aktualisieren, bearbeite den Eintrag und gib den aktuellen Marktwert ein.
+
+<Aside type="tip">
+  Preise werden in der Gesamtspalte der Sammlung-Tabelle als `Menge × Preis pro Kopie` angezeigt. Damit lässt sich der Gesamtwert deiner Sammlung auf einen Blick abschätzen.
+</Aside>
+
+## Empfänger
+
+Empfänger ermöglichen es dir, Sammlungskarten bestimmten Personen zuzuweisen — nützlich für die Verwaltung von Tauschgeschäften, Verkäufen oder organisierten Gruppenbestellungen.
+
+### Einen Empfänger erstellen
+
+<Steps>
+  1. Klicke auf **Empfänger verwalten** im Sammlungs-Header.
+  2. Klicke auf **Neuer Empfänger** und gib einen Namen ein.
+  3. Speichern.
+</Steps>
+
+### Eine Karte einem Empfänger zuweisen
+
+Bearbeite einen Sammlungseintrag und wähle einen Empfänger aus dem **Empfänger**-Dropdown. Die Kartenzeile zeigt dann den Namen des Empfängers, sodass leicht erkennbar ist, welche Karten bereits vergeben sind.
+
+## Deck-Integration
+
+Der **Fehlend**-Tab im **Deck Workshop** vergleicht deine Deck-Liste mit deiner Sammlung und zeigt alle Karten, die du nicht besitzt (oder von denen du nicht genug Kopien hast). Verwende dies, um eine Einkaufsliste für ein Deck zu erstellen.

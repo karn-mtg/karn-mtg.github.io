@@ -1,0 +1,213 @@
+---
+title: Deck Workshop
+description: O Deck Workshop é o construtor visual de decks do Karn Forge — um canvas infinito onde você organiza cartas, cria grupos, adiciona notas e posiciona widgets de análise ao vivo.
+---
+
+import { Aside, Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Deck Workshop
+
+O Deck Workshop é o coração do Karn Forge. É um canvas infinito onde você pode organizar visualmente suas cartas, agrupá-las em conjuntos com rótulos, adicionar notas de estratégia e incorporar widgets de análise ao vivo — tudo ao lado de uma visão de lista padrão para edição precisa.
+
+## Canvas
+
+O canvas é a área de trabalho principal. Cada carta do seu deck pode ser posicionada em qualquer lugar nele. As cartas no canvas são puramente visuais: você pode movê-las livremente sem afetar a lista do deck.
+
+### Navegando pelo canvas
+
+| Ação | Como fazer |
+|---|---|
+| Mover (pan) | Segure `Space` e arraste, ou clique com o botão do meio e arraste |
+| Zoom in/out | Roda do mouse, ou teclas `+` / `-` |
+| Resetar zoom | `Ctrl+0` / `Cmd+0` |
+| Ajustar ao conteúdo | `Ctrl+Shift+0` / `Cmd+Shift+0` |
+
+O nível de zoom atual é mostrado na barra de ferramentas inferior.
+
+### Modos do canvas
+
+Use a barra de ferramentas na parte inferior do canvas para alternar entre dois modos de interação:
+
+- **Modo Selecionar** (padrão) — clique e arraste para mover itens; selecione com borracha para selecionar múltiplos itens de uma vez.
+- **Modo Mão** — clique e arraste em qualquer lugar para mover o canvas. Útil com trackpads.
+
+Pressione `H` para alternar entre os modos, ou clique nos botões de modo na barra de ferramentas.
+
+## Adicionando cartas
+
+Abra o painel de **Busca de Cartas** com `Ctrl+F` / `Cmd+F` ou o ícone de busca na barra lateral direita. Arraste um resultado para o canvas, ou clique no botão **+** para posicioná-lo no centro da viewport.
+
+Quando você adiciona uma carta, ela aparece no canvas e também é adicionada à sua lista de deck. As duas ficam sincronizadas — remover uma carta da lista a remove do canvas, e vice-versa.
+
+<Aside type="tip">
+  Você pode adicionar várias cópias de uma carta. Clique no emblema de quantidade em uma carta do canvas para editar a contagem direto ali.
+</Aside>
+
+## Grupos
+
+Grupos são contêineres com rótulos que você pode colocar no canvas para agrupar cartas relacionadas — por exemplo, um grupo "Ramp", um grupo "Condições de Vitória" ou um grupo "Motor de Compra".
+
+### Criando um grupo
+
+<Steps>
+  1. Pressione **G** ou clique no botão **Grupo** na barra de ferramentas do canvas.
+  2. Digite um nome para o grupo e escolha uma cor.
+  3. Opcionalmente, use **Pré-selecionar** para preencher o grupo automaticamente:
+     - **Por tipo** — adicione todas as cartas que correspondam a uma tag de tipo (ex.: `Creature`, `Land` ou `Enchantment`). Combine múltiplas tags com AND/OR.
+     - **Por texto de oráculo** — adicione cartas cujo texto de oráculo contenha palavras-chave que você inserir.
+  4. Clique em **Criar Grupo**.
+</Steps>
+
+### Modos de layout do grupo
+
+Cada grupo tem três modos de layout, acessíveis pelo menu `⋮` do grupo:
+
+| Modo | Descrição |
+|---|---|
+| **Grade** | As cartas são organizadas em linhas. Configure o número de colunas por linha. |
+| **Pilha Horizontal** | As cartas se expandem para a direita em pilhas de profundidade configurável. |
+| **Pilha Vertical** | As cartas se expandem para baixo em pilhas de profundidade configurável. |
+
+### Movendo cartas entre grupos
+
+Arraste qualquer carta para fora de um grupo para colocá-la no canvas como uma carta livre. Arraste uma carta livre do canvas para dentro de um grupo para adicioná-la a ele.
+
+### Menu de contexto do grupo
+
+Clique com o botão direito no cabeçalho de um grupo para abrir o menu de contexto:
+
+- Renomear o grupo ou mudar sua cor
+- Mudar o modo de layout
+- Dissolver o grupo (solta as cartas no canvas)
+- Deletar o grupo e suas cartas
+
+## Notas adesivas
+
+Notas permitem que você anote o canvas com pensamentos de estratégia, interações entre cartas ou lembretes.
+
+<Steps>
+  1. Pressione **N** ou clique no botão **Nota** na barra de ferramentas.
+  2. Uma nota aparece no centro da viewport. Clique nela para entrar no modo de edição.
+  3. Digite seu conteúdo. Notas suportam **Markdown**: títulos (`#`, `##`), negrito (`**texto**`), itálico (`_texto_`) e listas (`- item`).
+  4. Clique fora da nota ou pressione `Escape` para salvar.
+</Steps>
+
+Notas podem ser redimensionadas arrastando suas alças esquerda, direita ou inferior-direita. Arraste a própria nota para reposicioná-la.
+
+## Widgets
+
+Widgets são painéis de análise ao vivo que você pode incorporar em qualquer lugar do canvas. Eles se atualizam automaticamente conforme você adiciona ou remove cartas.
+
+### Adicionando um widget
+
+<Steps>
+  1. Clique no botão **Widget** na barra de ferramentas do canvas (ou pressione **W**).
+  2. O seletor de widgets abre com todos os widgets disponíveis.
+  3. Clique em um widget para posicioná-lo no canvas.
+</Steps>
+
+### Configurando um widget
+
+Widgets com parâmetros configuráveis mostram um ícone de **ajuste** no cabeçalho. Clique nele para abrir um popover de parâmetros onde você pode ajustar coisas como o bucket máximo de CMC em um gráfico de curva de mana, ou se incluir o sideboard em uma distribuição de cores.
+
+### Widgets integrados
+
+Veja a [Referência de Widgets](/pt-br/reference/widgets) para a lista completa de widgets integrados e seus parâmetros.
+
+### Widgets personalizados
+
+Você pode criar widgets personalizados na seção **Widgets** do app. Widgets personalizados são escritos em JavaScript e têm acesso aos dados completos do deck. Veja a [Referência de Widgets](/pt-br/reference/widgets) para mais detalhes.
+
+## Painel de detalhes da carta
+
+Clique em qualquer carta no canvas para abrir o painel de **Detalhes da Carta** à direita. Ele mostra:
+
+- Imagem completa da carta (com seletor de variação de arte se houver múltiplas edições)
+- Texto de oráculo, linha de tipo, custo de mana e força/resistência
+- Legalidade em todos os formatos
+- Ranking no EDHREC e dados de preço
+
+### Mudando a arte da carta
+
+O painel de detalhes mostra todas as edições disponíveis de uma carta. Clique em qualquer edição para usar essa arte na carta do canvas para este deck.
+
+## Abas do deck
+
+A barra de ferramentas superior tem quatro abas para diferentes visualizações do mesmo deck:
+
+### Workshop
+
+O canvas visual (visualização padrão). Tudo descrito nesta página fica aqui.
+
+### Lista
+
+Uma visualização de lista de texto tradicional de todas as cartas do deck, agrupadas por categoria de tipo:
+
+- Commanders (se aplicável)
+- Criaturas
+- Instântaneos
+- Feitiços
+- Encantamentos
+- Artefatos
+- Planeswalkers
+- Terrenos
+- Outros
+- Sideboard
+
+Na visualização de lista, você pode editar quantidades diretamente clicando no número de quantidade.
+
+### Ausentes
+
+Mostra as cartas do deck que não estão na sua [Coleção](/pt-br/features/collection). Use isso para ver rapidamente o que você ainda precisa adquirir para o deck físico.
+
+### Combos
+
+*(Em breve)* — Detecção automática de combos usando o banco de dados do Commander Spellbook.
+
+## Layouts
+
+Um layout é um snapshot salvo da organização do canvas: a posição de cada carta, grupo, nota e widget. A lista do deck é compartilhada entre todos os layouts, mas cada layout pode ter sua própria organização visual.
+
+Casos de uso:
+- Um layout para uma visão geral detalhada da estratégia, outro para uma visualização compacta
+- Layouts separados para planejamento do deck principal e do sideboard
+- Diferentes configurações de grupos para diferentes contextos de meta
+
+### Gerenciando layouts
+
+O seletor de layout fica na barra de ferramentas superior. Clique nele para:
+
+- Alternar entre layouts salvos
+- Criar um novo layout
+- Renomear ou deletar um layout
+
+<Aside type="note">
+  Os layouts salvam automaticamente a cada 1,5 segundo após qualquer alteração. Você também pode salvar manualmente com `Ctrl+S` / `Cmd+S`.
+</Aside>
+
+## Desfazer / Refazer
+
+O canvas suporta desfazer e refazer para todas as operações do canvas (movimentações, alterações de grupos, adições, exclusões).
+
+| Ação | Windows/Linux | macOS |
+|---|---|---|
+| Desfazer | `Ctrl+Z` | `Cmd+Z` |
+| Refazer | `Ctrl+Shift+Z` | `Cmd+Shift+Z` |
+
+O histórico de desfazer é limitado a 50 estados do canvas ou 2 MB de dados de snapshot, o que for atingido primeiro.
+
+## Designação de Commander e parceiro
+
+Clique com o botão direito em qualquer carta do canvas para abrir o menu de contexto da carta. A partir daí você pode designar uma carta como:
+
+- **Commander** — mostrado com um emblema de escudo dourado
+- **Parceiro** — mostrado com um emblema de escudo azul
+- **Deck principal** — remove qualquer designação especial
+
+## Sideboard
+
+Cartas podem ser atribuídas ao **Sideboard** pelo menu de contexto da carta. Cartas do sideboard aparecem na visualização de lista sob "Sideboard" e são excluídas dos cálculos dos widgets do canvas por padrão.
+
+## Atalhos de teclado
+
+Veja a referência completa de [Atalhos de Teclado](/pt-br/reference/keyboard-shortcuts).

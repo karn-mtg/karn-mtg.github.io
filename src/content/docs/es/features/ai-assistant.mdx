@@ -1,0 +1,82 @@
+---
+title: Asistente de IA
+description: Obtén consejos sobre mazos, sugerencias de cartas y ayuda con estrategias de un asistente de IA directamente dentro del Deck Workshop de Karn Forge.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Asistente de IA
+
+Karn Forge incluye un asistente de IA con el que puedes hablar directamente desde el Deck Workshop. Puedes pedirle consejos sobre mazos, sugerencias de cartas, análisis de condiciones de victoria, recomendaciones de presupuesto o cualquier otra cosa relacionada con tu mazo.
+
+El asistente tiene contexto completo sobre tu mazo actual — lista de cartas, formato, identidad de color y grupos del canvas — por lo que puede darte respuestas relevantes y específicas.
+
+## Abrir el asistente
+
+<Steps>
+  1. Abre cualquier mazo en el **Deck Workshop**.
+  2. Haz clic en el botón **IA** en la barra de herramientas superior, o presiona `Ctrl+I` / `Cmd+I`.
+  3. El panel de IA se desliza desde la derecha.
+</Steps>
+
+## Proveedores
+
+El asistente admite múltiples proveedores de IA. Configura tu proveedor preferido en **Configuración → IA**:
+
+| Proveedor | Notas |
+|---|---|
+| **Claude (vía Claude Code CLI)** | Usa un CLI de Claude que se ejecuta localmente. No se necesita clave de API si Claude Code ya está instalado. |
+| **OpenAI** | Requiere una clave de API de OpenAI. Configúrala en Configuración. |
+
+<Aside type="note">
+  Si no hay ningún proveedor configurado, el panel de IA mostrará un mensaje de configuración. Sigue las instrucciones en Configuración para conectar un proveedor.
+</Aside>
+
+## Hablar con el asistente
+
+Escribe tu pregunta o solicitud en el campo de chat en la parte inferior del panel y presiona **Enter** o haz clic en **Enviar**.
+
+**Ejemplos de preguntas:**
+
+- "¿Qué tierras debería añadir a este mazo Commander?"
+- "Tengo demasiadas cartas con CMC 5 o más — ¿cuáles debería recortar?"
+- "Sugiere 5 cartas sinérgicas para mi mazo Atraxa Superfriends."
+- "¿Es este mazo legal en Modern?"
+- "¿Cuál es el CMC promedio de mis cartas que no son tierras?"
+
+El asistente transmite su respuesta en tiempo real. Puedes enviar un mensaje de seguimiento mientras aún está respondiendo.
+
+## Tipos de respuesta
+
+El asistente usa bloques de respuesta estructurados según el tipo de respuesta:
+
+### Presentación de cartas
+
+Cuando el asistente sugiere cartas específicas, las muestra como vistas previas interactivas con la imagen de la carta, nombre, tipo y coste de maná. Al pasar el cursor sobre una carta se muestra el tooltip con el texto de oracle completo.
+
+### Menú de opciones
+
+Para decisiones de múltiples pasos, el asistente puede presentar un conjunto de opciones como botones. Haz clic en uno para continuar la conversación con tu elección.
+
+### Sugerencias
+
+Una lista de sugerencias de acción rápida (por ejemplo, "Muéstrame la curva de maná", "¿Qué cartas están fuera del presupuesto?") que puedes hacer clic para enviar como mensaje.
+
+## Historial de conversación
+
+Cada mazo tiene su propio historial de conversación. Cuando cierras y vuelves a abrir el panel de IA, la conversación anterior se conserva. Puedes iniciar una nueva conversación desde el menú del panel sin perder la anterior.
+
+## Contexto enviado al asistente
+
+El asistente recibe el siguiente contexto con cada mensaje:
+
+- El nombre y formato del mazo
+- La lista completa de cartas con cantidades, tipos y costes de maná
+- La identidad de color del mazo
+- Los nombres de los grupos del canvas y sus asignaciones de cartas (si los hay)
+
+El asistente no recibe tu información personal de cuenta ni datos de otros mazos.
+
+<Aside type="tip">
+  Si has organizado tu canvas en grupos de estrategia (Ramp, Robo, Condiciones de victoria, etc.), el asistente puede hacer referencia a esos grupos por nombre y darte consejos más específicos.
+</Aside>

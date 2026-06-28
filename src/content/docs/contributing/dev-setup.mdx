@@ -1,0 +1,123 @@
+---
+title: Development Setup
+description: How to set up a local development environment for Karn Forge.
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Development Setup
+
+This guide covers everything you need to run Karn Forge locally for development.
+
+## Prerequisites
+
+- **Node.js 20+** — [nodejs.org](https://nodejs.org)
+- **npm 10+** — included with Node.js 20
+- **Git**
+- **Arsenal** (optional for development — see below)
+
+## Clone and install
+
+<Steps>
+  1. Fork the repository on GitHub, then clone your fork:
+     ```sh
+     git clone https://github.com/<your-username>/forge.git
+     cd forge
+     ```
+  2. Install dependencies:
+     ```sh
+     npm install
+     ```
+</Steps>
+
+## Running in development mode
+
+```sh
+npm run dev
+```
+
+This starts Vite (for the renderer) and Electron concurrently. The app opens automatically. Hot module replacement (HMR) is enabled for the renderer — most UI changes reflect instantly without reloading.
+
+<Aside type="note">
+  The first time you run the app in dev mode, the Arsenal setup prompt will appear. You can either set up Arsenal normally (requires downloading the databases) or skip it and use the app without card search for UI work.
+</Aside>
+
+## Project structure
+
+```
+forge/
+├── src/
+│   ├── domain/         Entity and value objects; IRepository interfaces
+│   ├── application/    Use cases and DTOs
+│   ├── infrastructure/ Repository implementations (SQLite, Scryfall API)
+│   ├── main/           Electron main process and IPC handlers
+│   └── renderer/       React UI (pages, components, hooks, stores)
+├── db/                 Database seed and migration scripts
+├── ipc/                Legacy IPC handlers (pre-DDD refactor)
+├── mcp/                MCP server (AI tool integrations)
+├── resources/          Bundled assets (Arsenal binary goes here at build time)
+└── .claude/            Project-specific AI assistant context
+```
+
+See [Architecture](/contributing/architecture) for a detailed explanation of how the layers interact.
+
+## Available scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start in development mode (Vite + Electron) |
+| `npm run build` | Build the Vite frontend for production |
+| `npm run dist:win` | Build the Windows installer |
+| `npm run dist:mac` | Build the macOS installer |
+| `npm run dist:linux` | Build the Linux AppImage |
+| `npm run lint` | Run ESLint |
+| `npm run type-check` | Run TypeScript type checking (no emit) |
+
+## Environment and configuration
+
+There is no `.env` file required for local development. Configuration that varies between dev and prod (like the Arsenal binary path) is handled via Electron's `app.isPackaged` flag.
+
+## Working on the renderer
+
+The renderer is a standard React 18 + Vite app. Component files live in `src/renderer/components/`, page components in `src/renderer/pages/`, and global state in `src/renderer/store/` (using Zustand).
+
+The renderer communicates with the main process exclusively via the IPC bridge exposed on `window.libraryAPI`, `window.cardsAPI`, `window.arsenalAPI`, and `window.aiAPI`. Never import from `domain/`, `application/`, or `infrastructure/` in renderer code.
+
+## Working on the main process
+
+The main process runs all business logic and data access. IPC handlers in `src/main/` receive calls from the renderer and delegate to use cases in `src/application/`.
+
+When adding a new IPC handler:
+1. Add a use case in `src/application/`
+2. Add the IPC handler in `src/main/ipc/`
+3. Expose the handler on the `contextBridge` in the preload script
+4. Add the TypeScript type to `src/renderer/types/electron.d.ts`
+
+## Working with the database
+
+Karn Forge uses SQLite for all persistent data (decks, collection, wishlist, arrangements). The database is managed via `better-sqlite3`.
+
+Schema migrations are applied on startup from `db/`. To add a migration:
+1. Create a new file in `db/` named with an incrementing version number.
+2. The migration runs automatically on next app start.
+
+<Aside type="caution">
+  Always write backward-compatible migrations. A user upgrading from an older version should not lose data.
+</Aside>
+
+## Building a release
+
+The CI pipeline (`.github/workflows/release.yml`) builds releases automatically when a `v*` tag is pushed.
+
+To trigger a release:
+
+<Steps>
+  1. Update the version in `package.json`.
+  2. Commit and push.
+  3. Tag the commit: `git tag v1.2.3 && git push origin v1.2.3`
+  4. GitHub Actions builds installers for Windows, macOS, and Linux and attaches them to the release automatically.
+</Steps>
+
+<Aside type="note">
+  The release workflow also downloads the latest Arsenal binary for each platform and bundles it with the installer. The `ARSENAL_REPO` environment variable in the workflow must point to the Arsenal repository.
+</Aside>

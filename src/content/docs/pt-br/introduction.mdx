@@ -1,33 +1,62 @@
 ---
 title: Introdução
-description: Bem-vindo ao Karn Forge — um construtor de decks de Magic The Gathering gratuito e de código aberto.
+description: "Uma visão geral do Karn Forge — um construtor de decks de Magic: The Gathering gratuito e de código aberto, com canvas visual, gerenciamento de coleção, análises e assistência de IA."
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components'
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components'
 
 # Bem-vindo ao Karn Forge
 
-Karn Forge é uma aplicação desktop gratuita e de código aberto para construir e gerenciar decks de Magic: The Gathering.
+Karn Forge é uma aplicação desktop gratuita e de código aberto para construir, gerenciar e analisar decks de Magic: The Gathering. Ele combina um construtor visual de canvas com rastreamento de coleção, dados de cartas em tempo real e um assistente de IA — tudo em um app rápido e que funciona offline.
 
-## O que é o Karn Forge?
-
-O Karn Forge combina um poderoso construtor visual de decks com gerenciamento de coleção, análises detalhadas e dados de cartas em tempo real — tudo em um aplicativo desktop rápido e que funciona offline.
+## O que você pode fazer com o Karn Forge
 
 <CardGrid>
-  <Card title="Canvas Visual" icon="pencil">
-    Organize cartas em um canvas infinito. Agrupe por estratégia, adicione notas e visualize seu deck como um designer.
+  <Card title="Dashboard" icon="rocket">
+    Tenha uma visão instantânea da sua biblioteca: gráficos de atividade, distribuição de cores, breakdown por formato e as cartas mais usadas em todos os seus decks.
   </Card>
-  <Card title="Rastreamento de Coleção" icon="document">
-    Importe do Moxfield, Archidekt ou CSV. Acompanhe preços em tempo real.
+  <Card title="Deck Workshop" icon="pencil">
+    Monte decks em um canvas visual infinito. Organize cartas em grupos, adicione notas adesivas, posicione widgets de análise e salve múltiplos layouts nomeados para o mesmo deck.
   </Card>
-  <Card title="Análises" icon="information">
-    Curva de mana, distribuição de cores, divisão por tipo — otimize com dados.
+  <Card title="Busca de Cartas" icon="magnifier">
+    Pesquise o banco de dados completo do Scryfall. Filtre por nome, tipo, cor, legalidade em formatos e muito mais. Clique em qualquer resultado para ver os detalhes completos da carta e adicioná-la direto ao seu deck.
   </Card>
-  <Card title="Dados ao Vivo" icon="star">
-    Powered by Scryfall. Cada carta, cada edição, sempre atualizado.
+  <Card title="Coleção" icon="document">
+    Rastreie sua coleção física com notas de condição (NM, LP, MP, HP, DMG), marcação de foil e preços por carta. Atribua cartas a destinatários para gerenciar trocas e pedidos.
+  </Card>
+  <Card title="Lista de Desejos" icon="star">
+    Mantenha uma lista priorizada de cartas que você quer adquirir. Defina prioridades de Baixa a Crítica, reordene arrastando e adicione cartas diretamente a qualquer um dos seus decks.
+  </Card>
+  <Card title="Assistente de IA" icon="comment">
+    Peça conselhos de deck, sugestões de cartas e ajuda com estratégia para um assistente de IA. O assistente pode mostrar prévias de cartas, oferecer menus de escolha e manter um histórico de conversa por deck.
+  </Card>
+  <Card title="Arsenal" icon="setting">
+    O Arsenal é o serviço de dados local do Karn Forge. Ele gerencia o banco de dados de cartas do Scryfall e o banco de dados de regras completo, para que o app funcione totalmente offline após a configuração inicial.
+  </Card>
+  <Card title="Widgets" icon="bars">
+    Incorpore análises ao vivo direto no canvas do deck. Os widgets integrados incluem Curva de Mana, Distribuição de Cores, Divisão por Tipo, Estatísticas do Deck, Proporção de Terrenos, Probabilidade de Compra e Rankings do EDHREC — ou crie os seus próprios com JavaScript.
   </Card>
 </CardGrid>
 
+## Formatos suportados
+
+O Karn Forge suporta construção e validação de decks para todos os principais formatos de MTG:
+
+- **Commander** (EDH)
+- **Modern**
+- **Standard**
+- **Pioneer**
+- **Legacy**
+- **Vintage**
+- **Pauper**
+
+## Offline primeiro
+
+Após o primeiro lançamento, o Karn Forge baixa o banco de dados de cartas do Scryfall via serviço Arsenal. Todas as buscas, pesquisas e validações de deck funcionam totalmente offline depois disso. O banco de dados é atualizado de forma independente e pode ser atualizado quando quiser, pelo painel do Arsenal.
+
 ## Próximos passos
 
-Vá para [Primeiros Passos](/pt-br/getting-started) para instalar e executar o aplicativo.
+<CardGrid>
+  <LinkCard title="Instalação" href="/pt-br/getting-started" description="Baixe e instale o Karn Forge no Windows, macOS ou Linux." />
+  <LinkCard title="Início Rápido" href="/pt-br/quick-start" description="Crie seu primeiro deck em menos de cinco minutos." />
+</CardGrid>

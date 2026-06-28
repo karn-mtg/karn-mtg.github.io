@@ -1,33 +1,62 @@
 ---
 title: Introducción
-description: Bienvenido a Karn Forge — un constructor de mazos de Magic The Gathering gratuito y de código abierto.
+description: "Una visión general de Karn Forge — un constructor de mazos de Magic: The Gathering gratuito y de código abierto con canvas visual, gestión de colección, análisis y asistencia por IA."
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components'
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components'
 
 # Bienvenido a Karn Forge
 
-Karn Forge es una aplicación de escritorio gratuita y de código abierto para construir y gestionar mazos de Magic: The Gathering.
+Karn Forge es una aplicación de escritorio gratuita y de código abierto para construir, gestionar y analizar mazos de Magic: The Gathering. Combina un constructor visual con canvas, seguimiento de colección, datos de cartas en tiempo real y un asistente de IA — todo en una aplicación rápida con capacidad offline.
 
-## ¿Qué es Karn Forge?
-
-Karn Forge combina un potente constructor visual de mazos con gestión de colección, análisis detallado y datos de cartas en vivo — todo en una aplicación de escritorio rápida con capacidad offline.
+## Qué puedes hacer con Karn Forge
 
 <CardGrid>
-  <Card title="Canvas Visual" icon="pencil">
-    Organiza cartas en un canvas infinito. Agrupa por estrategia, añade notas adhesivas y visualiza tu mazo como un diseñador.
+  <Card title="Dashboard" icon="rocket">
+    Obtén una visión instantánea de tu biblioteca: gráficos de actividad, distribución de colores, desglose por formato y tus cartas más usadas en todos tus mazos.
   </Card>
-  <Card title="Rastreador de colección" icon="document">
-    Importa desde Moxfield, Archidekt o CSV. Rastrea precios en tiempo real.
+  <Card title="Deck Workshop" icon="pencil">
+    Construye mazos en un canvas visual infinito. Organiza cartas en grupos, añade notas adhesivas, coloca widgets de análisis y guarda múltiples disposiciones con nombre para el mismo mazo.
   </Card>
-  <Card title="Análisis" icon="information">
-    Curva de maná, distribución de colores, desglose de tipos — optimiza con datos.
+  <Card title="Búsqueda de cartas" icon="magnifier">
+    Busca en la base de datos completa de Scryfall. Filtra por nombre, tipo, color, legalidad de formato y más. Haz clic en cualquier resultado para ver los detalles completos y añadir la carta directamente a tu mazo.
   </Card>
-  <Card title="Datos en vivo" icon="star">
-    Powered by Scryfall. Cada carta, cada edición, siempre actualizado.
+  <Card title="Colección" icon="document">
+    Rastrea tu colección física de cartas con grados de condición (NM, LP, MP, HP, DMG), indicadores de foil y precios por carta. Asigna cartas a destinatarios para gestionar intercambios y pedidos.
+  </Card>
+  <Card title="Lista de deseos" icon="star">
+    Mantén una lista priorizada de cartas que quieres adquirir. Define prioridades de Baja a Crítica, reordena arrastrando y añade cartas directamente a cualquiera de tus mazos.
+  </Card>
+  <Card title="Asistente de IA" icon="comment">
+    Consulta a un asistente de IA para obtener consejos sobre mazos, sugerencias de cartas y ayuda con estrategias. El asistente puede mostrar vistas previas de cartas, ofrecer menús de opciones y mantener un historial de conversación por mazo.
+  </Card>
+  <Card title="Arsenal" icon="setting">
+    El Arsenal es el servicio de datos local de Karn Forge. Gestiona la base de datos de cartas de Scryfall y la base de datos de reglas completa para que la app funcione completamente offline tras la configuración inicial.
+  </Card>
+  <Card title="Widgets" icon="bars">
+    Integra análisis en vivo directamente en el canvas del mazo. Los widgets integrados incluyen Curva de Maná, Distribución de Colores, Desglose por Tipo, Estadísticas del Mazo, Ratio de Tierras, Probabilidades de Robo y Rankings de EDHREC — o crea los tuyos con JavaScript.
   </Card>
 </CardGrid>
 
+## Formatos soportados
+
+Karn Forge admite la construcción de mazos y validación para todos los formatos principales de MTG:
+
+- **Commander** (EDH)
+- **Modern**
+- **Standard**
+- **Pioneer**
+- **Legacy**
+- **Vintage**
+- **Pauper**
+
+## Primero offline
+
+Tras el primer inicio, Karn Forge descarga la base de datos de cartas de Scryfall a través del servicio Arsenal. A partir de entonces, todas las búsquedas de cartas, consultas y validaciones de mazos funcionan completamente offline. La base de datos se actualiza de forma independiente y puede refrescarse cuando quieras desde el panel de Arsenal.
+
 ## Próximos pasos
 
-Ve a [Primeros Pasos](/es/getting-started) para instalar y ejecutar la aplicación.
+<CardGrid>
+  <LinkCard title="Instalación" href="/getting-started" description="Descarga e instala Karn Forge en Windows, macOS o Linux." />
+  <LinkCard title="Inicio rápido" href="/quick-start" description="Crea tu primer mazo en menos de cinco minutos." />
+</CardGrid>

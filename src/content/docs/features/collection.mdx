@@ -1,0 +1,90 @@
+---
+title: Collection
+description: Track your physical Magic card collection in Karn Forge with condition grades, foil flags, prices, and recipient assignments.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components'
+
+# Collection
+
+The Collection page lets you track your physical Magic: The Gathering cards. You can record each card's condition, quantity, foil status, and market price — and assign cards to recipients for trade and order management.
+
+## Adding a card to your collection
+
+<Steps>
+  1. Navigate to **Collection** in the left sidebar.
+  2. Use the **Card Search** panel on the right to find a card.
+  3. Click the card in the search results to select it.
+  4. Fill in the entry form:
+     - **Quantity** — how many copies
+     - **Condition** — see the condition guide below
+     - **Foil** — check if the copy is foil
+     - **Price** — optional market price per copy
+  5. Click **Add** to record the entry.
+</Steps>
+
+## Card condition grades
+
+Karn Forge uses the standard TCGPlayer condition grades:
+
+| Grade | Full name | Description |
+|---|---|---|
+| **NM** | Near Mint | Card shows no visible wear. Corners are sharp, surface is clean. |
+| **LP** | Lightly Played | Minor surface wear, slight edge wear. Sleeveable without concern. |
+| **MP** | Moderately Played | Visible wear — creases, scuffs, or scratched corners. Still tournament legal. |
+| **HP** | Heavily Played | Significant wear — deep creases, major edge wear, possible water damage. |
+| **DMG** | Damaged | Severe damage — tears, writing, or structural issues. |
+
+## Managing your collection
+
+### Editing an entry
+
+Click any row in the collection table to expand inline editing. You can change the quantity, condition, foil flag, price, and recipient without opening a separate dialog.
+
+### Removing a card
+
+Hover over a row and click the **Delete** icon that appears on the right.
+
+### Sorting and filtering
+
+Click any column header to sort the table by that column. Click again to reverse the sort order. Available sort columns:
+
+- Name
+- Quantity
+- Condition
+- Price
+- Foil
+
+Use the **Search** bar at the top of the app to filter the collection by card name in real time.
+
+## Foil tracking
+
+Each collection entry can be marked as foil. Foil entries are shown with a distinct badge in the table. Foil status is tracked separately from condition and quantity — you can have both NM foil and NM non-foil copies of the same card as separate entries.
+
+## Price tracking
+
+You can manually enter a price per copy for each collection entry. Prices are stored locally and are not automatically updated. To update prices, edit the entry and enter the current market value.
+
+<Aside type="tip">
+  Prices are shown in the collection table's total column as `quantity × price per copy`. Use this to estimate the total value of your collection at a glance.
+</Aside>
+
+## Recipients
+
+Recipients let you assign collection cards to specific people — useful for managing trades, sales, or organized group orders.
+
+### Creating a recipient
+
+<Steps>
+  1. Click **Manage Recipients** in the collection header.
+  2. Click **New Recipient** and enter a name.
+  3. Save.
+</Steps>
+
+### Assigning a card to a recipient
+
+Edit a collection entry and select a recipient from the **Recipient** dropdown. The card row will show the recipient's name, making it easy to see which cards are spoken for.
+
+## Deck integration
+
+The **Missing** tab in the **Deck Workshop** compares your deck list against your collection and shows every card you don't own (or don't have enough copies of). Use this to build a shopping list for a deck.

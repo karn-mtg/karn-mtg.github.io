@@ -1,0 +1,69 @@
+---
+title: Búsqueda de cartas
+description: Cómo usar el panel de búsqueda de cartas de Karn Forge para encontrar cartas en la base de datos completa de Scryfall y añadirlas a tu mazo.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Búsqueda de cartas
+
+El panel de Búsqueda de cartas te permite buscar en la base de datos completa de Scryfall — todas las cartas, todas las ediciones — directamente desde Karn Forge, sin conexión a internet (tras la configuración inicial de Arsenal).
+
+## Abrir el panel de búsqueda
+
+El panel de Búsqueda de cartas se encuentra en el lado derecho del **Deck Workshop**. Ábrelo con:
+
+- `Ctrl+F` / `Cmd+F`
+- El ícono de lupa en la barra lateral derecha
+
+## Buscar cartas
+
+Escribe cualquier parte del nombre de una carta en el cuadro de búsqueda. Los resultados aparecen mientras escribes, ordenados por relevancia. La búsqueda no distingue mayúsculas de minúsculas y coincide con nombres parciales.
+
+**Ejemplos:**
+
+| Consulta | Coincidencias |
+|---|---|
+| `lightning` | Lightning Bolt, Chain Lightning, Lightning Helix, … |
+| `sol ring` | Sol Ring |
+| `teferi` | Todos los planeswalkers y criaturas de Teferi |
+
+<Aside type="tip">
+  La búsqueda devuelve hasta 50 resultados. Si no encuentras lo que buscas, intenta una consulta más específica.
+</Aside>
+
+## Añadir cartas a tu mazo
+
+Desde los resultados de búsqueda, puedes añadir una carta al mazo de dos formas:
+
+- **Haz clic en el botón `+`** en la carta del resultado para añadir una copia en la posición central del viewport del mazo.
+- **Arrastra la carta del resultado** al canvas para colocarla exactamente donde quieras.
+
+Ambas acciones añaden la carta a la lista del mazo y la colocan en el canvas simultáneamente.
+
+## Panel de detalle de carta
+
+Haz clic en cualquier carta de los resultados de búsqueda (o en cualquier carta del canvas) para abrir el panel de **Detalle de carta**. Muestra:
+
+- **Imagen completa de la carta** — haz clic en la imagen para ver las ediciones disponibles
+- **Coste de maná y símbolos de maná** — renderizados con los íconos oficiales de pip de maná
+- **Línea de tipo** — tipo completo incluyendo supertipos, tipos de carta y subtipos
+- **Texto de oracle** — el texto de reglas definitivo de la carta
+- **Fuerza / Resistencia / Lealtad** — para criaturas y planeswalkers
+- **Legalidad de formato** — una cuadrícula que muestra la legalidad de la carta en Commander, Modern, Standard, Pioneer, Legacy, Vintage y Pauper
+- **Rango de EDHREC** — cuán popular es la carta en mazos Commander en EDHREC
+- **Precio** — datos de precio de mercado actuales (requiere conexión de red para actualizarse)
+
+### Cambiar la edición
+
+El panel de detalle muestra la edición actualmente seleccionada y una franja de miniaturas de arte para ediciones alternativas. Haz clic en cualquier miniatura para cambiar el arte usado en el canvas para esta carta.
+
+<Aside type="note">
+  Las selecciones de arte son por mazo y por disposición. Dos disposiciones del mismo mazo pueden mostrar diferentes ediciones de la misma carta.
+</Aside>
+
+## Búsqueda global
+
+Además del panel de Búsqueda de cartas en el mazo, Karn Forge tiene una **Búsqueda global** accesible desde la barra superior. La Búsqueda global busca en tus mazos y biblioteca por nombre de mazo, nombre de carta o formato.
+
+Abre la Búsqueda global con `Ctrl+K` / `Cmd+K`.

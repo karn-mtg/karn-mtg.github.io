@@ -1,0 +1,79 @@
+---
+title: Contribuindo
+description: Como contribuir com o Karn Forge — relatórios de bugs, solicitações de recursos, pull requests e diretrizes da comunidade.
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components'
+
+# Contribuindo
+
+O Karn Forge é open-source e aceita contribuições de todos os tipos — relatórios de bugs, melhorias na documentação, novos recursos e revisões de código.
+
+## Formas de contribuir
+
+<CardGrid>
+  <LinkCard
+    title="Reportar um bug"
+    href="https://github.com/karn-mtg/forge/issues/new?template=bug_report.md"
+    description="Encontrou algo quebrado? Abra uma issue com os passos para reproduzir."
+  />
+  <LinkCard
+    title="Solicitar um recurso"
+    href="https://github.com/karn-mtg/forge/issues/new?template=feature_request.md"
+    description="Tem uma ideia? Abra uma solicitação de recurso e descreva o que você gostaria."
+  />
+  <LinkCard
+    title="Ver issues abertas"
+    href="https://github.com/karn-mtg/forge/issues"
+    description="Veja o que já está sendo rastreado e encontre algo para trabalhar."
+  />
+  <LinkCard
+    title="Enviar um pull request"
+    href="https://github.com/karn-mtg/forge/pulls"
+    description="Tem código pronto? Abra um PR contra o branch main."
+  />
+</CardGrid>
+
+## Antes de começar
+
+Para qualquer coisa além de pequenas correções, abra uma issue ou discussão primeiro para alinhar a abordagem. Isso economiza tempo tanto para você quanto para os mantenedores.
+
+Para correções de bugs e melhorias na documentação, você pode ir direto para um pull request — sem necessidade de abrir uma issue antes.
+
+## Fazendo um bom relatório de bug
+
+Inclua o seguinte:
+
+1. **Passos para reproduzir** — a sequência exata de ações que desencadeia o bug.
+2. **Comportamento esperado** — o que você esperava que acontecesse.
+3. **Comportamento real** — o que realmente aconteceu. Screenshots ajudam.
+4. **Ambiente** — seu SO, versão do SO e versão do Karn Forge (visível em Configurações → Sobre).
+5. **Logs** — se o app travou, copie o erro de **Configurações → Logs** ou do console do sistema.
+
+## Diretrizes para pull requests
+
+- Mantenha as alterações focadas — um PR por alteração lógica.
+- Escreva uma descrição clara do PR explicando *o que* mudou e *por quê*.
+- Siga o estilo de código existente. O projeto usa ESLint e TypeScript em modo strict — garanta que `npm run lint` e `npm run type-check` passem antes de enviar.
+- Adicione testes se estiver alterando a lógica em `domain/` ou `application/`. Alterações de UI não precisam de testes, mas devem ser verificadas manualmente.
+- O canvas (`DeckView.tsx`) é a parte mais complexa do codebase. Se for mexer nele, leia o guia de [Arquitetura](/pt-br/contributing/architecture) primeiro.
+
+## Código de conduta
+
+Este projeto segue um padrão simples: seja respeitoso, seja prestativo e assuma boa-fé. Contribuições de todos são bem-vindas independentemente do nível de experiência.
+
+## O que está no escopo
+
+| No escopo | Fora do escopo |
+|---|---|
+| Correções de bugs | Alterações que requerem um backend sempre ativo |
+| Melhorias de desempenho | Recursos de monetização |
+| Novos tipos de widgets | Recursos específicos de plataforma que só funcionam em um SO |
+| Melhorias nos detalhes de cartas | Raspagem ou redistribuição de dados de cartas |
+| Polimento de UI | |
+| Melhorias de acessibilidade | |
+| Novos formatos de importação suportados | |
+
+## Rodando o código localmente
+
+Veja o guia de [Configuração de Desenvolvimento](/pt-br/contributing/dev-setup) para colocar o projeto rodando na sua máquina.

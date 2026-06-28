@@ -1,0 +1,77 @@
+---
+title: Dashboard
+description: Das Karn Forge Dashboard gibt dir einen sofortigen Überblick über deine gesamte Deck-Bibliothek mit Diagrammen, zuletzt geöffneten Decks und Sammlungseinblicken.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Dashboard
+
+Das Dashboard ist der Startbildschirm von Karn Forge. Es gibt dir einen Überblick über deine gesamte Bibliothek und zeigt die nützlichsten Informationen auf einen Blick.
+
+## Übersichtsbereich
+
+Der obere Bereich des Dashboards zeigt drei Analysediagramme, die sich automatisch aktualisieren, wenn deine Bibliothek wächst:
+
+### Aktivitätsdiagramm
+
+Eine Zeitlinie deiner Deck-Building-Aktivität. Jeder Balken steht für einen Aktivitätszeitraum und zeigt, wie viele Decks du in diesem Zeitraum erstellt oder bearbeitet hast.
+
+### Farbkreisdiagramm
+
+Ein Kreisdiagramm, das deine gesamte Bibliothek nach Farbidentität aufschlüsselt. Fahre mit der Maus über jeden Abschnitt, um die genaue Anzahl zu sehen. So erkennst du schnell, welche Farben du am häufigsten verwendest.
+
+### Stärkemesser
+
+Ein relativer Maßstab für die durchschnittliche Deck-Komplexität deiner Bibliothek, basierend auf Faktoren wie den durchschnittlichen Manakosten, der Kartenanzahl und dem Format.
+
+## Zuletzt geöffnete Decks
+
+Unterhalb der Diagramme zeigt das Dashboard bis zu 8 deiner zuletzt aktualisierten Decks. Von hier aus kannst du:
+
+- Auf eine Deck-Karte klicken, um den **Deck Workshop** zu öffnen
+- Auf **Neues Deck** (`+`-Karte) klicken, um ein neues Deck zu erstellen
+- Die **Filter**-Schaltfläche verwenden, um nach Format zu filtern
+- Die **Sortieren**-Schaltfläche oder das Sortier-Dropdown nutzen, um nach Zuletzt aktualisiert, Name oder Kartenanzahl zu sortieren
+
+Wenn du mehr als 8 Decks hast, erscheint unten im Bereich eine Schaltfläche **Alle N Decks anzeigen**.
+
+<Aside type="tip">
+  Die Suchleiste oben in der App filtert das Deck-Raster in Echtzeit. Gib einfach einen Deck-Namen ein, um direkt dorthin zu springen.
+</Aside>
+
+## Decks nach Format
+
+Ein horizontales Balkendiagramm, das zeigt, wie viele Decks du in jedem Format hast. Die Farben sind formatspezifisch:
+
+| Format | Farbe |
+|---|---|
+| Commander | Gold |
+| Modern | Blau |
+| Standard | Grün |
+| Pioneer | Lila |
+| Legacy | Rot |
+| Pauper | Amber |
+
+## Meistverwendete Karten
+
+Eine Rangliste der Karten, die in den meisten Decks deiner gesamten Bibliothek vorkommen, mit Kunstwerk-Vorschaubild und Deck-Anzahl. Das ist nützlich, um Standardkarten in deiner Sammlung zu erkennen.
+
+<Aside type="note">
+  Das Panel „Meistverwendete Karten" erscheint erst, wenn du mindestens ein Deck mit Karten hast.
+</Aside>
+
+## Navigation vom Dashboard aus
+
+Verwende die linke Seitenleiste, um zu anderen Bereichen zu navigieren:
+
+| Bereich | Inhalt |
+|---|---|
+| Dashboard | Diese Seite |
+| Alle Decks | Vollständige paginierte Liste aller Decks mit Suche und Filter |
+| Zuletzt geöffnet | Decks, die du zuletzt geöffnet hast |
+| Favoriten | Decks, die du mit Stern markiert hast |
+| Sammlung | Dein physisches Karteninventar |
+| Wunschliste | Karten, die du erwerben möchtest |
+| Widgets | Widget-Bibliothek und benutzerdefinierter Widget-Editor |
+| Einstellungen | App-Einstellungen und Präferenzen |

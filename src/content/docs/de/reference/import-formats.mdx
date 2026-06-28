@@ -1,0 +1,122 @@
+---
+title: Import-Formate
+description: Unterstützte Deck-Import-Formate in Karn Forge — einfache Textdecklisten, Moxfield-URLs, Archidekt-URLs und CSV-Dateien.
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Import-Formate
+
+Karn Forge kann Decks aus verschiedenen Quellen importieren. Um zu importieren, öffne ein Deck und gehe zu **Datei → Importieren** in der Menüleiste, oder drücke `Ctrl+Shift+I` / `Cmd+Shift+I`.
+
+## Einfache Textdeckliste
+
+Das universellste Format — eine Karte pro Zeile, optional mit einer Mengenangabe vorangestellt.
+
+```
+4 Lightning Bolt
+4 Monastery Swiftspear
+4 Goblin Guide
+2 Light Up the Stage
+```
+
+**Regeln:**
+- Jede Zeile ist ein Karteneintrag.
+- Optional mit einer Zahl und einem Leerzeichen voranstellen: `4 Lightning Bolt` oder `Lightning Bolt` (Standard: 1 Kopie).
+- Zeilen, die mit `//` beginnen, werden als Kommentare behandelt und ignoriert.
+- Eine Zeile, die nur `Sideboard` oder `SB:` am Anfang enthält, signalisiert den Beginn des Sideboard-Abschnitts.
+
+<Tabs>
+  <TabItem label="Mit Mengenangaben">
+    ```
+    4 Lightning Bolt
+    4 Monastery Swiftspear
+    4 Goblin Guide
+    2 Light Up the Stage
+    20 Mountain
+
+    Sideboard
+    4 Searing Blood
+    3 Smash to Smithereens
+    ```
+  </TabItem>
+  <TabItem label="Ohne Mengenangaben">
+    ```
+    Lightning Bolt
+    Monastery Swiftspear
+    Mountain
+    ```
+    Jede Karte wird standardmäßig mit 1 Kopie hinzugefügt.
+  </TabItem>
+  <TabItem label="MTGO-Format">
+    ```
+    4 Lightning Bolt (M11) 149
+    4 Monastery Swiftspear (KTK) 120a
+    ```
+    Set-Codes und Sammlernummern werden erkannt und verwendet, um den richtigen Druck auszuwählen.
+  </TabItem>
+</Tabs>
+
+<Aside type="tip">
+  Die meisten Deck-Seiten (Moxfield, Archidekt, MTGO, MTGGoldfish) bieten eine Option „Textliste kopieren" oder „Als Text exportieren", die kompatible Ausgaben erzeugt.
+</Aside>
+
+## Moxfield-URL
+
+Füge eine öffentliche Moxfield-Deck-URL ein, und Karn Forge ruft das Deck direkt ab.
+
+**Beispiel:** `https://www.moxfield.com/decks/abc123`
+
+Das Deck muss auf Moxfield auf **öffentliche** Sichtbarkeit eingestellt sein. Karn Forge ruft die Decklist über das Netzwerk ab und importiert alle Karten einschließlich des Sideboards.
+
+## Archidekt-URL
+
+Füge eine öffentliche Archidekt-Deck-URL ein, und Karn Forge ruft das Deck direkt ab.
+
+**Beispiel:** `https://archidekt.com/decks/1234567`
+
+Das Deck muss auf Archidekt öffentlich zugänglich sein.
+
+## CSV-Datei
+
+Importiere eine Tabellenkalkulation, bei der jede Zeile ein Karteneintrag ist.
+
+**Erforderliche Spalten:**
+
+| Spalte | Beschreibung |
+|---|---|
+| `name` | Kartenname (Groß-/Kleinschreibung irrelevant) |
+
+**Optionale Spalten:**
+
+| Spalte | Beschreibung |
+|---|---|
+| `quantity` oder `qty` oder `count` | Anzahl der Kopien (Standard: 1) |
+| `board` | `main`, `sideboard`, `commander` oder `partner` |
+| `set` | Set-Code (z. B. `M21`), um einen bestimmten Druck auszuwählen |
+| `collector_number` | Sammlernummer innerhalb des Sets |
+| `foil` | `true` / `false` oder `1` / `0` |
+
+**Beispiel-CSV:**
+```csv
+name,quantity,board,foil
+Lightning Bolt,4,main,false
+Monastery Swiftspear,4,main,false
+Mountain,20,main,false
+Searing Blood,4,sideboard,false
+```
+
+<Aside type="note">
+  Spaltennamen sind nicht case-sensitiv. Die erste Zeile muss eine Kopfzeile sein. Zusätzliche Spalten werden ignoriert.
+</Aside>
+
+## Nach dem Import
+
+Nach einem erfolgreichen Import geht Karn Forge wie folgt vor:
+
+1. Jeder Kartenname wird in der lokalen Arsenal-Datenbank nachgeschlagen.
+2. Gefundene Karten werden mit den richtigen Mengen und Board-Zuweisungen zur Deck-Liste hinzugefügt.
+3. Alle Karten werden auf dem Canvas an versetzten Positionen platziert.
+4. Karten, die nicht gefunden werden konnten, werden in einer Toast-Benachrichtigung gemeldet.
+
+Nicht gefundene Karten werden übersprungen. Dies kann passieren, wenn der Kartenname falsch geschrieben ist oder die Karte nicht in der Scryfall-Datenbank vorhanden ist (sehr selten).

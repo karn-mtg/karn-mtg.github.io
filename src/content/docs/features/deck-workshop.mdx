@@ -1,0 +1,213 @@
+---
+title: Deck Workshop
+description: The Deck Workshop is Karn Forge's visual deck builder — an infinite canvas where you arrange cards, create groups, add notes, and place live analytics widgets.
+---
+
+import { Aside, Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Deck Workshop
+
+The Deck Workshop is the core of Karn Forge. It's an infinite canvas where you can visually arrange your cards, organize them into labeled groups, add strategy notes, and embed live analytics widgets — all alongside a standard list view for precise editing.
+
+## Canvas
+
+The canvas is the main work area. Every card in your deck can be placed anywhere on it. Cards on the canvas are purely visual: you can move them freely without affecting the deck list.
+
+### Navigating the canvas
+
+| Action | How |
+|---|---|
+| Pan | Hold `Space` and drag, or middle-click and drag |
+| Zoom in/out | Scroll wheel, or `+` / `-` keys |
+| Reset zoom | `Ctrl+0` / `Cmd+0` |
+| Fit to content | `Ctrl+Shift+0` / `Cmd+Shift+0` |
+
+The current zoom level is shown in the bottom toolbar.
+
+### Canvas modes
+
+Use the toolbar at the bottom of the canvas to switch between two interaction modes:
+
+- **Select mode** (default) — click and drag to move items; rubber-band select to select multiple items at once.
+- **Hand mode** — click and drag anywhere to pan the canvas. Useful on trackpads.
+
+Press `H` to toggle between modes, or click the mode buttons in the toolbar.
+
+## Adding cards
+
+Open the **Card Search** panel with `Ctrl+F` / `Cmd+F` or the search icon in the right sidebar. Drag a result card onto the canvas, or click the **+** button to place it at the center of the viewport.
+
+When you add a card, it appears on the canvas and is also added to your deck list. The two stay in sync — removing a card from the list removes it from the canvas, and vice versa.
+
+<Aside type="tip">
+  You can add multiple copies of a card. Click the quantity badge on a canvas card to edit the count inline.
+</Aside>
+
+## Groups
+
+Groups are labeled containers you can place on the canvas to cluster related cards — for example, a "Ramp" group, a "Win Conditions" group, or a "Draw Engine" group.
+
+### Creating a group
+
+<Steps>
+  1. Press **G** or click the **Group** button in the canvas toolbar.
+  2. Enter a group name and choose a color.
+  3. Optionally, use **Pre-select** to automatically populate the group:
+     - **By type** — add all cards matching a type tag (e.g., `Creature`, `Land`, or `Enchantment`). Combine multiple tags with AND/OR.
+     - **By oracle text** — add cards whose oracle text matches keywords you enter.
+  4. Click **Create Group**.
+</Steps>
+
+### Group layout modes
+
+Each group has three layout modes, accessible from the group's `⋮` menu:
+
+| Mode | Description |
+|---|---|
+| **Grid** | Cards are arranged in rows. Configure columns per row. |
+| **Horizontal Stack** | Cards fan to the right in stacks of configurable depth. |
+| **Vertical Stack** | Cards fan downward in stacks of configurable depth. |
+
+### Moving cards between groups
+
+Drag any card out of a group to place it on the canvas as a free card. Drag a free canvas card onto a group to add it to that group.
+
+### Group context menu
+
+Right-click a group header to open the context menu:
+
+- Rename the group or change its color
+- Change the layout mode
+- Dissolve the group (releases cards to the canvas)
+- Delete the group and its cards
+
+## Sticky notes
+
+Notes let you annotate your canvas with strategy thoughts, card interactions, or reminders.
+
+<Steps>
+  1. Press **N** or click the **Note** button in the toolbar.
+  2. A note appears at the center of the viewport. Click it to enter edit mode.
+  3. Type your content. Notes support **Markdown**: headings (`#`, `##`), bold (`**text**`), italic (`_text_`), and lists (`- item`).
+  4. Click outside the note or press `Escape` to save.
+</Steps>
+
+Notes can be resized by dragging their left, right, or bottom-right handles. Drag the note itself to reposition it.
+
+## Widgets
+
+Widgets are live analytics panels you can embed anywhere on the canvas. They update automatically as you add or remove cards.
+
+### Adding a widget
+
+<Steps>
+  1. Click the **Widget** button in the canvas toolbar (or press **W**).
+  2. The widget picker opens with all available widgets.
+  3. Click a widget to place it on the canvas.
+</Steps>
+
+### Configuring a widget
+
+Widgets with configurable parameters show a **tune** icon in their header. Click it to open a parameter popover where you can adjust things like the maximum CMC bucket on a mana curve chart, or whether to include the sideboard in a color distribution.
+
+### Built-in widgets
+
+See [Widgets Reference](/reference/widgets) for a full list of built-in widgets and their parameters.
+
+### Custom widgets
+
+You can create custom widgets in the **Widgets** section of the app. Custom widgets are written in JavaScript and have access to the full deck data. See [Widgets Reference](/reference/widgets) for details.
+
+## Card detail panel
+
+Click any card on the canvas to open the **Card Detail** panel on the right. It shows:
+
+- Full card image (with art variation picker if multiple printings exist)
+- Oracle text, type line, mana cost, and power/toughness
+- Legality across all formats
+- EDHREC rank and price data
+
+### Changing card art
+
+The detail panel shows all available printings of a card. Click any printing to use that art on the canvas card for this deck.
+
+## Deck tabs
+
+The top toolbar has four tabs for different views of the same deck:
+
+### Workshop
+
+The visual canvas (default view). Everything described in this page lives here.
+
+### List
+
+A traditional text list view of all cards in the deck, grouped by type category:
+
+- Commanders (if applicable)
+- Creatures
+- Instants
+- Sorceries
+- Enchantments
+- Artifacts
+- Planeswalkers
+- Lands
+- Other
+- Sideboard
+
+In the list view you can edit quantities inline by clicking the quantity number.
+
+### Missing
+
+Shows cards in the deck that are not in your [Collection](/features/collection). Use this to quickly see what you still need to acquire for the physical deck.
+
+### Combos
+
+*(Coming soon)* — Automatic combo detection using the Commander Spellbook database.
+
+## Arrangements
+
+An arrangement is a saved snapshot of the canvas layout: the position of every card, group, note, and widget. The deck list itself is shared across all arrangements, but each arrangement can have its own visual layout.
+
+Use cases:
+- One arrangement for a detailed strategy overview, one for a compact at-a-glance view
+- Separate arrangements for main deck and sideboard planning
+- Different group configurations for different meta contexts
+
+### Managing arrangements
+
+The arrangement picker is in the top toolbar. Click it to:
+
+- Switch between saved arrangements
+- Create a new arrangement
+- Rename or delete an arrangement
+
+<Aside type="note">
+  Arrangements auto-save every 1.5 seconds after any change. You can also save manually with `Ctrl+S` / `Cmd+S`.
+</Aside>
+
+## Undo / Redo
+
+The canvas supports undo and redo for all canvas operations (moves, group changes, additions, deletions).
+
+| Action | Windows/Linux | macOS |
+|---|---|---|
+| Undo | `Ctrl+Z` | `Cmd+Z` |
+| Redo | `Ctrl+Shift+Z` | `Cmd+Shift+Z` |
+
+The undo history is capped at 50 canvas states or 2 MB of snapshot data, whichever is reached first.
+
+## Commander and partner designation
+
+Right-click any card on the canvas to open the card context menu. From there you can designate a card as:
+
+- **Commander** — shown with a gold shield badge
+- **Partner** — shown with a blue shield badge
+- **Main deck** — removes any special designation
+
+## Sideboard
+
+Cards can be assigned to the **Sideboard** board from the card context menu. Sideboard cards appear in the list view under "Sideboard" and are excluded from canvas widget calculations by default.
+
+## Keyboard shortcuts
+
+See the full [Keyboard Shortcuts](/reference/keyboard-shortcuts) reference.

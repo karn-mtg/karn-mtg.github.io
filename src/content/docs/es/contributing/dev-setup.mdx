@@ -1,0 +1,123 @@
+---
+title: Configuración de desarrollo
+description: Cómo configurar un entorno de desarrollo local para Karn Forge.
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Configuración de desarrollo
+
+Esta guía cubre todo lo que necesitas para ejecutar Karn Forge localmente para desarrollo.
+
+## Requisitos previos
+
+- **Node.js 20+** — [nodejs.org](https://nodejs.org)
+- **npm 10+** — incluido con Node.js 20
+- **Git**
+- **Arsenal** (opcional para desarrollo — ver más abajo)
+
+## Clonar e instalar
+
+<Steps>
+  1. Haz un fork del repositorio en GitHub, luego clona tu fork:
+     ```sh
+     git clone https://github.com/<tu-usuario>/forge.git
+     cd forge
+     ```
+  2. Instala las dependencias:
+     ```sh
+     npm install
+     ```
+</Steps>
+
+## Ejecutar en modo de desarrollo
+
+```sh
+npm run dev
+```
+
+Esto inicia Vite (para el renderer) y Electron de forma concurrente. La app se abre automáticamente. El reemplazo de módulos en caliente (HMR) está habilitado para el renderer — la mayoría de los cambios de interfaz se reflejan al instante sin recargar.
+
+<Aside type="note">
+  La primera vez que ejecutes la app en modo de desarrollo, aparecerá el mensaje de configuración de Arsenal. Puedes configurar Arsenal normalmente (requiere descargar las bases de datos) o saltarlo y usar la app sin búsqueda de cartas para trabajo de interfaz.
+</Aside>
+
+## Estructura del proyecto
+
+```
+forge/
+├── src/
+│   ├── domain/         Entidades y objetos de valor; interfaces IRepository
+│   ├── application/    Casos de uso y DTOs
+│   ├── infrastructure/ Implementaciones de repositorios (SQLite, Scryfall API)
+│   ├── main/           Proceso principal de Electron y manejadores IPC
+│   └── renderer/       Interfaz React (páginas, componentes, hooks, stores)
+├── db/                 Scripts de seed y migración de base de datos
+├── ipc/                Manejadores IPC heredados (antes de la refactorización DDD)
+├── mcp/                Servidor MCP (integraciones de herramientas de IA)
+├── resources/          Assets empaquetados (el binario de Arsenal va aquí en tiempo de compilación)
+└── .claude/            Contexto del asistente de IA específico del proyecto
+```
+
+Consulta [Arquitectura](/contributing/architecture) para una explicación detallada de cómo interactúan las capas.
+
+## Scripts disponibles
+
+| Comando | Descripción |
+|---|---|
+| `npm run dev` | Iniciar en modo de desarrollo (Vite + Electron) |
+| `npm run build` | Compilar el frontend de Vite para producción |
+| `npm run dist:win` | Compilar el instalador de Windows |
+| `npm run dist:mac` | Compilar el instalador de macOS |
+| `npm run dist:linux` | Compilar el AppImage de Linux |
+| `npm run lint` | Ejecutar ESLint |
+| `npm run type-check` | Ejecutar la verificación de tipos de TypeScript (sin emitir) |
+
+## Entorno y configuración
+
+No se requiere un archivo `.env` para el desarrollo local. La configuración que varía entre desarrollo y producción (como la ruta del binario de Arsenal) se maneja mediante el flag `app.isPackaged` de Electron.
+
+## Trabajar en el renderer
+
+El renderer es una app estándar de React 18 + Vite. Los archivos de componentes están en `src/renderer/components/`, los componentes de página en `src/renderer/pages/` y el estado global en `src/renderer/store/` (usando Zustand).
+
+El renderer se comunica con el proceso principal exclusivamente a través del puente IPC expuesto en `window.libraryAPI`, `window.cardsAPI`, `window.arsenalAPI` y `window.aiAPI`. Nunca importes desde `domain/`, `application/` o `infrastructure/` en el código del renderer.
+
+## Trabajar en el proceso principal
+
+El proceso principal ejecuta toda la lógica de negocio y acceso a datos. Los manejadores IPC en `src/main/` reciben llamadas del renderer y delegan a los casos de uso en `src/application/`.
+
+Al añadir un nuevo manejador IPC:
+1. Añade un caso de uso en `src/application/`
+2. Añade el manejador IPC en `src/main/ipc/`
+3. Expón el manejador en el `contextBridge` en el script de precarga
+4. Añade el tipo TypeScript a `src/renderer/types/electron.d.ts`
+
+## Trabajar con la base de datos
+
+Karn Forge usa SQLite para todos los datos persistentes (mazos, colección, lista de deseos, disposiciones). La base de datos se gestiona mediante `better-sqlite3`.
+
+Las migraciones de esquema se aplican al inicio desde `db/`. Para añadir una migración:
+1. Crea un nuevo archivo en `db/` con un número de versión incremental.
+2. La migración se ejecuta automáticamente al próximo inicio de la app.
+
+<Aside type="caution">
+  Siempre escribe migraciones compatibles con versiones anteriores. Un usuario que actualiza desde una versión anterior no debe perder datos.
+</Aside>
+
+## Compilar una versión
+
+El pipeline de CI (`.github/workflows/release.yml`) compila las versiones automáticamente cuando se empuja una etiqueta `v*`.
+
+Para activar una versión:
+
+<Steps>
+  1. Actualiza la versión en `package.json`.
+  2. Haz commit y push.
+  3. Etiqueta el commit: `git tag v1.2.3 && git push origin v1.2.3`
+  4. GitHub Actions compila los instaladores para Windows, macOS y Linux y los adjunta a la versión automáticamente.
+</Steps>
+
+<Aside type="note">
+  El flujo de trabajo de versión también descarga el binario de Arsenal más reciente para cada plataforma y lo incluye en el instalador. La variable de entorno `ARSENAL_REPO` en el flujo de trabajo debe apuntar al repositorio de Arsenal.
+</Aside>

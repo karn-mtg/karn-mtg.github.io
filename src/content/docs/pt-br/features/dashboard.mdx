@@ -1,0 +1,77 @@
+---
+title: Dashboard
+description: O Dashboard do Karn Forge oferece uma visão instantânea de toda a sua biblioteca de decks, com gráficos, decks recentes e informações sobre a coleção.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Dashboard
+
+O Dashboard é a tela inicial do Karn Forge. Ele oferece uma visão geral de toda a sua biblioteca e mostra as informações mais úteis de um jeito rápido.
+
+## Seção de visão geral
+
+O topo do Dashboard mostra três gráficos de análise que se atualizam automaticamente conforme sua biblioteca cresce:
+
+### Gráfico de Atividade
+
+Uma linha do tempo da sua atividade de construção de decks. Cada barra representa um período de atividade, mostrando quantos decks você criou ou modificou ao longo do tempo.
+
+### Gráfico de Cores
+
+Um gráfico de rosca que divide toda a sua biblioteca por identidade de cor. Passe o mouse sobre cada fatia para ver a contagem exata. Isso te dá uma noção rápida de quais cores você mais usa.
+
+### Medidor de Poder
+
+Uma medida relativa da complexidade média dos decks da sua biblioteca, baseada em fatores como custo de mana convertido médio, quantidade de cartas e formato.
+
+## Decks Recentes
+
+Abaixo dos gráficos, o Dashboard mostra até 8 dos seus decks atualizados mais recentemente. A partir daí você pode:
+
+- Clicar em qualquer cartão de deck para abrir o **Deck Workshop**
+- Clicar em **Novo Deck** (cartão `+`) para criar um novo deck
+- Usar o botão **Filtrar** para filtrar por formato
+- Usar o botão **Ordenar** ou o menu suspenso para ordenar por Última Atualização, Nome ou Quantidade de Cartas
+
+Se você tiver mais de 8 decks, um botão **Ver todos os N decks** aparece na parte inferior da seção.
+
+<Aside type="tip">
+  A barra de busca no topo do app filtra a grade de decks em tempo real. Comece a digitar o nome de um deck para ir direto a ele.
+</Aside>
+
+## Decks por Formato
+
+Um gráfico de barras horizontal mostrando quantos decks você tem em cada formato. As cores são específicas para cada formato:
+
+| Formato | Cor |
+|---|---|
+| Commander | Dourado |
+| Modern | Azul |
+| Standard | Verde |
+| Pioneer | Roxo |
+| Legacy | Vermelho |
+| Pauper | Âmbar |
+
+## Cartas Mais Usadas
+
+Uma lista classificada das cartas que aparecem no maior número de decks em toda a sua biblioteca, com a miniatura da arte e a contagem de decks. É útil para identificar cartas essenciais (staples) da sua coleção.
+
+<Aside type="note">
+  O painel de Cartas Mais Usadas só aparece quando você tiver pelo menos um deck com cartas.
+</Aside>
+
+## Navegando a partir do Dashboard
+
+Use a barra lateral esquerda para navegar para outras seções:
+
+| Seção | O que tem lá |
+|---|---|
+| Dashboard | Esta página |
+| Todos os Decks | Lista paginada completa de todos os decks, com busca e filtro |
+| Recentes | Decks que você abriu recentemente |
+| Favoritos | Decks que você marcou com estrela |
+| Coleção | Seu inventário físico de cartas |
+| Lista de Desejos | Cartas que você quer adquirir |
+| Widgets | Biblioteca de widgets e editor de widgets personalizados |
+| Configurações | Configurações e preferências do app |

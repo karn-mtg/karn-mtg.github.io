@@ -1,0 +1,77 @@
+---
+title: Dashboard
+description: The Karn Forge Dashboard gives you an instant overview of your entire deck library with charts, recent decks, and collection insights.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Dashboard
+
+The Dashboard is the home screen of Karn Forge. It gives you a high-level view of your entire library and surfaces the most useful information at a glance.
+
+## Overview section
+
+The top of the Dashboard shows three analytics charts that update automatically as your library grows:
+
+### Activity Chart
+
+A timeline of your deck-building activity. Each bar represents a period of activity, showing how many decks you've created or modified over time.
+
+### Color Donut
+
+A donut chart breaking down your entire library by color identity. Hover over each slice to see the exact count. This gives you a quick sense of which colors you build with most.
+
+### Power Gauge
+
+A relative measure of your library's average deck complexity, based on factors like average converted mana cost, card count, and format.
+
+## Recent Decks
+
+Below the charts, the Dashboard shows up to 8 of your most recently updated decks. From here you can:
+
+- Click any deck card to open the **Deck Workshop**
+- Click **New Deck** (`+` card) to create a new deck
+- Use the **Filter** button to narrow by format
+- Use the **Sort** button or the sort dropdown to sort by Last Updated, Name, or Card Count
+
+If you have more than 8 decks, a **View all N decks** button appears at the bottom of the section.
+
+<Aside type="tip">
+  The search bar at the top of the app filters the deck grid in real time. Start typing a deck name to jump straight to it.
+</Aside>
+
+## Decks by Format
+
+A horizontal bar chart showing how many decks you have in each format. Colors are format-specific:
+
+| Format | Color |
+|---|---|
+| Commander | Gold |
+| Modern | Blue |
+| Standard | Green |
+| Pioneer | Purple |
+| Legacy | Red |
+| Pauper | Amber |
+
+## Most-Used Cards
+
+A ranked list of the cards that appear in the most decks across your entire library, with their art thumbnail and deck count. This is useful for spotting staples in your collection.
+
+<Aside type="note">
+  The Most-Used Cards panel only appears once you have at least one deck with cards.
+</Aside>
+
+## Navigating from the Dashboard
+
+Use the left sidebar to navigate to other sections:
+
+| Section | What's there |
+|---|---|
+| Dashboard | This page |
+| All Decks | Full paginated list of all decks with search and filter |
+| Recents | Decks you've opened recently |
+| Favorites | Decks you've starred |
+| Collection | Your physical card inventory |
+| Wishlist | Cards you want to acquire |
+| Widgets | Widget library and custom widget editor |
+| Settings | App settings and preferences |

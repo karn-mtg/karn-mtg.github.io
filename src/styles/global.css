@@ -36,6 +36,60 @@ html {
     -webkit-backdrop-filter: blur(40px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
+
+  .canvas-widget {
+    background: rgba(16, 18, 24, 0.45);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .canvas-widget-header {
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .canvas-sticker {
+    background: rgba(26, 29, 34, 0.97);
+    border: 1px solid rgba(242, 202, 131, 0.25);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+  .canvas-card-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(78, 70, 57, 0.5);
+    background: #1c1b1b;
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+  }
+  .canvas-card-stack:hover .canvas-card-layer:first-child {
+    transform: translate(5px, -5px) !important;
+  }
+  .canvas-card-stack:hover .canvas-card-layer:nth-child(2) {
+    transform: translate(10px, -10px) !important;
+  }
+
+  .canvas-group {
+    border: 1.5px dashed rgba(212, 175, 106, 0.25);
+    border-radius: 1rem;
+    background: rgba(20, 20, 20, 0.45);
+    position: relative;
+  }
 }
 
 /* ── Starlight theme overrides ────────────────────────── */
@@ -67,6 +121,29 @@ html {
   --sl-color-text-invert: #0D0D0D;
 }
 
+/* Force always-dark: Starlight's JS may set data-theme='light' based on system pref;
+   re-pin our dark values at the same specificity so they win in the cascade */
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+  --sl-color-white: #e5e2e1;
+  --sl-color-gray-1: #d1c5b4;
+  --sl-color-gray-2: #9a8f80;
+  --sl-color-gray-3: #4e4639;
+  --sl-color-gray-4: #2a2a2a;
+  --sl-color-gray-5: #202329;
+  --sl-color-gray-6: #1A1D22;
+  --sl-color-black: #0D0D0D;
+  --sl-color-bg: #0D0D0D;
+  --sl-color-bg-nav: rgba(13, 13, 13, 0.85);
+  --sl-color-bg-sidebar: #1A1D22;
+  --sl-color-text: #e5e2e1;
+  --sl-color-text-accent: #f2ca83;
+  --sl-color-text-invert: #0D0D0D;
+  --sl-color-hairline: rgba(255, 255, 255, 0.05);
+  --sl-color-hairline-light: rgba(255, 255, 255, 0.05);
+  --sl-color-bg-inline-code: rgba(134, 239, 172, 0.08);
+}
+
 /* Starlight header — ensure our glass-nav styles win */
 header.header {
   padding: 0 !important;
@@ -80,6 +157,21 @@ header.header {
 .sidebar-pane {
   background: #1A1D22 !important;
   border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Fix sidebar accordion — Astro scoped CSS doesn't reliably apply inside node_modules components */
+.sidebar-pane details > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2em 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.sidebar-pane details > summary::marker,
+.sidebar-pane details > summary::-webkit-details-marker {
+  display: none;
 }
 
 /* Starlight content links */
@@ -98,4 +190,20 @@ header.header {
 /* Hide theme toggle — always dark */
 starlight-theme-select {
   display: none !important;
+}
+
+/* ── Scroll reveal ────────────────────────────────────── */
+[data-scroll] {
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+[data-scroll].scroll-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+}
+[data-scroll].scroll-hidden[data-scroll-type="scale"] {
+  transform: scale(0.96);
+}
+[data-scroll].scroll-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
