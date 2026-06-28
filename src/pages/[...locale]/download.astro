@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import SiteNav from '../../components/SiteNav.astro'
+import { locales, t } from '../../i18n'
+
+export function getStaticPaths() {
+  return locales.map(({ locale, lang }) => ({ params: { locale }, props: { lang } }))
+}
+
+const { lang } = Astro.props
+const i18n = t(lang)
+
+const VERSION = 'v1.1.0'
+const BASE = `https://github.com/karn-mtg/forge/releases/download/${VERSION}`
+
+const downloads = [
+  {
+    label: i18n.downloadMacLabel,
+    desc: i18n.downloadMacDesc,
+    icon: 'mac',
+    buttons: [
+      { label: i18n.downloadMacIntel, href: `${BASE}/Karn%20Forge-1.1.0.dmg`, primary: true },
+      { label: i18n.downloadMacSilicon, href: `${BASE}/Karn%20Forge-1.1.0-arm64.dmg`, primary: false },
+    ],
+  },
+  {
+    label: i18n.downloadWinLabel,
+    desc: i18n.downloadWinDesc,
+    icon: 'win',
+    buttons: [
+      { label: i18n.downloadWinBtn, href: `${BASE}/Karn%20Forge%20Setup%201.1.0.exe`, primary: true },
+    ],
+  },
+  {
+    label: i18n.downloadLinuxLabel,
+    desc: i18n.downloadLinuxDesc,
+    icon: 'linux',
+    buttons: [
+      { label: i18n.downloadLinuxBtn, href: `${BASE}/Karn%20Forge-1.1.0.AppImage`, primary: true },
+    ],
+  },
+]
+---
+
+<BaseLayout title={i18n.downloadTitle} description={i18n.downloadDescription} lang={lang}>
+  <div style="background-image: radial-gradient(circle, rgba(43,46,51,0.6) 1px, transparent 1px); background-size: 24px 24px; min-height: 100vh;">
+
+    <SiteNav lang={lang} activePage="download" />
+
+    <main class="pt-36 pb-24 px-6">
+
+      <!-- Header -->
+      <div class="max-w-2xl mx-auto text-center mb-16" data-scroll>
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6">
+          {VERSION} &mdash; {i18n.downloadVersion}
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-bold text-on-surface leading-tight mb-4">
+          {i18n.downloadHeading}
+        </h1>
+        <p class="text-on-surface-variant text-lg">{i18n.downloadSub}</p>
+      </div>
+
+      <!-- OS cards -->
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {downloads.map((os, i) => (
+          <div
+            class="glass-panel rounded-2xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+            data-scroll
+            data-scroll-delay={String(i)}
+          >
+            <div
+              class="absolute inset-0 pointer-events-none rounded-2xl"
+              style="background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(242,202,131,0.05) 0%, transparent 70%);"
+            />
+
+            <!-- OS Icon -->
+            <div class="w-16 h-16 mb-5 text-on-surface-variant relative flex items-center justify-center">
+              {os.icon === 'mac' && (
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-14 h-14" aria-hidden="true">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+              )}
+              {os.icon === 'win' && (
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12" aria-hidden="true">
+                  <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                </svg>
+              )}
+              {os.icon === 'linux' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                  <path d="M7 8l3 3-3 3"/>
+                  <path d="M13 14h4"/>
+                </svg>
+              )}
+            </div>
+
+            <h2 class="text-xl font-bold text-on-surface mb-2 relative">{os.label}</h2>
+            <p class="text-sm text-on-surface-variant mb-7 relative">{os.desc}</p>
+
+            <div class="flex flex-col gap-3 w-full relative mt-auto">
+              {os.buttons.map(btn => (
+                <a
+                  href={btn.href}
+                  class={btn.primary
+                    ? 'w-full px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-sm text-center hover:bg-primary-container transition-all duration-200 shadow-lg shadow-primary/20'
+                    : 'w-full px-5 py-3 rounded-xl border border-white/10 text-on-surface-variant font-bold text-sm text-center hover:bg-white/5 hover:text-on-surface transition-all duration-200'
+                  }
+                >
+                  {btn.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Footer note -->
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-1" data-scroll>
+        <p class="text-xs text-on-surface-variant/50 text-center sm:text-left">{i18n.downloadNote}</p>
+        <a
+          href="https://github.com/karn-mtg/forge/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs text-on-surface-variant/50 hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1.5"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          {i18n.downloadAllReleases}
+        </a>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    const scrollEls = document.querySelectorAll<HTMLElement>('[data-scroll]')
+    scrollEls.forEach(el => el.classList.add('scroll-hidden'))
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+        const delay = parseInt(entry.target.getAttribute('data-scroll-delay') ?? '0') * 80
+        setTimeout(() => {
+          entry.target.classList.remove('scroll-hidden')
+          entry.target.classList.add('scroll-visible')
+        }, delay)
+        observer.unobserve(entry.target)
+      })
+    }, { threshold: 0.08 })
+    scrollEls.forEach(el => observer.observe(el))
+  </script>
+</BaseLayout>

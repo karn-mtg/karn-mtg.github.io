@@ -1,5 +1,5 @@
 ---
-import { t, blogBase, type Lang } from '../../i18n'
+import { t, blogBase, downloadBase, type Lang } from '../../i18n'
 
 interface Props {
   lang?: Lang
@@ -22,7 +22,7 @@ const i18n = t(lang)
 
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center relative">
         <a
-          href="https://github.com/karn-mtg/forge/releases"
+          href={downloadBase(lang)}
           class="px-7 py-3.5 rounded-xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-all duration-200 shadow-lg shadow-primary/20"
         >
           {i18n.ctaButton}
