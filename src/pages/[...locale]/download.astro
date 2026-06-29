@@ -10,7 +10,7 @@ export function getStaticPaths() {
 const { lang } = Astro.props
 const i18n = t(lang)
 
-const VERSION = 'v1.1.0'
+const VERSION = 'v1.1.1'
 const BASE = `https://github.com/karn-mtg/forge/releases/download/${VERSION}`
 
 const downloads = [
@@ -20,8 +20,8 @@ const downloads = [
     icon: 'mac',
     notice: { title: i18n.downloadMacGatekeeperTitle, body: i18n.downloadMacGatekeeperBody },
     buttons: [
-      { label: i18n.downloadMacIntel, href: `${BASE}/Karn-Forge-1.1.0.dmg`, primary: true },
-      { label: i18n.downloadMacSilicon, href: `${BASE}/Karn-Forge-1.1.0-arm64.dmg`, primary: false },
+      { label: i18n.downloadMacIntel, href: `${BASE}/Karn-Forge-1.1.1.dmg`, primary: true },
+      { label: i18n.downloadMacSilicon, href: `${BASE}/Karn-Forge-1.1.1-arm64.dmg`, primary: false },
     ],
   },
   {
@@ -30,7 +30,7 @@ const downloads = [
     icon: 'win',
     notice: undefined,
     buttons: [
-      { label: i18n.downloadWinBtn, href: `${BASE}/Karn-Forge-Setup-1.1.0.exe`, primary: true },
+      { label: i18n.downloadWinBtn, href: `${BASE}/Karn-Forge-Setup-1.1.1.exe`, primary: true },
     ],
   },
   {
@@ -39,7 +39,7 @@ const downloads = [
     icon: 'linux',
     notice: undefined,
     buttons: [
-      { label: i18n.downloadLinuxBtn, href: `${BASE}/Karn-Forge-1.1.0.AppImage`, primary: true },
+      { label: i18n.downloadLinuxBtn, href: `${BASE}/Karn-Forge-1.1.1.AppImage`, primary: true },
     ],
   },
 ]
