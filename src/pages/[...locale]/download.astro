@@ -10,6 +10,7 @@ export function getStaticPaths() {
 const { lang } = Astro.props
 const i18n = t(lang)
 
+// Fallback version used for instant render — client-side JS updates to latest on load.
 const VERSION = 'v1.1.1'
 const BASE = `https://github.com/karn-mtg/forge/releases/download/${VERSION}`
 
@@ -20,8 +21,8 @@ const downloads = [
     icon: 'mac',
     notice: { title: i18n.downloadMacGatekeeperTitle, body: i18n.downloadMacGatekeeperBody },
     buttons: [
-      { label: i18n.downloadMacIntel, href: `${BASE}/Karn-Forge-1.1.1.dmg`, primary: true },
-      { label: i18n.downloadMacSilicon, href: `${BASE}/Karn-Forge-1.1.1-arm64.dmg`, primary: false },
+      { label: i18n.downloadMacIntel, href: `${BASE}/Karn-Forge-1.1.1.dmg`, primary: true, download: 'mac-intel' },
+      { label: i18n.downloadMacSilicon, href: `${BASE}/Karn-Forge-1.1.1-arm64.dmg`, primary: false, download: 'mac-silicon' },
     ],
   },
   {
@@ -30,7 +31,7 @@ const downloads = [
     icon: 'win',
     notice: undefined,
     buttons: [
-      { label: i18n.downloadWinBtn, href: `${BASE}/Karn-Forge-Setup-1.1.1.exe`, primary: true },
+      { label: i18n.downloadWinBtn, href: `${BASE}/Karn-Forge-Setup-1.1.1.exe`, primary: true, download: 'win' },
     ],
   },
   {
@@ -39,7 +40,7 @@ const downloads = [
     icon: 'linux',
     notice: undefined,
     buttons: [
-      { label: i18n.downloadLinuxBtn, href: `${BASE}/Karn-Forge-1.1.1.AppImage`, primary: true },
+      { label: i18n.downloadLinuxBtn, href: `${BASE}/Karn-Forge-1.1.1.AppImage`, primary: true, download: 'linux' },
     ],
   },
 ]
@@ -55,7 +56,7 @@ const downloads = [
       <!-- Header -->
       <div class="max-w-2xl mx-auto text-center mb-16" data-scroll>
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6">
-          {VERSION} &mdash; {i18n.downloadVersion}
+          <span data-version>{VERSION}</span> &mdash; {i18n.downloadVersion}
         </span>
         <h1 class="text-4xl sm:text-5xl font-bold text-on-surface leading-tight mb-4">
           {i18n.downloadHeading}
@@ -105,6 +106,7 @@ const downloads = [
               {os.buttons.map(btn => (
                 <a
                   href={btn.href}
+                  data-download={btn.download}
                   class={btn.primary
                     ? 'w-full px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-sm text-center hover:bg-primary-container transition-all duration-200 shadow-lg shadow-primary/20'
                     : 'w-full px-5 py-3 rounded-xl border border-white/10 text-on-surface-variant font-bold text-sm text-center hover:bg-white/5 hover:text-on-surface transition-all duration-200'
@@ -144,6 +146,7 @@ const downloads = [
   </div>
 
   <script>
+    // Scroll reveal
     const scrollEls = document.querySelectorAll<HTMLElement>('[data-scroll]')
     scrollEls.forEach(el => el.classList.add('scroll-hidden'))
     const observer = new IntersectionObserver((entries) => {
@@ -158,5 +161,33 @@ const downloads = [
       })
     }, { threshold: 0.08 })
     scrollEls.forEach(el => observer.observe(el))
+
+    // Fetch latest release from GitHub and update version badge + download links.
+    // Falls back silently to the statically-rendered version if the request fails.
+    fetch('https://api.github.com/repos/karn-mtg/forge/releases/latest', {
+      headers: { Accept: 'application/vnd.github+json' },
+    })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(release => {
+        const tag = release.tag_name as string          // e.g. "v1.1.1"
+        const ver = tag.replace(/^v/, '')               // e.g. "1.1.1"
+        const base = `https://github.com/karn-mtg/forge/releases/download/${tag}`
+
+        const hrefs: Record<string, string> = {
+          'mac-intel':  `${base}/Karn-Forge-${ver}.dmg`,
+          'mac-silicon': `${base}/Karn-Forge-${ver}-arm64.dmg`,
+          'win':        `${base}/Karn-Forge-Setup-${ver}.exe`,
+          'linux':      `${base}/Karn-Forge-${ver}.AppImage`,
+        }
+
+        document.querySelectorAll<HTMLElement>('[data-version]')
+          .forEach(el => { el.textContent = tag })
+
+        Object.entries(hrefs).forEach(([key, href]) => {
+          document.querySelectorAll<HTMLAnchorElement>(`[data-download="${key}"]`)
+            .forEach(el => { el.href = href })
+        })
+      })
+      .catch(() => { /* keep statically-rendered fallback links */ })
   </script>
 </BaseLayout>
