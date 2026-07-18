@@ -24,7 +24,7 @@ A `console.log` call during database initialization was writing plain text to st
 
 ### `karn` Arsenal server binary
 
-Separately, the previous `karn` Arsenal server release (`server-v1.1.0`) shipped with a corrupted Python DLL bundle and would fail immediately with a `LoadLibrary` error on Windows. `server-v1.1.1` fixes this — Arsenal's rules engine, combo detection, and semantic search are back online.
+Separately, the previous `karn` Arsenal server releases shipped with a corrupted Python DLL bundle and would fail immediately with a `LoadLibrary` error on Windows. The cause turned out to be a stray `strip=True` in the PyInstaller build config — GNU `strip` isn't safe on MSVC-built Windows DLLs like `python311.dll`, and quietly corrupted it during CI builds. `server-v1.1.3` fixes this — Arsenal's rules engine, combo detection, and semantic search are back online.
 
 ## Upgrade
 

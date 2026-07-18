@@ -25,7 +25,7 @@ Ein `console.log`-Aufruf während der Datenbank-Initialisierung schrieb reinen T
 
 ### karn Arsenal-Server-Binary
 
-Unabhängig davon enthielt das vorherige karn Arsenal-Server-Release (`server-v1.1.0`) ein beschädigtes Python-DLL-Bundle und schlug unter Windows sofort mit einem `LoadLibrary`-Fehler fehl. `server-v1.1.1` behebt das — Arsenals Regel-Engine, Combo-Erkennung und semantische Suche sind wieder online.
+Unabhängig davon enthielten die vorherigen karn Arsenal-Server-Releases ein beschädigtes Python-DLL-Bundle und schlugen unter Windows sofort mit einem `LoadLibrary`-Fehler fehl. Ursache war ein übersehenes `strip=True` in der PyInstaller-Build-Konfiguration — GNU `strip` ist bei MSVC-gebauten Windows-DLLs wie `python311.dll` nicht sicher und beschädigte sie während der CI-Builds still und leise. `server-v1.1.3` behebt das — Arsenals Regel-Engine, Combo-Erkennung und semantische Suche sind wieder online.
 
 ## Update
 

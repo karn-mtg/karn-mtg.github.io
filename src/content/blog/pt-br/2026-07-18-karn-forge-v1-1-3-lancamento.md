@@ -25,7 +25,7 @@ Uma chamada `console.log` durante a inicialização do banco de dados estava esc
 
 ### Binário do servidor karn Arsenal
 
-Separadamente, a release anterior do servidor karn Arsenal (`server-v1.1.0`) tinha um bundle de DLL do Python corrompido e falhava imediatamente com um erro de `LoadLibrary` no Windows. A `server-v1.1.1` corrige isso — o motor de regras, detecção de combos e busca semântica do Arsenal estão de volta ao ar.
+Separadamente, as releases anteriores do servidor karn Arsenal tinham um bundle de DLL do Python corrompido e falhavam imediatamente com um erro de `LoadLibrary` no Windows. A causa era um `strip=True` esquecido na configuração de build do PyInstaller — o `strip` do GNU não é seguro em DLLs do Windows compiladas com MSVC, como o `python311.dll`, e o corrompia silenciosamente durante os builds de CI. A `server-v1.1.3` corrige isso — o motor de regras, detecção de combos e busca semântica do Arsenal estão de volta ao ar.
 
 ## Como Atualizar
 
