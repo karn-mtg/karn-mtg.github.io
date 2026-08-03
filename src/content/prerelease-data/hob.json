@@ -1,0 +1,5143 @@
+{
+  "setCode": "hob",
+  "generatedAt": "2026-08-03T16:06:52.693Z",
+  "cardCount": 193,
+  "colorStats": {
+    "cardCount": 193,
+    "byColor": {
+      "W": {
+        "total": 30,
+        "creature": 14,
+        "nonCreature": 16
+      },
+      "U": {
+        "total": 30,
+        "creature": 15,
+        "nonCreature": 15
+      },
+      "B": {
+        "total": 29,
+        "creature": 16,
+        "nonCreature": 13
+      },
+      "R": {
+        "total": 31,
+        "creature": 20,
+        "nonCreature": 11
+      },
+      "G": {
+        "total": 29,
+        "creature": 20,
+        "nonCreature": 9
+      },
+      "multi": {
+        "total": 31,
+        "creature": 24,
+        "nonCreature": 7
+      },
+      "C": {
+        "total": 13,
+        "creature": 3,
+        "nonCreature": 10
+      }
+    },
+    "byRarity": {
+      "rare": 55,
+      "common": 69,
+      "uncommon": 54,
+      "mythic": 15
+    }
+  },
+  "cards": [
+    {
+      "name": "Along the Crooked Way",
+      "oracleId": "f4437cb3-85f7-49b5-bb41-6a948549d987",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Enchantment",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/6/3696d65c-fffd-4685-bb2d-e8769bf476e3.jpg?1785412571",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "An Unexpected Party // At the Door",
+      "oracleId": "38503d34-f4f9-4eeb-9b1e-4fec1df921b3",
+      "manaCost": "{2}{W}{W} // {X}{2}{W}",
+      "cmc": 4,
+      "typeLine": "Enchantment // Sorcery — Adventure",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/2/6/262d6907-f598-433a-8a11-cb8fd96a4adf.jpg?1783902771",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Attercop",
+      "oracleId": "45d652c4-188e-4f00-acdd-1be014922cbc",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Creature — Spider",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/8/1/81263d5d-e402-4813-9458-161112da27ab.jpg?1785497157",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Azog, Moria's Ruin",
+      "oracleId": "a8b018a7-0350-4ee0-9582-8d391018bdee",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Goblin Soldier",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/b/0b9ef17a-02a4-44c6-b0b3-9eccf7f324fd.jpg?1784760187",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 3.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Balin, Loremaster",
+      "oracleId": "0d420e41-43e9-41d6-832c-5a9f410c994e",
+      "manaCost": "{3}{R}{R}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Dwarf Bard",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/4/2/42d7ca7b-c983-40fd-ad57-59f6972bb375.jpg?1785496498",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 3.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Bard the Bowman",
+      "oracleId": "ec076f5b-b0e3-4b6f-9293-a8fc42f20bd8",
+      "manaCost": "{1}{W}{U}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Human Archer",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "colorIdentity": [
+        "U",
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/0/b/0b84e232-428c-424a-848c-ef95debc6e50.jpg?1784377009",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 1.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Bard's Company",
+      "oracleId": "5c5bfbb2-0e63-4e43-b441-c4878983288f",
+      "manaCost": "{2}{W}{U}",
+      "cmc": 4,
+      "typeLine": "Creature — Human Citizen",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "colorIdentity": [
+        "U",
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/7/c/7ca1300a-0ac3-413b-9617-5e8d1b5f1ca2.jpg?1785152283",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 2.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Bard, King of Dale",
+      "oracleId": "d05db2c1-a19a-4803-8e8a-fa2f9b798181",
+      "manaCost": "{4}{W}{U}",
+      "cmc": 6,
+      "typeLine": "Legendary Creature — Human Noble Archer",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "colorIdentity": [
+        "U",
+        "W"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/a/4/a4adb258-381e-4e64-9f93-9fcf943be360.jpg?1784377112",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 4.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Bejeweled Warg",
+      "oracleId": "051ff7e0-dd00-4467-8796-a5d1c21934ed",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/2/b/2b689d91-1ac0-474b-ae58-2c320e1af5e4.jpg?1785497262",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Belladonna Took",
+      "oracleId": "011da9c5-aa8a-4fa0-b1f2-62b9f3760476",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Halfling Citizen",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/f/0ff767b1-b04d-4d1d-bc91-3bd1361c5ee8.jpg?1784894831",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 3,
+        "overall": 3,
+        "tags": [
+          "diversity"
+        ]
+      }
+    },
+    {
+      "name": "Beorn the Fierce",
+      "oracleId": "30ca8e92-5955-46a1-86c1-094a873f518f",
+      "manaCost": "{3}{G}{G}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Bear Shapeshifter Warrior",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/3/6/367d5f8b-77ee-47f7-bc71-972d62c280a9.jpg?1784632151",
+      "bread": {
+        "bomb": 9,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 15,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Beorn's Hospitality",
+      "oracleId": "d9ed7252-11d1-432b-9101-ac08cd28826d",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Enchantment",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/1/5/153ca57e-30f0-4ad7-ae9d-c55cbf0fd4c9.jpg?1785152153",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Beorn, Reluctant Host // Till and Tend",
+      "oracleId": "288da486-393c-4995-ad02-c5093a71970d",
+      "manaCost": "{4}{G} // {1}{G}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Human Bear Shapeshifter // Sorcery — Adventure",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/8/0/804589b7-3ef9-473d-97cc-c61a2d41f70d.jpg?1785323267",
+      "bread": {
+        "bomb": 7,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 10,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Bifur, Melodic Rider",
+      "oracleId": "b8d563e4-e2bc-4e8b-8841-6655beff9138",
+      "manaCost": "{4}{R/W}{R/W}",
+      "cmc": 6,
+      "typeLine": "Legendary Creature — Dwarf Bard",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/e/e/ee88cc80-8fbf-451c-b2b8-09158426c26a.jpg?1784377019",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 3.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Bilbo Baggins, Burglar // Take a Glance",
+      "oracleId": "fa85f9e6-69ff-4669-b70a-440aa7b16c97",
+      "manaCost": "{2}{U} // {U}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Halfling Rogue // Sorcery — Adventure",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/6/a/6a109b3e-9f5b-4625-abb7-6b992c10530b.jpg?1785323194",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Bilbo's Deadly Slice",
+      "oracleId": "4c054431-3667-4e28-9d68-03b43447c35b",
+      "manaCost": "{1}{B}{B}",
+      "cmc": 3,
+      "typeLine": "Instant",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/1/7/17892c93-b9b2-4720-933b-998ed0200492.jpg?1785497075",
+      "bread": {
+        "bomb": 0,
+        "removal": 6,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Bilbo's Gambit",
+      "oracleId": "ef71ef07-8a35-41ec-a851-d95e9e3a221b",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/4/5/45ad01f0-cda8-4931-82bb-cb4949e56ae9.jpg?1784894818",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Bilbo, Luckwearer // Burglar's Plot",
+      "oracleId": "a73d9109-36e0-40ea-ab06-5c5f7eb4ac54",
+      "manaCost": "{1}{U} // {4}{U}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Halfling Rogue // Sorcery — Adventure",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/9/09f8b967-96fa-4c2b-b331-85b3704770c0.jpg?1783902771",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 4,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 6,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Bilbo, Thief in the Night",
+      "oracleId": "72a9a85d-7cfc-4b3c-82db-9d35be6c0982",
+      "manaCost": "{1}{U}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Halfling Rogue",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/4/8/484c7f83-8339-4ae1-8350-68ce1f7d05a3.jpg?1783902786",
+      "bread": {
+        "bomb": 0,
+        "removal": 8,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 8,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Bofur, Reliable Guardian // Concerted Care",
+      "oracleId": "8a0e35ac-6c03-4922-b3b4-e419419fe3d7",
+      "manaCost": "{W} // {1}{W}",
+      "cmc": 1,
+      "typeLine": "Legendary Creature — Dwarf Scout // Instant — Adventure",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/b/6b8e6435-7de4-41d5-bc7d-8e24c11897d0.jpg?1785496981",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Bolg of the North",
+      "oracleId": "88522a0f-5377-4522-97f4-4148bef954af",
+      "manaCost": "{3}{B}{R}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Goblin Soldier",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/7/b/7b2d2a7f-88e0-45a9-8579-a6736bcd66eb.jpg?1784377021",
+      "bread": {
+        "bomb": 6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Bolg's Company",
+      "oracleId": "fa602f8f-1d80-4f6d-8b8f-d1a1f36037bd",
+      "manaCost": "{B}{R}",
+      "cmc": 2,
+      "typeLine": "Creature — Goblin Soldier",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/a/2/a2ba9d82-83b6-43dd-8eb8-2401be0df754.jpg?1785497216",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Bombur, Gentle Dreamer",
+      "oracleId": "925ce68e-9323-4985-8fef-0d3f36e0d74c",
+      "manaCost": "{2}{R}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Dwarf Bard",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/3/63c317e7-432c-4817-8db4-3670a1d84be3.jpg?1785496185",
+      "bread": {
+        "bomb": 6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Bothersome Noisemaker",
+      "oracleId": "978e07fd-8b8c-4eab-850e-e4c0e712251e",
+      "manaCost": "{1}{R}",
+      "cmc": 2,
+      "typeLine": "Creature — Goblin Bard",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/c/b/cb25b11a-6bf5-4a9a-b60f-d4dcac3816d6.jpg?1784894881",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Boughside Wanderers",
+      "oracleId": "dc788b66-d03d-4066-be35-481be96ed2f7",
+      "manaCost": "{4}{G}{G}",
+      "cmc": 6,
+      "typeLine": "Creature — Elf Scout",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/7/1/71bec005-2925-4944-be16-2cc5eb30f5d6.jpg?1785497158",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 3.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Burn, Burn, Tree and Fern",
+      "oracleId": "a97d6c5c-1cff-442d-b535-fc8389160b0b",
+      "manaCost": "{3}{R}",
+      "cmc": 4,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/f/c/fceb1a2d-121e-49ad-acf2-1bb5aebec116.jpg?1784376970",
+      "bread": {
+        "bomb": 0,
+        "removal": 6,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 7.5,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Cantankerous Keepers",
+      "oracleId": "77c97dad-17cc-4a28-a48b-907c044d9034",
+      "manaCost": "{5}{G}",
+      "cmc": 6,
+      "typeLine": "Creature — Elf Soldier",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/a/c/ace0642f-fa57-4645-9891-43331b4963ed.jpg?1785152456",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 1.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Celebrate the Mountain-king",
+      "oracleId": "d51136fa-3c13-48a5-83fd-51fe00010a4b",
+      "manaCost": "{3}{W}",
+      "cmc": 4,
+      "typeLine": "Enchantment",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/4/2/42fbd61d-e1a6-465d-b1a3-f5ee0869d3af.jpg?1785496910",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Chief Warg's Company",
+      "oracleId": "372d7086-b7dc-4b6d-bdf6-e9ed9c995456",
+      "manaCost": "{1}{B}{G}",
+      "cmc": 3,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/d/0dd7b2d8-ca9d-4125-b57e-9b14deae8d9b.jpg?1784733937",
+      "bread": {
+        "bomb": 7,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 10,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Confusticate and Bebother",
+      "oracleId": "7a7d9887-3cc4-4fb9-9109-1315903ace45",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Instant",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/9/d/9de48690-e5ae-495a-addf-305f1db7ec21.jpg?1785496428",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Crude Bent Blade",
+      "oracleId": "eec81460-899d-4b4c-b33c-ce2ca704df17",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Artifact — Equipment",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/f/a/fa8fd3c4-bd00-485d-80b1-2b67f5786fce.jpg?1785496297",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dancing from Dark to Dawn",
+      "oracleId": "5ba482e9-fbb0-4d9f-a3a9-414892bcdfed",
+      "manaCost": "{3}{G}{G}",
+      "cmc": 5,
+      "typeLine": "Enchantment",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/5/5/550cd0b6-ca61-4db7-9d20-0b68c48066f9.jpg?1785236704",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Desert Were-Worm",
+      "oracleId": "81c2913f-42b7-4cfa-adc0-b3416fbe2ec6",
+      "manaCost": "{4}{R}{R}",
+      "cmc": 6,
+      "typeLine": "Creature — Dragon Wurm",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/f/3f4794de-701d-4619-8b8b-cbfdd860c567.jpg?1784733939",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Desolation Prowler",
+      "oracleId": "ed9d4bb1-7335-45fd-b2ea-97b1f6491d7a",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/3/63c87009-ff1b-44b9-88b1-e26219094c67.jpg?1785237955",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Desolation of Smaug",
+      "oracleId": "c9634afc-4a5b-4cf6-b63d-0ff9909dd5a7",
+      "manaCost": "{2}{R}{R}",
+      "cmc": 4,
+      "typeLine": "Sorcery",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/2/4/2462358b-52c8-49b2-8d97-d65a9188f8f7.jpg?1784376974",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dori, Bearer of Friends",
+      "oracleId": "58acd6b2-730c-4472-a34a-f2784977aca8",
+      "manaCost": "{2}{R}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Dwarf Warrior",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/d/2/d2f60ad0-c887-4585-85f8-afcf72fb80d0.jpg?1785323237",
+      "bread": {
+        "bomb": 3.4,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 6.4,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Down in the Valley",
+      "oracleId": "e3491542-569e-48a8-b625-fa7c4aa2792a",
+      "manaCost": "{2}{G}",
+      "cmc": 3,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/c/8/c8aa5179-475b-4cc8-b21e-205b475eb4cf.jpg?1784895042",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 2,
+        "overall": 3,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Down, Down to Goblin-town",
+      "oracleId": "e01860cd-0aa1-435a-9ef9-ee412bc458cd",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/b/7/b72e193c-e030-4936-9b79-c636eff750e1.jpg?1784733900",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 2,
+        "diversity": 1,
+        "overall": 3,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dreaded Bat-Cloud",
+      "oracleId": "3cc64ce6-45e2-4dc3-9b28-d7206a131873",
+      "manaCost": "{4}{B}",
+      "cmc": 5,
+      "typeLine": "Creature — Bat",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/1/d/1d84b0f8-aa9d-46b5-b46d-cb291aa6af9a.jpg?1785497205",
+      "bread": {
+        "bomb": 2.2,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 5.2,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Duskwatch Hunter",
+      "oracleId": "6283e5ca-9924-478b-89a5-36924accb9aa",
+      "manaCost": "{2}{B/G}",
+      "cmc": 3,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/3/6/3685c783-d837-4466-a960-ab3098db64c3.jpg?1785323286",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 4,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 5.2,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Dwalin, Weaponmaster",
+      "oracleId": "cee583b7-7cc3-40ea-a227-b760839ec291",
+      "manaCost": "{1}{R/W}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Dwarf Warrior",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/9/196d9287-a37d-4b27-a83b-a5489a54f081.jpg?1785496508",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dwarven Mattock",
+      "oracleId": "f75bb13b-41fc-4614-b35e-f456069ce9c6",
+      "manaCost": "{2}",
+      "cmc": 2,
+      "typeLine": "Artifact — Equipment",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/9/2/92c6f09d-b525-4e8c-a87c-a74df9dc3b1e.jpg?1785412768",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dwarven Mauler",
+      "oracleId": "70538676-2ffb-4cad-827e-b55e81088678",
+      "manaCost": "{R}",
+      "cmc": 1,
+      "typeLine": "Creature — Dwarf Warrior",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/b/d/bd0f0415-43af-4f5d-8999-853c5d42780d.jpg?1784895019",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dwarven Provisioner",
+      "oracleId": "8fcab221-8737-4357-b8ee-bad9421739a3",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Creature — Dwarf Citizen",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/1/f/1f9a61a1-454e-4d5b-a6dd-1a79fe9dedf3.jpg?1785496922",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dwarven Shortsword",
+      "oracleId": "9cc52afb-9788-46f6-9f9b-347513f8a64f",
+      "manaCost": "{3}{W}",
+      "cmc": 4,
+      "typeLine": "Artifact — Equipment",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/f/2/f2341cf3-4d2c-4a4f-9aea-8834104a8910.jpg?1785496931",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dáin Ironfoot",
+      "oracleId": "9924c189-3c82-431a-b570-7805b2a406f0",
+      "manaCost": "{2}{R}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Dwarf Warrior",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/7/1/7112e460-9160-4535-ad94-93f1f4ac04cf.jpg?1785236701",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 3.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dáin's Company",
+      "oracleId": "ae03782f-8f05-4ce2-a049-005b1b688faf",
+      "manaCost": "{R}{W}",
+      "cmc": 2,
+      "typeLine": "Creature — Dwarf Warrior",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/2/323f7ae8-9247-479e-aead-f46018a3d81d.jpg?1785236742",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Dáin, Lord of the Iron Hills",
+      "oracleId": "5b79b68a-db71-4638-824e-ab89b1716c86",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Dwarf Noble",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/9/9/99d27749-d16c-45e9-accc-6a01351c17f9.jpg?1785496921",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Eagle of the Great Shelf",
+      "oracleId": "cb4b4b63-682b-4439-9757-84cca7a27db2",
+      "manaCost": "{4}{W}",
+      "cmc": 5,
+      "typeLine": "Creature — Bird Soldier",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/3/f/3feca644-5f65-4477-bbc8-d505cec6f3a5.jpg?1784797947",
+      "bread": {
+        "bomb": 3.4,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 7.4,
+        "tags": [
+          "bomb",
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Eagle's Rescue",
+      "oracleId": "95e1c368-b58a-4e69-9583-587560ad558d",
+      "manaCost": "{2}{W/U}{W/U}",
+      "cmc": 4,
+      "typeLine": "Enchantment — Aura",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "colorIdentity": [
+        "U",
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/1/2/12c8f2cc-ac9d-4cf6-9025-efe366b4e07f.jpg?1785236726",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Elrond, Moon-Reader",
+      "oracleId": "3f4d6f91-95ad-4687-8899-5a21a0abb49e",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Elf Noble",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/3/e/3e95e9c2-cdbf-48b8-a7d0-87267f58e5ac.jpg?1784377174",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 5.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Elven Passage",
+      "oracleId": "97a2cd39-6b54-496b-b3ac-dab9dfed7edc",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/7/5/75cb4095-b252-49b0-ad2e-0ea52ae4709a.jpg?1785323390",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Elven Raft-Steerer",
+      "oracleId": "d0f62148-1015-49b8-b61f-a4332325a6b0",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Creature — Elf Pilot",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/c/1/c141695c-c108-41d5-85cb-1f7485d9d533.jpg?1784632054",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 2.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Elvenking's Halls",
+      "oracleId": "a91e0154-14a9-4681-8236-04db231592a4",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land",
+      "colors": [],
+      "colorIdentity": [
+        "G",
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/c/d/cd477096-41b1-4907-9cb3-852cb22c9ba2.jpg?1785323590",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Elvenking's Harper",
+      "oracleId": "7d070a95-49ea-4aea-b512-dbb0006a00ee",
+      "manaCost": "{1}{U}",
+      "cmc": 2,
+      "typeLine": "Creature — Elf Bard",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/9/c/9c50656d-c74a-4e90-9ef7-afa237682516.jpg?1785497043",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 4,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 4,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Enchanted River's Grasp",
+      "oracleId": "fcc9f3bc-0bc3-4189-a4d0-9698594b99a8",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Enchantment — Aura",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/a/d/ad40a4b9-9fab-49c1-8e9f-6e0776966833.jpg?1785497045",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Esgaroth Garrison",
+      "oracleId": "84597236-2cfc-4654-b126-a8ee252f4d14",
+      "manaCost": "{4}{W}",
+      "cmc": 5,
+      "typeLine": "Creature — Human Soldier",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/5/7/573f67b0-6ce8-4857-a703-4a5728640736.jpg?1785496934",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Fateful Discovery",
+      "oracleId": "72c6174c-fa2c-4ff2-b76e-eb6e890e97c9",
+      "manaCost": "{3}{U}{U}",
+      "cmc": 5,
+      "typeLine": "Enchantment",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/6/a/6a928a14-b906-402f-96e4-8b9391d6536c.jpg?1785323381",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Fearsome Goblin Pair",
+      "oracleId": "edbd3d4e-78a2-4c03-936d-dcb24cf7c87c",
+      "manaCost": "{2}{B/R}",
+      "cmc": 3,
+      "typeLine": "Creature — Goblin Soldier",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/2/e/2efe2dc7-3eaa-47f6-b1ae-f974c4a8ae79.jpg?1785324572",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Forest",
+      "oracleId": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Basic Land — Forest",
+      "colors": [],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/0/0000419b-0bba-4488-8f7a-6194544ce91e.jpg?1783910776",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Front Porch Sentries",
+      "oracleId": "b39f03cf-3d1a-42ad-903f-e3b3542878b0",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Creature — Goblin Soldier",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/7/07bfc803-e11b-47ab-9f25-0ace7e174200.jpg?1785496282",
+      "bread": {
+        "bomb": 0,
+        "removal": 3,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 3,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Fíli the Pathfinder",
+      "oracleId": "c91c7d6b-a502-4b66-9509-3c1eda00e763",
+      "manaCost": "{3}{W}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Dwarf Scout",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/e/0e4a1096-c40e-4471-8a44-9c2acad85769.jpg?1785497235",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Galion, Elvenking's Butler",
+      "oracleId": "9efb3aa4-0023-4e0e-8bd4-f4dff1b3be66",
+      "manaCost": "{2}{G}{G}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Elf Advisor",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/9/8/985bd676-58c4-42c7-a570-1b413e9aa94c.jpg?1785152142",
+      "bread": {
+        "bomb": 4.8,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 4.8,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Gandalf, Goblins' Bane // Flameshape",
+      "oracleId": "f48f2a9b-4ba5-4984-8180-3950889bba65",
+      "manaCost": "{2}{R} // {1}{R}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Avatar Wizard // Sorcery — Adventure",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/0/d/0db45ef8-5bc5-4914-9918-dae4ebf48153.jpg?1784377154",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 3,
+        "diversity": 0,
+        "overall": 5.4,
+        "tags": [
+          "aggro"
+        ]
+      }
+    },
+    {
+      "name": "Gandalf, Spark Starter",
+      "oracleId": "cd1a9d87-4c91-4456-8d88-19e0d6e0b200",
+      "manaCost": "{4}{R}{R}",
+      "cmc": 6,
+      "typeLine": "Legendary Creature — Avatar Wizard",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/7/c/7c5c6f1c-35cf-4172-b5a1-b73222b0723b.jpg?1784895032",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 1.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Gandalf, Wandering Wizard",
+      "oracleId": "c996bc53-184d-4dc3-8244-e8d9528516a0",
+      "manaCost": "{4}{U}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Avatar Wizard",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/1/f/1f8403a2-849c-4a59-b0ed-c8803995028d.jpg?1785496472",
+      "bread": {
+        "bomb": 7.3,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 9.3,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Gathering of Darkness",
+      "oracleId": "85e1556d-c4da-4979-a5db-4ce3842c7797",
+      "manaCost": "{3}{B}",
+      "cmc": 4,
+      "typeLine": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/2/c/2ce066be-e5ad-4b93-8245-1b5018990d03.jpg?1784733910",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Getaway Barrel",
+      "oracleId": "7ddbf891-7f80-44e9-b94c-70c1da0b91ed",
+      "manaCost": "{3}{R}",
+      "cmc": 4,
+      "typeLine": "Artifact",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/8/d/8db47144-e048-4996-9f9a-1184dd86151f.jpg?1785323397",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Giant's Boulder",
+      "oracleId": "80433c2c-5196-42e0-b9fa-d7b12783f5fd",
+      "manaCost": "{1}",
+      "cmc": 1,
+      "typeLine": "Artifact",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/c/e/ce254758-c928-4b43-a952-13fac1845668.jpg?1785497186",
+      "bread": {
+        "bomb": 0,
+        "removal": 6,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Gigantic Big Bear",
+      "oracleId": "88d7bd11-7b1d-426c-8552-01448531c6ad",
+      "manaCost": "{5}{G}{G}",
+      "cmc": 7,
+      "typeLine": "Creature — Bear",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/b/0b6ed366-24a3-4697-8a87-12c54da7c238.jpg?1785323398",
+      "bread": {
+        "bomb": 10,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 2,
+        "diversity": 0,
+        "overall": 12,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Glamdring, Foe-hammer // Gleam of Death",
+      "oracleId": "2802069f-201e-43a7-b5d3-43a95951a2ec",
+      "manaCost": "{2} // {3}{U}",
+      "cmc": 2,
+      "typeLine": "Legendary Artifact — Equipment // Sorcery — Adventure",
+      "colors": [],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/5/3/53cd94e9-6006-4d43-8032-7920103740fa.jpg?1785497198",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Gleaming Splendor",
+      "oracleId": "c01aeaa5-1d3b-4493-9575-30175dcd780d",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Enchantment",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/3/b/3b087bd4-bbb7-4963-bdb6-0a700ff19a04.jpg?1785496942",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Glóin the Mighty // Easy Pickings",
+      "oracleId": "6505a53b-00db-44c4-8eaa-09a1a01451a4",
+      "manaCost": "{3}{R} // {2}{R}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Dwarf Warrior // Sorcery — Adventure",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/5/5/5546390b-3957-4e3b-aa64-85692381f53f.jpg?1785323380",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 5.1,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Gnashing of Teeth",
+      "oracleId": "188a3f61-3f7c-450d-8ee7-e12ad13b86c6",
+      "manaCost": "{1}{B}{B}",
+      "cmc": 3,
+      "typeLine": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/5/d/5d485d70-c7b9-40a4-9089-5e7f1c2b9213.jpg?1784734464",
+      "bread": {
+        "bomb": 0,
+        "removal": 11,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 11,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Goblin Plate Mail",
+      "oracleId": "eda99a16-6a7c-4f39-8a6b-a284e6afd3fc",
+      "manaCost": "{1}{B/R}",
+      "cmc": 2,
+      "typeLine": "Artifact — Equipment",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/c/b/cb982607-da37-4894-91a5-cf6307d4d703.jpg?1785323293",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Goblin-town",
+      "oracleId": "98d20908-6d68-4d31-b719-207f93c9b402",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land",
+      "colors": [],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/d/7/d76df9d0-56cf-4351-a5e8-e6ae6fc791d1.jpg?1785323613",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Goblin-town Flunkies",
+      "oracleId": "85ceb4ac-7a1c-4c7e-95a3-515a5b5d6116",
+      "manaCost": "{1}{R}",
+      "cmc": 2,
+      "typeLine": "Creature — Goblin Soldier",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/c/c/ccff7382-8609-494c-aeee-cd1436456dd0.jpg?1785497117",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 2,
+        "diversity": 0,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Gollum the Abandoned",
+      "oracleId": "8d88facd-cf7e-498e-ab6b-6bd021316162",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Halfling Horror",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/5/0/50d91ef3-6f5d-4255-8d47-be731b5dad30.jpg?1784733916",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 2,
+        "diversity": 0,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Gollum, Riddle Master",
+      "oracleId": "514b451b-814d-45fb-a2ba-8fe6f0bdad60",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Halfling Horror",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/0/c/0c13e282-bbfb-4601-94ff-803874634371.jpg?1784377100",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 2,
+        "diversity": 3,
+        "overall": 5,
+        "tags": [
+          "diversity"
+        ]
+      }
+    },
+    {
+      "name": "Gollum, Silent Slinker // Meager Meal",
+      "oracleId": "0296d57e-e5b9-456f-bb21-eb584adefb4c",
+      "manaCost": "{3}{B} // {B}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Halfling Horror // Sorcery — Adventure",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/6/c/6cfaa182-3fec-4907-8814-b4d29c33cec3.jpg?1785323234",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 1,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 4.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Great Fierce Bee",
+      "oracleId": "37f82ad8-4f0b-4b17-abcc-03f43d4fdf1c",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Creature — Insect",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/9/d/9d9ef88f-d208-4788-9553-cd672b3be1fe.jpg?1785497086",
+      "bread": {
+        "bomb": 2.2,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 5.2,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Great Gilded Boat",
+      "oracleId": "d4607026-80b2-4fa6-99d5-694cd3b43868",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Artifact — Vehicle",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/b/2/b2fb3995-5b43-4776-88b2-346d353edee0.jpg?1784862975",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Great Ugly-Looking Goblin // Clap! Snap!",
+      "oracleId": "27e17542-549b-4c05-8091-c10a245c916b",
+      "manaCost": "{5}{B} // {1}{B}",
+      "cmc": 6,
+      "typeLine": "Creature — Goblin Soldier // Sorcery — Adventure",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/8/68fe7914-21b4-44eb-9432-3b1637864bc1.jpg?1785236766",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 2.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Guardian of the Halls",
+      "oracleId": "c3fb2829-64f2-4795-b815-edcc5bbbc360",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Creature — Elf Soldier",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/4/2/4265caec-8c28-44cd-8e6b-90b5af926d3c.jpg?1785497166",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Gundabad Opportunist",
+      "oracleId": "61773534-8da8-48fa-b51a-73c0a9a751c4",
+      "manaCost": "{3}{R}",
+      "cmc": 4,
+      "typeLine": "Creature — Goblin Rogue",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/b/c/bc4a60b8-a5bb-4dbf-8d48-95caf757eac3.jpg?1785497118",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 2.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Head of the Hunt",
+      "oracleId": "0523e271-5e0b-4e4b-9eac-86f915d18952",
+      "manaCost": "{2}{B}{B}",
+      "cmc": 4,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/f/3ffe34d4-72f4-4562-a948-8909b9321e59.jpg?1785152416",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 8,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 11.6,
+        "tags": [
+          "bomb",
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Hobbit Hole",
+      "oracleId": "17492186-9814-4c41-8111-1f000a96c212",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/3/0365c439-30bf-4d32-a791-166751bdb996.jpg?1785323332",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Inside Information",
+      "oracleId": "66961bcb-f588-47a7-b3f3-12f4ac674477",
+      "manaCost": "{X}{B}{B}",
+      "cmc": 2,
+      "typeLine": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/5/9/5913d004-0ef6-4dce-8f74-a8fbfc794d43.jpg?1785152471",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Iron Hills",
+      "oracleId": "a71e8d07-1a49-47a0-834e-de87d750a200",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land",
+      "colors": [],
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/7/8/78045c43-5cbe-48ff-837d-e7c6baac2937.jpg?1785323594",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Iron Hills Blacksmith",
+      "oracleId": "9febdfa8-8af2-4aba-b2e6-cb2baad7e02b",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Creature — Dwarf Artificer",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/3/7/370e09c2-36c5-4662-8350-1db798afad3e.jpg?1784631771",
+      "bread": {
+        "bomb": 2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 3,
+        "diversity": 0,
+        "overall": 5,
+        "tags": [
+          "aggro"
+        ]
+      }
+    },
+    {
+      "name": "Iron Hills Stalwart",
+      "oracleId": "bd4ab393-9538-4230-b2a1-bc77099481c9",
+      "manaCost": "{4}{R}",
+      "cmc": 5,
+      "typeLine": "Creature — Dwarf Warrior",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/4/6/46daa9ac-0ac7-4df9-b9d2-e03ab5b56c72.jpg?1785497126",
+      "bread": {
+        "bomb": 5.8,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 8.8,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Island",
+      "oracleId": "b2c6aa39-2d2a-459c-a555-fb48ba993373",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Basic Land — Island",
+      "colors": [],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/0/000f1f50-08e5-4d83-8159-98f06a0e2279.jpg?1783932574",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Key to the Side-Door",
+      "oracleId": "76c036df-44f5-4021-b7fc-656147351341",
+      "manaCost": "{1}",
+      "cmc": 1,
+      "typeLine": "Artifact",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/8/9/898c14a2-d897-4341-83ed-eee666df9648.jpg?1785412757",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Kíli the Resourceful",
+      "oracleId": "840de40b-590e-4bf0-8d16-22b0eff61202",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Dwarf Scout",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/8/1805532f-6d99-47d0-9529-5f5831a7fdc8.jpg?1785496242",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Lake-town",
+      "oracleId": "717c6beb-81c6-43ed-aab0-aedfc1cbac33",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land",
+      "colors": [],
+      "colorIdentity": [
+        "U",
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/2/f/2fbd0584-81a7-4c47-8af1-1c8635899a97.jpg?1785323601",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Lake-town Lookout",
+      "oracleId": "cf765efe-884c-48e2-9edb-9d45cf2756dd",
+      "manaCost": "{W}",
+      "cmc": 1,
+      "typeLine": "Creature — Human Scout",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/1/7/178c4cf6-6b11-40e4-9673-c560d6818a6b.jpg?1785496946",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Lake-town Mariners // Gone Fishing",
+      "oracleId": "dba1d231-6b03-44ad-ab8c-be0c8fe1b6db",
+      "manaCost": "{4}{U}{U} // {3}{U}",
+      "cmc": 6,
+      "typeLine": "Creature — Human Citizen // Instant — Adventure",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/4/2/4202a678-a5f4-47f9-9c18-e88ab9ad20a4.jpg?1785237929",
+      "bread": {
+        "bomb": 8.5,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 8.5,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Lake-town Toymaker",
+      "oracleId": "0f208cd3-7673-4380-9cb8-5b6f09966ebd",
+      "manaCost": "{3}{W}",
+      "cmc": 4,
+      "typeLine": "Creature — Human Artificer",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/7/67304269-c595-4cf0-8dbf-fcb2e9e01fe2.jpg?1785496951",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 4.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Lakeshore Apothecary",
+      "oracleId": "80bcb154-b4be-4bbd-bbc1-b116a59045b7",
+      "manaCost": "{1}{U}",
+      "cmc": 2,
+      "typeLine": "Creature — Human Cleric",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/a/b/abfbb255-a39b-4df5-bfb6-5298584e89f0.jpg?1785497053",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Large Bear",
+      "oracleId": "73346137-3117-4dc3-b5a4-1aca1da54548",
+      "manaCost": "{3}{B/G}{B/G}",
+      "cmc": 5,
+      "typeLine": "Creature — Bear",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/5/0/50202288-f433-4b56-8f60-349bda7b4f6b.jpg?1785323294",
+      "bread": {
+        "bomb": 7,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 3,
+        "diversity": 0,
+        "overall": 12,
+        "tags": [
+          "bomb",
+          "aggro"
+        ]
+      }
+    },
+    {
+      "name": "Last Light of Durin's Day",
+      "oracleId": "539583f4-21c8-4b61-a2c5-f612fadc3ffa",
+      "manaCost": "{1}{R}",
+      "cmc": 2,
+      "typeLine": "Enchantment",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/7/c/7cb22e85-8d54-48a9-a006-d6e2f3ff00e1.jpg?1784760213",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Little Bear",
+      "oracleId": "53c6c6bf-0256-424d-b937-1cc7d9e2d574",
+      "manaCost": "{2}{G}",
+      "cmc": 3,
+      "typeLine": "Creature — Bear",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/8/a/8a50858a-33b5-4c45-9c31-5956ae5a33a6.jpg?1785323276",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 2.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Long Lake Nuisance",
+      "oracleId": "a833fdf1-db0c-4846-8452-d3b2059c2355",
+      "manaCost": "{3}{U}",
+      "cmc": 4,
+      "typeLine": "Creature — Bird",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/c/d/cd5af94d-6321-4834-8e5f-e5d0261b3ef3.jpg?1785497055",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 4,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Long-Bodied Grey Dog",
+      "oracleId": "6f83da19-fd89-44ec-88f3-0c3fddfbd1b2",
+      "manaCost": "{3}",
+      "cmc": 3,
+      "typeLine": "Creature — Dog",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/d/1/d1a1e520-1fe2-4529-8afb-c187bb80da3c.jpg?1785639260",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 1.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Magnificent End",
+      "oracleId": "82bdf9cb-61fe-4eaf-8762-c32002403d96",
+      "manaCost": "{4}{W}",
+      "cmc": 5,
+      "typeLine": "Instant",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/4/3/430c8916-1167-400b-9cad-d301f59d5e5d.jpg?1785497008",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Master's Councillors",
+      "oracleId": "b9079564-5c86-4765-988a-f2334e016fa6",
+      "manaCost": "{1}{U}",
+      "cmc": 2,
+      "typeLine": "Creature — Human Advisor",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/a/d/addcefdd-e012-4adf-9052-e60376a8d2d3.jpg?1784798124",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Mirkwood",
+      "oracleId": "cd49aa99-bf84-4edd-aecc-6dae78b73412",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land",
+      "colors": [],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/6/1/612cf954-f86c-4629-99df-4874d56fded3.jpg?1785323344",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Mirkwood Meditator",
+      "oracleId": "399cd159-7376-421c-b001-c26f1cbadced",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Creature — Elf Druid",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/a/d/ad7ed4e6-3fe2-40f1-909b-a03b2a3c941a.jpg?1785497064",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 3.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Mirkwood Nurturer",
+      "oracleId": "66630640-9605-44da-afdf-eb9d458d056f",
+      "manaCost": "{2}{G/U}",
+      "cmc": 3,
+      "typeLine": "Creature — Elf Ranger",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "colorIdentity": [
+        "G",
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/7/0/704b45e4-566e-40f6-a33a-9151018b44e5.jpg?1785323302",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 2.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Mirkwood Pathmaker",
+      "oracleId": "f1b36dde-9cde-46c8-8d5a-9ad93feba41f",
+      "manaCost": "{2}{G}",
+      "cmc": 3,
+      "typeLine": "Creature — Elf Ranger",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/5/0/50fbedc0-bc66-4ffb-87f6-a2df69995091.jpg?1785152431",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Misty Mountains Raider",
+      "oracleId": "c394b767-620c-4310-b78f-ece312259e46",
+      "manaCost": "{4}{R}",
+      "cmc": 5,
+      "typeLine": "Creature — Goblin Soldier",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/d/6dff14cd-b60b-48f4-9d9f-c9019b55df4c.jpg?1785152178",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 3.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Moment of Glory",
+      "oracleId": "3d39db09-67b7-4a4e-9667-4e1b806f51a5",
+      "manaCost": "{W}",
+      "cmc": 1,
+      "typeLine": "Sorcery",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/a/0a6a6ff0-b1cd-4b06-bd31-612690094e0e.jpg?1785497012",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Most Decrepit Old Bird // Speak Secrets",
+      "oracleId": "34d34f2c-06ff-4acf-8f2f-ff867774b777",
+      "manaCost": "{U} // {1}{U}",
+      "cmc": 1,
+      "typeLine": "Creature — Bird // Sorcery — Adventure",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/2/8/289a6c72-3d0d-402d-8e27-9ad0e254d5f6.jpg?1785236758",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 5,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Mountain",
+      "oracleId": "a3fb7228-e76b-4e96-a40e-20b5fed75685",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Basic Land — Mountain",
+      "colors": [],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/0/005a993c-5111-4364-9fba-75b3d94a8296.jpg?1783948526",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "My Precious // Allure of Power",
+      "oracleId": "2e728381-6db0-4c66-883d-82d718fef833",
+      "manaCost": "{3} // {1}{B}",
+      "cmc": 3,
+      "typeLine": "Legendary Artifact — Equipment // Instant — Adventure",
+      "colors": [],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/5/15ae4d50-be2f-412c-bb6b-b0a06b60474a.jpg?1783902783",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Nasty Little Rabbit",
+      "oracleId": "ee86cce6-c7c1-40a6-896b-cde9b86bb532",
+      "manaCost": "{G}",
+      "cmc": 1,
+      "typeLine": "Creature — Rabbit",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/9/6/96bc7d25-2828-478a-8fe5-a1f4ede8c9c0.jpg?1785324620",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Nighthowl Pursuer",
+      "oracleId": "89aa97d0-1aef-4ed8-b29c-7943bb3d0e60",
+      "manaCost": "{B}",
+      "cmc": 1,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/d/3/d3cbe830-7e95-4019-89c4-cfb36bcf00f8.jpg?1784894860",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 1,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Nori, Teller of Tales",
+      "oracleId": "03253076-9add-4efb-9227-b0a062c86534",
+      "manaCost": "{1}{R/W}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Dwarf Bard",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/b/0/b05adb48-980c-49a0-9ce6-7c7f3f20715d.jpg?1785323303",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Old Fat Spider",
+      "oracleId": "8790f842-e842-4bed-adf4-5b3cc5fd68a9",
+      "manaCost": "{4}{G}{G}",
+      "cmc": 6,
+      "typeLine": "Creature — Spider",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/e/0/e0c0f842-40fe-4776-a988-a35216bcfd47.jpg?1785236709",
+      "bread": {
+        "bomb": 8,
+        "removal": 0,
+        "evasion": 4,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 14,
+        "tags": [
+          "bomb",
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Old Fat Spider Can't See Me",
+      "oracleId": "e4402d21-bb7f-4777-bc8d-b24bf2faccb0",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/4/a/4a865cea-f947-4736-8ace-ba478fceeb22.jpg?1785497065",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Old Thrush",
+      "oracleId": "c8259b0e-131f-44f0-86d4-7c4d711b328d",
+      "manaCost": "{2}",
+      "cmc": 2,
+      "typeLine": "Creature — Bird",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/3/a/3ad02b56-13ec-46ef-92bd-ae078b8bb517.jpg?1785639558",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 3,
+        "overall": 7,
+        "tags": [
+          "evasion",
+          "diversity"
+        ]
+      }
+    },
+    {
+      "name": "Orcrist, Goblin-cleaver",
+      "oracleId": "cc65821a-1893-4087-b461-35cf9fd26c71",
+      "manaCost": "{3}",
+      "cmc": 3,
+      "typeLine": "Legendary Artifact — Equipment",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/7/5/758b4398-4522-49c8-94de-b0d647532544.jpg?1784798231",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Ordinary Bear",
+      "oracleId": "89a2fab8-b074-42aa-a871-d9c5de2d0895",
+      "manaCost": "{3}{G}",
+      "cmc": 4,
+      "typeLine": "Creature — Bear",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/f/0feb9817-56e1-465a-851c-b2fe202aa8ae.jpg?1785323277",
+      "bread": {
+        "bomb": 6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Ori, Keeper of Songs",
+      "oracleId": "69cc089a-abd3-4edb-bc79-f02daac70837",
+      "manaCost": "{2}{W}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Dwarf Bard",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/c/5/c5727af5-a487-4b16-8278-81c3c928c417.jpg?1785323179",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 4.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Part in Friendship",
+      "oracleId": "e1a9c467-2d64-4e11-adf3-7333c923b187",
+      "manaCost": "{4}{G}",
+      "cmc": 5,
+      "typeLine": "Enchantment",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/4/6/46b3b094-0d1b-412e-8655-353ecbf983bb.jpg?1784631825",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Patient Instructor",
+      "oracleId": "bddd7e99-ec74-4ca6-9137-155b85695a95",
+      "manaCost": "{2}{W/U}",
+      "cmc": 3,
+      "typeLine": "Creature — Human Citizen",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "colorIdentity": [
+        "U",
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/e/4/e4800508-8bb9-41bb-8712-b55fba7a80a5.jpg?1785323310",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 1.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Pinecone Strike",
+      "oracleId": "961e3023-39ea-4141-99b6-738280a2815d",
+      "manaCost": "{1}{R}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/e/a/ea174cea-40e5-424e-9734-e39aae6c6b17.jpg?1785496194",
+      "bread": {
+        "bomb": 0,
+        "removal": 14,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 14,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Plains",
+      "oracleId": "bc71ebf6-2056-41f7-be35-b2e5c34afa99",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Basic Land — Plains",
+      "colors": [],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/0/00293ce4-3475-4064-8510-9e8c02faf3bf.jpg?1783936186",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Plunder the Trollshaws",
+      "oracleId": "526f520e-b4bb-4215-9c6b-afc298744f06",
+      "manaCost": "{1}{U}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/a/f/afb73190-b9bd-4744-a011-a37cd9c0148d.jpg?1785496438",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Quarrel",
+      "oracleId": "db05b114-2eb5-46bc-81e7-7e036d8eaab3",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/5/9/5900a0b4-aa89-4019-94c9-7e9ea3b4792e.jpg?1785496166",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Radagast of Rhosgobel",
+      "oracleId": "84d648c7-655e-4590-a3e0-366a8a4a4cb3",
+      "manaCost": "{2}{G}{G}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Avatar Wizard",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/e/3ea01785-add0-487d-b708-5bbf71033899.jpg?1785497266",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 3.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Rage into the Valley",
+      "oracleId": "8c7641b6-3a6c-4441-a98c-3b5d61d91f76",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/3/4/349d7464-e778-4a24-a528-d31d36ff4799.jpg?1785497196",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Ragged Short Spear",
+      "oracleId": "bb67d0a4-864e-4f46-8538-fdd920bf0197",
+      "manaCost": "{1}{R}",
+      "cmc": 2,
+      "typeLine": "Artifact — Equipment",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/7/b/7bf81a8b-52ad-49f5-a3d4-22613cad3a3d.jpg?1785497128",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 2,
+        "overall": 3,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Ravenhill Flock",
+      "oracleId": "7f961374-00b0-40df-83eb-9ced2bb519aa",
+      "manaCost": "{3}{U}",
+      "cmc": 4,
+      "typeLine": "Creature — Bird",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/a/c/acbb4d32-2771-469e-a6de-0df15155cc62.jpg?1784714603",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 6,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Ravening Warg",
+      "oracleId": "8060d231-7477-441d-b249-8e75aa1d7791",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/e/a/ea7b5052-b343-466d-879e-2a211657ef0a.jpg?1785497096",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Reverent Howl",
+      "oracleId": "86214b4c-a3ad-4372-b5fe-8f742a7a3d4c",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Instant",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/1/6/16765eb2-d497-4cd6-b683-20eac2f10bbf.jpg?1785497096",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 2,
+        "overall": 3,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Rhovanion Rampager",
+      "oracleId": "008a11c1-d283-49fe-abd7-ff4fe8b1fe79",
+      "manaCost": "{2}{B}",
+      "cmc": 3,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/5/e/5ee45a5e-3650-47b3-8d31-6b1de9e27a14.jpg?1785412699",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 2.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Riddles in the Dark",
+      "oracleId": "78bed291-0ec7-466f-bc7a-9dae7d0b56ae",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Instant",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/2/3/234e941d-ad86-4a3e-bd8c-0e680944919a.jpg?1783902777",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Roads Go Ever, Ever On",
+      "oracleId": "3cd3cdc9-2ed2-4cdf-b58a-12c3a2ef218b",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/b/3/b3c1ebd6-967f-4b8c-8f1f-442ce8c1da24.jpg?1784673434",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 1,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Roll-Roll-Roll-Roll",
+      "oracleId": "aa913409-7a7a-4e74-82ff-7ff8195585ad",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/a/2/a2e4099e-86bd-461f-87fa-7f7850ae7eec.jpg?1785152396",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Settle the Wreckage",
+      "oracleId": "2a2ea189-b663-4f4a-bb23-ff7a4af25f71",
+      "manaCost": "{2}{W}{W}",
+      "cmc": 4,
+      "typeLine": "Instant",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/1/31a7a5e2-4cb8-48fc-8351-18344b4a7560.jpg?1785496349",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Silvan Reveler",
+      "oracleId": "11932191-4b19-49b1-bfe4-abb7b83b2e59",
+      "manaCost": "{2}{G}{U}",
+      "cmc": 4,
+      "typeLine": "Creature — Elf Citizen",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "colorIdentity": [
+        "G",
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/c/7/c71b74fb-fb0c-4953-b536-7a3f283c6918.jpg?1784382379",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 3.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Smaug the Magnificent",
+      "oracleId": "c53b7602-5e36-4900-896c-844bf6eac22e",
+      "manaCost": "{2}{R}{R}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Dragon",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/4/3/43c56e15-ba46-4a27-b9b0-55cde9f8c933.jpg?1783902778",
+      "bread": {
+        "bomb": 4.6,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 2,
+        "diversity": 0,
+        "overall": 9.6,
+        "tags": [
+          "bomb",
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Smaug's Fury",
+      "oracleId": "5c034266-8e63-4b43-8f9e-564e6fff6ec1",
+      "manaCost": "{1}{R}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/a/1/a16f203a-785e-4c78-9410-fb9f8a0ffa01.jpg?1785497138",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Smaug, Wicked Worm",
+      "oracleId": "20535126-f811-4386-bdce-d73f30691724",
+      "manaCost": "{3}{B}{R}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Dragon",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/8/189a7d55-c3ec-4402-a3b3-72817f533e87.jpg?1785324584",
+      "bread": {
+        "bomb": 7,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 12,
+        "tags": [
+          "bomb",
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Smaug, the Great Calamity // Spew Flame",
+      "oracleId": "fc75cfec-e1f6-4cb5-8a3c-2f7b2c39c03f",
+      "manaCost": "{5}{R}{R} // {4}{R}",
+      "cmc": 7,
+      "typeLine": "Legendary Creature — Dragon // Sorcery — Adventure",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/4/1/419ca9e5-8413-4378-a4ef-eda5a1024218.jpg?1785497136",
+      "bread": {
+        "bomb": 4.6,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 7.6,
+        "tags": [
+          "bomb",
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Snowslope Hunter",
+      "oracleId": "fdf7f144-56e4-4f88-b81a-b85473922355",
+      "manaCost": "{2}{R}",
+      "cmc": 3,
+      "typeLine": "Creature — Goblin Ranger",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/4/7/47666099-ffb2-4d07-a801-70524dba0837.jpg?1785497147",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 2.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Sound the Trumpets",
+      "oracleId": "dbcf2a79-b455-43ac-9cf0-9e63708800f4",
+      "manaCost": "{1}{U}{U}",
+      "cmc": 3,
+      "typeLine": "Instant",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/d/d/dd32a1dd-3541-4572-a717-1deabc14b827.jpg?1784760160",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Sting, Bilbo's Sword",
+      "oracleId": "9779f32c-b1a2-42a3-8e78-14c28c3ad254",
+      "manaCost": "{2}",
+      "cmc": 2,
+      "typeLine": "Legendary Artifact — Equipment",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/0/30420a65-65f2-4331-9a5d-b1771da936b0.jpg?1784377093",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Stir Up Trouble",
+      "oracleId": "dda607bd-f419-4b7f-b052-a5ce6ce22bfe",
+      "manaCost": "{B}",
+      "cmc": 1,
+      "typeLine": "Sorcery",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/f/d/fd145e3a-c889-4390-accb-863dbcc845ce.jpg?1785497107",
+      "bread": {
+        "bomb": 0,
+        "removal": 6,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Stone by Sunlight",
+      "oracleId": "7907bbf0-f6d9-4e5b-b5de-73cd94979f98",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/c/5/c5752731-253c-4b41-bdd8-94c26d715206.jpg?1784631953",
+      "bread": {
+        "bomb": 0,
+        "removal": 6,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Stone-Giant of High Pass",
+      "oracleId": "cfaa8b7b-7bfc-4660-bbc7-a717e05df6ef",
+      "manaCost": "{5}{R}{R}",
+      "cmc": 7,
+      "typeLine": "Creature — Giant",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/a/1adfc347-5c69-45e1-829b-aaae19e04b96.jpg?1785497257",
+      "bread": {
+        "bomb": 8,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 8,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Stony-Voiced Goblins",
+      "oracleId": "d1dceaa7-d33e-4067-9e1b-8a8978a12933",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Creature — Goblin Bard",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/6/f/6fcc3699-b475-4612-884d-81bd4f21e9c1.jpg?1785497106",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Supper for Spiders",
+      "oracleId": "4d891515-39da-492e-ac19-1aa524245449",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/5/b/5b25e454-06bb-43ca-9a9f-57164f7a70c4.jpg?1784376962",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Swamp",
+      "oracleId": "56719f6a-1a6c-4c0a-8d21-18f7d7350b68",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Basic Land — Swamp",
+      "colors": [],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/0/000366c8-7a43-49d7-a103-ac5bd7efd9aa.jpg?1783946591",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Arkenstone // Seek the Heart",
+      "oracleId": "09f09d0a-6054-4545-b81e-0295773cc5f0",
+      "manaCost": "{5} // {2}{W}",
+      "cmc": 5,
+      "typeLine": "Legendary Artifact // Sorcery — Adventure",
+      "colors": [],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/2/d/2d08a806-c70d-4421-a9eb-e29e54e4268f.jpg?1783902778",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 2,
+        "overall": 3,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Black Arrow",
+      "oracleId": "cb2803ee-825b-420e-b404-c7c44f15ec15",
+      "manaCost": "{3}",
+      "cmc": 3,
+      "typeLine": "Legendary Artifact — Equipment",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/a/b/ab181190-d53d-4972-8cd5-8e54b45f2276.jpg?1785496386",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Chief Warg",
+      "oracleId": "5ebe8de1-aa3d-410d-b43d-1685259c7a97",
+      "manaCost": "{2}{B}{G}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Wolf",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/c/3/c397a298-bf7f-49d7-a26a-206ccf9e8120.jpg?1784377030",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 1,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 5.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Eagles Are Coming!",
+      "oracleId": "169a4a77-12ff-4997-9550-bdcd456aa2f7",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/b/0bda1b62-47fc-42c2-a841-ccad8ea0db48.jpg?1784376936",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Great Goblin",
+      "oracleId": "83dcfac0-6efd-4e37-9402-15f9889e84e1",
+      "manaCost": "{1}{B/R}{B/R}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Goblin Noble",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/7/2/720ae752-c3a7-4bc0-bc0f-a9772bea3960.jpg?1784798161",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 2,
+        "diversity": 0,
+        "overall": 4.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Lonely Mountain",
+      "oracleId": "3678c06f-8a33-4a6d-bf20-5b92d5c05a95",
+      "manaCost": "",
+      "cmc": 0,
+      "typeLine": "Land — Mountain",
+      "colors": [],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/0/0015ae49-bc21-4cf3-bb46-3df52760e183.jpg?1784377071",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Lord of the Eagles",
+      "oracleId": "3b38f314-d997-4c2a-b4c9-40dbe780993d",
+      "manaCost": "{7}{U}{U}",
+      "cmc": 9,
+      "typeLine": "Legendary Creature — Bird Noble",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/8/a/8acfaac6-5a63-4fd6-999b-562e989e2ce1.jpg?1784631799",
+      "bread": {
+        "bomb": 9,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 12,
+        "tags": [
+          "bomb",
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "The Master of Lake-town",
+      "oracleId": "89c3c81b-8960-4f79-b2ec-f13560058071",
+      "manaCost": "{1}{B}{B}",
+      "cmc": 3,
+      "typeLine": "Legendary Creature — Human Advisor",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/3/7/3788ada6-34a9-41af-a31c-2d090550e503.jpg?1784632114",
+      "bread": {
+        "bomb": 2.4,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 4.4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Misty Mountains Cold",
+      "oracleId": "c50282bd-4b57-4c7b-9598-ea67ba49248b",
+      "manaCost": "{2}{R}",
+      "cmc": 3,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/a/1aaf8a8a-1032-4ee5-9c18-2debb40ec561.jpg?1784632137",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Mountain-king's Return",
+      "oracleId": "32ad5b3e-92c0-45be-b2e4-6f1794552f36",
+      "manaCost": "{2}{W}",
+      "cmc": 3,
+      "typeLine": "Enchantment — Saga",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/8/68f4893d-e9a5-4f89-ade3-9ab78a834ad5.jpg?1784631780",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Notary Hobbits",
+      "oracleId": "dc20b29b-856e-4d45-99cd-5e12cfc2324d",
+      "manaCost": "{3}{G}{G}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Halfling Advisor",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/e/0e88b614-f5b3-4e1e-beed-3c49e366be11.jpg?1785412592",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Queen of Dale",
+      "oracleId": "a2ec1dd0-86c7-423d-b562-ed95b79bf8f7",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Human Noble",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/4/c/4cff1878-3f23-4a0a-ad79-28a44921cca8.jpg?1784377123",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "The Sackville-Bagginses",
+      "oracleId": "e3a665f9-6e51-4e0d-923b-e9552d5978a4",
+      "manaCost": "{1}{B}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Halfling Citizen",
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/1/11144267-15d1-47b4-8c26-d57328e11422.jpg?1784895070",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Thorin Oakenshield",
+      "oracleId": "bdd41af0-bbd1-4ecd-a699-99f006f5e5ce",
+      "manaCost": "{R}{W}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Dwarf Noble",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/b/6/b6d8d14d-4713-40ea-9509-81ce68b2184d.jpg?1784377060",
+      "bread": {
+        "bomb": 1,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 4,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Thorin's Last Stand",
+      "oracleId": "3c4da169-1e50-4790-abdc-214e7b8a2ad5",
+      "manaCost": "{2}{W}{W}",
+      "cmc": 4,
+      "typeLine": "Instant",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/0/8/089e8e4b-c367-4d86-a69a-951f7d779aaf.jpg?1785497210",
+      "bread": {
+        "bomb": 0,
+        "removal": 6,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 1,
+        "overall": 8,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Thorin, Mountain-king",
+      "oracleId": "94917b80-ac32-45ab-b4ee-157ade024bcd",
+      "manaCost": "{3}{R}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Dwarf Noble",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "mythic",
+      "image": "https://cards.scryfall.io/normal/front/0/e/0e29ba51-763c-48ec-95ec-9d6916f4db44.jpg?1783902776",
+      "bread": {
+        "bomb": 4.6,
+        "removal": 0,
+        "evasion": 2,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 7.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Thranduil's Company",
+      "oracleId": "2c195485-83f9-424f-854a-50c4f5b04182",
+      "manaCost": "{2}{G}{U}",
+      "cmc": 4,
+      "typeLine": "Creature — Elf Soldier",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "colorIdentity": [
+        "G",
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/a/b/abdb9d4e-e6ca-409b-b589-0cf71724340b.jpg?1785412736",
+      "bread": {
+        "bomb": 3.6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 3.6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Thranduil's Decree",
+      "oracleId": "d7cba934-02ad-4677-bb4d-50808b01b4f9",
+      "manaCost": "{4}{U}{U}",
+      "cmc": 6,
+      "typeLine": "Instant",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/e/4/e4ded4c1-0e3e-47c5-8fdc-e7c187f68b12.jpg?1784760181",
+      "bread": {
+        "bomb": 0,
+        "removal": 8,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 8,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Thranduil, Sindarin Liege // Silvan Rally",
+      "oracleId": "f6771d32-395e-4832-b33d-cbc12dff1516",
+      "manaCost": "{2}{G/U}{G/U} // {1}{G/U}{G/U}",
+      "cmc": 4,
+      "typeLine": "Legendary Creature — Elf Noble // Sorcery — Adventure",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "colorIdentity": [
+        "G",
+        "U"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/0/9/0992ce8b-7bef-4799-a52d-7a46021a8672.jpg?1785412593",
+      "bread": {
+        "bomb": 1.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 2.2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Thranduil, the Elvenking",
+      "oracleId": "4a5f76e7-40be-4b06-9935-4a3b2672e1c2",
+      "manaCost": "{2}{B}{G}{U}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Elf Noble",
+      "colors": [
+        "B",
+        "G",
+        "U"
+      ],
+      "colorIdentity": [
+        "B",
+        "G",
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/4/9/49539856-989e-4f95-8e67-9cff4408cd87.jpg?1784377164",
+      "bread": {
+        "bomb": 7.2,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 2,
+        "overall": 9.2,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Through the Forest Gate",
+      "oracleId": "acfe54b3-10e3-4fdb-b874-d39fde96c40a",
+      "manaCost": "{6}{G}{G}",
+      "cmc": 8,
+      "typeLine": "Sorcery",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/8/8/880adfc8-69cf-4062-a804-e65b6cb6056d.jpg?1784895046",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 1,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Thrór's Map",
+      "oracleId": "925cacdc-6d09-4fbd-9258-9f0539da180c",
+      "manaCost": "{2}",
+      "cmc": 2,
+      "typeLine": "Legendary Artifact",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/a/d/ad0dba36-d056-4bc1-987a-391da26ad267.jpg?1785458557",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 4,
+        "overall": 4,
+        "tags": [
+          "diversity"
+        ]
+      }
+    },
+    {
+      "name": "Tidings of War",
+      "oracleId": "5753f4d6-08d0-4e12-85c5-875ee6441626",
+      "manaCost": "{R}",
+      "cmc": 1,
+      "typeLine": "Sorcery",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/3/8/38c16a0a-375e-48cb-9720-dbbc08c603ae.jpg?1785497148",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Tom, Bert, and William",
+      "oracleId": "0ea58cfe-b37c-49a6-a3be-7e60065b8238",
+      "manaCost": "{3}{B}{G}",
+      "cmc": 5,
+      "typeLine": "Legendary Creature — Troll",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/b/1bc9137e-a1e0-4412-8034-8471ae308bc7.jpg?1783902787",
+      "bread": {
+        "bomb": 6,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Troll Negotiations",
+      "oracleId": "6e275711-eb76-4924-ba38-c38a36d9d82a",
+      "manaCost": "{2}{G}{G}",
+      "cmc": 4,
+      "typeLine": "Sorcery",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/c/a/ca0f7bf4-b8a2-4ec4-ad7e-b639de9fa76a.jpg?1785496323",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Troop of Ponies",
+      "oracleId": "bb52b3c3-09f0-4506-b7c0-250ab0b91866",
+      "manaCost": "{2}",
+      "cmc": 2,
+      "typeLine": "Creature — Horse",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/0/b/0b4b1c59-bcec-4779-9e27-0e6f9feb4e11.jpg?1785639568",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Uncover the Moon-Letters",
+      "oracleId": "4c67359d-5590-4eb0-827e-b411967ee238",
+      "manaCost": "{3}{U}",
+      "cmc": 4,
+      "typeLine": "Enchantment",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/1/8/1849eb57-7560-4ffc-9400-02387b1a71e6.jpg?1785497245",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Uneasy Partings",
+      "oracleId": "15211eaa-d906-4b95-8942-2f49d3cb4b81",
+      "manaCost": "{3}{U}",
+      "cmc": 4,
+      "typeLine": "Instant",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/e/4/e49866d4-966a-40f9-b08d-18e5af6d726b.jpg?1785497074",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Velvetwing Butterflies // Gaze in Wonder",
+      "oracleId": "70a702fe-1dd6-4d7b-a85a-45744ecad741",
+      "manaCost": "{2}{W} // {1}{W}",
+      "cmc": 3,
+      "typeLine": "Creature — Insect // Instant — Adventure",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/5/c/5cc0f994-5048-4898-926e-b56cbc97e0ca.jpg?1785497031",
+      "bread": {
+        "bomb": 2.2,
+        "removal": 0,
+        "evasion": 3,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 5.2,
+        "tags": [
+          "evasion"
+        ]
+      }
+    },
+    {
+      "name": "Vow to Erebor",
+      "oracleId": "f8961618-ae68-4d13-84eb-8b5464ce4971",
+      "manaCost": "{1}{W}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "W"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/8/d/8d4f3eb5-fedf-45d6-8bd8-aacbe0ce33b2.jpg?1785497034",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Warg Tactics",
+      "oracleId": "d1663b51-37a1-45a0-b477-2d3e7dd0828e",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Instant",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/b/0/b06d9cee-bb0f-4fe7-ab2a-b55d36461aec.jpg?1785497168",
+      "bread": {
+        "bomb": 0,
+        "removal": 6,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 6,
+        "tags": [
+          "removal"
+        ]
+      }
+    },
+    {
+      "name": "Wargling",
+      "oracleId": "ce107656-f222-4d9a-9ba2-b33b4d47bdb5",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/1/c/1ccbf823-846f-4f09-9c67-1deebb5d1d92.jpg?1785497175",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Well-Worn Spatula",
+      "oracleId": "3cc333a1-c854-4b7c-8002-910e48222371",
+      "manaCost": "{1}",
+      "cmc": 1,
+      "typeLine": "Artifact — Equipment",
+      "colors": [],
+      "colorIdentity": [],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/6/5/659b687f-4068-496f-81b2-7b606bf07ec1.jpg?1785496409",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 1,
+        "overall": 2,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Wilderland Scrounger",
+      "oracleId": "8a2946ad-7a7b-4cda-8591-da8c7da5e072",
+      "manaCost": "{4}{G}",
+      "cmc": 5,
+      "typeLine": "Creature — Wolf",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/6/3/63078f42-f404-4c61-86be-45d934393b0a.jpg?1785236564",
+      "bread": {
+        "bomb": 4.8,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 4.8,
+        "tags": [
+          "bomb"
+        ]
+      }
+    },
+    {
+      "name": "Wizard's Staff",
+      "oracleId": "30c3c700-46f4-4a77-8c45-5c7e3a21bd62",
+      "manaCost": "{1}{U}",
+      "cmc": 2,
+      "typeLine": "Artifact — Equipment",
+      "colors": [
+        "U"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/d/0de529a7-bdc5-4581-a169-1ad123bc099a.jpg?1785152406",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Wood Elves",
+      "oracleId": "8973bd99-20f8-4867-90ef-50392147ee1b",
+      "manaCost": "{2}{G}",
+      "cmc": 3,
+      "typeLine": "Creature — Elf Scout",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "rare",
+      "image": "https://cards.scryfall.io/normal/front/0/2/02de2d9d-2a7d-4059-9258-ef5b50f1f801.jpg?1783921555",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 0,
+        "diversity": 0,
+        "overall": 0,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Woodland Weavemaster",
+      "oracleId": "28ffddca-a3c4-467d-a2dc-2c5e62393e11",
+      "manaCost": "{1}{G}",
+      "cmc": 2,
+      "typeLine": "Creature — Elf Druid",
+      "colors": [
+        "G"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "rarity": "uncommon",
+      "image": "https://cards.scryfall.io/normal/front/f/e/fe2b4bcf-56de-44d3-83af-aeb27f82c25e.jpg?1785237990",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 0,
+        "overall": 1,
+        "tags": [
+          "filler"
+        ]
+      }
+    },
+    {
+      "name": "Óin the Brave",
+      "oracleId": "a25ba5cc-6ff8-4215-b70d-7e86e15e3c1a",
+      "manaCost": "{1}{R}",
+      "cmc": 2,
+      "typeLine": "Legendary Creature — Dwarf Warrior",
+      "colors": [
+        "R"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "rarity": "common",
+      "image": "https://cards.scryfall.io/normal/front/9/9/9984b9ef-e81c-48f4-aa33-0504171a2d3c.jpg?1785496200",
+      "bread": {
+        "bomb": 0,
+        "removal": 0,
+        "evasion": 0,
+        "aggro": 1,
+        "diversity": 2,
+        "overall": 3,
+        "tags": [
+          "filler"
+        ]
+      }
+    }
+  ],
+  "bestCards": [
+    "Beorn the Fierce",
+    "Old Fat Spider",
+    "Pinecone Strike",
+    "Gigantic Big Bear",
+    "Large Bear",
+    "Smaug, Wicked Worm",
+    "The Lord of the Eagles",
+    "Head of the Hunt",
+    "Gnashing of Teeth",
+    "Beorn, Reluctant Host // Till and Tend",
+    "Chief Warg's Company",
+    "Smaug the Magnificent",
+    "Gandalf, Wandering Wizard",
+    "Thranduil, the Elvenking",
+    "Iron Hills Stalwart"
+  ],
+  "manaCombos": [
+    {
+      "colors": "BG",
+      "cardCount": 6,
+      "avgBomb": 3.9,
+      "avgOverall": 6.7,
+      "topCards": [
+        "Chief Warg's Company",
+        "Large Bear",
+        "Tom, Bert, and William",
+        "The Chief Warg",
+        "Duskwatch Hunter"
+      ]
+    },
+    {
+      "colors": "BR",
+      "cardCount": 7,
+      "avgBomb": 2.2,
+      "avgOverall": 3.8,
+      "topCards": [
+        "Smaug, Wicked Worm",
+        "Bolg of the North",
+        "The Great Goblin",
+        "Bolg's Company",
+        "Fearsome Goblin Pair"
+      ]
+    },
+    {
+      "colors": "UG",
+      "cardCount": 5,
+      "avgBomb": 1.7,
+      "avgOverall": 2.6,
+      "topCards": [
+        "Thranduil's Company",
+        "Mirkwood Nurturer",
+        "Silvan Reveler",
+        "Thranduil, Sindarin Liege // Silvan Rally",
+        "Elvenking's Halls"
+      ]
+    },
+    {
+      "colors": "WU",
+      "cardCount": 6,
+      "avgBomb": 1,
+      "avgOverall": 1.9,
+      "topCards": [
+        "Bard, King of Dale",
+        "Bard the Bowman",
+        "Bard's Company",
+        "Patient Instructor",
+        "Eagle's Rescue"
+      ]
+    },
+    {
+      "colors": "WR",
+      "cardCount": 6,
+      "avgBomb": 0.8,
+      "avgOverall": 1.7,
+      "topCards": [
+        "Bifur, Melodic Rider",
+        "Thorin Oakenshield",
+        "Dwalin, Weaponmaster",
+        "Dáin's Company",
+        "Iron Hills"
+      ]
+    }
+  ]
+}
