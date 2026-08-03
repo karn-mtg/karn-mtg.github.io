@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import SiteNav from '../../../components/SiteNav.astro'
+import { locales, contentPrefix, prereleaseBase, t } from '../../../i18n'
+
+export function getStaticPaths() {
+  return locales.map(({ locale, lang }) => ({ params: { locale }, props: { lang } }))
+}
+
+const { lang } = Astro.props
+const i18n = t(lang)
+const prefix = contentPrefix(lang)
+
+const articles = (await getCollection('prerelease', ({ id }) => id.startsWith(prefix)))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+---
+
+<BaseLayout title={`${i18n.prereleaseListTitle} — Karn Forge`} description={i18n.prereleaseListSubtitle} lang={lang}>
+  <SiteNav lang={lang} activePage="prerelease" />
+
+  <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-on-surface mb-2">{i18n.prereleaseListTitle}</h1>
+    <p class="text-on-surface-variant mb-10">{i18n.prereleaseListSubtitle}</p>
+
+    {articles.length === 0 ? (
+      <p class="text-on-surface-variant/50 py-16 text-center">{i18n.explorerNoResults}</p>
+    ) : (
+      <div class="grid gap-6">
+        {articles.map(article => {
+          const slug = article.id.replace(prefix, '').replace(/\.md$/, '')
+          const formattedDate = new Date(article.data.date).toLocaleDateString(i18n.dateLocale, {
+            year: 'numeric', month: 'long', day: 'numeric',
+          })
+          return (
+            <a href={`${prereleaseBase(lang)}/${slug}`} class="group block">
+              <article class="glass-panel rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 p-6">
+                <time class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/60">{formattedDate}</time>
+                <h2 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors duration-200 leading-snug mt-2">
+                  {article.data.title}
+                </h2>
+                <p class="mt-2 text-sm text-on-surface-variant leading-relaxed">{article.data.description}</p>
+                <span class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  {i18n.readMore} →
+                </span>
+              </article>
+            </a>
+          )
+        })}
+      </div>
+    )}
+  </main>
+
+  <footer class="border-t border-white/5 px-6 py-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant/40">
+      <span>{i18n.footerCopy}</span>
+    </div>
+  </footer>
+</BaseLayout>

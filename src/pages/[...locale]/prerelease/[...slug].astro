@@ -1,0 +1,124 @@
+---
+import { getCollection, getEntry, render } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import SiteNav from '../../../components/SiteNav.astro'
+import StatTile from '../../../components/prerelease/StatTile.astro'
+import ColorDistributionChart from '../../../components/prerelease/ColorDistributionChart.astro'
+import BreadDefinitions from '../../../components/prerelease/BreadDefinitions.astro'
+import CardExplorer from '../../../components/prerelease/CardExplorer.astro'
+import BestCardsList from '../../../components/prerelease/BestCardsList.astro'
+import ManaComboRanking from '../../../components/prerelease/ManaComboRanking.astro'
+import { locales, contentPrefix, prereleaseBase, t } from '../../../i18n'
+
+export async function getStaticPaths() {
+  const paths = []
+  for (const { locale, lang } of locales) {
+    const prefix = contentPrefix(lang)
+    const articles = await getCollection('prerelease', ({ id }) => id.startsWith(prefix))
+    for (const article of articles) {
+      paths.push({
+        params: { locale, slug: article.id.replace(prefix, '').replace(/\.md$/, '') },
+        props: { article, lang },
+      })
+    }
+  }
+  return paths
+}
+
+const { article, lang } = Astro.props
+const { Content } = await render(article)
+const i18n = t(lang)
+
+const data = await getEntry('prerelease-data', article.data.setCode)
+if (!data) throw new Error(`Missing prerelease-data entry for set "${article.data.setCode}"`)
+
+const formattedDate = new Date(article.data.date).toLocaleDateString(i18n.dateLocale, {
+  year: 'numeric', month: 'long', day: 'numeric',
+})
+
+const bestCards = data.data.bestCards
+  .map(name => data.data.cards.find(c => c.name === name))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c))
+---
+
+<BaseLayout title={`${article.data.title} — Karn Forge`} description={article.data.description} lang={lang}>
+  <SiteNav lang={lang} activePage="prerelease" />
+
+  <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
+    <a
+      href={prereleaseBase(lang)}
+      class="inline-flex items-center gap-1 text-xs font-semibold text-on-surface-variant/60 hover:text-primary transition-colors mb-10"
+    >
+      {i18n.prereleaseBackToList}
+    </a>
+
+    {article.data.image && (
+      <div class="rounded-2xl overflow-hidden mb-10 border border-white/5">
+        <img src={article.data.image} alt={article.data.title} class="w-full aspect-[16/7] object-cover" />
+      </div>
+    )}
+
+    <time class="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant/60 mb-2">{formattedDate}</time>
+    <h1 class="text-4xl font-bold text-on-surface mb-4">{article.data.title}</h1>
+    <p class="text-on-surface-variant mb-10 text-lg leading-relaxed">{article.data.description}</p>
+
+    <!-- General Information -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.generalInfoHeading}</h2>
+      <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.generalInfoIntro}</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+        <StatTile value={data.data.cardCount} label={i18n.prereleaseCardCount(data.data.cardCount)} />
+        <StatTile value={data.data.colorStats.byRarity.mythic ?? 0} label="Mythic" />
+        <StatTile value={data.data.colorStats.byRarity.rare ?? 0} label="Rare" />
+        <StatTile value={data.data.colorStats.byRarity.uncommon ?? 0} label="Uncommon" />
+      </div>
+
+      <h3 class="text-lg font-semibold text-on-surface mb-3">{i18n.colorDistributionHeading}</h3>
+      <ColorDistributionChart
+        byColor={data.data.colorStats.byColor}
+        creatureLabel={i18n.colorDistributionCreature}
+        nonCreatureLabel={i18n.colorDistributionNonCreature}
+      />
+    </section>
+
+    <!-- B.R.E.A.D. -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.breadHeading}</h2>
+      <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.breadIntro}</p>
+
+      <BreadDefinitions lang={lang} />
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.bestCardsHeading}</h3>
+      <BestCardsList cards={bestCards} lang={lang} />
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.manaCombosHeading}</h3>
+      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.manaCombosSubtitle}</p>
+      <ManaComboRanking combos={data.data.manaCombos} />
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.cardExplorerHeading}</h3>
+      <CardExplorer cards={data.data.cards} lang={lang} />
+    </section>
+
+    <div
+      class="prose prose-invert prose-lg max-w-none
+        prose-headings:text-on-surface prose-headings:font-bold prose-headings:tracking-tight
+        prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
+        prose-p:text-on-surface-variant prose-p:leading-relaxed
+        prose-a:text-[#7eb8f7] prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-on-surface
+        prose-li:text-on-surface-variant prose-ul:text-on-surface-variant prose-ol:text-on-surface-variant"
+    >
+      <Content />
+    </div>
+
+    <div class="mt-16 pt-10 border-t border-white/5">
+      <a
+        href={prereleaseBase(lang)}
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 text-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-200"
+      >
+        {i18n.prereleaseBackToList}
+      </a>
+    </div>
+  </main>
+</BaseLayout>

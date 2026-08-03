@@ -1,0 +1,61 @@
+{
+  "tagThreshold": 3,
+  "bomb": {
+    "minCmc": 3,
+    "statVsCmcWeight": 1.2,
+    "statVsCmcCap": 8,
+    "keywordBonuses": {
+      "Ward": 2.5,
+      "Indestructible": 3,
+      "Hexproof": 2,
+      "Trample": 1,
+      "Flying": 1,
+      "Lifelink": 1,
+      "Double strike": 2,
+      "Protection": 1.5
+    }
+  },
+  "removal": {
+    "patterns": [
+      { "pattern": "exile .{0,40}?until .{0,40}?leaves", "flags": "i", "weight": 4, "note": "temporary exile — reversible, weakest of the three" },
+      { "pattern": "destroy target", "flags": "i", "weight": 6, "note": "destroy — can be regenerated/reanimated" },
+      { "pattern": "destroy (all|each) (target )?creatures?", "flags": "i", "weight": 5, "note": "board wipe — strong but not targeted" },
+      { "pattern": "exile target", "flags": "i", "weight": 8, "note": "permanent exile — strongest, skip if already matched exile-until-leaves" },
+      { "pattern": "exile (it|that (creature|permanent|card))", "flags": "i", "weight": 8, "note": "permanent exile via trigger" },
+      { "pattern": "-\\d+/-\\d+", "flags": "i", "weight": 3, "note": "-X/-X removal, softer than hard removal" }
+    ]
+  },
+  "evasion": {
+    "patterns": [
+      { "pattern": "can't be blocked", "flags": "i", "weight": 4 },
+      { "pattern": "\\bflying\\b", "flags": "i", "weight": 3 },
+      { "pattern": "\\btrample\\b", "flags": "i", "weight": 2 },
+      { "pattern": "\\bmenace\\b", "flags": "i", "weight": 1 }
+    ],
+    "comboBonuses": {
+      "Double strike": 1,
+      "Lifelink": 1
+    }
+  },
+  "aggro": {
+    "patterns": [
+      { "pattern": "deals? \\d+ damage to (each opponent|target (player|opponent))", "flags": "i", "weight": 2 },
+      { "pattern": "(opponent|each opponent) loses \\d+ life", "flags": "i", "weight": 2 },
+      { "pattern": "gets? \\+\\d+/\\+\\d+", "flags": "i", "weight": 1 }
+    ],
+    "keywordBonuses": {
+      "Haste": 2,
+      "Trample": 1,
+      "Double strike": 2,
+      "First strike": 1
+    }
+  },
+  "diversity": {
+    "patterns": [
+      { "pattern": "draws? (a|two|three) cards?", "flags": "i", "weight": 2 },
+      { "pattern": "gain \\d+ life", "flags": "i", "weight": 1 },
+      { "pattern": "search your library for a( basic)? land", "flags": "i", "weight": 2 },
+      { "pattern": "add \\{[wubrgc]\\}", "flags": "i", "weight": 1.5 }
+    ]
+  }
+}

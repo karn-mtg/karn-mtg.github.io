@@ -1,0 +1,105 @@
+---
+import { scaleLinear, scaleBand } from 'd3-scale'
+
+interface ColorBucket {
+  total: number
+  creature: number
+  nonCreature: number
+}
+
+interface Props {
+  byColor: Record<string, ColorBucket>
+  creatureLabel: string
+  nonCreatureLabel: string
+}
+
+const { byColor, creatureLabel, nonCreatureLabel } = Astro.props
+
+const ORDER = ['W', 'U', 'B', 'R', 'G', 'multi', 'C'] as const
+const COLOR_HEX: Record<string, string> = {
+  W: '#e8e4d0',
+  U: '#5b9bd5',
+  B: '#8b7fb0',
+  R: '#e0654a',
+  G: '#5a9e6f',
+  multi: '#f2ca83',
+  C: '#9a8f80',
+}
+const LABEL: Record<string, string> = {
+  W: 'White',
+  U: 'Blue',
+  B: 'Black',
+  R: 'Red',
+  G: 'Green',
+  multi: 'Multi',
+  C: 'Colorless',
+}
+
+const rows = ORDER.filter(key => byColor[key]).map(key => ({ key, ...byColor[key] }))
+const maxTotal = Math.max(1, ...rows.map(r => r.total))
+
+const width = 480
+const rowHeight = 34
+const rowGap = 10
+const labelWidth = 72
+const barMaxWidth = width - labelWidth - 48
+const height = rows.length * (rowHeight + rowGap)
+
+const x = scaleLinear().domain([0, maxTotal]).range([0, barMaxWidth])
+const y = scaleBand()
+  .domain(rows.map(r => r.key))
+  .range([0, height])
+  .paddingInner(rowGap / (rowHeight + rowGap))
+---
+
+<div class="glass-panel rounded-xl p-6">
+  <svg viewBox={`0 0 ${width} ${height}`} class="w-full h-auto" role="img" aria-label="Color distribution chart">
+    {rows.map(row => {
+      const barY = y(row.key) ?? 0
+      const creatureWidth = x(row.creature)
+      const nonCreatureWidth = x(row.total) - creatureWidth
+      return (
+        <g transform={`translate(0, ${barY})`}>
+          <text
+            x={labelWidth - 12}
+            y={rowHeight / 2}
+            text-anchor="end"
+            dominant-baseline="middle"
+            class="fill-on-surface text-[13px] font-semibold"
+          >
+            {LABEL[row.key]}
+          </text>
+          <rect
+            x={labelWidth}
+            y={0}
+            width={creatureWidth}
+            height={rowHeight}
+            rx={4}
+            fill={COLOR_HEX[row.key]}
+          />
+          <rect
+            x={labelWidth + creatureWidth}
+            y={0}
+            width={nonCreatureWidth}
+            height={rowHeight}
+            rx={4}
+            fill={COLOR_HEX[row.key]}
+            opacity={0.35}
+          />
+          <text
+            x={labelWidth + x(row.total) + 8}
+            y={rowHeight / 2}
+            dominant-baseline="middle"
+            class="fill-on-surface-variant text-[12px]"
+          >
+            {row.total}
+          </text>
+        </g>
+      )
+    })}
+  </svg>
+  <div class="mt-4 flex items-center gap-6 text-xs text-on-surface-variant/70">
+    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-primary inline-block" />{creatureLabel}</span>
+    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-primary/35 inline-block" />{nonCreatureLabel}</span>
+  </div>
+</div>

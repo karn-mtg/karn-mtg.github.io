@@ -1,0 +1,107 @@
+---
+import { t, type Lang } from '../../i18n'
+import BreadScorePills from './BreadScorePills.astro'
+
+interface CardEntry {
+  name: string
+  oracleId: string
+  manaCost: string
+  typeLine: string
+  colorIdentity: string[]
+  rarity: string
+  image?: string
+  bread: { bomb: number; removal: number; evasion: number; aggro: number; diversity: number; overall: number; tags: string[] }
+}
+
+interface Props {
+  cards: CardEntry[]
+  lang: Lang
+}
+
+const { cards, lang } = Astro.props
+const i18n = t(lang)
+
+const TAG_FILTERS = ['bomb', 'removal', 'evasion', 'aggro', 'diversity', 'filler'] as const
+const TAG_LABEL: Record<string, string> = {
+  bomb: i18n.breadBombLabel,
+  removal: i18n.breadRemovalLabel,
+  evasion: i18n.breadEvasionLabel,
+  aggro: i18n.breadAggroLabel,
+  diversity: i18n.breadDiversityLabel,
+  filler: i18n.breadFillerLabel,
+}
+
+const sorted = [...cards].sort((a, b) => b.bread.overall - a.bread.overall)
+---
+
+<div id="card-explorer">
+  <div class="flex flex-wrap gap-2 mb-6" id="bread-tag-filter">
+    <button
+      data-tag="all"
+      class="tag-filter-btn inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-150 bg-primary text-on-primary active"
+    >
+      {i18n.explorerFilterAll}
+    </button>
+    {TAG_FILTERS.map(tag => (
+      <button
+        data-tag={tag}
+        class="tag-filter-btn inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-150 bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20"
+      >
+        {TAG_LABEL[tag]}
+      </button>
+    ))}
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="card-grid">
+    {sorted.map(card => (
+      <div
+        class="card-item glass-panel rounded-xl overflow-hidden flex gap-3 p-3"
+        data-tags={card.bread.tags.join(',')}
+        data-colors={(card.colorIdentity.length ? card.colorIdentity : ['C']).join(',')}
+      >
+        {card.image && (
+          <img src={card.image} alt={card.name} class="w-16 h-auto rounded-md flex-shrink-0" loading="lazy" />
+        )}
+        <div class="min-w-0">
+          <div class="flex items-baseline justify-between gap-2">
+            <h4 class="font-semibold text-sm text-on-surface truncate">{card.name}</h4>
+            <span class="text-[11px] text-on-surface-variant/60 flex-shrink-0">{card.manaCost}</span>
+          </div>
+          <p class="text-[11px] text-on-surface-variant/70 mb-2 truncate">{card.typeLine}</p>
+          <BreadScorePills bread={card.bread} lang={lang} />
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div id="explorer-no-results" class="hidden text-center py-16 text-on-surface-variant/50">
+    {i18n.explorerNoResults}
+  </div>
+</div>
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('#bread-tag-filter .tag-filter-btn')
+  const items = document.querySelectorAll<HTMLElement>('#card-grid .card-item')
+  const noResults = document.getElementById('explorer-no-results')
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag!
+      btns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'active')
+        b.classList.add('bg-primary/10', 'text-primary', 'hover:bg-primary/20', 'border', 'border-primary/20')
+      })
+      btn.classList.add('bg-primary', 'text-on-primary', 'active')
+      btn.classList.remove('bg-primary/10', 'text-primary', 'hover:bg-primary/20', 'border', 'border-primary/20')
+
+      let visibleCount = 0
+      items.forEach(item => {
+        const tags = item.dataset.tags?.split(',') ?? []
+        const show = tag === 'all' || tags.includes(tag)
+        item.style.display = show ? '' : 'none'
+        if (show) visibleCount++
+      })
+      if (noResults) noResults.classList.toggle('hidden', visibleCount > 0)
+    })
+  })
+</script>

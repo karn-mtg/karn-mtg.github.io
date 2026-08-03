@@ -1,0 +1,30 @@
+---
+import { t, type Lang } from '../../i18n'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const i18n = t(lang)
+
+const categories = [
+  { key: 'bomb', label: i18n.breadBombLabel, def: i18n.breadBombDef, color: 'bg-primary' },
+  { key: 'removal', label: i18n.breadRemovalLabel, def: i18n.breadRemovalDef, color: 'bg-red-400' },
+  { key: 'evasion', label: i18n.breadEvasionLabel, def: i18n.breadEvasionDef, color: 'bg-sky-400' },
+  { key: 'aggro', label: i18n.breadAggroLabel, def: i18n.breadAggroDef, color: 'bg-orange-400' },
+  { key: 'diversity', label: i18n.breadDiversityLabel, def: i18n.breadDiversityDef, color: 'bg-emerald-400' },
+] as const
+---
+
+<div class="grid gap-4 sm:grid-cols-2">
+  {categories.map(cat => (
+    <div class="glass-panel rounded-xl p-5">
+      <div class="flex items-center gap-2 mb-2">
+        <span class={`w-2.5 h-2.5 rounded-full ${cat.color}`} />
+        <h3 class="font-bold text-on-surface">{cat.label}</h3>
+      </div>
+      <p class="text-sm text-on-surface-variant leading-relaxed">{cat.def}</p>
+    </div>
+  ))}
+</div>

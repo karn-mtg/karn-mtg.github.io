@@ -36,4 +36,68 @@ const blog = defineCollection({
   }),
 })
 
-export const collections = { docs, blog, authors }
+const prerelease = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.string(),
+    setCode: z.string(),
+    setName: z.string(),
+    author: z.string().optional(),
+    image: z.string().optional(),
+    lang: z.enum(['en', 'pt-br', 'de', 'es']).default('en'),
+    generalInfoIntro: z.string(),
+    breadIntro: z.string(),
+  }),
+})
+
+const breadScoreSchema = z.object({
+  bomb: z.number(),
+  removal: z.number(),
+  evasion: z.number(),
+  aggro: z.number(),
+  diversity: z.number(),
+  overall: z.number(),
+  tags: z.array(z.string()),
+})
+
+const prereleaseData = defineCollection({
+  type: 'data',
+  schema: z.object({
+    setCode: z.string(),
+    generatedAt: z.string(),
+    cardCount: z.number(),
+    colorStats: z.object({
+      cardCount: z.number(),
+      byColor: z.record(z.string(), z.object({
+        total: z.number(),
+        creature: z.number(),
+        nonCreature: z.number(),
+      })),
+      byRarity: z.record(z.string(), z.number()),
+    }),
+    cards: z.array(z.object({
+      name: z.string(),
+      oracleId: z.string(),
+      manaCost: z.string(),
+      cmc: z.number(),
+      typeLine: z.string(),
+      colors: z.array(z.string()),
+      colorIdentity: z.array(z.string()),
+      rarity: z.string(),
+      image: z.string().optional(),
+      bread: breadScoreSchema,
+    })),
+    bestCards: z.array(z.string()),
+    manaCombos: z.array(z.object({
+      colors: z.string(),
+      cardCount: z.number(),
+      avgBomb: z.number(),
+      avgOverall: z.number(),
+      topCards: z.array(z.string()),
+    })),
+  }),
+})
+
+export const collections = { docs, blog, authors, prerelease, 'prerelease-data': prereleaseData }
