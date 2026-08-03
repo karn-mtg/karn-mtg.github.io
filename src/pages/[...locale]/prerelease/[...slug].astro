@@ -15,6 +15,8 @@ import MatrixHeatmap from '../../../components/prerelease/MatrixHeatmap.astro'
 import MechanicsList from '../../../components/prerelease/MechanicsList.astro'
 import SynergyCombosTable from '../../../components/prerelease/SynergyCombosTable.astro'
 import ArchetypeAnalysis from '../../../components/prerelease/ArchetypeAnalysis.astro'
+import AtAGlance from '../../../components/prerelease/AtAGlance.astro'
+import SectionNav from '../../../components/prerelease/SectionNav.astro'
 import { locales, contentPrefix, prereleaseBase, t } from '../../../i18n'
 
 export async function getStaticPaths() {
@@ -46,12 +48,22 @@ const formattedDate = new Date(article.data.date).toLocaleDateString(i18n.dateLo
 const bestCards = data.data.bestCards
   .map(name => data.data.cards.find(c => c.name === name))
   .filter((c): c is NonNullable<typeof c> => Boolean(c))
+
+const hasAnalysis = data.data.archetypeAnalysis.length > 0
+
+const sections = [
+  { id: 'general-info', label: i18n.generalInfoHeading },
+  { id: 'synergy', label: i18n.synergyHeading },
+  { id: 'bread', label: i18n.breadHeading },
+  ...(hasAnalysis ? [{ id: 'analysis', label: i18n.analysisHeading }] : []),
+  { id: 'explore', label: i18n.cardExplorerHeading },
+]
 ---
 
 <BaseLayout title={`${article.data.title} — Karn Forge`} description={article.data.description} lang={lang}>
   <SiteNav lang={lang} activePage="prerelease" />
 
-  <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
+  <main class="pt-28 pb-24 px-6 max-w-6xl mx-auto">
     <a
       href={prereleaseBase(lang)}
       class="inline-flex items-center gap-1 text-xs font-semibold text-on-surface-variant/60 hover:text-primary transition-colors mb-10"
@@ -65,12 +77,26 @@ const bestCards = data.data.bestCards
       </div>
     )}
 
-    <time class="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant/60 mb-2">{formattedDate}</time>
-    <h1 class="text-4xl font-bold text-on-surface mb-4">{article.data.title}</h1>
-    <p class="text-on-surface-variant mb-10 text-lg leading-relaxed">{article.data.description}</p>
+    <div class="max-w-2xl">
+      <time class="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant/60 mb-2">{formattedDate}</time>
+      <h1 class="text-4xl font-bold text-on-surface mb-4">{article.data.title}</h1>
+      <p class="text-on-surface-variant mb-10 text-lg leading-relaxed">{article.data.description}</p>
+    </div>
+
+    <SectionNav sections={sections} />
+
+    <AtAGlance
+      lang={lang}
+      cardCount={data.data.cardCount}
+      byRarity={data.data.colorStats.byRarity}
+      byColor={data.data.colorStats.byColor}
+      topCard={bestCards[0]}
+      topCombo={data.data.manaCombos[0]}
+      archetypes={data.data.archetypeAnalysis}
+    />
 
     <!-- General Information -->
-    <section class="mb-16">
+    <section id="general-info" class="mb-16 scroll-mt-32">
       <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.generalInfoHeading}</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.generalInfoIntro}</p>
 
@@ -81,13 +107,6 @@ const bestCards = data.data.bestCards
         <StatTile value={data.data.colorStats.byRarity.uncommon ?? 0} label="Uncommon" />
       </div>
 
-      <h3 class="text-lg font-semibold text-on-surface mb-3">{i18n.colorDistributionHeading}</h3>
-      <ColorDistributionChart
-        byColor={data.data.colorStats.byColor}
-        creatureLabel={i18n.colorDistributionCreature}
-        nonCreatureLabel={i18n.colorDistributionNonCreature}
-      />
-
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.creatureTypesHeading}</h3>
       <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.kindredSignalsSubtitle}</p>
       <KindredSignals signals={data.data.creatureTypes.kindredSignals} />
@@ -97,7 +116,7 @@ const bestCards = data.data.bestCards
     </section>
 
     <!-- Interaction / Synergy -->
-    <section class="mb-16">
+    <section id="synergy" class="mb-16 scroll-mt-32">
       <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.synergyHeading}</h2>
       {article.data.synergyIntro && (
         <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.synergyIntro}</p>
@@ -125,7 +144,7 @@ const bestCards = data.data.bestCards
     </section>
 
     <!-- B.R.E.A.D. -->
-    <section class="mb-16">
+    <section id="bread" class="mb-16 scroll-mt-32">
       <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.breadHeading}</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.breadIntro}</p>
 
@@ -137,14 +156,11 @@ const bestCards = data.data.bestCards
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.manaCombosHeading}</h3>
       <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.manaCombosSubtitle}</p>
       <ManaComboRanking combos={data.data.manaCombos} />
-
-      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.cardExplorerHeading}</h3>
-      <CardExplorer cards={data.data.cards} lang={lang} />
     </section>
 
     <!-- Analysis -->
-    {data.data.archetypeAnalysis.length > 0 && (
-      <section class="mb-16">
+    {hasAnalysis && (
+      <section id="analysis" class="mb-16 scroll-mt-32">
         <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.analysisHeading}</h2>
         {article.data.analysisIntro && (
           <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.analysisIntro}</p>
@@ -154,8 +170,14 @@ const bestCards = data.data.bestCards
       </section>
     )}
 
+    <!-- Explore -->
+    <section id="explore" class="mb-16 scroll-mt-32">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.cardExplorerHeading}</h2>
+      <CardExplorer cards={data.data.cards} lang={lang} />
+    </section>
+
     <div
-      class="prose prose-invert prose-lg max-w-none
+      class="prose prose-invert prose-lg max-w-2xl
         prose-headings:text-on-surface prose-headings:font-bold prose-headings:tracking-tight
         prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
         prose-p:text-on-surface-variant prose-p:leading-relaxed

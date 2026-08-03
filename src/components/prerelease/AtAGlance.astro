@@ -1,0 +1,90 @@
+---
+import { t, type Lang } from '../../i18n'
+import StatTile from './StatTile.astro'
+import ColorDistributionChart from './ColorDistributionChart.astro'
+import BreadScorePills from './BreadScorePills.astro'
+
+interface Props {
+  lang: Lang
+  cardCount: number
+  byRarity: Record<string, number>
+  byColor: Record<string, { total: number; creature: number; nonCreature: number }>
+  topCard?: {
+    name: string
+    image?: string
+    bread: { bomb: number; removal: number; evasion: number; aggro: number; diversity: number; overall: number; tags: string[] }
+  }
+  topCombo?: { colors: string; avgBomb: number }
+  archetypes?: { verdict: string }[]
+}
+
+const { lang, cardCount, byRarity, byColor, topCard, topCombo, archetypes = [] } = Astro.props
+const i18n = t(lang)
+
+const COLOR_HEX: Record<string, string> = { W: '#e8e4d0', U: '#5b9bd5', B: '#8b7fb0', R: '#e0654a', G: '#5a9e6f' }
+const VERDICT_LABEL: Record<string, string> = {
+  wellSupported: i18n.verdictWellSupported,
+  plentifulButWeak: i18n.verdictPlentifulButWeak,
+  rareButStrong: i18n.verdictRareButStrong,
+  dataDisagrees: i18n.verdictDataDisagrees,
+  insufficient: i18n.verdictInsufficient,
+}
+const verdictCounts: Record<string, number> = {}
+for (const a of archetypes) verdictCounts[a.verdict] = (verdictCounts[a.verdict] || 0) + 1
+---
+
+<div class="grid gap-6 lg:grid-cols-5 mb-16">
+  <div class="lg:col-span-3 glass-panel rounded-2xl p-6">
+    <h3 class="text-sm font-semibold uppercase tracking-widest text-on-surface-variant/50 mb-4">{i18n.colorDistributionHeading}</h3>
+    <ColorDistributionChart
+      byColor={byColor}
+      creatureLabel={i18n.colorDistributionCreature}
+      nonCreatureLabel={i18n.colorDistributionNonCreature}
+    />
+  </div>
+
+  <div class="lg:col-span-2 flex flex-col gap-4">
+    <div class="grid grid-cols-2 gap-3">
+      <StatTile value={cardCount} label={i18n.prereleaseCardCount(cardCount)} />
+      <StatTile value={byRarity.mythic ?? 0} label="Mythic" />
+    </div>
+
+    {topCard && (
+      <a href="#bread" class="glass-panel rounded-xl p-4 block hover:border-primary/30 transition-colors">
+        <div class="flex items-center gap-3">
+          {topCard.image && <img src={topCard.image} alt={topCard.name} class="w-12 h-auto rounded-md flex-shrink-0" />}
+          <div class="min-w-0">
+            <div class="text-[10px] uppercase tracking-widest text-on-surface-variant/50">{i18n.bestCardsHeading}</div>
+            <div class="font-bold text-on-surface truncate">{topCard.name}</div>
+            <BreadScorePills bread={topCard.bread} lang={lang} />
+          </div>
+        </div>
+      </a>
+    )}
+
+    {topCombo && (
+      <a href="#bread" class="glass-panel rounded-xl p-4 flex items-center justify-between hover:border-primary/30 transition-colors">
+        <div>
+          <div class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 mb-1">{i18n.manaCombosHeading}</div>
+          <div class="flex gap-1">
+            {topCombo.colors.split('').map(c => (
+              <span class="w-3.5 h-3.5 rounded-full inline-block border border-white/10" style={`background:${COLOR_HEX[c]}`} />
+            ))}
+          </div>
+        </div>
+        <span class="text-lg font-bold text-primary">{topCombo.avgBomb}</span>
+      </a>
+    )}
+
+    {Object.keys(verdictCounts).length > 0 && (
+      <a href="#analysis" class="glass-panel rounded-xl p-4 hover:border-primary/30 transition-colors">
+        <div class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 mb-2">{i18n.analysisHeading}</div>
+        <div class="flex flex-wrap gap-1.5">
+          {Object.entries(verdictCounts).map(([verdict, count]) => (
+            <span class="text-xs font-semibold text-on-surface-variant">{count}× {VERDICT_LABEL[verdict]}</span>
+          ))}
+        </div>
+      </a>
+    )}
+  </div>
+</div>
