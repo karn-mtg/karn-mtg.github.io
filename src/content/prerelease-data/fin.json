@@ -1,6 +1,6 @@
 {
   "setCode": "fin",
-  "generatedAt": "2026-08-03T18:18:01.911Z",
+  "generatedAt": "2026-08-03T19:08:16.604Z",
   "cardCount": 312,
   "colorStats": {
     "cardCount": 312,
@@ -8190,14 +8190,6 @@
   ],
   "wordCloud": [
     {
-      "word": "target",
-      "count": 113
-    },
-    {
-      "word": "enters",
-      "count": 101
-    },
-    {
       "word": "land",
       "count": 52
     },
@@ -8348,17 +8340,17 @@
     {
       "word": "types",
       "count": 20
+    },
+    {
+      "word": "lifelink",
+      "count": 19
+    },
+    {
+      "word": "equipment",
+      "count": 19
     }
   ],
   "topWords": [
-    {
-      "word": "target",
-      "count": 113
-    },
-    {
-      "word": "enters",
-      "count": 101
-    },
     {
       "word": "land",
       "count": 52
@@ -8390,33 +8382,17 @@
     {
       "word": "create",
       "count": 46
+    },
+    {
+      "word": "tapped",
+      "count": 46
+    },
+    {
+      "word": "deals",
+      "count": 44
     }
   ],
   "wordColorMatrix": [
-    {
-      "word": "target",
-      "byColor": {
-        "W": 19,
-        "U": 18,
-        "B": 16,
-        "R": 21,
-        "G": 14,
-        "multi": 16,
-        "C": 9
-      }
-    },
-    {
-      "word": "enters",
-      "byColor": {
-        "W": 10,
-        "U": 12,
-        "B": 13,
-        "R": 10,
-        "G": 17,
-        "multi": 32,
-        "C": 7
-      }
-    },
     {
       "word": "land",
       "byColor": {
@@ -8572,28 +8548,52 @@
         "multi": 5,
         "C": 4
       }
+    },
+    {
+      "word": "library",
+      "byColor": {
+        "W": 6,
+        "U": 4,
+        "B": 4,
+        "R": 10,
+        "G": 8,
+        "multi": 4,
+        "C": 3
+      }
+    },
+    {
+      "word": "flying",
+      "byColor": {
+        "W": 8,
+        "U": 8,
+        "B": 4,
+        "R": 1,
+        "G": 1,
+        "multi": 9,
+        "C": 4
+      }
     }
   ],
   "mechanics": [
     {
       "mechanic": "Flying",
       "count": 30,
-      "synergyCount": 27
+      "synergyCount": 25
     },
     {
       "mechanic": "Equip",
       "count": 27,
-      "synergyCount": 15
+      "synergyCount": 11
     },
     {
       "mechanic": "Transform",
       "count": 27,
-      "synergyCount": 26
+      "synergyCount": 25
     },
     {
       "mechanic": "Job select",
       "count": 16,
-      "synergyCount": 7
+      "synergyCount": 6
     },
     {
       "mechanic": "Flashback",
@@ -8603,7 +8603,7 @@
     {
       "mechanic": "Lifelink",
       "count": 12,
-      "synergyCount": 9
+      "synergyCount": 10
     },
     {
       "mechanic": "Trample",
@@ -8613,7 +8613,7 @@
     {
       "mechanic": "Surveil",
       "count": 11,
-      "synergyCount": 10
+      "synergyCount": 8
     },
     {
       "mechanic": "Landfall",
@@ -8623,7 +8623,7 @@
     {
       "mechanic": "Vigilance",
       "count": 10,
-      "synergyCount": 7
+      "synergyCount": 6
     },
     {
       "mechanic": "Treasure",
@@ -8633,7 +8633,7 @@
     {
       "mechanic": "Mill",
       "count": 10,
-      "synergyCount": 8
+      "synergyCount": 7
     },
     {
       "mechanic": "Reach",
@@ -8653,17 +8653,17 @@
     {
       "mechanic": "Cycling",
       "count": 8,
-      "synergyCount": 6
+      "synergyCount": 3
     },
     {
       "mechanic": "Double",
       "count": 7,
-      "synergyCount": 7
+      "synergyCount": 6
     },
     {
       "mechanic": "Tiered",
       "count": 6,
-      "synergyCount": 6
+      "synergyCount": 3
     },
     {
       "mechanic": "Deathtouch",
@@ -8673,12 +8673,12 @@
     {
       "mechanic": "Landcycling",
       "count": 5,
-      "synergyCount": 4
+      "synergyCount": 2
     },
     {
       "mechanic": "Typecycling",
       "count": 5,
-      "synergyCount": 4
+      "synergyCount": 2
     },
     {
       "mechanic": "Haste",
@@ -8688,17 +8688,17 @@
     {
       "mechanic": "Flash",
       "count": 4,
-      "synergyCount": 4
+      "synergyCount": 2
     },
     {
       "mechanic": "Ward",
       "count": 3,
-      "synergyCount": 3
+      "synergyCount": 2
     },
     {
       "mechanic": "Affinity",
       "count": 3,
-      "synergyCount": 3
+      "synergyCount": 2
     },
     {
       "mechanic": "Indestructible",
@@ -8728,7 +8728,7 @@
     {
       "mechanic": "Enchant",
       "count": 2,
-      "synergyCount": 2
+      "synergyCount": 1
     },
     {
       "mechanic": "Take 59 Flights of Stairs",
@@ -8753,7 +8753,7 @@
     {
       "mechanic": "Forestcycling",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Attack",
@@ -8883,17 +8883,17 @@
     {
       "mechanic": "Blizzard",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Blizzara",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Blizzaga",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "10,000 Needles",
@@ -8923,17 +8923,17 @@
     {
       "mechanic": "A Test of Your Reflexes!",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Bad Breath",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Swampcycling",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Mutsunokami",
@@ -8943,7 +8943,7 @@
     {
       "mechanic": "Wave Cannon",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Selfie Shot",
@@ -8963,17 +8963,17 @@
     {
       "mechanic": "Curaga",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Cura",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Cure",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Angelo Cannon",
@@ -8988,7 +8988,7 @@
     {
       "mechanic": "Hagneia",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Murasame",
@@ -9048,22 +9048,22 @@
     {
       "mechanic": "Triple",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Final Heaven",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Meteor Strikes",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Somersault",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Chef's Knife",
@@ -9108,12 +9108,12 @@
     {
       "mechanic": "My First Friend",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Burning Chains",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     }
   ],
   "mechanicColorMatrix": [
@@ -10418,17 +10418,17 @@
     {
       "mechanic": "Flying",
       "count": 30,
-      "synergyCount": 27
+      "synergyCount": 25
     },
     {
       "mechanic": "Transform",
       "count": 27,
-      "synergyCount": 26
+      "synergyCount": 25
     },
     {
       "mechanic": "Equip",
       "count": 27,
-      "synergyCount": 15
+      "synergyCount": 11
     },
     {
       "mechanic": "Flashback",
@@ -10436,8 +10436,8 @@
       "synergyCount": 11
     },
     {
-      "mechanic": "Surveil",
-      "count": 11,
+      "mechanic": "Lifelink",
+      "count": 12,
       "synergyCount": 10
     },
     {
@@ -10451,11 +10451,6 @@
       "synergyCount": 10
     },
     {
-      "mechanic": "Lifelink",
-      "count": 12,
-      "synergyCount": 9
-    },
-    {
       "mechanic": "Menace",
       "count": 9,
       "synergyCount": 9
@@ -10466,17 +10461,12 @@
       "synergyCount": 8
     },
     {
-      "mechanic": "Mill",
-      "count": 10,
+      "mechanic": "Surveil",
+      "count": 11,
       "synergyCount": 8
     },
     {
-      "mechanic": "Job select",
-      "count": 16,
-      "synergyCount": 7
-    },
-    {
-      "mechanic": "Vigilance",
+      "mechanic": "Mill",
       "count": 10,
       "synergyCount": 7
     },
@@ -10491,18 +10481,18 @@
       "synergyCount": 7
     },
     {
-      "mechanic": "Double",
-      "count": 7,
-      "synergyCount": 7
-    },
-    {
-      "mechanic": "Cycling",
-      "count": 8,
+      "mechanic": "Job select",
+      "count": 16,
       "synergyCount": 6
     },
     {
-      "mechanic": "Tiered",
-      "count": 6,
+      "mechanic": "Vigilance",
+      "count": 10,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Double",
+      "count": 7,
       "synergyCount": 6
     },
     {
@@ -10511,39 +10501,49 @@
       "synergyCount": 5
     },
     {
-      "mechanic": "Landcycling",
-      "count": 5,
-      "synergyCount": 4
-    },
-    {
-      "mechanic": "Typecycling",
-      "count": 5,
-      "synergyCount": 4
-    },
-    {
       "mechanic": "Haste",
       "count": 5,
       "synergyCount": 4
     },
     {
-      "mechanic": "Flash",
-      "count": 4,
-      "synergyCount": 4
-    },
-    {
-      "mechanic": "Ward",
-      "count": 3,
+      "mechanic": "Cycling",
+      "count": 8,
       "synergyCount": 3
     },
     {
-      "mechanic": "Affinity",
-      "count": 3,
+      "mechanic": "Tiered",
+      "count": 6,
       "synergyCount": 3
     },
     {
       "mechanic": "Indestructible",
       "count": 3,
       "synergyCount": 3
+    },
+    {
+      "mechanic": "Landcycling",
+      "count": 5,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Typecycling",
+      "count": 5,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Flash",
+      "count": 4,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Ward",
+      "count": 3,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Affinity",
+      "count": 3,
+      "synergyCount": 2
     },
     {
       "mechanic": "Kicker",
@@ -10568,7 +10568,7 @@
     {
       "mechanic": "Enchant",
       "count": 2,
-      "synergyCount": 2
+      "synergyCount": 1
     },
     {
       "mechanic": "Take 59 Flights of Stairs",
@@ -10587,11 +10587,6 @@
     },
     {
       "mechanic": "Diana",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Forestcycling",
       "count": 1,
       "synergyCount": 1
     },
@@ -10701,21 +10696,6 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "Blizzard",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Blizzara",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Blizzaga",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
       "mechanic": "Flare Star",
       "count": 1,
       "synergyCount": 1
@@ -10731,27 +10711,7 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "A Test of Your Reflexes!",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Bad Breath",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Swampcycling",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
       "mechanic": "Mutsunokami",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Wave Cannon",
       "count": 1,
       "synergyCount": 1
     },
@@ -10771,32 +10731,12 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "Curaga",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Cura",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Cure",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
       "mechanic": "Angelo Cannon",
       "count": 1,
       "synergyCount": 1
     },
     {
       "mechanic": "Summon",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Hagneia",
       "count": 1,
       "synergyCount": 1
     },
@@ -10851,26 +10791,6 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "Triple",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Final Heaven",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Meteor Strikes",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Somersault",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
       "mechanic": "Chef's Knife",
       "count": 1,
       "synergyCount": 1
@@ -10911,14 +10831,9 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "My First Friend",
+      "mechanic": "Forestcycling",
       "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Burning Chains",
-      "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Hideaway",
@@ -10941,6 +10856,21 @@
       "synergyCount": 0
     },
     {
+      "mechanic": "Blizzard",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Blizzara",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Blizzaga",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
       "mechanic": "10,000 Needles",
       "count": 1,
       "synergyCount": 0
@@ -10951,7 +10881,77 @@
       "synergyCount": 0
     },
     {
+      "mechanic": "A Test of Your Reflexes!",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Bad Breath",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Swampcycling",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Wave Cannon",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Curaga",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Cura",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Cure",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Hagneia",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
       "mechanic": "Murasame",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Triple",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Final Heaven",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Meteor Strikes",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Somersault",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "My First Friend",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Burning Chains",
       "count": 1,
       "synergyCount": 0
     }
@@ -11306,6 +11306,62 @@
         "subtype": "Plant",
         "count": 4,
         "concentration": 67
+      }
+    ],
+    "kindredSignalsByPair": [
+      {
+        "colors": "WU",
+        "subtype": "Warrior",
+        "count": 2,
+        "concentration": 15
+      },
+      {
+        "colors": "WB",
+        "subtype": "Knight",
+        "count": 4,
+        "concentration": 31
+      },
+      {
+        "colors": "WR",
+        "subtype": "Soldier",
+        "count": 2,
+        "concentration": 17
+      },
+      {
+        "colors": "WG",
+        "subtype": "Cleric",
+        "count": 2,
+        "concentration": 33
+      },
+      {
+        "colors": "UB",
+        "subtype": "Warlock",
+        "count": 2,
+        "concentration": 33
+      },
+      {
+        "colors": "UR",
+        "subtype": "Wizard",
+        "count": 5,
+        "concentration": 22
+      },
+      {
+        "colors": "BR",
+        "subtype": "Wizard",
+        "count": 3,
+        "concentration": 13
+      },
+      {
+        "colors": "BG",
+        "subtype": "Spirit",
+        "count": 2,
+        "concentration": 67
+      },
+      {
+        "colors": "RG",
+        "subtype": "Human",
+        "count": 3,
+        "concentration": 4
       }
     ]
   },

@@ -1,5 +1,6 @@
 ---
 import { t, type Lang } from '../../i18n'
+import ManaSymbol from './ManaSymbol.astro'
 
 interface Archetype {
   colors: string
@@ -27,8 +28,6 @@ interface Props {
 const { archetypes, lang } = Astro.props
 const i18n = t(lang)
 
-const COLOR_HEX: Record<string, string> = { W: '#e8e4d0', U: '#5b9bd5', B: '#8b7fb0', R: '#e0654a', G: '#5a9e6f' }
-
 const VERDICT_LABEL: Record<string, string> = {
   wellSupported: i18n.verdictWellSupported,
   plentifulButWeak: i18n.verdictPlentifulButWeak,
@@ -50,10 +49,8 @@ const VERDICT_STYLE: Record<string, string> = {
     <div class="glass-panel rounded-xl p-5">
       <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
         <div class="flex items-center gap-3">
-          <div class="flex gap-1">
-            {arch.colors.split('').map(c => (
-              <span class="w-4 h-4 rounded-full inline-block border border-white/10" style={`background:${COLOR_HEX[c]}`} />
-            ))}
+          <div class="flex gap-0.5">
+            {arch.colors.split('').map(c => <ManaSymbol color={c} />)}
           </div>
           <h4 class="font-bold text-on-surface">{arch.name}</h4>
           <span class="text-xs text-on-surface-variant/50">({arch.mechanic})</span>

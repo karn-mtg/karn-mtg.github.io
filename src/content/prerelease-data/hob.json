@@ -1,6 +1,6 @@
 {
   "setCode": "hob",
-  "generatedAt": "2026-08-03T18:18:02.025Z",
+  "generatedAt": "2026-08-03T19:08:16.726Z",
   "cardCount": 193,
   "colorStats": {
     "cardCount": 193,
@@ -5142,14 +5142,6 @@
   ],
   "wordCloud": [
     {
-      "word": "target",
-      "count": 80
-    },
-    {
-      "word": "enters",
-      "count": 68
-    },
-    {
       "word": "draw",
       "count": 35
     },
@@ -5300,17 +5292,17 @@
     {
       "word": "discard",
       "count": 11
+    },
+    {
+      "word": "number",
+      "count": 11
+    },
+    {
+      "word": "first",
+      "count": 11
     }
   ],
   "topWords": [
-    {
-      "word": "target",
-      "count": 80
-    },
-    {
-      "word": "enters",
-      "count": 68
-    },
     {
       "word": "draw",
       "count": 35
@@ -5342,33 +5334,17 @@
     {
       "word": "create",
       "count": 23
+    },
+    {
+      "word": "cast",
+      "count": 23
+    },
+    {
+      "word": "life",
+      "count": 22
     }
   ],
   "wordColorMatrix": [
-    {
-      "word": "target",
-      "byColor": {
-        "W": 15,
-        "U": 12,
-        "B": 14,
-        "R": 10,
-        "G": 10,
-        "multi": 14,
-        "C": 5
-      }
-    },
-    {
-      "word": "enters",
-      "byColor": {
-        "W": 8,
-        "U": 6,
-        "B": 6,
-        "R": 12,
-        "G": 9,
-        "multi": 19,
-        "C": 8
-      }
-    },
     {
       "word": "draw",
       "byColor": {
@@ -5524,34 +5500,58 @@
         "multi": 2,
         "C": 2
       }
+    },
+    {
+      "word": "artifact",
+      "byColor": {
+        "W": 4,
+        "U": 2,
+        "B": 4,
+        "R": 6,
+        "G": 0,
+        "multi": 1,
+        "C": 1
+      }
+    },
+    {
+      "word": "graveyard",
+      "byColor": {
+        "W": 2,
+        "U": 6,
+        "B": 4,
+        "R": 2,
+        "G": 0,
+        "multi": 3,
+        "C": 0
+      }
     }
   ],
   "mechanics": [
     {
       "mechanic": "Adventure",
       "count": 17,
-      "synergyCount": 15,
+      "synergyCount": 13,
       "description": "A card that can be cast as an Instant/Sorcery Adventure, which then lets you cast the permanent side afterward."
     },
     {
       "mechanic": "Amass",
       "count": 14,
-      "synergyCount": 12
+      "synergyCount": 8
     },
     {
       "mechanic": "Equip",
       "count": 12,
-      "synergyCount": 11
+      "synergyCount": 7
     },
     {
       "mechanic": "Flying",
       "count": 12,
-      "synergyCount": 9
+      "synergyCount": 7
     },
     {
       "mechanic": "Recruit",
       "count": 10,
-      "synergyCount": 8,
+      "synergyCount": 5,
       "description": "Keyword action: draw a card, then discard a card. If the discarded card is nonland, create a 1/1 white Human Soldier token."
     },
     {
@@ -5562,7 +5562,7 @@
     {
       "mechanic": "Trample",
       "count": 10,
-      "synergyCount": 7
+      "synergyCount": 6
     },
     {
       "mechanic": "Landfall",
@@ -5578,22 +5578,22 @@
     {
       "mechanic": "Reach",
       "count": 8,
-      "synergyCount": 7
+      "synergyCount": 6
     },
     {
       "mechanic": "Vigilance",
       "count": 7,
-      "synergyCount": 6
+      "synergyCount": 5
     },
     {
       "mechanic": "Mill",
       "count": 6,
-      "synergyCount": 5
+      "synergyCount": 4
     },
     {
       "mechanic": "Flash",
       "count": 6,
-      "synergyCount": 6
+      "synergyCount": 5
     },
     {
       "mechanic": "Ferocious",
@@ -5608,12 +5608,12 @@
     {
       "mechanic": "Haste",
       "count": 4,
-      "synergyCount": 3
+      "synergyCount": 2
     },
     {
       "mechanic": "Scry",
       "count": 3,
-      "synergyCount": 2
+      "synergyCount": 1
     },
     {
       "mechanic": "Menace",
@@ -5634,7 +5634,7 @@
     {
       "mechanic": "Enchant",
       "count": 2,
-      "synergyCount": 2
+      "synergyCount": 1
     },
     {
       "mechanic": "Ward",
@@ -5649,12 +5649,12 @@
     {
       "mechanic": "Lifelink",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Affinity",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "First strike",
@@ -6167,18 +6167,8 @@
     {
       "mechanic": "Adventure",
       "count": 17,
-      "synergyCount": 15,
+      "synergyCount": 13,
       "description": "A card that can be cast as an Instant/Sorcery Adventure, which then lets you cast the permanent side afterward."
-    },
-    {
-      "mechanic": "Amass",
-      "count": 14,
-      "synergyCount": 12
-    },
-    {
-      "mechanic": "Equip",
-      "count": 12,
-      "synergyCount": 11
     },
     {
       "mechanic": "Treasure",
@@ -6186,39 +6176,33 @@
       "synergyCount": 10
     },
     {
-      "mechanic": "Flying",
-      "count": 12,
-      "synergyCount": 9
-    },
-    {
       "mechanic": "Landfall",
       "count": 9,
       "synergyCount": 9
     },
     {
-      "mechanic": "Recruit",
-      "count": 10,
-      "synergyCount": 8,
-      "description": "Keyword action: draw a card, then discard a card. If the discarded card is nonland, create a 1/1 white Human Soldier token."
+      "mechanic": "Amass",
+      "count": 14,
+      "synergyCount": 8
+    },
+    {
+      "mechanic": "Equip",
+      "count": 12,
+      "synergyCount": 7
+    },
+    {
+      "mechanic": "Flying",
+      "count": 12,
+      "synergyCount": 7
     },
     {
       "mechanic": "Trample",
       "count": 10,
-      "synergyCount": 7
+      "synergyCount": 6
     },
     {
       "mechanic": "Reach",
       "count": 8,
-      "synergyCount": 7
-    },
-    {
-      "mechanic": "Vigilance",
-      "count": 7,
-      "synergyCount": 6
-    },
-    {
-      "mechanic": "Flash",
-      "count": 6,
       "synergyCount": 6
     },
     {
@@ -6227,25 +6211,36 @@
       "synergyCount": 6
     },
     {
+      "mechanic": "Recruit",
+      "count": 10,
+      "synergyCount": 5,
+      "description": "Keyword action: draw a card, then discard a card. If the discarded card is nonland, create a 1/1 white Human Soldier token."
+    },
+    {
       "mechanic": "Storied",
       "count": 9,
       "synergyCount": 5,
       "description": "Static ability: once you control 3+ artifacts, legendaries, and/or Sagas, you have an \"enduring story\" for the rest of the game, unlocking a bonus effect."
     },
     {
-      "mechanic": "Mill",
+      "mechanic": "Vigilance",
+      "count": 7,
+      "synergyCount": 5
+    },
+    {
+      "mechanic": "Flash",
       "count": 6,
       "synergyCount": 5
+    },
+    {
+      "mechanic": "Mill",
+      "count": 6,
+      "synergyCount": 4
     },
     {
       "mechanic": "Deathtouch",
       "count": 4,
       "synergyCount": 4
-    },
-    {
-      "mechanic": "Haste",
-      "count": 4,
-      "synergyCount": 3
     },
     {
       "mechanic": "Menace",
@@ -6258,8 +6253,8 @@
       "synergyCount": 3
     },
     {
-      "mechanic": "Scry",
-      "count": 3,
+      "mechanic": "Haste",
+      "count": 4,
       "synergyCount": 2
     },
     {
@@ -6269,27 +6264,22 @@
       "description": "Counters placed on Equipment; each hone counter grants +1/+0 to the equipped creature."
     },
     {
-      "mechanic": "Enchant",
-      "count": 2,
-      "synergyCount": 2
-    },
-    {
       "mechanic": "Ward",
       "count": 2,
       "synergyCount": 2
     },
     {
+      "mechanic": "Scry",
+      "count": 3,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Enchant",
+      "count": 2,
+      "synergyCount": 1
+    },
+    {
       "mechanic": "Gift",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Lifelink",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Affinity",
       "count": 1,
       "synergyCount": 1
     },
@@ -6342,6 +6332,16 @@
       "mechanic": "Fight",
       "count": 1,
       "synergyCount": 1
+    },
+    {
+      "mechanic": "Lifelink",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Affinity",
+      "count": 1,
+      "synergyCount": 0
     },
     {
       "mechanic": "Crew",
@@ -6674,6 +6674,38 @@
         "subtype": "Bear",
         "count": 5,
         "concentration": 83
+      }
+    ],
+    "kindredSignalsByPair": [
+      {
+        "colors": "WU",
+        "subtype": "Archer",
+        "count": 2,
+        "concentration": 100
+      },
+      {
+        "colors": "WR",
+        "subtype": "Bard",
+        "count": 2,
+        "concentration": 25
+      },
+      {
+        "colors": "UG",
+        "subtype": "Elf",
+        "count": 4,
+        "concentration": 25
+      },
+      {
+        "colors": "BR",
+        "subtype": "Goblin",
+        "count": 4,
+        "concentration": 31
+      },
+      {
+        "colors": "BG",
+        "subtype": "Wolf",
+        "count": 3,
+        "concentration": 27
       }
     ]
   },

@@ -3,6 +3,7 @@ import { t, type Lang } from '../../i18n'
 import StatTile from './StatTile.astro'
 import ColorDistributionChart from './ColorDistributionChart.astro'
 import BreadScorePills from './BreadScorePills.astro'
+import ManaSymbol from './ManaSymbol.astro'
 
 interface Props {
   lang: Lang
@@ -21,7 +22,6 @@ interface Props {
 const { lang, cardCount, byRarity, byColor, topCard, topCombo, archetypes = [] } = Astro.props
 const i18n = t(lang)
 
-const COLOR_HEX: Record<string, string> = { W: '#e8e4d0', U: '#5b9bd5', B: '#8b7fb0', R: '#e0654a', G: '#5a9e6f' }
 const VERDICT_LABEL: Record<string, string> = {
   wellSupported: i18n.verdictWellSupported,
   plentifulButWeak: i18n.verdictPlentifulButWeak,
@@ -66,10 +66,8 @@ for (const a of archetypes) verdictCounts[a.verdict] = (verdictCounts[a.verdict]
       <a href="#bread" class="glass-panel rounded-xl p-4 flex items-center justify-between hover:border-primary/30 transition-colors">
         <div>
           <div class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 mb-1">{i18n.manaCombosHeading}</div>
-          <div class="flex gap-1">
-            {topCombo.colors.split('').map(c => (
-              <span class="w-3.5 h-3.5 rounded-full inline-block border border-white/10" style={`background:${COLOR_HEX[c]}`} />
-            ))}
+          <div class="flex gap-0.5">
+            {topCombo.colors.split('').map(c => <ManaSymbol color={c} />)}
           </div>
         </div>
         <span class="text-lg font-bold text-primary">{topCombo.avgBomb}</span>

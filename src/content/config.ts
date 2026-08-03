@@ -155,6 +155,12 @@ const prereleaseData = defineCollection({
         count: z.number(),
         concentration: z.number(),
       })),
+      kindredSignalsByPair: z.array(z.object({
+        colors: z.string(),
+        subtype: z.string(),
+        count: z.number(),
+        concentration: z.number(),
+      })),
     }),
   }),
 })

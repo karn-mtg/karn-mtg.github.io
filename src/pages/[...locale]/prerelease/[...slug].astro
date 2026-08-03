@@ -9,6 +9,7 @@ import CardExplorer from '../../../components/prerelease/CardExplorer.astro'
 import BestCardsList from '../../../components/prerelease/BestCardsList.astro'
 import ManaComboRanking from '../../../components/prerelease/ManaComboRanking.astro'
 import KindredSignals from '../../../components/prerelease/KindredSignals.astro'
+import GuildSignals from '../../../components/prerelease/GuildSignals.astro'
 import WordCloudViz from '../../../components/prerelease/WordCloudViz.astro'
 import TopWordsList from '../../../components/prerelease/TopWordsList.astro'
 import MatrixHeatmap from '../../../components/prerelease/MatrixHeatmap.astro'
@@ -109,7 +110,15 @@ const sections = [
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.creatureTypesHeading}</h3>
       <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.kindredSignalsSubtitle}</p>
-      <KindredSignals signals={data.data.creatureTypes.kindredSignals} />
+      <KindredSignals signals={data.data.creatureTypes.kindredSignals} lang={lang} />
+
+      {data.data.creatureTypes.kindredSignalsByPair.length > 0 && (
+        <>
+          <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.guildKindredSignalsHeading}</h4>
+          <p class="text-xs text-on-surface-variant/60 mb-4">{i18n.guildKindredSignalsSubtitle}</p>
+          <GuildSignals signals={data.data.creatureTypes.kindredSignalsByPair} lang={lang} />
+        </>
+      )}
 
       <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.creatureTypeMatrixHeading}</h4>
       <MatrixHeatmap rows={data.data.creatureTypes.subtypes.map(s => ({ label: s.subtype, byColor: s.byColor }))} />
@@ -133,7 +142,7 @@ const sections = [
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.mechanicsHeading}</h3>
       <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.mechanicsSubtitle}</p>
-      <MechanicsList mechanics={data.data.mechanicsBySynergy} />
+      <MechanicsList mechanics={data.data.mechanicsBySynergy} lang={lang} />
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.mechanicColorMatrixHeading}</h3>
       <MatrixHeatmap rows={data.data.mechanicColorMatrix.map(m => ({ label: m.mechanic, byColor: m.byColor }))} />

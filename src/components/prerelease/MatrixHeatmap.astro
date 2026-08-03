@@ -1,4 +1,6 @@
 ---
+import ManaSymbol from './ManaSymbol.astro'
+
 interface Row {
   label: string
   byColor: Record<string, number>
@@ -11,6 +13,7 @@ interface Props {
 
 const { rows, columns = ['W', 'U', 'B', 'R', 'G', 'multi', 'C'] } = Astro.props
 const maxValue = Math.max(1, ...rows.flatMap(r => columns.map(c => r.byColor[c] || 0)))
+const MANA_COLORS = new Set(['W', 'U', 'B', 'R', 'G', 'C'])
 
 function cellStyle(value: number) {
   const alpha = value === 0 ? 0 : 0.15 + (value / maxValue) * 0.7
@@ -19,21 +22,23 @@ function cellStyle(value: number) {
 ---
 
 <div class="glass-panel rounded-xl p-4 overflow-x-auto">
-  <table class="w-full text-xs border-collapse">
+  <table class="matrix-heatmap w-full text-xs border-collapse">
     <thead>
       <tr>
-        <th class="text-left font-semibold text-on-surface-variant/60 pb-2 pr-3 sticky left-0 bg-surface">&nbsp;</th>
-        {columns.map(col => (
-          <th class="font-semibold text-on-surface-variant/60 pb-2 px-2 text-center min-w-[2.5rem]">{col}</th>
+        <th class="text-left font-semibold text-on-surface-variant/60 pb-2 pr-3 sticky left-0 bg-surface transition-opacity">&nbsp;</th>
+        {columns.map((col, j) => (
+          <th data-col={j} class="font-semibold text-on-surface-variant/60 pb-2 px-2 text-center min-w-[2.5rem] transition-opacity">
+            {MANA_COLORS.has(col) ? <ManaSymbol color={col} /> : col}
+          </th>
         ))}
       </tr>
     </thead>
     <tbody>
-      {rows.map(row => (
+      {rows.map((row, i) => (
         <tr>
-          <td class="pr-3 py-1 font-semibold text-on-surface whitespace-nowrap sticky left-0 bg-surface">{row.label}</td>
-          {columns.map(col => (
-            <td class="text-center py-1 px-2 rounded text-on-surface" style={cellStyle(row.byColor[col] || 0)}>
+          <td data-row={i} class="pr-3 py-1 font-semibold text-on-surface whitespace-nowrap sticky left-0 bg-surface transition-opacity">{row.label}</td>
+          {columns.map((col, j) => (
+            <td data-row={i} data-col={j} class="text-center py-1 px-2 rounded text-on-surface transition-opacity" style={cellStyle(row.byColor[col] || 0)}>
               {row.byColor[col] || ''}
             </td>
           ))}
@@ -42,3 +47,27 @@ function cellStyle(value: number) {
     </tbody>
   </table>
 </div>
+
+<script>
+  // Runs once (Astro dedupes identical inline scripts across the many
+  // MatrixHeatmap instances on a page) — handles every matrix generically
+  // rather than assuming a single instance.
+  document.querySelectorAll<HTMLTableElement>('.matrix-heatmap').forEach(table => {
+    const cells = Array.from(table.querySelectorAll<HTMLElement>('[data-row], [data-col]'))
+
+    table.addEventListener('mouseover', e => {
+      const target = (e.target as HTMLElement).closest<HTMLElement>('[data-row][data-col]')
+      if (!target) return
+      const { row, col } = target.dataset
+      cells.forEach(cell => {
+        const match = cell.dataset.row === row || cell.dataset.col === col
+        cell.style.opacity = match ? '1' : '0.3'
+      })
+    })
+
+    table.addEventListener('mouseout', e => {
+      if (table.contains(e.relatedTarget as Node)) return
+      cells.forEach(cell => { cell.style.opacity = '' })
+    })
+  })
+</script>

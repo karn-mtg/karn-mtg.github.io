@@ -24,4 +24,5 @@ export const STOPWORDS = new Set([
   // the card actually does — not a synergy signal on their own.
   'creature', 'creatures', 'opponent', 'opponents', 'hand', 'token', 'tokens',
   'permanent', 'permanents', 'player', 'players', 'battlefield',
+  'enters', 'target', 'targets',
 ])

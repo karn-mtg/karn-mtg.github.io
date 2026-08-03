@@ -1,0 +1,11 @@
+---
+interface Props {
+  color: string // W | U | B | R | G | C
+  size?: '1x' | '2x'
+}
+
+const { color, size = '1x' } = Astro.props
+const sizeClass = size === '2x' ? 'ms-2x' : ''
+---
+
+<i class={`ms ms-${color.toLowerCase()} ms-cost ${sizeClass}`} aria-label={color}></i>

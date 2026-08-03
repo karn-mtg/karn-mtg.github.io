@@ -1,4 +1,6 @@
 ---
+import ManaSymbol from './ManaSymbol.astro'
+
 interface Combo {
   colors: string
   cardCount: number
@@ -12,20 +14,14 @@ interface Props {
 }
 
 const { combos } = Astro.props
-
-const COLOR_HEX: Record<string, string> = {
-  W: '#e8e4d0', U: '#5b9bd5', B: '#8b7fb0', R: '#e0654a', G: '#5a9e6f',
-}
 ---
 
 <div class="grid gap-3 sm:grid-cols-2">
   {combos.map(combo => (
     <div class="glass-panel rounded-xl p-4">
       <div class="flex items-center justify-between mb-2">
-        <div class="flex gap-1">
-          {combo.colors.split('').map(c => (
-            <span class="w-4 h-4 rounded-full inline-block border border-white/10" style={`background:${COLOR_HEX[c]}`} />
-          ))}
+        <div class="flex gap-0.5">
+          {combo.colors.split('').map(c => <ManaSymbol color={c} />)}
         </div>
         <span class="text-xs font-semibold text-primary">{combo.avgBomb}</span>
       </div>

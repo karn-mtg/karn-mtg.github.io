@@ -3,7 +3,7 @@ import { t, type Lang } from '../../i18n'
 import ManaSymbol from './ManaSymbol.astro'
 
 interface Props {
-  signals: { color: string; subtype: string; count: number; concentration: number }[]
+  signals: { colors: string; subtype: string; count: number; concentration: number }[]
   lang: Lang
 }
 
@@ -14,7 +14,9 @@ const i18n = t(lang)
 <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
   {signals.map(sig => (
     <div class="glass-panel rounded-xl p-4 text-center">
-      <ManaSymbol color={sig.color} size="2x" />
+      <div class="flex items-center justify-center gap-0.5">
+        {sig.colors.split('').map(c => <ManaSymbol color={c} size="2x" />)}
+      </div>
       <div class="font-bold text-on-surface mt-2">{sig.subtype}</div>
       <div class="text-xs text-primary font-semibold mt-1">{sig.count} <span class="text-on-surface-variant/50 font-normal">{i18n.tribeCardsUnit}</span></div>
       <div class="text-[10px] text-on-surface-variant/50">{sig.concentration}% {i18n.concentrationUnit}</div>
