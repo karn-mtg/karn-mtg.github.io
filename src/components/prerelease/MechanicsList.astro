@@ -1,0 +1,22 @@
+---
+interface Props {
+  mechanics: { mechanic: string; count: number; synergyCount: number }[]
+}
+
+const { mechanics } = Astro.props
+const maxCount = Math.max(1, ...mechanics.map(m => m.count))
+---
+
+<div class="grid gap-2 sm:grid-cols-2">
+  {mechanics.map(({ mechanic, count, synergyCount }) => (
+    <div class="glass-panel rounded-lg px-4 py-2.5 flex items-center gap-3">
+      <span class="text-sm font-semibold text-on-surface flex-1 truncate">{mechanic}</span>
+      <div class="w-14 h-1.5 rounded-full bg-white/5 overflow-hidden flex-shrink-0">
+        <div class="h-full bg-primary rounded-full" style={`width:${(count / maxCount) * 100}%`} />
+      </div>
+      <span class="text-xs text-on-surface-variant/60 flex-shrink-0" title="cards with this mechanic / cards also using a top synergy word">
+        {count} <span class="text-on-surface-variant/30">·</span> {synergyCount}
+      </span>
+    </div>
+  ))}
+</div>

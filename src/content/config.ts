@@ -48,6 +48,7 @@ const prerelease = defineCollection({
     image: z.string().optional(),
     lang: z.enum(['en', 'pt-br', 'de', 'es']).default('en'),
     generalInfoIntro: z.string(),
+    synergyIntro: z.string().optional(),
     breadIntro: z.string(),
   }),
 })
@@ -96,6 +97,31 @@ const prereleaseData = defineCollection({
       avgBomb: z.number(),
       avgOverall: z.number(),
       topCards: z.array(z.string()),
+    })),
+    wordCloud: z.array(z.object({ word: z.string(), count: z.number() })),
+    topWords: z.array(z.object({ word: z.string(), count: z.number() })),
+    wordColorMatrix: z.array(z.object({
+      word: z.string(),
+      byColor: z.record(z.string(), z.number()),
+    })),
+    mechanics: z.array(z.object({
+      mechanic: z.string(),
+      count: z.number(),
+      synergyCount: z.number(),
+    })),
+    mechanicColorMatrix: z.array(z.object({
+      mechanic: z.string(),
+      byColor: z.record(z.string(), z.number()),
+    })),
+    mechanicsBySynergy: z.array(z.object({
+      mechanic: z.string(),
+      count: z.number(),
+      synergyCount: z.number(),
+    })),
+    synergyCombinations: z.array(z.object({
+      mechanics: z.array(z.string()),
+      count: z.number(),
+      examples: z.array(z.string()),
     })),
   }),
 })

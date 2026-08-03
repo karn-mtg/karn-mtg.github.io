@@ -6,6 +6,7 @@ setCode: 'hob'
 setName: 'The Hobbits'
 lang: 'de'
 generalInfoIntro: 'The Hobbits ist ein schlankes Set mit 193 Karten und einer ungewöhnlich ausgewogenen Farbverteilung — jede Farbe liegt bei 29-31 Karten, enger als bei den meisten Sets. Mehrfarbig (31 Karten, davon 24 Kreaturen) und Rot (31 Karten, 20 Kreaturen) sind die kreaturenlastigsten Slots, während Farblos mit nur 13 Karten klein ausfällt.'
+synergyIntro: 'Die Wortwolke hier ist deutlich stärker auf Kreaturenkampf ausgerichtet als bei Final Fantasy: Kreatur, Ziel, betritt, ziehen, zwei, Zauberspruch, Land, Marke, Hand, Stärke. Amass und Equip führen die Mechanik-Liste an, gemessen daran, wie oft sie zusammen mit diesen Synergie-Wörtern auftauchen, vor Flying und Treasure. Nichts in diesem Set wiederholt Mechanik-Paarungen so aggressiv wie Final Fantasy — am nächsten kommen kleine Zweifach-Paarungen wie Trample+Treasure und Flying+Treasure, ein Zeichen, dass dieses Set seine Synergie gleichmäßiger über Archetypen verteilt, statt auf eine Signatur-Kombo zu setzen.'
 breadIntro: 'Jede Karte lief durch denselben regelbasierten B.R.E.A.D.-Scorer, den wir in der gesamten Prerelease-Berichterstattung verwenden — Bombe, Entfernung, Umgehung, Aggro, Vielfalt. Eine Karte kann in mehr als eine Kategorie fallen, wenn sie wirklich mehr als eine Aufgabe erfüllt.'
 ---
 

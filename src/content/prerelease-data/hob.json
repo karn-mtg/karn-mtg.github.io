@@ -1,6 +1,6 @@
 {
   "setCode": "hob",
-  "generatedAt": "2026-08-03T16:06:52.693Z",
+  "generatedAt": "2026-08-03T16:24:24.726Z",
   "cardCount": 193,
   "colorStats": {
     "cardCount": 193,
@@ -5137,6 +5137,1181 @@
         "Dwalin, Weaponmaster",
         "Dáin's Company",
         "Iron Hills"
+      ]
+    }
+  ],
+  "wordCloud": [
+    {
+      "word": "creature",
+      "count": 122
+    },
+    {
+      "word": "target",
+      "count": 80
+    },
+    {
+      "word": "enters",
+      "count": 68
+    },
+    {
+      "word": "draw",
+      "count": 35
+    },
+    {
+      "word": "two",
+      "count": 30
+    },
+    {
+      "word": "spell",
+      "count": 27
+    },
+    {
+      "word": "land",
+      "count": 25
+    },
+    {
+      "word": "counter",
+      "count": 25
+    },
+    {
+      "word": "hand",
+      "count": 24
+    },
+    {
+      "word": "power",
+      "count": 24
+    },
+    {
+      "word": "library",
+      "count": 24
+    },
+    {
+      "word": "create",
+      "count": 23
+    },
+    {
+      "word": "cast",
+      "count": 23
+    },
+    {
+      "word": "token",
+      "count": 23
+    },
+    {
+      "word": "life",
+      "count": 22
+    },
+    {
+      "word": "sacrifice",
+      "count": 22
+    },
+    {
+      "word": "opponent",
+      "count": 21
+    },
+    {
+      "word": "damage",
+      "count": 20
+    },
+    {
+      "word": "creatures",
+      "count": 19
+    },
+    {
+      "word": "deals",
+      "count": 19
+    },
+    {
+      "word": "battlefield",
+      "count": 19
+    },
+    {
+      "word": "artifact",
+      "count": 18
+    },
+    {
+      "word": "graveyard",
+      "count": 17
+    },
+    {
+      "word": "exile",
+      "count": 17
+    },
+    {
+      "word": "another",
+      "count": 16
+    },
+    {
+      "word": "equip",
+      "count": 16
+    },
+    {
+      "word": "flying",
+      "count": 16
+    },
+    {
+      "word": "attacks",
+      "count": 15
+    },
+    {
+      "word": "equipment",
+      "count": 15
+    },
+    {
+      "word": "tapped",
+      "count": 15
+    },
+    {
+      "word": "goblins",
+      "count": 14
+    },
+    {
+      "word": "gains",
+      "count": 14
+    },
+    {
+      "word": "long",
+      "count": 14
+    },
+    {
+      "word": "activate",
+      "count": 14
+    },
+    {
+      "word": "amass",
+      "count": 13
+    },
+    {
+      "word": "gain",
+      "count": 13
+    },
+    {
+      "word": "trample",
+      "count": 13
+    },
+    {
+      "word": "top",
+      "count": 13
+    },
+    {
+      "word": "equipped",
+      "count": 13
+    },
+    {
+      "word": "counters",
+      "count": 13
+    }
+  ],
+  "topWords": [
+    {
+      "word": "creature",
+      "count": 122
+    },
+    {
+      "word": "target",
+      "count": 80
+    },
+    {
+      "word": "enters",
+      "count": 68
+    },
+    {
+      "word": "draw",
+      "count": 35
+    },
+    {
+      "word": "two",
+      "count": 30
+    },
+    {
+      "word": "spell",
+      "count": 27
+    },
+    {
+      "word": "land",
+      "count": 25
+    },
+    {
+      "word": "counter",
+      "count": 25
+    },
+    {
+      "word": "hand",
+      "count": 24
+    },
+    {
+      "word": "power",
+      "count": 24
+    }
+  ],
+  "wordColorMatrix": [
+    {
+      "word": "creature",
+      "byColor": {
+        "W": 18,
+        "U": 13,
+        "B": 22,
+        "R": 19,
+        "G": 22,
+        "multi": 19,
+        "C": 9
+      }
+    },
+    {
+      "word": "target",
+      "byColor": {
+        "W": 15,
+        "U": 12,
+        "B": 14,
+        "R": 10,
+        "G": 10,
+        "multi": 14,
+        "C": 5
+      }
+    },
+    {
+      "word": "enters",
+      "byColor": {
+        "W": 8,
+        "U": 6,
+        "B": 6,
+        "R": 12,
+        "G": 9,
+        "multi": 19,
+        "C": 8
+      }
+    },
+    {
+      "word": "draw",
+      "byColor": {
+        "W": 4,
+        "U": 11,
+        "B": 6,
+        "R": 3,
+        "G": 2,
+        "multi": 7,
+        "C": 2
+      }
+    },
+    {
+      "word": "two",
+      "byColor": {
+        "W": 4,
+        "U": 6,
+        "B": 2,
+        "R": 3,
+        "G": 3,
+        "multi": 10,
+        "C": 2
+      }
+    },
+    {
+      "word": "spell",
+      "byColor": {
+        "W": 5,
+        "U": 8,
+        "B": 5,
+        "R": 3,
+        "G": 4,
+        "multi": 2,
+        "C": 0
+      }
+    },
+    {
+      "word": "land",
+      "byColor": {
+        "W": 1,
+        "U": 3,
+        "B": 0,
+        "R": 1,
+        "G": 7,
+        "multi": 8,
+        "C": 5
+      }
+    },
+    {
+      "word": "counter",
+      "byColor": {
+        "W": 3,
+        "U": 5,
+        "B": 3,
+        "R": 1,
+        "G": 7,
+        "multi": 5,
+        "C": 1
+      }
+    },
+    {
+      "word": "hand",
+      "byColor": {
+        "W": 4,
+        "U": 4,
+        "B": 4,
+        "R": 2,
+        "G": 4,
+        "multi": 4,
+        "C": 2
+      }
+    },
+    {
+      "word": "power",
+      "byColor": {
+        "W": 2,
+        "U": 3,
+        "B": 4,
+        "R": 2,
+        "G": 9,
+        "multi": 4,
+        "C": 0
+      }
+    },
+    {
+      "word": "library",
+      "byColor": {
+        "W": 3,
+        "U": 3,
+        "B": 1,
+        "R": 5,
+        "G": 5,
+        "multi": 2,
+        "C": 5
+      }
+    },
+    {
+      "word": "create",
+      "byColor": {
+        "W": 6,
+        "U": 0,
+        "B": 2,
+        "R": 6,
+        "G": 4,
+        "multi": 3,
+        "C": 2
+      }
+    },
+    {
+      "word": "cast",
+      "byColor": {
+        "W": 3,
+        "U": 7,
+        "B": 4,
+        "R": 4,
+        "G": 3,
+        "multi": 2,
+        "C": 0
+      }
+    },
+    {
+      "word": "token",
+      "byColor": {
+        "W": 6,
+        "U": 0,
+        "B": 2,
+        "R": 7,
+        "G": 4,
+        "multi": 2,
+        "C": 2
+      }
+    },
+    {
+      "word": "life",
+      "byColor": {
+        "W": 3,
+        "U": 0,
+        "B": 13,
+        "R": 0,
+        "G": 1,
+        "multi": 2,
+        "C": 3
+      }
+    }
+  ],
+  "mechanics": [
+    {
+      "mechanic": "Amass",
+      "count": 14,
+      "synergyCount": 13
+    },
+    {
+      "mechanic": "Equip",
+      "count": 12,
+      "synergyCount": 12
+    },
+    {
+      "mechanic": "Flying",
+      "count": 12,
+      "synergyCount": 11
+    },
+    {
+      "mechanic": "Treasure",
+      "count": 10,
+      "synergyCount": 10
+    },
+    {
+      "mechanic": "Trample",
+      "count": 10,
+      "synergyCount": 8
+    },
+    {
+      "mechanic": "Landfall",
+      "count": 9,
+      "synergyCount": 9
+    },
+    {
+      "mechanic": "Reach",
+      "count": 8,
+      "synergyCount": 7
+    },
+    {
+      "mechanic": "Vigilance",
+      "count": 7,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Mill",
+      "count": 6,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Flash",
+      "count": 6,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Ferocious",
+      "count": 6,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Deathtouch",
+      "count": 4,
+      "synergyCount": 4
+    },
+    {
+      "mechanic": "Haste",
+      "count": 4,
+      "synergyCount": 3
+    },
+    {
+      "mechanic": "Scry",
+      "count": 3,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Menace",
+      "count": 3,
+      "synergyCount": 3
+    },
+    {
+      "mechanic": "Flashback",
+      "count": 3,
+      "synergyCount": 3
+    },
+    {
+      "mechanic": "Enchant",
+      "count": 2,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Ward",
+      "count": 2,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Gift",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Lifelink",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Affinity",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "First strike",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Behold",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Hexproof",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Crew",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Double strike",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Mountaincycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Landcycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Typecycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Cycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Threshold",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Kicker",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Fight",
+      "count": 1,
+      "synergyCount": 1
+    }
+  ],
+  "mechanicColorMatrix": [
+    {
+      "mechanic": "Amass",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 7,
+        "R": 4,
+        "G": 0,
+        "multi": 3,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Equip",
+      "byColor": {
+        "W": 1,
+        "U": 2,
+        "B": 2,
+        "R": 1,
+        "G": 0,
+        "multi": 1,
+        "C": 5
+      }
+    },
+    {
+      "mechanic": "Flying",
+      "byColor": {
+        "W": 2,
+        "U": 4,
+        "B": 2,
+        "R": 2,
+        "G": 0,
+        "multi": 1,
+        "C": 1
+      }
+    },
+    {
+      "mechanic": "Treasure",
+      "byColor": {
+        "W": 2,
+        "U": 0,
+        "B": 1,
+        "R": 3,
+        "G": 1,
+        "multi": 1,
+        "C": 2
+      }
+    },
+    {
+      "mechanic": "Trample",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 3,
+        "G": 4,
+        "multi": 3,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Landfall",
+      "byColor": {
+        "W": 0,
+        "U": 2,
+        "B": 0,
+        "R": 0,
+        "G": 4,
+        "multi": 3,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Reach",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 2,
+        "G": 2,
+        "multi": 3,
+        "C": 1
+      }
+    },
+    {
+      "mechanic": "Vigilance",
+      "byColor": {
+        "W": 1,
+        "U": 3,
+        "B": 0,
+        "R": 0,
+        "G": 1,
+        "multi": 2,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Mill",
+      "byColor": {
+        "W": 0,
+        "U": 3,
+        "B": 1,
+        "R": 0,
+        "G": 1,
+        "multi": 1,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Flash",
+      "byColor": {
+        "W": 0,
+        "U": 1,
+        "B": 1,
+        "R": 0,
+        "G": 1,
+        "multi": 0,
+        "C": 3
+      }
+    },
+    {
+      "mechanic": "Ferocious",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 2,
+        "R": 0,
+        "G": 3,
+        "multi": 1,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Deathtouch",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 3,
+        "R": 0,
+        "G": 1,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Haste",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 2,
+        "G": 1,
+        "multi": 1,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Scry",
+      "byColor": {
+        "W": 0,
+        "U": 1,
+        "B": 1,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 1
+      }
+    },
+    {
+      "mechanic": "Menace",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 2,
+        "R": 0,
+        "G": 0,
+        "multi": 1,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Flashback",
+      "byColor": {
+        "W": 1,
+        "U": 1,
+        "B": 0,
+        "R": 1,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Enchant",
+      "byColor": {
+        "W": 0,
+        "U": 1,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 1,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Ward",
+      "byColor": {
+        "W": 0,
+        "U": 2,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Gift",
+      "byColor": {
+        "W": 1,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Lifelink",
+      "byColor": {
+        "W": 1,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Affinity",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 1,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "First strike",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 1,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Behold",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 1
+      }
+    },
+    {
+      "mechanic": "Hexproof",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 1,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Crew",
+      "byColor": {
+        "W": 0,
+        "U": 1,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Double strike",
+      "byColor": {
+        "W": 1,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Mountaincycling",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 1,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Landcycling",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 1,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Typecycling",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 1,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Cycling",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 1,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Threshold",
+      "byColor": {
+        "W": 0,
+        "U": 1,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Kicker",
+      "byColor": {
+        "W": 1,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 0,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Fight",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 1,
+        "multi": 0,
+        "C": 0
+      }
+    }
+  ],
+  "mechanicsBySynergy": [
+    {
+      "mechanic": "Amass",
+      "count": 14,
+      "synergyCount": 13
+    },
+    {
+      "mechanic": "Equip",
+      "count": 12,
+      "synergyCount": 12
+    },
+    {
+      "mechanic": "Flying",
+      "count": 12,
+      "synergyCount": 11
+    },
+    {
+      "mechanic": "Treasure",
+      "count": 10,
+      "synergyCount": 10
+    },
+    {
+      "mechanic": "Landfall",
+      "count": 9,
+      "synergyCount": 9
+    },
+    {
+      "mechanic": "Trample",
+      "count": 10,
+      "synergyCount": 8
+    },
+    {
+      "mechanic": "Reach",
+      "count": 8,
+      "synergyCount": 7
+    },
+    {
+      "mechanic": "Vigilance",
+      "count": 7,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Mill",
+      "count": 6,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Flash",
+      "count": 6,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Ferocious",
+      "count": 6,
+      "synergyCount": 6
+    },
+    {
+      "mechanic": "Deathtouch",
+      "count": 4,
+      "synergyCount": 4
+    },
+    {
+      "mechanic": "Haste",
+      "count": 4,
+      "synergyCount": 3
+    },
+    {
+      "mechanic": "Menace",
+      "count": 3,
+      "synergyCount": 3
+    },
+    {
+      "mechanic": "Flashback",
+      "count": 3,
+      "synergyCount": 3
+    },
+    {
+      "mechanic": "Scry",
+      "count": 3,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Enchant",
+      "count": 2,
+      "synergyCount": 2
+    },
+    {
+      "mechanic": "Ward",
+      "count": 2,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Gift",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Lifelink",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Affinity",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "First strike",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Behold",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Hexproof",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Double strike",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Mountaincycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Landcycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Typecycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Cycling",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Threshold",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Kicker",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Fight",
+      "count": 1,
+      "synergyCount": 1
+    },
+    {
+      "mechanic": "Crew",
+      "count": 1,
+      "synergyCount": 0
+    }
+  ],
+  "synergyCombinations": [
+    {
+      "mechanics": [
+        "Trample",
+        "Treasure"
+      ],
+      "count": 2,
+      "examples": [
+        "Bejeweled Warg",
+        "Dori, Bearer of Friends"
+      ]
+    },
+    {
+      "mechanics": [
+        "Reach",
+        "Trample"
+      ],
+      "count": 2,
+      "examples": [
+        "Iron Hills Stalwart",
+        "Large Bear"
+      ]
+    },
+    {
+      "mechanics": [
+        "Ferocious",
+        "Menace"
+      ],
+      "count": 2,
+      "examples": [
+        "Nighthowl Pursuer",
+        "The Chief Warg"
+      ]
+    },
+    {
+      "mechanics": [
+        "Flying",
+        "Treasure"
+      ],
+      "count": 2,
+      "examples": [
+        "Smaug the Magnificent",
+        "Smaug, Wicked Worm"
+      ]
+    },
+    {
+      "mechanics": [
+        "Equip",
+        "Flash"
+      ],
+      "count": 2,
+      "examples": [
+        "Sting, Bilbo's Sword",
+        "The Black Arrow"
       ]
     }
   ]

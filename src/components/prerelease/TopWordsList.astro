@@ -1,0 +1,21 @@
+---
+interface Props {
+  words: { word: string; count: number }[]
+}
+
+const { words } = Astro.props
+const maxCount = Math.max(1, ...words.map(w => w.count))
+---
+
+<ol class="grid gap-2 sm:grid-cols-2">
+  {words.map(({ word, count }, i) => (
+    <li class="glass-panel rounded-lg px-4 py-2.5 flex items-center gap-3">
+      <span class="text-xs font-bold text-primary/50 w-5 flex-shrink-0">{i + 1}</span>
+      <span class="text-sm font-semibold text-on-surface flex-1">{word}</span>
+      <div class="w-16 h-1.5 rounded-full bg-white/5 overflow-hidden flex-shrink-0">
+        <div class="h-full bg-primary rounded-full" style={`width:${(count / maxCount) * 100}%`} />
+      </div>
+      <span class="text-xs text-on-surface-variant/60 w-6 text-right flex-shrink-0">{count}</span>
+    </li>
+  ))}
+</ol>

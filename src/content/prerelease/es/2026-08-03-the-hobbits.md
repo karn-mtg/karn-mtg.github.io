@@ -6,6 +6,7 @@ setCode: 'hob'
 setName: 'The Hobbits'
 lang: 'es'
 generalInfoIntro: 'The Hobbits es una colección compacta de 193 cartas con un balance de colores inusualmente parejo — cada color se mantiene entre 29 y 31 cartas, más ajustado que la mayoría de las colecciones. Multicolor (31 cartas, 24 criaturas) y Rojo (31 cartas, 20 criaturas) son los grupos con más criaturas, mientras que Incoloro es pequeño, con solo 13 cartas.'
+synergyIntro: 'La nube de palabras aquí tiene un sabor notablemente más orientado al combate de criaturas que Final Fantasy: criatura, objetivo, entra, robar, dos, hechizo, tierra, contador, mano, poder. Amass y Equip lideran la lista de mecánicas por cuánto aparecen junto a esas palabras de sinergia, por delante de Flying y Treasure. Nada en esta colección repite pares de mecánicas tan agresivamente como Final Fantasy — lo más cercano son pares puntuales como Trample+Treasure y Flying+Treasure, señal de que esta colección reparte su sinergia de forma más pareja entre arquetipos en lugar de apoyarse en una combinación insignia.'
 breadIntro: 'Todas las cartas pasaron por el mismo clasificador B.R.E.A.D. basado en reglas que usamos en toda nuestra cobertura de pre-lanzamiento — Bomba, Remoción, Evasión, Agresividad, Diversidad. Una carta puede caer en más de una categoría si realmente cumple más de una función.'
 ---
 

@@ -4,6 +4,9 @@ import { fileURLToPath } from 'node:url'
 import { computeColorStats } from './lib/colorStats.mjs'
 import { scoreCardBread } from './lib/bread.mjs'
 import { computeManaCombos } from './lib/manaCombos.mjs'
+import { computeWordCloud } from './lib/wordCloud.mjs'
+import { computeMechanics } from './lib/mechanics.mjs'
+import { computeSynergyCombinations } from './lib/combinationScore.mjs'
 
 const setCode = process.argv[2]
 if (!setCode) {
@@ -40,6 +43,10 @@ const bestCards = [...cardsWithBread]
   .slice(0, 15)
   .map(c => c.name)
 
+const { wordCloud, topWords, wordColorMatrix } = computeWordCloud(raw)
+const { mechanics, mechanicColorMatrix, mechanicsBySynergy } = computeMechanics(raw, topWords)
+const synergyCombinations = computeSynergyCombinations(raw)
+
 const output = {
   setCode,
   generatedAt: new Date().toISOString(),
@@ -48,6 +55,13 @@ const output = {
   cards: cardsWithBread,
   bestCards,
   manaCombos,
+  wordCloud,
+  topWords,
+  wordColorMatrix,
+  mechanics,
+  mechanicColorMatrix,
+  mechanicsBySynergy,
+  synergyCombinations,
 }
 
 mkdirSync(outDir, { recursive: true })

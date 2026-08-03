@@ -1,0 +1,19 @@
+---
+interface Props {
+  combos: { mechanics: string[]; count: number; examples: string[] }[]
+}
+
+const { combos } = Astro.props
+---
+
+<div class="grid gap-3 sm:grid-cols-2">
+  {combos.map(combo => (
+    <div class="glass-panel rounded-xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-sm font-semibold text-on-surface">{combo.mechanics.join(' + ')}</span>
+        <span class="text-xs font-semibold text-primary">{combo.count} cards</span>
+      </div>
+      <p class="text-xs text-on-surface-variant/70 truncate">{combo.examples.join(', ')}</p>
+    </div>
+  ))}
+</div>

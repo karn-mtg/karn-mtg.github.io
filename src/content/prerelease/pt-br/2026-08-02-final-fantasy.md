@@ -6,6 +6,7 @@ setCode: 'fin'
 setName: 'Final Fantasy'
 lang: 'pt-br'
 generalInfoIntro: 'Final Fantasy traz 312 cartas únicas (sem contar variantes digitais). Multicolor é o maior grupo isolado, com 57 cartas — e a maioria delas são criaturas (46), sinal de que a coleção quer que você jogue cartas de duas cores, não apenas splash.'
+synergyIntro: 'Tirando as palavras de preenchimento, a coleção continua falando das mesmas poucas ideias: criatura, alvo, entra, terreno, dano, comprar, conjurar, mágica, contador, cemitério. É uma coleção construída em torno de gatilhos de entrada e de conjurar mágicas, não um único mecanismo silencioso fazendo todo o trabalho. Flying, Equip e Transform são as mecânicas mais associadas a essas palavras de sinergia, e Equip + Job select é o par de mecânicas mais repetido da coleção.'
 breadIntro: 'Passamos todas as cartas por um classificador B.R.E.A.D. baseado em regras — Bomba, Remoção, Evasão, Agressividade, Diversidade — para você ver rapidamente para que cada carta serve, não só quanto ela custa. Uma carta pode (e frequentemente pontua) em mais de uma categoria ao mesmo tempo.'
 ---
 

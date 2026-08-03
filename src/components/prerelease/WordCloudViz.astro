@@ -1,0 +1,31 @@
+---
+interface Props {
+  words: { word: string; count: number }[]
+}
+
+const { words } = Astro.props
+const maxCount = Math.max(1, ...words.map(w => w.count))
+const minCount = Math.min(...words.map(w => w.count))
+const range = Math.max(1, maxCount - minCount)
+
+function sizeFor(count: number) {
+  const t = (count - minCount) / range
+  return 0.85 + t * 1.65 // rem, 0.85rem .. 2.5rem
+}
+function opacityFor(count: number) {
+  const t = (count - minCount) / range
+  return 0.55 + t * 0.45
+}
+---
+
+<div class="glass-panel rounded-xl p-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+  {words.map(({ word, count }) => (
+    <span
+      class="font-bold text-primary leading-none"
+      style={`font-size:${sizeFor(count)}rem; opacity:${opacityFor(count)}`}
+      title={`${word} — ${count} cards`}
+    >
+      {word}
+    </span>
+  ))}
+</div>

@@ -6,6 +6,7 @@ setCode: 'fin'
 setName: 'Final Fantasy'
 lang: 'en'
 generalInfoIntro: 'Final Fantasy packs 312 unique cards (not counting digital-only variants). Multicolor is the biggest single bucket at 57 cards — and it leans heavily toward creatures, 46 of them, which tells you this set wants you playing gold cards, not just splashing one.'
+synergyIntro: 'Strip out the filler words and the set keeps talking about the same handful of ideas: creature, target, enters, land, damage, draw, cast, spell, counter, graveyard. That is a set built around ETB triggers and spell-slinging, not one quiet mechanic doing all the work. Flying, Equip, and Transform are the mechanics most often paired with those synergy words, and Equip + Job select is the single most repeated mechanic pairing in the set.'
 breadIntro: 'We ran every card through a rules-based B.R.E.A.D. scorer — Bomb, Removal, Evasion, Aggro, Diversity — so you can see at a glance what a card is good for, not just what it costs. A card can (and often does) score in more than one bucket at once.'
 ---
 

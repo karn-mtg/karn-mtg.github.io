@@ -6,6 +6,7 @@ setCode: 'hob'
 setName: 'The Hobbits'
 lang: 'en'
 generalInfoIntro: 'The Hobbits is a lean 193-card set with unusually even color balance — every color sits at 29-31 cards, tighter than most sets. Multicolor (31 cards, 24 of them creatures) and Red (31 cards, 20 creatures) are the most creature-heavy slots, while Colorless is small at just 13 cards.'
+synergyIntro: 'The word cloud here is noticeably more creature-combat flavored than Final Fantasy: creature, target, enters, draw, two, spell, land, counter, hand, power. Amass and Equip lead the mechanics list by how often they show up alongside those synergy words, ahead of Flying and Treasure. Nothing in this set repeats mechanic pairings as aggressively as Final Fantasy does — the closest are small two-off pairings like Trample+Treasure and Flying+Treasure, a sign this set spreads its synergy more evenly across archetypes instead of leaning on one signature combo.'
 breadIntro: 'Every card ran through the same rules-based B.R.E.A.D. scorer used across our pre-release coverage — Bomb, Removal, Evasion, Aggro, Diversity. A card can land in more than one bucket if it genuinely does more than one job.'
 ---
 

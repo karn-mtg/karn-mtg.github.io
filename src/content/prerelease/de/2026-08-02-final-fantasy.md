@@ -6,6 +6,7 @@ setCode: 'fin'
 setName: 'Final Fantasy'
 lang: 'de'
 generalInfoIntro: 'Final Fantasy umfasst 312 einzigartige Karten (ohne rein digitale Varianten). Mehrfarbig ist mit 57 Karten die größte Einzelgruppe — und davon sind 46 Kreaturen, ein klares Zeichen, dass dieses Set auf goldene Karten setzt, nicht nur auf gelegentliches Splashen.'
+synergyIntro: 'Streicht man die Füllwörter, dreht sich das Set immer wieder um dieselbe Handvoll Ideen: Kreatur, Ziel, betritt, Land, Schaden, ziehen, wirken, Zauberspruch, Marke, Friedhof. Das ist ein Set, das um ETB-Auslöser und Zauberspruch-Spam gebaut ist, nicht um einen einzelnen ruhigen Mechanismus, der die ganze Arbeit macht. Flying, Equip und Transform sind die Mechaniken, die am häufigsten mit diesen Synergie-Wörtern kombiniert werden, und Equip + Job select ist die am häufigsten wiederholte Mechanik-Paarung im Set.'
 breadIntro: 'Wir haben jede Karte durch einen regelbasierten B.R.E.A.D.-Scorer laufen lassen — Bombe, Entfernung, Umgehung, Aggro, Vielfalt — damit du auf einen Blick siehst, wofür eine Karte gut ist, nicht nur, was sie kostet. Eine Karte kann (und tut das oft) in mehr als einer Kategorie punkten.'
 ---
 
