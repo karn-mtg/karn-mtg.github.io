@@ -14,6 +14,7 @@ import TopWordsList from '../../../components/prerelease/TopWordsList.astro'
 import MatrixHeatmap from '../../../components/prerelease/MatrixHeatmap.astro'
 import MechanicsList from '../../../components/prerelease/MechanicsList.astro'
 import SynergyCombosTable from '../../../components/prerelease/SynergyCombosTable.astro'
+import ArchetypeAnalysis from '../../../components/prerelease/ArchetypeAnalysis.astro'
 import { locales, contentPrefix, prereleaseBase, t } from '../../../i18n'
 
 export async function getStaticPaths() {
@@ -140,6 +141,18 @@ const bestCards = data.data.bestCards
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.cardExplorerHeading}</h3>
       <CardExplorer cards={data.data.cards} lang={lang} />
     </section>
+
+    <!-- Analysis -->
+    {data.data.archetypeAnalysis.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.analysisHeading}</h2>
+        {article.data.analysisIntro && (
+          <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.analysisIntro}</p>
+        )}
+        <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.archetypeAnalysisSubtitle}</p>
+        <ArchetypeAnalysis archetypes={data.data.archetypeAnalysis} lang={lang} />
+      </section>
+    )}
 
     <div
       class="prose prose-invert prose-lg max-w-none

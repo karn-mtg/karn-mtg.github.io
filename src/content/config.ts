@@ -50,6 +50,7 @@ const prerelease = defineCollection({
     generalInfoIntro: z.string(),
     synergyIntro: z.string().optional(),
     breadIntro: z.string(),
+    analysisIntro: z.string().optional(),
   }),
 })
 
@@ -124,6 +125,23 @@ const prereleaseData = defineCollection({
       mechanics: z.array(z.string()),
       count: z.number(),
       examples: z.array(z.string()),
+    })),
+    archetypeAnalysis: z.array(z.object({
+      colors: z.string(),
+      name: z.string(),
+      mechanic: z.string(),
+      description: z.string(),
+      supportCardCount: z.number(),
+      byRarity: z.record(z.string(), z.number()),
+      expectedCount: z.number(),
+      probabilityAtLeastOne: z.number(),
+      probabilityPlayable: z.number(),
+      avgQuality: z.number(),
+      setWideAvgQuality: z.number(),
+      rankAmongPairs: z.number().nullable(),
+      totalPairs: z.number(),
+      signalCards: z.array(z.string()),
+      verdict: z.enum(['wellSupported', 'plentifulButWeak', 'rareButStrong', 'dataDisagrees', 'insufficient']),
     })),
     creatureTypes: z.object({
       subtypes: z.array(z.object({

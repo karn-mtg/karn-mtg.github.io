@@ -1,6 +1,6 @@
 {
   "setCode": "hob",
-  "generatedAt": "2026-08-03T18:10:17.891Z",
+  "generatedAt": "2026-08-03T18:18:02.025Z",
   "cardCount": 193,
   "colorStats": {
     "cardCount": 193,
@@ -6676,5 +6676,132 @@
         "concentration": 83
       }
     ]
-  }
+  },
+  "archetypeAnalysis": [
+    {
+      "colors": "WU",
+      "name": "Humans",
+      "mechanic": "Recruit",
+      "description": "Leverages the recruit mechanic to generate creature tokens while drawing extra cards, then buffs the team for the win.",
+      "supportCardCount": 10,
+      "byRarity": {
+        "common": 4,
+        "uncommon": 3,
+        "rare": 2,
+        "mythic": 1
+      },
+      "expectedCount": 4.7,
+      "probabilityAtLeastOne": 99.1,
+      "probabilityPlayable": 85,
+      "avgQuality": 0.7,
+      "setWideAvgQuality": 3.1,
+      "rankAmongPairs": 4,
+      "totalPairs": 5,
+      "signalCards": [
+        "Bard's Company",
+        "Great Gilded Boat",
+        "The Queen of Dale"
+      ],
+      "verdict": "plentifulButWeak"
+    },
+    {
+      "colors": "BR",
+      "name": "Goblins",
+      "mechanic": "Amass",
+      "description": "Uses amass to build a growing Army token that can be sacrificed for value, draining opponents while accumulating resources.",
+      "supportCardCount": 14,
+      "byRarity": {
+        "common": 4,
+        "uncommon": 7,
+        "rare": 3,
+        "mythic": 0
+      },
+      "expectedCount": 6.1,
+      "probabilityAtLeastOne": 99.8,
+      "probabilityPlayable": 94.2,
+      "avgQuality": 1.8,
+      "setWideAvgQuality": 3.1,
+      "rankAmongPairs": 2,
+      "totalPairs": 5,
+      "signalCards": [
+        "Azog, Moria's Ruin",
+        "Rhovanion Rampager",
+        "Along the Crooked Way"
+      ],
+      "verdict": "plentifulButWeak"
+    },
+    {
+      "colors": "BG",
+      "name": "Wolves",
+      "mechanic": "Ferocious",
+      "description": "Gets large creatures (power 4+) onto the battlefield quickly, then leverages ferocious for card advantage.",
+      "supportCardCount": 6,
+      "byRarity": {
+        "common": 2,
+        "uncommon": 4,
+        "rare": 0,
+        "mythic": 0
+      },
+      "expectedCount": 3.1,
+      "probabilityAtLeastOne": 95.4,
+      "probabilityPlayable": 59.3,
+      "avgQuality": 2.4,
+      "setWideAvgQuality": 3.1,
+      "rankAmongPairs": 1,
+      "totalPairs": 5,
+      "signalCards": [],
+      "verdict": "insufficient"
+    },
+    {
+      "colors": "WR",
+      "name": "Dwarves",
+      "mechanic": "Storied",
+      "description": "Builds toward 3+ artifacts, legendaries, and/or Sagas to unlock an enduring story, then cashes in on storied payoffs.",
+      "supportCardCount": 9,
+      "byRarity": {
+        "common": 2,
+        "uncommon": 4,
+        "rare": 3,
+        "mythic": 0
+      },
+      "expectedCount": 3.4,
+      "probabilityAtLeastOne": 96.5,
+      "probabilityPlayable": 65.2,
+      "avgQuality": 3.1,
+      "setWideAvgQuality": 3.1,
+      "rankAmongPairs": 5,
+      "totalPairs": 5,
+      "signalCards": [
+        "Balin, Loremaster",
+        "Kíli the Resourceful",
+        "Fíli the Pathfinder"
+      ],
+      "verdict": "wellSupported"
+    },
+    {
+      "colors": "UG",
+      "name": "Elves",
+      "mechanic": "Landfall",
+      "description": "A controlling strategy built around landfall, shutting opponents down while building toward increasingly powerful creatures.",
+      "supportCardCount": 9,
+      "byRarity": {
+        "common": 3,
+        "uncommon": 4,
+        "rare": 1,
+        "mythic": 1
+      },
+      "expectedCount": 4.1,
+      "probabilityAtLeastOne": 98.3,
+      "probabilityPlayable": 77.4,
+      "avgQuality": 2.2,
+      "setWideAvgQuality": 3.1,
+      "rankAmongPairs": 3,
+      "totalPairs": 5,
+      "signalCards": [
+        "Thranduil's Company",
+        "Dancing from Dark to Dawn"
+      ],
+      "verdict": "plentifulButWeak"
+    }
+  ]
 }

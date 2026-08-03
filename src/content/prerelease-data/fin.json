@@ -1,6 +1,6 @@
 {
   "setCode": "fin",
-  "generatedAt": "2026-08-03T18:10:17.774Z",
+  "generatedAt": "2026-08-03T18:18:01.911Z",
   "cardCount": 312,
   "colorStats": {
     "cardCount": 312,
@@ -11308,5 +11308,6 @@
         "concentration": 67
       }
     ]
-  }
+  },
+  "archetypeAnalysis": []
 }

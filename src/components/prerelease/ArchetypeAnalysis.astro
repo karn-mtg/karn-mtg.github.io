@@ -1,0 +1,94 @@
+---
+import { t, type Lang } from '../../i18n'
+
+interface Archetype {
+  colors: string
+  name: string
+  mechanic: string
+  description: string
+  supportCardCount: number
+  byRarity: Record<string, number>
+  expectedCount: number
+  probabilityAtLeastOne: number
+  probabilityPlayable: number
+  avgQuality: number
+  setWideAvgQuality: number
+  rankAmongPairs: number | null
+  totalPairs: number
+  signalCards: string[]
+  verdict: 'wellSupported' | 'plentifulButWeak' | 'rareButStrong' | 'dataDisagrees' | 'insufficient'
+}
+
+interface Props {
+  archetypes: Archetype[]
+  lang: Lang
+}
+
+const { archetypes, lang } = Astro.props
+const i18n = t(lang)
+
+const COLOR_HEX: Record<string, string> = { W: '#e8e4d0', U: '#5b9bd5', B: '#8b7fb0', R: '#e0654a', G: '#5a9e6f' }
+
+const VERDICT_LABEL: Record<string, string> = {
+  wellSupported: i18n.verdictWellSupported,
+  plentifulButWeak: i18n.verdictPlentifulButWeak,
+  rareButStrong: i18n.verdictRareButStrong,
+  dataDisagrees: i18n.verdictDataDisagrees,
+  insufficient: i18n.verdictInsufficient,
+}
+const VERDICT_STYLE: Record<string, string> = {
+  wellSupported: 'bg-emerald-400/15 text-emerald-300 border-emerald-400/30',
+  plentifulButWeak: 'bg-amber-400/15 text-amber-300 border-amber-400/30',
+  rareButStrong: 'bg-sky-400/15 text-sky-300 border-sky-400/30',
+  dataDisagrees: 'bg-red-400/15 text-red-300 border-red-400/30',
+  insufficient: 'bg-red-400/15 text-red-300 border-red-400/30',
+}
+---
+
+<div class="grid gap-4">
+  {archetypes.map(arch => (
+    <div class="glass-panel rounded-xl p-5">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+        <div class="flex items-center gap-3">
+          <div class="flex gap-1">
+            {arch.colors.split('').map(c => (
+              <span class="w-4 h-4 rounded-full inline-block border border-white/10" style={`background:${COLOR_HEX[c]}`} />
+            ))}
+          </div>
+          <h4 class="font-bold text-on-surface">{arch.name}</h4>
+          <span class="text-xs text-on-surface-variant/50">({arch.mechanic})</span>
+        </div>
+        <span class={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold border ${VERDICT_STYLE[arch.verdict]}`}>
+          {VERDICT_LABEL[arch.verdict]}
+        </span>
+      </div>
+
+      <p class="text-sm text-on-surface-variant/80 leading-relaxed mb-4">{arch.description}</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mb-4">
+        <div>
+          <div class="text-lg font-bold text-primary">{arch.supportCardCount}</div>
+          <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.supportCardsLabel}</div>
+        </div>
+        <div>
+          <div class="text-lg font-bold text-primary">{arch.probabilityPlayable}%</div>
+          <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.feasibilityLabel}</div>
+        </div>
+        <div>
+          <div class="text-lg font-bold text-primary">{arch.avgQuality} <span class="text-on-surface-variant/40 text-xs font-normal">/{arch.setWideAvgQuality}</span></div>
+          <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.qualityLabel}</div>
+        </div>
+        <div>
+          <div class="text-lg font-bold text-primary">{arch.rankAmongPairs ? `#${arch.rankAmongPairs}` : '—'} <span class="text-on-surface-variant/40 text-xs font-normal">/{arch.totalPairs}</span></div>
+          <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.ourRankLabel}</div>
+        </div>
+      </div>
+
+      {arch.signalCards.length > 0 && (
+        <p class="text-xs text-on-surface-variant/60">
+          <span class="font-semibold text-on-surface-variant">{i18n.signalCardsLabel}:</span> {arch.signalCards.join(', ')}
+        </p>
+      )}
+    </div>
+  ))}
+</div>

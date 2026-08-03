@@ -1,0 +1,11 @@
+{
+  "packsOpened": 6,
+  "slotsPerPack": {
+    "common": 10,
+    "uncommon": 3,
+    "rare": 1
+  },
+  "mythicRate": 0.125,
+  "playableThreshold": 3,
+  "lowSupportThreshold": 8
+}

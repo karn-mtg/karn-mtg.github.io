@@ -1,0 +1,37 @@
+[
+  {
+    "colors": "WU",
+    "name": "Humans",
+    "mechanic": "Recruit",
+    "description": "Leverages the recruit mechanic to generate creature tokens while drawing extra cards, then buffs the team for the win.",
+    "source": "https://magic.wizards.com/en/news/feature/the-hobbit-prerelease-guide"
+  },
+  {
+    "colors": "BR",
+    "name": "Goblins",
+    "mechanic": "Amass",
+    "description": "Uses amass to build a growing Army token that can be sacrificed for value, draining opponents while accumulating resources.",
+    "source": "https://magic.wizards.com/en/news/feature/the-hobbit-prerelease-guide"
+  },
+  {
+    "colors": "BG",
+    "name": "Wolves",
+    "mechanic": "Ferocious",
+    "description": "Gets large creatures (power 4+) onto the battlefield quickly, then leverages ferocious for card advantage.",
+    "source": "https://magic.wizards.com/en/news/feature/the-hobbit-prerelease-guide"
+  },
+  {
+    "colors": "RW",
+    "name": "Dwarves",
+    "mechanic": "Storied",
+    "description": "Builds toward 3+ artifacts, legendaries, and/or Sagas to unlock an enduring story, then cashes in on storied payoffs.",
+    "source": "https://magic.wizards.com/en/news/feature/the-hobbit-prerelease-guide"
+  },
+  {
+    "colors": "GU",
+    "name": "Elves",
+    "mechanic": "Landfall",
+    "description": "A controlling strategy built around landfall, shutting opponents down while building toward increasingly powerful creatures.",
+    "source": "https://magic.wizards.com/en/news/feature/the-hobbit-prerelease-guide"
+  }
+]

@@ -9,6 +9,8 @@ import { computeMechanics } from './lib/mechanics.mjs'
 import { computeSynergyCombinations } from './lib/combinationScore.mjs'
 import { computeCreatureTypes } from './lib/creatureTypes.mjs'
 import { loadNamedMechanics, applyNamedMechanics } from './lib/setMechanics.mjs'
+import { loadArchetypeDefs, computeArchetypeAnalysis } from './lib/archetypeAnalysis.mjs'
+import sealedConfig from './lib/sealed-config.json' with { type: 'json' }
 
 const setCode = process.argv[2]
 if (!setCode) {
@@ -56,6 +58,21 @@ const { mechanics, mechanicColorMatrix, mechanicsBySynergy } = computeMechanics(
 const synergyCombinations = computeSynergyCombinations(cardsWithNamedMechanics)
 const creatureTypes = computeCreatureTypes(raw)
 
+const breadByOracleId = new Map(cardsWithBread.map(c => [c.oracleId, c]))
+const mergedCards = cardsWithNamedMechanics.map(card => ({
+  name: card.name,
+  colorIdentity: card.color_identity || [],
+  rarity: card.rarity,
+  keywords: card.keywords || [],
+  bread: breadByOracleId.get(card.oracle_id)?.bread ?? { overall: 0 },
+}))
+
+const archetypeDefs = loadArchetypeDefs(setCode)
+const archetypeAnalysis = computeArchetypeAnalysis(mergedCards, colorStats.byRarity, manaCombos, archetypeDefs, sealedConfig)
+if (archetypeDefs.length > 0) {
+  console.log(`  applied ${archetypeDefs.length} curated official archetypes from data/set-archetypes/${setCode}.json`)
+}
+
 const output = {
   setCode,
   generatedAt: new Date().toISOString(),
@@ -72,6 +89,7 @@ const output = {
   mechanicsBySynergy,
   synergyCombinations,
   creatureTypes,
+  archetypeAnalysis,
 }
 
 mkdirSync(outDir, { recursive: true })
