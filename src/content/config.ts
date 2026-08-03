@@ -108,6 +108,7 @@ const prereleaseData = defineCollection({
       mechanic: z.string(),
       count: z.number(),
       synergyCount: z.number(),
+      description: z.string().optional(),
     })),
     mechanicColorMatrix: z.array(z.object({
       mechanic: z.string(),
@@ -117,6 +118,7 @@ const prereleaseData = defineCollection({
       mechanic: z.string(),
       count: z.number(),
       synergyCount: z.number(),
+      description: z.string().optional(),
     })),
     synergyCombinations: z.array(z.object({
       mechanics: z.array(z.string()),

@@ -8,6 +8,7 @@ import { computeWordCloud } from './lib/wordCloud.mjs'
 import { computeMechanics } from './lib/mechanics.mjs'
 import { computeSynergyCombinations } from './lib/combinationScore.mjs'
 import { computeCreatureTypes } from './lib/creatureTypes.mjs'
+import { loadNamedMechanics, applyNamedMechanics } from './lib/setMechanics.mjs'
 
 const setCode = process.argv[2]
 if (!setCode) {
@@ -44,9 +45,15 @@ const bestCards = [...cardsWithBread]
   .slice(0, 15)
   .map(c => c.name)
 
+const namedMechanics = loadNamedMechanics(setCode)
+const cardsWithNamedMechanics = applyNamedMechanics(raw, namedMechanics)
+if (namedMechanics.length > 0) {
+  console.log(`  applied ${namedMechanics.length} curated named mechanics from data/set-mechanics/${setCode}.json`)
+}
+
 const { wordCloud, topWords, wordColorMatrix } = computeWordCloud(raw)
-const { mechanics, mechanicColorMatrix, mechanicsBySynergy } = computeMechanics(raw, topWords)
-const synergyCombinations = computeSynergyCombinations(raw)
+const { mechanics, mechanicColorMatrix, mechanicsBySynergy } = computeMechanics(cardsWithNamedMechanics, topWords, namedMechanics)
+const synergyCombinations = computeSynergyCombinations(cardsWithNamedMechanics)
 const creatureTypes = computeCreatureTypes(raw)
 
 const output = {

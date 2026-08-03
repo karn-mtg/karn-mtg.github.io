@@ -39,20 +39,30 @@ later phase, not built yet.
    tune weights in `scripts/prerelease/lib/bread-rules.json` (BREAD) or the stopword list in
    `scripts/prerelease/lib/stopwords.mjs` (word cloud) — not the `.mjs` logic — and re-run.
 
-4. **Scaffold the article.** Create `src/content/prerelease/en/<date>-<slug>.md` with frontmatter:
+4. **(Optional) Curate official named mechanics.** Scryfall's `keywords` field only covers
+   recognized keyword abilities — set-specific "ability words" WotC calls out in its own
+   mechanics preview article (e.g. Storied, Recruit for The Hobbits) usually aren't in it. If
+   such an article exists for the set, fetch it, and for anything missing from `analyze.mjs`'s
+   output `mechanics` list, add an entry to `scripts/prerelease/data/set-mechanics/<code>.json`:
+   `{name, field: "oracle_text"|"type_line", pattern, flags, description, source}`. Re-run
+   `analyze.mjs` — it auto-detects these via regex and folds them into the mechanics list, the
+   mechanic×color matrix, and synergy combinations alongside the Scryfall keywords. This file is
+   optional; skip it if no official mechanics article exists.
+
+5. **Scaffold the article.** Create `src/content/prerelease/en/<date>-<slug>.md` with frontmatter:
    `title, description, date, setCode, setName, lang: en, generalInfoIntro, synergyIntro, breadIntro`
    (these are the short "digestible text" blurbs feature.md asks for between sections — plain
    sentences, not markdown; `synergyIntro` is optional but should be filled in for a complete
    article). Mirror it into `pt-br/`, `de/`, `es/` under the matching `lang` value once the
    English version is finalized (this site is i18n'd from v1).
 
-5. **Write the prose** (this is the LLM part): read the generated `prerelease-data/<code>.json`
+6. **Write the prose** (this is the LLM part): read the generated `prerelease-data/<code>.json`
    and ground `generalInfoIntro`/`synergyIntro`/`breadIntro`, plus a short intro/closing in the
    markdown body, in the *actual* numbers — e.g. name the strongest color pair from `manaCombos`,
    the top `topWords`/`mechanicsBySynergy` entries, or the top `synergyCombinations` pair; call out
    a couple of `bestCards` by name. Don't invent numbers not present in the data file.
 
-6. **Verify.** `npm run dev`, visit `/prerelease/<slug>` and `/pt-br/prerelease/<slug>`, confirm
+7. **Verify.** `npm run dev`, visit `/prerelease/<slug>` and `/pt-br/prerelease/<slug>`, confirm
    the color chart, word cloud, word/mechanic matrices, synergy combos table, B.R.E.A.D. explorer
    filters, best-cards list, and mana-combo ranking all render. Then `npm run build` to confirm
    the full site still builds.

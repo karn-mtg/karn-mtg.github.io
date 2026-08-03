@@ -1,6 +1,6 @@
 {
   "setCode": "hob",
-  "generatedAt": "2026-08-03T18:01:00.588Z",
+  "generatedAt": "2026-08-03T18:10:17.891Z",
   "cardCount": 193,
   "colorStats": {
     "cardCount": 193,
@@ -5528,6 +5528,12 @@
   ],
   "mechanics": [
     {
+      "mechanic": "Adventure",
+      "count": 17,
+      "synergyCount": 15,
+      "description": "A card that can be cast as an Instant/Sorcery Adventure, which then lets you cast the permanent side afterward."
+    },
+    {
       "mechanic": "Amass",
       "count": 14,
       "synergyCount": 12
@@ -5543,6 +5549,12 @@
       "synergyCount": 9
     },
     {
+      "mechanic": "Recruit",
+      "count": 10,
+      "synergyCount": 8,
+      "description": "Keyword action: draw a card, then discard a card. If the discarded card is nonland, create a 1/1 white Human Soldier token."
+    },
+    {
       "mechanic": "Treasure",
       "count": 10,
       "synergyCount": 10
@@ -5556,6 +5568,12 @@
       "mechanic": "Landfall",
       "count": 9,
       "synergyCount": 9
+    },
+    {
+      "mechanic": "Storied",
+      "count": 9,
+      "synergyCount": 5,
+      "description": "Static ability: once you control 3+ artifacts, legendaries, and/or Sagas, you have an \"enduring story\" for the rest of the game, unlocking a bonus effect."
     },
     {
       "mechanic": "Reach",
@@ -5606,6 +5624,12 @@
       "mechanic": "Flashback",
       "count": 3,
       "synergyCount": 3
+    },
+    {
+      "mechanic": "Hone counters",
+      "count": 2,
+      "synergyCount": 2,
+      "description": "Counters placed on Equipment; each hone counter grants +1/+0 to the equipped creature."
     },
     {
       "mechanic": "Enchant",
@@ -5695,6 +5719,18 @@
   ],
   "mechanicColorMatrix": [
     {
+      "mechanic": "Adventure",
+      "byColor": {
+        "W": 4,
+        "U": 5,
+        "B": 3,
+        "R": 3,
+        "G": 1,
+        "multi": 1,
+        "C": 0
+      }
+    },
+    {
       "mechanic": "Amass",
       "byColor": {
         "W": 0,
@@ -5731,6 +5767,18 @@
       }
     },
     {
+      "mechanic": "Recruit",
+      "byColor": {
+        "W": 5,
+        "U": 3,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 2,
+        "C": 0
+      }
+    },
+    {
       "mechanic": "Treasure",
       "byColor": {
         "W": 2,
@@ -5763,6 +5811,18 @@
         "R": 0,
         "G": 4,
         "multi": 3,
+        "C": 0
+      }
+    },
+    {
+      "mechanic": "Storied",
+      "byColor": {
+        "W": 4,
+        "U": 0,
+        "B": 0,
+        "R": 3,
+        "G": 0,
+        "multi": 2,
         "C": 0
       }
     },
@@ -5884,6 +5944,18 @@
         "G": 0,
         "multi": 0,
         "C": 0
+      }
+    },
+    {
+      "mechanic": "Hone counters",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 0,
+        "R": 0,
+        "G": 0,
+        "multi": 1,
+        "C": 1
       }
     },
     {
@@ -6093,6 +6165,12 @@
   ],
   "mechanicsBySynergy": [
     {
+      "mechanic": "Adventure",
+      "count": 17,
+      "synergyCount": 15,
+      "description": "A card that can be cast as an Instant/Sorcery Adventure, which then lets you cast the permanent side afterward."
+    },
+    {
       "mechanic": "Amass",
       "count": 14,
       "synergyCount": 12
@@ -6118,6 +6196,12 @@
       "synergyCount": 9
     },
     {
+      "mechanic": "Recruit",
+      "count": 10,
+      "synergyCount": 8,
+      "description": "Keyword action: draw a card, then discard a card. If the discarded card is nonland, create a 1/1 white Human Soldier token."
+    },
+    {
       "mechanic": "Trample",
       "count": 10,
       "synergyCount": 7
@@ -6141,6 +6225,12 @@
       "mechanic": "Ferocious",
       "count": 6,
       "synergyCount": 6
+    },
+    {
+      "mechanic": "Storied",
+      "count": 9,
+      "synergyCount": 5,
+      "description": "Static ability: once you control 3+ artifacts, legendaries, and/or Sagas, you have an \"enduring story\" for the rest of the game, unlocking a bonus effect."
     },
     {
       "mechanic": "Mill",
@@ -6171,6 +6261,12 @@
       "mechanic": "Scry",
       "count": 3,
       "synergyCount": 2
+    },
+    {
+      "mechanic": "Hone counters",
+      "count": 2,
+      "synergyCount": 2,
+      "description": "Counters placed on Equipment; each hone counter grants +1/+0 to the equipped creature."
     },
     {
       "mechanic": "Enchant",
@@ -6261,6 +6357,30 @@
   "synergyCombinations": [
     {
       "mechanics": [
+        "Adventure",
+        "Mill"
+      ],
+      "count": 3,
+      "examples": [
+        "Glamdring, Foe-hammer // Gleam of Death",
+        "Most Decrepit Old Bird // Speak Secrets",
+        "Thranduil, Sindarin Liege // Silvan Rally"
+      ]
+    },
+    {
+      "mechanics": [
+        "Adventure",
+        "Flying"
+      ],
+      "count": 3,
+      "examples": [
+        "Most Decrepit Old Bird // Speak Secrets",
+        "Smaug, the Great Calamity // Spew Flame",
+        "Velvetwing Butterflies // Gaze in Wonder"
+      ]
+    },
+    {
+      "mechanics": [
         "Trample",
         "Treasure"
       ],
@@ -6268,6 +6388,17 @@
       "examples": [
         "Bejeweled Warg",
         "Dori, Bearer of Friends"
+      ]
+    },
+    {
+      "mechanics": [
+        "Adventure",
+        "Equip"
+      ],
+      "count": 2,
+      "examples": [
+        "Glamdring, Foe-hammer // Gleam of Death",
+        "My Precious // Allure of Power"
       ]
     },
     {

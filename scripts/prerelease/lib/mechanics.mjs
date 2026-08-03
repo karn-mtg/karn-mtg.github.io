@@ -10,7 +10,8 @@ const COLOR_BUCKETS = ['W', 'U', 'B', 'R', 'G', 'multi', 'C']
  * most cards that also do something the word cloud flagged as a core
  * synergy action).
  */
-export function computeMechanics(cards, topWords) {
+export function computeMechanics(cards, topWords, namedMechanics = []) {
+  const descriptions = new Map(namedMechanics.map(m => [m.name, m.description]))
   const frequency = new Map()
   const byColor = new Map()
   const synergyCount = new Map()
@@ -36,6 +37,7 @@ export function computeMechanics(cards, topWords) {
       mechanic,
       count,
       synergyCount: synergyCount.get(mechanic) || 0,
+      ...(descriptions.has(mechanic) ? { description: descriptions.get(mechanic) } : {}),
     }))
     .sort((a, b) => b.count - a.count)
 
