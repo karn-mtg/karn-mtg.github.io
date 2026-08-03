@@ -1,6 +1,6 @@
 {
   "setCode": "fin",
-  "generatedAt": "2026-08-03T16:24:24.626Z",
+  "generatedAt": "2026-08-03T18:01:00.486Z",
   "cardCount": 312,
   "colorStats": {
     "cardCount": 312,
@@ -8190,10 +8190,6 @@
   ],
   "wordCloud": [
     {
-      "word": "creature",
-      "count": 189
-    },
-    {
       "word": "target",
       "count": 113
     },
@@ -8230,10 +8226,6 @@
       "count": 49
     },
     {
-      "word": "opponent",
-      "count": 48
-    },
-    {
       "word": "create",
       "count": 46
     },
@@ -8246,23 +8238,11 @@
       "count": 44
     },
     {
-      "word": "token",
-      "count": 43
-    },
-    {
       "word": "add",
       "count": 42
     },
     {
       "word": "life",
-      "count": 40
-    },
-    {
-      "word": "hand",
-      "count": 40
-    },
-    {
-      "word": "battlefield",
       "count": 40
     },
     {
@@ -8272,10 +8252,6 @@
     {
       "word": "library",
       "count": 39
-    },
-    {
-      "word": "creatures",
-      "count": 36
     },
     {
       "word": "flying",
@@ -8303,10 +8279,6 @@
     },
     {
       "word": "mana",
-      "count": 31
-    },
-    {
-      "word": "permanent",
       "count": 31
     },
     {
@@ -8342,19 +8314,43 @@
       "count": 24
     },
     {
-      "word": "player",
-      "count": 24
-    },
-    {
       "word": "iii",
       "count": 23
+    },
+    {
+      "word": "any",
+      "count": 22
+    },
+    {
+      "word": "top",
+      "count": 22
+    },
+    {
+      "word": "another",
+      "count": 21
+    },
+    {
+      "word": "activate",
+      "count": 21
+    },
+    {
+      "word": "power",
+      "count": 20
+    },
+    {
+      "word": "owner's",
+      "count": 20
+    },
+    {
+      "word": "addition",
+      "count": 20
+    },
+    {
+      "word": "types",
+      "count": 20
     }
   ],
   "topWords": [
-    {
-      "word": "creature",
-      "count": 189
-    },
     {
       "word": "target",
       "count": 113
@@ -8390,21 +8386,13 @@
     {
       "word": "graveyard",
       "count": 49
+    },
+    {
+      "word": "create",
+      "count": 46
     }
   ],
   "wordColorMatrix": [
-    {
-      "word": "creature",
-      "byColor": {
-        "W": 30,
-        "U": 26,
-        "B": 38,
-        "R": 30,
-        "G": 33,
-        "multi": 19,
-        "C": 13
-      }
-    },
     {
       "word": "target",
       "byColor": {
@@ -8514,18 +8502,6 @@
       }
     },
     {
-      "word": "opponent",
-      "byColor": {
-        "W": 3,
-        "U": 6,
-        "B": 14,
-        "R": 5,
-        "G": 3,
-        "multi": 14,
-        "C": 3
-      }
-    },
-    {
       "word": "create",
       "byColor": {
         "W": 9,
@@ -8562,15 +8538,39 @@
       }
     },
     {
-      "word": "token",
+      "word": "add",
+      "byColor": {
+        "W": 3,
+        "U": 3,
+        "B": 1,
+        "R": 5,
+        "G": 5,
+        "multi": 14,
+        "C": 11
+      }
+    },
+    {
+      "word": "life",
       "byColor": {
         "W": 6,
-        "U": 3,
-        "B": 7,
-        "R": 9,
-        "G": 6,
-        "multi": 10,
-        "C": 2
+        "U": 0,
+        "B": 16,
+        "R": 1,
+        "G": 3,
+        "multi": 7,
+        "C": 7
+      }
+    },
+    {
+      "word": "artifact",
+      "byColor": {
+        "W": 8,
+        "U": 9,
+        "B": 9,
+        "R": 1,
+        "G": 3,
+        "multi": 5,
+        "C": 4
       }
     }
   ],
@@ -8578,42 +8578,42 @@
     {
       "mechanic": "Flying",
       "count": 30,
-      "synergyCount": 29
+      "synergyCount": 27
     },
     {
       "mechanic": "Equip",
       "count": 27,
-      "synergyCount": 27
+      "synergyCount": 15
     },
     {
       "mechanic": "Transform",
       "count": 27,
-      "synergyCount": 27
+      "synergyCount": 26
     },
     {
       "mechanic": "Job select",
       "count": 16,
-      "synergyCount": 16
+      "synergyCount": 7
     },
     {
       "mechanic": "Flashback",
       "count": 14,
-      "synergyCount": 12
+      "synergyCount": 11
     },
     {
       "mechanic": "Lifelink",
       "count": 12,
-      "synergyCount": 10
+      "synergyCount": 9
     },
     {
       "mechanic": "Trample",
       "count": 12,
-      "synergyCount": 10
+      "synergyCount": 8
     },
     {
       "mechanic": "Surveil",
       "count": 11,
-      "synergyCount": 11
+      "synergyCount": 10
     },
     {
       "mechanic": "Landfall",
@@ -8623,7 +8623,7 @@
     {
       "mechanic": "Vigilance",
       "count": 10,
-      "synergyCount": 8
+      "synergyCount": 7
     },
     {
       "mechanic": "Treasure",
@@ -8633,7 +8633,7 @@
     {
       "mechanic": "Mill",
       "count": 10,
-      "synergyCount": 9
+      "synergyCount": 8
     },
     {
       "mechanic": "Reach",
@@ -8813,7 +8813,7 @@
     {
       "mechanic": "Chaosbringer",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Defender",
@@ -8833,7 +8833,7 @@
     {
       "mechanic": "Gae Bolg",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Two-Headed Coin",
@@ -8898,7 +8898,7 @@
     {
       "mechanic": "10,000 Needles",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Flare Star",
@@ -8918,7 +8918,7 @@
     {
       "mechanic": "Machina",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "A Test of Your Reflexes!",
@@ -8993,7 +8993,7 @@
     {
       "mechanic": "Murasame",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Fire Cross",
@@ -10418,41 +10418,26 @@
     {
       "mechanic": "Flying",
       "count": 30,
-      "synergyCount": 29
-    },
-    {
-      "mechanic": "Equip",
-      "count": 27,
       "synergyCount": 27
     },
     {
       "mechanic": "Transform",
       "count": 27,
-      "synergyCount": 27
+      "synergyCount": 26
     },
     {
-      "mechanic": "Job select",
-      "count": 16,
-      "synergyCount": 16
+      "mechanic": "Equip",
+      "count": 27,
+      "synergyCount": 15
     },
     {
       "mechanic": "Flashback",
       "count": 14,
-      "synergyCount": 12
+      "synergyCount": 11
     },
     {
       "mechanic": "Surveil",
       "count": 11,
-      "synergyCount": 11
-    },
-    {
-      "mechanic": "Lifelink",
-      "count": 12,
-      "synergyCount": 10
-    },
-    {
-      "mechanic": "Trample",
-      "count": 12,
       "synergyCount": 10
     },
     {
@@ -10466,8 +10451,8 @@
       "synergyCount": 10
     },
     {
-      "mechanic": "Mill",
-      "count": 10,
+      "mechanic": "Lifelink",
+      "count": 12,
       "synergyCount": 9
     },
     {
@@ -10476,9 +10461,24 @@
       "synergyCount": 9
     },
     {
-      "mechanic": "Vigilance",
+      "mechanic": "Trample",
+      "count": 12,
+      "synergyCount": 8
+    },
+    {
+      "mechanic": "Mill",
       "count": 10,
       "synergyCount": 8
+    },
+    {
+      "mechanic": "Job select",
+      "count": 16,
+      "synergyCount": 7
+    },
+    {
+      "mechanic": "Vigilance",
+      "count": 10,
+      "synergyCount": 7
     },
     {
       "mechanic": "Reach",
@@ -10646,11 +10646,6 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "Chaosbringer",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
       "mechanic": "Defender",
       "count": 1,
       "synergyCount": 1
@@ -10662,11 +10657,6 @@
     },
     {
       "mechanic": "Dragonfire Dive",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Gae Bolg",
       "count": 1,
       "synergyCount": 1
     },
@@ -10726,11 +10716,6 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "10,000 Needles",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
       "mechanic": "Flare Star",
       "count": 1,
       "synergyCount": 1
@@ -10742,11 +10727,6 @@
     },
     {
       "mechanic": "First strike",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Machina",
       "count": 1,
       "synergyCount": 1
     },
@@ -10817,11 +10797,6 @@
     },
     {
       "mechanic": "Hagneia",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
-      "mechanic": "Murasame",
       "count": 1,
       "synergyCount": 1
     },
@@ -10951,7 +10926,32 @@
       "synergyCount": 0
     },
     {
+      "mechanic": "Chaosbringer",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Gae Bolg",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
       "mechanic": "Mountaincycling",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "10,000 Needles",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Machina",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Murasame",
       "count": 1,
       "synergyCount": 0
     }
@@ -11077,5 +11077,236 @@
         "Summon: Titan"
       ]
     }
-  ]
+  ],
+  "creatureTypes": {
+    "subtypes": [
+      {
+        "subtype": "Human",
+        "count": 78,
+        "byColor": {
+          "W": 11,
+          "U": 5,
+          "B": 11,
+          "R": 13,
+          "G": 4,
+          "multi": 34,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Wizard",
+        "count": 23,
+        "byColor": {
+          "W": 1,
+          "U": 2,
+          "B": 1,
+          "R": 2,
+          "G": 0,
+          "multi": 17,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Saga",
+        "count": 23,
+        "byColor": {
+          "W": 5,
+          "U": 3,
+          "B": 3,
+          "R": 5,
+          "G": 4,
+          "multi": 2,
+          "C": 1
+        }
+      },
+      {
+        "subtype": "Noble",
+        "count": 16,
+        "byColor": {
+          "W": 3,
+          "U": 2,
+          "B": 2,
+          "R": 2,
+          "G": 0,
+          "multi": 7,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Warrior",
+        "count": 13,
+        "byColor": {
+          "W": 0,
+          "U": 2,
+          "B": 4,
+          "R": 3,
+          "G": 0,
+          "multi": 4,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Knight",
+        "count": 13,
+        "byColor": {
+          "W": 3,
+          "U": 0,
+          "B": 2,
+          "R": 3,
+          "G": 0,
+          "multi": 5,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Avatar",
+        "count": 12,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 3,
+          "R": 0,
+          "G": 0,
+          "multi": 9,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Soldier",
+        "count": 12,
+        "byColor": {
+          "W": 5,
+          "U": 0,
+          "B": 3,
+          "R": 1,
+          "G": 0,
+          "multi": 3,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Bird",
+        "count": 8,
+        "byColor": {
+          "W": 2,
+          "U": 0,
+          "B": 0,
+          "R": 0,
+          "G": 5,
+          "multi": 1,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Horror",
+        "count": 7,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 7,
+          "R": 0,
+          "G": 0,
+          "multi": 0,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Beast",
+        "count": 7,
+        "byColor": {
+          "W": 1,
+          "U": 1,
+          "B": 1,
+          "R": 0,
+          "G": 3,
+          "multi": 1,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Cleric",
+        "count": 6,
+        "byColor": {
+          "W": 3,
+          "U": 0,
+          "B": 0,
+          "R": 0,
+          "G": 0,
+          "multi": 3,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Elemental",
+        "count": 6,
+        "byColor": {
+          "W": 0,
+          "U": 3,
+          "B": 0,
+          "R": 1,
+          "G": 2,
+          "multi": 0,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Plant",
+        "count": 6,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 1,
+          "R": 1,
+          "G": 4,
+          "multi": 0,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Demon",
+        "count": 6,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 1,
+          "R": 2,
+          "G": 0,
+          "multi": 2,
+          "C": 1
+        }
+      }
+    ],
+    "kindredSignals": [
+      {
+        "color": "W",
+        "subtype": "Moogle",
+        "count": 4,
+        "concentration": 100
+      },
+      {
+        "color": "U",
+        "subtype": "Elemental",
+        "count": 3,
+        "concentration": 50
+      },
+      {
+        "color": "B",
+        "subtype": "Horror",
+        "count": 7,
+        "concentration": 100
+      },
+      {
+        "color": "R",
+        "subtype": "Warrior",
+        "count": 3,
+        "concentration": 23
+      },
+      {
+        "color": "G",
+        "subtype": "Plant",
+        "count": 4,
+        "concentration": 67
+      }
+    ]
+  }
 }

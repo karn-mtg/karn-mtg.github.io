@@ -123,6 +123,19 @@ const prereleaseData = defineCollection({
       count: z.number(),
       examples: z.array(z.string()),
     })),
+    creatureTypes: z.object({
+      subtypes: z.array(z.object({
+        subtype: z.string(),
+        count: z.number(),
+        byColor: z.record(z.string(), z.number()),
+      })),
+      kindredSignals: z.array(z.object({
+        color: z.string(),
+        subtype: z.string(),
+        count: z.number(),
+        concentration: z.number(),
+      })),
+    }),
   }),
 })
 

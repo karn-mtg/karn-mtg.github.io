@@ -8,6 +8,7 @@ import BreadDefinitions from '../../../components/prerelease/BreadDefinitions.as
 import CardExplorer from '../../../components/prerelease/CardExplorer.astro'
 import BestCardsList from '../../../components/prerelease/BestCardsList.astro'
 import ManaComboRanking from '../../../components/prerelease/ManaComboRanking.astro'
+import KindredSignals from '../../../components/prerelease/KindredSignals.astro'
 import WordCloudViz from '../../../components/prerelease/WordCloudViz.astro'
 import TopWordsList from '../../../components/prerelease/TopWordsList.astro'
 import MatrixHeatmap from '../../../components/prerelease/MatrixHeatmap.astro'
@@ -85,6 +86,13 @@ const bestCards = data.data.bestCards
         creatureLabel={i18n.colorDistributionCreature}
         nonCreatureLabel={i18n.colorDistributionNonCreature}
       />
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.creatureTypesHeading}</h3>
+      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.kindredSignalsSubtitle}</p>
+      <KindredSignals signals={data.data.creatureTypes.kindredSignals} />
+
+      <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.creatureTypeMatrixHeading}</h4>
+      <MatrixHeatmap rows={data.data.creatureTypes.subtypes.map(s => ({ label: s.subtype, byColor: s.byColor }))} />
     </section>
 
     <!-- Interaction / Synergy -->

@@ -20,4 +20,8 @@ export const STOPWORDS = new Set([
   'up', 'until',
   'was', 'way', 'ways', 'were', 'when', 'whenever', 'where', 'which', 'while', 'who', 'will', 'with', 'without', 'would',
   'you', 'your',
+  // Generic Magic nouns that show up on almost every card regardless of what
+  // the card actually does — not a synergy signal on their own.
+  'creature', 'creatures', 'opponent', 'opponents', 'hand', 'token', 'tokens',
+  'permanent', 'permanents', 'player', 'players', 'battlefield',
 ])

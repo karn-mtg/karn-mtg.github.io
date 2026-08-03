@@ -1,0 +1,21 @@
+---
+interface Props {
+  signals: { color: string; subtype: string; count: number; concentration: number }[]
+}
+
+const { signals } = Astro.props
+
+const COLOR_HEX: Record<string, string> = { W: '#e8e4d0', U: '#5b9bd5', B: '#8b7fb0', R: '#e0654a', G: '#5a9e6f' }
+const COLOR_NAME: Record<string, string> = { W: 'White', U: 'Blue', B: 'Black', R: 'Red', G: 'Green' }
+---
+
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+  {signals.map(sig => (
+    <div class="glass-panel rounded-xl p-4 text-center">
+      <span class="w-3 h-3 rounded-full inline-block mb-2" style={`background:${COLOR_HEX[sig.color]}`} />
+      <div class="text-xs text-on-surface-variant/60 mb-1">{COLOR_NAME[sig.color]}</div>
+      <div class="font-bold text-on-surface">{sig.subtype}</div>
+      <div class="text-xs text-primary font-semibold mt-1">{sig.concentration}% · {sig.count}</div>
+    </div>
+  ))}
+</div>

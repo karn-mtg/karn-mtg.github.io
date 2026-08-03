@@ -1,6 +1,6 @@
 {
   "setCode": "hob",
-  "generatedAt": "2026-08-03T16:24:24.726Z",
+  "generatedAt": "2026-08-03T18:01:00.588Z",
   "cardCount": 193,
   "colorStats": {
     "cardCount": 193,
@@ -5142,10 +5142,6 @@
   ],
   "wordCloud": [
     {
-      "word": "creature",
-      "count": 122
-    },
-    {
       "word": "target",
       "count": 80
     },
@@ -5174,10 +5170,6 @@
       "count": 25
     },
     {
-      "word": "hand",
-      "count": 24
-    },
-    {
       "word": "power",
       "count": 24
     },
@@ -5194,10 +5186,6 @@
       "count": 23
     },
     {
-      "word": "token",
-      "count": 23
-    },
-    {
       "word": "life",
       "count": 22
     },
@@ -5206,23 +5194,11 @@
       "count": 22
     },
     {
-      "word": "opponent",
-      "count": 21
-    },
-    {
       "word": "damage",
       "count": 20
     },
     {
-      "word": "creatures",
-      "count": 19
-    },
-    {
       "word": "deals",
-      "count": 19
-    },
-    {
-      "word": "battlefield",
       "count": 19
     },
     {
@@ -5300,13 +5276,33 @@
     {
       "word": "counters",
       "count": 13
+    },
+    {
+      "word": "return",
+      "count": 12
+    },
+    {
+      "word": "add",
+      "count": 12
+    },
+    {
+      "word": "mana",
+      "count": 12
+    },
+    {
+      "word": "shuffle",
+      "count": 12
+    },
+    {
+      "word": "dwarf",
+      "count": 11
+    },
+    {
+      "word": "discard",
+      "count": 11
     }
   ],
   "topWords": [
-    {
-      "word": "creature",
-      "count": 122
-    },
     {
       "word": "target",
       "count": 80
@@ -5336,27 +5332,19 @@
       "count": 25
     },
     {
-      "word": "hand",
+      "word": "power",
       "count": 24
     },
     {
-      "word": "power",
+      "word": "library",
       "count": 24
+    },
+    {
+      "word": "create",
+      "count": 23
     }
   ],
   "wordColorMatrix": [
-    {
-      "word": "creature",
-      "byColor": {
-        "W": 18,
-        "U": 13,
-        "B": 22,
-        "R": 19,
-        "G": 22,
-        "multi": 19,
-        "C": 9
-      }
-    },
     {
       "word": "target",
       "byColor": {
@@ -5442,18 +5430,6 @@
       }
     },
     {
-      "word": "hand",
-      "byColor": {
-        "W": 4,
-        "U": 4,
-        "B": 4,
-        "R": 2,
-        "G": 4,
-        "multi": 4,
-        "C": 2
-      }
-    },
-    {
       "word": "power",
       "byColor": {
         "W": 2,
@@ -5502,18 +5478,6 @@
       }
     },
     {
-      "word": "token",
-      "byColor": {
-        "W": 6,
-        "U": 0,
-        "B": 2,
-        "R": 7,
-        "G": 4,
-        "multi": 2,
-        "C": 2
-      }
-    },
-    {
       "word": "life",
       "byColor": {
         "W": 3,
@@ -5524,23 +5488,59 @@
         "multi": 2,
         "C": 3
       }
+    },
+    {
+      "word": "sacrifice",
+      "byColor": {
+        "W": 0,
+        "U": 0,
+        "B": 6,
+        "R": 4,
+        "G": 0,
+        "multi": 8,
+        "C": 4
+      }
+    },
+    {
+      "word": "damage",
+      "byColor": {
+        "W": 1,
+        "U": 2,
+        "B": 0,
+        "R": 11,
+        "G": 2,
+        "multi": 2,
+        "C": 2
+      }
+    },
+    {
+      "word": "deals",
+      "byColor": {
+        "W": 1,
+        "U": 1,
+        "B": 0,
+        "R": 11,
+        "G": 2,
+        "multi": 2,
+        "C": 2
+      }
     }
   ],
   "mechanics": [
     {
       "mechanic": "Amass",
       "count": 14,
-      "synergyCount": 13
+      "synergyCount": 12
     },
     {
       "mechanic": "Equip",
       "count": 12,
-      "synergyCount": 12
+      "synergyCount": 11
     },
     {
       "mechanic": "Flying",
       "count": 12,
-      "synergyCount": 11
+      "synergyCount": 9
     },
     {
       "mechanic": "Treasure",
@@ -5550,7 +5550,7 @@
     {
       "mechanic": "Trample",
       "count": 10,
-      "synergyCount": 8
+      "synergyCount": 7
     },
     {
       "mechanic": "Landfall",
@@ -5570,7 +5570,7 @@
     {
       "mechanic": "Mill",
       "count": 6,
-      "synergyCount": 6
+      "synergyCount": 5
     },
     {
       "mechanic": "Flash",
@@ -5615,7 +5615,7 @@
     {
       "mechanic": "Ward",
       "count": 2,
-      "synergyCount": 1
+      "synergyCount": 2
     },
     {
       "mechanic": "Gift",
@@ -5680,7 +5680,7 @@
     {
       "mechanic": "Threshold",
       "count": 1,
-      "synergyCount": 1
+      "synergyCount": 0
     },
     {
       "mechanic": "Kicker",
@@ -6095,15 +6095,10 @@
     {
       "mechanic": "Amass",
       "count": 14,
-      "synergyCount": 13
-    },
-    {
-      "mechanic": "Equip",
-      "count": 12,
       "synergyCount": 12
     },
     {
-      "mechanic": "Flying",
+      "mechanic": "Equip",
       "count": 12,
       "synergyCount": 11
     },
@@ -6113,6 +6108,11 @@
       "synergyCount": 10
     },
     {
+      "mechanic": "Flying",
+      "count": 12,
+      "synergyCount": 9
+    },
+    {
       "mechanic": "Landfall",
       "count": 9,
       "synergyCount": 9
@@ -6120,7 +6120,7 @@
     {
       "mechanic": "Trample",
       "count": 10,
-      "synergyCount": 8
+      "synergyCount": 7
     },
     {
       "mechanic": "Reach",
@@ -6133,11 +6133,6 @@
       "synergyCount": 6
     },
     {
-      "mechanic": "Mill",
-      "count": 6,
-      "synergyCount": 6
-    },
-    {
       "mechanic": "Flash",
       "count": 6,
       "synergyCount": 6
@@ -6146,6 +6141,11 @@
       "mechanic": "Ferocious",
       "count": 6,
       "synergyCount": 6
+    },
+    {
+      "mechanic": "Mill",
+      "count": 6,
+      "synergyCount": 5
     },
     {
       "mechanic": "Deathtouch",
@@ -6180,7 +6180,7 @@
     {
       "mechanic": "Ward",
       "count": 2,
-      "synergyCount": 1
+      "synergyCount": 2
     },
     {
       "mechanic": "Gift",
@@ -6238,11 +6238,6 @@
       "synergyCount": 1
     },
     {
-      "mechanic": "Threshold",
-      "count": 1,
-      "synergyCount": 1
-    },
-    {
       "mechanic": "Kicker",
       "count": 1,
       "synergyCount": 1
@@ -6254,6 +6249,11 @@
     },
     {
       "mechanic": "Crew",
+      "count": 1,
+      "synergyCount": 0
+    },
+    {
+      "mechanic": "Threshold",
       "count": 1,
       "synergyCount": 0
     }
@@ -6314,5 +6314,236 @@
         "The Black Arrow"
       ]
     }
-  ]
+  ],
+  "creatureTypes": {
+    "subtypes": [
+      {
+        "subtype": "Dwarf",
+        "count": 21,
+        "byColor": {
+          "W": 7,
+          "U": 0,
+          "B": 0,
+          "R": 9,
+          "G": 0,
+          "multi": 5,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Elf",
+        "count": 16,
+        "byColor": {
+          "W": 0,
+          "U": 4,
+          "B": 0,
+          "R": 0,
+          "G": 7,
+          "multi": 5,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Goblin",
+        "count": 13,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 4,
+          "R": 5,
+          "G": 0,
+          "multi": 4,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Soldier",
+        "count": 13,
+        "byColor": {
+          "W": 2,
+          "U": 0,
+          "B": 3,
+          "R": 2,
+          "G": 2,
+          "multi": 4,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Human",
+        "count": 13,
+        "byColor": {
+          "W": 4,
+          "U": 3,
+          "B": 1,
+          "R": 0,
+          "G": 1,
+          "multi": 4,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Wolf",
+        "count": 11,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 5,
+          "R": 0,
+          "G": 3,
+          "multi": 3,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Noble",
+        "count": 10,
+        "byColor": {
+          "W": 2,
+          "U": 2,
+          "B": 0,
+          "R": 1,
+          "G": 0,
+          "multi": 5,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Halfling",
+        "count": 9,
+        "byColor": {
+          "W": 1,
+          "U": 3,
+          "B": 4,
+          "R": 0,
+          "G": 1,
+          "multi": 0,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Warrior",
+        "count": 9,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 0,
+          "R": 6,
+          "G": 1,
+          "multi": 2,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Bard",
+        "count": 8,
+        "byColor": {
+          "W": 1,
+          "U": 1,
+          "B": 1,
+          "R": 3,
+          "G": 0,
+          "multi": 2,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Citizen",
+        "count": 7,
+        "byColor": {
+          "W": 2,
+          "U": 1,
+          "B": 1,
+          "R": 0,
+          "G": 0,
+          "multi": 3,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Bear",
+        "count": 6,
+        "byColor": {
+          "W": 0,
+          "U": 0,
+          "B": 0,
+          "R": 0,
+          "G": 5,
+          "multi": 1,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Scout",
+        "count": 6,
+        "byColor": {
+          "W": 4,
+          "U": 0,
+          "B": 0,
+          "R": 0,
+          "G": 2,
+          "multi": 0,
+          "C": 0
+        }
+      },
+      {
+        "subtype": "Bird",
+        "count": 6,
+        "byColor": {
+          "W": 1,
+          "U": 4,
+          "B": 0,
+          "R": 0,
+          "G": 0,
+          "multi": 0,
+          "C": 1
+        }
+      },
+      {
+        "subtype": "Rogue",
+        "count": 4,
+        "byColor": {
+          "W": 0,
+          "U": 3,
+          "B": 0,
+          "R": 1,
+          "G": 0,
+          "multi": 0,
+          "C": 0
+        }
+      }
+    ],
+    "kindredSignals": [
+      {
+        "color": "W",
+        "subtype": "Scout",
+        "count": 4,
+        "concentration": 67
+      },
+      {
+        "color": "U",
+        "subtype": "Rogue",
+        "count": 3,
+        "concentration": 75
+      },
+      {
+        "color": "B",
+        "subtype": "Horror",
+        "count": 3,
+        "concentration": 100
+      },
+      {
+        "color": "R",
+        "subtype": "Dragon",
+        "count": 3,
+        "concentration": 75
+      },
+      {
+        "color": "G",
+        "subtype": "Bear",
+        "count": 5,
+        "concentration": 83
+      }
+    ]
+  }
 }

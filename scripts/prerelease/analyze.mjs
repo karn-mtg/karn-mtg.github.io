@@ -7,6 +7,7 @@ import { computeManaCombos } from './lib/manaCombos.mjs'
 import { computeWordCloud } from './lib/wordCloud.mjs'
 import { computeMechanics } from './lib/mechanics.mjs'
 import { computeSynergyCombinations } from './lib/combinationScore.mjs'
+import { computeCreatureTypes } from './lib/creatureTypes.mjs'
 
 const setCode = process.argv[2]
 if (!setCode) {
@@ -46,6 +47,7 @@ const bestCards = [...cardsWithBread]
 const { wordCloud, topWords, wordColorMatrix } = computeWordCloud(raw)
 const { mechanics, mechanicColorMatrix, mechanicsBySynergy } = computeMechanics(raw, topWords)
 const synergyCombinations = computeSynergyCombinations(raw)
+const creatureTypes = computeCreatureTypes(raw)
 
 const output = {
   setCode,
@@ -62,6 +64,7 @@ const output = {
   mechanicColorMatrix,
   mechanicsBySynergy,
   synergyCombinations,
+  creatureTypes,
 }
 
 mkdirSync(outDir, { recursive: true })
