@@ -1,0 +1,192 @@
+---
+interface ColorCurve {
+  color: string
+  counts: Record<string, number>
+  total: number
+}
+
+interface Props {
+  rows: ColorCurve[]
+}
+
+const { rows } = Astro.props
+
+const CMC_ORDER = ['0', '1', '2', '3', '4', '5', '6+']
+const COLOR_ORDER = ['W', 'U', 'B', 'R', 'G', 'C'] as const
+const COLOR_HEX: Record<string, string> = {
+  W: '#e8e4d0',
+  U: '#5b9bd5',
+  B: '#8b7fb0',
+  R: '#e0654a',
+  G: '#5a9e6f',
+  C: '#9a8f80',
+}
+const COLOR_NAME: Record<string, string> = {
+  W: 'White',
+  U: 'Blue',
+  B: 'Black',
+  R: 'Red',
+  G: 'Green',
+  C: 'Colorless',
+}
+
+const byColor = Object.fromEntries(rows.map(r => [r.color, r.counts]))
+const datasets = COLOR_ORDER
+  .map(color => ({
+    colorKey: color,
+    label: COLOR_NAME[color],
+    color: COLOR_HEX[color],
+    data: CMC_ORDER.map(cmc => byColor[color]?.[cmc] ?? 0),
+  }))
+  .filter(d => d.colorKey === 'C' || d.data.some(v => v > 0))
+
+const labelsJson = JSON.stringify(CMC_ORDER)
+const datasetsJson = JSON.stringify(datasets)
+---
+
+<div class="glass-panel rounded-xl p-6">
+  <div class="relative h-[320px]">
+    <canvas
+      class="mana-curve-canvas"
+      role="img"
+      aria-label="Mana curve by color"
+      data-labels={labelsJson}
+      data-datasets={datasetsJson}
+    ></canvas>
+  </div>
+</div>
+
+<script>
+  import Chart from 'chart.js/auto'
+
+  const tickColor = '#d1c5b4'
+  const gridColor = 'rgba(255, 255, 255, 0.08)'
+  const avgColor = '#e5e2e1'
+
+  document.querySelectorAll('.mana-curve-canvas').forEach(canvas => {
+    if (canvas.dataset.chartInit) return
+    canvas.dataset.chartInit = 'true'
+
+    const group = canvas.closest('[data-curve-group]')?.dataset.curveGroup || ''
+    const labels = JSON.parse(canvas.dataset.labels || '[]')
+    const rawDatasets = JSON.parse(canvas.dataset.datasets || '[]')
+
+    // Isolate-style legend filter: up to 2 non-colorless colors selected at once.
+    // Colorless always renders and is never clickable/selectable.
+    const selected = new Set()
+
+    const chartDatasets = rawDatasets.map(d => ({
+      colorKey: d.colorKey,
+      label: d.label,
+      data: d.data,
+      borderColor: d.color,
+      backgroundColor: d.color,
+      pointBackgroundColor: d.color,
+      tension: 0.3,
+      borderWidth: 2,
+      pointRadius: 4,
+      pointHoverRadius: 6,
+    }))
+
+    // Dashed average of the currently selected color(s) — not a real color, kept out of the legend.
+    chartDatasets.push({
+      colorKey: 'avg',
+      label: 'Average',
+      data: labels.map(() => 0),
+      borderColor: avgColor,
+      backgroundColor: avgColor,
+      borderDash: [6, 4],
+      borderWidth: 2,
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      tension: 0.3,
+      hidden: true,
+    })
+
+    const chart = new Chart(canvas, {
+      type: 'line',
+      data: { labels, datasets: chartDatasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'nearest', intersect: false },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: tickColor,
+              usePointStyle: true,
+              boxWidth: 8,
+              padding: 14,
+              font: { size: 11 },
+              filter: (legendItem, data) => data.datasets[legendItem.datasetIndex].colorKey !== 'avg',
+            },
+            onClick: (evt, legendItem) => {
+              const colorKey = chart.data.datasets[legendItem.datasetIndex].colorKey
+              if (colorKey === 'C') return
+
+              if (selected.has(colorKey)) {
+                selected.delete(colorKey)
+              } else {
+                if (selected.size >= 2) return
+                selected.add(colorKey)
+              }
+              applySelection()
+            },
+          },
+          tooltip: {
+            callbacks: {
+              title: items => `CMC ${items[0].label}`,
+            },
+          },
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Mana value', color: tickColor, font: { size: 11 } },
+            ticks: { color: tickColor },
+            grid: { color: gridColor },
+          },
+          y: {
+            beginAtZero: true,
+            ticks: { color: tickColor, precision: 0 },
+            grid: { color: gridColor },
+          },
+        },
+      },
+    })
+
+    function applySelection({ broadcast = true } = {}) {
+      chart.data.datasets.forEach((d, i) => {
+        if (d.colorKey === 'C' || d.colorKey === 'avg') return
+        chart.getDatasetMeta(i).hidden = selected.size > 0 && !selected.has(d.colorKey)
+      })
+
+      const avgIndex = chart.data.datasets.findIndex(d => d.colorKey === 'avg')
+      if (avgIndex !== -1) {
+        const avgMeta = chart.getDatasetMeta(avgIndex)
+        if (selected.size > 0) {
+          const arrays = chart.data.datasets.filter(d => selected.has(d.colorKey)).map(d => d.data)
+          chart.data.datasets[avgIndex].data = arrays[0].map((_, i) => arrays.reduce((sum, arr) => sum + arr[i], 0) / arrays.length)
+          avgMeta.hidden = false
+        } else {
+          avgMeta.hidden = true
+        }
+      }
+
+      chart.update()
+
+      if (broadcast && group) {
+        document.dispatchEvent(new CustomEvent('manacurve:chart-select', { detail: { group, colors: [...selected] } }))
+      }
+    }
+
+    if (group) {
+      document.addEventListener('manacurve:table-select', e => {
+        if (e.detail.group !== group) return
+        selected.clear()
+        e.detail.colors.forEach(c => { if (c !== 'C') selected.add(c) })
+        applySelection({ broadcast: false })
+      })
+    }
+  })
+</script>

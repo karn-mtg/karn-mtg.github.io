@@ -30,7 +30,7 @@ function topColors(byColor: Record<string, number>) {
 }
 ---
 
-<div class="glass-panel rounded-xl overflow-x-auto">
+<div class="glass-panel rounded-xl overflow-x-auto h-full">
   <table class="w-full text-sm">
     <thead>
       <tr class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant/50 border-b border-white/5">
@@ -43,7 +43,7 @@ function topColors(byColor: Record<string, number>) {
     </thead>
     <tbody>
       {rows.map((row, i) => (
-        <tr class="border-b border-white/5 last:border-0">
+        <tr class="border-b border-white/5 last:border-0" data-affinity-key={row.label}>
           <td class="px-4 py-2.5 text-xs font-bold text-primary/50">{i + 1}</td>
           <td class="px-4 py-2.5 font-semibold text-on-surface">{row.label}</td>
           <td class="px-4 py-2.5 text-right text-on-surface-variant">{row.count}</td>

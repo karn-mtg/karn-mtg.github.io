@@ -15,6 +15,7 @@ import { loadArchetypeDefs, computeArchetypeAnalysis } from './lib/archetypeAnal
 import { computeCrossCardSynergies } from './lib/crossCardSynergy.mjs'
 import { computeBreadByColor } from './lib/breadByColor.mjs'
 import { computeBoosterOdds } from './lib/pullChance.mjs'
+import { computeManaCurveByColor, computeCurveFitByPair } from './lib/manaCurve.mjs'
 import sealedConfig from './lib/sealed-config.json' with { type: 'json' }
 
 const setCode = process.argv[2]
@@ -93,6 +94,7 @@ function computeForPool(raw) {
     name: card.name,
     colorIdentity: card.color_identity || [],
     rarity: card.rarity,
+    typeLine: card.type_line || '',
     keywords: card.keywords || [],
     bread: breadByOracleId.get(card.oracle_id)?.bread ?? { overall: 0 },
   }))
@@ -105,6 +107,8 @@ function computeForPool(raw) {
 
   const breadByColor = computeBreadByColor(cardsWithBread)
   const boosterOdds = computeBoosterOdds(byRarityTotals, sealedConfig)
+  const manaCurveByColor = computeManaCurveByColor(raw)
+  const curveFitByPair = computeCurveFitByPair(raw, byRarityTotals, sealedConfig)
 
   return {
     colorStats,
@@ -123,6 +127,8 @@ function computeForPool(raw) {
     archetypeAnalysis,
     breadByColor,
     boosterOdds,
+    manaCurveByColor,
+    curveFitByPair,
   }
 }
 
@@ -153,6 +159,8 @@ const output = {
   archetypeAnalysis: dual('archetypeAnalysis'),
   breadByColor: dual('breadByColor'),
   boosterOdds: dual('boosterOdds'),
+  manaCurveByColor: dual('manaCurveByColor'),
+  curveFitByPair: dual('curveFitByPair'),
 }
 
 mkdirSync(outDir, { recursive: true })

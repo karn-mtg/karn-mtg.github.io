@@ -1,10 +1,12 @@
 ---
 import { t, type Lang } from '../../i18n'
+import { manaIconColors } from '../../lib/manaIcons'
 import ManaSymbol from './ManaSymbol.astro'
 
 interface CardRef {
   name: string
   colorIdentity: string[]
+  manaCost?: string
 }
 
 interface Synergy {
@@ -27,16 +29,31 @@ interface Props {
 
 const { synergies, lang } = Astro.props
 const i18n = t(lang)
+
+const qualities = synergies.map(s => s.avgQuality)
+const minQuality = Math.min(...qualities)
+const maxQuality = Math.max(...qualities)
+
+function qualityBadgeStyle(quality: number) {
+  const t = maxQuality === minQuality ? 1 : (quality - minQuality) / (maxQuality - minQuality)
+  const hue = t * 120
+  return `background: hsla(${hue}, 70%, 45%, 0.15); color: hsl(${hue}, 75%, 65%); border-color: hsla(${hue}, 70%, 45%, 0.35)`
+}
 ---
 
-<div class="grid gap-4">
+<div class="grid gap-4 lg:grid-cols-2">
   {synergies.map(syn => (
     <div class="glass-panel rounded-xl p-5">
       <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
         <h4 class="font-bold text-on-surface">{syn.name}</h4>
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold border bg-primary/15 text-primary border-primary/30">
-          {syn.comboScore}% {i18n.crossCardChanceLabel}
-        </span>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold border bg-primary/15 text-primary border-primary/30">
+            {syn.comboScore}% {i18n.crossCardChanceLabel}
+          </span>
+          <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold border" style={qualityBadgeStyle(syn.avgQuality)}>
+            {i18n.qualityLabel}: {syn.avgQuality}
+          </span>
+        </div>
       </div>
       <p class="text-sm text-on-surface-variant/80 leading-relaxed mb-4">{syn.description}</p>
 
@@ -47,11 +64,11 @@ const i18n = t(lang)
             <span class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.crossCardPayoffLabel} ({syn.probabilityPayoff}%)</span>
           </div>
           {syn.topPayoffCards.length > 0 && (
-            <ul class="text-xs text-on-surface-variant/70 mt-1 space-y-0.5">
+            <ul class="text-xs text-on-surface-variant/70 mt-1 space-y-1.5">
               {syn.topPayoffCards.slice(0, 3).map(c => (
                 <li class="flex items-center gap-1">
-                  <span class="flex gap-0.5">{c.colorIdentity.map(col => <ManaSymbol color={col} />)}</span>
-                  <span class="cursor-default" data-card-name={c.name}>{c.name}</span>
+                  <span class="flex gap-0.5 shrink-0">{manaIconColors(c.colorIdentity, c.manaCost).map(col => <ManaSymbol color={col} />)}</span>
+                  <span class="min-w-0 truncate cursor-default" data-card-name={c.name} title={c.name}>{c.name}</span>
                 </li>
               ))}
             </ul>
@@ -63,19 +80,17 @@ const i18n = t(lang)
             <span class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.crossCardEnablerLabel} ({syn.probabilityEnablers}%)</span>
           </div>
           {syn.topEnablerCards.length > 0 && (
-            <ul class="text-xs text-on-surface-variant/70 mt-1 space-y-0.5">
+            <ul class="text-xs text-on-surface-variant/70 mt-1 space-y-1.5">
               {syn.topEnablerCards.slice(0, 3).map(c => (
                 <li class="flex items-center gap-1">
-                  <span class="flex gap-0.5">{c.colorIdentity.map(col => <ManaSymbol color={col} />)}</span>
-                  <span class="cursor-default" data-card-name={c.name}>{c.name}</span>
+                  <span class="flex gap-0.5 shrink-0">{manaIconColors(c.colorIdentity, c.manaCost).map(col => <ManaSymbol color={col} />)}</span>
+                  <span class="min-w-0 truncate cursor-default" data-card-name={c.name} title={c.name}>{c.name}</span>
                 </li>
               ))}
             </ul>
           )}
         </div>
       </div>
-
-      <p class="text-[10px] text-on-surface-variant/50">{i18n.qualityLabel}: {syn.avgQuality}</p>
     </div>
   ))}
 </div>

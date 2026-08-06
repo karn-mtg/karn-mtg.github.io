@@ -1,7 +1,7 @@
 ---
 import { t, type Lang } from '../../i18n'
-import StatTile from './StatTile.astro'
 import ColorDistributionChart from './ColorDistributionChart.astro'
+import RarityBar from './RarityBar.astro'
 import BreadScorePills from './BreadScorePills.astro'
 import ManaSymbol from './ManaSymbol.astro'
 
@@ -10,27 +10,25 @@ interface Props {
   cardCount: number
   byRarity: Record<string, number>
   byColor: Record<string, { total: number; creature: number; nonCreature: number }>
+  boosterOdds: Record<string, { duplicateChance: number }>
+  rarityLabels: Record<string, string>
   topCard?: {
     name: string
     image?: string
     bread: { bomb: number; removal: number; evasion: number; aggro: number; diversity: number; overall: number; tags: string[] }
   }
   topCombo?: { colors: string; avgBomb: number }
-  archetypes?: { verdict: string }[]
 }
 
-const { lang, cardCount, byRarity, byColor, topCard, topCombo, archetypes = [] } = Astro.props
+const { lang, cardCount, byRarity, byColor, boosterOdds, rarityLabels, topCard, topCombo } = Astro.props
 const i18n = t(lang)
 
-const VERDICT_LABEL: Record<string, string> = {
-  wellSupported: i18n.verdictWellSupported,
-  plentifulButWeak: i18n.verdictPlentifulButWeak,
-  rareButStrong: i18n.verdictRareButStrong,
-  dataDisagrees: i18n.verdictDataDisagrees,
-  insufficient: i18n.verdictInsufficient,
+const RARITY_COLOR_HEX: Record<string, string> = {
+  common: '#9a8f80',
+  uncommon: '#7ea9c9',
+  rare: '#e0b04a',
+  mythic: '#e0654a',
 }
-const verdictCounts: Record<string, number> = {}
-for (const a of archetypes) verdictCounts[a.verdict] = (verdictCounts[a.verdict] || 0) + 1
 ---
 
 <div class="grid gap-6 lg:grid-cols-5 mb-16">
@@ -44,9 +42,22 @@ for (const a of archetypes) verdictCounts[a.verdict] = (verdictCounts[a.verdict]
   </div>
 
   <div class="lg:col-span-2 flex flex-col gap-4">
-    <div class="grid grid-cols-2 gap-3">
-      <StatTile value={cardCount} label={i18n.prereleaseCardCount(cardCount)} />
-      <StatTile value={byRarity.mythic ?? 0} label="Mythic" />
+    <RarityBar cardCount={cardCount} byRarity={byRarity} rarityLabels={rarityLabels} cardCountLabel={i18n.prereleaseCardCount(cardCount)} />
+
+    <div class="glass-panel rounded-xl px-4 py-3">
+      <div class="text-sm font-bold text-on-surface mb-2">{i18n.repeatChanceHeading}</div>
+      <div class="flex items-start gap-4">
+        {Object.entries(boosterOdds).map(([rarity, odds]) => (
+          <div class="text-center">
+            <div class="text-base font-semibold" style={`color:${RARITY_COLOR_HEX[rarity] ?? 'inherit'}`}>
+              {odds.duplicateChance}%
+            </div>
+            <div class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 mt-0.5">
+              {rarityLabels[rarity] ?? rarity}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
 
     {topCard && (
@@ -71,17 +82,6 @@ for (const a of archetypes) verdictCounts[a.verdict] = (verdictCounts[a.verdict]
           </div>
         </div>
         <span class="text-lg font-bold text-primary">{topCombo.avgBomb}</span>
-      </a>
-    )}
-
-    {Object.keys(verdictCounts).length > 0 && (
-      <a href="#analysis" class="glass-panel rounded-xl p-4 hover:border-primary/30 transition-colors">
-        <div class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 mb-2">{i18n.analysisHeading}</div>
-        <div class="flex flex-wrap gap-1.5">
-          {Object.entries(verdictCounts).map(([verdict, count]) => (
-            <span class="text-xs font-semibold text-on-surface-variant">{count}× {VERDICT_LABEL[verdict]}</span>
-          ))}
-        </div>
       </a>
     )}
   </div>

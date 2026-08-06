@@ -1,10 +1,12 @@
 ---
-// Hand-rolled pentagram affinity graph (see pentagram.md) — no D3/Cytoscape/React
+// Hand-rolled pentagon affinity graph (see pentagram.md) — no D3/Cytoscape/React
 // Flow dependency. The force-settle pass runs once at build time in plain JS
 // (not client-side), since the layout is static: each node's target position
 // is the count-weighted average of the five color anchors, then a small
 // number of collision-repulsion iterations (with a spring pulling back
 // toward the target) keep same-color clusters from overlapping.
+import ManaSymbol from './ManaSymbol.astro'
+
 interface Cluster {
   subtype: string
   count: number
@@ -32,15 +34,64 @@ const COLOR_HEX: Record<string, string> = { W: '#e8e4d0', U: '#5b9bd5', B: '#8b7
 
 const CENTER = 160
 const maxCount = Math.max(1, ...clusters.map(c => c.count))
-const radiusScale = 34 / Math.sqrt(maxCount)
+const radiusScale = 20 / Math.sqrt(maxCount)
 
-const nodes = clusters.map(c => {
-  const tx = c.W * ANCHORS.W.x + c.U * ANCHORS.U.x + c.B * ANCHORS.B.x + c.R * ANCHORS.R.x + c.G * ANCHORS.G.x
-  const ty = c.W * ANCHORS.W.y + c.U * ANCHORS.U.y + c.B * ANCHORS.B.y + c.R * ANCHORS.R.y + c.G * ANCHORS.G.y
-  const radius = Math.max(8, Math.sqrt(c.count) * radiusScale)
-  const dominant = (['W', 'U', 'B', 'R', 'G'] as const).reduce((best, k) => (c[k] > c[best] ? k : best), 'W' as 'W' | 'U' | 'B' | 'R' | 'G')
-  return { subtype: c.subtype, count: c.count, targetX: tx, targetY: ty, x: tx, y: ty, radius, color: COLOR_HEX[dominant] }
+// Pentagon: connect each anchor to its neighbor, tracing the outer shape
+// between the five colors. Then a line from each edge's midpoint to the
+// center splits the pentagon into five zones, one per color.
+const ANCHOR_ORDER = ['W', 'U', 'B', 'R', 'G'] as const
+const edgeLines = ANCHOR_ORDER.map((from, i) => {
+  const to = ANCHOR_ORDER[(i + 1) % 5]
+  return { from: ANCHORS[from], to: ANCHORS[to] }
 })
+const zoneLines = edgeLines.map(edge => ({
+  from: { x: 0, y: 0 },
+  to: { x: (edge.from.x + edge.to.x) / 2, y: (edge.from.y + edge.to.y) / 2 },
+}))
+// Every edge midpoint sits at the same distance from center on this
+// hand-tuned pentagon — that's the largest radius a node can occupy
+// without poking through an edge.
+const INRADIUS = Math.hypot(zoneLines[0].to.x, zoneLines[0].to.y)
+
+const angleOf = (k: typeof ANCHOR_ORDER[number]) => Math.atan2(ANCHORS[k].y, ANCHORS[k].x)
+const radiusOf = (k: typeof ANCHOR_ORDER[number]) => Math.hypot(ANCHORS[k].x, ANCHORS[k].y)
+
+// A node's angle is pinned to its single dominant color, so it can never
+// land in another color's zone — five weights summed as vectors (the
+// previous approach) can average two "enemy" colors straight into a third
+// color's wedge, which is what looked like a placement bug. Distance from
+// center reflects how pure that color is (a 50/50 split sits near the
+// middle; a mono-color tribe sits right at the anchor). Only when the
+// second color is an immediate ally on the wheel do we lean the angle
+// toward it, capped well inside the wedge boundary so it still can't cross
+// into a neighboring zone.
+const nodes = clusters.map(c => {
+  const ranked = ANCHOR_ORDER
+    .map(k => ({ k, w: c[k] }))
+    .sort((a, b) => b.w - a.w)
+  const [dominant, secondary] = ranked
+  const idx = ANCHOR_ORDER.indexOf(dominant.k)
+  const isNextAlly = ANCHOR_ORDER[(idx + 1) % 5] === secondary.k
+  const isPrevAlly = ANCHOR_ORDER[(idx + 4) % 5] === secondary.k
+  let bias = 0
+  if ((isNextAlly || isPrevAlly) && dominant.w + secondary.w > 0) {
+    const maxBiasDeg = 30 // stays inside the 36°-half-wide wedge
+    const leanShare = secondary.w / (dominant.w + secondary.w)
+    bias = (isNextAlly ? 1 : -1) * leanShare * maxBiasDeg * (Math.PI / 180)
+  }
+  const angle = angleOf(dominant.k) + bias
+  const dist = radiusOf(dominant.k) * dominant.w
+  const tx = dist * Math.cos(angle)
+  const ty = dist * Math.sin(angle)
+  const radius = Math.max(6, Math.sqrt(c.count) * radiusScale)
+  return { subtype: c.subtype, count: c.count, targetX: tx, targetY: ty, x: tx, y: ty, radius, color: COLOR_HEX[dominant.k] }
+})
+
+const ICON_POS = ANCHOR_ORDER.map(k => ({
+  color: k,
+  leftPct: ((CENTER + ANCHORS[k].x * 1.18) / 320) * 100,
+  topPct: ((CENTER + ANCHORS[k].y * 1.18) / 320) * 100,
+}))
 
 // Build-time collision settle: iteratively push overlapping nodes apart,
 // with a mild spring pulling each node back toward its color-weighted target.
@@ -67,32 +118,120 @@ for (let iter = 0; iter < 120; iter++) {
     }
   }
 }
+
+// Collision repulsion can shove a node past the pentagon's edge when many
+// tribes crowd the same zone — clamp every node back inside the inscribed
+// circle so the ball (center + its own radius) never pokes through an edge.
+for (const n of nodes) {
+  const dist = Math.hypot(n.x, n.y)
+  const maxDist = Math.max(0, INRADIUS - n.radius)
+  if (dist > maxDist && dist > 0) {
+    const scale = maxDist / dist
+    n.x *= scale
+    n.y *= scale
+  }
+}
 ---
 
-<div class="glass-panel rounded-xl p-6">
-  <svg viewBox="0 0 320 320" class="w-full h-auto" role="img" aria-label="Kindred affinity map">
-    {(['W', 'U', 'B', 'R', 'G'] as const).map(k => (
-      <text
-        x={CENTER + ANCHORS[k].x * 1.18}
-        y={CENTER + ANCHORS[k].y * 1.18}
-        text-anchor="middle"
-        dominant-baseline="middle"
-        class="fill-on-surface-variant/40 text-[11px] font-bold uppercase tracking-widest"
+<div class="glass-panel rounded-xl p-6 h-full">
+  <div class="relative w-full h-full min-h-[240px]">
+    <svg viewBox="0 0 320 320" preserveAspectRatio="none" class="w-full h-full" role="img" aria-label="Kindred affinity map">
+      {edgeLines.map(line => (
+        <line
+          x1={CENTER + line.from.x} y1={CENTER + line.from.y}
+          x2={CENTER + line.to.x} y2={CENTER + line.to.y}
+          class="stroke-white/15"
+          stroke-width="1"
+        />
+      ))}
+      {zoneLines.map(line => (
+        <line
+          x1={CENTER + line.from.x} y1={CENTER + line.from.y}
+          x2={CENTER + line.to.x} y2={CENTER + line.to.y}
+          class="stroke-white/10"
+          stroke-width="1"
+        />
+      ))}
+      {nodes.map(n => (
+        <g data-affinity-key={n.subtype} transform={`translate(${CENTER + n.x}, ${CENTER + n.y})`}>
+          <circle r={n.radius} fill={n.color} opacity="0.75" />
+          <text
+            y={n.radius + 11}
+            text-anchor="middle"
+            class="fill-on-surface-variant text-[9px] font-semibold"
+          >
+            {n.subtype}
+          </text>
+        </g>
+      ))}
+    </svg>
+    {ICON_POS.map(p => (
+      <div
+        class="absolute -translate-x-1/2 -translate-y-1/2 opacity-60"
+        style={`left:${p.leftPct}%; top:${p.topPct}%`}
       >
-        {k}
-      </text>
+        <ManaSymbol color={p.color} size="2x" />
+      </div>
     ))}
-    {nodes.map(n => (
-      <g transform={`translate(${CENTER + n.x}, ${CENTER + n.y})`}>
-        <circle r={n.radius} fill={n.color} opacity="0.75" />
-        <text
-          y={n.radius + 11}
-          text-anchor="middle"
-          class="fill-on-surface-variant text-[9px] font-semibold"
-        >
-          {n.subtype}
-        </text>
-      </g>
-    ))}
-  </svg>
+  </div>
 </div>
+
+<style is:global>
+  .affinity-panel [data-affinity-key] {
+    transition: opacity 0.15s ease;
+  }
+  .affinity-panel g[data-affinity-key] {
+    cursor: pointer;
+  }
+  .affinity-panel g[data-affinity-key] circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.15s ease;
+  }
+  .affinity-panel tr[data-affinity-key] {
+    cursor: pointer;
+  }
+  .affinity-panel.is-hovering [data-affinity-key]:not(.is-active) {
+    opacity: 0.35;
+  }
+  .affinity-panel g[data-affinity-key].is-active circle {
+    transform: scale(1.18);
+  }
+  .affinity-panel tr[data-affinity-key].is-active {
+    background: rgba(255, 255, 255, 0.06);
+  }
+</style>
+
+<script>
+  if (!(window as any).__affinityHoverBound) {
+    (window as any).__affinityHoverBound = true
+
+    const activate = (panel: Element, key: string) => {
+      panel.classList.add('is-hovering')
+      panel.querySelectorAll(`[data-affinity-key="${CSS.escape(key)}"]`)
+        .forEach(el => el.classList.add('is-active'))
+    }
+    const clear = (panel: Element) => {
+      panel.classList.remove('is-hovering')
+      panel.querySelectorAll('[data-affinity-key].is-active')
+        .forEach(el => el.classList.remove('is-active'))
+    }
+
+    document.addEventListener('mouseover', (e) => {
+      const target = (e.target as Element).closest?.('[data-affinity-key]')
+      if (!target) return
+      const panel = target.closest('.affinity-panel')
+      if (!panel) return
+      const key = target.getAttribute('data-affinity-key')
+      if (key) activate(panel, key)
+    })
+
+    document.addEventListener('mouseout', (e) => {
+      const target = (e.target as Element).closest?.('[data-affinity-key]')
+      if (!target) return
+      const panel = target.closest('.affinity-panel')
+      if (!panel) return
+      clear(panel)
+    })
+  }
+</script>

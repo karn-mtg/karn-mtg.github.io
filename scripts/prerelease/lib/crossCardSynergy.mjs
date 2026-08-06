@@ -16,7 +16,7 @@ function topCards(cards) {
   return [...cards]
     .sort((a, b) => b.bread.overall - a.bread.overall)
     .slice(0, 5)
-    .map(c => ({ name: c.name, colorIdentity: c.colorIdentity }))
+    .map(c => ({ name: c.name, colorIdentity: c.colorIdentity, manaCost: c.manaCost }))
 }
 
 /**
@@ -82,13 +82,13 @@ export function computeCrossCardSynergies(cardsWithBread, byRarityTotals, sealed
       topPayoffCards: topCards(payoffCards),
       topEnablerCards: topCards(enablerCards),
     }
-  }).sort((a, b) => b.comboScore - a.comboScore)
+  }).filter(r => r.payoffCardCount > 0).sort((a, b) => b.comboScore - a.comboScore)
 
   const multiRoleCards = [...roleCountByCard.values()]
     .filter(({ themes }) => themes.size >= 2)
     .sort((a, b) => b.themes.size - a.themes.size || b.card.bread.overall - a.card.bread.overall)
     .slice(0, 8)
-    .map(({ card, themes }) => ({ name: card.name, colorIdentity: card.colorIdentity, themeCount: themes.size, themes: [...themes] }))
+    .map(({ card, themes }) => ({ name: card.name, colorIdentity: card.colorIdentity, manaCost: card.manaCost, themeCount: themes.size, themes: [...themes] }))
 
   return { synergies: results, multiRoleCards }
 }

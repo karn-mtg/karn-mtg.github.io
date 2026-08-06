@@ -1,28 +1,37 @@
 {
   "tagThreshold": 3,
+  "tagThresholdOverrides": {
+    "removal": 2
+  },
   "bomb": {
+    "_comment": "statBaselineByCmc computed from combined creature pool across ecl/fin/hob/msh/stx/tmt (build-bomb-baseline.mjs) — refresh as more sets get cached. Shared across all sets on purpose so bomb scores stay on the same scale set-to-set, rather than each set grading against its own curve.",
     "minCmc": 3,
-    "statVsCmcWeight": 1.2,
-    "statVsCmcCap": 8,
-    "keywordBonuses": {
+    "statBaselineByCmc": {
+      "3": { "avgP": 2.38, "avgT": 2.63 },
+      "4": { "avgP": 2.99, "avgT": 3.47 },
+      "5": { "avgP": 3.79, "avgT": 4.12 },
+      "6": { "avgP": 4.88, "avgT": 5 },
+      "7": { "avgP": 6.13, "avgT": 6.13 },
+      "8": { "avgP": 5.71, "avgT": 7.43 },
+      "9+": { "avgP": 8.5, "avgT": 8.5 }
+    },
+    "permanenceKeywords": {
       "Ward": 2.5,
       "Indestructible": 3,
       "Hexproof": 2,
-      "Trample": 1,
-      "Flying": 1,
-      "Lifelink": 1,
-      "Double strike": 2,
       "Protection": 1.5
-    }
+    },
+    "utilityBonus": 2
   },
   "removal": {
+    "_comment": "Weights halved vs. their original 4/6/5/8/8/3 values to bring removal's typical score onto the same scale as bomb — see refactor.md discussion. Relative ranking (exile > destroy > board wipe > temp exile > -X/-X) is unchanged.",
     "patterns": [
-      { "pattern": "exile .{0,40}?until .{0,40}?leaves", "flags": "i", "weight": 4, "note": "temporary exile — reversible, weakest of the three" },
-      { "pattern": "destroy target", "flags": "i", "weight": 6, "note": "destroy — can be regenerated/reanimated" },
-      { "pattern": "destroy (all|each) (target )?creatures?", "flags": "i", "weight": 5, "note": "board wipe — strong but not targeted" },
-      { "pattern": "exile target", "flags": "i", "weight": 8, "note": "permanent exile — strongest, skip if already matched exile-until-leaves" },
-      { "pattern": "exile (it|that (creature|permanent|card))", "flags": "i", "weight": 8, "note": "permanent exile via trigger" },
-      { "pattern": "-\\d+/-\\d+", "flags": "i", "weight": 3, "note": "-X/-X removal, softer than hard removal" }
+      { "pattern": "exile .{0,40}?until .{0,40}?leaves", "flags": "i", "weight": 2, "note": "temporary exile — reversible, weakest of the three" },
+      { "pattern": "destroy target", "flags": "i", "weight": 3, "note": "destroy — can be regenerated/reanimated" },
+      { "pattern": "destroy (all|each) (target )?creatures?", "flags": "i", "weight": 2.5, "note": "board wipe — strong but not targeted" },
+      { "pattern": "exile target", "flags": "i", "weight": 4, "note": "permanent exile — strongest, skip if already matched exile-until-leaves" },
+      { "pattern": "exile (it|that (creature|permanent|card))", "flags": "i", "weight": 4, "note": "permanent exile via trigger" },
+      { "pattern": "-\\d+/-\\d+", "flags": "i", "weight": 1.5, "note": "-X/-X removal, softer than hard removal" }
     ]
   },
   "evasion": {
@@ -38,24 +47,32 @@
     }
   },
   "aggro": {
+    "_comment": "Weights doubled vs. their original 2/2/1 + 2/1/2/1 values — the old max (3) barely cleared tagThreshold, so almost nothing tagged aggro. Now on the same scale as bomb/removal/evasion.",
     "patterns": [
-      { "pattern": "deals? \\d+ damage to (each opponent|target (player|opponent))", "flags": "i", "weight": 2 },
-      { "pattern": "(opponent|each opponent) loses \\d+ life", "flags": "i", "weight": 2 },
-      { "pattern": "gets? \\+\\d+/\\+\\d+", "flags": "i", "weight": 1 }
+      { "pattern": "deals? \\d+ damage to (each opponent|target (player|opponent))", "flags": "i", "weight": 4 },
+      { "pattern": "(opponent|each opponent) loses \\d+ life", "flags": "i", "weight": 4 },
+      { "pattern": "gets? \\+\\d+/\\+\\d+", "flags": "i", "weight": 2 }
     ],
     "keywordBonuses": {
-      "Haste": 2,
-      "Trample": 1,
-      "Double strike": 2,
-      "First strike": 1
+      "Haste": 4,
+      "Trample": 2,
+      "Double strike": 4,
+      "First strike": 2
     }
   },
   "diversity": {
+    "_comment": "Weights scaled 1.5x vs. their original 2/1/2/1.5 values for the same reason as aggro — bring the typical/max score onto the shared bomb/removal/evasion scale. Covers the full 'advantage in any form' bucket — draw, ramp, scry/surveil, tokens, life gain, graveyard recursion — deliberately excluding strategy-specific value like discard/mill/drain.",
     "patterns": [
-      { "pattern": "draws? (a|two|three) cards?", "flags": "i", "weight": 2 },
-      { "pattern": "gain \\d+ life", "flags": "i", "weight": 1 },
-      { "pattern": "search your library for a( basic)? land", "flags": "i", "weight": 2 },
-      { "pattern": "add \\{[wubrgc]\\}", "flags": "i", "weight": 1.5 }
+      { "pattern": "draws? (a|an|two|three|four|five|six|seven|x|that many) cards?", "flags": "i", "weight": 3 },
+      { "pattern": "draws? cards? (equal to|for each)", "flags": "i", "weight": 3 },
+      { "pattern": "gains? \\d+ life", "flags": "i", "weight": 1.5 },
+      { "pattern": "gains? life equal to", "flags": "i", "weight": 1.5 },
+      { "pattern": "search your library for .{0,40}?\\bland\\b", "flags": "i", "weight": 3 },
+      { "pattern": "add \\{[wubrgc]\\}", "flags": "i", "weight": 2.25 },
+      { "pattern": "\\b(scry|surveil) \\d+", "flags": "i", "weight": 1 },
+      { "pattern": "\\bcreates? .{0,60}?tokens?\\b", "flags": "i", "weight": 2 },
+      { "pattern": "return .{0,80}?from (your|a|that player's|target player's) graveyard", "flags": "i", "weight": 2.5 },
+      { "pattern": "graveyard.{0,80}?return (it|that card|those cards)?.{0,10}?to (your hand|the battlefield)", "flags": "i", "weight": 2.5 }
     ]
   }
 }

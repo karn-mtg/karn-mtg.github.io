@@ -1,11 +1,13 @@
 ---
 interface Props {
-  color: string // W | U | B | R | G | C
+  color: string // W | U | B | R | G | C | multi
   size?: '1x' | '2x'
 }
 
 const { color, size = '1x' } = Astro.props
 const sizeClass = size === '2x' ? 'ms-2x' : ''
+const isMulti = color.toLowerCase() === 'multi'
+const slug = isMulti ? 'multicolor' : color.toLowerCase()
 ---
 
-<i class={`ms ms-${color.toLowerCase()} ms-cost ${sizeClass}`} aria-label={color}></i>
+<i class={`ms ms-${slug} ms-cost ${sizeClass}`} aria-label={color} style={isMulti ? 'background-color: #f2ca83;' : undefined}></i>

@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { colorKey } from './util.mjs'
+import { colorKey, isCreature, isLand } from './util.mjs'
 import { poissonAtLeast } from './poisson.mjs'
 import { expectedSealedCount } from './sealedProbability.mjs'
 
@@ -20,20 +20,29 @@ function isSubsetColorIdentity(colorIdentity, archColorSet) {
 /**
  * Cross-checks WotC's stated archetypes (feature.md: "go against the
  * official combination... which are real feasible and which ones are hard
- * to go with") against our own data along two independent axes:
+ * to go with") against our own data along three independent axes:
  *
- *  - Feasibility: given the set's actual rarity population and a standard
- *    6-pack sealed pool, what's the probability (Poisson approximation,
- *    since these are rare-event draws without replacement across packs) of
- *    opening enough of the archetype's color+mechanic cards to build it.
+ *  - Deck feasibility: can these two colors actually fill a real 40-card
+ *    deck (~17 land / 15 creatures / 8 spells), independent of the named
+ *    mechanic — a color pair can be "insufficient" on its own merits even
+ *    before asking whether the flavor theme shows up.
+ *  - Theme feasibility: given the set's actual rarity population and a
+ *    standard 6-pack sealed pool, what's the probability (Poisson
+ *    approximation, since these are rare-event draws without replacement
+ *    across packs) of opening enough of the archetype's color+mechanic
+ *    cards to build it.
  *  - Quality: the average B.R.E.A.D. `overall` score of those support
  *    cards, vs. the set-wide average. An archetype can be statistically
  *    likely to come together (plenty of cheap commons) but still be weak,
  *    or the reverse (rare/mythic-gated, unlikely, but powerful when it
  *    lands) — the user specifically wants both signals, not just one.
  */
-const WEAK_VERDICTS = new Set(['insufficient', 'dataDisagrees', 'plentifulButWeak'])
+const WEAK_VERDICTS = new Set(['insufficient', 'themeThin', 'dataDisagrees', 'plentifulButWeak'])
 const MIN_ALTERNATIVE_SUPPORT = 3
+
+function byRarityCount(cards) {
+  return Object.fromEntries(RARITIES.map(r => [r, cards.filter(c => c.rarity === r).length]))
+}
 
 function findAlternativeSignal(archColors, ownMechanic, mechanicsByColorPair) {
   const candidates = mechanicsByColorPair
@@ -55,6 +64,19 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
   return archetypeDefs.map(def => {
     const archColors = colorKey(def.colors.split(''))
     const archColorSet = new Set(archColors.split(''))
+
+    const colorPoolCards = mergedCards.filter(c =>
+      isSubsetColorIdentity(c.colorIdentity, archColorSet) && !isLand(c.typeLine)
+    )
+    const creaturePool = colorPoolCards.filter(c => isCreature(c.typeLine))
+    const spellPool = colorPoolCards.filter(c => !isCreature(c.typeLine))
+
+    const expectedCreatures = expectedSealedCount(byRarityCount(creaturePool), byRarityTotals, sealedConfig)
+    const expectedSpells = expectedSealedCount(byRarityCount(spellPool), byRarityTotals, sealedConfig)
+
+    const creatureFeasibility = round(poissonAtLeast(expectedCreatures, sealedConfig.deckCreatureTarget) * 100)
+    const spellFeasibility = round(poissonAtLeast(expectedSpells, sealedConfig.deckSpellTarget) * 100)
+    const deckFeasible = creatureFeasibility >= 50 && spellFeasibility >= 50
 
     const supportCards = mergedCards.filter(c =>
       isSubsetColorIdentity(c.colorIdentity, archColorSet) && (c.keywords || []).includes(def.mechanic)
@@ -85,7 +107,8 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
     const isQuality = avgQuality >= setWideAvgQuality
 
     let verdict
-    if (totalSupport < sealedConfig.lowSupportThreshold) verdict = 'insufficient'
+    if (!deckFeasible) verdict = 'insufficient'
+    else if (totalSupport < sealedConfig.lowSupportThreshold) verdict = 'themeThin'
     else if (!isPlayable && !isQuality) verdict = 'dataDisagrees'
     else if (!isPlayable && isQuality) verdict = 'rareButStrong'
     else if (isPlayable && !isQuality) verdict = 'plentifulButWeak'
@@ -100,6 +123,13 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
       name: def.name,
       mechanic: def.mechanic,
       description: def.description,
+      deckFeasible,
+      expectedCreatures: round(expectedCreatures),
+      expectedSpells: round(expectedSpells),
+      creatureFeasibility,
+      spellFeasibility,
+      deckCreatureTarget: sealedConfig.deckCreatureTarget,
+      deckSpellTarget: sealedConfig.deckSpellTarget,
       supportCardCount: totalSupport,
       byRarity,
       expectedCount: round(expectedCount),

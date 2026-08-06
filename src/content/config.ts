@@ -48,6 +48,7 @@ const prerelease = defineCollection({
     image: z.string().optional(),
     lang: z.enum(['en', 'pt-br', 'de', 'es']).default('en'),
     generalInfoIntro: z.string(),
+    manaCurveIntro: z.string().optional(),
     synergyIntro: z.string().optional(),
     breadIntro: z.string(),
     analysisIntro: z.string().optional(),
@@ -146,6 +147,13 @@ const archetypeAnalysisSchema = z.array(z.object({
   name: z.string(),
   mechanic: z.string(),
   description: z.string(),
+  deckFeasible: z.boolean(),
+  expectedCreatures: z.number(),
+  expectedSpells: z.number(),
+  creatureFeasibility: z.number(),
+  spellFeasibility: z.number(),
+  deckCreatureTarget: z.number(),
+  deckSpellTarget: z.number(),
   supportCardCount: z.number(),
   byRarity: byRaritySchema,
   expectedCount: z.number(),
@@ -156,7 +164,7 @@ const archetypeAnalysisSchema = z.array(z.object({
   rankAmongPairs: z.number().nullable(),
   totalPairs: z.number(),
   signalCards: z.array(z.string()),
-  verdict: z.enum(['wellSupported', 'plentifulButWeak', 'rareButStrong', 'dataDisagrees', 'insufficient']),
+  verdict: z.enum(['wellSupported', 'plentifulButWeak', 'rareButStrong', 'dataDisagrees', 'themeThin', 'insufficient']),
   alternativeSignal: z.object({
     mechanic: z.string(),
     cardCount: z.number(),
@@ -204,6 +212,18 @@ const breadByColorSchema = z.array(z.object({
   aggro: z.number(),
   diversity: z.number(),
   overall: z.number(),
+}))
+
+const manaCurveByColorSchema = z.array(z.object({
+  color: z.string(),
+  counts: z.record(z.string(), z.number()),
+  total: z.number(),
+}))
+
+const curveFitByPairSchema = z.array(z.object({
+  colors: z.string(),
+  expected: z.record(z.string(), z.number()),
+  curveFitPercent: z.number(),
 }))
 
 const boosterOddsSchema = z.record(z.string(), z.object({
@@ -254,6 +274,8 @@ const prereleaseData = defineCollection({
     creatureTypes: dual(creatureTypesSchema),
     breadByColor: dual(breadByColorSchema),
     boosterOdds: dual(boosterOddsSchema),
+    manaCurveByColor: dual(manaCurveByColorSchema),
+    curveFitByPair: dual(curveFitByPairSchema),
   }),
 })
 

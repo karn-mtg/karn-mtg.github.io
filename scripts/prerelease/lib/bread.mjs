@@ -17,25 +17,49 @@ function numericStat(value) {
   return Number.isFinite(n) ? n : null
 }
 
-/** Bombs: big finishers. Scored off raw stats vs. mana cost, plus keyword bonuses. */
+// Owned exclusively by evasion/aggro — excluded from bomb so one keyword doesn't
+// score across three categories at once (see refactor.md discussion).
+const EVASION_KEYWORDS = new Set(['flying', 'trample', 'menace'])
+const AGGRO_KEYWORDS = new Set(['haste', 'first strike', 'double strike'])
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+/**
+ * Bombs: size + permanence + utility, nothing else — evasion/aggro/removal
+ * cover the rest, and a card tagged in multiple categories is read off
+ * `overall`/`tags` rather than folded into bomb itself.
+ */
 function scoreBomb(card) {
-  const { minCmc, statVsCmcWeight, statVsCmcCap, keywordBonuses } = rules.bomb
+  if (!isCreature(card.type_line) || card.cmc < rules.bomb.minCmc) return 0
+  const { statBaselineByCmc, permanenceKeywords, utilityBonus } = rules.bomb
+  const keywords = card.keywords || []
   let score = 0
 
-  if (isCreature(card.type_line) && card.cmc >= minCmc) {
-    const power = numericStat(card.power)
-    const toughness = numericStat(card.toughness)
-    if (power !== null && toughness !== null) {
-      const raw = (power + toughness - card.cmc) * statVsCmcWeight
-      score += Math.max(0, Math.min(raw, statVsCmcCap))
-    }
+  // Size: stat surplus vs. a shared per-cmc baseline (same baseline across every
+  // set, so scores stay on the same scale set-to-set instead of each set grading
+  // against its own curve).
+  const power = numericStat(card.power)
+  const toughness = numericStat(card.toughness)
+  if (power !== null && toughness !== null) {
+    const bucket = statBaselineByCmc[card.cmc >= 9 ? '9+' : String(Math.round(card.cmc))]
+    if (bucket) score += Math.max(0, (power - bucket.avgP) + (toughness - bucket.avgT))
   }
 
-  if (isCreature(card.type_line)) {
-    for (const kw of card.keywords || []) {
-      if (keywordBonuses[kw]) score += keywordBonuses[kw]
-    }
+  // Permanence: hard to remove.
+  for (const kw of keywords) {
+    if (permanenceKeywords[kw]) score += permanenceKeywords[kw]
   }
+
+  // Utility: flat bonus for doing *something* beyond stats/permanence/evasion/aggro
+  // keywords — bomb isn't trying to grade what the ability does, other categories do.
+  const text = stripReminderText(card.oracle_text)
+  const lowerKeywords = keywords.map(k => k.toLowerCase())
+  const onlyKnownKeywords = lowerKeywords.every(kw =>
+    EVASION_KEYWORDS.has(kw) || AGGRO_KEYWORDS.has(kw) || permanenceKeywords[capitalize(kw)]
+  )
+  if (text.length > 0 && !onlyKnownKeywords) score += utilityBonus
 
   return round(score)
 }
@@ -120,7 +144,7 @@ export function scoreCardBread(card) {
 
   const categoryScores = { bomb, removal, evasion, aggro, diversity }
   const tags = Object.entries(categoryScores)
-    .filter(([, v]) => v >= rules.tagThreshold)
+    .filter(([k, v]) => v >= (rules.tagThresholdOverrides?.[k] ?? rules.tagThreshold))
     .map(([k]) => k)
   if (tags.length === 0) tags.push('filler')
 

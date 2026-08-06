@@ -13,7 +13,6 @@ interface Props {
 
 const { rows, columns = ['W', 'U', 'B', 'R', 'G', 'multi', 'C'] } = Astro.props
 const maxValue = Math.max(1, ...rows.flatMap(r => columns.map(c => r.byColor[c] || 0)))
-const MANA_COLORS = new Set(['W', 'U', 'B', 'R', 'G', 'C'])
 
 function cellStyle(value: number) {
   const alpha = value === 0 ? 0 : 0.15 + (value / maxValue) * 0.7
@@ -28,7 +27,7 @@ function cellStyle(value: number) {
         <th class="text-left font-semibold text-on-surface-variant/60 pb-2 pr-3 sticky left-0 bg-surface transition-opacity">&nbsp;</th>
         {columns.map((col, j) => (
           <th data-col={j} class="font-semibold text-on-surface-variant/60 pb-2 px-2 text-center min-w-[2.5rem] transition-opacity">
-            {MANA_COLORS.has(col) ? <ManaSymbol color={col} /> : col}
+            <ManaSymbol color={col} />
           </th>
         ))}
       </tr>
@@ -38,7 +37,7 @@ function cellStyle(value: number) {
         <tr>
           <td data-row={i} class="pr-3 py-1 font-semibold text-on-surface whitespace-nowrap sticky left-0 bg-surface transition-opacity">{row.label}</td>
           {columns.map((col, j) => (
-            <td data-row={i} data-col={j} class="text-center py-1 px-2 rounded text-on-surface transition-opacity" style={cellStyle(row.byColor[col] || 0)}>
+            <td data-row={i} data-col={j} class="text-center py-1 px-2 text-on-surface transition-opacity" style={cellStyle(row.byColor[col] || 0)}>
               {row.byColor[col] || ''}
             </td>
           ))}

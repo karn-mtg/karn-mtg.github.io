@@ -1,0 +1,47 @@
+---
+interface Props {
+  cardCount: number
+  byRarity: Record<string, number>
+  rarityLabels: Record<string, string>
+  cardCountLabel: string
+}
+
+const { cardCount, byRarity, rarityLabels, cardCountLabel } = Astro.props
+
+const ORDER = ['common', 'uncommon', 'rare', 'mythic'] as const
+const COLOR_HEX: Record<string, string> = {
+  common: '#9a8f80',
+  uncommon: '#7ea9c9',
+  rare: '#e0b04a',
+  mythic: '#e0654a',
+}
+
+const segments = ORDER
+  .filter(key => byRarity[key])
+  .map(key => ({
+    key,
+    label: rarityLabels[key] ?? key,
+    count: byRarity[key],
+    pct: cardCount > 0 ? (byRarity[key] / cardCount) * 100 : 0,
+    color: COLOR_HEX[key],
+  }))
+---
+
+<div class="glass-panel rounded-xl p-4">
+  <div class="text-sm font-semibold text-on-surface mb-3">{cardCountLabel}</div>
+
+  <div class="flex h-3 rounded-full overflow-hidden bg-white/5">
+    {segments.map(seg => (
+      <div style={`width:${seg.pct}%; background-color:${seg.color}`} />
+    ))}
+  </div>
+
+  <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-on-surface-variant/70">
+    {segments.map(seg => (
+      <span class="flex items-center gap-1.5">
+        <span class="w-2.5 h-2.5 rounded-sm inline-block" style={`background-color:${seg.color}`} />
+        {seg.label} · {seg.count}
+      </span>
+    ))}
+  </div>
+</div>

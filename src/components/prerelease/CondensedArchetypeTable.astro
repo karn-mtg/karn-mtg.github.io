@@ -6,11 +6,16 @@ interface Archetype {
   colors: string
   name: string
   mechanic: string
+  deckFeasible: boolean
+  expectedCreatures: number
+  expectedSpells: number
+  deckCreatureTarget: number
+  deckSpellTarget: number
   supportCardCount: number
   probabilityPlayable: number
   avgQuality: number
   setWideAvgQuality: number
-  verdict: 'wellSupported' | 'plentifulButWeak' | 'rareButStrong' | 'dataDisagrees' | 'insufficient'
+  verdict: 'wellSupported' | 'plentifulButWeak' | 'rareButStrong' | 'dataDisagrees' | 'themeThin' | 'insufficient'
   alternativeSignal: { mechanic: string; cardCount: number; avgOverall: number } | null
 }
 
@@ -27,6 +32,7 @@ const VERDICT_LABEL: Record<string, string> = {
   plentifulButWeak: i18n.verdictPlentifulButWeak,
   rareButStrong: i18n.verdictRareButStrong,
   dataDisagrees: i18n.verdictDataDisagrees,
+  themeThin: i18n.verdictThemeThin,
   insufficient: i18n.verdictInsufficient,
 }
 const VERDICT_STYLE: Record<string, string> = {
@@ -34,6 +40,7 @@ const VERDICT_STYLE: Record<string, string> = {
   plentifulButWeak: 'bg-amber-400/15 text-amber-300 border-amber-400/30',
   rareButStrong: 'bg-sky-400/15 text-sky-300 border-sky-400/30',
   dataDisagrees: 'bg-red-400/15 text-red-300 border-red-400/30',
+  themeThin: 'bg-slate-400/15 text-slate-300 border-slate-400/30',
   insufficient: 'bg-red-400/15 text-red-300 border-red-400/30',
 }
 ---
@@ -59,6 +66,11 @@ const VERDICT_STYLE: Record<string, string> = {
           <td class="px-4 py-2.5">
             <div class="font-semibold text-on-surface">{arch.name}</div>
             <div class="text-xs text-on-surface-variant/50">{arch.mechanic}</div>
+            {!arch.deckFeasible && (
+              <div class="text-[11px] text-red-300/90 mt-1">
+                {i18n.deckShapeHintLabel(arch.expectedCreatures, arch.deckCreatureTarget, arch.expectedSpells, arch.deckSpellTarget)}
+              </div>
+            )}
             {arch.alternativeSignal && (
               <div class="text-[11px] text-amber-300/90 mt-1">
                 {i18n.alternativeSignalLabel} {arch.alternativeSignal.mechanic} ({arch.alternativeSignal.cardCount})

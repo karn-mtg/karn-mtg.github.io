@@ -20,6 +20,10 @@ export function isCreature(typeLine) {
   return /\bCreature\b/.test(typeLine || '')
 }
 
+export function isLand(typeLine) {
+  return /\bLand\b/.test(typeLine || '')
+}
+
 const RARITY_ORDER = ['common', 'uncommon', 'rare', 'mythic']
 export function rarityRank(rarity) {
   return RARITY_ORDER.indexOf(rarity)

@@ -7,5 +7,7 @@
   },
   "mythicRate": 0.125,
   "playableThreshold": 3,
-  "lowSupportThreshold": 8
+  "lowSupportThreshold": 8,
+  "deckCreatureTarget": 15,
+  "deckSpellTarget": 8
 }

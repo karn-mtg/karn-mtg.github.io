@@ -1,6 +1,6 @@
 {
   "setCode": "fin",
-  "generatedAt": "2026-08-05T21:22:11.104Z",
+  "generatedAt": "2026-08-06T20:13:19.925Z",
   "cardCount": 312,
   "colorStats": {
     "all": {
@@ -138,14 +138,13 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/5/0/50716867-4370-4c2f-aae5-9d791a5d5a2e.jpg?1783906470",
       "bread": {
-        "bomb": 9,
+        "bomb": 2.9,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
         "diversity": 0,
-        "overall": 12,
+        "overall": 5.9,
         "tags": [
-          "bomb",
           "evasion"
         ]
       }
@@ -165,10 +164,10 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/1/a/1a67a991-1e52-4676-a2e3-2bc7aa943ab3.jpg?1783906656",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
         "overall": 2,
         "tags": [
@@ -191,10 +190,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -213,10 +212,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2.5,
-        "overall": 2.5,
+        "diversity": 3.8,
+        "overall": 3.8,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -235,12 +234,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/2/024a8033-fb41-40a4-b71d-0aa533e0f378.jpg?1783906451",
       "bread": {
-        "bomb": 2.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -265,8 +264,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -309,14 +308,15 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/1/6/162a415c-5465-497e-8f4e-c6f09681641d.jpg?1783906624",
       "bread": {
-        "bomb": 2.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 7.2,
+        "diversity": 3,
+        "overall": 8,
         "tags": [
-          "evasion"
+          "evasion",
+          "diversity"
         ]
       }
     },
@@ -336,11 +336,11 @@
       "image": "https://cards.scryfall.io/normal/front/e/c/ec91c4e4-711f-464d-bc83-e6813f4fdcdb.jpg?1783906592",
       "bread": {
         "bomb": 0,
-        "removal": 6,
+        "removal": 3,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 6,
+        "overall": 3,
         "tags": [
           "removal"
         ]
@@ -361,14 +361,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/5/8/58ccdcfc-a669-480f-bded-4273cfaf2045.jpg?1783906624",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 1,
-        "overall": 5.4,
+        "aggro": 4,
+        "diversity": 1.5,
+        "overall": 5.5,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -390,9 +390,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -413,12 +413,12 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/4/c/4c139f30-5ecd-48fd-ae7c-ec2cc98889ff.jpg?1783906591",
       "bread": {
-        "bomb": 10.5,
-        "removal": 8,
+        "bomb": 19.4,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 18.5,
+        "diversity": 2,
+        "overall": 25.4,
         "tags": [
           "bomb",
           "removal"
@@ -440,12 +440,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/3/4/34bd7a66-afb1-4a6b-80b3-fce1bb361d88.jpg?1783906451",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -466,12 +466,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/9/b/9b103e50-8bac-41d4-966e-a5d42132bc12.jpg?1783906492",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.4,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -521,9 +521,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -546,8 +546,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 3.5,
-        "overall": 3.5,
+        "diversity": 5.3,
+        "overall": 5.3,
         "tags": [
           "diversity"
         ]
@@ -568,12 +568,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/e/5/e5857b1b-73bc-458e-b26b-7ed8bef785f3.jpg?1783906591",
       "bread": {
-        "bomb": 8.2,
+        "bomb": 4.1,
         "removal": 0,
         "evasion": 2,
-        "aggro": 1,
-        "diversity": 1,
-        "overall": 12.2,
+        "aggro": 2,
+        "diversity": 1.5,
+        "overall": 9.6,
         "tags": [
           "bomb"
         ]
@@ -596,12 +596,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/6/a/6aaba8b1-1fcb-4a73-894f-f32400352c8c.jpg?1783906533",
       "bread": {
-        "bomb": 4.8,
+        "bomb": 4,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 5.8,
+        "overall": 6,
         "tags": [
           "bomb"
         ]
@@ -625,9 +625,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -651,8 +651,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -673,12 +673,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/1/a/1a504dff-5857-4a61-ab99-616d5df7cf5a.jpg?1783906607",
       "bread": {
-        "bomb": 4.8,
+        "bomb": 3.5,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 4.8,
+        "overall": 3.5,
         "tags": [
           "bomb"
         ]
@@ -699,12 +699,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/b/1b9a92f8-2044-4554-aec9-00b410dada35.jpg?1783906473",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.4,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -726,13 +726,14 @@
       "image": "https://cards.scryfall.io/normal/front/2/4/240e1466-bd02-423d-b829-234dcd2bfab2.jpg?1783906653",
       "bread": {
         "bomb": 0,
-        "removal": 6,
+        "removal": 3,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 1,
-        "overall": 8,
+        "aggro": 2,
+        "diversity": 3.5,
+        "overall": 8.5,
         "tags": [
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -751,12 +752,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/9/d/9da83b07-4978-4af7-be51-8aa8f35ec0bb.jpg?1783906435",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.4,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -780,9 +781,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 3,
+        "aggro": 6,
         "diversity": 0,
-        "overall": 3,
+        "overall": 6,
         "tags": [
           "aggro"
         ]
@@ -805,14 +806,15 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/7/d/7d143a13-a627-4b64-9356-253a2f9ddf98.jpg?1783906469",
       "bread": {
-        "bomb": 1,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
-        "aggro": 2,
+        "aggro": 4,
         "diversity": 0,
-        "overall": 6,
+        "overall": 9,
         "tags": [
-          "evasion"
+          "evasion",
+          "aggro"
         ]
       }
     },
@@ -857,10 +859,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -882,9 +884,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -904,11 +906,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 2,
-        "overall": 3,
+        "aggro": 2,
+        "diversity": 3,
+        "overall": 5,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -927,10 +929,10 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/d/5/d5273db4-6214-41e4-825a-612fca8bbe03.jpg?1783906590",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 2,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
         "overall": 4,
         "tags": [
@@ -956,9 +958,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 1,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -979,8 +981,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -1005,8 +1007,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -1025,12 +1027,12 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 1,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -1055,12 +1057,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/c/1ce688fa-1fdb-4acd-b9b0-bf7325a6b8e0.jpg?1783904641",
       "bread": {
-        "bomb": 4.8,
+        "bomb": 3.5,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 5.8,
+        "overall": 5.5,
         "tags": [
           "bomb"
         ]
@@ -1084,9 +1086,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 1,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -1136,9 +1138,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 1,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -1161,12 +1163,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/0/1/0148fa7c-b6d6-458c-8cdd-a6c4e6dd4e59.jpg?1783906494",
       "bread": {
-        "bomb": 4.8,
+        "bomb": 3.5,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 5.8,
+        "overall": 5.5,
         "tags": [
           "bomb"
         ]
@@ -1190,11 +1192,12 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 3,
-        "diversity": 2,
-        "overall": 5,
+        "aggro": 6,
+        "diversity": 5,
+        "overall": 11,
         "tags": [
-          "aggro"
+          "aggro",
+          "diversity"
         ]
       }
     },
@@ -1239,8 +1242,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -1258,14 +1261,15 @@
       ],
       "rarity": "mythic",
       "bread": {
-        "bomb": 0,
-        "removal": 8,
+        "bomb": 2,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 9.5,
+        "diversity": 5.3,
+        "overall": 11.3,
         "tags": [
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -1286,12 +1290,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/a/2/a292094a-674a-401f-8776-ba5ebe57c946.jpg?1783906575",
       "bread": {
-        "bomb": 2.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
         "diversity": 0,
-        "overall": 5.2,
+        "overall": 5,
         "tags": [
           "evasion"
         ]
@@ -1340,14 +1344,14 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/7/5/75180e47-064e-4dd6-adcf-d4fb497a445b.jpg?1783906469",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 0.1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 3.6,
+        "overall": 0.1,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -1366,12 +1370,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/7/3/7387bca7-f496-45da-a0ac-6be049303a8f.jpg?1783906653",
       "bread": {
-        "bomb": 1,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
         "diversity": 0,
-        "overall": 4,
+        "overall": 5,
         "tags": [
           "evasion"
         ]
@@ -1418,15 +1422,15 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/9/0/900206f1-7dd6-4db9-a430-73e560fd196b.jpg?1783906589",
       "bread": {
-        "bomb": 9,
-        "removal": 6,
+        "bomb": 1.7,
+        "removal": 3,
         "evasion": 2,
-        "aggro": 1,
-        "diversity": 2,
-        "overall": 20,
+        "aggro": 2,
+        "diversity": 3,
+        "overall": 11.7,
         "tags": [
-          "bomb",
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -1449,10 +1453,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -1500,9 +1504,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -1526,11 +1530,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 0,
-        "overall": 2,
+        "aggro": 4,
+        "diversity": 2,
+        "overall": 6,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -1568,10 +1572,10 @@
       ],
       "rarity": "uncommon",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
         "overall": 5,
         "tags": [
@@ -1623,9 +1627,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -1647,13 +1651,14 @@
       "image": "https://cards.scryfall.io/normal/front/a/1/a11cb85c-85dd-435c-8303-4d0d18bdb1e9.jpg?1783906435",
       "bread": {
         "bomb": 0,
-        "removal": 6,
+        "removal": 3,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 8,
+        "diversity": 3,
+        "overall": 6,
         "tags": [
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -1672,12 +1677,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/f/5/f58840dc-c641-4092-8b67-9c0d449af715.jpg?1783906652",
       "bread": {
-        "bomb": 2.2,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
         "diversity": 0,
-        "overall": 5.2,
+        "overall": 3,
         "tags": [
           "evasion"
         ]
@@ -1724,14 +1729,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/6/c/6ce7f494-2a19-4b11-94d4-fc5e5a7068bd.jpg?1783906588",
       "bread": {
-        "bomb": 8,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 8,
+        "overall": 2,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -1747,11 +1752,11 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 1,
-        "removal": 6,
+        "bomb": 2,
+        "removal": 3,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 0,
+        "diversity": 2,
         "overall": 10,
         "tags": [
           "removal",
@@ -1777,9 +1782,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -1800,12 +1805,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/d/9/d92bce20-308e-4841-aaf8-8e20698292e7.jpg?1783906638",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 4,
+        "diversity": 2,
+        "overall": 5,
         "tags": [
           "evasion"
         ]
@@ -1830,10 +1835,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 4,
+        "overall": 4,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -1856,8 +1861,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -1878,10 +1883,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 4.8,
+        "overall": 4.8,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -1900,14 +1905,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/f/0f85cda8-f333-4b73-8005-34df32d3ed73.jpg?1783906194",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 5.6,
+        "diversity": 3,
+        "overall": 5,
         "tags": [
-          "bomb"
+          "diversity"
         ]
       }
     },
@@ -1930,10 +1935,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -1952,8 +1957,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 1.5,
+        "overall": 1.5,
         "tags": [
           "filler"
         ]
@@ -1972,14 +1977,15 @@
       ],
       "rarity": "mythic",
       "bread": {
-        "bomb": 0,
-        "removal": 8,
+        "bomb": 2,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 10,
+        "diversity": 3,
+        "overall": 9,
         "tags": [
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -1996,13 +2002,14 @@
       "rarity": "rare",
       "bread": {
         "bomb": 0,
-        "removal": 8,
+        "removal": 4,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 2.5,
-        "overall": 11.5,
+        "aggro": 2,
+        "diversity": 4.8,
+        "overall": 10.8,
         "tags": [
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -2025,8 +2032,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -2051,8 +2058,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2.5,
+        "overall": 2.5,
         "tags": [
           "filler"
         ]
@@ -2072,9 +2079,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -2093,12 +2100,12 @@
       ],
       "rarity": "uncommon",
       "bread": {
-        "bomb": 1,
+        "bomb": 2,
         "removal": 0,
         "evasion": 2,
-        "aggro": 1,
-        "diversity": 1,
-        "overall": 5,
+        "aggro": 2,
+        "diversity": 1.5,
+        "overall": 7.5,
         "tags": [
           "filler"
         ]
@@ -2119,14 +2126,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/a/8/a8bfc03f-227c-4a5d-b172-067ea5860bf9.jpg?1783906447",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 4.4,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -2146,11 +2153,11 @@
       "image": "https://cards.scryfall.io/normal/front/9/0/900cdf11-b42e-4dcc-97c3-2e4d8e406a70.jpg?1783906650",
       "bread": {
         "bomb": 0,
-        "removal": 6,
+        "removal": 3,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 6,
+        "overall": 3,
         "tags": [
           "removal"
         ]
@@ -2175,8 +2182,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2.5,
+        "overall": 2.5,
         "tags": [
           "filler"
         ]
@@ -2223,14 +2230,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/6/5/65290ee9-0fbe-49d5-af48-cfbcde82277f.jpg?1783906177",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 3.6,
+        "diversity": 2,
+        "overall": 3,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -2277,8 +2284,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -2325,14 +2332,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/0/7/076a8eca-ed73-4ee9-aab4-d9d43d394ee6.jpg?1783906648",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 2.1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 5.6,
+        "diversity": 3,
+        "overall": 5.1,
         "tags": [
-          "bomb"
+          "diversity"
         ]
       }
     },
@@ -2351,12 +2358,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/2/9/29606c49-e1a4-49c3-883b-9122c08bbbc7.jpg?1783906648",
       "bread": {
-        "bomb": 2.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 6.2,
+        "overall": 7,
         "tags": [
           "evasion"
         ]
@@ -2377,12 +2384,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/4/2/42605473-e37d-46b3-8979-31cc6b21bc3c.jpg?1783906482",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 1.2,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -2406,9 +2413,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -2427,14 +2434,15 @@
       ],
       "rarity": "uncommon",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 4,
+        "diversity": 3.5,
+        "overall": 6.5,
         "tags": [
-          "evasion"
+          "evasion",
+          "diversity"
         ]
       }
     },
@@ -2455,12 +2463,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/6/1/6136d21e-e6fa-4aaf-9eca-3847fa2c65fd.jpg?1783906466",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 1,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -2503,14 +2511,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/b/c/bc10d648-4053-460f-bc52-9c20477bf6de.jpg?1783906587",
       "bread": {
-        "bomb": 4.8,
+        "bomb": 1.5,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 5.8,
+        "overall": 3.5,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -2529,14 +2537,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/e/1eb81329-fb7a-4347-b96c-9960a5c48e87.jpg?1783906605",
       "bread": {
-        "bomb": 7.2,
+        "bomb": 2.1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 7.2,
+        "overall": 2.1,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -2557,14 +2565,15 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/6/a/6a7784de-a10d-4ce6-98a5-aaf3e85773b6.jpg?1783906571",
       "bread": {
-        "bomb": 2,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 2,
-        "overall": 6,
+        "aggro": 4,
+        "diversity": 3,
+        "overall": 7,
         "tags": [
-          "filler"
+          "aggro",
+          "diversity"
         ]
       }
     },
@@ -2585,14 +2594,15 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/4/4/442957fc-045d-4db6-b82a-445f172d23e4.jpg?1783906571",
       "bread": {
-        "bomb": 7.2,
+        "bomb": 4.1,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 2,
-        "overall": 10.2,
+        "aggro": 2,
+        "diversity": 3,
+        "overall": 9.1,
         "tags": [
-          "bomb"
+          "bomb",
+          "diversity"
         ]
       }
     },
@@ -2611,14 +2621,14 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/0/5/054e180d-4e66-426d-adb5-a4fee94b6a67.jpg?1783906512",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 3.6,
+        "overall": 1,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -2640,8 +2650,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -2668,10 +2678,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 3.5,
+        "overall": 3.5,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -2693,8 +2703,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -2719,8 +2729,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -2744,9 +2754,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -2770,8 +2780,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -2795,9 +2805,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 1,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -2821,9 +2831,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -2870,14 +2880,13 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/2/a/2a8b3e1e-5c10-4360-ac1c-83b2e026278c.jpg?1783906603",
       "bread": {
-        "bomb": 4.6,
+        "bomb": 2,
         "removal": 0,
         "evasion": 2,
-        "aggro": 3,
+        "aggro": 6,
         "diversity": 0,
-        "overall": 9.6,
+        "overall": 10,
         "tags": [
-          "bomb",
           "aggro"
         ]
       }
@@ -2899,12 +2908,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/b/0b3ba36b-4a15-425c-98ae-37a10b3772bc.jpg?1783906442",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 1,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -2925,14 +2934,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/a/d/ad304c9c-943f-442f-bb82-ff378ad7d7ba.jpg?1783906636",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 3.6,
+        "overall": 2,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -2979,12 +2988,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/2/7/2790a23d-00ff-47b7-badd-9dd68042bb99.jpg?1783906464",
       "bread": {
-        "bomb": 1.2,
-        "removal": 8,
+        "bomb": 2,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 9.2,
+        "diversity": 2,
+        "overall": 8,
         "tags": [
           "removal"
         ]
@@ -3005,11 +3014,11 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/a/e/ae612312-3a8e-495f-8730-deaaf7505ca1.jpg?1783906636",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 0,
+        "diversity": 1,
         "overall": 4,
         "tags": [
           "evasion"
@@ -3034,8 +3043,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -3056,8 +3065,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 3,
-        "overall": 3,
+        "diversity": 4.5,
+        "overall": 4.5,
         "tags": [
           "diversity"
         ]
@@ -3074,14 +3083,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/e/4/e48cf6d5-4d32-4b66-80be-3495ecd3e906.jpg?1783906556",
       "bread": {
-        "bomb": 7,
+        "bomb": 2,
         "removal": 0,
         "evasion": 2,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 10,
+        "overall": 6,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -3102,10 +3111,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 4.8,
+        "overall": 4.8,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -3171,14 +3180,15 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 0,
-        "removal": 8,
+        "bomb": 2,
+        "removal": 4,
         "evasion": 1,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 11,
+        "diversity": 3,
+        "overall": 10,
         "tags": [
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -3199,14 +3209,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/2/2/22dd493f-e481-4563-8f87-c5bdbfd54fdd.jpg?1783906463",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 2.4,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -3227,8 +3237,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -3246,12 +3256,12 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 4,
         "aggro": 0,
         "diversity": 0,
-        "overall": 4,
+        "overall": 6,
         "tags": [
           "evasion"
         ]
@@ -3273,11 +3283,13 @@
         "bomb": 2,
         "removal": 0,
         "evasion": 4,
-        "aggro": 2,
-        "diversity": 0,
-        "overall": 8,
+        "aggro": 4,
+        "diversity": 8,
+        "overall": 18,
         "tags": [
-          "evasion"
+          "evasion",
+          "aggro",
+          "diversity"
         ]
       }
     },
@@ -3350,12 +3362,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/7/8/785640aa-047c-449f-8b25-e3ccc2ad06e8.jpg?1783906170",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 2.2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -3376,14 +3388,15 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/2/8/28eb294b-4cab-4c34-ae29-20aac9799471.jpg?1783906481",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 3,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 3.6,
+        "diversity": 5,
+        "overall": 8,
         "tags": [
-          "bomb"
+          "bomb",
+          "diversity"
         ]
       }
     },
@@ -3401,14 +3414,15 @@
       ],
       "rarity": "mythic",
       "bread": {
-        "bomb": 1,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 6,
+        "diversity": 3,
+        "overall": 8,
         "tags": [
-          "evasion"
+          "evasion",
+          "diversity"
         ]
       }
     },
@@ -3425,14 +3439,14 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 0,
-        "overall": 2,
+        "aggro": 4,
+        "diversity": 2,
+        "overall": 8,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -3455,10 +3469,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -3505,15 +3519,15 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/0/c/0c665905-183b-401f-b83c-a312d032e061.jpg?1783906461",
       "bread": {
-        "bomb": 4.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
-        "aggro": 2,
+        "aggro": 4,
         "diversity": 0,
-        "overall": 9.4,
+        "overall": 9,
         "tags": [
-          "bomb",
-          "evasion"
+          "evasion",
+          "aggro"
         ]
       }
     },
@@ -3532,12 +3546,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/4/0/40cce7b4-1d5d-4d91-90c5-71b79b5be1ac.jpg?1783906476",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 1,
         "aggro": 0,
         "diversity": 0,
-        "overall": 3.4,
+        "overall": 1,
         "tags": [
           "filler"
         ]
@@ -3559,11 +3573,12 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 1.5,
-        "overall": 3.5,
+        "aggro": 4,
+        "diversity": 4.3,
+        "overall": 8.3,
         "tags": [
-          "filler"
+          "aggro",
+          "diversity"
         ]
       }
     },
@@ -3581,9 +3596,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3606,14 +3621,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/5/7/572feb8c-6976-40a8-8a34-b4db836cca56.jpg?1783906565",
       "bread": {
-        "bomb": 3.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 5.4,
+        "diversity": 3,
+        "overall": 5,
         "tags": [
-          "bomb"
+          "diversity"
         ]
       }
     },
@@ -3632,12 +3647,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/a/1/a182bc66-bfda-4bf5-bd12-3de5dba60945.jpg?1783906585",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 3.4,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3681,11 +3696,11 @@
       "image": "https://cards.scryfall.io/normal/front/d/6/d6e1e3e7-20d4-42cb-ad22-60356b9e8fdc.jpg?1783906555",
       "bread": {
         "bomb": 0,
-        "removal": 6,
+        "removal": 3,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 6,
+        "diversity": 1,
+        "overall": 4,
         "tags": [
           "removal"
         ]
@@ -3709,9 +3724,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3735,9 +3750,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3754,12 +3769,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/5/7/57d07ca0-5618-4a90-a605-ca14a193ce3b.jpg?1783906555",
       "bread": {
-        "bomb": 2.4,
-        "removal": 8,
+        "bomb": 2,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 10.4,
+        "diversity": 2,
+        "overall": 8,
         "tags": [
           "removal"
         ]
@@ -3784,8 +3799,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3809,9 +3824,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3831,9 +3846,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3854,12 +3869,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/e/4/e46d8048-03ce-4e07-ba24-f41ba6140a4e.jpg?1783906617",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.4,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3880,14 +3895,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/4/0429bba6-d496-49ac-b849-fb8274f86880.jpg?1783906487",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 4.4,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -3934,8 +3949,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 3.5,
-        "overall": 3.5,
+        "diversity": 5.3,
+        "overall": 5.3,
         "tags": [
           "diversity"
         ]
@@ -3956,12 +3971,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/6/8/6822144f-f0eb-4e10-a217-52cad36d2973.jpg?1783906647",
       "bread": {
-        "bomb": 2.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -3981,9 +3996,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4008,8 +4023,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4054,14 +4069,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/6/b/6bc39af4-be19-4889-b930-df7ebf7b9481.jpg?1783906602",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 0,
-        "overall": 3.2,
+        "aggro": 4,
+        "diversity": 2,
+        "overall": 6,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -4080,14 +4095,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/f/9/f9d25b34-990d-416c-aef7-1b5a73f19dd4.jpg?1783906616",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 2.5,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 3.6,
+        "diversity": 3,
+        "overall": 5.5,
         "tags": [
-          "bomb"
+          "diversity"
         ]
       }
     },
@@ -4110,10 +4125,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -4135,11 +4150,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 2,
-        "overall": 3,
+        "aggro": 2,
+        "diversity": 3,
+        "overall": 5,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -4162,14 +4177,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/8/1881a66b-956d-4bab-b578-5b2d3407c972.jpg?1783906565",
       "bread": {
-        "bomb": 4.6,
+        "bomb": 2.5,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 4.6,
+        "overall": 2.5,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -4190,12 +4205,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/6/1/615f1a04-2ad4-443b-a915-2181a6bf13af.jpg?1783906524",
       "bread": {
-        "bomb": 8,
+        "bomb": 5.7,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 8,
+        "overall": 5.7,
         "tags": [
           "bomb"
         ]
@@ -4219,9 +4234,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4243,13 +4258,13 @@
       "image": "https://cards.scryfall.io/normal/front/a/e/ae075e71-d33d-4d6c-b4a5-0b47dd6fd196.jpg?1783906615",
       "bread": {
         "bomb": 0,
-        "removal": 3,
+        "removal": 1.5,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 3,
+        "overall": 1.5,
         "tags": [
-          "removal"
+          "filler"
         ]
       }
     },
@@ -4271,9 +4286,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4297,9 +4312,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4321,11 +4336,11 @@
       "image": "https://cards.scryfall.io/normal/front/6/2/62e299b0-9ef6-49d3-aa79-384325fed89e.jpg?1783906645",
       "bread": {
         "bomb": 0,
-        "removal": 8,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 8,
+        "diversity": 2.5,
+        "overall": 6.5,
         "tags": [
           "removal"
         ]
@@ -4371,13 +4386,13 @@
       "image": "https://cards.scryfall.io/normal/front/f/f/ff2bafe7-4d0f-464d-b7ba-55a54366fc68.jpg?1783906615",
       "bread": {
         "bomb": 0,
-        "removal": 3,
+        "removal": 1.5,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 3,
+        "overall": 1.5,
         "tags": [
-          "removal"
+          "filler"
         ]
       }
     },
@@ -4400,10 +4415,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -4425,11 +4440,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 0,
-        "overall": 2,
+        "aggro": 4,
+        "diversity": 2,
+        "overall": 6,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -4444,12 +4459,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/9/8/989b52f7-d8a5-4488-9a5d-f14a1d48686d.jpg?1783906554",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
         "diversity": 0,
-        "overall": 4,
+        "overall": 3,
         "tags": [
           "evasion"
         ]
@@ -4470,14 +4485,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/a/7/a75a6ecc-a6a5-462c-bd92-ae57dde9b965.jpg?1783906631",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 4.4,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -4496,14 +4511,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/5/9/5957ab2d-55ed-4160-8c78-8c70009c39d8.jpg?1783906476",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
-        "diversity": 0,
-        "overall": 2,
+        "aggro": 4,
+        "diversity": 2,
+        "overall": 8,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -4522,12 +4537,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/0/2/0208a5a9-3a6f-44c5-9e46-24bdf924753c.jpg?1783906472",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.4,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -4548,12 +4563,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/3/c/3cc379aa-6810-421d-a317-026867c4d245.jpg?1783906485",
       "bread": {
-        "bomb": 1.2,
-        "removal": 8,
+        "bomb": 2,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 9.2,
+        "overall": 6,
         "tags": [
           "removal"
         ]
@@ -4574,12 +4589,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/7/4/7475ecf6-23f5-45af-9ef0-ac7923bbc9cb.jpg?1783906614",
       "bread": {
-        "bomb": 2.4,
-        "removal": 6,
+        "bomb": 0,
+        "removal": 3,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 8.4,
+        "overall": 3,
         "tags": [
           "removal"
         ]
@@ -4603,8 +4618,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -4627,14 +4642,13 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/0/1/01c5bafe-c995-4cef-90fb-7ccb95858511.jpg?1783906622",
       "bread": {
-        "bomb": 8.2,
-        "removal": 6,
+        "bomb": 2.7,
+        "removal": 3,
         "evasion": 3,
-        "aggro": 3,
-        "diversity": 0,
-        "overall": 20.2,
+        "aggro": 6,
+        "diversity": 2.5,
+        "overall": 17.2,
         "tags": [
-          "bomb",
           "removal",
           "evasion",
           "aggro"
@@ -4682,12 +4696,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/4/14154d2c-911a-433c-8f09-bddd41a2f65e.jpg?1783906175",
       "bread": {
-        "bomb": 2.5,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.5,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -4712,10 +4726,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -4737,9 +4751,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4756,14 +4770,13 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/e/0/e09ee4c9-85ef-4d1e-864b-d659b8e8f51d.jpg?1783906553",
       "bread": {
-        "bomb": 6,
+        "bomb": 1.1,
         "removal": 0,
         "evasion": 4,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 10,
+        "diversity": 2.5,
+        "overall": 7.6,
         "tags": [
-          "bomb",
           "evasion"
         ]
       }
@@ -4787,8 +4800,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4865,8 +4878,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1,
-        "overall": 1,
+        "diversity": 1.5,
+        "overall": 1.5,
         "tags": [
           "filler"
         ]
@@ -4891,8 +4904,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -4939,8 +4952,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -4963,14 +4976,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/3/f/3f77c0f4-7a1b-496e-b030-55627446dfe3.jpg?1783906457",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 2.1,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 4.6,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 6.1,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -4989,15 +5002,15 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/4/5/4572884d-0c0e-41e7-b219-f76b95fdbd01.jpg?1783906631",
       "bread": {
-        "bomb": 3.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 8.4,
+        "diversity": 3,
+        "overall": 6,
         "tags": [
-          "bomb",
-          "evasion"
+          "evasion",
+          "diversity"
         ]
       }
     },
@@ -5016,12 +5029,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/c/4/c44e0ad6-9f44-4e4c-8c3b-3ee99409a740.jpg?1783906436",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 1.2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -5044,14 +5057,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/5/d/5d49c95e-2398-4646-b9f1-44d0b73fc157.jpg?1783906457",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 3.6,
+        "diversity": 2,
+        "overall": 3,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -5073,9 +5086,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 1,
+        "aggro": 2,
+        "diversity": 2.5,
+        "overall": 4.5,
         "tags": [
           "filler"
         ]
@@ -5102,10 +5115,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 5.5,
+        "overall": 5.5,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5127,11 +5140,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
+        "aggro": 4,
         "diversity": 0,
-        "overall": 2,
+        "overall": 4,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -5153,9 +5166,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -5205,9 +5218,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -5228,15 +5241,15 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/a/6/a6e021da-2397-4ad3-a07b-65c701df531a.jpg?1783906599",
       "bread": {
-        "bomb": 4.8,
-        "removal": 6,
+        "bomb": 1.1,
+        "removal": 3,
         "evasion": 0,
-        "aggro": 2,
+        "aggro": 4,
         "diversity": 0,
-        "overall": 12.8,
+        "overall": 8.1,
         "tags": [
-          "bomb",
-          "removal"
+          "removal",
+          "aggro"
         ]
       }
     },
@@ -5255,14 +5268,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/e/1e2a3566-1390-457e-8077-d776a8671319.jpg?1783906583",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 2.4,
+        "diversity": 3,
+        "overall": 5,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5310,9 +5323,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -5333,14 +5346,13 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/a/0a38194e-44bb-4f79-9797-03cb733808d0.jpg?1783906443",
       "bread": {
-        "bomb": 3.6,
-        "removal": 8,
+        "bomb": 2.5,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 11.6,
+        "overall": 6.5,
         "tags": [
-          "bomb",
           "removal"
         ]
       }
@@ -5387,11 +5399,11 @@
       "image": "https://cards.scryfall.io/normal/front/c/f/cf7df82f-937a-443f-813f-2bcc6944c5c0.jpg?1783906612",
       "bread": {
         "bomb": 0,
-        "removal": 6,
+        "removal": 3,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1,
-        "overall": 7,
+        "diversity": 1.5,
+        "overall": 4.5,
         "tags": [
           "removal"
         ]
@@ -5409,14 +5421,15 @@
       ],
       "rarity": "mythic",
       "bread": {
-        "bomb": 1,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
-        "aggro": 2,
-        "diversity": 3,
-        "overall": 9,
+        "aggro": 4,
+        "diversity": 4.5,
+        "overall": 13.5,
         "tags": [
           "evasion",
+          "aggro",
           "diversity"
         ]
       }
@@ -5438,14 +5451,14 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/3/6/361f3cbb-5a9e-4b77-9180-742f25d954cc.jpg?1783985268",
       "bread": {
-        "bomb": 2.4,
-        "removal": 3,
+        "bomb": 2,
+        "removal": 1.5,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 5.4,
+        "overall": 3.5,
         "tags": [
-          "removal"
+          "filler"
         ]
       }
     },
@@ -5462,12 +5475,12 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -5488,14 +5501,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/8/f/8fc42c17-a12b-42db-bb01-3e444ac2a376.jpg?1783906480",
       "bread": {
-        "bomb": 6,
+        "bomb": 2.1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 8,
+        "diversity": 3,
+        "overall": 5.1,
         "tags": [
-          "bomb"
+          "diversity"
         ]
       }
     },
@@ -5514,14 +5527,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/f/0/f02ce338-4fe2-44b0-a896-3ed7e6c874a3.jpg?1783906612",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 3.6,
+        "diversity": 2.5,
+        "overall": 3.5,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -5542,14 +5555,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/d/1/d1e01457-1696-4313-b21e-36e088735b1f.jpg?1783906458",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 3.2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5571,8 +5584,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -5593,12 +5606,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/7/3/7367b257-1a8c-4593-a307-7116e36e0342.jpg?1783906612",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1,
-        "overall": 3.4,
+        "diversity": 1.5,
+        "overall": 3.5,
         "tags": [
           "filler"
         ]
@@ -5620,10 +5633,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5643,10 +5656,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 4.3,
+        "overall": 4.3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5662,12 +5675,12 @@
       ],
       "rarity": "uncommon",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -5688,9 +5701,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -5711,11 +5724,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 2,
-        "overall": 3,
+        "aggro": 2,
+        "diversity": 5,
+        "overall": 7,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5738,14 +5751,13 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/7/075dd582-61b7-45e9-9dcf-0b544b733e61.jpg?1783906457",
       "bread": {
-        "bomb": 9,
+        "bomb": 1.7,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 12,
+        "diversity": 2,
+        "overall": 6.7,
         "tags": [
-          "bomb",
           "evasion"
         ]
       }
@@ -5817,12 +5829,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/3/9/399bb699-e61d-4b41-b6e9-e594cbad6194.jpg?1783906643",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 0,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -5847,10 +5859,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 4.8,
+        "overall": 4.8,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5871,14 +5883,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/7/076af4bd-1b74-4cf3-b6a0-8ec17d5b0e26.jpg?1783906425",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 2.5,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 3.6,
+        "diversity": 2.5,
+        "overall": 5,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -5897,8 +5909,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -5919,14 +5931,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/6/06a972a4-0c1b-4f12-a5a5-fdea47c4cd35.jpg?1783906644",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
+        "diversity": 3,
         "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -5997,14 +6009,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/a/a/aa4f6703-21f8-4c29-ad5a-5afb54188ade.jpg?1783906610",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 1,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 5.4,
+        "diversity": 3,
+        "overall": 4,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -6019,15 +6031,15 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/5/c/5c0e08d1-ecec-4577-b16e-a8d8478472a0.jpg?1783906200",
       "bread": {
-        "bomb": 9,
+        "bomb": 1,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 14,
+        "diversity": 3,
+        "overall": 7,
         "tags": [
-          "bomb",
-          "evasion"
+          "evasion",
+          "diversity"
         ]
       }
     },
@@ -6072,14 +6084,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/0/0/00546117-018a-4286-bc20-b5446c5be56f.jpg?1784182958",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 1,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 4.6,
+        "overall": 3,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -6098,12 +6110,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/8/4/840659ee-1493-4190-a514-c2c9ae14e331.jpg?1783906596",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 3.4,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -6124,14 +6136,14 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/3/2/32eb192b-de6b-4814-8077-628d343d014e.jpg?1784182967",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 0.1,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 4.6,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 4.1,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -6150,12 +6162,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/4/1/412093fb-15c1-4b36-aa53-9484f955ee2c.jpg?1783906513",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 4,
-        "overall": 6.4,
+        "diversity": 6,
+        "overall": 6,
         "tags": [
           "diversity"
         ]
@@ -6176,12 +6188,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/5/b/5bb06121-b390-4e3d-8822-4389570b0e15.jpg?1783906173",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 2.4,
+        "diversity": 1,
+        "overall": 3,
         "tags": [
           "filler"
         ]
@@ -6202,12 +6214,12 @@
       "rarity": "common",
       "image": "https://cards.scryfall.io/normal/front/2/5/25c3ce9a-39e5-4273-ba67-224a837b75e7.jpg?1783906517",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 3.5,
-        "overall": 5.9,
+        "diversity": 5.3,
+        "overall": 5.3,
         "tags": [
           "diversity"
         ]
@@ -6231,9 +6243,9 @@
         "bomb": 3,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 4,
+        "aggro": 2,
+        "diversity": 2,
+        "overall": 7,
         "tags": [
           "bomb"
         ]
@@ -6254,14 +6266,15 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/2/2/22281ba1-d509-4039-83c7-d912a1ce5ac4.jpg?1783906185",
       "bread": {
-        "bomb": 9.7,
+        "bomb": 4.6,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 11.7,
+        "diversity": 3,
+        "overall": 7.6,
         "tags": [
-          "bomb"
+          "bomb",
+          "diversity"
         ]
       }
     },
@@ -6280,14 +6293,13 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/e/4/e44497a8-067e-454e-a9c0-684f03df55ff.jpg?1783906643",
       "bread": {
-        "bomb": 3.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 3,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 7.4,
+        "overall": 5,
         "tags": [
-          "bomb",
           "evasion"
         ]
       }
@@ -6307,14 +6319,15 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/3/13e0ad67-35a6-48f3-83cb-5ffd07daf717.jpg?1783906180",
       "bread": {
-        "bomb": 2.4,
-        "removal": 6,
+        "bomb": 0,
+        "removal": 3,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 10.4,
+        "diversity": 3,
+        "overall": 6,
         "tags": [
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -6333,14 +6346,14 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/3/4/340b2b03-1b20-411c-ba30-2be77655290a.jpg?1783906520",
       "bread": {
-        "bomb": 4.8,
+        "bomb": 1.1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 6.8,
+        "diversity": 3,
+        "overall": 4.1,
         "tags": [
-          "bomb"
+          "diversity"
         ]
       }
     },
@@ -6359,12 +6372,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/e/1eb2a447-e18e-4318-898d-bc12fdd16172.jpg?1783906167",
       "bread": {
-        "bomb": 9,
+        "bomb": 8.1,
         "removal": 0,
         "evasion": 2,
-        "aggro": 1,
-        "diversity": 0,
-        "overall": 12,
+        "aggro": 2,
+        "diversity": 2.5,
+        "overall": 14.6,
         "tags": [
           "bomb"
         ]
@@ -6412,11 +6425,11 @@
       "image": "https://cards.scryfall.io/normal/front/f/6/f61693a2-7042-44e0-85ba-9bf12ab94e7e.jpg?1783906595",
       "bread": {
         "bomb": 0,
-        "removal": 16,
+        "removal": 8,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 16,
+        "overall": 8,
         "tags": [
           "removal"
         ]
@@ -6441,8 +6454,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 1,
+        "overall": 1,
         "tags": [
           "filler"
         ]
@@ -6488,11 +6501,11 @@
       "image": "https://cards.scryfall.io/normal/front/0/8/08375017-4432-4296-9799-966db145ed7c.jpg?1783924879",
       "bread": {
         "bomb": 0,
-        "removal": 8,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 8,
+        "overall": 4,
         "tags": [
           "removal"
         ]
@@ -6515,14 +6528,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/0/d/0dcb6a53-ad1b-465b-8d4c-f2c8b2b29e25.jpg?1783906523",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 3.2,
+        "diversity": 5,
+        "overall": 5,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -6542,14 +6555,15 @@
       ],
       "rarity": "mythic",
       "bread": {
-        "bomb": 1,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 5.5,
+        "diversity": 4.3,
+        "overall": 9.3,
         "tags": [
-          "evasion"
+          "evasion",
+          "diversity"
         ]
       }
     },
@@ -6572,8 +6586,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -6595,11 +6609,11 @@
       "image": "https://cards.scryfall.io/normal/front/0/f/0f93b6ac-54ce-45d0-8549-19307406e6e5.jpg?1783906621",
       "bread": {
         "bomb": 0,
-        "removal": 8,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1,
-        "overall": 9,
+        "diversity": 1.5,
+        "overall": 5.5,
         "tags": [
           "removal"
         ]
@@ -6648,8 +6662,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -6674,8 +6688,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -6700,8 +6714,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -6722,8 +6736,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 3.5,
-        "overall": 3.5,
+        "diversity": 7.3,
+        "overall": 7.3,
         "tags": [
           "diversity"
         ]
@@ -6817,11 +6831,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
+        "aggro": 4,
         "diversity": 0,
-        "overall": 2,
+        "overall": 4,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -6849,8 +6863,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -6926,11 +6940,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 2,
-        "overall": 3,
+        "aggro": 2,
+        "diversity": 3,
+        "overall": 5,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -7003,10 +7017,10 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/6/165a50ba-5ead-45aa-be8a-9bdd9766da66.jpg?1783906473",
       "bread": {
-        "bomb": 1,
+        "bomb": 0,
         "removal": 0,
         "evasion": 2,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
         "overall": 4,
         "tags": [
@@ -7032,9 +7046,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -7111,8 +7125,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1,
-        "overall": 1,
+        "diversity": 1.5,
+        "overall": 1.5,
         "tags": [
           "filler"
         ]
@@ -7137,10 +7151,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -7159,12 +7173,12 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/1/5/156cfd45-1556-4804-becf-039cfff7de3d.jpg?1783906436",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 2.4,
+        "overall": 0,
         "tags": [
           "filler"
         ]
@@ -7188,8 +7202,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -7259,11 +7273,11 @@
       "image": "https://cards.scryfall.io/normal/front/b/9/b9162d08-a6ba-4e6e-b82c-9b092bd781dd.jpg?1783906432",
       "bread": {
         "bomb": 0,
-        "removal": 6,
+        "removal": 3,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 7,
+        "overall": 5,
         "tags": [
           "removal"
         ]
@@ -7280,14 +7294,13 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/2/a/2ac1b165-27ff-47f3-b598-43f7f021093a.jpg?1783906532",
       "bread": {
-        "bomb": 4.6,
+        "bomb": 0.1,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 9.1,
+        "diversity": 2.3,
+        "overall": 5.4,
         "tags": [
-          "bomb",
           "evasion"
         ]
       }
@@ -7307,14 +7320,14 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/6/166f9d06-c390-4cc8-ad33-3fd14e499527.jpg?1783906093",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 4.4,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -7331,12 +7344,12 @@
       ],
       "rarity": "uncommon",
       "bread": {
-        "bomb": 0,
+        "bomb": 2,
         "removal": 0,
         "evasion": 1,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 1,
+        "diversity": 1,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -7387,8 +7400,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 0,
+        "diversity": 2,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -7435,12 +7448,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/5/0/50e1ec29-9de3-4f1b-b818-057e030d475b.jpg?1783906593",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 1.2,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -7461,14 +7474,13 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/b/4/b40a055f-ea66-44d4-b058-a328a3d10994.jpg?1783906626",
       "bread": {
-        "bomb": 3.4,
+        "bomb": 2,
         "removal": 0,
         "evasion": 3,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 6.4,
+        "diversity": 1,
+        "overall": 6,
         "tags": [
-          "bomb",
           "evasion"
         ]
       }
@@ -7489,12 +7501,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/2/8/28cdd11b-7337-4696-b2a0-77236c7b7210.jpg?1783906505",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 1.2,
+        "diversity": 2.5,
+        "overall": 4.5,
         "tags": [
           "filler"
         ]
@@ -7516,13 +7528,13 @@
       "image": "https://cards.scryfall.io/normal/front/6/d/6de6d23b-7d42-41c1-be1c-010fe43ee586.jpg?1783906610",
       "bread": {
         "bomb": 0,
-        "removal": 3,
+        "removal": 1.5,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 3,
+        "overall": 1.5,
         "tags": [
-          "removal"
+          "filler"
         ]
       }
     },
@@ -7544,8 +7556,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -7563,15 +7575,16 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 3,
-        "removal": 8,
+        "bomb": 5,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 13,
+        "diversity": 3,
+        "overall": 12,
         "tags": [
           "bomb",
-          "removal"
+          "removal",
+          "diversity"
         ]
       }
     },
@@ -7590,9 +7603,9 @@
         "bomb": 2,
         "removal": 0,
         "evasion": 3,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 6,
+        "overall": 7,
         "tags": [
           "evasion"
         ]
@@ -7644,11 +7657,11 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 2,
+        "aggro": 4,
         "diversity": 0,
-        "overall": 2,
+        "overall": 4,
         "tags": [
-          "filler"
+          "aggro"
         ]
       }
     },
@@ -7670,9 +7683,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -7693,8 +7706,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -7719,10 +7732,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -7742,11 +7755,11 @@
       "image": "https://cards.scryfall.io/normal/front/2/d/2df6f515-9d21-4769-b1c4-c219611bccbb.jpg?1783906641",
       "bread": {
         "bomb": 0,
-        "removal": 8,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 9.5,
+        "diversity": 2.3,
+        "overall": 6.3,
         "tags": [
           "removal"
         ]
@@ -7770,9 +7783,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
-        "diversity": 1,
-        "overall": 2,
+        "aggro": 2,
+        "diversity": 1.5,
+        "overall": 3.5,
         "tags": [
           "filler"
         ]
@@ -7796,8 +7809,8 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 2.3,
+        "overall": 2.3,
         "tags": [
           "filler"
         ]
@@ -7818,10 +7831,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 2,
-        "overall": 2,
+        "diversity": 3,
+        "overall": 3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -7842,12 +7855,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/1/c/1caed9a8-b73b-470e-b9d8-8c3b7cac3eee.jpg?1783906432",
       "bread": {
-        "bomb": 2.4,
+        "bomb": 0,
         "removal": 0,
         "evasion": 1,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 4.4,
+        "overall": 3,
         "tags": [
           "filler"
         ]
@@ -7868,12 +7881,12 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/0/1/01eee1b7-286c-4df7-aeaf-ada01882e662.jpg?1783906184",
       "bread": {
-        "bomb": 2.4,
-        "removal": 8,
+        "bomb": 0,
+        "removal": 4,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 10.4,
+        "overall": 4,
         "tags": [
           "removal"
         ]
@@ -7897,9 +7910,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -7922,14 +7935,14 @@
       "rarity": "mythic",
       "image": "https://cards.scryfall.io/normal/front/3/5/35b613ad-86f0-431b-af93-147d21041fde.jpg?1783906559",
       "bread": {
-        "bomb": 3.6,
+        "bomb": 0.1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 3.6,
+        "diversity": 2.5,
+        "overall": 2.6,
         "tags": [
-          "bomb"
+          "filler"
         ]
       }
     },
@@ -7976,10 +7989,10 @@
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 1.5,
-        "overall": 1.5,
+        "diversity": 4.3,
+        "overall": 4.3,
         "tags": [
-          "filler"
+          "diversity"
         ]
       }
     },
@@ -8001,9 +8014,9 @@
         "bomb": 0,
         "removal": 0,
         "evasion": 0,
-        "aggro": 1,
+        "aggro": 2,
         "diversity": 0,
-        "overall": 1,
+        "overall": 2,
         "tags": [
           "filler"
         ]
@@ -8021,14 +8034,13 @@
       ],
       "rarity": "rare",
       "bread": {
-        "bomb": 1,
-        "removal": 3,
+        "bomb": 2,
+        "removal": 1.5,
         "evasion": 3,
         "aggro": 0,
         "diversity": 0,
-        "overall": 7,
+        "overall": 6.5,
         "tags": [
-          "removal",
           "evasion"
         ]
       }
@@ -8050,12 +8062,12 @@
       "rarity": "uncommon",
       "image": "https://cards.scryfall.io/normal/front/2/e/2eaffe7a-0e04-4c19-942b-695a0c350ef0.jpg?1783906452",
       "bread": {
-        "bomb": 1.2,
+        "bomb": 2,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
-        "diversity": 0,
-        "overall": 1.2,
+        "diversity": 2,
+        "overall": 4,
         "tags": [
           "filler"
         ]
@@ -8076,12 +8088,12 @@
       "rarity": "rare",
       "image": "https://cards.scryfall.io/normal/front/2/e/2eb50ecd-d32f-482b-8e6f-57f68179241b.jpg?1783906528",
       "bread": {
-        "bomb": 9,
+        "bomb": 5.1,
         "removal": 0,
         "evasion": 0,
         "aggro": 0,
         "diversity": 0,
-        "overall": 9,
+        "overall": 5.1,
         "tags": [
           "bomb"
         ]
@@ -8090,67 +8102,47 @@
   ],
   "bestCards": {
     "all": [
-      "Ragnarok, Divine Deliverance",
-      "Coliseum Behemoth",
       "Ancient Adamantoise",
-      "Suplex",
-      "Summon: Bahamut",
-      "Venat, Heart of Hydaelyn // Hydaelyn, the Mothercrystal",
-      "Sandworm",
-      "Balamb T-Rexaur",
-      "Absolute Virtue",
-      "Sin, Spira's Punishment",
+      "Joshua, Phoenix's Dominant // Phoenix, Warden of Fire",
+      "Ragnarok, Divine Deliverance",
       "Summon: Titan",
-      "Summon: Leviathan",
-      "Seifer Almasy",
+      "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
+      "Venat, Heart of Hydaelyn // Hydaelyn, the Mothercrystal",
+      "Coliseum Behemoth",
+      "Clive, Ifrit's Dominant // Ifrit, Warden of Inferno",
+      "Circle of Power",
       "Esper Origins // Summon: Esper Maduin",
-      "Jecht, Reluctant Guardian // Braska's Final Aeon"
+      "Dion, Bahamut's Dominant // Bahamut, Warden of Light",
+      "Hill Gigas",
+      "Jecht, Reluctant Guardian // Braska's Final Aeon",
+      "Balamb T-Rexaur",
+      "Terra, Magical Adept // Esper Terra"
     ],
     "commonsOnly": [
       "Ragnarok, Divine Deliverance",
       "Coliseum Behemoth",
-      "Suplex",
-      "Sandworm",
-      "Balamb T-Rexaur",
-      "Magic Pot",
-      "Gladiolus Amicitia",
-      "Iron Giant",
-      "Relentless X-ATM092",
+      "Circle of Power",
       "Hill Gigas",
-      "White Auracite",
+      "Balamb T-Rexaur",
+      "Gladiolus Amicitia",
+      "Black Waltz No. 3",
+      "Battle Menu",
+      "Sandworm",
+      "Ahriman",
       "Ignis Scientia",
-      "Quistis Trepe",
-      "Qutrub Forayer",
-      "Rook Turret"
+      "Magic Pot",
+      "Queen Brahne",
+      "Suplex",
+      "Relentless X-ATM092"
     ]
   },
   "manaCombos": {
     "all": [
       {
-        "colors": "WU",
-        "cardCount": 5,
-        "avgBomb": 3,
-        "avgOverall": 4.1,
-        "topCards": [
-          "Absolute Virtue",
-          "Cid, Timeless Artificer",
-          "Hope Estheim",
-          "Sharlayan, Nation of Scholars",
-          "Tidus, Blitzball Star"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 1,
-          "mythic": 1
-        },
-        "pullChance": 65
-      },
-      {
         "colors": "RG",
         "cardCount": 4,
-        "avgBomb": 3,
-        "avgOverall": 4.9,
+        "avgBomb": 2,
+        "avgOverall": 5.7,
         "topCards": [
           "Gladiolus Amicitia",
           "Balthier and Fran",
@@ -8166,30 +8158,10 @@
         "pullChance": 63.8
       },
       {
-        "colors": "BG",
-        "cardCount": 6,
-        "avgBomb": 2.5,
-        "avgOverall": 5.9,
-        "topCards": [
-          "Ragnarok, Divine Deliverance",
-          "Jenova, Ancient Calamity",
-          "Cloud of Darkness",
-          "Vanille, Cheerful l'Cie",
-          "Exdeath, Void Warlock // Neo Exdeath, Dimension's End"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 4,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 74
-      },
-      {
         "colors": "UG",
         "cardCount": 4,
-        "avgBomb": 2.3,
-        "avgOverall": 5.6,
+        "avgBomb": 1.9,
+        "avgOverall": 5.3,
         "topCards": [
           "Omega, Heartless Evolution",
           "Ignis Scientia",
@@ -8205,16 +8177,95 @@
         "pullChance": 63.8
       },
       {
+        "colors": "BG",
+        "cardCount": 6,
+        "avgBomb": 1.5,
+        "avgOverall": 6.6,
+        "topCards": [
+          "Ragnarok, Divine Deliverance",
+          "Cloud of Darkness",
+          "Exdeath, Void Warlock // Neo Exdeath, Dimension's End",
+          "Vanille, Cheerful l'Cie",
+          "Gohn, Town of Ruin"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 4,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 74
+      },
+      {
+        "colors": "WU",
+        "cardCount": 5,
+        "avgBomb": 1.3,
+        "avgOverall": 2.7,
+        "topCards": [
+          "Cid, Timeless Artificer",
+          "Absolute Virtue",
+          "Hope Estheim",
+          "Sharlayan, Nation of Scholars",
+          "Tidus, Blitzball Star"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 1
+        },
+        "pullChance": 65
+      },
+      {
+        "colors": "UB",
+        "cardCount": 7,
+        "avgBomb": 1.1,
+        "avgOverall": 4.3,
+        "topCards": [
+          "Emet-Selch, Unsundered // Hades, Sorcerer of Eld",
+          "Locke Cole",
+          "Sephiroth, Planet's Heir",
+          "Ultimecia, Time Sorceress // Ultimecia, Omnipotent",
+          "Golbez, Crystal Collector"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 2,
+          "mythic": 2
+        },
+        "pullChance": 68.2
+      },
+      {
+        "colors": "BR",
+        "cardCount": 4,
+        "avgBomb": 1,
+        "avgOverall": 6.5,
+        "topCards": [
+          "Black Waltz No. 3",
+          "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
+          "Garland, Knight of Cornelia // Chaos, the Endless",
+          "Vector, Imperial Capital"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 63.8
+      },
+      {
         "colors": "WR",
         "cardCount": 6,
-        "avgBomb": 2.2,
-        "avgOverall": 5,
+        "avgBomb": 1,
+        "avgOverall": 6.7,
         "topCards": [
-          "Lightning, Army of One",
-          "Cloud, Planet's Champion",
-          "Giott, King of the Dwarves",
           "Joshua, Phoenix's Dominant // Phoenix, Warden of Fire",
-          "Zidane, Tantalus Thief"
+          "Lightning, Army of One",
+          "Zidane, Tantalus Thief",
+          "Cloud, Planet's Champion",
+          "Giott, King of the Dwarves"
         ],
         "byRarity": {
           "common": 1,
@@ -8225,13 +8276,33 @@
         "pullChance": 66.2
       },
       {
+        "colors": "WG",
+        "cardCount": 5,
+        "avgBomb": 0.8,
+        "avgOverall": 3,
+        "topCards": [
+          "Rinoa Heartilly",
+          "Serah Farron // Crystallized Serah",
+          "Yuna, Hope of Spira",
+          "Garnet, Princess of Alexandria",
+          "Windurst, Federation Center"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 1
+        },
+        "pullChance": 65
+      },
+      {
         "colors": "WB",
         "cardCount": 5,
-        "avgBomb": 1.6,
-        "avgOverall": 2.1,
+        "avgBomb": 0.7,
+        "avgOverall": 2.3,
         "topCards": [
-          "Rufus Shinra",
           "Squall, SeeD Mercenary",
+          "Rufus Shinra",
           "Cecil, Dark Knight // Cecil, Redeemed Paladin",
           "Insomnia, Crown City",
           "Judge Magister Gabranth"
@@ -8245,54 +8316,14 @@
         "pullChance": 66
       },
       {
-        "colors": "WG",
-        "cardCount": 5,
-        "avgBomb": 1.6,
-        "avgOverall": 2.3,
-        "topCards": [
-          "Rinoa Heartilly",
-          "Yuna, Hope of Spira",
-          "Garnet, Princess of Alexandria",
-          "Serah Farron // Crystallized Serah",
-          "Windurst, Federation Center"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 1,
-          "mythic": 1
-        },
-        "pullChance": 65
-      },
-      {
-        "colors": "UB",
-        "cardCount": 7,
-        "avgBomb": 1.2,
-        "avgOverall": 4,
-        "topCards": [
-          "Locke Cole",
-          "Sephiroth, Planet's Heir",
-          "Xande, Dark Mage",
-          "Emet-Selch, Unsundered // Hades, Sorcerer of Eld",
-          "Golbez, Crystal Collector"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 2,
-          "mythic": 2
-        },
-        "pullChance": 68.2
-      },
-      {
         "colors": "UR",
         "cardCount": 5,
-        "avgBomb": 0.5,
-        "avgOverall": 2.3,
+        "avgBomb": 0,
+        "avgOverall": 3.3,
         "topCards": [
+          "Baron, Airship Kingdom",
           "Shantotto, Tactician Magician",
           "Tellah, Great Sage",
-          "Baron, Airship Kingdom",
           "The Emperor of Palamecia // The Lord Master of Hell",
           "Vivi Ornitier"
         ],
@@ -8303,33 +8334,14 @@
           "mythic": 1
         },
         "pullChance": 65
-      },
-      {
-        "colors": "BR",
-        "cardCount": 4,
-        "avgBomb": 0.5,
-        "avgOverall": 3.4,
-        "topCards": [
-          "Black Waltz No. 3",
-          "Garland, Knight of Cornelia // Chaos, the Endless",
-          "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
-          "Vector, Imperial Capital"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 63.8
       }
     ],
     "commonsOnly": [
       {
         "colors": "UG",
         "cardCount": 3,
-        "avgBomb": 3.1,
-        "avgOverall": 6.2,
+        "avgBomb": 2.6,
+        "avgOverall": 5.3,
         "topCards": [
           "Omega, Heartless Evolution",
           "Ignis Scientia",
@@ -8346,13 +8358,13 @@
       {
         "colors": "BG",
         "cardCount": 5,
-        "avgBomb": 2.5,
-        "avgOverall": 6.6,
+        "avgBomb": 1.7,
+        "avgOverall": 7.3,
         "topCards": [
           "Ragnarok, Divine Deliverance",
           "Cloud of Darkness",
-          "Vanille, Cheerful l'Cie",
           "Exdeath, Void Warlock // Neo Exdeath, Dimension's End",
+          "Vanille, Cheerful l'Cie",
           "Gohn, Town of Ruin"
         ],
         "byRarity": {
@@ -8366,8 +8378,8 @@
       {
         "colors": "RG",
         "cardCount": 3,
-        "avgBomb": 2.4,
-        "avgOverall": 4.6,
+        "avgBomb": 1.4,
+        "avgOverall": 5.6,
         "topCards": [
           "Gladiolus Amicitia",
           "Gongaga, Reactor Town",
@@ -8382,10 +8394,28 @@
         "pullChance": 61.5
       },
       {
+        "colors": "UB",
+        "cardCount": 3,
+        "avgBomb": 1.3,
+        "avgOverall": 3.8,
+        "topCards": [
+          "Locke Cole",
+          "Ultimecia, Time Sorceress // Ultimecia, Omnipotent",
+          "Treno, Dark City"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.5
+      },
+      {
         "colors": "WU",
         "cardCount": 3,
-        "avgBomb": 1.6,
-        "avgOverall": 2.4,
+        "avgBomb": 1.2,
+        "avgOverall": 2.6,
         "topCards": [
           "Cid, Timeless Artificer",
           "Sharlayan, Nation of Scholars",
@@ -8400,82 +8430,10 @@
         "pullChance": 61.5
       },
       {
-        "colors": "WG",
-        "cardCount": 3,
-        "avgBomb": 1.5,
-        "avgOverall": 2.4,
-        "topCards": [
-          "Rinoa Heartilly",
-          "Garnet, Princess of Alexandria",
-          "Windurst, Federation Center"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.5
-      },
-      {
-        "colors": "WB",
-        "cardCount": 3,
-        "avgBomb": 1.2,
-        "avgOverall": 2,
-        "topCards": [
-          "Rufus Shinra",
-          "Insomnia, Crown City",
-          "Judge Magister Gabranth"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.5
-      },
-      {
-        "colors": "WR",
-        "cardCount": 3,
-        "avgBomb": 1.1,
-        "avgOverall": 2.9,
-        "topCards": [
-          "Giott, King of the Dwarves",
-          "Zidane, Tantalus Thief",
-          "Rabanastre, Royal City"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.5
-      },
-      {
-        "colors": "UB",
-        "cardCount": 3,
-        "avgBomb": 1.1,
-        "avgOverall": 2.6,
-        "topCards": [
-          "Locke Cole",
-          "Treno, Dark City",
-          "Ultimecia, Time Sorceress // Ultimecia, Omnipotent"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.5
-      },
-      {
         "colors": "BR",
         "cardCount": 3,
         "avgBomb": 0.7,
-        "avgOverall": 3.8,
+        "avgOverall": 5.9,
         "topCards": [
           "Black Waltz No. 3",
           "Garland, Knight of Cornelia // Chaos, the Endless",
@@ -8490,13 +8448,67 @@
         "pullChance": 61.5
       },
       {
-        "colors": "UR",
+        "colors": "WG",
         "cardCount": 3,
-        "avgBomb": 0.4,
+        "avgBomb": 0.7,
+        "avgOverall": 2.8,
+        "topCards": [
+          "Rinoa Heartilly",
+          "Garnet, Princess of Alexandria",
+          "Windurst, Federation Center"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.5
+      },
+      {
+        "colors": "WR",
+        "cardCount": 3,
+        "avgBomb": 0.7,
+        "avgOverall": 4.4,
+        "topCards": [
+          "Zidane, Tantalus Thief",
+          "Giott, King of the Dwarves",
+          "Rabanastre, Royal City"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.5
+      },
+      {
+        "colors": "WB",
+        "cardCount": 3,
+        "avgBomb": 0.3,
         "avgOverall": 2.1,
         "topCards": [
-          "Shantotto, Tactician Magician",
+          "Rufus Shinra",
+          "Insomnia, Crown City",
+          "Judge Magister Gabranth"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.5
+      },
+      {
+        "colors": "UR",
+        "cardCount": 3,
+        "avgBomb": 0,
+        "avgOverall": 2.5,
+        "topCards": [
           "Baron, Airship Kingdom",
+          "Shantotto, Tactician Magician",
           "The Emperor of Palamecia // The Lord Master of Hell"
         ],
         "byRarity": {
@@ -18067,40 +18079,45 @@
           "probabilityPayoff": 99.5,
           "probabilityEnablers": 97.3,
           "comboScore": 96.8,
-          "avgQuality": 4.5,
+          "avgQuality": 5.2,
           "topPayoffCards": [
+            {
+              "name": "Joshua, Phoenix's Dominant // Phoenix, Warden of Fire",
+              "colorIdentity": [
+                "R",
+                "W"
+              ],
+              "manaCost": ""
+            },
             {
               "name": "Ragnarok, Divine Deliverance",
               "colorIdentity": [
                 "B",
                 "G"
-              ]
-            },
-            {
-              "name": "Sin, Spira's Punishment",
-              "colorIdentity": [
-                "B",
-                "G",
-                "U"
-              ]
+              ],
+              "manaCost": ""
             },
             {
               "name": "Summon: Titan",
               "colorIdentity": [
                 "G"
-              ]
-            },
-            {
-              "name": "Seifer Almasy",
-              "colorIdentity": [
-                "R"
-              ]
+              ],
+              "manaCost": "{3}{G}{G}"
             },
             {
               "name": "Esper Origins // Summon: Esper Maduin",
               "colorIdentity": [
                 "G"
-              ]
+              ],
+              "manaCost": ""
+            },
+            {
+              "name": "Emet-Selch, Unsundered // Hades, Sorcerer of Eld",
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "manaCost": ""
             }
           ],
           "topEnablerCards": [
@@ -18108,33 +18125,43 @@
               "name": "Summon: Titan",
               "colorIdentity": [
                 "G"
-              ]
+              ],
+              "manaCost": "{3}{G}{G}"
             },
             {
               "name": "Jecht, Reluctant Guardian // Braska's Final Aeon",
               "colorIdentity": [
                 "B"
-              ]
+              ],
+              "manaCost": ""
+            },
+            {
+              "name": "Terra, Magical Adept // Esper Terra",
+              "colorIdentity": [
+                "B",
+                "G",
+                "R",
+                "U",
+                "W"
+              ],
+              "manaCost": ""
             },
             {
               "name": "Emet-Selch, Unsundered // Hades, Sorcerer of Eld",
               "colorIdentity": [
                 "B",
                 "U"
-              ]
+              ],
+              "manaCost": ""
             },
             {
-              "name": "Rook Turret",
+              "name": "Kefka, Court Mage // Kefka, Ruler of Ruin",
               "colorIdentity": [
-                "U"
-              ]
-            },
-            {
-              "name": "Giott, King of the Dwarves",
-              "colorIdentity": [
+                "B",
                 "R",
-                "W"
-              ]
+                "U"
+              ],
+              "manaCost": ""
             }
           ]
         },
@@ -18158,27 +18185,30 @@
           "probabilityPayoff": 57.3,
           "probabilityEnablers": 50.5,
           "comboScore": 28.9,
-          "avgQuality": 4,
+          "avgQuality": 6.4,
           "topPayoffCards": [
             {
               "name": "Rook Turret",
               "colorIdentity": [
                 "U"
-              ]
+              ],
+              "manaCost": "{3}{U}"
             },
             {
               "name": "Golbez, Crystal Collector",
               "colorIdentity": [
                 "B",
                 "U"
-              ]
+              ],
+              "manaCost": "{U}{B}"
             },
             {
               "name": "Tidus, Blitzball Star",
               "colorIdentity": [
                 "U",
                 "W"
-              ]
+              ],
+              "manaCost": "{1}{W}{U}"
             }
           ],
           "topEnablerCards": [
@@ -18186,27 +18216,32 @@
               "name": "Ancient Adamantoise",
               "colorIdentity": [
                 "G"
-              ]
-            },
-            {
-              "name": "Magic Pot",
-              "colorIdentity": []
+              ],
+              "manaCost": "{5}{G}{G}{G}"
             },
             {
               "name": "Kain, Traitorous Dragoon",
               "colorIdentity": [
                 "B"
-              ]
+              ],
+              "manaCost": "{2}{B}"
             },
             {
-              "name": "Namazu Trader",
-              "colorIdentity": [
-                "B"
-              ]
+              "name": "Magic Pot",
+              "colorIdentity": [],
+              "manaCost": "{3}"
             },
             {
               "name": "The Gold Saucer",
-              "colorIdentity": []
+              "colorIdentity": [],
+              "manaCost": ""
+            },
+            {
+              "name": "Prompto Argentum",
+              "colorIdentity": [
+                "R"
+              ],
+              "manaCost": "{1}{R}"
             }
           ]
         },
@@ -18230,14 +18265,22 @@
           "probabilityPayoff": 98.1,
           "probabilityEnablers": 27.1,
           "comboScore": 26.6,
-          "avgQuality": 2.7,
+          "avgQuality": 4,
           "topPayoffCards": [
             {
               "name": "Gladiolus Amicitia",
               "colorIdentity": [
                 "G",
                 "R"
-              ]
+              ],
+              "manaCost": "{4}{R}{G}"
+            },
+            {
+              "name": "Sidequest: Raise a Chocobo // Black Chocobo",
+              "colorIdentity": [
+                "G"
+              ],
+              "manaCost": ""
             },
             {
               "name": "Choco, Seeker of Paradise",
@@ -18245,25 +18288,23 @@
                 "G",
                 "U",
                 "W"
-              ]
+              ],
+              "manaCost": "{1}{G}{W}{U}"
+            },
+            {
+              "name": "Rydia, Summoner of Mist",
+              "colorIdentity": [
+                "G",
+                "R"
+              ],
+              "manaCost": "{R}{G}"
             },
             {
               "name": "Summon: Fat Chocobo",
               "colorIdentity": [
                 "G"
-              ]
-            },
-            {
-              "name": "Tifa Lockhart",
-              "colorIdentity": [
-                "G"
-              ]
-            },
-            {
-              "name": "Sidequest: Raise a Chocobo // Black Chocobo",
-              "colorIdentity": [
-                "G"
-              ]
+              ],
+              "manaCost": "{4}{G}"
             }
           ],
           "topEnablerCards": [
@@ -18272,29 +18313,34 @@
               "colorIdentity": [
                 "G",
                 "R"
-              ]
-            },
-            {
-              "name": "Summon: Fenrir",
-              "colorIdentity": [
-                "G"
-              ]
+              ],
+              "manaCost": "{4}{R}{G}"
             },
             {
               "name": "Sidequest: Raise a Chocobo // Black Chocobo",
               "colorIdentity": [
                 "G"
-              ]
+              ],
+              "manaCost": ""
+            },
+            {
+              "name": "Summon: Fenrir",
+              "colorIdentity": [
+                "G"
+              ],
+              "manaCost": "{2}{G}"
             },
             {
               "name": "Prishe's Wanderings",
               "colorIdentity": [
                 "G"
-              ]
+              ],
+              "manaCost": "{2}{G}"
             },
             {
               "name": "World Map",
-              "colorIdentity": []
+              "colorIdentity": [],
+              "manaCost": "{1}"
             }
           ]
         },
@@ -18318,55 +18364,64 @@
           "probabilityPayoff": 16.9,
           "probabilityEnablers": 89.1,
           "comboScore": 15.1,
-          "avgQuality": 5,
+          "avgQuality": 5.3,
           "topPayoffCards": [
             {
               "name": "Aerith Gainsborough",
               "colorIdentity": [
                 "W"
-              ]
+              ],
+              "manaCost": "{2}{W}"
+            },
+            {
+              "name": "Excalibur II",
+              "colorIdentity": [],
+              "manaCost": "{1}"
             },
             {
               "name": "Minwu, White Mage",
               "colorIdentity": [
                 "W"
-              ]
-            },
-            {
-              "name": "Excalibur II",
-              "colorIdentity": []
+              ],
+              "manaCost": "{3}{W}{W}"
             }
           ],
           "topEnablerCards": [
             {
-              "name": "Balamb T-Rexaur",
+              "name": "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
               "colorIdentity": [
-                "G"
-              ]
+                "B"
+              ],
+              "manaCost": ""
             },
             {
               "name": "Esper Origins // Summon: Esper Maduin",
               "colorIdentity": [
                 "G"
-              ]
+              ],
+              "manaCost": ""
             },
             {
-              "name": "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
+              "name": "Balamb T-Rexaur",
               "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "The Darkness Crystal",
-              "colorIdentity": [
-                "B"
-              ]
+                "G"
+              ],
+              "manaCost": "{4}{G}{G}"
             },
             {
               "name": "Battle Menu",
               "colorIdentity": [
                 "W"
-              ]
+              ],
+              "manaCost": "{1}{W}"
+            },
+            {
+              "name": "Exdeath, Void Warlock // Neo Exdeath, Dimension's End",
+              "colorIdentity": [
+                "B",
+                "G"
+              ],
+              "manaCost": ""
             }
           ]
         },
@@ -18396,224 +18451,56 @@
               "name": "Astrologian's Planisphere",
               "colorIdentity": [
                 "U"
-              ]
+              ],
+              "manaCost": "{1}{U}"
             }
           ],
-          "topEnablerCards": [
-            {
-              "name": "Coliseum Behemoth",
-              "colorIdentity": [
-                "G"
-              ]
-            },
-            {
-              "name": "Summon: Bahamut",
-              "colorIdentity": []
-            },
-            {
-              "name": "Venat, Heart of Hydaelyn // Hydaelyn, the Mothercrystal",
-              "colorIdentity": [
-                "W"
-              ]
-            },
-            {
-              "name": "Summon: Leviathan",
-              "colorIdentity": [
-                "U"
-              ]
-            },
-            {
-              "name": "Jecht, Reluctant Guardian // Braska's Final Aeon",
-              "colorIdentity": [
-                "B"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Sacrifice Matters",
-          "description": "Payoffs that trigger off sacrificing permanents, paired with generic sacrifice outlets.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 5,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 2,
-            "uncommon": 2,
-            "rare": 0,
-            "mythic": 1
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 22,
-          "comboScore": 0,
-          "avgQuality": 4.2,
-          "topPayoffCards": [],
           "topEnablerCards": [
             {
               "name": "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
               "colorIdentity": [
                 "B"
-              ]
+              ],
+              "manaCost": ""
             },
-            {
-              "name": "Ahriman",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Namazu Trader",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Reno and Rude",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
-              "colorIdentity": [
-                "B"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "+1/+1 Counters Matter",
-          "description": "Payoffs that trigger off counters being placed, paired with generic counter-granting effects.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 30,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 6,
-            "uncommon": 11,
-            "rare": 11,
-            "mythic": 2
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 95.1,
-          "comboScore": 0,
-          "avgQuality": 2.7,
-          "topPayoffCards": [],
-          "topEnablerCards": [
             {
               "name": "Venat, Heart of Hydaelyn // Hydaelyn, the Mothercrystal",
               "colorIdentity": [
                 "W"
-              ]
+              ],
+              "manaCost": ""
             },
             {
-              "name": "Dion, Bahamut's Dominant // Bahamut, Warden of Light",
+              "name": "Coliseum Behemoth",
               "colorIdentity": [
-                "W"
-              ]
+                "G"
+              ],
+              "manaCost": "{5}{G}{G}"
             },
             {
-              "name": "Zodiark, Umbral God",
+              "name": "Clive, Ifrit's Dominant // Ifrit, Warden of Inferno",
+              "colorIdentity": [
+                "R"
+              ],
+              "manaCost": ""
+            },
+            {
+              "name": "Circle of Power",
               "colorIdentity": [
                 "B"
-              ]
-            },
-            {
-              "name": "Seymour Flux",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Sephiroth, Planet's Heir",
-              "colorIdentity": [
-                "B",
-                "U"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tokens Matter",
-          "description": "Payoffs that trigger off tokens entering, paired with generic token-creation effects.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 39,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 11,
-            "uncommon": 15,
-            "rare": 11,
-            "mythic": 2
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 99.7,
-          "comboScore": 0,
-          "avgQuality": 2.9,
-          "topPayoffCards": [],
-          "topEnablerCards": [
-            {
-              "name": "Sin, Spira's Punishment",
-              "colorIdentity": [
-                "B",
-                "G",
-                "U"
-              ]
-            },
-            {
-              "name": "Magic Pot",
-              "colorIdentity": []
-            },
-            {
-              "name": "Dion, Bahamut's Dominant // Bahamut, Warden of Light",
-              "colorIdentity": [
-                "W"
-              ]
-            },
-            {
-              "name": "Ignis Scientia",
-              "colorIdentity": [
-                "G",
-                "U"
-              ]
-            },
-            {
-              "name": "Battle Menu",
-              "colorIdentity": [
-                "W"
-              ]
+              ],
+              "manaCost": "{3}{B}"
             }
           ]
         }
       ],
       "multiRoleCards": [
         {
-          "name": "Magic Pot",
-          "colorIdentity": [],
-          "themeCount": 3,
-          "themes": [
-            "Artifacts/Treasure Matter",
-            "Graveyard/Mill Matters",
-            "Tokens Matter"
-          ]
-        },
-        {
           "name": "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
           "colorIdentity": [
             "B"
           ],
+          "manaCost": "",
           "themeCount": 3,
           "themes": [
             "Draw Matters",
@@ -18622,37 +18509,38 @@
           ]
         },
         {
-          "name": "Rook Turret",
-          "colorIdentity": [
-            "U"
-          ],
+          "name": "Magic Pot",
+          "colorIdentity": [],
+          "manaCost": "{3}",
           "themeCount": 3,
           "themes": [
-            "Draw Matters",
             "Artifacts/Treasure Matter",
-            "Graveyard/Mill Matters"
-          ]
-        },
-        {
-          "name": "Namazu Trader",
-          "colorIdentity": [
-            "B"
-          ],
-          "themeCount": 3,
-          "themes": [
-            "Sacrifice Matters",
-            "Artifacts/Treasure Matter",
+            "Graveyard/Mill Matters",
             "Tokens Matter"
           ]
         },
         {
           "name": "The Gold Saucer",
           "colorIdentity": [],
+          "manaCost": "",
           "themeCount": 3,
           "themes": [
             "Draw Matters",
             "Artifacts/Treasure Matter",
             "Tokens Matter"
+          ]
+        },
+        {
+          "name": "Rook Turret",
+          "colorIdentity": [
+            "U"
+          ],
+          "manaCost": "{3}{U}",
+          "themeCount": 3,
+          "themes": [
+            "Draw Matters",
+            "Artifacts/Treasure Matter",
+            "Graveyard/Mill Matters"
           ]
         },
         {
@@ -18661,6 +18549,7 @@
             "G",
             "R"
           ],
+          "manaCost": "{R}{G}",
           "themeCount": 3,
           "themes": [
             "Draw Matters",
@@ -18669,14 +18558,15 @@
           ]
         },
         {
-          "name": "Vaan, Street Thief",
+          "name": "Namazu Trader",
           "colorIdentity": [
-            "R"
+            "B"
           ],
+          "manaCost": "{3}{B}",
           "themeCount": 3,
           "themes": [
+            "Sacrifice Matters",
             "Artifacts/Treasure Matter",
-            "+1/+1 Counters Matter",
             "Tokens Matter"
           ]
         },
@@ -18685,10 +18575,24 @@
           "colorIdentity": [
             "B"
           ],
+          "manaCost": "",
           "themeCount": 3,
           "themes": [
             "Sacrifice Matters",
             "Artifacts/Treasure Matter",
+            "Tokens Matter"
+          ]
+        },
+        {
+          "name": "Vaan, Street Thief",
+          "colorIdentity": [
+            "R"
+          ],
+          "manaCost": "{2}{R}",
+          "themeCount": 3,
+          "themes": [
+            "Artifacts/Treasure Matter",
+            "+1/+1 Counters Matter",
             "Tokens Matter"
           ]
         }
@@ -18716,69 +18620,81 @@
           "probabilityPayoff": 98.9,
           "probabilityEnablers": 96.5,
           "comboScore": 95.4,
-          "avgQuality": 3.9,
+          "avgQuality": 4.5,
           "topPayoffCards": [
             {
               "name": "Ragnarok, Divine Deliverance",
               "colorIdentity": [
                 "B",
                 "G"
-              ]
-            },
-            {
-              "name": "Magic Pot",
-              "colorIdentity": []
-            },
-            {
-              "name": "Relentless X-ATM092",
-              "colorIdentity": []
+              ],
+              "manaCost": ""
             },
             {
               "name": "Ignis Scientia",
               "colorIdentity": [
                 "G",
                 "U"
-              ]
+              ],
+              "manaCost": "{1}{G}{U}"
             },
             {
-              "name": "Quistis Trepe",
+              "name": "Magic Pot",
+              "colorIdentity": [],
+              "manaCost": "{3}"
+            },
+            {
+              "name": "Relentless X-ATM092",
+              "colorIdentity": [],
+              "manaCost": "{6}"
+            },
+            {
+              "name": "Garland, Knight of Cornelia // Chaos, the Endless",
               "colorIdentity": [
-                "U"
-              ]
+                "B",
+                "R"
+              ],
+              "manaCost": ""
             }
           ],
           "topEnablerCards": [
-            {
-              "name": "Rook Turret",
-              "colorIdentity": [
-                "U"
-              ]
-            },
             {
               "name": "Giott, King of the Dwarves",
               "colorIdentity": [
                 "R",
                 "W"
-              ]
+              ],
+              "manaCost": "{R}{W}"
+            },
+            {
+              "name": "Rook Turret",
+              "colorIdentity": [
+                "U"
+              ],
+              "manaCost": "{3}{U}"
+            },
+            {
+              "name": "Rydia, Summoner of Mist",
+              "colorIdentity": [
+                "G",
+                "R"
+              ],
+              "manaCost": "{R}{G}"
             },
             {
               "name": "Summon: G.F. Ifrit",
               "colorIdentity": [
                 "R"
-              ]
+              ],
+              "manaCost": "{2}{R}"
             },
             {
               "name": "Locke Cole",
               "colorIdentity": [
                 "B",
                 "U"
-              ]
-            },
-            {
-              "name": "Qiqirn Merchant",
-              "colorIdentity": [
-                "U"
-              ]
+              ],
+              "manaCost": "{1}{U}{B}"
             }
           ]
         },
@@ -18802,49 +18718,55 @@
           "probabilityPayoff": 54.6,
           "probabilityEnablers": 46.5,
           "comboScore": 25.4,
-          "avgQuality": 3.2,
+          "avgQuality": 4.8,
           "topPayoffCards": [
             {
               "name": "Rook Turret",
               "colorIdentity": [
                 "U"
-              ]
+              ],
+              "manaCost": "{3}{U}"
             },
             {
               "name": "Tidus, Blitzball Star",
               "colorIdentity": [
                 "U",
                 "W"
-              ]
+              ],
+              "manaCost": "{1}{W}{U}"
             }
           ],
           "topEnablerCards": [
             {
               "name": "Magic Pot",
-              "colorIdentity": []
-            },
-            {
-              "name": "Namazu Trader",
-              "colorIdentity": [
-                "B"
-              ]
+              "colorIdentity": [],
+              "manaCost": "{3}"
             },
             {
               "name": "The Gold Saucer",
-              "colorIdentity": []
+              "colorIdentity": [],
+              "manaCost": ""
             },
             {
               "name": "Prompto Argentum",
               "colorIdentity": [
                 "R"
-              ]
+              ],
+              "manaCost": "{1}{R}"
             },
             {
-              "name": "Zidane, Tantalus Thief",
+              "name": "Namazu Trader",
               "colorIdentity": [
-                "R",
-                "W"
-              ]
+                "B"
+              ],
+              "manaCost": "{3}{B}"
+            },
+            {
+              "name": "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+              "colorIdentity": [
+                "B"
+              ],
+              "manaCost": ""
             }
           ]
         },
@@ -18868,39 +18790,44 @@
           "probabilityPayoff": 97.8,
           "probabilityEnablers": 25.5,
           "comboScore": 24.9,
-          "avgQuality": 2.5,
+          "avgQuality": 4,
           "topPayoffCards": [
             {
               "name": "Gladiolus Amicitia",
               "colorIdentity": [
                 "G",
                 "R"
-              ]
-            },
-            {
-              "name": "Summon: Fat Chocobo",
-              "colorIdentity": [
-                "G"
-              ]
+              ],
+              "manaCost": "{4}{R}{G}"
             },
             {
               "name": "Sidequest: Raise a Chocobo // Black Chocobo",
               "colorIdentity": [
                 "G"
-              ]
+              ],
+              "manaCost": ""
             },
             {
               "name": "Rydia, Summoner of Mist",
               "colorIdentity": [
                 "G",
                 "R"
-              ]
+              ],
+              "manaCost": "{R}{G}"
             },
             {
-              "name": "Sabotender",
+              "name": "Summon: Fat Chocobo",
+              "colorIdentity": [
+                "G"
+              ],
+              "manaCost": "{4}{G}"
+            },
+            {
+              "name": "Call the Mountain Chocobo",
               "colorIdentity": [
                 "R"
-              ]
+              ],
+              "manaCost": "{3}{R}"
             }
           ],
           "topEnablerCards": [
@@ -18909,298 +18836,34 @@
               "colorIdentity": [
                 "G",
                 "R"
-              ]
-            },
-            {
-              "name": "Summon: Fenrir",
-              "colorIdentity": [
-                "G"
-              ]
+              ],
+              "manaCost": "{4}{R}{G}"
             },
             {
               "name": "Sidequest: Raise a Chocobo // Black Chocobo",
               "colorIdentity": [
                 "G"
-              ]
-            },
-            {
-              "name": "Prishe's Wanderings",
-              "colorIdentity": [
-                "G"
-              ]
-            },
-            {
-              "name": "World Map",
-              "colorIdentity": []
-            }
-          ]
-        },
-        {
-          "name": "Draw Matters",
-          "description": "Payoffs that trigger off drawing cards, paired with generic card-draw sources.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 26,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 11,
-            "uncommon": 15,
-            "rare": 0,
-            "mythic": 0
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 99.5,
-          "comboScore": 0,
-          "avgQuality": 4.7,
-          "topPayoffCards": [],
-          "topEnablerCards": [
-            {
-              "name": "Coliseum Behemoth",
-              "colorIdentity": [
-                "G"
-              ]
-            },
-            {
-              "name": "Rook Turret",
-              "colorIdentity": [
-                "U"
-              ]
-            },
-            {
-              "name": "Ahriman",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Summon: Shiva",
-              "colorIdentity": [
-                "U"
-              ]
+              ],
+              "manaCost": ""
             },
             {
               "name": "Summon: Fenrir",
               "colorIdentity": [
                 "G"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Sacrifice Matters",
-          "description": "Payoffs that trigger off sacrificing permanents, paired with generic sacrifice outlets.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 4,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 2,
-            "uncommon": 2,
-            "rare": 0,
-            "mythic": 0
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 21.2,
-          "comboScore": 0,
-          "avgQuality": 3,
-          "topPayoffCards": [],
-          "topEnablerCards": [
-            {
-              "name": "Ahriman",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Namazu Trader",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Reno and Rude",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
-              "colorIdentity": [
-                "B"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "+1/+1 Counters Matter",
-          "description": "Payoffs that trigger off counters being placed, paired with generic counter-granting effects.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 17,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 6,
-            "uncommon": 11,
-            "rare": 0,
-            "mythic": 0
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 91.6,
-          "comboScore": 0,
-          "avgQuality": 1.3,
-          "topPayoffCards": [],
-          "topEnablerCards": [
-            {
-              "name": "Cloudbound Moogle",
-              "colorIdentity": [
-                "W"
-              ]
-            },
-            {
-              "name": "Sahagin",
-              "colorIdentity": [
-                "U"
-              ]
-            },
-            {
-              "name": "Quina, Qu Gourmet",
-              "colorIdentity": [
-                "G"
-              ]
-            },
-            {
-              "name": "Combat Tutorial",
-              "colorIdentity": [
-                "U"
-              ]
+              ],
+              "manaCost": "{2}{G}"
             },
             {
               "name": "Prishe's Wanderings",
               "colorIdentity": [
                 "G"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Tokens Matter",
-          "description": "Payoffs that trigger off tokens entering, paired with generic token-creation effects.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 26,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 11,
-            "uncommon": 15,
-            "rare": 0,
-            "mythic": 0
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 99.5,
-          "comboScore": 0,
-          "avgQuality": 2.6,
-          "topPayoffCards": [],
-          "topEnablerCards": [
-            {
-              "name": "Magic Pot",
-              "colorIdentity": []
+              ],
+              "manaCost": "{2}{G}"
             },
             {
-              "name": "Ignis Scientia",
-              "colorIdentity": [
-                "G",
-                "U"
-              ]
-            },
-            {
-              "name": "Battle Menu",
-              "colorIdentity": [
-                "W"
-              ]
-            },
-            {
-              "name": "Circle of Power",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Summon: Fat Chocobo",
-              "colorIdentity": [
-                "G"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Lifegain Matters",
-          "description": "Payoffs that trigger off gaining life, paired with generic lifegain effects.",
-          "payoffCardCount": 0,
-          "enablerCardCount": 11,
-          "payoffByRarity": {
-            "common": 0,
-            "uncommon": 0,
-            "rare": 0,
-            "mythic": 0
-          },
-          "enablerByRarity": {
-            "common": 7,
-            "uncommon": 4,
-            "rare": 0,
-            "mythic": 0
-          },
-          "probabilityPayoff": 0,
-          "probabilityEnablers": 87.8,
-          "comboScore": 0,
-          "avgQuality": 4.6,
-          "topPayoffCards": [],
-          "topEnablerCards": [
-            {
-              "name": "Balamb T-Rexaur",
-              "colorIdentity": [
-                "G"
-              ]
-            },
-            {
-              "name": "Battle Menu",
-              "colorIdentity": [
-                "W"
-              ]
-            },
-            {
-              "name": "Sephiroth's Intervention",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Al Bhed Salvagers",
-              "colorIdentity": [
-                "B"
-              ]
-            },
-            {
-              "name": "Exdeath, Void Warlock // Neo Exdeath, Dimension's End",
-              "colorIdentity": [
-                "B",
-                "G"
-              ]
+              "name": "World Map",
+              "colorIdentity": [],
+              "manaCost": "{1}"
             }
           ]
         }
@@ -19209,10 +18872,22 @@
         {
           "name": "Magic Pot",
           "colorIdentity": [],
+          "manaCost": "{3}",
           "themeCount": 3,
           "themes": [
             "Artifacts/Treasure Matter",
             "Graveyard/Mill Matters",
+            "Tokens Matter"
+          ]
+        },
+        {
+          "name": "The Gold Saucer",
+          "colorIdentity": [],
+          "manaCost": "",
+          "themeCount": 3,
+          "themes": [
+            "Draw Matters",
+            "Artifacts/Treasure Matter",
             "Tokens Matter"
           ]
         },
@@ -19221,33 +18896,12 @@
           "colorIdentity": [
             "U"
           ],
+          "manaCost": "{3}{U}",
           "themeCount": 3,
           "themes": [
             "Draw Matters",
             "Artifacts/Treasure Matter",
             "Graveyard/Mill Matters"
-          ]
-        },
-        {
-          "name": "Namazu Trader",
-          "colorIdentity": [
-            "B"
-          ],
-          "themeCount": 3,
-          "themes": [
-            "Sacrifice Matters",
-            "Artifacts/Treasure Matter",
-            "Tokens Matter"
-          ]
-        },
-        {
-          "name": "The Gold Saucer",
-          "colorIdentity": [],
-          "themeCount": 3,
-          "themes": [
-            "Draw Matters",
-            "Artifacts/Treasure Matter",
-            "Tokens Matter"
           ]
         },
         {
@@ -19256,6 +18910,7 @@
             "G",
             "R"
           ],
+          "manaCost": "{R}{G}",
           "themeCount": 3,
           "themes": [
             "Draw Matters",
@@ -19264,10 +18919,11 @@
           ]
         },
         {
-          "name": "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+          "name": "Namazu Trader",
           "colorIdentity": [
             "B"
           ],
+          "manaCost": "{3}{B}",
           "themeCount": 3,
           "themes": [
             "Sacrifice Matters",
@@ -19276,14 +18932,27 @@
           ]
         },
         {
-          "name": "Ignis Scientia",
+          "name": "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
           "colorIdentity": [
-            "G",
-            "U"
+            "B"
           ],
+          "manaCost": "",
+          "themeCount": 3,
+          "themes": [
+            "Sacrifice Matters",
+            "Artifacts/Treasure Matter",
+            "Tokens Matter"
+          ]
+        },
+        {
+          "name": "Circle of Power",
+          "colorIdentity": [
+            "B"
+          ],
+          "manaCost": "{3}{B}",
           "themeCount": 2,
           "themes": [
-            "Graveyard/Mill Matters",
+            "Draw Matters",
             "Tokens Matter"
           ]
         },
@@ -19292,6 +18961,7 @@
           "colorIdentity": [
             "W"
           ],
+          "manaCost": "{1}{W}",
           "themeCount": 2,
           "themes": [
             "Tokens Matter",
@@ -20352,144 +20022,144 @@
       {
         "color": "W",
         "cardCount": 47,
-        "bomb": 0.8,
-        "removal": 0.9,
+        "bomb": 0.6,
+        "removal": 0.4,
         "evasion": 0.4,
-        "aggro": 0.3,
-        "diversity": 0.3,
-        "overall": 2.7
+        "aggro": 0.6,
+        "diversity": 1,
+        "overall": 3
       },
       {
         "color": "U",
         "cardCount": 44,
-        "bomb": 1,
-        "removal": 0.5,
+        "bomb": 0.4,
+        "removal": 0.3,
         "evasion": 0.5,
-        "aggro": 0.1,
-        "diversity": 0.6,
-        "overall": 2.8
+        "aggro": 0.2,
+        "diversity": 1.3,
+        "overall": 2.6
       },
       {
         "color": "B",
         "cardCount": 45,
-        "bomb": 1.1,
-        "removal": 1.2,
+        "bomb": 0.7,
+        "removal": 0.6,
         "evasion": 0.4,
-        "aggro": 0.4,
-        "diversity": 0.6,
-        "overall": 3.6
+        "aggro": 0.7,
+        "diversity": 1.6,
+        "overall": 3.9
       },
       {
         "color": "R",
         "cardCount": 46,
-        "bomb": 0.9,
-        "removal": 0.8,
+        "bomb": 0.4,
+        "removal": 0.4,
         "evasion": 0.1,
-        "aggro": 0.6,
-        "diversity": 0.3,
-        "overall": 2.6
+        "aggro": 1.1,
+        "diversity": 1,
+        "overall": 3
       },
       {
         "color": "G",
         "cardCount": 42,
-        "bomb": 1.7,
-        "removal": 0.7,
+        "bomb": 1,
+        "removal": 0.3,
         "evasion": 0.2,
-        "aggro": 0.5,
-        "diversity": 0.4,
-        "overall": 3.5
+        "aggro": 0.9,
+        "diversity": 1.2,
+        "overall": 3.7
       },
       {
         "color": "multi",
         "cardCount": 57,
-        "bomb": 2,
-        "removal": 0.4,
+        "bomb": 1.2,
+        "removal": 0.2,
         "evasion": 0.6,
-        "aggro": 0.4,
-        "diversity": 0.7,
-        "overall": 4.1
+        "aggro": 0.8,
+        "diversity": 1.9,
+        "overall": 4.8
       },
       {
         "color": "C",
         "cardCount": 31,
-        "bomb": 1,
-        "removal": 0.6,
+        "bomb": 0.2,
+        "removal": 0.3,
         "evasion": 0.5,
-        "aggro": 0.3,
-        "diversity": 1,
-        "overall": 3.3
+        "aggro": 0.6,
+        "diversity": 1.8,
+        "overall": 3.4
       }
     ],
     "commonsOnly": [
       {
         "color": "W",
         "cardCount": 31,
-        "bomb": 0.7,
-        "removal": 0.9,
+        "bomb": 0.3,
+        "removal": 0.5,
         "evasion": 0.5,
-        "aggro": 0.4,
-        "diversity": 0.3,
-        "overall": 2.8
+        "aggro": 0.8,
+        "diversity": 1,
+        "overall": 3
       },
       {
         "color": "U",
         "cardCount": 31,
-        "bomb": 0.7,
-        "removal": 0.5,
+        "bomb": 0.2,
+        "removal": 0.3,
         "evasion": 0.5,
-        "aggro": 0.1,
-        "diversity": 0.6,
-        "overall": 2.4
+        "aggro": 0.3,
+        "diversity": 1.3,
+        "overall": 2.6
       },
       {
         "color": "B",
         "cardCount": 31,
-        "bomb": 0.8,
-        "removal": 0.7,
+        "bomb": 0.4,
+        "removal": 0.3,
         "evasion": 0.2,
-        "aggro": 0.4,
-        "diversity": 0.4,
-        "overall": 2.4
+        "aggro": 0.8,
+        "diversity": 1.2,
+        "overall": 2.9
       },
       {
         "color": "R",
         "cardCount": 31,
-        "bomb": 0.7,
-        "removal": 0.7,
+        "bomb": 0.3,
+        "removal": 0.4,
         "evasion": 0.1,
-        "aggro": 0.7,
-        "diversity": 0.3,
-        "overall": 2.4
+        "aggro": 1.5,
+        "diversity": 0.8,
+        "overall": 3
       },
       {
         "color": "G",
         "cardCount": 30,
-        "bomb": 1.4,
-        "removal": 0.4,
+        "bomb": 0.3,
+        "removal": 0.2,
         "evasion": 0.2,
-        "aggro": 0.5,
-        "diversity": 0.5,
-        "overall": 2.9
+        "aggro": 1,
+        "diversity": 1.1,
+        "overall": 2.8
       },
       {
         "color": "multi",
         "cardCount": 32,
-        "bomb": 1.6,
-        "removal": 0.4,
+        "bomb": 1.1,
+        "removal": 0.2,
         "evasion": 0.5,
-        "aggro": 0.3,
-        "diversity": 0.9,
-        "overall": 3.8
+        "aggro": 0.7,
+        "diversity": 1.9,
+        "overall": 4.4
       },
       {
         "color": "C",
         "cardCount": 19,
-        "bomb": 0.9,
-        "removal": 0.7,
+        "bomb": 0.3,
+        "removal": 0.4,
         "evasion": 0.5,
-        "aggro": 0.2,
-        "diversity": 1.1,
-        "overall": 3.3
+        "aggro": 0.3,
+        "diversity": 2.3,
+        "overall": 3.7
       }
     ]
   },
@@ -20538,5 +20208,459 @@
         "duplicateChance": 0
       }
     }
+  },
+  "manaCurveByColor": {
+    "all": [
+      {
+        "color": "W",
+        "counts": {
+          "0": 0,
+          "1": 4,
+          "2": 5,
+          "3": 6,
+          "4": 5,
+          "5": 3,
+          "6+": 2
+        },
+        "total": 25
+      },
+      {
+        "color": "U",
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 4,
+          "3": 6,
+          "4": 1,
+          "5": 1,
+          "6+": 6
+        },
+        "total": 18
+      },
+      {
+        "color": "B",
+        "counts": {
+          "0": 0,
+          "1": 1,
+          "2": 5,
+          "3": 8,
+          "4": 4,
+          "5": 4,
+          "6+": 4
+        },
+        "total": 26
+      },
+      {
+        "color": "R",
+        "counts": {
+          "0": 0,
+          "1": 2,
+          "2": 5,
+          "3": 7,
+          "4": 4,
+          "5": 1,
+          "6+": 3
+        },
+        "total": 22
+      },
+      {
+        "color": "G",
+        "counts": {
+          "0": 0,
+          "1": 3,
+          "2": 6,
+          "3": 4,
+          "4": 2,
+          "5": 3,
+          "6+": 5
+        },
+        "total": 23
+      },
+      {
+        "color": "multi",
+        "counts": {
+          "0": 0,
+          "1": 1,
+          "2": 9,
+          "3": 13,
+          "4": 9,
+          "5": 8,
+          "6+": 6
+        },
+        "total": 46
+      },
+      {
+        "color": "C",
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 0,
+          "5": 1,
+          "6+": 3
+        },
+        "total": 6
+      }
+    ],
+    "commonsOnly": [
+      {
+        "color": "W",
+        "counts": {
+          "0": 0,
+          "1": 2,
+          "2": 4,
+          "3": 4,
+          "4": 3,
+          "5": 2,
+          "6+": 0
+        },
+        "total": 15
+      },
+      {
+        "color": "U",
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 4,
+          "3": 3,
+          "4": 1,
+          "5": 1,
+          "6+": 2
+        },
+        "total": 11
+      },
+      {
+        "color": "B",
+        "counts": {
+          "0": 0,
+          "1": 1,
+          "2": 4,
+          "3": 6,
+          "4": 2,
+          "5": 1,
+          "6+": 2
+        },
+        "total": 16
+      },
+      {
+        "color": "R",
+        "counts": {
+          "0": 0,
+          "1": 2,
+          "2": 3,
+          "3": 3,
+          "4": 2,
+          "5": 1,
+          "6+": 1
+        },
+        "total": 12
+      },
+      {
+        "color": "G",
+        "counts": {
+          "0": 0,
+          "1": 3,
+          "2": 4,
+          "3": 3,
+          "4": 1,
+          "5": 1,
+          "6+": 3
+        },
+        "total": 15
+      },
+      {
+        "color": "multi",
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 6,
+          "3": 6,
+          "4": 3,
+          "5": 4,
+          "6+": 3
+        },
+        "total": 22
+      },
+      {
+        "color": "C",
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 0,
+          "5": 0,
+          "6+": 2
+        },
+        "total": 4
+      }
+    ]
+  },
+  "curveFitByPair": {
+    "all": [
+      {
+        "colors": "WB",
+        "expected": {
+          "0": 0,
+          "1": 1.1,
+          "2": 3.6,
+          "3": 5,
+          "4": 2.1,
+          "5": 1.3,
+          "6+": 1.8
+        },
+        "curveFitPercent": 81.3
+      },
+      {
+        "colors": "BG",
+        "expected": {
+          "0": 0,
+          "1": 1.1,
+          "2": 3.5,
+          "3": 4.2,
+          "4": 1.8,
+          "5": 1.3,
+          "6+": 3
+        },
+        "curveFitPercent": 73.8
+      },
+      {
+        "colors": "WG",
+        "expected": {
+          "0": 0,
+          "1": 1.9,
+          "2": 3.6,
+          "3": 3.4,
+          "4": 1.8,
+          "5": 1.9,
+          "6+": 2
+        },
+        "curveFitPercent": 73.1
+      },
+      {
+        "colors": "UB",
+        "expected": {
+          "0": 0,
+          "1": 0.2,
+          "2": 3.4,
+          "3": 4.9,
+          "4": 1.6,
+          "5": 0.7,
+          "6+": 2.8
+        },
+        "curveFitPercent": 72.5
+      },
+      {
+        "colors": "WU",
+        "expected": {
+          "0": 0,
+          "1": 0.9,
+          "2": 3.4,
+          "3": 4.1,
+          "4": 1.9,
+          "5": 1.1,
+          "6+": 2
+        },
+        "curveFitPercent": 71.9
+      },
+      {
+        "colors": "BR",
+        "expected": {
+          "0": 0,
+          "1": 1,
+          "2": 3.5,
+          "3": 4.8,
+          "4": 1.6,
+          "5": 0.6,
+          "6+": 2.5
+        },
+        "curveFitPercent": 71.9
+      },
+      {
+        "colors": "WR",
+        "expected": {
+          "0": 0,
+          "1": 1.7,
+          "2": 3.5,
+          "3": 4.1,
+          "4": 1.5,
+          "5": 1.3,
+          "6+": 1.6
+        },
+        "curveFitPercent": 71.3
+      },
+      {
+        "colors": "UR",
+        "expected": {
+          "0": 0,
+          "1": 0.8,
+          "2": 3.4,
+          "3": 4.1,
+          "4": 1.1,
+          "5": 0.5,
+          "6+": 2.6
+        },
+        "curveFitPercent": 63.1
+      },
+      {
+        "colors": "UG",
+        "expected": {
+          "0": 0,
+          "1": 1,
+          "2": 3.4,
+          "3": 3.4,
+          "4": 1.3,
+          "5": 1,
+          "6+": 3.1
+        },
+        "curveFitPercent": 63.1
+      },
+      {
+        "colors": "RG",
+        "expected": {
+          "0": 0,
+          "1": 1.7,
+          "2": 3.6,
+          "3": 3.3,
+          "4": 1.1,
+          "5": 1,
+          "6+": 2.8
+        },
+        "curveFitPercent": 62.5
+      }
+    ],
+    "commonsOnly": [
+      {
+        "colors": "WB",
+        "expected": {
+          "0": 0,
+          "1": 1,
+          "2": 3.5,
+          "3": 4.7,
+          "4": 1.7,
+          "5": 1,
+          "6+": 1.6
+        },
+        "curveFitPercent": 74.4
+      },
+      {
+        "colors": "BG",
+        "expected": {
+          "0": 0,
+          "1": 1.1,
+          "2": 3.3,
+          "3": 4.1,
+          "4": 1.6,
+          "5": 1,
+          "6+": 2.7
+        },
+        "curveFitPercent": 68.8
+      },
+      {
+        "colors": "WG",
+        "expected": {
+          "0": 0,
+          "1": 1.7,
+          "2": 3.5,
+          "3": 3.2,
+          "4": 1.6,
+          "5": 1.6,
+          "6+": 1.7
+        },
+        "curveFitPercent": 68.1
+      },
+      {
+        "colors": "WU",
+        "expected": {
+          "0": 0,
+          "1": 0.8,
+          "2": 3.3,
+          "3": 3.8,
+          "4": 1.7,
+          "5": 1,
+          "6+": 1.6
+        },
+        "curveFitPercent": 67.5
+      },
+      {
+        "colors": "UB",
+        "expected": {
+          "0": 0,
+          "1": 0.2,
+          "2": 3.3,
+          "3": 4.6,
+          "4": 1.4,
+          "5": 0.5,
+          "6+": 2.4
+        },
+        "curveFitPercent": 67.5
+      },
+      {
+        "colors": "WR",
+        "expected": {
+          "0": 0,
+          "1": 1.6,
+          "2": 3.3,
+          "3": 3.6,
+          "4": 1.3,
+          "5": 1.1,
+          "6+": 1.4
+        },
+        "curveFitPercent": 64.4
+      },
+      {
+        "colors": "BR",
+        "expected": {
+          "0": 0,
+          "1": 1,
+          "2": 3.3,
+          "3": 4.4,
+          "4": 1.3,
+          "5": 0.3,
+          "6+": 2.2
+        },
+        "curveFitPercent": 64.4
+      },
+      {
+        "colors": "UG",
+        "expected": {
+          "0": 0,
+          "1": 1,
+          "2": 3.3,
+          "3": 3.2,
+          "4": 1.3,
+          "5": 0.8,
+          "6+": 2.7
+        },
+        "curveFitPercent": 60
+      },
+      {
+        "colors": "UR",
+        "expected": {
+          "0": 0,
+          "1": 0.8,
+          "2": 3.3,
+          "3": 3.6,
+          "4": 1,
+          "5": 0.3,
+          "6+": 2.2
+        },
+        "curveFitPercent": 57.5
+      },
+      {
+        "colors": "RG",
+        "expected": {
+          "0": 0,
+          "1": 1.7,
+          "2": 3.3,
+          "3": 3,
+          "4": 1,
+          "5": 0.8,
+          "6+": 2.5
+        },
+        "curveFitPercent": 56.9
+      }
+    ]
   }
 }
