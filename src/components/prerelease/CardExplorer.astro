@@ -63,13 +63,14 @@ const sorted = [...cards].sort((a, b) => b.bread.overall - a.bread.overall)
         class="card-item glass-panel rounded-xl overflow-hidden flex gap-3 p-3"
         data-tags={card.bread.tags.join(',')}
         data-colors={(card.colorIdentity.length ? card.colorIdentity : ['C']).join(',')}
+        data-card-name={card.name}
       >
         {card.image && (
           <img src={card.image} alt={card.name} class="w-16 h-auto rounded-md flex-shrink-0" loading="lazy" />
         )}
         <div class="min-w-0">
           <div class="flex items-baseline justify-between gap-2">
-            <h4 class="font-semibold text-sm text-on-surface truncate">{card.name}</h4>
+            <h4 class="font-semibold text-sm text-on-surface truncate cursor-default">{card.name}</h4>
             <span class="text-[11px] text-on-surface-variant/60 flex-shrink-0">{card.manaCost}</span>
           </div>
           <p class="text-[11px] text-on-surface-variant/70 mb-2 truncate">{card.typeLine}</p>

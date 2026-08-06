@@ -51,6 +51,13 @@ const prerelease = defineCollection({
     synergyIntro: z.string().optional(),
     breadIntro: z.string(),
     analysisIntro: z.string().optional(),
+    introText: z.string().optional(),
+    wordCloudIntro: z.string().optional(),
+    kindredIntro: z.string().optional(),
+    blockAloneConclusion: z.string().optional(),
+    mechanicsIntro: z.string().optional(),
+    breadByColorIntro: z.string().optional(),
+    conclusionText: z.string().optional(),
   }),
 })
 
@@ -64,21 +71,157 @@ const breadScoreSchema = z.object({
   tags: z.array(z.string()),
 })
 
+const byRaritySchema = z.record(z.string(), z.number())
+
+const colorStatsSchema = z.object({
+  cardCount: z.number(),
+  byColor: z.record(z.string(), z.object({
+    total: z.number(),
+    creature: z.number(),
+    nonCreature: z.number(),
+  })),
+  byRarity: byRaritySchema,
+})
+
+const manaCombosSchema = z.array(z.object({
+  colors: z.string(),
+  cardCount: z.number(),
+  avgBomb: z.number(),
+  avgOverall: z.number(),
+  topCards: z.array(z.string()),
+  byRarity: byRaritySchema,
+  pullChance: z.number(),
+}))
+
+const wordEntrySchema = z.object({
+  word: z.string(),
+  count: z.number(),
+  byRarity: byRaritySchema,
+  byColor: z.record(z.string(), z.number()),
+  pullChance: z.number(),
+})
+
+const mechanicEntrySchema = z.object({
+  mechanic: z.string(),
+  count: z.number(),
+  synergyCount: z.number(),
+  byRarity: byRaritySchema,
+  pullChance: z.number(),
+  description: z.string().optional(),
+})
+
+const synergyCombinationsSchema = z.array(z.object({
+  mechanics: z.array(z.string()),
+  count: z.number(),
+  examples: z.array(z.string()),
+  verdict: z.enum(['confirmed', 'coincidental', 'unclear']),
+  mechanism: z.string().optional(),
+}))
+
+const crossCardSynergiesSchema = z.object({
+  synergies: z.array(z.object({
+    name: z.string(),
+    description: z.string(),
+    payoffCardCount: z.number(),
+    enablerCardCount: z.number(),
+    payoffByRarity: byRaritySchema,
+    enablerByRarity: byRaritySchema,
+    probabilityPayoff: z.number(),
+    probabilityEnablers: z.number(),
+    comboScore: z.number(),
+    avgQuality: z.number(),
+    topPayoffCards: z.array(z.object({ name: z.string(), colorIdentity: z.array(z.string()) })),
+    topEnablerCards: z.array(z.object({ name: z.string(), colorIdentity: z.array(z.string()) })),
+  })),
+  multiRoleCards: z.array(z.object({
+    name: z.string(),
+    colorIdentity: z.array(z.string()),
+    themeCount: z.number(),
+    themes: z.array(z.string()),
+  })),
+})
+
+const archetypeAnalysisSchema = z.array(z.object({
+  colors: z.string(),
+  name: z.string(),
+  mechanic: z.string(),
+  description: z.string(),
+  supportCardCount: z.number(),
+  byRarity: byRaritySchema,
+  expectedCount: z.number(),
+  probabilityAtLeastOne: z.number(),
+  probabilityPlayable: z.number(),
+  avgQuality: z.number(),
+  setWideAvgQuality: z.number(),
+  rankAmongPairs: z.number().nullable(),
+  totalPairs: z.number(),
+  signalCards: z.array(z.string()),
+  verdict: z.enum(['wellSupported', 'plentifulButWeak', 'rareButStrong', 'dataDisagrees', 'insufficient']),
+  alternativeSignal: z.object({
+    mechanic: z.string(),
+    cardCount: z.number(),
+    avgOverall: z.number(),
+  }).nullable(),
+}))
+
+const creatureTypesSchema = z.object({
+  subtypes: z.array(z.object({
+    subtype: z.string(),
+    count: z.number(),
+    byColor: z.record(z.string(), z.number()),
+    byRarity: byRaritySchema,
+    pullChance: z.number(),
+  })),
+  kindredSignals: z.array(z.object({
+    color: z.string(),
+    subtype: z.string(),
+    count: z.number(),
+    concentration: z.number(),
+  })),
+  kindredSignalsByPair: z.array(z.object({
+    colors: z.string(),
+    subtype: z.string(),
+    count: z.number(),
+    concentration: z.number(),
+  })),
+  subtypeColorAffinity: z.array(z.object({
+    subtype: z.string(),
+    count: z.number(),
+    W: z.number(),
+    U: z.number(),
+    B: z.number(),
+    R: z.number(),
+    G: z.number(),
+  })),
+})
+
+const breadByColorSchema = z.array(z.object({
+  color: z.string(),
+  cardCount: z.number(),
+  bomb: z.number(),
+  removal: z.number(),
+  evasion: z.number(),
+  aggro: z.number(),
+  diversity: z.number(),
+  overall: z.number(),
+}))
+
+const boosterOddsSchema = z.record(z.string(), z.object({
+  uniqueCount: z.number(),
+  slotsOpened: z.number(),
+  duplicateChance: z.number(),
+}))
+
+/** Wraps a per-pool schema in the {all, commonsOnly} shape every rarity-sensitive field carries — see the "Remove Rares/Mythics" toggle in analyze.mjs's computeForPool. */
+const dual = (schema) => z.object({ all: schema, commonsOnly: schema })
+
 const prereleaseData = defineCollection({
   type: 'data',
   schema: z.object({
     setCode: z.string(),
     generatedAt: z.string(),
     cardCount: z.number(),
-    colorStats: z.object({
-      cardCount: z.number(),
-      byColor: z.record(z.string(), z.object({
-        total: z.number(),
-        creature: z.number(),
-        nonCreature: z.number(),
-      })),
-      byRarity: z.record(z.string(), z.number()),
-    }),
+    colorStats: dual(colorStatsSchema),
     cards: z.array(z.object({
       name: z.string(),
       oracleId: z.string(),
@@ -91,77 +234,26 @@ const prereleaseData = defineCollection({
       image: z.string().optional(),
       bread: breadScoreSchema,
     })),
-    bestCards: z.array(z.string()),
-    manaCombos: z.array(z.object({
-      colors: z.string(),
-      cardCount: z.number(),
-      avgBomb: z.number(),
-      avgOverall: z.number(),
-      topCards: z.array(z.string()),
-    })),
-    wordCloud: z.array(z.object({ word: z.string(), count: z.number() })),
-    topWords: z.array(z.object({ word: z.string(), count: z.number() })),
-    wordColorMatrix: z.array(z.object({
+    bestCards: dual(z.array(z.string())),
+    manaCombos: dual(manaCombosSchema),
+    wordCloud: dual(z.array(wordEntrySchema)),
+    topWords: dual(z.array(wordEntrySchema)),
+    wordColorMatrix: dual(z.array(z.object({
       word: z.string(),
       byColor: z.record(z.string(), z.number()),
-    })),
-    mechanics: z.array(z.object({
-      mechanic: z.string(),
-      count: z.number(),
-      synergyCount: z.number(),
-      description: z.string().optional(),
-    })),
-    mechanicColorMatrix: z.array(z.object({
+    }))),
+    mechanics: dual(z.array(mechanicEntrySchema)),
+    mechanicColorMatrix: dual(z.array(z.object({
       mechanic: z.string(),
       byColor: z.record(z.string(), z.number()),
-    })),
-    mechanicsBySynergy: z.array(z.object({
-      mechanic: z.string(),
-      count: z.number(),
-      synergyCount: z.number(),
-      description: z.string().optional(),
-    })),
-    synergyCombinations: z.array(z.object({
-      mechanics: z.array(z.string()),
-      count: z.number(),
-      examples: z.array(z.string()),
-    })),
-    archetypeAnalysis: z.array(z.object({
-      colors: z.string(),
-      name: z.string(),
-      mechanic: z.string(),
-      description: z.string(),
-      supportCardCount: z.number(),
-      byRarity: z.record(z.string(), z.number()),
-      expectedCount: z.number(),
-      probabilityAtLeastOne: z.number(),
-      probabilityPlayable: z.number(),
-      avgQuality: z.number(),
-      setWideAvgQuality: z.number(),
-      rankAmongPairs: z.number().nullable(),
-      totalPairs: z.number(),
-      signalCards: z.array(z.string()),
-      verdict: z.enum(['wellSupported', 'plentifulButWeak', 'rareButStrong', 'dataDisagrees', 'insufficient']),
-    })),
-    creatureTypes: z.object({
-      subtypes: z.array(z.object({
-        subtype: z.string(),
-        count: z.number(),
-        byColor: z.record(z.string(), z.number()),
-      })),
-      kindredSignals: z.array(z.object({
-        color: z.string(),
-        subtype: z.string(),
-        count: z.number(),
-        concentration: z.number(),
-      })),
-      kindredSignalsByPair: z.array(z.object({
-        colors: z.string(),
-        subtype: z.string(),
-        count: z.number(),
-        concentration: z.number(),
-      })),
-    }),
+    }))),
+    mechanicsBySynergy: dual(z.array(mechanicEntrySchema)),
+    synergyCombinations: dual(synergyCombinationsSchema),
+    crossCardSynergies: dual(crossCardSynergiesSchema),
+    archetypeAnalysis: dual(archetypeAnalysisSchema),
+    creatureTypes: dual(creatureTypesSchema),
+    breadByColor: dual(breadByColorSchema),
+    boosterOdds: dual(boosterOddsSchema),
   }),
 })
 

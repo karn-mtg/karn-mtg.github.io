@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { colorKey } from './util.mjs'
 import { poissonAtLeast } from './poisson.mjs'
+import { expectedSealedCount } from './sealedProbability.mjs'
 
 const RARITIES = ['common', 'uncommon', 'rare', 'mythic']
 
@@ -31,7 +32,20 @@ function isSubsetColorIdentity(colorIdentity, archColorSet) {
  *    or the reverse (rare/mythic-gated, unlikely, but powerful when it
  *    lands) — the user specifically wants both signals, not just one.
  */
-export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos, archetypeDefs, sealedConfig) {
+const WEAK_VERDICTS = new Set(['insufficient', 'dataDisagrees', 'plentifulButWeak'])
+const MIN_ALTERNATIVE_SUPPORT = 3
+
+function findAlternativeSignal(archColors, ownMechanic, mechanicsByColorPair) {
+  const candidates = mechanicsByColorPair
+    .filter(m => m.colors === archColors && m.mechanic !== ownMechanic && m.cardCount >= MIN_ALTERNATIVE_SUPPORT)
+    .sort((a, b) => (b.cardCount * b.avgOverall) - (a.cardCount * a.avgOverall))
+
+  if (candidates.length === 0) return null
+  const { mechanic, cardCount, avgOverall } = candidates[0]
+  return { mechanic, cardCount, avgOverall }
+}
+
+export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos, archetypeDefs, sealedConfig, mechanicsByColorPair = []) {
   if (archetypeDefs.length === 0) return []
 
   const setWideAvgQuality = round(
@@ -48,18 +62,7 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
 
     const byRarity = Object.fromEntries(RARITIES.map(r => [r, supportCards.filter(c => c.rarity === r).length]))
 
-    let expectedCount = 0
-    for (const rarity of ['common', 'uncommon']) {
-      const total = byRarityTotals[rarity]
-      if (!total) continue
-      expectedCount += sealedConfig.packsOpened * sealedConfig.slotsPerPack[rarity] * (byRarity[rarity] / total)
-    }
-    if (byRarityTotals.rare) {
-      expectedCount += sealedConfig.packsOpened * sealedConfig.slotsPerPack.rare * (1 - sealedConfig.mythicRate) * (byRarity.rare / byRarityTotals.rare)
-    }
-    if (byRarityTotals.mythic) {
-      expectedCount += sealedConfig.packsOpened * sealedConfig.slotsPerPack.rare * sealedConfig.mythicRate * (byRarity.mythic / byRarityTotals.mythic)
-    }
+    const expectedCount = expectedSealedCount(byRarity, byRarityTotals, sealedConfig)
 
     const probabilityAtLeastOne = round(poissonAtLeast(expectedCount, 1) * 100)
     const probabilityPlayable = round(poissonAtLeast(expectedCount, sealedConfig.playableThreshold) * 100)
@@ -88,6 +91,10 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
     else if (isPlayable && !isQuality) verdict = 'plentifulButWeak'
     else verdict = 'wellSupported'
 
+    const alternativeSignal = WEAK_VERDICTS.has(verdict)
+      ? findAlternativeSignal(archColors, def.mechanic, mechanicsByColorPair)
+      : null
+
     return {
       colors: archColors,
       name: def.name,
@@ -104,6 +111,7 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
       totalPairs: manaCombos.length,
       signalCards,
       verdict,
+      alternativeSignal,
     }
   })
 }

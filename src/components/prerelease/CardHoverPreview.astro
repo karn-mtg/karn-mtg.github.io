@@ -1,0 +1,64 @@
+---
+interface Props {
+  cardImageMap: Record<string, string>
+}
+
+const { cardImageMap } = Astro.props
+---
+
+<script type="application/json" id="card-image-map" set:html={JSON.stringify(cardImageMap)} />
+
+<div id="card-hover-preview" class="hidden fixed z-50 pointer-events-none">
+  <img id="card-hover-preview-img" alt="" class="w-[260px] h-auto rounded-xl shadow-2xl border border-white/10" />
+</div>
+
+<script>
+  const mapEl = document.getElementById('card-image-map')
+  const imageMap: Record<string, string> = mapEl ? JSON.parse(mapEl.textContent || '{}') : {}
+
+  const preview = document.getElementById('card-hover-preview') as HTMLElement
+  const previewImg = document.getElementById('card-hover-preview-img') as HTMLImageElement
+
+  const PREVIEW_WIDTH = 260
+  const OFFSET = 16
+
+  function position(x: number, y: number) {
+    const maxX = window.innerWidth - PREVIEW_WIDTH - OFFSET
+    const maxY = window.innerHeight - preview.offsetHeight - OFFSET
+    let left = x + OFFSET
+    let top = y + OFFSET
+    if (left > maxX) left = x - PREVIEW_WIDTH - OFFSET
+    if (top > maxY) top = Math.max(OFFSET, y - preview.offsetHeight - OFFSET)
+    preview.style.left = `${Math.max(OFFSET, left)}px`
+    preview.style.top = `${Math.max(OFFSET, top)}px`
+  }
+
+  function findCardName(target: EventTarget | null): string | null {
+    if (!(target instanceof Element)) return null
+    const el = target.closest<HTMLElement>('[data-card-name]')
+    return el?.dataset.cardName ?? null
+  }
+
+  document.addEventListener('mouseover', e => {
+    const name = findCardName(e.target)
+    if (!name) return
+    const src = imageMap[name]
+    if (!src) return
+    previewImg.src = src
+    preview.classList.remove('hidden')
+    position(e.clientX, e.clientY)
+  })
+
+  document.addEventListener('mousemove', e => {
+    if (preview.classList.contains('hidden')) return
+    position(e.clientX, e.clientY)
+  })
+
+  document.addEventListener('mouseout', e => {
+    const stillOverName = findCardName(e.relatedTarget)
+    if (stillOverName) return
+    const name = findCardName(e.target)
+    if (!name) return
+    preview.classList.add('hidden')
+  })
+</script>

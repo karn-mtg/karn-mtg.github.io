@@ -1,0 +1,47 @@
+---
+import { t, type Lang } from '../../i18n'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const i18n = t(lang)
+---
+
+<button
+  id="rarity-toggle"
+  type="button"
+  class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 bg-surface/90 backdrop-blur shadow-lg text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors"
+  aria-pressed="false"
+>
+  <span class="w-2 h-2 rounded-full bg-primary"></span>
+  <span id="rarity-toggle-label">{i18n.rarityToggleAllLabel}</span>
+</button>
+
+<style is:global>
+  :root:not([data-rarity-view]) .rarity-commonsOnly-only,
+  [data-rarity-view='all'] .rarity-commonsOnly-only { display: none; }
+  [data-rarity-view='commonsOnly'] .rarity-all-only { display: none; }
+</style>
+
+<script define:vars={{ allLabel: i18n.rarityToggleAllLabel, commonsOnlyLabel: i18n.rarityToggleCommonsOnlyLabel }}>
+  const STORAGE_KEY = 'karn-rarity-view'
+  const btn = document.getElementById('rarity-toggle')
+  const label = document.getElementById('rarity-toggle-label')
+
+  function apply(view) {
+    document.documentElement.dataset.rarityView = view
+    if (label) label.textContent = view === 'commonsOnly' ? commonsOnlyLabel : allLabel
+    if (btn) btn.setAttribute('aria-pressed', String(view === 'commonsOnly'))
+  }
+
+  const stored = localStorage.getItem(STORAGE_KEY)
+  apply(stored === 'commonsOnly' ? 'commonsOnly' : 'all')
+
+  btn?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.rarityView === 'commonsOnly' ? 'all' : 'commonsOnly'
+    localStorage.setItem(STORAGE_KEY, next)
+    apply(next)
+  })
+</script>

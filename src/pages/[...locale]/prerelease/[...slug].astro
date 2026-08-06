@@ -3,7 +3,6 @@ import { getCollection, getEntry, render } from 'astro:content'
 import BaseLayout from '../../../layouts/BaseLayout.astro'
 import SiteNav from '../../../components/SiteNav.astro'
 import StatTile from '../../../components/prerelease/StatTile.astro'
-import ColorDistributionChart from '../../../components/prerelease/ColorDistributionChart.astro'
 import BreadDefinitions from '../../../components/prerelease/BreadDefinitions.astro'
 import CardExplorer from '../../../components/prerelease/CardExplorer.astro'
 import BestCardsList from '../../../components/prerelease/BestCardsList.astro'
@@ -11,13 +10,20 @@ import ManaComboRanking from '../../../components/prerelease/ManaComboRanking.as
 import KindredSignals from '../../../components/prerelease/KindredSignals.astro'
 import GuildSignals from '../../../components/prerelease/GuildSignals.astro'
 import WordCloudViz from '../../../components/prerelease/WordCloudViz.astro'
-import TopWordsList from '../../../components/prerelease/TopWordsList.astro'
 import MatrixHeatmap from '../../../components/prerelease/MatrixHeatmap.astro'
 import MechanicsList from '../../../components/prerelease/MechanicsList.astro'
 import SynergyCombosTable from '../../../components/prerelease/SynergyCombosTable.astro'
-import ArchetypeAnalysis from '../../../components/prerelease/ArchetypeAnalysis.astro'
+import CrossCardSynergyTable from '../../../components/prerelease/CrossCardSynergyTable.astro'
+import CondensedArchetypeTable from '../../../components/prerelease/CondensedArchetypeTable.astro'
 import AtAGlance from '../../../components/prerelease/AtAGlance.astro'
 import SectionNav from '../../../components/prerelease/SectionNav.astro'
+import RarityToggle from '../../../components/prerelease/RarityToggle.astro'
+import WeightedColorRankTable from '../../../components/prerelease/WeightedColorRankTable.astro'
+import PentagramGraph from '../../../components/prerelease/PentagramGraph.astro'
+import BreadByColorChart from '../../../components/prerelease/BreadByColorChart.astro'
+import ConclusionSynthesis from '../../../components/prerelease/ConclusionSynthesis.astro'
+import ManaSymbol from '../../../components/prerelease/ManaSymbol.astro'
+import CardHoverPreview from '../../../components/prerelease/CardHoverPreview.astro'
 import { locales, contentPrefix, prereleaseBase, t } from '../../../i18n'
 
 export async function getStaticPaths() {
@@ -46,19 +52,62 @@ const formattedDate = new Date(article.data.date).toLocaleDateString(i18n.dateLo
   year: 'numeric', month: 'long', day: 'numeric',
 })
 
-const bestCards = data.data.bestCards
+const bestCards = data.data.bestCards.all
   .map(name => data.data.cards.find(c => c.name === name))
   .filter((c): c is NonNullable<typeof c> => Boolean(c))
 
-const hasAnalysis = data.data.archetypeAnalysis.length > 0
+const hasAnalysis = data.data.archetypeAnalysis.all.length > 0
+
+const cardImageMap = Object.fromEntries(
+  data.data.cards.filter(c => c.image).map(c => [c.name, c.image as string])
+)
 
 const sections = [
   { id: 'general-info', label: i18n.generalInfoHeading },
-  { id: 'synergy', label: i18n.synergyHeading },
-  { id: 'bread', label: i18n.breadHeading },
-  ...(hasAnalysis ? [{ id: 'analysis', label: i18n.analysisHeading }] : []),
-  { id: 'explore', label: i18n.cardExplorerHeading },
+  { id: 'block-alone', label: i18n.blockAloneHeading },
+  { id: 'block-wizards', label: i18n.blockWizardsHeading },
+  { id: 'block-bread', label: i18n.blockBreadHeading },
+  { id: 'conclusion', label: i18n.conclusionHeading },
 ]
+
+// Set-size comparison against every other set already analyzed (Phase 1 intro stat).
+const allSetsData = await getCollection('prerelease-data')
+const otherSets = allSetsData.filter(s => s.id !== data.id)
+const avgOtherCardCount = otherSets.length > 0
+  ? Math.round(otherSets.reduce((sum, s) => sum + s.data.cardCount, 0) / otherSets.length)
+  : 0
+const sizeDiffPct = avgOtherCardCount > 0 ? Math.round(((data.data.cardCount - avgOtherCardCount) / avgOtherCardCount) * 100) : 0
+const sizeComparisonText = otherSets.length === 0
+  ? null
+  : Math.abs(sizeDiffPct) < 3
+    ? i18n.setSizeSimilar(avgOtherCardCount)
+    : sizeDiffPct > 0
+      ? i18n.setSizeBigger(sizeDiffPct, avgOtherCardCount)
+      : i18n.setSizeSmaller(Math.abs(sizeDiffPct), avgOtherCardCount)
+
+const strongestColorAll = [...data.data.breadByColor.all].sort((a, b) => b.overall - a.overall)[0]
+
+const wordRankRows = data.data.topWords.all.map(w => ({ label: w.word, count: w.count, pullChance: w.pullChance, byColor: w.byColor }))
+const wordRankRowsCommonsOnly = data.data.topWords.commonsOnly.map(w => ({ label: w.word, count: w.count, pullChance: w.pullChance, byColor: w.byColor }))
+
+const creatureRankRows = data.data.creatureTypes.all.subtypes.map(s => ({ label: s.subtype, count: s.count, pullChance: s.pullChance, byColor: s.byColor }))
+const creatureRankRowsCommonsOnly = data.data.creatureTypes.commonsOnly.subtypes.map(s => ({ label: s.subtype, count: s.count, pullChance: s.pullChance, byColor: s.byColor }))
+
+const rarityLabels: Record<string, string> = {
+  common: i18n.rarityCommon,
+  uncommon: i18n.rarityUncommon,
+  rare: i18n.rarityRare,
+  mythic: i18n.rarityMythic,
+}
+
+const breadCategoryLabels = {
+  bomb: i18n.breadBombLabel,
+  removal: i18n.breadRemovalLabel,
+  evasion: 'Evasion',
+  aggro: 'Aggro',
+  diversity: 'Diversity',
+  overall: i18n.qualityLabel,
+}
 ---
 
 <BaseLayout title={`${article.data.title} — Karn Forge`} description={article.data.description} lang={lang}>
@@ -81,7 +130,32 @@ const sections = [
     <div class="max-w-2xl">
       <time class="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant/60 mb-2">{formattedDate}</time>
       <h1 class="text-4xl font-bold text-on-surface mb-4">{article.data.title}</h1>
-      <p class="text-on-surface-variant mb-10 text-lg leading-relaxed">{article.data.description}</p>
+      <p class="text-on-surface-variant mb-6 text-lg leading-relaxed">{article.data.description}</p>
+
+      {article.data.introText && (
+        <p class="text-on-surface-variant leading-relaxed mb-4">{article.data.introText}</p>
+      )}
+
+      {sizeComparisonText && (
+        <p class="text-sm text-on-surface-variant/70 mb-2">
+          <span class="font-semibold text-on-surface-variant">{i18n.prereleaseCardCount(data.data.cardCount)}</span> — {sizeComparisonText}
+        </p>
+      )}
+
+      {hasAnalysis && (
+        <p class="text-sm text-on-surface-variant/70 mb-8">
+          {i18n.archetypeOverviewLabel} {i18n.archetypeOverviewSuffix(data.data.archetypeAnalysis.all.length)}: {data.data.archetypeAnalysis.all.map(a => a.name).join(', ')}.
+        </p>
+      )}
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 max-w-2xl">
+      {Object.entries(data.data.boosterOdds.all).map(([rarity, odds]) => (
+        <StatTile
+          value={`${odds.duplicateChance}%`}
+          label={i18n.repeatChanceLabel(rarityLabels[rarity] ?? rarity)}
+        />
+      ))}
     </div>
 
     <SectionNav sections={sections} />
@@ -89,100 +163,187 @@ const sections = [
     <AtAGlance
       lang={lang}
       cardCount={data.data.cardCount}
-      byRarity={data.data.colorStats.byRarity}
-      byColor={data.data.colorStats.byColor}
+      byRarity={data.data.colorStats.all.byRarity}
+      byColor={data.data.colorStats.all.byColor}
       topCard={bestCards[0]}
-      topCombo={data.data.manaCombos[0]}
-      archetypes={data.data.archetypeAnalysis}
+      topCombo={data.data.manaCombos.all[0]}
+      archetypes={data.data.archetypeAnalysis.all}
     />
+
+    <RarityToggle lang={lang} />
+    <CardHoverPreview cardImageMap={cardImageMap} />
 
     <!-- General Information -->
     <section id="general-info" class="mb-16 scroll-mt-32">
       <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.generalInfoHeading}</h2>
-      <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.generalInfoIntro}</p>
+      <p class="text-on-surface-variant leading-relaxed mb-2 max-w-2xl">{article.data.generalInfoIntro}</p>
+      <p class="text-xs text-on-surface-variant/50 mb-2 max-w-2xl">{i18n.colorDistributionExplainer}</p>
+      {strongestColorAll && (
+        <p class="text-xs text-on-surface-variant/70 mb-8 max-w-2xl flex items-center gap-1.5">
+          {strongestColorAll.color !== 'multi' && strongestColorAll.color !== 'C' && <ManaSymbol color={strongestColorAll.color} />}
+          {i18n.strongestColorCaption(strongestColorAll.overall)}
+        </p>
+      )}
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         <StatTile value={data.data.cardCount} label={i18n.prereleaseCardCount(data.data.cardCount)} />
-        <StatTile value={data.data.colorStats.byRarity.mythic ?? 0} label="Mythic" />
-        <StatTile value={data.data.colorStats.byRarity.rare ?? 0} label="Rare" />
-        <StatTile value={data.data.colorStats.byRarity.uncommon ?? 0} label="Uncommon" />
+        <StatTile value={data.data.colorStats.all.byRarity.mythic ?? 0} label="Mythic" />
+        <StatTile value={data.data.colorStats.all.byRarity.rare ?? 0} label="Rare" />
+        <StatTile value={data.data.colorStats.all.byRarity.uncommon ?? 0} label="Uncommon" />
       </div>
+    </section>
+
+    <!-- Block 1: The Set, Analyzed Alone -->
+    <section id="block-alone" class="mb-16 scroll-mt-32">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.blockAloneHeading}</h2>
+
+      <h3 class="text-lg font-semibold text-on-surface mb-3">{i18n.wordCloudHeading}</h3>
+      <div class="grid gap-4 lg:grid-cols-2 mb-4">
+        <div>
+          <div class="rarity-all-only"><WordCloudViz words={data.data.wordCloud.all} /></div>
+          <div class="rarity-commonsOnly-only"><WordCloudViz words={data.data.wordCloud.commonsOnly} /></div>
+        </div>
+        <div>
+          <div class="rarity-all-only"><WeightedColorRankTable rows={wordRankRows} countLabel={i18n.wordRankHeading} lang={lang} /></div>
+          <div class="rarity-commonsOnly-only"><WeightedColorRankTable rows={wordRankRowsCommonsOnly} countLabel={i18n.wordRankHeading} lang={lang} /></div>
+        </div>
+      </div>
+      {article.data.wordCloudIntro && (
+        <p class="text-sm text-on-surface-variant/70 leading-relaxed mb-8 max-w-2xl">{article.data.wordCloudIntro}</p>
+      )}
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.wordColorMatrixHeading}</h3>
+      <MatrixHeatmap rows={data.data.wordColorMatrix.all.map(w => ({ label: w.word, byColor: w.byColor }))} />
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.synergyCombosHeading}</h3>
+      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.crossCardSynergySubtitle}</p>
+      <div class="rarity-all-only"><CrossCardSynergyTable synergies={data.data.crossCardSynergies.all.synergies} lang={lang} /></div>
+      <div class="rarity-commonsOnly-only"><CrossCardSynergyTable synergies={data.data.crossCardSynergies.commonsOnly.synergies} lang={lang} /></div>
+
+      <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.sameCardSynergyHeading}</h4>
+      <p class="text-xs text-on-surface-variant/60 mb-4">{i18n.synergyCombosSubtitle}</p>
+      <SynergyCombosTable combos={data.data.synergyCombinations.all} lang={lang} />
+
+      {data.data.crossCardSynergies.all.multiRoleCards.length > 0 && (
+        <>
+          <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.multiRoleCardsHeading}</h4>
+          <p class="text-xs text-on-surface-variant/60 mb-4">{i18n.multiRoleCardsSubtitle}</p>
+          <ul class="grid gap-2 sm:grid-cols-2">
+            {data.data.crossCardSynergies.all.multiRoleCards.map(c => (
+              <li class="glass-panel rounded-lg px-4 py-2.5 flex items-center gap-3">
+                <div class="flex gap-0.5">{c.colorIdentity.map((col: string) => <ManaSymbol color={col} />)}</div>
+                <span class="text-sm font-semibold text-on-surface flex-1 cursor-default" data-card-name={c.name}>{c.name}</span>
+                <span class="text-xs text-on-surface-variant/50">{c.themeCount}×</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      {article.data.synergyIntro && (
+        <p class="text-sm text-on-surface-variant/70 leading-relaxed mt-6 mb-8 max-w-2xl">{article.data.synergyIntro}</p>
+      )}
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.creatureTypesHeading}</h3>
-      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.kindredSignalsSubtitle}</p>
-      <KindredSignals signals={data.data.creatureTypes.kindredSignals} lang={lang} />
+      <div class="grid gap-4 lg:grid-cols-2 mb-4">
+        <div>
+          <div class="rarity-all-only"><PentagramGraph clusters={data.data.creatureTypes.all.subtypeColorAffinity} /></div>
+          <div class="rarity-commonsOnly-only"><PentagramGraph clusters={data.data.creatureTypes.commonsOnly.subtypeColorAffinity} /></div>
+        </div>
+        <div>
+          <div class="rarity-all-only"><WeightedColorRankTable rows={creatureRankRows} countLabel={i18n.creatureTypeRankHeading} lang={lang} /></div>
+          <div class="rarity-commonsOnly-only"><WeightedColorRankTable rows={creatureRankRowsCommonsOnly} countLabel={i18n.creatureTypeRankHeading} lang={lang} /></div>
+        </div>
+      </div>
+      <p class="text-xs text-on-surface-variant/50 mb-8 max-w-2xl">{i18n.pentagramSubtitle}</p>
 
-      {data.data.creatureTypes.kindredSignalsByPair.length > 0 && (
+      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.kindredSignalsSubtitle}</p>
+      <KindredSignals signals={data.data.creatureTypes.all.kindredSignals} lang={lang} />
+
+      {data.data.creatureTypes.all.kindredSignalsByPair.length > 0 && (
         <>
           <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.guildKindredSignalsHeading}</h4>
           <p class="text-xs text-on-surface-variant/60 mb-4">{i18n.guildKindredSignalsSubtitle}</p>
-          <GuildSignals signals={data.data.creatureTypes.kindredSignalsByPair} lang={lang} />
+          <GuildSignals signals={data.data.creatureTypes.all.kindredSignalsByPair} lang={lang} />
         </>
       )}
 
       <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.creatureTypeMatrixHeading}</h4>
-      <MatrixHeatmap rows={data.data.creatureTypes.subtypes.map(s => ({ label: s.subtype, byColor: s.byColor }))} />
-    </section>
+      <MatrixHeatmap rows={data.data.creatureTypes.all.subtypes.map(s => ({ label: s.subtype, byColor: s.byColor }))} />
 
-    <!-- Interaction / Synergy -->
-    <section id="synergy" class="mb-16 scroll-mt-32">
-      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.synergyHeading}</h2>
-      {article.data.synergyIntro && (
-        <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.synergyIntro}</p>
+      {article.data.kindredIntro && (
+        <p class="text-sm text-on-surface-variant/70 leading-relaxed mt-6 mb-8 max-w-2xl">{article.data.kindredIntro}</p>
       )}
 
-      <h3 class="text-lg font-semibold text-on-surface mb-3">{i18n.wordCloudHeading}</h3>
-      <WordCloudViz words={data.data.wordCloud} />
-
-      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.topWordsHeading}</h3>
-      <TopWordsList words={data.data.topWords} />
-
-      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.wordColorMatrixHeading}</h3>
-      <MatrixHeatmap rows={data.data.wordColorMatrix.map(w => ({ label: w.word, byColor: w.byColor }))} />
-
-      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.mechanicsHeading}</h3>
-      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.mechanicsSubtitle}</p>
-      <MechanicsList mechanics={data.data.mechanicsBySynergy} lang={lang} />
-
-      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.mechanicColorMatrixHeading}</h3>
-      <MatrixHeatmap rows={data.data.mechanicColorMatrix.map(m => ({ label: m.mechanic, byColor: m.byColor }))} />
-
-      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.synergyCombosHeading}</h3>
-      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.synergyCombosSubtitle}</p>
-      <SynergyCombosTable combos={data.data.synergyCombinations} />
+      {article.data.blockAloneConclusion && (
+        <p class="text-on-surface-variant leading-relaxed mt-8 max-w-2xl border-t border-white/5 pt-6">{article.data.blockAloneConclusion}</p>
+      )}
     </section>
 
-    <!-- B.R.E.A.D. -->
-    <section id="bread" class="mb-16 scroll-mt-32">
-      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.breadHeading}</h2>
+    <!-- Block 2: The Set, Through Wizards of the Coast -->
+    <section id="block-wizards" class="mb-16 scroll-mt-32">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.blockWizardsHeading}</h2>
+
+      <h3 class="text-lg font-semibold text-on-surface mb-3">{i18n.mechanicsHeading}</h3>
+      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.mechanicsSubtitle}</p>
+      <div class="rarity-all-only"><MechanicsList mechanics={data.data.mechanicsBySynergy.all} lang={lang} /></div>
+      <div class="rarity-commonsOnly-only"><MechanicsList mechanics={data.data.mechanicsBySynergy.commonsOnly} lang={lang} /></div>
+
+      <h4 class="text-sm font-semibold text-on-surface-variant mt-8 mb-3">{i18n.mechanicColorMatrixHeading}</h4>
+      <MatrixHeatmap rows={data.data.mechanicColorMatrix.all.map(m => ({ label: m.mechanic, byColor: m.byColor }))} />
+
+      {article.data.mechanicsIntro && (
+        <p class="text-sm text-on-surface-variant/70 leading-relaxed mt-6 mb-8 max-w-2xl">{article.data.mechanicsIntro}</p>
+      )}
+
+      {hasAnalysis && (
+        <>
+          <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.condensedArchetypeHeading}</h3>
+          <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.archetypeAnalysisSubtitle}</p>
+          <div class="rarity-all-only"><CondensedArchetypeTable archetypes={data.data.archetypeAnalysis.all} lang={lang} /></div>
+          <div class="rarity-commonsOnly-only"><CondensedArchetypeTable archetypes={data.data.archetypeAnalysis.commonsOnly} lang={lang} /></div>
+
+          {article.data.analysisIntro && (
+            <p class="text-on-surface-variant leading-relaxed mt-6 max-w-2xl">{article.data.analysisIntro}</p>
+          )}
+        </>
+      )}
+    </section>
+
+    <!-- Block 3: The Set, Through B.R.E.A.D. -->
+    <section id="block-bread" class="mb-16 scroll-mt-32">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.blockBreadHeading}</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.breadIntro}</p>
 
       <BreadDefinitions lang={lang} />
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-3">{i18n.breadByColorHeading}</h3>
+      <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.breadByColorSubtitle}</p>
+      <div class="rarity-all-only"><BreadByColorChart rows={data.data.breadByColor.all} categoryLabels={breadCategoryLabels} /></div>
+      <div class="rarity-commonsOnly-only"><BreadByColorChart rows={data.data.breadByColor.commonsOnly} categoryLabels={breadCategoryLabels} /></div>
+      {article.data.breadByColorIntro && (
+        <p class="text-sm text-on-surface-variant/70 leading-relaxed mt-6 mb-8 max-w-2xl">{article.data.breadByColorIntro}</p>
+      )}
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.bestCardsHeading}</h3>
       <BestCardsList cards={bestCards} lang={lang} />
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.manaCombosHeading}</h3>
       <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.manaCombosSubtitle}</p>
-      <ManaComboRanking combos={data.data.manaCombos} />
+      <div class="rarity-all-only"><ManaComboRanking combos={data.data.manaCombos.all} /></div>
+      <div class="rarity-commonsOnly-only"><ManaComboRanking combos={data.data.manaCombos.commonsOnly} /></div>
+
+      <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.cardExplorerHeading}</h3>
+      <CardExplorer cards={data.data.cards} lang={lang} />
     </section>
 
-    <!-- Analysis -->
-    {hasAnalysis && (
-      <section id="analysis" class="mb-16 scroll-mt-32">
-        <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.analysisHeading}</h2>
-        {article.data.analysisIntro && (
-          <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">{article.data.analysisIntro}</p>
-        )}
-        <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.archetypeAnalysisSubtitle}</p>
-        <ArchetypeAnalysis archetypes={data.data.archetypeAnalysis} lang={lang} />
-      </section>
-    )}
-
-    <!-- Explore -->
-    <section id="explore" class="mb-16 scroll-mt-32">
-      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.cardExplorerHeading}</h2>
-      <CardExplorer cards={data.data.cards} lang={lang} />
+    <!-- Conclusion -->
+    <section id="conclusion" class="mb-16 scroll-mt-32">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.conclusionHeading}</h2>
+      {article.data.conclusionText && (
+        <p class="text-on-surface-variant leading-relaxed mb-4 max-w-2xl">{article.data.conclusionText}</p>
+      )}
+      <p class="text-sm text-on-surface-variant/70 mb-6 max-w-2xl">{i18n.conclusionIntro}</p>
+      <ConclusionSynthesis comboAll={data.data.manaCombos.all} comboCommonsOnly={data.data.manaCombos.commonsOnly} lang={lang} />
     </section>
 
     <div

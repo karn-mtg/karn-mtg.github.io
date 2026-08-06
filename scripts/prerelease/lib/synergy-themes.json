@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Draw Matters",
+    "description": "Payoffs that trigger off drawing cards, paired with generic card-draw sources.",
+    "payoff": { "pattern": "whenever you('d| would)? draw", "flags": "i" },
+    "enabler": { "pattern": "draws? (a|two|three|a card|cards)\\b", "flags": "i" }
+  },
+  {
+    "name": "Sacrifice Matters",
+    "description": "Payoffs that trigger off sacrificing permanents, paired with generic sacrifice outlets.",
+    "payoff": { "pattern": "whenever you sacrifice", "flags": "i" },
+    "enabler": { "pattern": "sacrifice (a|an|another) creature", "flags": "i" }
+  },
+  {
+    "name": "Landfall",
+    "description": "Landfall payoffs paired with extra land drops and land-fetch effects.",
+    "payoff": { "pattern": "landfall|whenever a land (you control )?enters", "flags": "i" },
+    "enabler": { "pattern": "search your library for a( basic)? land card|an additional land", "flags": "i" }
+  },
+  {
+    "name": "Artifacts/Treasure Matter",
+    "description": "Payoffs that care about artifacts entering, paired with Treasure/artifact-token generation.",
+    "payoff": { "pattern": "whenever (an|another) artifact (you control )?enters", "flags": "i" },
+    "enabler": { "pattern": "create(s)? .{0,20}?treasure token", "flags": "i" }
+  },
+  {
+    "name": "+1/+1 Counters Matter",
+    "description": "Payoffs that trigger off counters being placed, paired with generic counter-granting effects.",
+    "payoff": { "pattern": "whenever (one or more \\+1/\\+1 counters?|you put a \\+1/\\+1 counter)", "flags": "i" },
+    "enabler": { "pattern": "put[s]? (a|one|two|three|X) \\+1/\\+1 counters?", "flags": "i" }
+  },
+  {
+    "name": "Graveyard/Mill Matters",
+    "description": "Payoffs that care about cards in graveyards, paired with self-mill and discard effects.",
+    "payoff": { "pattern": "from (your|a) graveyard|whenever a card is put into your graveyard", "flags": "i" },
+    "enabler": { "pattern": "mills? (a|two|three|\\d+|\\w+) cards?|discards? (a|two|\\d+) cards?", "flags": "i" }
+  },
+  {
+    "name": "Tokens Matter",
+    "description": "Payoffs that trigger off tokens entering, paired with generic token-creation effects.",
+    "payoff": { "pattern": "whenever (one or more tokens|a token)( you control)? enters", "flags": "i" },
+    "enabler": { "pattern": "creates? (a|an|one|two|three|X) .{0,30}?tokens?", "flags": "i" }
+  },
+  {
+    "name": "Lifegain Matters",
+    "description": "Payoffs that trigger off gaining life, paired with generic lifegain effects.",
+    "payoff": { "pattern": "whenever you gain life", "flags": "i" },
+    "enabler": { "pattern": "gain[s]? \\d+ life", "flags": "i" }
+  }
+]

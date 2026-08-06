@@ -1,0 +1,42 @@
+[
+  {
+    "mechanics": ["Adventure", "Mill"],
+    "verdict": "coincidental",
+    "mechanism": "Adventure (rule 715.3) only controls how a card is cast; the mill effect is just what one Adventure spell side happens to do (e.g. Glamdring's Equip//Mill split) — no rules link between the two."
+  },
+  {
+    "mechanics": ["Adventure", "Flying"],
+    "verdict": "coincidental",
+    "mechanism": "Flying is a combat-evasion keyword unrelated to Adventure's casting-mode rule (715.3) — the two just appear on the same creature side of an Adventure card."
+  },
+  {
+    "mechanics": ["Trample", "Treasure"],
+    "verdict": "coincidental",
+    "mechanism": "Treasure (rule 111.10a) is a mana-fixing/ramp resource; Trample governs combat damage assignment. No functional link — both effects just happen to trigger off the same attack trigger on cards like Bejeweled Warg."
+  },
+  {
+    "mechanics": ["Adventure", "Equip"],
+    "verdict": "coincidental",
+    "mechanism": "On Glamdring, Equip is simply the creature-side ability of an Adventure card whose spell side is unrelated (cost reduction); Adventure's casting rule doesn't interact with Equip."
+  },
+  {
+    "mechanics": ["Reach", "Trample"],
+    "verdict": "coincidental",
+    "mechanism": "Reach (can block flying) and Trample (excess combat damage) are independent combat keywords that don't reference or modify each other — having both just makes a well-rounded body."
+  },
+  {
+    "mechanics": ["Ferocious", "Menace"],
+    "verdict": "coincidental",
+    "mechanism": "Ferocious checks for a creature with power 4+ you control; Menace doesn't grant power, so it doesn't help satisfy that condition. On Nighthowl Pursuer / The Chief Warg the two are just independently stapled abilities."
+  },
+  {
+    "mechanics": ["Flying", "Treasure"],
+    "verdict": "coincidental",
+    "mechanism": "Flying is combat evasion; Treasure is a mana resource. No rules interaction between the two."
+  },
+  {
+    "mechanics": ["Equip", "Flash"],
+    "verdict": "confirmed",
+    "mechanism": "Equip only activates at sorcery speed (rule 702.6a), so Flash on the same Equipment (Sting, Bilbo's Sword; The Black Arrow) lets you deploy it at instant speed — end of opponent's turn, or as a combat trick — then Equip it safely on your own turn. Real tempo synergy, not co-print."
+  }
+]

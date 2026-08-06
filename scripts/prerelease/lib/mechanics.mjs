@@ -1,6 +1,8 @@
 import { colorBucket, stripReminderText } from './util.mjs'
+import { pullChanceForRow } from './pullChance.mjs'
 
 const COLOR_BUCKETS = ['W', 'U', 'B', 'R', 'G', 'multi', 'C']
+const RARITIES = ['common', 'uncommon', 'rare', 'mythic']
 
 /**
  * Mechanics = Scryfall-parsed keyword abilities (Flying, Ward, Channel, ...).
@@ -10,10 +12,11 @@ const COLOR_BUCKETS = ['W', 'U', 'B', 'R', 'G', 'multi', 'C']
  * most cards that also do something the word cloud flagged as a core
  * synergy action).
  */
-export function computeMechanics(cards, topWords, namedMechanics = []) {
+export function computeMechanics(cards, topWords, namedMechanics = [], byRarityTotals, sealedConfig) {
   const descriptions = new Map(namedMechanics.map(m => [m.name, m.description]))
   const frequency = new Map()
   const byColor = new Map()
+  const byRarity = new Map()
   const synergyCount = new Map()
 
   const topWordSet = new Set(topWords.map(w => w.word))
@@ -28,6 +31,8 @@ export function computeMechanics(cards, topWords, namedMechanics = []) {
       frequency.set(kw, (frequency.get(kw) || 0) + 1)
       if (!byColor.has(kw)) byColor.set(kw, Object.fromEntries(COLOR_BUCKETS.map(b => [b, 0])))
       byColor.get(kw)[bucket]++
+      if (!byRarity.has(kw)) byRarity.set(kw, Object.fromEntries(RARITIES.map(r => [r, 0])))
+      if (RARITIES.includes(card.rarity)) byRarity.get(kw)[card.rarity]++
       if (hasSynergyWord) synergyCount.set(kw, (synergyCount.get(kw) || 0) + 1)
     }
   }
@@ -37,6 +42,8 @@ export function computeMechanics(cards, topWords, namedMechanics = []) {
       mechanic,
       count,
       synergyCount: synergyCount.get(mechanic) || 0,
+      byRarity: byRarity.get(mechanic),
+      pullChance: pullChanceForRow(byRarity.get(mechanic), byRarityTotals, sealedConfig),
       ...(descriptions.has(mechanic) ? { description: descriptions.get(mechanic) } : {}),
     }))
     .sort((a, b) => b.count - a.count)

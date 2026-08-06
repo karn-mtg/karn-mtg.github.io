@@ -1,0 +1,56 @@
+---
+import ManaSymbol from './ManaSymbol.astro'
+
+interface Row {
+  color: string
+  cardCount: number
+  bomb: number
+  removal: number
+  evasion: number
+  aggro: number
+  diversity: number
+  overall: number
+}
+
+interface Props {
+  rows: Row[]
+  categoryLabels: { bomb: string; removal: string; evasion: string; aggro: string; diversity: string; overall: string }
+}
+
+const { rows, categoryLabels } = Astro.props
+const CATEGORIES = ['bomb', 'removal', 'evasion', 'aggro', 'diversity', 'overall'] as const
+const maxByCategory = Object.fromEntries(CATEGORIES.map(cat => [cat, Math.max(0.1, ...rows.map(r => r[cat]))]))
+const COLOR_LABEL: Record<string, string> = { multi: 'Multi', C: 'Colorless' }
+---
+
+<div class="glass-panel rounded-xl overflow-x-auto">
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant/50 border-b border-white/5">
+        <th class="px-4 py-3 font-semibold">Color</th>
+        {CATEGORIES.map(cat => <th class="px-3 py-3 font-semibold text-center">{categoryLabels[cat]}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(row => (
+        <tr class="border-b border-white/5 last:border-0">
+          <td class="px-4 py-2.5 font-semibold text-on-surface whitespace-nowrap">
+            {row.color === 'multi' || row.color === 'C'
+              ? <span class="text-xs">{COLOR_LABEL[row.color]}</span>
+              : <ManaSymbol color={row.color} />}
+          </td>
+          {CATEGORIES.map(cat => (
+            <td class="px-3 py-2.5">
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-xs text-on-surface-variant">{row[cat]}</span>
+                <div class="w-full h-1 rounded-full bg-white/5 overflow-hidden">
+                  <div class="h-full bg-primary rounded-full" style={`width:${(row[cat] / maxByCategory[cat]) * 100}%`} />
+                </div>
+              </div>
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

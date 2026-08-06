@@ -18,6 +18,7 @@ interface Archetype {
   totalPairs: number
   signalCards: string[]
   verdict: 'wellSupported' | 'plentifulButWeak' | 'rareButStrong' | 'dataDisagrees' | 'insufficient'
+  alternativeSignal: { mechanic: string; cardCount: number; avgOverall: number } | null
 }
 
 interface Props {
@@ -84,6 +85,13 @@ const VERDICT_STYLE: Record<string, string> = {
       {arch.signalCards.length > 0 && (
         <p class="text-xs text-on-surface-variant/60">
           <span class="font-semibold text-on-surface-variant">{i18n.signalCardsLabel}:</span> {arch.signalCards.join(', ')}
+        </p>
+      )}
+
+      {arch.alternativeSignal && (
+        <p class="text-xs text-amber-300/90 mt-3 pt-3 border-t border-on-surface-variant/10">
+          <span class="font-semibold">{i18n.alternativeSignalLabel} {arch.alternativeSignal.mechanic}</span>
+          {' '}({arch.alternativeSignal.cardCount} cards, avg quality {arch.alternativeSignal.avgOverall})
         </p>
       )}
     </div>

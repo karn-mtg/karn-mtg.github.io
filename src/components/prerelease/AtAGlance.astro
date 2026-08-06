@@ -50,7 +50,7 @@ for (const a of archetypes) verdictCounts[a.verdict] = (verdictCounts[a.verdict]
     </div>
 
     {topCard && (
-      <a href="#bread" class="glass-panel rounded-xl p-4 block hover:border-primary/30 transition-colors">
+      <a href="#bread" class="glass-panel rounded-xl p-4 block hover:border-primary/30 transition-colors" data-card-name={topCard.name}>
         <div class="flex items-center gap-3">
           {topCard.image && <img src={topCard.image} alt={topCard.name} class="w-12 h-auto rounded-md flex-shrink-0" />}
           <div class="min-w-0">

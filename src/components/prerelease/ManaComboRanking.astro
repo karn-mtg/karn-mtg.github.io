@@ -26,7 +26,14 @@ const { combos } = Astro.props
         <span class="text-xs font-semibold text-primary">{combo.avgBomb}</span>
       </div>
       <p class="text-[11px] text-on-surface-variant/60 mb-1">{combo.cardCount} cards · avg overall {combo.avgOverall}</p>
-      <p class="text-xs text-on-surface-variant truncate">{combo.topCards.join(', ')}</p>
+      <p class="text-xs text-on-surface-variant truncate">
+        {combo.topCards.map((name, i) => (
+          <>
+            {i > 0 && ', '}
+            <span class="cursor-default" data-card-name={name}>{name}</span>
+          </>
+        ))}
+      </p>
     </div>
   ))}
 </div>

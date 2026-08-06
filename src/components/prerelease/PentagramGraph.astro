@@ -1,0 +1,98 @@
+---
+// Hand-rolled pentagram affinity graph (see pentagram.md) — no D3/Cytoscape/React
+// Flow dependency. The force-settle pass runs once at build time in plain JS
+// (not client-side), since the layout is static: each node's target position
+// is the count-weighted average of the five color anchors, then a small
+// number of collision-repulsion iterations (with a spring pulling back
+// toward the target) keep same-color clusters from overlapping.
+interface Cluster {
+  subtype: string
+  count: number
+  W: number
+  U: number
+  B: number
+  R: number
+  G: number
+}
+
+interface Props {
+  clusters: Cluster[]
+}
+
+const { clusters } = Astro.props
+
+const ANCHORS: Record<'W' | 'U' | 'B' | 'R' | 'G', { x: number; y: number }> = {
+  W: { x: 0, y: -110 },
+  U: { x: 105, y: -34 },
+  B: { x: 65, y: 89 },
+  R: { x: -65, y: 89 },
+  G: { x: -105, y: -34 },
+}
+const COLOR_HEX: Record<string, string> = { W: '#e8e4d0', U: '#5b9bd5', B: '#8b7fb0', R: '#e0654a', G: '#5a9e6f' }
+
+const CENTER = 160
+const maxCount = Math.max(1, ...clusters.map(c => c.count))
+const radiusScale = 34 / Math.sqrt(maxCount)
+
+const nodes = clusters.map(c => {
+  const tx = c.W * ANCHORS.W.x + c.U * ANCHORS.U.x + c.B * ANCHORS.B.x + c.R * ANCHORS.R.x + c.G * ANCHORS.G.x
+  const ty = c.W * ANCHORS.W.y + c.U * ANCHORS.U.y + c.B * ANCHORS.B.y + c.R * ANCHORS.R.y + c.G * ANCHORS.G.y
+  const radius = Math.max(8, Math.sqrt(c.count) * radiusScale)
+  const dominant = (['W', 'U', 'B', 'R', 'G'] as const).reduce((best, k) => (c[k] > c[best] ? k : best), 'W' as 'W' | 'U' | 'B' | 'R' | 'G')
+  return { subtype: c.subtype, count: c.count, targetX: tx, targetY: ty, x: tx, y: ty, radius, color: COLOR_HEX[dominant] }
+})
+
+// Build-time collision settle: iteratively push overlapping nodes apart,
+// with a mild spring pulling each node back toward its color-weighted target.
+for (let iter = 0; iter < 120; iter++) {
+  for (let i = 0; i < nodes.length; i++) {
+    const a = nodes[i]
+    a.x += (a.targetX - a.x) * 0.06
+    a.y += (a.targetY - a.y) * 0.06
+    for (let j = i + 1; j < nodes.length; j++) {
+      const b = nodes[j]
+      const dx = b.x - a.x
+      const dy = b.y - a.y
+      const dist = Math.sqrt(dx * dx + dy * dy) || 0.01
+      const minDist = a.radius + b.radius + 3
+      if (dist < minDist) {
+        const push = (minDist - dist) / 2
+        const ux = dx / dist
+        const uy = dy / dist
+        a.x -= ux * push
+        a.y -= uy * push
+        b.x += ux * push
+        b.y += uy * push
+      }
+    }
+  }
+}
+---
+
+<div class="glass-panel rounded-xl p-6">
+  <svg viewBox="0 0 320 320" class="w-full h-auto" role="img" aria-label="Kindred affinity map">
+    {(['W', 'U', 'B', 'R', 'G'] as const).map(k => (
+      <text
+        x={CENTER + ANCHORS[k].x * 1.18}
+        y={CENTER + ANCHORS[k].y * 1.18}
+        text-anchor="middle"
+        dominant-baseline="middle"
+        class="fill-on-surface-variant/40 text-[11px] font-bold uppercase tracking-widest"
+      >
+        {k}
+      </text>
+    ))}
+    {nodes.map(n => (
+      <g transform={`translate(${CENTER + n.x}, ${CENTER + n.y})`}>
+        <circle r={n.radius} fill={n.color} opacity="0.75" />
+        <text
+          y={n.radius + 11}
+          text-anchor="middle"
+          class="fill-on-surface-variant text-[9px] font-semibold"
+        >
+          {n.subtype}
+        </text>
+      </g>
+    ))}
+  </svg>
+</div>

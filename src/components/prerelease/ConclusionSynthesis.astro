@@ -1,0 +1,61 @@
+---
+import { t, type Lang } from '../../i18n'
+import ManaSymbol from './ManaSymbol.astro'
+
+interface ComboEntry {
+  colors: string
+  cardCount: number
+  avgBomb: number
+  avgOverall: number
+  topCards: string[]
+}
+
+interface Props {
+  comboAll: ComboEntry[]
+  comboCommonsOnly: ComboEntry[]
+  lang: Lang
+}
+
+const { comboAll, comboCommonsOnly, lang } = Astro.props
+const i18n = t(lang)
+
+const topThree = comboAll.slice(0, 3).map((entry, rankAll) => {
+  const commonsRank = comboCommonsOnly.findIndex(c => c.colors === entry.colors)
+  const commonsEntry = commonsRank >= 0 ? comboCommonsOnly[commonsRank] : null
+  const droppedCards = commonsEntry ? entry.topCards.filter(name => !commonsEntry.topCards.includes(name)) : entry.topCards
+  const rankShift = commonsRank >= 0 ? commonsRank - rankAll : null
+  return { ...entry, rankAll: rankAll + 1, commonsRank: commonsRank >= 0 ? commonsRank + 1 : null, droppedCards, rankShift }
+})
+---
+
+<div class="grid gap-4">
+  {topThree.map(entry => (
+    <div class="glass-panel rounded-xl p-5">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-3">
+          <span class="text-lg font-bold text-primary/60">#{entry.rankAll}</span>
+          <div class="flex gap-0.5">{entry.colors.split('').map((c: string) => <ManaSymbol color={c} />)}</div>
+        </div>
+        <span class="text-sm font-bold text-primary">{entry.avgBomb} avg bomb</span>
+      </div>
+
+      {entry.rankShift !== null && entry.rankShift !== 0 && (
+        <p class="text-xs text-amber-300/90 mb-2">
+          {i18n.rankShiftWarning(entry.rankAll, entry.commonsRank)}
+        </p>
+      )}
+
+      {entry.droppedCards.length > 0 && (
+        <p class="text-xs text-on-surface-variant/70">
+          <span class="font-semibold text-on-surface-variant">{i18n.rareCarriedCardsLabel}:</span>{' '}
+          {entry.droppedCards.map((name: string, i: number) => (
+            <>
+              {i > 0 && ', '}
+              <span class="cursor-default" data-card-name={name}>{name}</span>
+            </>
+          ))}
+        </p>
+      )}
+    </div>
+  ))}
+</div>

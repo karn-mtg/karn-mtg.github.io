@@ -20,12 +20,12 @@ const { cards, lang } = Astro.props
 
 <ol class="grid gap-3 sm:grid-cols-2">
   {cards.map((card, i) => (
-    <li class="glass-panel rounded-xl p-4 flex items-center gap-3">
+    <li class="glass-panel rounded-xl p-4 flex items-center gap-3" data-card-name={card.name}>
       <span class="text-2xl font-bold text-primary/40 w-8 flex-shrink-0 text-center">{i + 1}</span>
       {card.image && <img src={card.image} alt={card.name} class="w-12 h-auto rounded-md flex-shrink-0" loading="lazy" />}
       <div class="min-w-0">
         <div class="flex items-baseline gap-2">
-          <h4 class="font-semibold text-sm text-on-surface truncate">{card.name}</h4>
+          <h4 class="font-semibold text-sm text-on-surface truncate cursor-default">{card.name}</h4>
           <span class="text-[11px] text-on-surface-variant/60 flex-shrink-0">{card.manaCost}</span>
         </div>
         <BreadScorePills bread={card.bread} lang={lang} />

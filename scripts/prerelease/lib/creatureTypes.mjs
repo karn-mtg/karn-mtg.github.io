@@ -1,8 +1,10 @@
 import { colorBucket, colorKey } from './util.mjs'
+import { pullChanceForRow } from './pullChance.mjs'
 
 const COLOR_BUCKETS = ['W', 'U', 'B', 'R', 'G', 'multi', 'C']
 const SINGLE_COLORS = ['W', 'U', 'B', 'R', 'G']
 const PAIRS = ['WU', 'WB', 'WR', 'WG', 'UB', 'UR', 'UG', 'BR', 'BG', 'RG']
+const RARITIES = ['common', 'uncommon', 'rare', 'mythic']
 
 /**
  * Double-faced cards can have a type line like "Saga // Creature — Human
@@ -29,10 +31,12 @@ function parseSubtypes(typeLine) {
  * tribe in each color and in each two-color guild, mirroring how limited
  * sets print signpost cards to flag a supported tribal archetype.
  */
-export function computeCreatureTypes(cards, { topSize = 15, minSignalCount = 3, minPairSignalCount = 2 } = {}) {
+export function computeCreatureTypes(cards, byRarityTotals, sealedConfig, { topSize = 15, minSignalCount = 3, minPairSignalCount = 2 } = {}) {
   const frequency = new Map()
   const byColor = new Map()
   const byPair = new Map()
+  const byRarity = new Map()
+  const affinity = new Map()
 
   for (const card of cards) {
     const subtypesForCard = parseSubtypes(card.type_line)
@@ -40,11 +44,18 @@ export function computeCreatureTypes(cards, { topSize = 15, minSignalCount = 3, 
     const identity = card.color_identity || []
     const bucket = colorBucket(identity)
     const pairKey = identity.length === 2 ? colorKey(identity) : null
+    const singleColorIdentity = identity.filter(c => SINGLE_COLORS.includes(c))
+    const pipCredit = singleColorIdentity.length > 0 ? 1 / singleColorIdentity.length : 0
 
     for (const subtype of subtypesForCard) {
       frequency.set(subtype, (frequency.get(subtype) || 0) + 1)
       if (!byColor.has(subtype)) byColor.set(subtype, Object.fromEntries(COLOR_BUCKETS.map(b => [b, 0])))
       byColor.get(subtype)[bucket]++
+      if (!byRarity.has(subtype)) byRarity.set(subtype, Object.fromEntries(RARITIES.map(r => [r, 0])))
+      if (RARITIES.includes(card.rarity)) byRarity.get(subtype)[card.rarity]++
+
+      if (!affinity.has(subtype)) affinity.set(subtype, Object.fromEntries(SINGLE_COLORS.map(c => [c, 0])))
+      for (const c of singleColorIdentity) affinity.get(subtype)[c] += pipCredit
 
       if (pairKey) {
         if (!byPair.has(subtype)) byPair.set(subtype, Object.fromEntries(PAIRS.map(p => [p, 0])))
@@ -54,7 +65,22 @@ export function computeCreatureTypes(cards, { topSize = 15, minSignalCount = 3, 
   }
 
   const ranked = [...frequency.entries()].sort((a, b) => b[1] - a[1])
-  const subtypes = ranked.slice(0, topSize).map(([subtype, count]) => ({ subtype, count, byColor: byColor.get(subtype) }))
+  const subtypes = ranked.slice(0, topSize).map(([subtype, count]) => ({
+    subtype,
+    count,
+    byColor: byColor.get(subtype),
+    byRarity: byRarity.get(subtype),
+    pullChance: pullChanceForRow(byRarity.get(subtype), byRarityTotals, sealedConfig),
+  }))
+
+  const subtypeColorAffinity = ranked.slice(0, topSize).map(([subtype, count]) => {
+    const raw = affinity.get(subtype)
+    const total = SINGLE_COLORS.reduce((sum, c) => sum + raw[c], 0)
+    const normalized = total > 0
+      ? Object.fromEntries(SINGLE_COLORS.map(c => [c, round(raw[c] / total)]))
+      : Object.fromEntries(SINGLE_COLORS.map(c => [c, 0]))
+    return { subtype, count, ...normalized }
+  })
 
   // Ranks by concentration (share of the tribe's total that lives in this
   // color/guild), not raw count — otherwise a globally common tribe like
@@ -82,5 +108,9 @@ export function computeCreatureTypes(cards, { topSize = 15, minSignalCount = 3, 
     return best ? { ...best, concentration: Math.round(best.concentration * 100) } : null
   }).filter(Boolean)
 
-  return { subtypes, kindredSignals, kindredSignalsByPair }
+  return { subtypes, kindredSignals, kindredSignalsByPair, subtypeColorAffinity }
+}
+
+function round(n) {
+  return Math.round(n * 1000) / 1000
 }

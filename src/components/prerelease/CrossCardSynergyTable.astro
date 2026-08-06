@@ -1,0 +1,81 @@
+---
+import { t, type Lang } from '../../i18n'
+import ManaSymbol from './ManaSymbol.astro'
+
+interface CardRef {
+  name: string
+  colorIdentity: string[]
+}
+
+interface Synergy {
+  name: string
+  description: string
+  payoffCardCount: number
+  enablerCardCount: number
+  probabilityPayoff: number
+  probabilityEnablers: number
+  comboScore: number
+  avgQuality: number
+  topPayoffCards: CardRef[]
+  topEnablerCards: CardRef[]
+}
+
+interface Props {
+  synergies: Synergy[]
+  lang: Lang
+}
+
+const { synergies, lang } = Astro.props
+const i18n = t(lang)
+---
+
+<div class="grid gap-4">
+  {synergies.map(syn => (
+    <div class="glass-panel rounded-xl p-5">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+        <h4 class="font-bold text-on-surface">{syn.name}</h4>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold border bg-primary/15 text-primary border-primary/30">
+          {syn.comboScore}% {i18n.crossCardChanceLabel}
+        </span>
+      </div>
+      <p class="text-sm text-on-surface-variant/80 leading-relaxed mb-4">{syn.description}</p>
+
+      <div class="grid grid-cols-2 gap-4 mb-3">
+        <div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-lg font-bold text-primary">{syn.payoffCardCount}</span>
+            <span class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.crossCardPayoffLabel} ({syn.probabilityPayoff}%)</span>
+          </div>
+          {syn.topPayoffCards.length > 0 && (
+            <ul class="text-xs text-on-surface-variant/70 mt-1 space-y-0.5">
+              {syn.topPayoffCards.slice(0, 3).map(c => (
+                <li class="flex items-center gap-1">
+                  <span class="flex gap-0.5">{c.colorIdentity.map(col => <ManaSymbol color={col} />)}</span>
+                  <span class="cursor-default" data-card-name={c.name}>{c.name}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-lg font-bold text-primary">{syn.enablerCardCount}</span>
+            <span class="text-[10px] uppercase tracking-wide text-on-surface-variant/50">{i18n.crossCardEnablerLabel} ({syn.probabilityEnablers}%)</span>
+          </div>
+          {syn.topEnablerCards.length > 0 && (
+            <ul class="text-xs text-on-surface-variant/70 mt-1 space-y-0.5">
+              {syn.topEnablerCards.slice(0, 3).map(c => (
+                <li class="flex items-center gap-1">
+                  <span class="flex gap-0.5">{c.colorIdentity.map(col => <ManaSymbol color={col} />)}</span>
+                  <span class="cursor-default" data-card-name={c.name}>{c.name}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+
+      <p class="text-[10px] text-on-surface-variant/50">{i18n.qualityLabel}: {syn.avgQuality}</p>
+    </div>
+  ))}
+</div>

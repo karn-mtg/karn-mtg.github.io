@@ -1,0 +1,64 @@
+---
+import { t, type Lang } from '../../i18n'
+import ManaSymbol from './ManaSymbol.astro'
+
+interface Row {
+  label: string
+  count: number
+  pullChance: number
+  byColor: Record<string, number>
+}
+
+interface Props {
+  rows: Row[]
+  countLabel: string
+  lang: Lang
+}
+
+const { rows, countLabel, lang } = Astro.props
+const i18n = t(lang)
+
+const SINGLE_COLORS = ['W', 'U', 'B', 'R', 'G']
+const SIZE_TIERS = [1.5, 1.15, 0.9] // rem, biggest-first
+
+function topColors(byColor: Record<string, number>) {
+  return SINGLE_COLORS
+    .map(c => ({ color: c, count: byColor[c] || 0 }))
+    .filter(c => c.count > 0)
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 3)
+}
+---
+
+<div class="glass-panel rounded-xl overflow-x-auto">
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="text-left text-[10px] uppercase tracking-widest text-on-surface-variant/50 border-b border-white/5">
+        <th class="px-4 py-3 font-semibold">#</th>
+        <th class="px-4 py-3 font-semibold">{countLabel}</th>
+        <th class="px-4 py-3 font-semibold text-right">{i18n.quantityColumnLabel}</th>
+        <th class="px-4 py-3 font-semibold text-right">{i18n.pullChanceLabel}</th>
+        <th class="px-4 py-3 font-semibold text-right">{i18n.colorsColumnLabel}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row, i) => (
+        <tr class="border-b border-white/5 last:border-0">
+          <td class="px-4 py-2.5 text-xs font-bold text-primary/50">{i + 1}</td>
+          <td class="px-4 py-2.5 font-semibold text-on-surface">{row.label}</td>
+          <td class="px-4 py-2.5 text-right text-on-surface-variant">{row.count}</td>
+          <td class="px-4 py-2.5 text-right text-on-surface-variant">{row.pullChance}%</td>
+          <td class="px-4 py-2.5">
+            <div class="flex items-center justify-end gap-1">
+              {topColors(row.byColor).map(({ color }, idx) => (
+                <span style={`font-size:${SIZE_TIERS[idx]}rem; line-height:1`}>
+                  <ManaSymbol color={color} />
+                </span>
+              ))}
+            </div>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
