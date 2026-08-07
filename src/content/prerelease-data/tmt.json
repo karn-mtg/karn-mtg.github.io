@@ -1,6 +1,6 @@
 {
   "setCode": "tmt",
-  "generatedAt": "2026-08-06T20:13:20.251Z",
+  "generatedAt": "2026-08-07T08:13:30.664Z",
   "cardCount": 186,
   "colorStats": {
     "all": {
@@ -5006,54 +5006,6 @@
   "manaCombos": {
     "all": [
       {
-        "colors": "UB",
-        "cardCount": 1,
-        "avgBomb": 5.1,
-        "avgOverall": 5.1,
-        "topCards": [
-          "Krang & Shredder"
-        ],
-        "byRarity": {
-          "common": 0,
-          "uncommon": 0,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 10
-      },
-      {
-        "colors": "WU",
-        "cardCount": 1,
-        "avgBomb": 4.1,
-        "avgOverall": 4.1,
-        "topCards": [
-          "Don & Leo, Problem Solvers"
-        ],
-        "byRarity": {
-          "common": 0,
-          "uncommon": 0,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 10
-      },
-      {
-        "colors": "RG",
-        "cardCount": 1,
-        "avgBomb": 1.7,
-        "avgOverall": 9.7,
-        "topCards": [
-          "Raph & Mikey, Troublemakers"
-        ],
-        "byRarity": {
-          "common": 0,
-          "uncommon": 0,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 10
-      },
-      {
         "colors": "BG",
         "cardCount": 8,
         "avgBomb": 1.6,
@@ -5071,27 +5023,19 @@
           "rare": 1,
           "mythic": 1
         },
-        "pullChance": 98
-      },
-      {
-        "colors": "UG",
-        "cardCount": 7,
-        "avgBomb": 1.2,
-        "avgOverall": 3.7,
-        "topCards": [
-          "Punk Frogs",
-          "Mikey & Don, Party Planners",
-          "Venus, Torn Between Worlds",
-          "Genghis Frog",
-          "Lessons from Life"
+        "pullChance": 98,
+        "expectedQualityScore": 108.5,
+        "rawScorePercent": 100,
+        "curveFitPercent": 90,
+        "deckPullChancePercent": 85.2,
+        "synergyPercent": 98.6,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 3,
-          "uncommon": 3,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 98
+        "deckFeasible": true,
+        "finalScore": 93.4
       },
       {
         "colors": "WB",
@@ -5111,27 +5055,19 @@
           "rare": 1,
           "mythic": 1
         },
-        "pullChance": 98
-      },
-      {
-        "colors": "UR",
-        "cardCount": 8,
-        "avgBomb": 0.7,
-        "avgOverall": 2.6,
-        "topCards": [
-          "North Wind Avatar",
-          "Nobody",
-          "Don & Raph, Hard Science",
-          "Metalhead",
-          "Baxter Stockman"
+        "pullChance": 98,
+        "expectedQualityScore": 103.4,
+        "rawScorePercent": 95.3,
+        "curveFitPercent": 92.5,
+        "deckPullChancePercent": 83.8,
+        "synergyPercent": 84.3,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 3,
-          "uncommon": 3,
-          "rare": 1,
-          "mythic": 1
-        },
-        "pullChance": 98
+        "deckFeasible": true,
+        "finalScore": 89
       },
       {
         "colors": "WR",
@@ -5151,23 +5087,19 @@
           "rare": 1,
           "mythic": 0
         },
-        "pullChance": 98
-      },
-      {
-        "colors": "WG",
-        "cardCount": 1,
-        "avgBomb": 0,
-        "avgOverall": 3,
-        "topCards": [
-          "Mikey & Leo, Chaos & Order"
+        "pullChance": 98,
+        "expectedQualityScore": 102.1,
+        "rawScorePercent": 94.1,
+        "curveFitPercent": 89.4,
+        "deckPullChancePercent": 83,
+        "synergyPercent": 71.4,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 0,
-          "uncommon": 0,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 10
+        "deckFeasible": true,
+        "finalScore": 84.5
       },
       {
         "colors": "BR",
@@ -5183,7 +5115,191 @@
           "rare": 1,
           "mythic": 0
         },
-        "pullChance": 10
+        "pullChance": 10,
+        "expectedQualityScore": 96.2,
+        "rawScorePercent": 88.7,
+        "curveFitPercent": 80,
+        "deckPullChancePercent": 74.6,
+        "synergyPercent": 92.1,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 83.9
+      },
+      {
+        "colors": "UB",
+        "cardCount": 1,
+        "avgBomb": 5.1,
+        "avgOverall": 5.1,
+        "topCards": [
+          "Krang & Shredder"
+        ],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 10,
+        "expectedQualityScore": 88.8,
+        "rawScorePercent": 81.8,
+        "curveFitPercent": 79.4,
+        "deckPullChancePercent": 70.4,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 82.9
+      },
+      {
+        "colors": "UR",
+        "cardCount": 8,
+        "avgBomb": 0.7,
+        "avgOverall": 2.6,
+        "topCards": [
+          "North Wind Avatar",
+          "Nobody",
+          "Don & Raph, Hard Science",
+          "Metalhead",
+          "Baxter Stockman"
+        ],
+        "byRarity": {
+          "common": 3,
+          "uncommon": 3,
+          "rare": 1,
+          "mythic": 1
+        },
+        "pullChance": 98,
+        "expectedQualityScore": 95.7,
+        "rawScorePercent": 88.2,
+        "curveFitPercent": 88.1,
+        "deckPullChancePercent": 82.1,
+        "synergyPercent": 55,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 78.4
+      },
+      {
+        "colors": "UG",
+        "cardCount": 7,
+        "avgBomb": 1.2,
+        "avgOverall": 3.7,
+        "topCards": [
+          "Punk Frogs",
+          "Mikey & Don, Party Planners",
+          "Venus, Torn Between Worlds",
+          "Genghis Frog",
+          "Lessons from Life"
+        ],
+        "byRarity": {
+          "common": 3,
+          "uncommon": 3,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 98,
+        "expectedQualityScore": 99,
+        "rawScorePercent": 91.2,
+        "curveFitPercent": 88.8,
+        "deckPullChancePercent": 81.2,
+        "synergyPercent": 52.1,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 78.3
+      },
+      {
+        "colors": "RG",
+        "cardCount": 1,
+        "avgBomb": 1.7,
+        "avgOverall": 9.7,
+        "topCards": [
+          "Raph & Mikey, Troublemakers"
+        ],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 10,
+        "expectedQualityScore": 97.6,
+        "rawScorePercent": 90,
+        "curveFitPercent": 84.4,
+        "deckPullChancePercent": 72.6,
+        "synergyPercent": 52.1,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 74.8
+      },
+      {
+        "colors": "WU",
+        "cardCount": 1,
+        "avgBomb": 4.1,
+        "avgOverall": 4.1,
+        "topCards": [
+          "Don & Leo, Problem Solvers"
+        ],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 10,
+        "expectedQualityScore": 86.5,
+        "rawScorePercent": 79.7,
+        "curveFitPercent": 81.3,
+        "deckPullChancePercent": 66.9,
+        "synergyPercent": 70.7,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 74.7
+      },
+      {
+        "colors": "WG",
+        "cardCount": 1,
+        "avgBomb": 0,
+        "avgOverall": 3,
+        "topCards": [
+          "Mikey & Leo, Chaos & Order"
+        ],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 10,
+        "expectedQualityScore": 92.7,
+        "rawScorePercent": 85.4,
+        "curveFitPercent": 83.8,
+        "deckPullChancePercent": 70.2,
+        "synergyPercent": 53.6,
+        "synergyThemes": [
+          "Landfall",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 73.3
       }
     ],
     "commonsOnly": [
@@ -5205,7 +5321,17 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 97.7
+        "pullChance": 97.7,
+        "expectedQualityScore": 94.9,
+        "rawScorePercent": 98,
+        "curveFitPercent": 88.8,
+        "deckPullChancePercent": 75.4,
+        "synergyPercent": 97.8,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 90
       },
       {
         "colors": "UG",
@@ -5225,7 +5351,17 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 97.7
+        "pullChance": 97.7,
+        "expectedQualityScore": 89.4,
+        "rawScorePercent": 92.4,
+        "curveFitPercent": 85.6,
+        "deckPullChancePercent": 72.7,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 87.7
       },
       {
         "colors": "BG",
@@ -5245,7 +5381,89 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 97.7
+        "pullChance": 97.7,
+        "expectedQualityScore": 96.8,
+        "rawScorePercent": 100,
+        "curveFitPercent": 86.9,
+        "deckPullChancePercent": 77.1,
+        "synergyPercent": 66.7,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 82.7
+      },
+      {
+        "colors": "UB",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 79,
+        "rawScorePercent": 81.6,
+        "curveFitPercent": 70.6,
+        "deckPullChancePercent": 60.3,
+        "synergyPercent": 91.1,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 75.9
+      },
+      {
+        "colors": "BR",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 86.2,
+        "rawScorePercent": 89,
+        "curveFitPercent": 76.3,
+        "deckPullChancePercent": 65.1,
+        "synergyPercent": 68.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 74.8
+      },
+      {
+        "colors": "RG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 86.6,
+        "rawScorePercent": 89.5,
+        "curveFitPercent": 81.3,
+        "deckPullChancePercent": 63.3,
+        "synergyPercent": 62.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 74.1
       },
       {
         "colors": "WR",
@@ -5265,7 +5483,15 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 97.7
+        "pullChance": 97.7,
+        "expectedQualityScore": 94.7,
+        "rawScorePercent": 97.8,
+        "curveFitPercent": 86.3,
+        "deckPullChancePercent": 75.4,
+        "synergyPercent": 0,
+        "synergyThemes": [],
+        "deckFeasible": true,
+        "finalScore": 64.9
       },
       {
         "colors": "UR",
@@ -5285,7 +5511,59 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 97.7
+        "pullChance": 97.7,
+        "expectedQualityScore": 86.8,
+        "rawScorePercent": 89.7,
+        "curveFitPercent": 83.1,
+        "deckPullChancePercent": 74.4,
+        "synergyPercent": 0,
+        "synergyThemes": [],
+        "deckFeasible": true,
+        "finalScore": 61.8
+      },
+      {
+        "colors": "WG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 84.3,
+        "rawScorePercent": 87.1,
+        "curveFitPercent": 80,
+        "deckPullChancePercent": 59.9,
+        "synergyPercent": 0,
+        "synergyThemes": [],
+        "deckFeasible": false,
+        "finalScore": 56.8
+      },
+      {
+        "colors": "WU",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 79.4,
+        "rawScorePercent": 82,
+        "curveFitPercent": 75.6,
+        "deckPullChancePercent": 56.8,
+        "synergyPercent": 0,
+        "synergyThemes": [],
+        "deckFeasible": false,
+        "finalScore": 53.6
       }
     ]
   },
@@ -12588,5 +12866,1061 @@
         "curveFitPercent": 70.6
       }
     ]
+  },
+  "manaFixing": {
+    "all": {
+      "colorlessFixers": {
+        "cardCount": 4,
+        "byRarity": {
+          "common": 2,
+          "uncommon": 1,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 89.9,
+        "topCards": [
+          "Escape Tunnel",
+          "Everything Pizza",
+          "Omni-Cheese Pizza",
+          "Weather Maker"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Foot Headquarters"
+          ]
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Dimension X"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "TCRI Building"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Mutant Town"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Illegitimate Business"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 98.4,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Weather Maker",
+            "Foot Headquarters",
+            "Dimension X"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 98.4,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Weather Maker",
+            "TCRI Building",
+            "Mutant Town"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 98.4,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Weather Maker",
+            "Foot Headquarters",
+            "Illegitimate Business"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 98.4,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Weather Maker",
+            "Dimension X",
+            "TCRI Building"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 98.4,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Weather Maker",
+            "Mutant Town",
+            "Illegitimate Business"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4.1,
+              "pullChance": 98.4
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "WB",
+          "splashColor": "G",
+          "baseStrengthPercent": 95.3,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 98.1,
+          "splashRemoval": 0.1,
+          "topCards": [
+            "Mutant Town",
+            "Illegitimate Business"
+          ]
+        },
+        {
+          "baseColors": "WR",
+          "splashColor": "G",
+          "baseStrengthPercent": 90.5,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 96.2,
+          "splashRemoval": 0.1,
+          "topCards": [
+            "Mutant Town",
+            "Illegitimate Business"
+          ]
+        },
+        {
+          "baseColors": "BR",
+          "splashColor": "G",
+          "baseStrengthPercent": 89.8,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 95.9,
+          "splashRemoval": 0.1,
+          "topCards": [
+            "Mutant Town",
+            "Illegitimate Business"
+          ]
+        }
+      ]
+    },
+    "commonsOnly": {
+      "colorlessFixers": {
+        "cardCount": 3,
+        "byRarity": {
+          "common": 2,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 88.8,
+        "topCards": [
+          "Escape Tunnel",
+          "Everything Pizza",
+          "Omni-Cheese Pizza"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Foot Headquarters"
+          ]
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Dimension X"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "TCRI Building"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Mutant Town"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 60.3,
+          "topCards": [
+            "Illegitimate Business"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 98.2,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Foot Headquarters",
+            "Dimension X"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 98.2,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "TCRI Building",
+            "Mutant Town"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 98.2,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Foot Headquarters",
+            "Illegitimate Business"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 98.2,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Dimension X",
+            "TCRI Building"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 98.2,
+          "topCards": [
+            "Escape Tunnel",
+            "Everything Pizza",
+            "Omni-Cheese Pizza",
+            "Mutant Town",
+            "Illegitimate Business"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 4,
+              "pullChance": 98.2
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "WB",
+          "splashColor": "G",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0,
+          "topCards": [
+            "Mutant Town",
+            "Illegitimate Business"
+          ]
+        },
+        {
+          "baseColors": "UG",
+          "splashColor": "W",
+          "baseStrengthPercent": 97.4,
+          "splashQualityPercent": 94.6,
+          "fixingPercent": 100,
+          "combinedScore": 97.1,
+          "splashRemoval": 0.3,
+          "topCards": [
+            "Foot Headquarters",
+            "Dimension X"
+          ]
+        },
+        {
+          "baseColors": "UG",
+          "splashColor": "B",
+          "baseStrengthPercent": 97.4,
+          "splashQualityPercent": 94.6,
+          "fixingPercent": 100,
+          "combinedScore": 97.1,
+          "splashRemoval": 0.9,
+          "topCards": [
+            "Foot Headquarters",
+            "Illegitimate Business"
+          ]
+        }
+      ]
+    }
   }
 }

@@ -1,8 +1,9 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { colorKey, isCreature, isLand } from './util.mjs'
+import { colorKey, isSubsetColorIdentity } from './util.mjs'
 import { poissonAtLeast } from './poisson.mjs'
 import { expectedSealedCount } from './sealedProbability.mjs'
+import { computeDeckStructureFeasibility } from './deckStructure.mjs'
 
 const RARITIES = ['common', 'uncommon', 'rare', 'mythic']
 
@@ -11,10 +12,6 @@ export function loadArchetypeDefs(setCode) {
   const path = fileURLToPath(new URL(`../data/set-archetypes/${setCode}.json`, import.meta.url))
   if (!existsSync(path)) return []
   return JSON.parse(readFileSync(path, 'utf-8'))
-}
-
-function isSubsetColorIdentity(colorIdentity, archColorSet) {
-  return colorIdentity.every(c => archColorSet.has(c))
 }
 
 /**
@@ -40,10 +37,6 @@ function isSubsetColorIdentity(colorIdentity, archColorSet) {
 const WEAK_VERDICTS = new Set(['insufficient', 'themeThin', 'dataDisagrees', 'plentifulButWeak'])
 const MIN_ALTERNATIVE_SUPPORT = 3
 
-function byRarityCount(cards) {
-  return Object.fromEntries(RARITIES.map(r => [r, cards.filter(c => c.rarity === r).length]))
-}
-
 function findAlternativeSignal(archColors, ownMechanic, mechanicsByColorPair) {
   const candidates = mechanicsByColorPair
     .filter(m => m.colors === archColors && m.mechanic !== ownMechanic && m.cardCount >= MIN_ALTERNATIVE_SUPPORT)
@@ -65,18 +58,8 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
     const archColors = colorKey(def.colors.split(''))
     const archColorSet = new Set(archColors.split(''))
 
-    const colorPoolCards = mergedCards.filter(c =>
-      isSubsetColorIdentity(c.colorIdentity, archColorSet) && !isLand(c.typeLine)
-    )
-    const creaturePool = colorPoolCards.filter(c => isCreature(c.typeLine))
-    const spellPool = colorPoolCards.filter(c => !isCreature(c.typeLine))
-
-    const expectedCreatures = expectedSealedCount(byRarityCount(creaturePool), byRarityTotals, sealedConfig)
-    const expectedSpells = expectedSealedCount(byRarityCount(spellPool), byRarityTotals, sealedConfig)
-
-    const creatureFeasibility = round(poissonAtLeast(expectedCreatures, sealedConfig.deckCreatureTarget) * 100)
-    const spellFeasibility = round(poissonAtLeast(expectedSpells, sealedConfig.deckSpellTarget) * 100)
-    const deckFeasible = creatureFeasibility >= 50 && spellFeasibility >= 50
+    const { deckFeasible, expectedCreatures, expectedSpells, creatureFeasibility, spellFeasibility } =
+      computeDeckStructureFeasibility(mergedCards, archColorSet, byRarityTotals, sealedConfig)
 
     const supportCards = mergedCards.filter(c =>
       isSubsetColorIdentity(c.colorIdentity, archColorSet) && (c.keywords || []).includes(def.mechanic)
@@ -124,8 +107,8 @@ export function computeArchetypeAnalysis(mergedCards, byRarityTotals, manaCombos
       mechanic: def.mechanic,
       description: def.description,
       deckFeasible,
-      expectedCreatures: round(expectedCreatures),
-      expectedSpells: round(expectedSpells),
+      expectedCreatures,
+      expectedSpells,
       creatureFeasibility,
       spellFeasibility,
       deckCreatureTarget: sealedConfig.deckCreatureTarget,

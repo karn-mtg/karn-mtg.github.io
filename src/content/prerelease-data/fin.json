@@ -1,6 +1,6 @@
 {
   "setCode": "fin",
-  "generatedAt": "2026-08-06T20:13:19.925Z",
+  "generatedAt": "2026-08-07T08:13:30.060Z",
   "cardCount": 312,
   "colorStats": {
     "all": {
@@ -8139,25 +8139,6 @@
   "manaCombos": {
     "all": [
       {
-        "colors": "RG",
-        "cardCount": 4,
-        "avgBomb": 2,
-        "avgOverall": 5.7,
-        "topCards": [
-          "Gladiolus Amicitia",
-          "Balthier and Fran",
-          "Gongaga, Reactor Town",
-          "Rydia, Summoner of Mist"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 63.8
-      },
-      {
         "colors": "UG",
         "cardCount": 4,
         "avgBomb": 1.9,
@@ -8174,47 +8155,21 @@
           "rare": 1,
           "mythic": 0
         },
-        "pullChance": 63.8
-      },
-      {
-        "colors": "BG",
-        "cardCount": 6,
-        "avgBomb": 1.5,
-        "avgOverall": 6.6,
-        "topCards": [
-          "Ragnarok, Divine Deliverance",
-          "Cloud of Darkness",
-          "Exdeath, Void Warlock // Neo Exdeath, Dimension's End",
-          "Vanille, Cheerful l'Cie",
-          "Gohn, Town of Ruin"
+        "pullChance": 63.8,
+        "expectedQualityScore": 95.8,
+        "rawScorePercent": 89.8,
+        "curveFitPercent": 63.1,
+        "deckPullChancePercent": 66.5,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 4,
-          "rare": 1,
-          "mythic": 0
-        },
-        "pullChance": 74
-      },
-      {
-        "colors": "WU",
-        "cardCount": 5,
-        "avgBomb": 1.3,
-        "avgOverall": 2.7,
-        "topCards": [
-          "Cid, Timeless Artificer",
-          "Absolute Virtue",
-          "Hope Estheim",
-          "Sharlayan, Nation of Scholars",
-          "Tidus, Blitzball Star"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 1,
-          "mythic": 1
-        },
-        "pullChance": 65
+        "deckFeasible": false,
+        "finalScore": 79.9
       },
       {
         "colors": "UB",
@@ -8234,58 +8189,64 @@
           "rare": 2,
           "mythic": 2
         },
-        "pullChance": 68.2
+        "pullChance": 68.2,
+        "expectedQualityScore": 100.3,
+        "rawScorePercent": 94,
+        "curveFitPercent": 72.5,
+        "deckPullChancePercent": 69.1,
+        "synergyPercent": 66.2,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 75.5
       },
       {
-        "colors": "BR",
-        "cardCount": 4,
-        "avgBomb": 1,
-        "avgOverall": 6.5,
+        "colors": "BG",
+        "cardCount": 6,
+        "avgBomb": 1.5,
+        "avgOverall": 6.6,
         "topCards": [
-          "Black Waltz No. 3",
-          "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
-          "Garland, Knight of Cornelia // Chaos, the Endless",
-          "Vector, Imperial Capital"
+          "Ragnarok, Divine Deliverance",
+          "Cloud of Darkness",
+          "Exdeath, Void Warlock // Neo Exdeath, Dimension's End",
+          "Vanille, Cheerful l'Cie",
+          "Gohn, Town of Ruin"
         ],
         "byRarity": {
           "common": 1,
-          "uncommon": 2,
+          "uncommon": 4,
           "rare": 1,
           "mythic": 0
         },
-        "pullChance": 63.8
-      },
-      {
-        "colors": "WR",
-        "cardCount": 6,
-        "avgBomb": 1,
-        "avgOverall": 6.7,
-        "topCards": [
-          "Joshua, Phoenix's Dominant // Phoenix, Warden of Fire",
-          "Lightning, Army of One",
-          "Zidane, Tantalus Thief",
-          "Cloud, Planet's Champion",
-          "Giott, King of the Dwarves"
+        "pullChance": 74,
+        "expectedQualityScore": 106.2,
+        "rawScorePercent": 99.5,
+        "curveFitPercent": 73.8,
+        "deckPullChancePercent": 76.1,
+        "synergyPercent": 48.4,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 1,
-          "mythic": 2
-        },
-        "pullChance": 66.2
+        "deckFeasible": true,
+        "finalScore": 74.5
       },
       {
-        "colors": "WG",
+        "colors": "WU",
         "cardCount": 5,
-        "avgBomb": 0.8,
-        "avgOverall": 3,
+        "avgBomb": 1.3,
+        "avgOverall": 2.7,
         "topCards": [
-          "Rinoa Heartilly",
-          "Serah Farron // Crystallized Serah",
-          "Yuna, Hope of Spira",
-          "Garnet, Princess of Alexandria",
-          "Windurst, Federation Center"
+          "Cid, Timeless Artificer",
+          "Absolute Virtue",
+          "Hope Estheim",
+          "Sharlayan, Nation of Scholars",
+          "Tidus, Blitzball Star"
         ],
         "byRarity": {
           "common": 1,
@@ -8293,27 +8254,21 @@
           "rare": 1,
           "mythic": 1
         },
-        "pullChance": 65
-      },
-      {
-        "colors": "WB",
-        "cardCount": 5,
-        "avgBomb": 0.7,
-        "avgOverall": 2.3,
-        "topCards": [
-          "Squall, SeeD Mercenary",
-          "Rufus Shinra",
-          "Cecil, Dark Knight // Cecil, Redeemed Paladin",
-          "Insomnia, Crown City",
-          "Judge Magister Gabranth"
+        "pullChance": 65,
+        "expectedQualityScore": 95.3,
+        "rawScorePercent": 89.3,
+        "curveFitPercent": 71.9,
+        "deckPullChancePercent": 67.7,
+        "synergyPercent": 64.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 2,
-          "mythic": 0
-        },
-        "pullChance": 66
+        "deckFeasible": false,
+        "finalScore": 73.3
       },
       {
         "colors": "UR",
@@ -8333,7 +8288,179 @@
           "rare": 1,
           "mythic": 1
         },
-        "pullChance": 65
+        "pullChance": 65,
+        "expectedQualityScore": 98.1,
+        "rawScorePercent": 91.9,
+        "curveFitPercent": 63.1,
+        "deckPullChancePercent": 63.1,
+        "synergyPercent": 70.8,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 72.2
+      },
+      {
+        "colors": "WB",
+        "cardCount": 5,
+        "avgBomb": 0.7,
+        "avgOverall": 2.3,
+        "topCards": [
+          "Squall, SeeD Mercenary",
+          "Rufus Shinra",
+          "Cecil, Dark Knight // Cecil, Redeemed Paladin",
+          "Insomnia, Crown City",
+          "Judge Magister Gabranth"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 2,
+          "mythic": 0
+        },
+        "pullChance": 66,
+        "expectedQualityScore": 102,
+        "rawScorePercent": 95.6,
+        "curveFitPercent": 81.3,
+        "deckPullChancePercent": 75.3,
+        "synergyPercent": 36,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 72.1
+      },
+      {
+        "colors": "BR",
+        "cardCount": 4,
+        "avgBomb": 1,
+        "avgOverall": 6.5,
+        "topCards": [
+          "Black Waltz No. 3",
+          "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
+          "Garland, Knight of Cornelia // Chaos, the Endless",
+          "Vector, Imperial Capital"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 63.8,
+        "expectedQualityScore": 106.7,
+        "rawScorePercent": 100,
+        "curveFitPercent": 71.9,
+        "deckPullChancePercent": 70.3,
+        "synergyPercent": 41.6,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 71
+      },
+      {
+        "colors": "WG",
+        "cardCount": 5,
+        "avgBomb": 0.8,
+        "avgOverall": 3,
+        "topCards": [
+          "Rinoa Heartilly",
+          "Serah Farron // Crystallized Serah",
+          "Yuna, Hope of Spira",
+          "Garnet, Princess of Alexandria",
+          "Windurst, Federation Center"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 1
+        },
+        "pullChance": 65,
+        "expectedQualityScore": 97.9,
+        "rawScorePercent": 91.8,
+        "curveFitPercent": 73.1,
+        "deckPullChancePercent": 73.7,
+        "synergyPercent": 43.2,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 70.4
+      },
+      {
+        "colors": "WR",
+        "cardCount": 6,
+        "avgBomb": 1,
+        "avgOverall": 6.7,
+        "topCards": [
+          "Joshua, Phoenix's Dominant // Phoenix, Warden of Fire",
+          "Lightning, Army of One",
+          "Zidane, Tantalus Thief",
+          "Cloud, Planet's Champion",
+          "Giott, King of the Dwarves"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 2
+        },
+        "pullChance": 66.2,
+        "expectedQualityScore": 103.1,
+        "rawScorePercent": 96.6,
+        "curveFitPercent": 71.3,
+        "deckPullChancePercent": 69.9,
+        "synergyPercent": 38.6,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 69.1
+      },
+      {
+        "colors": "RG",
+        "cardCount": 4,
+        "avgBomb": 2,
+        "avgOverall": 5.7,
+        "topCards": [
+          "Gladiolus Amicitia",
+          "Balthier and Fran",
+          "Gongaga, Reactor Town",
+          "Rydia, Summoner of Mist"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 63.8,
+        "expectedQualityScore": 101.9,
+        "rawScorePercent": 95.5,
+        "curveFitPercent": 62.5,
+        "deckPullChancePercent": 68.8,
+        "synergyPercent": 47.4,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 68.6
       }
     ],
     "commonsOnly": [
@@ -8353,7 +8480,79 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.5
+        "pullChance": 61.5,
+        "expectedQualityScore": 89.2,
+        "rawScorePercent": 91,
+        "curveFitPercent": 60,
+        "deckPullChancePercent": 61.9,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 78.2
+      },
+      {
+        "colors": "UR",
+        "cardCount": 3,
+        "avgBomb": 0,
+        "avgOverall": 2.5,
+        "topCards": [
+          "Baron, Airship Kingdom",
+          "Shantotto, Tactician Magician",
+          "The Emperor of Palamecia // The Lord Master of Hell"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.5,
+        "expectedQualityScore": 92.4,
+        "rawScorePercent": 94.3,
+        "curveFitPercent": 57.5,
+        "deckPullChancePercent": 58,
+        "synergyPercent": 97.4,
+        "synergyThemes": [
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 76.8
+      },
+      {
+        "colors": "WU",
+        "cardCount": 3,
+        "avgBomb": 1.2,
+        "avgOverall": 2.6,
+        "topCards": [
+          "Cid, Timeless Artificer",
+          "Sharlayan, Nation of Scholars",
+          "Tidus, Blitzball Star"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.5,
+        "expectedQualityScore": 89.3,
+        "rawScorePercent": 91.1,
+        "curveFitPercent": 67.5,
+        "deckPullChancePercent": 61.9,
+        "synergyPercent": 82.8,
+        "synergyThemes": [
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 75.8
       },
       {
         "colors": "BG",
@@ -8373,25 +8572,18 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 72.4
-      },
-      {
-        "colors": "RG",
-        "cardCount": 3,
-        "avgBomb": 1.4,
-        "avgOverall": 5.6,
-        "topCards": [
-          "Gladiolus Amicitia",
-          "Gongaga, Reactor Town",
-          "Rydia, Summoner of Mist"
+        "pullChance": 72.4,
+        "expectedQualityScore": 96.5,
+        "rawScorePercent": 98.5,
+        "curveFitPercent": 68.8,
+        "deckPullChancePercent": 69.7,
+        "synergyPercent": 51,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.5
+        "deckFeasible": false,
+        "finalScore": 72
       },
       {
         "colors": "UB",
@@ -8409,43 +8601,18 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.5
-      },
-      {
-        "colors": "WU",
-        "cardCount": 3,
-        "avgBomb": 1.2,
-        "avgOverall": 2.6,
-        "topCards": [
-          "Cid, Timeless Artificer",
-          "Sharlayan, Nation of Scholars",
-          "Tidus, Blitzball Star"
+        "pullChance": 61.5,
+        "expectedQualityScore": 91.6,
+        "rawScorePercent": 93.5,
+        "curveFitPercent": 67.5,
+        "deckPullChancePercent": 62.7,
+        "synergyPercent": 60.3,
+        "synergyThemes": [
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.5
-      },
-      {
-        "colors": "BR",
-        "cardCount": 3,
-        "avgBomb": 0.7,
-        "avgOverall": 5.9,
-        "topCards": [
-          "Black Waltz No. 3",
-          "Garland, Knight of Cornelia // Chaos, the Endless",
-          "Vector, Imperial Capital"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.5
+        "deckFeasible": false,
+        "finalScore": 71
       },
       {
         "colors": "WG",
@@ -8463,7 +8630,18 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.5
+        "pullChance": 61.5,
+        "expectedQualityScore": 90.2,
+        "rawScorePercent": 92,
+        "curveFitPercent": 68.1,
+        "deckPullChancePercent": 67.1,
+        "synergyPercent": 53,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 70.1
       },
       {
         "colors": "WR",
@@ -8481,7 +8659,18 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.5
+        "pullChance": 61.5,
+        "expectedQualityScore": 95.6,
+        "rawScorePercent": 97.6,
+        "curveFitPercent": 64.4,
+        "deckPullChancePercent": 62.6,
+        "synergyPercent": 53.6,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 69.6
       },
       {
         "colors": "WB",
@@ -8499,17 +8688,28 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.5
+        "pullChance": 61.5,
+        "expectedQualityScore": 93,
+        "rawScorePercent": 94.9,
+        "curveFitPercent": 74.4,
+        "deckPullChancePercent": 67.9,
+        "synergyPercent": 40.4,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 69.4
       },
       {
-        "colors": "UR",
+        "colors": "BR",
         "cardCount": 3,
-        "avgBomb": 0,
-        "avgOverall": 2.5,
+        "avgBomb": 0.7,
+        "avgOverall": 5.9,
         "topCards": [
-          "Baron, Airship Kingdom",
-          "Shantotto, Tactician Magician",
-          "The Emperor of Palamecia // The Lord Master of Hell"
+          "Black Waltz No. 3",
+          "Garland, Knight of Cornelia // Chaos, the Endless",
+          "Vector, Imperial Capital"
         ],
         "byRarity": {
           "common": 1,
@@ -8517,7 +8717,47 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.5
+        "pullChance": 61.5,
+        "expectedQualityScore": 98,
+        "rawScorePercent": 100,
+        "curveFitPercent": 64.4,
+        "deckPullChancePercent": 63.4,
+        "synergyPercent": 48.3,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 69
+      },
+      {
+        "colors": "RG",
+        "cardCount": 3,
+        "avgBomb": 1.4,
+        "avgOverall": 5.6,
+        "topCards": [
+          "Gladiolus Amicitia",
+          "Gongaga, Reactor Town",
+          "Rydia, Summoner of Mist"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.5,
+        "expectedQualityScore": 94.7,
+        "rawScorePercent": 96.6,
+        "curveFitPercent": 56.9,
+        "deckPullChancePercent": 62.6,
+        "synergyPercent": 54.3,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 67.6
       }
     ]
   },
@@ -20662,5 +20902,1129 @@
         "curveFitPercent": 56.9
       }
     ]
+  },
+  "manaFixing": {
+    "all": {
+      "colorlessFixers": {
+        "cardCount": 14,
+        "byRarity": {
+          "common": 5,
+          "uncommon": 5,
+          "rare": 3,
+          "mythic": 1
+        },
+        "pullChance": 98.5,
+        "topCards": [
+          "Ancient Adamantoise",
+          "Blitzball",
+          "Capital City",
+          "Kain, Traitorous Dragoon",
+          "Magic Pot",
+          "Namazu Trader",
+          "Prompto Argentum",
+          "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Sharlayan, Nation of Scholars"
+          ]
+        },
+        {
+          "colors": "WB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Insomnia, Crown City"
+          ]
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Rabanastre, Royal City"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Windurst, Federation Center"
+          ]
+        },
+        {
+          "colors": "UB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Treno, Dark City"
+          ]
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Baron, Airship Kingdom"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 2,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 49.7,
+          "topCards": [
+            "Balamb Garden, SeeD Academy // Balamb Garden, Airborne",
+            "Guadosalam, Farplane Gateway"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Vector, Imperial Capital"
+          ]
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Gohn, Town of Ruin"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Gongaga, Reactor Town"
+          ]
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 18,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 3,
+            "mythic": 1
+          },
+          "pullChance": 99.9,
+          "topCards": [
+            "Ancient Adamantoise",
+            "Blitzball",
+            "Capital City",
+            "Kain, Traitorous Dragoon",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 19,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 4,
+            "mythic": 1
+          },
+          "pullChance": 99.9,
+          "topCards": [
+            "Ancient Adamantoise",
+            "Blitzball",
+            "Capital City",
+            "Kain, Traitorous Dragoon",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 18,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 3,
+            "mythic": 1
+          },
+          "pullChance": 99.9,
+          "topCards": [
+            "Ancient Adamantoise",
+            "Blitzball",
+            "Capital City",
+            "Kain, Traitorous Dragoon",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 18,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 3,
+            "mythic": 1
+          },
+          "pullChance": 99.9,
+          "topCards": [
+            "Ancient Adamantoise",
+            "Blitzball",
+            "Capital City",
+            "Kain, Traitorous Dragoon",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 19,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 4,
+            "mythic": 1
+          },
+          "pullChance": 99.9,
+          "topCards": [
+            "Ancient Adamantoise",
+            "Blitzball",
+            "Capital City",
+            "Kain, Traitorous Dragoon",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "G",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": "G"
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": "U"
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "G",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": "G"
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "G",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": "G"
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": "U"
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 5,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.7,
+              "pullChance": 99.9
+            }
+          ],
+          "bestSplash": "U"
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "UG",
+          "splashColor": "B",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 97.6,
+          "combinedScore": 99.4,
+          "splashRemoval": 0.6,
+          "topCards": [
+            "Insomnia, Crown City",
+            "Treno, Dark City",
+            "Vector, Imperial Capital",
+            "Gohn, Town of Ruin"
+          ]
+        },
+        {
+          "baseColors": "WU",
+          "splashColor": "B",
+          "baseStrengthPercent": 91.7,
+          "splashQualityPercent": 100,
+          "fixingPercent": 97.6,
+          "combinedScore": 96.1,
+          "splashRemoval": 0.6,
+          "topCards": [
+            "Insomnia, Crown City",
+            "Treno, Dark City",
+            "Vector, Imperial Capital",
+            "Gohn, Town of Ruin"
+          ]
+        },
+        {
+          "baseColors": "UB",
+          "splashColor": "G",
+          "baseStrengthPercent": 94.5,
+          "splashQualityPercent": 94.9,
+          "fixingPercent": 100,
+          "combinedScore": 96,
+          "splashRemoval": 0.3,
+          "topCards": [
+            "Windurst, Federation Center",
+            "Balamb Garden, SeeD Academy // Balamb Garden, Airborne",
+            "Guadosalam, Farplane Gateway",
+            "Gohn, Town of Ruin",
+            "Gongaga, Reactor Town"
+          ]
+        }
+      ]
+    },
+    "commonsOnly": {
+      "colorlessFixers": {
+        "cardCount": 10,
+        "byRarity": {
+          "common": 5,
+          "uncommon": 5,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 98.1,
+        "topCards": [
+          "Blitzball",
+          "Capital City",
+          "Magic Pot",
+          "Namazu Trader",
+          "Prompto Argentum",
+          "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+          "The Gold Saucer",
+          "Undercity Dire Rat"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Sharlayan, Nation of Scholars"
+          ]
+        },
+        {
+          "colors": "WB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Insomnia, Crown City"
+          ]
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Rabanastre, Royal City"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Windurst, Federation Center"
+          ]
+        },
+        {
+          "colors": "UB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Treno, Dark City"
+          ]
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Baron, Airship Kingdom"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Guadosalam, Farplane Gateway"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Vector, Imperial Capital"
+          ]
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Gohn, Town of Ruin"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 46.5,
+          "topCards": [
+            "Gongaga, Reactor Town"
+          ]
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 14,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Blitzball",
+            "Capital City",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+            "The Gold Saucer",
+            "Undercity Dire Rat"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 14,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Blitzball",
+            "Capital City",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+            "The Gold Saucer",
+            "Undercity Dire Rat"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 14,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Blitzball",
+            "Capital City",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+            "The Gold Saucer",
+            "Undercity Dire Rat"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 14,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Blitzball",
+            "Capital City",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+            "The Gold Saucer",
+            "Undercity Dire Rat"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 14,
+          "byRarity": {
+            "common": 9,
+            "uncommon": 5,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Blitzball",
+            "Capital City",
+            "Magic Pot",
+            "Namazu Trader",
+            "Prompto Argentum",
+            "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+            "The Gold Saucer",
+            "Undercity Dire Rat"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.5,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "UG",
+          "splashColor": "W",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0.5,
+          "topCards": [
+            "Sharlayan, Nation of Scholars",
+            "Insomnia, Crown City",
+            "Rabanastre, Royal City",
+            "Windurst, Federation Center"
+          ]
+        },
+        {
+          "baseColors": "UG",
+          "splashColor": "R",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0.4,
+          "topCards": [
+            "Rabanastre, Royal City",
+            "Baron, Airship Kingdom",
+            "Vector, Imperial Capital",
+            "Gongaga, Reactor Town"
+          ]
+        },
+        {
+          "baseColors": "UR",
+          "splashColor": "W",
+          "baseStrengthPercent": 98.2,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 99.3,
+          "splashRemoval": 0.5,
+          "topCards": [
+            "Sharlayan, Nation of Scholars",
+            "Insomnia, Crown City",
+            "Rabanastre, Royal City",
+            "Windurst, Federation Center"
+          ]
+        }
+      ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "setCode": "stx",
-  "generatedAt": "2026-08-06T20:13:20.409Z",
+  "generatedAt": "2026-08-07T08:13:30.516Z",
   "cardCount": 176,
   "colorStats": {
     "all": {
@@ -4793,7 +4793,18 @@
           "rare": 2,
           "mythic": 0
         },
-        "pullChance": 99.8
+        "pullChance": 99.8,
+        "expectedQualityScore": 88.6,
+        "rawScorePercent": 95.8,
+        "curveFitPercent": 85.6,
+        "deckPullChancePercent": 83.3,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 91.2
       },
       {
         "colors": "WR",
@@ -4813,27 +4824,17 @@
           "rare": 3,
           "mythic": 1
         },
-        "pullChance": 99.7
-      },
-      {
-        "colors": "WB",
-        "cardCount": 13,
-        "avgBomb": 0.5,
-        "avgOverall": 2.8,
-        "topCards": [
-          "Owlin Shieldmage",
-          "Silverquill Pledgemage",
-          "Spiteful Squad",
-          "Blot Out the Sky",
-          "Closing Statement"
+        "pullChance": 99.7,
+        "expectedQualityScore": 83.1,
+        "rawScorePercent": 89.8,
+        "curveFitPercent": 80,
+        "deckPullChancePercent": 78.7,
+        "synergyPercent": 42.4,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
         ],
-        "byRarity": {
-          "common": 6,
-          "uncommon": 4,
-          "rare": 2,
-          "mythic": 1
-        },
-        "pullChance": 99.8
+        "deckFeasible": true,
+        "finalScore": 72.7
       },
       {
         "colors": "UR",
@@ -4853,7 +4854,17 @@
           "rare": 3,
           "mythic": 2
         },
-        "pullChance": 99.8
+        "pullChance": 99.8,
+        "expectedQualityScore": 92.5,
+        "rawScorePercent": 100,
+        "curveFitPercent": 84.4,
+        "deckPullChancePercent": 74.9,
+        "synergyPercent": 29.3,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 72.2
       },
       {
         "colors": "UG",
@@ -4873,7 +4884,167 @@
           "rare": 3,
           "mythic": 1
         },
-        "pullChance": 99.7
+        "pullChance": 99.7,
+        "expectedQualityScore": 80,
+        "rawScorePercent": 86.5,
+        "curveFitPercent": 86.9,
+        "deckPullChancePercent": 77.5,
+        "synergyPercent": 35.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 71.7
+      },
+      {
+        "colors": "WB",
+        "cardCount": 13,
+        "avgBomb": 0.5,
+        "avgOverall": 2.8,
+        "topCards": [
+          "Owlin Shieldmage",
+          "Silverquill Pledgemage",
+          "Spiteful Squad",
+          "Blot Out the Sky",
+          "Closing Statement"
+        ],
+        "byRarity": {
+          "common": 6,
+          "uncommon": 4,
+          "rare": 2,
+          "mythic": 1
+        },
+        "pullChance": 99.8,
+        "expectedQualityScore": 74.4,
+        "rawScorePercent": 80.4,
+        "curveFitPercent": 80,
+        "deckPullChancePercent": 81,
+        "synergyPercent": 37,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 69.6
+      },
+      {
+        "colors": "BR",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 71.6,
+        "rawScorePercent": 77.4,
+        "curveFitPercent": 70.6,
+        "deckPullChancePercent": 67,
+        "synergyPercent": 32.6,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 61.9
+      },
+      {
+        "colors": "RG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 67.7,
+        "rawScorePercent": 73.2,
+        "curveFitPercent": 73.8,
+        "deckPullChancePercent": 63.9,
+        "synergyPercent": 35.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 61.7
+      },
+      {
+        "colors": "UB",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 72.4,
+        "rawScorePercent": 78.3,
+        "curveFitPercent": 65.6,
+        "deckPullChancePercent": 60.7,
+        "synergyPercent": 32.6,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 59.3
+      },
+      {
+        "colors": "WG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 53.4,
+        "rawScorePercent": 57.7,
+        "curveFitPercent": 65,
+        "deckPullChancePercent": 58.8,
+        "synergyPercent": 40.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 55.4
+      },
+      {
+        "colors": "WU",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 58.7,
+        "rawScorePercent": 63.5,
+        "curveFitPercent": 56.9,
+        "deckPullChancePercent": 51.3,
+        "synergyPercent": 30.4,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 50.5
       }
     ],
     "commonsOnly": [
@@ -4895,27 +5066,18 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 99.7
-      },
-      {
-        "colors": "WB",
-        "cardCount": 10,
-        "avgBomb": 0.7,
-        "avgOverall": 2.8,
-        "topCards": [
-          "Owlin Shieldmage",
-          "Silverquill Pledgemage",
-          "Spiteful Squad",
-          "Closing Statement",
-          "Exhilarating Elocution"
+        "pullChance": 99.7,
+        "expectedQualityScore": 82.5,
+        "rawScorePercent": 100,
+        "curveFitPercent": 82.5,
+        "deckPullChancePercent": 78.2,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 6,
-          "uncommon": 4,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 99.6
+        "deckFeasible": true,
+        "finalScore": 90.2
       },
       {
         "colors": "WR",
@@ -4935,7 +5097,17 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 99.4
+        "pullChance": 99.4,
+        "expectedQualityScore": 75.2,
+        "rawScorePercent": 91.2,
+        "curveFitPercent": 78.8,
+        "deckPullChancePercent": 72.2,
+        "synergyPercent": 39.1,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 70.3
       },
       {
         "colors": "UG",
@@ -4955,7 +5127,17 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 99.4
+        "pullChance": 99.4,
+        "expectedQualityScore": 73.8,
+        "rawScorePercent": 89.5,
+        "curveFitPercent": 80,
+        "deckPullChancePercent": 71.5,
+        "synergyPercent": 37.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 69.7
       },
       {
         "colors": "UR",
@@ -4975,7 +5157,167 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 99.6
+        "pullChance": 99.6,
+        "expectedQualityScore": 81.6,
+        "rawScorePercent": 98.9,
+        "curveFitPercent": 78.1,
+        "deckPullChancePercent": 69.2,
+        "synergyPercent": 29.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 69
+      },
+      {
+        "colors": "WB",
+        "cardCount": 10,
+        "avgBomb": 0.7,
+        "avgOverall": 2.8,
+        "topCards": [
+          "Owlin Shieldmage",
+          "Silverquill Pledgemage",
+          "Spiteful Squad",
+          "Closing Statement",
+          "Exhilarating Elocution"
+        ],
+        "byRarity": {
+          "common": 6,
+          "uncommon": 4,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 99.6,
+        "expectedQualityScore": 68.6,
+        "rawScorePercent": 83.2,
+        "curveFitPercent": 75.6,
+        "deckPullChancePercent": 75.3,
+        "synergyPercent": 35.6,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 67.4
+      },
+      {
+        "colors": "RG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 64.3,
+        "rawScorePercent": 77.9,
+        "curveFitPercent": 71.3,
+        "deckPullChancePercent": 61.1,
+        "synergyPercent": 36.8,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 61.8
+      },
+      {
+        "colors": "BR",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 66.3,
+        "rawScorePercent": 80.4,
+        "curveFitPercent": 67.5,
+        "deckPullChancePercent": 63.1,
+        "synergyPercent": 31,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 60.5
+      },
+      {
+        "colors": "UB",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 66.8,
+        "rawScorePercent": 81,
+        "curveFitPercent": 60.6,
+        "deckPullChancePercent": 55.9,
+        "synergyPercent": 29.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 56.9
+      },
+      {
+        "colors": "WG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 51.2,
+        "rawScorePercent": 62.1,
+        "curveFitPercent": 62.5,
+        "deckPullChancePercent": 54.8,
+        "synergyPercent": 42.5,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 55.5
+      },
+      {
+        "colors": "WU",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 54.9,
+        "rawScorePercent": 66.5,
+        "curveFitPercent": 53.8,
+        "deckPullChancePercent": 47.4,
+        "synergyPercent": 32.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 50
       }
     ]
   },
@@ -11169,5 +11511,1049 @@
         "curveFitPercent": 53.8
       }
     ]
+  },
+  "manaFixing": {
+    "all": {
+      "colorlessFixers": {
+        "cardCount": 6,
+        "byRarity": {
+          "common": 3,
+          "uncommon": 1,
+          "rare": 1,
+          "mythic": 1
+        },
+        "pullChance": 93.8,
+        "topCards": [
+          "Creative Outburst",
+          "Culmination of Studies",
+          "Elemental Masterpiece",
+          "Galazeth Prismari",
+          "Letter of Acceptance",
+          "Sudden Breakthrough"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 51,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 51,
+          "topCards": [
+            "Witherbloom Campus"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 3,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 1
+          },
+          "pullChance": 93.8,
+          "topCards": [
+            "Creative Outburst",
+            "Culmination of Studies",
+            "Elemental Masterpiece",
+            "Galazeth Prismari",
+            "Letter of Acceptance",
+            "Sudden Breakthrough"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 1
+          },
+          "pullChance": 96.9,
+          "topCards": [
+            "Creative Outburst",
+            "Culmination of Studies",
+            "Elemental Masterpiece",
+            "Galazeth Prismari",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Prismari Campus"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 1
+          },
+          "pullChance": 96.9,
+          "topCards": [
+            "Creative Outburst",
+            "Culmination of Studies",
+            "Elemental Masterpiece",
+            "Galazeth Prismari",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Witherbloom Campus"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 1
+          },
+          "pullChance": 96.9,
+          "topCards": [
+            "Creative Outburst",
+            "Culmination of Studies",
+            "Elemental Masterpiece",
+            "Galazeth Prismari",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Prismari Campus"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 1,
+            "mythic": 1
+          },
+          "pullChance": 96.9,
+          "topCards": [
+            "Creative Outburst",
+            "Culmination of Studies",
+            "Elemental Masterpiece",
+            "Galazeth Prismari",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Witherbloom Campus"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.8,
+              "pullChance": 93.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.8,
+              "pullChance": 93.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.8,
+              "pullChance": 93.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.8,
+              "pullChance": 93.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.8,
+              "pullChance": 93.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.5,
+              "pullChance": 96.9
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.8,
+              "pullChance": 93.8
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "BG",
+          "splashColor": "U",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 71.4,
+          "combinedScore": 92.9,
+          "splashRemoval": 0.7,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        },
+        {
+          "baseColors": "WR",
+          "splashColor": "U",
+          "baseStrengthPercent": 79.7,
+          "splashQualityPercent": 100,
+          "fixingPercent": 71.4,
+          "combinedScore": 84.7,
+          "splashRemoval": 0.7,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        },
+        {
+          "baseColors": "BG",
+          "splashColor": "R",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 74.3,
+          "fixingPercent": 71.4,
+          "combinedScore": 83.9,
+          "splashRemoval": 0.4,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        }
+      ]
+    },
+    "commonsOnly": {
+      "colorlessFixers": {
+        "cardCount": 4,
+        "byRarity": {
+          "common": 3,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 91.3,
+        "topCards": [
+          "Creative Outburst",
+          "Elemental Masterpiece",
+          "Letter of Acceptance",
+          "Sudden Breakthrough"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 51,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 51,
+          "topCards": [
+            "Witherbloom Campus"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 4,
+          "byRarity": {
+            "common": 3,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 91.3,
+          "topCards": [
+            "Creative Outburst",
+            "Elemental Masterpiece",
+            "Letter of Acceptance",
+            "Sudden Breakthrough"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 95.7,
+          "topCards": [
+            "Creative Outburst",
+            "Elemental Masterpiece",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Prismari Campus"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 95.7,
+          "topCards": [
+            "Creative Outburst",
+            "Elemental Masterpiece",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Witherbloom Campus"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 95.7,
+          "topCards": [
+            "Creative Outburst",
+            "Elemental Masterpiece",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Prismari Campus"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 5,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 95.7,
+          "topCards": [
+            "Creative Outburst",
+            "Elemental Masterpiece",
+            "Letter of Acceptance",
+            "Sudden Breakthrough",
+            "Witherbloom Campus"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.4,
+              "pullChance": 91.3
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.4,
+              "pullChance": 91.3
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.4,
+              "pullChance": 91.3
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.4,
+              "pullChance": 91.3
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.4,
+              "pullChance": 91.3
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 1,
+              "expectedCount": 3.2,
+              "pullChance": 95.7
+            },
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 2.4,
+              "pullChance": 91.3
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "BG",
+          "splashColor": "U",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 71.4,
+          "combinedScore": 92.9,
+          "splashRemoval": 0.8,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        },
+        {
+          "baseColors": "WR",
+          "splashColor": "U",
+          "baseStrengthPercent": 77.9,
+          "splashQualityPercent": 100,
+          "fixingPercent": 71.4,
+          "combinedScore": 84,
+          "splashRemoval": 0.8,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        },
+        {
+          "baseColors": "BG",
+          "splashColor": "R",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 71.9,
+          "fixingPercent": 71.4,
+          "combinedScore": 83,
+          "splashRemoval": 0.2,
+          "topCards": [
+            "Prismari Campus"
+          ]
+        }
+      ]
+    }
   }
 }

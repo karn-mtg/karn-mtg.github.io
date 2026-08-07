@@ -1,0 +1,136 @@
+---
+import { t, type Lang } from '../../i18n'
+import ManaSymbol from './ManaSymbol.astro'
+
+interface FixerSummary {
+  cardCount: number
+  pullChance: number
+  topCards: string[]
+}
+
+interface DualFixerPair extends FixerSummary {
+  colors: string
+}
+
+interface ColorFixer extends FixerSummary {
+  color: string
+}
+
+interface TopSplashCombo {
+  baseColors: string
+  splashColor: string
+  baseStrengthPercent: number
+  splashQualityPercent: number
+  fixingPercent: number
+  combinedScore: number
+  splashRemoval: number
+  topCards: string[]
+}
+
+interface ManaFixing {
+  colorlessFixers: FixerSummary
+  dualFixersByPair: DualFixerPair[]
+  fixersByColor: ColorFixer[]
+  topSplashCombos: TopSplashCombo[]
+}
+
+interface Props {
+  manaFixing: ManaFixing
+  lang: Lang
+}
+
+const { manaFixing, lang } = Astro.props
+const i18n = t(lang)
+
+const dualTotalCount = manaFixing.dualFixersByPair.reduce((sum, p) => sum + p.cardCount, 0)
+
+const keyCards = [
+  ...manaFixing.colorlessFixers.topCards,
+  ...manaFixing.dualFixersByPair.flatMap(p => p.topCards),
+].filter((name, i, arr) => arr.indexOf(name) === i).slice(0, 8)
+
+const scoreBars: Array<[string, keyof TopSplashCombo]> = [
+  [i18n.baseStrengthLabel, 'baseStrengthPercent'],
+  [i18n.splashQualityLabel, 'splashQualityPercent'],
+  [i18n.fixingEaseLabel, 'fixingPercent'],
+]
+---
+
+<div class="space-y-8">
+  <div class="glass-panel rounded-xl p-5">
+    <p class="text-sm text-on-surface-variant leading-relaxed mb-5">
+      {dualTotalCount > 0
+        ? i18n.splashOverviewSummary(manaFixing.colorlessFixers.cardCount, manaFixing.colorlessFixers.pullChance, dualTotalCount)
+        : i18n.splashOverviewSummaryNoDual(manaFixing.colorlessFixers.cardCount, manaFixing.colorlessFixers.pullChance)}
+    </p>
+
+    <h4 class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/50 mb-2">{i18n.splashFixersByColorLabel}</h4>
+    <div class="flex flex-wrap gap-2 mb-5">
+      {manaFixing.fixersByColor.map(f => (
+        <div class="flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1.5">
+          <ManaSymbol color={f.color} />
+          <span class="text-xs font-bold text-on-surface">{f.cardCount}</span>
+          <span class="text-[10px] text-on-surface-variant/50">({f.pullChance}%)</span>
+        </div>
+      ))}
+    </div>
+
+    {keyCards.length > 0 && (
+      <>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/50 mb-2">{i18n.splashKeyCardsLabel}</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">
+          {keyCards.map((name, i) => (
+            <>
+              {i > 0 && ', '}
+              <strong class="text-on-surface font-semibold cursor-default" data-card-name={name}>{name}</strong>
+            </>
+          ))}
+        </p>
+      </>
+    )}
+  </div>
+
+  <div>
+    <h4 class="text-sm font-semibold text-on-surface mb-1">{i18n.topSplashCombosLabel}</h4>
+    <p class="text-xs text-on-surface-variant/60 mb-4">{i18n.topSplashCombosSubtitle}</p>
+    <div class="grid gap-3 sm:grid-cols-3">
+      {manaFixing.topSplashCombos.map(combo => (
+        <div class="glass-panel rounded-xl p-4">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-1">
+              {combo.baseColors.split('').map(c => <ManaSymbol color={c} />)}
+              <span class="text-on-surface-variant/30 mx-1 text-xs">+</span>
+              <ManaSymbol color={combo.splashColor} />
+            </div>
+            <span class="text-sm font-bold text-primary">{combo.combinedScore}%</span>
+          </div>
+
+          <div class="space-y-2 mb-4">
+            {scoreBars.map(([label, key]) => (
+              <div>
+                <div class="flex items-center justify-between mb-0.5">
+                  <span class="text-[10px] text-on-surface-variant/60">{label}</span>
+                  <span class="text-[10px] font-semibold text-on-surface-variant">{combo[key]}%</span>
+                </div>
+                <div class="h-1 rounded-full bg-white/5 overflow-hidden">
+                  <div class="h-full bg-primary/70 rounded-full" style={`width:${combo[key]}%`} />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {combo.topCards.length > 0 && (
+            <p class="text-[11px] text-on-surface-variant/60 leading-relaxed">
+              {combo.topCards.map((name, i) => (
+                <>
+                  {i > 0 && ', '}
+                  <strong class="text-on-surface-variant font-semibold cursor-default" data-card-name={name}>{name}</strong>
+                </>
+              ))}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

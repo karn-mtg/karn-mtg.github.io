@@ -1,6 +1,6 @@
 {
   "setCode": "ecl",
-  "generatedAt": "2026-08-06T20:13:20.585Z",
+  "generatedAt": "2026-08-07T08:13:29.903Z",
   "cardCount": 232,
   "colorStats": {
     "all": {
@@ -6198,81 +6198,6 @@
   "manaCombos": {
     "all": [
       {
-        "colors": "WB",
-        "cardCount": 3,
-        "avgBomb": 2.8,
-        "avgOverall": 5.5,
-        "topCards": [
-          "Reaping Willow",
-          "Eirdu, Carrier of Dawn // Isilu, Carrier of Twilight",
-          "Prideful Feastling"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 1,
-          "rare": 0,
-          "mythic": 1
-        },
-        "pullChance": 62.9
-      },
-      {
-        "colors": "UG",
-        "cardCount": 4,
-        "avgBomb": 2.4,
-        "avgOverall": 5.5,
-        "topCards": [
-          "Wistfulness",
-          "Chitinous Graspling",
-          "Glister Bairn",
-          "Oko, Lorwyn Liege // Oko, Shadowmoor Scion"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 1,
-          "rare": 0,
-          "mythic": 2
-        },
-        "pullChance": 64.5
-      },
-      {
-        "colors": "RG",
-        "cardCount": 4,
-        "avgBomb": 2,
-        "avgOverall": 4.7,
-        "topCards": [
-          "Gangly Stompling",
-          "Noggle Robber",
-          "Vibrance",
-          "Raiding Schemes"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 1,
-          "rare": 1,
-          "mythic": 1
-        },
-        "pullChance": 67.4
-      },
-      {
-        "colors": "WR",
-        "cardCount": 4,
-        "avgBomb": 1.9,
-        "avgOverall": 2.8,
-        "topCards": [
-          "Hovel Hurler",
-          "Bre of Clan Stoutarm",
-          "Kirol, Attentive First-Year",
-          "Feisty Spikeling"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 1,
-          "rare": 2,
-          "mythic": 0
-        },
-        "pullChance": 70.1
-      },
-      {
         "colors": "BR",
         "cardCount": 7,
         "avgBomb": 1.7,
@@ -6290,37 +6215,27 @@
           "rare": 4,
           "mythic": 0
         },
-        "pullChance": 80.9
-      },
-      {
-        "colors": "WG",
-        "cardCount": 6,
-        "avgBomb": 0.8,
-        "avgOverall": 2.3,
-        "topCards": [
-          "Wary Farmer",
-          "Brigid, Clachan's Heart // Brigid, Doun's Mind",
-          "Brigid's Command",
-          "Eclipsed Kithkin",
-          "Temple Garden // Temple Garden"
+        "pullChance": 80.9,
+        "expectedQualityScore": 109.3,
+        "rawScorePercent": 98.1,
+        "curveFitPercent": 98.1,
+        "deckPullChancePercent": 91.5,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 3,
-          "mythic": 0
-        },
-        "pullChance": 78.3
+        "deckFeasible": true,
+        "finalScore": 96.9
       },
       {
-        "colors": "UB",
+        "colors": "WB",
         "cardCount": 3,
-        "avgBomb": 0.7,
-        "avgOverall": 2.7,
+        "avgBomb": 2.8,
+        "avgOverall": 5.5,
         "topCards": [
-          "Deceit",
-          "Mischievous Sneakling",
-          "Voracious Tome-Skimmer"
+          "Reaping Willow",
+          "Eirdu, Carrier of Dawn // Isilu, Carrier of Twilight",
+          "Prideful Feastling"
         ],
         "byRarity": {
           "common": 1,
@@ -6328,7 +6243,17 @@
           "rare": 0,
           "mythic": 1
         },
-        "pullChance": 62.9
+        "pullChance": 62.9,
+        "expectedQualityScore": 101.3,
+        "rawScorePercent": 90.9,
+        "curveFitPercent": 99.4,
+        "deckPullChancePercent": 89.9,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 95.1
       },
       {
         "colors": "BG",
@@ -6348,27 +6273,75 @@
           "rare": 3,
           "mythic": 0
         },
-        "pullChance": 78.3
+        "pullChance": 78.3,
+        "expectedQualityScore": 111.4,
+        "rawScorePercent": 100,
+        "curveFitPercent": 96.9,
+        "deckPullChancePercent": 91.4,
+        "synergyPercent": 80.5,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 92.2
       },
       {
-        "colors": "UR",
-        "cardCount": 6,
-        "avgBomb": 0.3,
-        "avgOverall": 1.8,
+        "colors": "UG",
+        "cardCount": 4,
+        "avgBomb": 2.4,
+        "avgOverall": 5.5,
         "topCards": [
-          "Sanar, Innovative First-Year",
-          "Ashling, Rekindled // Ashling, Rimebound",
-          "Eclipsed Flamekin",
-          "Flaring Cinder",
-          "Steam Vents // Steam Vents"
+          "Wistfulness",
+          "Chitinous Graspling",
+          "Glister Bairn",
+          "Oko, Lorwyn Liege // Oko, Shadowmoor Scion"
         ],
         "byRarity": {
           "common": 1,
-          "uncommon": 2,
-          "rare": 3,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 2
+        },
+        "pullChance": 64.5,
+        "expectedQualityScore": 97.9,
+        "rawScorePercent": 87.9,
+        "curveFitPercent": 96.3,
+        "deckPullChancePercent": 89.7,
+        "synergyPercent": 92.7,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 91.6
+      },
+      {
+        "colors": "WR",
+        "cardCount": 4,
+        "avgBomb": 1.9,
+        "avgOverall": 2.8,
+        "topCards": [
+          "Hovel Hurler",
+          "Bre of Clan Stoutarm",
+          "Kirol, Attentive First-Year",
+          "Feisty Spikeling"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 1,
+          "rare": 2,
           "mythic": 0
         },
-        "pullChance": 78.3
+        "pullChance": 70.1,
+        "expectedQualityScore": 95.4,
+        "rawScorePercent": 85.6,
+        "curveFitPercent": 95.6,
+        "deckPullChancePercent": 90.9,
+        "synergyPercent": 90.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 90.6
       },
       {
         "colors": "WU",
@@ -6388,7 +6361,134 @@
           "rare": 3,
           "mythic": 0
         },
-        "pullChance": 78.3
+        "pullChance": 78.3,
+        "expectedQualityScore": 93,
+        "rawScorePercent": 83.5,
+        "curveFitPercent": 93.8,
+        "deckPullChancePercent": 89.7,
+        "synergyPercent": 87.8,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 88.7
+      },
+      {
+        "colors": "WG",
+        "cardCount": 6,
+        "avgBomb": 0.8,
+        "avgOverall": 2.3,
+        "topCards": [
+          "Wary Farmer",
+          "Brigid, Clachan's Heart // Brigid, Doun's Mind",
+          "Brigid's Command",
+          "Eclipsed Kithkin",
+          "Temple Garden // Temple Garden"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 3,
+          "mythic": 0
+        },
+        "pullChance": 78.3,
+        "expectedQualityScore": 103.3,
+        "rawScorePercent": 92.7,
+        "curveFitPercent": 95,
+        "deckPullChancePercent": 91.5,
+        "synergyPercent": 73.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 88.1
+      },
+      {
+        "colors": "UB",
+        "cardCount": 3,
+        "avgBomb": 0.7,
+        "avgOverall": 2.7,
+        "topCards": [
+          "Deceit",
+          "Mischievous Sneakling",
+          "Voracious Tome-Skimmer"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 1
+        },
+        "pullChance": 62.9,
+        "expectedQualityScore": 95.2,
+        "rawScorePercent": 85.5,
+        "curveFitPercent": 90,
+        "deckPullChancePercent": 88.7,
+        "synergyPercent": 82.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 86.8
+      },
+      {
+        "colors": "UR",
+        "cardCount": 6,
+        "avgBomb": 0.3,
+        "avgOverall": 1.8,
+        "topCards": [
+          "Sanar, Innovative First-Year",
+          "Ashling, Rekindled // Ashling, Rimebound",
+          "Eclipsed Flamekin",
+          "Flaring Cinder",
+          "Steam Vents // Steam Vents"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 3,
+          "mythic": 0
+        },
+        "pullChance": 78.3,
+        "expectedQualityScore": 93,
+        "rawScorePercent": 83.5,
+        "curveFitPercent": 97.5,
+        "deckPullChancePercent": 90.4,
+        "synergyPercent": 75.6,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 86.8
+      },
+      {
+        "colors": "RG",
+        "cardCount": 4,
+        "avgBomb": 2,
+        "avgOverall": 4.7,
+        "topCards": [
+          "Gangly Stompling",
+          "Noggle Robber",
+          "Vibrance",
+          "Raiding Schemes"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 1,
+          "rare": 1,
+          "mythic": 1
+        },
+        "pullChance": 67.4,
+        "expectedQualityScore": 109.1,
+        "rawScorePercent": 97.9,
+        "curveFitPercent": 97.5,
+        "deckPullChancePercent": 91.4,
+        "synergyPercent": 56.1,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 85.7
       }
     ],
     "commonsOnly": [
@@ -6407,58 +6507,17 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.4
-      },
-      {
-        "colors": "RG",
-        "cardCount": 2,
-        "avgBomb": 3,
-        "avgOverall": 6,
-        "topCards": [
-          "Gangly Stompling",
-          "Noggle Robber"
+        "pullChance": 61.4,
+        "expectedQualityScore": 96,
+        "rawScorePercent": 91.9,
+        "curveFitPercent": 96.9,
+        "deckPullChancePercent": 87.1,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 1,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.4
-      },
-      {
-        "colors": "WR",
-        "cardCount": 2,
-        "avgBomb": 2.6,
-        "avgOverall": 4.3,
-        "topCards": [
-          "Hovel Hurler",
-          "Feisty Spikeling"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 1,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.4
-      },
-      {
-        "colors": "UG",
-        "cardCount": 2,
-        "avgBomb": 2.3,
-        "avgOverall": 2.3,
-        "topCards": [
-          "Chitinous Graspling",
-          "Glister Bairn"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 1,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 61.4
+        "deckFeasible": true,
+        "finalScore": 94
       },
       {
         "colors": "BR",
@@ -6476,43 +6535,17 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 68.1
-      },
-      {
-        "colors": "WG",
-        "cardCount": 3,
-        "avgBomb": 1,
-        "avgOverall": 2,
-        "topCards": [
-          "Wary Farmer",
-          "Eclipsed Kithkin",
-          "Thoughtweft Lieutenant"
+        "pullChance": 68.1,
+        "expectedQualityScore": 102.8,
+        "rawScorePercent": 98.4,
+        "curveFitPercent": 96.9,
+        "deckPullChancePercent": 87.6,
+        "synergyPercent": 88.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 68.1
-      },
-      {
-        "colors": "WU",
-        "cardCount": 3,
-        "avgBomb": 0.7,
-        "avgOverall": 3,
-        "topCards": [
-          "Merrow Skyswimmer",
-          "Deepchannel Duelist",
-          "Eclipsed Merrow"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 68.1
+        "deckFeasible": true,
+        "finalScore": 92.9
       },
       {
         "colors": "BG",
@@ -6530,7 +6563,71 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 68.1
+        "pullChance": 68.1,
+        "expectedQualityScore": 104.5,
+        "rawScorePercent": 100,
+        "curveFitPercent": 94.4,
+        "deckPullChancePercent": 88.1,
+        "synergyPercent": 83.3,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 91.5
+      },
+      {
+        "colors": "WR",
+        "cardCount": 2,
+        "avgBomb": 2.6,
+        "avgOverall": 4.3,
+        "topCards": [
+          "Hovel Hurler",
+          "Feisty Spikeling"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.4,
+        "expectedQualityScore": 90.9,
+        "rawScorePercent": 87,
+        "curveFitPercent": 91.9,
+        "deckPullChancePercent": 87.6,
+        "synergyPercent": 88.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 88.9
+      },
+      {
+        "colors": "RG",
+        "cardCount": 2,
+        "avgBomb": 3,
+        "avgOverall": 6,
+        "topCards": [
+          "Gangly Stompling",
+          "Noggle Robber"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.4,
+        "expectedQualityScore": 103.9,
+        "rawScorePercent": 99.4,
+        "curveFitPercent": 94.4,
+        "deckPullChancePercent": 88.1,
+        "synergyPercent": 69.4,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 87.8
       },
       {
         "colors": "UR",
@@ -6548,7 +6645,17 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 68.1
+        "pullChance": 68.1,
+        "expectedQualityScore": 87.2,
+        "rawScorePercent": 83.4,
+        "curveFitPercent": 95,
+        "deckPullChancePercent": 85.9,
+        "synergyPercent": 86.1,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 87.6
       },
       {
         "colors": "UB",
@@ -6565,7 +6672,100 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 61.4
+        "pullChance": 61.4,
+        "expectedQualityScore": 89.2,
+        "rawScorePercent": 85.4,
+        "curveFitPercent": 88.8,
+        "deckPullChancePercent": 84.7,
+        "synergyPercent": 88.9,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 86.9
+      },
+      {
+        "colors": "WU",
+        "cardCount": 3,
+        "avgBomb": 0.7,
+        "avgOverall": 3,
+        "topCards": [
+          "Merrow Skyswimmer",
+          "Deepchannel Duelist",
+          "Eclipsed Merrow"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 68.1,
+        "expectedQualityScore": 85.5,
+        "rawScorePercent": 81.8,
+        "curveFitPercent": 93.1,
+        "deckPullChancePercent": 85.9,
+        "synergyPercent": 86.1,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 86.7
+      },
+      {
+        "colors": "WG",
+        "cardCount": 3,
+        "avgBomb": 1,
+        "avgOverall": 2,
+        "topCards": [
+          "Wary Farmer",
+          "Eclipsed Kithkin",
+          "Thoughtweft Lieutenant"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 68.1,
+        "expectedQualityScore": 96.4,
+        "rawScorePercent": 92.2,
+        "curveFitPercent": 91.9,
+        "deckPullChancePercent": 88.6,
+        "synergyPercent": 72.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 86.2
+      },
+      {
+        "colors": "UG",
+        "cardCount": 2,
+        "avgBomb": 2.3,
+        "avgOverall": 2.3,
+        "topCards": [
+          "Chitinous Graspling",
+          "Glister Bairn"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 61.4,
+        "expectedQualityScore": 90.4,
+        "rawScorePercent": 86.5,
+        "curveFitPercent": 95,
+        "deckPullChancePercent": 85.9,
+        "synergyPercent": 72.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 84.9
       }
     ]
   },
@@ -13316,5 +13516,1039 @@
         "curveFitPercent": 88.8
       }
     ]
+  },
+  "manaFixing": {
+    "all": {
+      "colorlessFixers": {
+        "cardCount": 7,
+        "byRarity": {
+          "common": 4,
+          "uncommon": 2,
+          "rare": 1,
+          "mythic": 0
+        },
+        "pullChance": 97.1,
+        "topCards": [
+          "Eclipsed Realms",
+          "Firdoch Core",
+          "Flamekin Gildweaver",
+          "Foraging Wickermaw",
+          "Noggle Robber",
+          "Reckless Ransacking",
+          "Scuzzback Scrounger"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 97.1,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking",
+            "Scuzzback Scrounger"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 97.1,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking",
+            "Scuzzback Scrounger"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 97.1,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking",
+            "Scuzzback Scrounger"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 97.1,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking",
+            "Scuzzback Scrounger"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 97.1,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking",
+            "Scuzzback Scrounger"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.5,
+              "pullChance": 97.1
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "BR",
+          "splashColor": "G",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 0,
+          "combinedScore": 75,
+          "splashRemoval": 0.2,
+          "topCards": []
+        },
+        {
+          "baseColors": "WB",
+          "splashColor": "G",
+          "baseStrengthPercent": 98.1,
+          "splashQualityPercent": 100,
+          "fixingPercent": 0,
+          "combinedScore": 74.2,
+          "splashRemoval": 0.2,
+          "topCards": []
+        },
+        {
+          "baseColors": "WR",
+          "splashColor": "G",
+          "baseStrengthPercent": 93.5,
+          "splashQualityPercent": 100,
+          "fixingPercent": 0,
+          "combinedScore": 72.4,
+          "splashRemoval": 0.2,
+          "topCards": []
+        }
+      ]
+    },
+    "commonsOnly": {
+      "colorlessFixers": {
+        "cardCount": 6,
+        "byRarity": {
+          "common": 4,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 96.7,
+        "topCards": [
+          "Eclipsed Realms",
+          "Firdoch Core",
+          "Flamekin Gildweaver",
+          "Foraging Wickermaw",
+          "Noggle Robber",
+          "Reckless Ransacking"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "BG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 96.7,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 96.7,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 96.7,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 96.7,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 6,
+          "byRarity": {
+            "common": 4,
+            "uncommon": 2,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 96.7,
+          "topCards": [
+            "Eclipsed Realms",
+            "Firdoch Core",
+            "Flamekin Gildweaver",
+            "Foraging Wickermaw",
+            "Noggle Robber",
+            "Reckless Ransacking"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 0,
+              "expectedCount": 3.4,
+              "pullChance": 96.7
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "WB",
+          "splashColor": "G",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 0,
+          "combinedScore": 75,
+          "splashRemoval": 0.1,
+          "topCards": []
+        },
+        {
+          "baseColors": "BR",
+          "splashColor": "G",
+          "baseStrengthPercent": 98.8,
+          "splashQualityPercent": 100,
+          "fixingPercent": 0,
+          "combinedScore": 74.5,
+          "splashRemoval": 0.1,
+          "topCards": []
+        },
+        {
+          "baseColors": "WR",
+          "splashColor": "B",
+          "baseStrengthPercent": 94.6,
+          "splashQualityPercent": 100,
+          "fixingPercent": 0,
+          "combinedScore": 72.8,
+          "splashRemoval": 0.9,
+          "topCards": []
+        }
+      ]
+    }
   }
 }

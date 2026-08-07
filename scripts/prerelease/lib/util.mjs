@@ -24,6 +24,10 @@ export function isLand(typeLine) {
   return /\bLand\b/.test(typeLine || '')
 }
 
+export function isArtifact(typeLine) {
+  return /\bArtifact\b/.test(typeLine || '')
+}
+
 const RARITY_ORDER = ['common', 'uncommon', 'rare', 'mythic']
 export function rarityRank(rarity) {
   return RARITY_ORDER.indexOf(rarity)
@@ -32,3 +36,15 @@ export function rarityRank(rarity) {
 export function readSlug(setCode) {
   return setCode.toLowerCase()
 }
+
+/** True if every color in `colorIdentity` is a member of `colorSet` (colorless cards trivially qualify). */
+export function isSubsetColorIdentity(colorIdentity, colorSet) {
+  return colorIdentity.every(c => colorSet.has(c))
+}
+
+export function byRarityCount(cards) {
+  return Object.fromEntries(RARITY_ORDER.map(r => [r, cards.filter(c => c.rarity === r).length]))
+}
+
+/** The 10 two-color pairs in canonical WUBRG order (matches colorKey's ordering). */
+export const TWO_COLOR_PAIRS = ['WU', 'WB', 'WR', 'WG', 'UB', 'UR', 'UG', 'BR', 'BG', 'RG']

@@ -8,41 +8,109 @@ interface ComboEntry {
   avgBomb: number
   avgOverall: number
   topCards: string[]
+  finalScore: number
+}
+
+interface ArchetypeEntry {
+  colors: string
+  name: string
+  verdict: string
 }
 
 interface Props {
   comboAll: ComboEntry[]
   comboCommonsOnly: ComboEntry[]
+  archetypeAll: ArchetypeEntry[]
+  archetypeCommonsOnly: ArchetypeEntry[]
   lang: Lang
 }
 
-const { comboAll, comboCommonsOnly, lang } = Astro.props
+const { comboAll, comboCommonsOnly, archetypeAll, archetypeCommonsOnly, lang } = Astro.props
 const i18n = t(lang)
 
-const topThree = comboAll.slice(0, 3).map((entry, rankAll) => {
-  const commonsRank = comboCommonsOnly.findIndex(c => c.colors === entry.colors)
-  const commonsEntry = commonsRank >= 0 ? comboCommonsOnly[commonsRank] : null
-  const droppedCards = commonsEntry ? entry.topCards.filter(name => !commonsEntry.topCards.includes(name)) : entry.topCards
-  const rankShift = commonsRank >= 0 ? commonsRank - rankAll : null
-  return { ...entry, rankAll: rankAll + 1, commonsRank: commonsRank >= 0 ? commonsRank + 1 : null, droppedCards, rankShift }
-})
+// Ordinal weight per archetypeAnalysis verdict (see archetypeAnalysis.mjs) — used to fold
+// "does this pair's named archetype actually hold up" into the ranking below, not just raw
+// power. wellSupported is the only verdict that's good on both power and reliability;
+// rareButStrong and plentifulButWeak are both middling but for opposite reasons (bomb-dependent
+// vs. reliable-but-weak), themeThin/dataDisagrees/insufficient are all real red flags.
+const VERDICT_WEIGHT: Record<string, number> = {
+  wellSupported: 100,
+  rareButStrong: 70,
+  plentifulButWeak: 60,
+  themeThin: 35,
+  dataDisagrees: 20,
+  insufficient: 0,
+}
+const VERDICT_LABEL: Record<string, string> = {
+  wellSupported: i18n.verdictWellSupported,
+  rareButStrong: i18n.verdictRareButStrong,
+  plentifulButWeak: i18n.verdictPlentifulButWeak,
+  themeThin: i18n.verdictThemeThin,
+  dataDisagrees: i18n.verdictDataDisagrees,
+  insufficient: i18n.verdictInsufficient,
+}
+const round = (n: number) => Math.round(n * 10) / 10
+
+const archetypeAllByColors = new Map(archetypeAll.map(a => [a.colors, a]))
+const archetypeCommonsByColors = new Map(archetypeCommonsOnly.map(a => [a.colors, a]))
+
+// Pairs with zero gold cards still get a real Final Score (built from mono/colorless
+// support alone, see comboComposite.mjs) so the full ranking keeps them rather than
+// hiding them — but a "top pair" spotlight with no cards to name isn't an actionable
+// pick, so the spotlight itself only draws from pairs with real cards. On top of that,
+// Final Score alone only measures raw power/curve/synergy with everything you could
+// possibly open — it says nothing about whether the pair's actual named archetype needs
+// a bomb to work. This composite score blends the two: 60% Final Score, 40% how well the
+// archetype verdict holds up averaged across "with rares" and "commons only" — so a pair
+// that stays reliable without its rares (Goblins) out-scores one that only looks good on
+// paper once you assume you opened every payoff (a themeThin pair with a high Final Score).
+const ranked = comboAll
+  .filter(entry => entry.cardCount > 0)
+  .map(entry => {
+    const archAll = archetypeAllByColors.get(entry.colors) ?? null
+    const archCommons = archetypeCommonsByColors.get(entry.colors) ?? null
+    const resilience = archAll
+      ? round((VERDICT_WEIGHT[archAll.verdict] + VERDICT_WEIGHT[(archCommons ?? archAll).verdict]) / 2)
+      : null
+    const compositeScore = resilience !== null ? round(entry.finalScore * 0.6 + resilience * 0.4) : entry.finalScore
+    return { ...entry, archAll, archCommons, compositeScore }
+  })
+  .sort((a, b) => b.compositeScore - a.compositeScore)
+  .slice(0, 5)
+  .map((entry, i) => {
+    const commonsEntry = comboCommonsOnly.find(c => c.colors === entry.colors) ?? null
+    const droppedCards = commonsEntry ? entry.topCards.filter(name => !commonsEntry.topCards.includes(name)) : entry.topCards
+    return { ...entry, rank: i + 1, droppedCards }
+  })
 ---
 
+<p class="text-xs text-on-surface-variant/60 mb-4">{i18n.compositeScoreExplainer}</p>
+
 <div class="grid gap-4">
-  {topThree.map(entry => (
+  {ranked.map(entry => (
     <div class="glass-panel rounded-xl p-5">
       <div class="flex items-center justify-between mb-3">
         <div class="flex items-center gap-3">
-          <span class="text-lg font-bold text-primary/60">#{entry.rankAll}</span>
+          <span class="text-lg font-bold text-primary/60">#{entry.rank}</span>
           <div class="flex gap-0.5">{entry.colors.split('').map((c: string) => <ManaSymbol color={c} />)}</div>
+          {entry.archAll && <span class="text-sm text-on-surface-variant/70">{entry.archAll.name}</span>}
         </div>
-        <span class="text-sm font-bold text-primary">{entry.avgBomb} avg bomb</span>
+        <div class="text-right">
+          <div class="text-sm font-bold text-primary">{entry.compositeScore} {i18n.compositeScoreLabel}</div>
+          <div class="text-xs text-on-surface-variant/60">{entry.avgBomb} avg bomb</div>
+        </div>
       </div>
 
-      {entry.rankShift !== null && entry.rankShift !== 0 && (
-        <p class="text-xs text-amber-300/90 mb-2">
-          {i18n.rankShiftWarning(entry.rankAll, entry.commonsRank)}
-        </p>
+      {entry.archAll && entry.archCommons && (
+        entry.archAll.verdict === entry.archCommons.verdict ? (
+          <p class="text-xs text-emerald-300/90 mb-2">
+            {i18n.resilienceHoldsLabel(VERDICT_LABEL[entry.archAll.verdict])}
+          </p>
+        ) : (
+          <p class="text-xs text-amber-300/90 mb-2">
+            {i18n.resilienceFragileLabel(VERDICT_LABEL[entry.archAll.verdict], VERDICT_LABEL[entry.archCommons.verdict])}
+          </p>
+        )
       )}
 
       {entry.droppedCards.length > 0 && (

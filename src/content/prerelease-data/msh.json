@@ -1,6 +1,6 @@
 {
   "setCode": "msh",
-  "generatedAt": "2026-08-06T20:13:20.096Z",
+  "generatedAt": "2026-08-07T08:13:30.373Z",
   "cardCount": 267,
   "colorStats": {
     "all": {
@@ -7095,26 +7095,6 @@
   "manaCombos": {
     "all": [
       {
-        "colors": "BG",
-        "cardCount": 5,
-        "avgBomb": 2.8,
-        "avgOverall": 6.8,
-        "topCards": [
-          "Titania, Rugged Rumbler",
-          "The Serpent Society",
-          "Killmonger, Scourge of Wakanda",
-          "Subterranean Cavern",
-          "The Coming of Galactus"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 1,
-          "mythic": 1
-        },
-        "pullChance": 69.4
-      },
-      {
         "colors": "RG",
         "cardCount": 6,
         "avgBomb": 2,
@@ -7132,107 +7112,54 @@
           "rare": 3,
           "mythic": 0
         },
-        "pullChance": 73.6
+        "pullChance": 73.6,
+        "expectedQualityScore": 90.5,
+        "rawScorePercent": 92.4,
+        "curveFitPercent": 89.4,
+        "deckPullChancePercent": 84.4,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 91.6
       },
       {
-        "colors": "WU",
-        "cardCount": 6,
-        "avgBomb": 1.5,
-        "avgOverall": 4.7,
+        "colors": "BG",
+        "cardCount": 5,
+        "avgBomb": 2.8,
+        "avgOverall": 6.8,
         "topCards": [
-          "Captain America, Living Legend",
-          "King T'Challa // Black Panther, Hope Enduring",
-          "Spider-Woman, Secret Agent",
-          "The Mighty Thor, Jane Foster",
-          "Avengers Hangar"
+          "Titania, Rugged Rumbler",
+          "The Serpent Society",
+          "Killmonger, Scourge of Wakanda",
+          "Subterranean Cavern",
+          "The Coming of Galactus"
         ],
         "byRarity": {
           "common": 1,
           "uncommon": 2,
-          "rare": 2,
+          "rare": 1,
           "mythic": 1
         },
-        "pullChance": 72
-      },
-      {
-        "colors": "WR",
-        "cardCount": 6,
-        "avgBomb": 1.4,
-        "avgOverall": 4.9,
-        "topCards": [
-          "Monica Rambeau // Photon, Living Light",
-          "Daredevil, Man Without Fear",
-          "Thor Odinson",
-          "Asgardian Citadel",
-          "The Super Hero Civil War"
+        "pullChance": 69.4,
+        "expectedQualityScore": 93.7,
+        "rawScorePercent": 95.7,
+        "curveFitPercent": 95,
+        "deckPullChancePercent": 88.6,
+        "synergyPercent": 80.2,
+        "synergyThemes": [
+          "Draw Matters",
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 2,
-          "mythic": 1
-        },
-        "pullChance": 72
-      },
-      {
-        "colors": "UB",
-        "cardCount": 6,
-        "avgBomb": 1.3,
-        "avgOverall": 3.9,
-        "topCards": [
-          "Taskmaster, Mercenary Mimic",
-          "Kang, Temporal Tyrant",
-          "Ghost, Spectral Saboteur",
-          "A.I.M. Labs",
-          "Hidden Lair"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 3,
-          "mythic": 0
-        },
-        "pullChance": 73.6
-      },
-      {
-        "colors": "WB",
-        "cardCount": 6,
-        "avgBomb": 1.2,
-        "avgOverall": 3.4,
-        "topCards": [
-          "The Kingpin of Crime",
-          "Black Widow, Double Agent",
-          "Cloak and Dagger, Entwined",
-          "Fisk Tower",
-          "U.S.Agent, John Walker"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 3,
-          "mythic": 0
-        },
-        "pullChance": 73.6
-      },
-      {
-        "colors": "WG",
-        "cardCount": 6,
-        "avgBomb": 0.8,
-        "avgOverall": 3.7,
-        "topCards": [
-          "Spider-Man, To the Rescue",
-          "Black Panther, Vanguard",
-          "Storm, Windrider",
-          "Birnin Zana Plaza",
-          "Gathering Place"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 2,
-          "mythic": 1
-        },
-        "pullChance": 72
+        "deckFeasible": true,
+        "finalScore": 89.9
       },
       {
         "colors": "UG",
@@ -7252,7 +7179,21 @@
           "rare": 4,
           "mythic": 0
         },
-        "pullChance": 75.8
+        "pullChance": 75.8,
+        "expectedQualityScore": 85.6,
+        "rawScorePercent": 87.4,
+        "curveFitPercent": 95,
+        "deckPullChancePercent": 87.8,
+        "synergyPercent": 84.4,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 88.7
       },
       {
         "colors": "BR",
@@ -7272,7 +7213,51 @@
           "rare": 4,
           "mythic": 0
         },
-        "pullChance": 75.8
+        "pullChance": 75.8,
+        "expectedQualityScore": 97.9,
+        "rawScorePercent": 100,
+        "curveFitPercent": 85.6,
+        "deckPullChancePercent": 84.8,
+        "synergyPercent": 67.2,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 84.4
+      },
+      {
+        "colors": "WR",
+        "cardCount": 6,
+        "avgBomb": 1.4,
+        "avgOverall": 4.9,
+        "topCards": [
+          "Monica Rambeau // Photon, Living Light",
+          "Daredevil, Man Without Fear",
+          "Thor Odinson",
+          "Asgardian Citadel",
+          "The Super Hero Civil War"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 2,
+          "mythic": 1
+        },
+        "pullChance": 72,
+        "expectedQualityScore": 89.8,
+        "rawScorePercent": 91.7,
+        "curveFitPercent": 83.7,
+        "deckPullChancePercent": 84.6,
+        "synergyPercent": 67.7,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 81.9
       },
       {
         "colors": "UR",
@@ -7292,28 +7277,147 @@
           "rare": 2,
           "mythic": 1
         },
-        "pullChance": 72
-      }
-    ],
-    "commonsOnly": [
+        "pullChance": 72,
+        "expectedQualityScore": 92.1,
+        "rawScorePercent": 94.1,
+        "curveFitPercent": 85.6,
+        "deckPullChancePercent": 80.1,
+        "synergyPercent": 67.7,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 81.9
+      },
       {
-        "colors": "RG",
-        "cardCount": 3,
-        "avgBomb": 2.9,
-        "avgOverall": 6.8,
+        "colors": "UB",
+        "cardCount": 6,
+        "avgBomb": 1.3,
+        "avgOverall": 3.9,
         "topCards": [
-          "Hulk, Gamma Goliath",
-          "Abomination, Terrifying Titan",
-          "Los Diablos Missile Base"
+          "Taskmaster, Mercenary Mimic",
+          "Kang, Temporal Tyrant",
+          "Ghost, Spectral Saboteur",
+          "A.I.M. Labs",
+          "Hidden Lair"
         ],
         "byRarity": {
           "common": 1,
           "uncommon": 2,
-          "rare": 0,
+          "rare": 3,
           "mythic": 0
         },
-        "pullChance": 65.5
+        "pullChance": 73.6,
+        "expectedQualityScore": 96.2,
+        "rawScorePercent": 98.3,
+        "curveFitPercent": 91.3,
+        "deckPullChancePercent": 87.3,
+        "synergyPercent": 45.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 80.6
       },
+      {
+        "colors": "WB",
+        "cardCount": 6,
+        "avgBomb": 1.2,
+        "avgOverall": 3.4,
+        "topCards": [
+          "The Kingpin of Crime",
+          "Black Widow, Double Agent",
+          "Cloak and Dagger, Entwined",
+          "Fisk Tower",
+          "U.S.Agent, John Walker"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 3,
+          "mythic": 0
+        },
+        "pullChance": 73.6,
+        "expectedQualityScore": 93,
+        "rawScorePercent": 95,
+        "curveFitPercent": 88.8,
+        "deckPullChancePercent": 89.4,
+        "synergyPercent": 45.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 79.6
+      },
+      {
+        "colors": "WU",
+        "cardCount": 6,
+        "avgBomb": 1.5,
+        "avgOverall": 4.7,
+        "topCards": [
+          "Captain America, Living Legend",
+          "King T'Challa // Black Panther, Hope Enduring",
+          "Spider-Woman, Secret Agent",
+          "The Mighty Thor, Jane Foster",
+          "Avengers Hangar"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 2,
+          "mythic": 1
+        },
+        "pullChance": 72,
+        "expectedQualityScore": 86.1,
+        "rawScorePercent": 87.9,
+        "curveFitPercent": 86.9,
+        "deckPullChancePercent": 87.3,
+        "synergyPercent": 45.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 76.9
+      },
+      {
+        "colors": "WG",
+        "cardCount": 6,
+        "avgBomb": 0.8,
+        "avgOverall": 3.7,
+        "topCards": [
+          "Spider-Man, To the Rescue",
+          "Black Panther, Vanguard",
+          "Storm, Windrider",
+          "Birnin Zana Plaza",
+          "Gathering Place"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 2,
+          "mythic": 1
+        },
+        "pullChance": 72,
+        "expectedQualityScore": 83.2,
+        "rawScorePercent": 85,
+        "curveFitPercent": 93.1,
+        "deckPullChancePercent": 86.7,
+        "synergyPercent": 41.7,
+        "synergyThemes": [
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 76.6
+      }
+    ],
+    "commonsOnly": [
       {
         "colors": "BG",
         "cardCount": 3,
@@ -7330,17 +7434,30 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 65.5
+        "pullChance": 65.5,
+        "expectedQualityScore": 89,
+        "rawScorePercent": 96.8,
+        "curveFitPercent": 93.1,
+        "deckPullChancePercent": 84.4,
+        "synergyPercent": 89.7,
+        "synergyThemes": [
+          "Draw Matters",
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 91
       },
       {
-        "colors": "WU",
+        "colors": "RG",
         "cardCount": 3,
-        "avgBomb": 2,
-        "avgOverall": 3.3,
+        "avgBomb": 2.9,
+        "avgOverall": 6.8,
         "topCards": [
-          "Captain America, Living Legend",
-          "Spider-Woman, Secret Agent",
-          "Avengers Hangar"
+          "Hulk, Gamma Goliath",
+          "Abomination, Terrifying Titan",
+          "Los Diablos Missile Base"
         ],
         "byRarity": {
           "common": 1,
@@ -7348,97 +7465,21 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 65.5
-      },
-      {
-        "colors": "UB",
-        "cardCount": 3,
-        "avgBomb": 1.5,
-        "avgOverall": 5.9,
-        "topCards": [
-          "Kang, Temporal Tyrant",
-          "Ghost, Spectral Saboteur",
-          "A.I.M. Labs"
+        "pullChance": 65.5,
+        "expectedQualityScore": 85.2,
+        "rawScorePercent": 92.7,
+        "curveFitPercent": 85.6,
+        "deckPullChancePercent": 79.3,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
         ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 65.5
-      },
-      {
-        "colors": "WG",
-        "cardCount": 3,
-        "avgBomb": 1.2,
-        "avgOverall": 3.8,
-        "topCards": [
-          "Spider-Man, To the Rescue",
-          "Black Panther, Vanguard",
-          "Birnin Zana Plaza"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 65.5
-      },
-      {
-        "colors": "WR",
-        "cardCount": 3,
-        "avgBomb": 0.7,
-        "avgOverall": 4,
-        "topCards": [
-          "Thor Odinson",
-          "Asgardian Citadel",
-          "War Machine, Legacy of Iron"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 65.5
-      },
-      {
-        "colors": "WB",
-        "cardCount": 3,
-        "avgBomb": 0.7,
-        "avgOverall": 3.3,
-        "topCards": [
-          "Black Widow, Double Agent",
-          "Fisk Tower",
-          "U.S.Agent, John Walker"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 65.5
-      },
-      {
-        "colors": "UR",
-        "cardCount": 3,
-        "avgBomb": 0.7,
-        "avgOverall": 5.3,
-        "topCards": [
-          "Iron Man, Master of Machines",
-          "Speedball, New Warrior",
-          "Stark Industries"
-        ],
-        "byRarity": {
-          "common": 1,
-          "uncommon": 2,
-          "rare": 0,
-          "mythic": 0
-        },
-        "pullChance": 65.5
+        "deckFeasible": true,
+        "finalScore": 89.4
       },
       {
         "colors": "UG",
@@ -7456,7 +7497,20 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 65.5
+        "pullChance": 65.5,
+        "expectedQualityScore": 79.8,
+        "rawScorePercent": 86.8,
+        "curveFitPercent": 91.3,
+        "deckPullChancePercent": 82,
+        "synergyPercent": 70.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 82.6
       },
       {
         "colors": "BR",
@@ -7474,7 +7528,196 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 65.5
+        "pullChance": 65.5,
+        "expectedQualityScore": 91.9,
+        "rawScorePercent": 100,
+        "curveFitPercent": 84.4,
+        "deckPullChancePercent": 79.8,
+        "synergyPercent": 66.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 82.6
+      },
+      {
+        "colors": "UB",
+        "cardCount": 3,
+        "avgBomb": 1.5,
+        "avgOverall": 5.9,
+        "topCards": [
+          "Kang, Temporal Tyrant",
+          "Ghost, Spectral Saboteur",
+          "A.I.M. Labs"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 65.5,
+        "expectedQualityScore": 90.9,
+        "rawScorePercent": 98.9,
+        "curveFitPercent": 88.8,
+        "deckPullChancePercent": 82.5,
+        "synergyPercent": 50.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 80.1
+      },
+      {
+        "colors": "WB",
+        "cardCount": 3,
+        "avgBomb": 0.7,
+        "avgOverall": 3.3,
+        "topCards": [
+          "Black Widow, Double Agent",
+          "Fisk Tower",
+          "U.S.Agent, John Walker"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 65.5,
+        "expectedQualityScore": 86.5,
+        "rawScorePercent": 94.1,
+        "curveFitPercent": 88.1,
+        "deckPullChancePercent": 85,
+        "synergyPercent": 49.7,
+        "synergyThemes": [
+          "Draw Matters",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 79.2
+      },
+      {
+        "colors": "UR",
+        "cardCount": 3,
+        "avgBomb": 0.7,
+        "avgOverall": 5.3,
+        "topCards": [
+          "Iron Man, Master of Machines",
+          "Speedball, New Warrior",
+          "Stark Industries"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 65.5,
+        "expectedQualityScore": 85.9,
+        "rawScorePercent": 93.5,
+        "curveFitPercent": 81.9,
+        "deckPullChancePercent": 73.8,
+        "synergyPercent": 63.4,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 78.1
+      },
+      {
+        "colors": "WR",
+        "cardCount": 3,
+        "avgBomb": 0.7,
+        "avgOverall": 4,
+        "topCards": [
+          "Thor Odinson",
+          "Asgardian Citadel",
+          "War Machine, Legacy of Iron"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 65.5,
+        "expectedQualityScore": 82.2,
+        "rawScorePercent": 89.4,
+        "curveFitPercent": 80.6,
+        "deckPullChancePercent": 79.1,
+        "synergyPercent": 61.1,
+        "synergyThemes": [
+          "Draw Matters",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 77.6
+      },
+      {
+        "colors": "WU",
+        "cardCount": 3,
+        "avgBomb": 2,
+        "avgOverall": 3.3,
+        "topCards": [
+          "Captain America, Living Legend",
+          "Spider-Woman, Secret Agent",
+          "Avengers Hangar"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 65.5,
+        "expectedQualityScore": 78.6,
+        "rawScorePercent": 85.5,
+        "curveFitPercent": 86.3,
+        "deckPullChancePercent": 81.9,
+        "synergyPercent": 46.9,
+        "synergyThemes": [
+          "Draw Matters",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 75.2
+      },
+      {
+        "colors": "WG",
+        "cardCount": 3,
+        "avgBomb": 1.2,
+        "avgOverall": 3.8,
+        "topCards": [
+          "Spider-Man, To the Rescue",
+          "Black Panther, Vanguard",
+          "Birnin Zana Plaza"
+        ],
+        "byRarity": {
+          "common": 1,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 65.5,
+        "expectedQualityScore": 77.3,
+        "rawScorePercent": 84.1,
+        "curveFitPercent": 90.6,
+        "deckPullChancePercent": 81.6,
+        "synergyPercent": 44.6,
+        "synergyThemes": [
+          "+1/+1 Counters Matter",
+          "Graveyard/Mill Matters",
+          "Lifegain Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 75.2
       }
     ]
   },
@@ -16960,5 +17203,1137 @@
         "curveFitPercent": 80.6
       }
     ]
+  },
+  "manaFixing": {
+    "all": {
+      "colorlessFixers": {
+        "cardCount": 9,
+        "byRarity": {
+          "common": 4,
+          "uncommon": 3,
+          "rare": 2,
+          "mythic": 0
+        },
+        "pullChance": 97,
+        "topCards": [
+          "Ant-Man's Army",
+          "Avengers Tower",
+          "Avengers: Under Siege",
+          "Castle Doom",
+          "Death to Our Enemies",
+          "Dependable Quinjet",
+          "Stark Industries Executive",
+          "Surveillance Room"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 2,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 54.1,
+          "topCards": [
+            "Avengers Hangar",
+            "Gleaming Bastion"
+          ]
+        },
+        {
+          "colors": "WB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Fisk Tower"
+          ]
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Asgardian Citadel"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 2,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 54.1,
+          "topCards": [
+            "Birnin Zana Plaza",
+            "Gathering Place"
+          ]
+        },
+        {
+          "colors": "UB",
+          "cardCount": 2,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 54.1,
+          "topCards": [
+            "A.I.M. Labs",
+            "Hidden Lair"
+          ]
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Stark Industries"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Pym Technologies"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 2,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 54.1,
+          "topCards": [
+            "Dark Fortress",
+            "Hell's Kitchen"
+          ]
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Subterranean Cavern"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 2,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 1,
+            "mythic": 0
+          },
+          "pullChance": 54.1,
+          "topCards": [
+            "Los Diablos Missile Base",
+            "Training Compound"
+          ]
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 4,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Avengers: Under Siege",
+            "Castle Doom",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 4,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Avengers: Under Siege",
+            "Castle Doom",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 4,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Avengers: Under Siege",
+            "Castle Doom",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 4,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Avengers: Under Siege",
+            "Castle Doom",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 4,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Avengers: Under Siege",
+            "Castle Doom",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 6,
+              "expectedCount": 6.4,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "RG",
+          "splashColor": "W",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0.3,
+          "topCards": [
+            "Avengers Hangar",
+            "Gleaming Bastion",
+            "Fisk Tower",
+            "Asgardian Citadel",
+            "Birnin Zana Plaza",
+            "Gathering Place"
+          ]
+        },
+        {
+          "baseColors": "RG",
+          "splashColor": "U",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0,
+          "topCards": [
+            "Avengers Hangar",
+            "Gleaming Bastion",
+            "A.I.M. Labs",
+            "Hidden Lair",
+            "Stark Industries",
+            "Pym Technologies"
+          ]
+        },
+        {
+          "baseColors": "BG",
+          "splashColor": "W",
+          "baseStrengthPercent": 98.1,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 99.2,
+          "splashRemoval": 0.3,
+          "topCards": [
+            "Avengers Hangar",
+            "Gleaming Bastion",
+            "Fisk Tower",
+            "Asgardian Citadel",
+            "Birnin Zana Plaza",
+            "Gathering Place"
+          ]
+        }
+      ]
+    },
+    "commonsOnly": {
+      "colorlessFixers": {
+        "cardCount": 7,
+        "byRarity": {
+          "common": 4,
+          "uncommon": 3,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 96.4,
+        "topCards": [
+          "Ant-Man's Army",
+          "Avengers Tower",
+          "Death to Our Enemies",
+          "Dependable Quinjet",
+          "Stark Industries Executive",
+          "Surveillance Room",
+          "Villainous Hideout"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Avengers Hangar"
+          ]
+        },
+        {
+          "colors": "WB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Fisk Tower"
+          ]
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Asgardian Citadel"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Birnin Zana Plaza"
+          ]
+        },
+        {
+          "colors": "UB",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "A.I.M. Labs"
+          ]
+        },
+        {
+          "colors": "UR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Stark Industries"
+          ]
+        },
+        {
+          "colors": "UG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Pym Technologies"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Hell's Kitchen"
+          ]
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Subterranean Cavern"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 49.8,
+          "topCards": [
+            "Los Diablos Missile Base"
+          ]
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 11,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room",
+            "Villainous Hideout",
+            "Avengers Hangar"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 11,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room",
+            "Villainous Hideout",
+            "Avengers Hangar"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 11,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room",
+            "Villainous Hideout",
+            "Fisk Tower"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 11,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room",
+            "Villainous Hideout",
+            "Asgardian Citadel"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 11,
+          "byRarity": {
+            "common": 8,
+            "uncommon": 3,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Ant-Man's Army",
+            "Avengers Tower",
+            "Death to Our Enemies",
+            "Dependable Quinjet",
+            "Stark Industries Executive",
+            "Surveillance Room",
+            "Villainous Hideout",
+            "Birnin Zana Plaza"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 4,
+              "expectedCount": 6.1,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "BG",
+          "splashColor": "U",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0.1,
+          "topCards": [
+            "Avengers Hangar",
+            "A.I.M. Labs",
+            "Stark Industries",
+            "Pym Technologies"
+          ]
+        },
+        {
+          "baseColors": "RG",
+          "splashColor": "U",
+          "baseStrengthPercent": 98.2,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 99.3,
+          "splashRemoval": 0.1,
+          "topCards": [
+            "Avengers Hangar",
+            "A.I.M. Labs",
+            "Stark Industries",
+            "Pym Technologies"
+          ]
+        },
+        {
+          "baseColors": "BG",
+          "splashColor": "R",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 96.9,
+          "fixingPercent": 100,
+          "combinedScore": 98.9,
+          "splashRemoval": 0.1,
+          "topCards": [
+            "Asgardian Citadel",
+            "Stark Industries",
+            "Hell's Kitchen",
+            "Los Diablos Missile Base"
+          ]
+        }
+      ]
+    }
   }
 }

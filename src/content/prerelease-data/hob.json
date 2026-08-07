@@ -1,6 +1,6 @@
 {
   "setCode": "hob",
-  "generatedAt": "2026-08-06T20:13:06.006Z",
+  "generatedAt": "2026-08-07T08:13:30.213Z",
   "cardCount": 193,
   "colorStats": {
     "all": {
@@ -5148,46 +5148,6 @@
   "manaCombos": {
     "all": [
       {
-        "colors": "BG",
-        "cardCount": 6,
-        "avgBomb": 1.9,
-        "avgOverall": 6.4,
-        "topCards": [
-          "Large Bear",
-          "Chief Warg's Company",
-          "Tom, Bert, and William",
-          "The Chief Warg",
-          "Duskwatch Hunter"
-        ],
-        "byRarity": {
-          "common": 2,
-          "uncommon": 2,
-          "rare": 2,
-          "mythic": 0
-        },
-        "pullChance": 92.5
-      },
-      {
-        "colors": "BR",
-        "cardCount": 7,
-        "avgBomb": 1.5,
-        "avgOverall": 4.1,
-        "topCards": [
-          "Bolg of the North",
-          "Smaug, Wicked Worm",
-          "Fearsome Goblin Pair",
-          "Bolg's Company",
-          "Goblin Plate Mail"
-        ],
-        "byRarity": {
-          "common": 2,
-          "uncommon": 2,
-          "rare": 3,
-          "mythic": 0
-        },
-        "pullChance": 93.2
-      },
-      {
         "colors": "UG",
         "cardCount": 5,
         "avgBomb": 1.3,
@@ -5205,7 +5165,75 @@
           "rare": 1,
           "mythic": 0
         },
-        "pullChance": 91.8
+        "pullChance": 91.8,
+        "expectedQualityScore": 94,
+        "rawScorePercent": 85.6,
+        "curveFitPercent": 95.6,
+        "deckPullChancePercent": 86.4,
+        "synergyPercent": 81.6,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 87.3
+      },
+      {
+        "colors": "UR",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 100.2,
+        "rawScorePercent": 91.3,
+        "curveFitPercent": 88.8,
+        "deckPullChancePercent": 82.9,
+        "synergyPercent": 79.7,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 85.7
+      },
+      {
+        "colors": "UB",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 95.8,
+        "rawScorePercent": 87.2,
+        "curveFitPercent": 76.9,
+        "deckPullChancePercent": 77.9,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Draw Matters",
+          "Sacrifice Matters",
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 85.5
       },
       {
         "colors": "WU",
@@ -5225,7 +5253,84 @@
           "rare": 1,
           "mythic": 1
         },
-        "pullChance": 92.2
+        "pullChance": 92.2,
+        "expectedQualityScore": 88.6,
+        "rawScorePercent": 80.7,
+        "curveFitPercent": 82.5,
+        "deckPullChancePercent": 83.6,
+        "synergyPercent": 93.1,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Artifacts/Treasure Matter",
+          "Graveyard/Mill Matters",
+          "Tokens Matter"
+        ],
+        "deckFeasible": true,
+        "finalScore": 85
+      },
+      {
+        "colors": "BG",
+        "cardCount": 6,
+        "avgBomb": 1.9,
+        "avgOverall": 6.4,
+        "topCards": [
+          "Large Bear",
+          "Chief Warg's Company",
+          "Tom, Bert, and William",
+          "The Chief Warg",
+          "Duskwatch Hunter"
+        ],
+        "byRarity": {
+          "common": 2,
+          "uncommon": 2,
+          "rare": 2,
+          "mythic": 0
+        },
+        "pullChance": 92.5,
+        "expectedQualityScore": 104.1,
+        "rawScorePercent": 94.8,
+        "curveFitPercent": 86.9,
+        "deckPullChancePercent": 87.4,
+        "synergyPercent": 56.7,
+        "synergyThemes": [
+          "Sacrifice Matters",
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 81.5
+      },
+      {
+        "colors": "BR",
+        "cardCount": 7,
+        "avgBomb": 1.5,
+        "avgOverall": 4.1,
+        "topCards": [
+          "Bolg of the North",
+          "Smaug, Wicked Worm",
+          "Fearsome Goblin Pair",
+          "Bolg's Company",
+          "Goblin Plate Mail"
+        ],
+        "byRarity": {
+          "common": 2,
+          "uncommon": 2,
+          "rare": 3,
+          "mythic": 0
+        },
+        "pullChance": 93.2,
+        "expectedQualityScore": 109.8,
+        "rawScorePercent": 100,
+        "curveFitPercent": 83.7,
+        "deckPullChancePercent": 86.8,
+        "synergyPercent": 32.7,
+        "synergyThemes": [
+          "Sacrifice Matters",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 75.8
       },
       {
         "colors": "WR",
@@ -5245,20 +5350,108 @@
           "rare": 2,
           "mythic": 0
         },
-        "pullChance": 92.5
+        "pullChance": 92.5,
+        "expectedQualityScore": 94.2,
+        "rawScorePercent": 85.8,
+        "curveFitPercent": 81.3,
+        "deckPullChancePercent": 88.1,
+        "synergyPercent": 37.3,
+        "synergyThemes": [
+          "Graveyard/Mill Matters",
+          "Tokens Matter"
+        ],
+        "deckFeasible": true,
+        "finalScore": 73.1
+      },
+      {
+        "colors": "RG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 97.7,
+        "rawScorePercent": 89,
+        "curveFitPercent": 83.8,
+        "deckPullChancePercent": 81.8,
+        "synergyPercent": 35.5,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 72.5
+      },
+      {
+        "colors": "WG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 81.7,
+        "rawScorePercent": 74.4,
+        "curveFitPercent": 78.8,
+        "deckPullChancePercent": 81.8,
+        "synergyPercent": 52.5,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters",
+          "Tokens Matter"
+        ],
+        "deckFeasible": true,
+        "finalScore": 71.9
+      },
+      {
+        "colors": "WB",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 88.3,
+        "rawScorePercent": 80.4,
+        "curveFitPercent": 68.8,
+        "deckPullChancePercent": 75.6,
+        "synergyPercent": 59.9,
+        "synergyThemes": [
+          "Sacrifice Matters",
+          "Graveyard/Mill Matters",
+          "Tokens Matter"
+        ],
+        "deckFeasible": true,
+        "finalScore": 71.2
       }
     ],
     "commonsOnly": [
       {
-        "colors": "BR",
+        "colors": "UG",
         "cardCount": 4,
-        "avgBomb": 1.5,
-        "avgOverall": 2.6,
+        "avgBomb": 1,
+        "avgOverall": 4,
         "topCards": [
-          "Bolg of the North",
-          "Fearsome Goblin Pair",
-          "Goblin Plate Mail",
-          "Goblin-town"
+          "Silvan Reveler",
+          "Thranduil, Sindarin Liege // Silvan Rally",
+          "Elvenking's Halls",
+          "Mirkwood Nurturer"
         ],
         "byRarity": {
           "common": 2,
@@ -5266,26 +5459,45 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 91
+        "pullChance": 91,
+        "expectedQualityScore": 87.3,
+        "rawScorePercent": 86.1,
+        "curveFitPercent": 94.4,
+        "deckPullChancePercent": 79.2,
+        "synergyPercent": 100,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 89.9
       },
       {
-        "colors": "BG",
-        "cardCount": 4,
-        "avgBomb": 1.5,
-        "avgOverall": 6.1,
-        "topCards": [
-          "Large Bear",
-          "The Chief Warg",
-          "Duskwatch Hunter",
-          "Mirkwood"
-        ],
+        "colors": "UR",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
         "byRarity": {
-          "common": 2,
-          "uncommon": 2,
+          "common": 0,
+          "uncommon": 0,
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 91
+        "pullChance": 0,
+        "expectedQualityScore": 95.1,
+        "rawScorePercent": 93.8,
+        "curveFitPercent": 86.9,
+        "deckPullChancePercent": 76.4,
+        "synergyPercent": 86.1,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 85.8
       },
       {
         "colors": "WU",
@@ -5304,18 +5516,56 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 91
+        "pullChance": 91,
+        "expectedQualityScore": 83,
+        "rawScorePercent": 81.9,
+        "curveFitPercent": 80,
+        "deckPullChancePercent": 78.5,
+        "synergyPercent": 80.3,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 80.2
       },
       {
-        "colors": "UG",
+        "colors": "UB",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 89.3,
+        "rawScorePercent": 88.1,
+        "curveFitPercent": 73.8,
+        "deckPullChancePercent": 72,
+        "synergyPercent": 83.9,
+        "synergyThemes": [
+          "Draw Matters",
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 79.4
+      },
+      {
+        "colors": "BG",
         "cardCount": 4,
-        "avgBomb": 1,
-        "avgOverall": 4,
+        "avgBomb": 1.5,
+        "avgOverall": 6.1,
         "topCards": [
-          "Silvan Reveler",
-          "Thranduil, Sindarin Liege // Silvan Rally",
-          "Elvenking's Halls",
-          "Mirkwood Nurturer"
+          "Large Bear",
+          "The Chief Warg",
+          "Duskwatch Hunter",
+          "Mirkwood"
         ],
         "byRarity": {
           "common": 2,
@@ -5323,7 +5573,97 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 91
+        "pullChance": 91,
+        "expectedQualityScore": 94.9,
+        "rawScorePercent": 93.6,
+        "curveFitPercent": 81.9,
+        "deckPullChancePercent": 80.9,
+        "synergyPercent": 56.9,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 78.3
+      },
+      {
+        "colors": "RG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 91.2,
+        "rawScorePercent": 89.9,
+        "curveFitPercent": 81.3,
+        "deckPullChancePercent": 74.1,
+        "synergyPercent": 59.1,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 76.1
+      },
+      {
+        "colors": "BR",
+        "cardCount": 4,
+        "avgBomb": 1.5,
+        "avgOverall": 2.6,
+        "topCards": [
+          "Bolg of the North",
+          "Fearsome Goblin Pair",
+          "Goblin Plate Mail",
+          "Goblin-town"
+        ],
+        "byRarity": {
+          "common": 2,
+          "uncommon": 2,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 91,
+        "expectedQualityScore": 101.4,
+        "rawScorePercent": 100,
+        "curveFitPercent": 78.8,
+        "deckPullChancePercent": 80.5,
+        "synergyPercent": 26.3,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 71.4
+      },
+      {
+        "colors": "WG",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 75.2,
+        "rawScorePercent": 74.2,
+        "curveFitPercent": 76.9,
+        "deckPullChancePercent": 74.7,
+        "synergyPercent": 50.4,
+        "synergyThemes": [
+          "Landfall",
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 69.1
       },
       {
         "colors": "WR",
@@ -5342,7 +5682,41 @@
           "rare": 0,
           "mythic": 0
         },
-        "pullChance": 91
+        "pullChance": 91,
+        "expectedQualityScore": 88.8,
+        "rawScorePercent": 87.6,
+        "curveFitPercent": 78.8,
+        "deckPullChancePercent": 82.7,
+        "synergyPercent": 22.6,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": true,
+        "finalScore": 67.9
+      },
+      {
+        "colors": "WB",
+        "cardCount": 0,
+        "avgBomb": 0,
+        "avgOverall": 0,
+        "topCards": [],
+        "byRarity": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 0,
+        "expectedQualityScore": 81.7,
+        "rawScorePercent": 80.6,
+        "curveFitPercent": 65.6,
+        "deckPullChancePercent": 70.2,
+        "synergyPercent": 21.2,
+        "synergyThemes": [
+          "Graveyard/Mill Matters"
+        ],
+        "deckFeasible": false,
+        "finalScore": 59.4
       }
     ]
   },
@@ -13101,5 +13475,1087 @@
         "curveFitPercent": 65.6
       }
     ]
+  },
+  "manaFixing": {
+    "all": {
+      "colorlessFixers": {
+        "cardCount": 13,
+        "byRarity": {
+          "common": 4,
+          "uncommon": 1,
+          "rare": 5,
+          "mythic": 3
+        },
+        "pullChance": 98.8,
+        "topCards": [
+          "Bejeweled Warg",
+          "Dori, Bearer of Friends",
+          "Elven Passage",
+          "Giant's Boulder",
+          "Gleaming Splendor",
+          "Hobbit Hole",
+          "Long-Bodied Grey Dog",
+          "Orcrist, Goblin-cleaver"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Lake-town"
+          ]
+        },
+        {
+          "colors": "WB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Iron Hills"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Elvenking's Halls"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Goblin-town"
+          ]
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Mirkwood"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 5,
+            "mythic": 3
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Bejeweled Warg",
+            "Dori, Bearer of Friends",
+            "Elven Passage",
+            "Giant's Boulder",
+            "Gleaming Splendor",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Orcrist, Goblin-cleaver"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 5,
+            "mythic": 3
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Bejeweled Warg",
+            "Dori, Bearer of Friends",
+            "Elven Passage",
+            "Giant's Boulder",
+            "Gleaming Splendor",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Orcrist, Goblin-cleaver"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 5,
+            "mythic": 3
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Bejeweled Warg",
+            "Dori, Bearer of Friends",
+            "Elven Passage",
+            "Giant's Boulder",
+            "Gleaming Splendor",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Orcrist, Goblin-cleaver"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 5,
+            "mythic": 3
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Bejeweled Warg",
+            "Dori, Bearer of Friends",
+            "Elven Passage",
+            "Giant's Boulder",
+            "Gleaming Splendor",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Orcrist, Goblin-cleaver"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 15,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 5,
+            "mythic": 3
+          },
+          "pullChance": 99.8,
+          "topCards": [
+            "Bejeweled Warg",
+            "Dori, Bearer of Friends",
+            "Elven Passage",
+            "Giant's Boulder",
+            "Gleaming Splendor",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Orcrist, Goblin-cleaver"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 6.2,
+              "pullChance": 99.8
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "UG",
+          "splashColor": "B",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0.6,
+          "topCards": [
+            "Goblin-town",
+            "Mirkwood"
+          ]
+        },
+        {
+          "baseColors": "UR",
+          "splashColor": "B",
+          "baseStrengthPercent": 98.2,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 99.3,
+          "splashRemoval": 0.6,
+          "topCards": [
+            "Goblin-town",
+            "Mirkwood"
+          ]
+        },
+        {
+          "baseColors": "WU",
+          "splashColor": "B",
+          "baseStrengthPercent": 97.4,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 99,
+          "splashRemoval": 0.6,
+          "topCards": [
+            "Goblin-town",
+            "Mirkwood"
+          ]
+        }
+      ]
+    },
+    "commonsOnly": {
+      "colorlessFixers": {
+        "cardCount": 5,
+        "byRarity": {
+          "common": 4,
+          "uncommon": 1,
+          "rare": 0,
+          "mythic": 0
+        },
+        "pullChance": 97.8,
+        "topCards": [
+          "Dori, Bearer of Friends",
+          "Giant's Boulder",
+          "Hobbit Hole",
+          "Long-Bodied Grey Dog",
+          "Thrór's Map"
+        ]
+      },
+      "dualFixersByPair": [
+        {
+          "colors": "WU",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Lake-town"
+          ]
+        },
+        {
+          "colors": "WB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "WR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Iron Hills"
+          ]
+        },
+        {
+          "colors": "WG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UB",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UR",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        },
+        {
+          "colors": "UG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Elvenking's Halls"
+          ]
+        },
+        {
+          "colors": "BR",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Goblin-town"
+          ]
+        },
+        {
+          "colors": "BG",
+          "cardCount": 1,
+          "byRarity": {
+            "common": 1,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 58.1,
+          "topCards": [
+            "Mirkwood"
+          ]
+        },
+        {
+          "colors": "RG",
+          "cardCount": 0,
+          "byRarity": {
+            "common": 0,
+            "uncommon": 0,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 0,
+          "topCards": []
+        }
+      ],
+      "fixersByColor": [
+        {
+          "color": "W",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.6,
+          "topCards": [
+            "Dori, Bearer of Friends",
+            "Giant's Boulder",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Thrór's Map",
+            "Lake-town",
+            "Iron Hills"
+          ]
+        },
+        {
+          "color": "U",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.6,
+          "topCards": [
+            "Dori, Bearer of Friends",
+            "Giant's Boulder",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Thrór's Map",
+            "Lake-town",
+            "Elvenking's Halls"
+          ]
+        },
+        {
+          "color": "B",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.6,
+          "topCards": [
+            "Dori, Bearer of Friends",
+            "Giant's Boulder",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Thrór's Map",
+            "Goblin-town",
+            "Mirkwood"
+          ]
+        },
+        {
+          "color": "R",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.6,
+          "topCards": [
+            "Dori, Bearer of Friends",
+            "Giant's Boulder",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Thrór's Map",
+            "Iron Hills",
+            "Goblin-town"
+          ]
+        },
+        {
+          "color": "G",
+          "cardCount": 7,
+          "byRarity": {
+            "common": 6,
+            "uncommon": 1,
+            "rare": 0,
+            "mythic": 0
+          },
+          "pullChance": 99.6,
+          "topCards": [
+            "Dori, Bearer of Friends",
+            "Giant's Boulder",
+            "Hobbit Hole",
+            "Long-Bodied Grey Dog",
+            "Thrór's Map",
+            "Elvenking's Halls",
+            "Mirkwood"
+          ]
+        }
+      ],
+      "splashSuggestions": [
+        {
+          "colors": "WU",
+          "candidates": [
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WB",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WR",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "WG",
+          "candidates": [
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UB",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "UG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BR",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "G",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "BG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "R",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        },
+        {
+          "colors": "RG",
+          "candidates": [
+            {
+              "color": "W",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "U",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            },
+            {
+              "color": "B",
+              "dualFixerCount": 2,
+              "expectedCount": 5.6,
+              "pullChance": 99.6
+            }
+          ],
+          "bestSplash": null
+        }
+      ],
+      "topSplashCombos": [
+        {
+          "baseColors": "UG",
+          "splashColor": "B",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 100,
+          "splashRemoval": 0.7,
+          "topCards": [
+            "Goblin-town",
+            "Mirkwood"
+          ]
+        },
+        {
+          "baseColors": "UR",
+          "splashColor": "B",
+          "baseStrengthPercent": 95.4,
+          "splashQualityPercent": 100,
+          "fixingPercent": 100,
+          "combinedScore": 98.2,
+          "splashRemoval": 0.7,
+          "topCards": [
+            "Goblin-town",
+            "Mirkwood"
+          ]
+        },
+        {
+          "baseColors": "UG",
+          "splashColor": "R",
+          "baseStrengthPercent": 100,
+          "splashQualityPercent": 93.8,
+          "fixingPercent": 100,
+          "combinedScore": 97.8,
+          "splashRemoval": 0.5,
+          "topCards": [
+            "Iron Hills",
+            "Goblin-town"
+          ]
+        }
+      ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { stripReminderText } from './util.mjs'
+import { stripReminderText, isSubsetColorIdentity, TWO_COLOR_PAIRS } from './util.mjs'
 import { poissonAtLeast } from './poisson.mjs'
 import { expectedSealedCount } from './sealedProbability.mjs'
 
@@ -91,6 +91,48 @@ export function computeCrossCardSynergies(cardsWithBread, byRarityTotals, sealed
     .map(({ card, themes }) => ({ name: card.name, colorIdentity: card.colorIdentity, manaCost: card.manaCost, themeCount: themes.size, themes: [...themes] }))
 
   return { synergies: results, multiRoleCards }
+}
+
+/**
+ * Attributes synergy strength to each 2-color pair, for comboComposite.mjs's
+ * "Synergy %" axis on the mana-combo ranking. Re-runs the same payoff/enabler
+ * theme classification computeCrossCardSynergies does, scoped per pair
+ * (color-identity subset), rather than set-wide — a theme only counts for a
+ * pair if that pair's card pool has *both* a payoff and an enabler for it.
+ */
+export function computeSynergyByColorPair(cardsWithBread) {
+  return TWO_COLOR_PAIRS.map(pair => {
+    const pairSet = new Set(pair.split(''))
+    const liveThemes = []
+    let qualitySum = 0
+
+    for (const theme of themes) {
+      const payoffRe = new RegExp(theme.payoff.pattern, theme.payoff.flags)
+      const enablerRe = new RegExp(theme.enabler.pattern, theme.enabler.flags)
+
+      const payoffInPair = []
+      const enablerInPair = []
+      for (const card of cardsWithBread) {
+        if (!isSubsetColorIdentity(card.colorIdentity, pairSet)) continue
+        const text = stripReminderText(card.oracleText)
+        if (payoffRe.test(text)) payoffInPair.push(card)
+        if (enablerRe.test(text)) enablerInPair.push(card)
+      }
+
+      if (payoffInPair.length > 0 && enablerInPair.length > 0) {
+        liveThemes.push(theme.name)
+        const unionCards = [...new Set([...payoffInPair, ...enablerInPair])]
+        qualitySum += unionCards.reduce((sum, c) => sum + c.bread.overall, 0) / unionCards.length
+      }
+    }
+
+    return {
+      colors: pair,
+      liveThemeCount: liveThemes.length,
+      synergyRawScore: round(qualitySum),
+      themes: liveThemes,
+    }
+  })
 }
 
 function round(n) {

@@ -9,5 +9,11 @@
   "playableThreshold": 3,
   "lowSupportThreshold": 8,
   "deckCreatureTarget": 15,
-  "deckSpellTarget": 8
+  "deckSpellTarget": 8,
+  "comboScoreWeights": {
+    "raw": 0.25,
+    "curve": 0.25,
+    "pullChance": 0.25,
+    "synergy": 0.25
+  }
 }

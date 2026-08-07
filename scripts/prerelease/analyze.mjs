@@ -12,10 +12,12 @@ import { computeCreatureTypes } from './lib/creatureTypes.mjs'
 import { computeMechanicsByColorPair } from './lib/mechanicsByColorPair.mjs'
 import { loadNamedMechanics, applyNamedMechanics } from './lib/setMechanics.mjs'
 import { loadArchetypeDefs, computeArchetypeAnalysis } from './lib/archetypeAnalysis.mjs'
-import { computeCrossCardSynergies } from './lib/crossCardSynergy.mjs'
+import { computeCrossCardSynergies, computeSynergyByColorPair } from './lib/crossCardSynergy.mjs'
 import { computeBreadByColor } from './lib/breadByColor.mjs'
 import { computeBoosterOdds } from './lib/pullChance.mjs'
 import { computeManaCurveByColor, computeCurveFitByPair } from './lib/manaCurve.mjs'
+import { computeComboComposite } from './lib/comboComposite.mjs'
+import { computeManaFixing } from './lib/manaFixing.mjs'
 import sealedConfig from './lib/sealed-config.json' with { type: 'json' }
 
 const setCode = process.argv[2]
@@ -104,17 +106,22 @@ function computeForPool(raw) {
   const oracleTextByOracleId = new Map(raw.map(c => [c.oracle_id, c.oracle_text]))
   const cardsWithText = cardsWithBread.map(c => ({ ...c, oracleText: oracleTextByOracleId.get(c.oracleId) || '' }))
   const crossCardSynergies = computeCrossCardSynergies(cardsWithText, byRarityTotals, sealedConfig)
+  const synergyByPair = computeSynergyByColorPair(cardsWithText)
 
   const breadByColor = computeBreadByColor(cardsWithBread)
   const boosterOdds = computeBoosterOdds(byRarityTotals, sealedConfig)
   const manaCurveByColor = computeManaCurveByColor(raw)
   const curveFitByPair = computeCurveFitByPair(raw, byRarityTotals, sealedConfig)
 
+  const manaCombosScored = computeComboComposite(manaCombos, curveFitByPair, synergyByPair, mergedCards, byRarityTotals, sealedConfig)
+  const pairStrengthByColors = Object.fromEntries(manaCombosScored.map(c => [c.colors, c.finalScore]))
+  const manaFixing = computeManaFixing(raw, byRarityTotals, sealedConfig, breadByColor, pairStrengthByColors)
+
   return {
     colorStats,
     cardsWithBread,
     bestCards,
-    manaCombos,
+    manaCombos: manaCombosScored,
     wordCloud,
     topWords,
     wordColorMatrix,
@@ -129,6 +136,7 @@ function computeForPool(raw) {
     boosterOdds,
     manaCurveByColor,
     curveFitByPair,
+    manaFixing,
   }
 }
 
@@ -161,10 +169,12 @@ const output = {
   boosterOdds: dual('boosterOdds'),
   manaCurveByColor: dual('manaCurveByColor'),
   curveFitByPair: dual('curveFitByPair'),
+  manaFixing: dual('manaFixing'),
 }
 
 mkdirSync(outDir, { recursive: true })
 writeFileSync(outPath, JSON.stringify(output, null, 2))
 
 console.log(`Wrote ${outPath}`)
-console.log(`  ${output.cardCount} cards, ${allPool.manaCombos.length} two-color pairs, top bomb pair: ${allPool.manaCombos[0]?.colors}`)
+const topBombPair = [...allPool.manaCombos].sort((a, b) => b.avgBomb - a.avgBomb)[0]
+console.log(`  ${output.cardCount} cards, ${allPool.manaCombos.length} two-color pairs, top bomb pair: ${topBombPair?.colors}`)

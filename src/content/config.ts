@@ -92,6 +92,14 @@ const manaCombosSchema = z.array(z.object({
   topCards: z.array(z.string()),
   byRarity: byRaritySchema,
   pullChance: z.number(),
+  expectedQualityScore: z.number(),
+  rawScorePercent: z.number(),
+  curveFitPercent: z.number(),
+  deckPullChancePercent: z.number(),
+  synergyPercent: z.number(),
+  synergyThemes: z.array(z.string()),
+  deckFeasible: z.boolean(),
+  finalScore: z.number(),
 }))
 
 const wordEntrySchema = z.object({
@@ -232,6 +240,39 @@ const boosterOddsSchema = z.record(z.string(), z.object({
   duplicateChance: z.number(),
 }))
 
+const fixerSummarySchema = z.object({
+  cardCount: z.number(),
+  byRarity: byRaritySchema,
+  pullChance: z.number(),
+  topCards: z.array(z.string()),
+})
+
+const manaFixingSchema = z.object({
+  colorlessFixers: fixerSummarySchema,
+  dualFixersByPair: z.array(z.object({ colors: z.string() }).extend(fixerSummarySchema.shape)),
+  fixersByColor: z.array(z.object({ color: z.string() }).extend(fixerSummarySchema.shape)),
+  splashSuggestions: z.array(z.object({
+    colors: z.string(),
+    candidates: z.array(z.object({
+      color: z.string(),
+      dualFixerCount: z.number(),
+      expectedCount: z.number(),
+      pullChance: z.number(),
+    })),
+    bestSplash: z.string().nullable(),
+  })),
+  topSplashCombos: z.array(z.object({
+    baseColors: z.string(),
+    splashColor: z.string(),
+    baseStrengthPercent: z.number(),
+    splashQualityPercent: z.number(),
+    fixingPercent: z.number(),
+    combinedScore: z.number(),
+    splashRemoval: z.number(),
+    topCards: z.array(z.string()),
+  })),
+})
+
 /** Wraps a per-pool schema in the {all, commonsOnly} shape every rarity-sensitive field carries — see the "Remove Rares/Mythics" toggle in analyze.mjs's computeForPool. */
 const dual = (schema) => z.object({ all: schema, commonsOnly: schema })
 
@@ -276,6 +317,7 @@ const prereleaseData = defineCollection({
     boosterOdds: dual(boosterOddsSchema),
     manaCurveByColor: dual(manaCurveByColorSchema),
     curveFitByPair: dual(curveFitByPairSchema),
+    manaFixing: dual(manaFixingSchema),
   }),
 })
 

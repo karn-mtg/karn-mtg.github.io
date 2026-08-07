@@ -1,11 +1,11 @@
-import { colorBucket, isCreature } from './util.mjs'
+import { colorBucket, isCreature, TWO_COLOR_PAIRS } from './util.mjs'
 import { expectedSealedCount } from './sealedProbability.mjs'
 
 const RARITIES = ['common', 'uncommon', 'rare', 'mythic']
 
 const CMC_BUCKETS = ['0', '1', '2', '3', '4', '5', '6+']
 const COLOR_BUCKETS = ['W', 'U', 'B', 'R', 'G', 'multi', 'C']
-const PAIRS = ['WU', 'WB', 'WR', 'WG', 'UB', 'UR', 'UG', 'BR', 'BG', 'RG']
+const PAIRS = TWO_COLOR_PAIRS
 
 // Rough target curve for a 40-card sealed deck running ~15-17 creatures —
 // standard limited guidance (light at 1-2, peak at 3, tapering after 4).

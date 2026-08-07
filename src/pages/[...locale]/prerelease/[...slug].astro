@@ -6,6 +6,7 @@ import BreadDefinitions from '../../../components/prerelease/BreadDefinitions.as
 import CardExplorer from '../../../components/prerelease/CardExplorer.astro'
 import BestCardsList from '../../../components/prerelease/BestCardsList.astro'
 import ManaComboRanking from '../../../components/prerelease/ManaComboRanking.astro'
+import SplashFixingPanel from '../../../components/prerelease/SplashFixingPanel.astro'
 import WordCloudViz from '../../../components/prerelease/WordCloudViz.astro'
 import MatrixHeatmap from '../../../components/prerelease/MatrixHeatmap.astro'
 import MechanicsList from '../../../components/prerelease/MechanicsList.astro'
@@ -22,7 +23,7 @@ import ManaSymbol from '../../../components/prerelease/ManaSymbol.astro'
 import { manaIconColors } from '../../../lib/manaIcons'
 import CardHoverPreview from '../../../components/prerelease/CardHoverPreview.astro'
 import ManaCurveLineChart from '../../../components/prerelease/ManaCurveLineChart.astro'
-import { locales, contentPrefix, prereleaseBase, t } from '../../../i18n'
+import { locales, contentPrefix, prereleaseBase, blogBase, t } from '../../../i18n'
 
 export async function getStaticPaths() {
   const paths = []
@@ -65,6 +66,7 @@ const sections = [
   { id: 'block-alone', label: i18n.blockAloneHeading },
   { id: 'block-wizards', label: i18n.blockWizardsHeading },
   { id: 'block-bread', label: i18n.blockBreadHeading },
+  { id: 'splashing', label: i18n.splashingHeading },
   { id: 'conclusion', label: i18n.conclusionHeading },
 ]
 
@@ -376,7 +378,13 @@ const breadCategoryLabels = {
     <!-- Block 3: The Set, Through B.R.E.A.D. -->
     <section id="block-bread" class="mb-16 scroll-mt-32">
       <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.blockBreadHeading}</h2>
-      <p class="text-on-surface-variant leading-relaxed mb-8">{article.data.breadIntro}</p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">{article.data.breadIntro}</p>
+      <a
+        href={`${blogBase(lang)}/${i18n.breadArticleSlug}`}
+        class="inline-block text-sm font-semibold text-primary hover:underline mb-8"
+      >
+        {i18n.breadArticleLinkText}
+      </a>
 
       <BreadDefinitions lang={lang} />
 
@@ -393,11 +401,19 @@ const breadCategoryLabels = {
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.manaCombosHeading}</h3>
       <p class="text-sm text-on-surface-variant/70 mb-4">{i18n.manaCombosSubtitle}</p>
-      <div class="rarity-all-only"><ManaComboRanking combos={data.data.manaCombos.all} /></div>
-      <div class="rarity-commonsOnly-only"><ManaComboRanking combos={data.data.manaCombos.commonsOnly} /></div>
+      <div class="rarity-all-only"><ManaComboRanking combos={data.data.manaCombos.all} lang={lang} /></div>
+      <div class="rarity-commonsOnly-only"><ManaComboRanking combos={data.data.manaCombos.commonsOnly} lang={lang} /></div>
 
       <h3 class="text-lg font-semibold text-on-surface mt-10 mb-4">{i18n.cardExplorerHeading}</h3>
       <CardExplorer cards={data.data.cards} lang={lang} />
+    </section>
+
+    <!-- Splashing -->
+    <section id="splashing" class="mb-16 scroll-mt-32">
+      <h2 class="text-2xl font-bold text-on-surface mb-4">{i18n.splashingHeading}</h2>
+      <p class="text-sm text-on-surface-variant/70 mb-8">{i18n.splashingSubtitle}</p>
+      <div class="rarity-all-only"><SplashFixingPanel manaFixing={data.data.manaFixing.all} lang={lang} /></div>
+      <div class="rarity-commonsOnly-only"><SplashFixingPanel manaFixing={data.data.manaFixing.commonsOnly} lang={lang} /></div>
     </section>
 
     <!-- Conclusion -->
@@ -407,7 +423,13 @@ const breadCategoryLabels = {
         <p class="text-on-surface-variant leading-relaxed mb-4">{article.data.conclusionText}</p>
       )}
       <p class="text-sm text-on-surface-variant/70 mb-6">{i18n.conclusionIntro}</p>
-      <ConclusionSynthesis comboAll={data.data.manaCombos.all} comboCommonsOnly={data.data.manaCombos.commonsOnly} lang={lang} />
+      <ConclusionSynthesis
+        comboAll={data.data.manaCombos.all}
+        comboCommonsOnly={data.data.manaCombos.commonsOnly}
+        archetypeAll={data.data.archetypeAnalysis.all}
+        archetypeCommonsOnly={data.data.archetypeAnalysis.commonsOnly}
+        lang={lang}
+      />
     </section>
 
     <div
