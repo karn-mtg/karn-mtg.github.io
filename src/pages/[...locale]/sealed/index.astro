@@ -759,6 +759,17 @@ for (const entry of legacyBreadEntries) {
       return s2c(r.left + r.width / 2 + jitterX, r.top + r.height / 2 + jitterY)
     }
 
+    // Notes/widgets are much bigger than the small random jitter above, so
+    // clicking "Note" then "Curve" then "Types" back-to-back (no dragging in
+    // between) landed them all almost exactly on top of each other — visually
+    // merging into one unreadable box. Cascade each new one diagonally instead.
+    function nextAnnotationPoint() {
+      const count = canvas.querySelectorAll('.canvas-note, .canvas-widget').length
+      const center = viewportCenterCanvasPoint()
+      const cascade = (count % 10) * 36
+      return { x: center.x + cascade, y: center.y + cascade }
+    }
+
     function addCardToCanvasDefault(card) {
       const center = viewportCenterCanvasPoint()
       canvas.appendChild(makeCanvasCardEl(card, center.x - TILE_WIDTH / 2, center.y - TILE_HEIGHT / 2, false))
@@ -768,16 +779,18 @@ for (const entry of legacyBreadEntries) {
     // ---- Sticky notes ----
     function makeStickyNoteEl(id, x, y, text) {
       const el = document.createElement('div')
-      el.className = 'canvas-note absolute rounded-lg shadow-xl p-2 cursor-grab select-none'
+      el.className = 'canvas-note absolute rounded-lg shadow-xl p-2 cursor-grab select-none flex flex-col'
       el.style.left = x + 'px'
       el.style.top = y + 'px'
       el.style.width = '160px'
       el.style.minHeight = '120px'
       el.style.background = '#f2ca83'
       el.dataset.noteId = id
+      // note-text fills the whole box (flex-1) so clicking anywhere in the
+      // note's visible area focuses it for typing instead of starting a drag.
       el.innerHTML = `
         <button type="button" class="delete-note-btn absolute top-1 right-1 w-5 h-5 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-xs font-bold">×</button>
-        <div class="note-text outline-none pr-5 text-xs text-black/80 whitespace-pre-wrap" contenteditable="true" spellcheck="false">${text || ''}</div>
+        <div class="note-text flex-1 outline-none pr-5 text-xs text-black/80 whitespace-pre-wrap" contenteditable="true" spellcheck="false">${text || ''}</div>
       `
       el.querySelector('.delete-note-btn').addEventListener('click', e => {
         e.stopPropagation()
@@ -792,7 +805,7 @@ for (const entry of legacyBreadEntries) {
     }
 
     function addStickyNote() {
-      const center = viewportCenterCanvasPoint()
+      const center = nextAnnotationPoint()
       const el = makeStickyNoteEl(`note-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, center.x - 80, center.y - 60, '')
       canvas.appendChild(el)
       canvasEmptyMsg.classList.add('hidden')
@@ -958,7 +971,7 @@ for (const entry of legacyBreadEntries) {
     }
 
     function addWidget(kind) {
-      const center = viewportCenterCanvasPoint()
+      const center = nextAnnotationPoint()
       const el = makeWidgetEl(`widget-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, center.x - 100, center.y - 90, kind)
       canvas.appendChild(el)
       canvasEmptyMsg.classList.add('hidden')
