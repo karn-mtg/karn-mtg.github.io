@@ -303,6 +303,9 @@ for (const entry of legacyBreadEntries) {
         autoBuildUseDeck: i18n.sealedAutoBuildUseDeck,
         autoBuildAvgScoreLabel: i18n.sealedAutoBuildAvgScoreLabel,
         autoBuildDeckSizeLabel: i18n.sealedAutoBuildDeckSizeLabel,
+        autoBuildPowerLabel: i18n.sealedAutoBuildPowerLabel,
+        autoBuildCoverageLabel: i18n.sealedAutoBuildCoverageLabel,
+        autoBuildSynergyLabel: i18n.sealedAutoBuildSynergyLabel,
         quadrantDevelopLabel: i18n.sealedQuadrantDevelopLabel,
         quadrantParityLabel: i18n.sealedQuadrantParityLabel,
         quadrantAheadLabel: i18n.sealedQuadrantAheadLabel,
@@ -1408,11 +1411,58 @@ for (const entry of legacyBreadEntries) {
       return results.sort((a, b) => b.score - a.score)
     }
 
-    function gradeFor(avgScore) {
-      if (avgScore >= 3.2) return 'A'
-      if (avgScore >= 2.6) return 'B'
-      if (avgScore >= 2.0) return 'C'
-      if (avgScore >= 1.4) return 'D'
+    // Grades weigh three things, not just raw power:
+    //  - Power (50%): average Limited Score, same as before.
+    //  - BREAD coverage (30%): does the deck actually have the cards that win
+    //    games — Bombs and Removal count fully, Evasion/Aggro count half —
+    //    as a share of the deck, normalized against a ~35% target.
+    //  - Synergy (20%): tribal density (creature types that repeat) plus
+    //    keyword clustering (3+ cards sharing a keyword, e.g. a Flying shell)
+    //    from the Scryfall data already fetched for quadrant tagging.
+    const BREAD_COVERAGE_TARGET = 0.55
+
+    function coverageScoreFor(deckCards) {
+      if (deckCards.length === 0) return 0
+      const weight = { B: 1, R: 1, E: 0.5, A: 0.5, D: 0, F: 0 }
+      const weighted = deckCards.reduce((s, c) => s + (weight[c.bread] || 0), 0)
+      return Math.min(1, weighted / deckCards.length / BREAD_COVERAGE_TARGET)
+    }
+
+    function synergyScoreFor(deckCards) {
+      if (deckCards.length === 0) return 0
+      const subtypeCounts = {}
+      deckCards.forEach(c => {
+        if (!c.typeLine || !c.typeLine.includes('Creature')) return
+        const subtypes = c.typeLine.split('—')[1]
+        if (!subtypes) return
+        subtypes.trim().split(/\s+/).forEach(t => { subtypeCounts[t] = (subtypeCounts[t] || 0) + 1 })
+      })
+      const tribalWeight = Object.values(subtypeCounts).filter(n => n >= 2).reduce((s, n) => s + n, 0)
+
+      const keywordCounts = {}
+      deckCards.forEach(c => {
+        const sc = scryfallDetailsCache[c.scryfallId]
+        ;(sc?.keywords || []).forEach(k => { keywordCounts[k] = (keywordCounts[k] || 0) + 1 })
+      })
+      const keywordWeight = Object.values(keywordCounts).filter(n => n >= 3).reduce((s, n) => s + n, 0)
+
+      return Math.min(1, (tribalWeight + keywordWeight * 0.5) / (deckCards.length * 0.6))
+    }
+
+    function compositeScoreFor(deckCards) {
+      const avg = deckCards.length ? deckCards.reduce((s, c) => s + c.power_score, 0) / deckCards.length : 0
+      const power = avg / 5
+      const coverage = coverageScoreFor(deckCards)
+      const synergy = synergyScoreFor(deckCards)
+      const composite = power * 0.5 + coverage * 0.3 + synergy * 0.2
+      return { avg, power, coverage, synergy, composite }
+    }
+
+    function gradeFor(compositeScore) {
+      if (compositeScore >= 0.72) return 'A'
+      if (compositeScore >= 0.58) return 'B'
+      if (compositeScore >= 0.44) return 'C'
+      if (compositeScore >= 0.30) return 'D'
       return 'F'
     }
 
@@ -1486,6 +1536,24 @@ for (const entry of legacyBreadEntries) {
         ? `<div>${i18n.autoBuildSimilarityLabel}: <span class="text-on-surface font-semibold">${Math.round(candidate.similarity * 100)}%</span></div>`
         : ''
 
+      const breakdownHtml = `
+        <div class="flex flex-col gap-1 text-[10px]">
+          ${[
+            [i18n.autoBuildPowerLabel, candidate.power, 'bg-primary'],
+            [i18n.autoBuildCoverageLabel, candidate.coverage, 'bg-sky-400'],
+            [i18n.autoBuildSynergyLabel, candidate.synergy, 'bg-emerald-400'],
+          ].map(([label, value, barClass]) => `
+            <div class="flex items-center gap-2">
+              <span class="w-14 text-on-surface-variant/60 flex-shrink-0">${label}</span>
+              <span class="flex-1 h-1.5 rounded-full bg-white/10 overflow-hidden">
+                <span class="block h-full ${barClass}" style="width:${Math.round(Math.min(1, value) * 100)}%"></span>
+              </span>
+              <span class="w-8 text-right font-semibold text-on-surface flex-shrink-0">${Math.round(Math.min(1, value) * 100)}%</span>
+            </div>
+          `).join('')}
+        </div>
+      `
+
       const showDiff = candidate.similarity !== null
         && candidate.similarity >= AUTOBUILD_DIFF_THRESHOLD
         && (candidate.toRemove.length > 0 || candidate.toAdd.length > 0)
@@ -1517,6 +1585,7 @@ for (const entry of legacyBreadEntries) {
             <div>${i18n.autoBuildDeckSizeLabel}: <span class="text-on-surface font-semibold">${candidate.deckCards.length}</span></div>
             ${similarityHtml}
           </div>
+          ${breakdownHtml}
           <div class="flex flex-wrap gap-3 text-[10px] text-on-surface-variant/70">${quadrantSummary}</div>
           ${diffHtml}
           <div class="mt-1 flex flex-col gap-1.5">${actionHtml}</div>
@@ -1640,7 +1709,7 @@ for (const entry of legacyBreadEntries) {
           .slice(0, AUTOBUILD_OPTION_COUNT)
           .map(({ pair, eligible }) => {
             const deckCards = pickDeckCards(eligible)
-            const avg = deckCards.length ? deckCards.reduce((s, c) => s + c.power_score, 0) / deckCards.length : 0
+            const { avg, power, coverage, synergy, composite } = compositeScoreFor(deckCards)
             const candidateIds = new Set(deckCards.map(c => c.oracleId))
 
             let similarity = null
@@ -1654,7 +1723,12 @@ for (const entry of legacyBreadEntries) {
               toAdd = deckCards.filter(c => !currentDeckIds.has(c.oracleId))
             }
 
-            return { pair, deckCards, avg, grade: gradeFor(avg), quadrants: tallyQuadrants(deckCards), similarity, toRemove, toAdd }
+            return {
+              pair, deckCards, avg, power, coverage, synergy, composite,
+              grade: gradeFor(composite),
+              quadrants: tallyQuadrants(deckCards),
+              similarity, toRemove, toAdd,
+            }
           })
 
         showAutoBuildModal(candidates, pool, hasExistingDeck)
