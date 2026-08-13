@@ -1611,33 +1611,75 @@ for (const entry of legacyBreadEntries) {
       return tally
     }
 
-    // CABS-weighted curve fill: hit the 2s/3s targets first with the best card
-    // available at each CMC, then top off with the highest remaining scores.
+    // Every limited strategy guide (and Draftsim's own methodology) agrees on
+    // two things a pure "top 23 by power score" pass misses: bombs/removal
+    // get locked in ahead of everything else, and a deck needs a creature
+    // floor (15-17 is the near-universal number) or it can't actually attack
+    // or block regardless of how strong its spells are. This does both
+    // before falling back to CABS curve-fill for the remaining slots.
+    const MIN_CREATURES = 15
+
+    function isCreatureCard(c) {
+      return !!(c.typeLine && c.typeLine.includes('Creature'))
+    }
+
     function pickDeckCards(eligible) {
+      const picked = []
+      const pickedIds = new Set()
+      const take = c => {
+        if (pickedIds.has(c.oracleId)) return
+        picked.push(c)
+        pickedIds.add(c.oracleId)
+      }
+
+      // 1) Lock in bombs and removal first — BREAD's two highest-priority
+      // categories, and the cards every guide says to prioritize on raw pick order.
+      eligible
+        .filter(c => c.bread === 'B' || c.bread === 'R')
+        .sort((a, b) => b.power_score - a.power_score)
+        .forEach(c => { if (picked.length < DECK_SIZE) take(c) })
+
+      // 2) Guarantee a creature floor before anything else claims the
+      // remaining slots — a deck can be full of great removal and still lose
+      // for having nothing to attack or block with.
+      eligible
+        .filter(c => isCreatureCard(c) && !pickedIds.has(c.oracleId))
+        .sort((a, b) => b.power_score - a.power_score)
+        .forEach(c => {
+          const creatureCount = picked.filter(isCreatureCard).length
+          if (picked.length < DECK_SIZE && creatureCount < MIN_CREATURES) take(c)
+        })
+
+      // 3) CABS-weighted curve fill for whatever's left: hit the 2s/3s
+      // targets first with the best remaining card available at each CMC,
+      // net of slots already filled at that CMC by steps 1-2.
+      const remainingPool = eligible.filter(c => !pickedIds.has(c.oracleId))
       const byCmc = {}
-      for (const c of eligible) {
+      for (const c of remainingPool) {
         const bucket = Math.min(Math.max(Math.round(c.cmc), 1), 7)
         ;(byCmc[bucket] = byCmc[bucket] || []).push(c)
       }
       for (const b in byCmc) byCmc[b].sort((a, b2) => b2.power_score - a.power_score)
 
-      const picked = []
-      const pickedIds = new Set()
       for (const [bucket, need] of CURVE_TARGETS) {
+        if (picked.length >= DECK_SIZE) break
+        const already = picked.filter(c => Math.min(Math.max(Math.round(c.cmc), 1), 7) === bucket).length
+        const stillNeed = Math.max(0, need - already)
         const available = byCmc[bucket] || []
-        for (let k = 0; k < need && k < available.length; k++) {
-          picked.push(available[k])
-          pickedIds.add(available[k].oracleId)
+        for (let k = 0; k < available.length && k < stillNeed && picked.length < DECK_SIZE; k++) {
+          take(available[k])
         }
       }
-      const remaining = DECK_SIZE - picked.length
-      if (remaining > 0) {
-        const rest = eligible
+
+      // 4) Anything still open goes to the best remaining cards overall.
+      if (picked.length < DECK_SIZE) {
+        eligible
           .filter(c => !pickedIds.has(c.oracleId))
           .sort((a, b) => b.power_score - a.power_score)
-          .slice(0, remaining)
-        picked.push(...rest)
+          .slice(0, DECK_SIZE - picked.length)
+          .forEach(take)
       }
+
       return picked
     }
 
