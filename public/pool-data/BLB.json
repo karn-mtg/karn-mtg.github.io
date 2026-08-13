@@ -1,0 +1,4533 @@
+{
+  "set_code": "blb",
+  "set_name": "Bloomburrow",
+  "score_version": "v1-heuristic",
+  "generated_at": "2026-08-09T19:51:46.869920+00:00",
+  "card_count": 266,
+  "rarities": {
+    "common": [
+      {
+        "oracleId": "7b89b7d2-c724-4d5d-9f0b-7d3302ad1168",
+        "scryfallId": "7dd9946b-515e-4e0d-9da2-711e126e9fa6",
+        "name": "Agate Assault",
+        "typeLine": "Sorcery",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/d/7dd9946b-515e-4e0d-9da2-711e126e9fa6.jpg?1783910826",
+        "foilEligible": true,
+        "power_score": 4.2,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "381a3e8e-71dd-48e4-ab62-53478bde4a14",
+        "scryfallId": "39ebb84a-1c52-4b07-9bd0-b360523b3a5b",
+        "name": "Agate-Blade Assassin",
+        "typeLine": "Creature — Lizard Assassin",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/9/39ebb84a-1c52-4b07-9bd0-b360523b3a5b.jpg?1783910839",
+        "foilEligible": true,
+        "power_score": 1.62,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ce36a450-68a6-4519-a9f0-0e3b772054eb",
+        "scryfallId": "d3871fe6-e26e-4ab4-bd81-7e3c7b8135c1",
+        "name": "Alania's Pathmaker",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{3}{R}",
+        "cmc": 4.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/3/d3871fe6-e26e-4ab4-bd81-7e3c7b8135c1.jpg?1783910825",
+        "foilEligible": true,
+        "power_score": 1.55,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ecd9a0a4-1dfa-4d91-8339-062e2be4e5d9",
+        "scryfallId": "5309354f-1ff4-4fa9-9141-01ea2f7588ab",
+        "name": "Bakersbane Duo",
+        "typeLine": "Creature — Squirrel Raccoon",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/3/5309354f-1ff4-4fa9-9141-01ea2f7588ab.jpg?1783910814",
+        "foilEligible": true,
+        "power_score": 1.72,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f28b21a6-f7ce-437a-8c5b-0423cb55cefb",
+        "scryfallId": "25a06f82-ebdb-4dd6-bfe8-958018ce557c",
+        "name": "Banishing Light",
+        "typeLine": "Enchantment",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/5/25a06f82-ebdb-4dd6-bfe8-958018ce557c.jpg?1783910866",
+        "foilEligible": true,
+        "power_score": 1.6,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0339bd11-ad71-4998-9b5d-a32790f0e5e3",
+        "scryfallId": "f77049a6-0f22-415b-bc89-20bcb32accf6",
+        "name": "Barkform Harvester",
+        "typeLine": "Artifact Creature — Shapeshifter",
+        "manaCost": "{3}",
+        "cmc": 3.0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/7/f77049a6-0f22-415b-bc89-20bcb32accf6.jpg?1783910787",
+        "foilEligible": true,
+        "power_score": 1.24,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f2f3be8a-5ea1-47c2-8104-747f4589f5e6",
+        "scryfallId": "ca2215dd-6300-49cf-b9b2-3a840b786c31",
+        "name": "Bellowing Crier",
+        "typeLine": "Creature — Frog Advisor",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/a/ca2215dd-6300-49cf-b9b2-3a840b786c31.jpg?1783910852",
+        "foilEligible": true,
+        "power_score": 1.59,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "c79cf0e5-52dd-4af3-ab06-6cdaab526c23",
+        "scryfallId": "faf226fa-ca09-4468-8804-87b2a7de2c66",
+        "name": "Bonebind Orator",
+        "typeLine": "Creature — Squirrel Warlock Bard",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/a/faf226fa-ca09-4468-8804-87b2a7de2c66.jpg?1783910838",
+        "foilEligible": true,
+        "power_score": 1.77,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "1f5b7f4c-a3d2-4472-80f5-8504562fc7fd",
+        "scryfallId": "b8dd4693-424d-4d6e-86cf-24401a23d6b1",
+        "name": "Brave-Kin Duo",
+        "typeLine": "Creature — Rabbit Mouse",
+        "manaCost": "{W}",
+        "cmc": 1.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/8/b8dd4693-424d-4d6e-86cf-24401a23d6b1.jpg?1783910865",
+        "foilEligible": true,
+        "power_score": 1.62,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "6e152529-64b4-472c-8e50-99095af6af99",
+        "scryfallId": "5f0affd5-5dcd-4dd1-a694-37a9aedf4084",
+        "name": "Bumbleflower's Sharepot",
+        "typeLine": "Artifact",
+        "manaCost": "{2}",
+        "cmc": 2.0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/f/5f0affd5-5dcd-4dd1-a694-37a9aedf4084.jpg?1783910786",
+        "foilEligible": true,
+        "power_score": 3.4,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "06ccec61-27d2-4079-80b5-29ebd3a980ee",
+        "scryfallId": "dfd977dc-a7c3-4d0a-aca7-b25bd154e963",
+        "name": "Cache Grab",
+        "typeLine": "Instant",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/f/dfd977dc-a7c3-4d0a-aca7-b25bd154e963.jpg?1783910811",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5fe3aabd-3271-41bf-ae50-f6efaba7c4ae",
+        "scryfallId": "eb03bb4f-8b4b-417e-bfc6-294cd2186b2e",
+        "name": "Carrot Cake",
+        "typeLine": "Artifact — Food",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/b/eb03bb4f-8b4b-417e-bfc6-294cd2186b2e.jpg?1783910864",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "46e8bec0-1a09-4e6e-b78a-7ba161686ca9",
+        "scryfallId": "b2ea10dd-21ea-4622-be27-79d03a802b85",
+        "name": "Cindering Cutthroat",
+        "typeLine": "Creature — Lizard Assassin",
+        "manaCost": "{2}{B/R}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/2/b2ea10dd-21ea-4622-be27-79d03a802b85.jpg?1783910799",
+        "foilEligible": true,
+        "power_score": 1.24,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0369627e-3b83-4e5b-a8af-a99f944443b3",
+        "scryfallId": "2f373dd6-2412-453c-85ba-10230dfe473a",
+        "name": "Conduct Electricity",
+        "typeLine": "Instant",
+        "manaCost": "{4}{R}",
+        "cmc": 5.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/f/2f373dd6-2412-453c-85ba-10230dfe473a.jpg?1783910823",
+        "foilEligible": true,
+        "power_score": 2.6,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5ded56df-c7d5-4043-85df-410f47219faa",
+        "scryfallId": "c911a759-ed7b-452b-88a3-663478357610",
+        "name": "Corpseberry Cultivator",
+        "typeLine": "Creature — Squirrel Warlock",
+        "manaCost": "{1}{B/G}{B/G}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/9/c911a759-ed7b-452b-88a3-663478357610.jpg?1783910798",
+        "foilEligible": true,
+        "power_score": 1.24,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "93596258-bb44-4aa3-833d-9a0ab16b5ec1",
+        "scryfallId": "3c7b3b25-d4b3-4451-9f5c-6eb369541175",
+        "name": "Crumb and Get It",
+        "typeLine": "Instant",
+        "manaCost": "{W}",
+        "cmc": 1.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/c/3c7b3b25-d4b3-4451-9f5c-6eb369541175.jpg?1783910863",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "43ccc568-2509-49b6-99d7-c56900d1565a",
+        "scryfallId": "cea2bb34-e328-44fb-918a-72208c9457e4",
+        "name": "Daggerfang Duo",
+        "typeLine": "Creature — Rat Squirrel",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/e/cea2bb34-e328-44fb-918a-72208c9457e4.jpg?1783910837",
+        "foilEligible": true,
+        "power_score": 1.59,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "6d56bd32-f47a-4e54-a88e-b69d16283ea4",
+        "scryfallId": "8739f1ac-2e57-4b52-a7ff-cc8df5936aad",
+        "name": "Dazzling Denial",
+        "typeLine": "Instant",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/7/8739f1ac-2e57-4b52-a7ff-cc8df5936aad.jpg?1783910851",
+        "foilEligible": true,
+        "power_score": 1.6,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a45065e9-951a-4c6d-80b6-bd86a49f7439",
+        "scryfallId": "f1931f22-974c-43ad-911e-684bf3f9995d",
+        "name": "Dire Downdraft",
+        "typeLine": "Instant",
+        "manaCost": "{3}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/1/f1931f22-974c-43ad-911e-684bf3f9995d.jpg?1783910851",
+        "foilEligible": true,
+        "power_score": 1.6,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a7b12df9-fddd-4cd4-8c09-d54a47867ab6",
+        "scryfallId": "fada29c0-5293-40a4-b36d-d073ee99e650",
+        "name": "Diresight",
+        "typeLine": "Sorcery",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/a/fada29c0-5293-40a4-b36d-d073ee99e650.jpg?1783910834",
+        "foilEligible": true,
+        "power_score": 2.15,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "9740ce6d-ef6b-4d70-839a-8bd5e0e1e0a1",
+        "scryfallId": "6b485cf7-bad0-4824-9ba7-cb112ce4769f",
+        "name": "Druid of the Spade",
+        "typeLine": "Creature — Rabbit Druid",
+        "manaCost": "{2}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/b/6b485cf7-bad0-4824-9ba7-cb112ce4769f.jpg?1783910811",
+        "foilEligible": true,
+        "power_score": 1.24,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "fbf2653e-9cc4-442f-bc73-6e2ba6e067cb",
+        "scryfallId": "5030e6ac-211d-4145-8c87-998a8351a467",
+        "name": "Early Winter",
+        "typeLine": "Instant",
+        "manaCost": "{4}{B}",
+        "cmc": 5.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/0/5030e6ac-211d-4145-8c87-998a8351a467.jpg?1783910835",
+        "foilEligible": true,
+        "power_score": 2.6,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "76c2e0b4-d4fa-4e98-b363-0a76eb481304",
+        "scryfallId": "1c671eab-d1ef-4d79-94eb-8b85f0d18699",
+        "name": "Finch Formation",
+        "typeLine": "Creature — Bird Scout",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/c/1c671eab-d1ef-4d79-94eb-8b85f0d18699.jpg?1783910850",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+        "scryfallId": "0000419b-0bba-4488-8f7a-6194544ce91e",
+        "name": "Forest",
+        "typeLine": "Basic Land — Forest",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/0/0000419b-0bba-4488-8f7a-6194544ce91e.jpg?1783910776",
+        "foilEligible": true,
+        "power_score": 0.0,
+        "bread": "-",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ea4c5b8f-a5ff-47dd-8e47-5ae7b21926b4",
+        "scryfallId": "a5c94bc0-a49d-451b-8e8d-64d46b8b8603",
+        "name": "Fountainport Bell",
+        "typeLine": "Artifact",
+        "manaCost": "{1}",
+        "cmc": 1.0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/5/a5c94bc0-a49d-451b-8e8d-64d46b8b8603.jpg?1783910786",
+        "foilEligible": true,
+        "power_score": 2.35,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "69038520-7156-48d9-aae8-ba3cc76a5993",
+        "scryfallId": "674bbd6d-e329-42cf-963d-88d1ce8fe51e",
+        "name": "Frilled Sparkshooter",
+        "typeLine": "Creature — Lizard Archer",
+        "manaCost": "{3}{R}",
+        "cmc": 4.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/7/674bbd6d-e329-42cf-963d-88d1ce8fe51e.jpg?1783910821",
+        "foilEligible": true,
+        "power_score": 1.8,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "33c06c11-8d0a-45ce-adea-c9a7a8ac8779",
+        "scryfallId": "4831e7ae-54e3-4bd9-b5af-52dc29f81715",
+        "name": "Glidedive Duo",
+        "typeLine": "Creature — Bat Lizard",
+        "manaCost": "{4}{B}",
+        "cmc": 5.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/8/4831e7ae-54e3-4bd9-b5af-52dc29f81715.jpg?1783910835",
+        "foilEligible": true,
+        "power_score": 2.2,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "467d6acb-9a3c-433f-836d-54e0e670b7d0",
+        "scryfallId": "2fc20157-edd3-484d-8864-925c071c0551",
+        "name": "Head of the Homestead",
+        "typeLine": "Creature — Rabbit Citizen",
+        "manaCost": "{3}{G/W}{G/W}",
+        "cmc": 5.0,
+        "colors": [
+          "G",
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/f/2fc20157-edd3-484d-8864-925c071c0551.jpg?1783910796",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "bbfc5011-a9b7-442d-a443-974a5a64de46",
+        "scryfallId": "3b5349db-0e0a-4b15-886e-0db403ef49cb",
+        "name": "Heaped Harvest",
+        "typeLine": "Artifact — Food",
+        "manaCost": "{2}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/b/3b5349db-0e0a-4b15-886e-0db403ef49cb.jpg?1783910809",
+        "foilEligible": true,
+        "power_score": 2.2,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "382d18a2-438e-4ae7-a83f-1658ef1f9b07",
+        "scryfallId": "4ba8f2e7-8357-4862-97dc-1942d066023a",
+        "name": "Hidden Grotto",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/b/4ba8f2e7-8357-4862-97dc-1942d066023a.jpg?1783910785",
+        "foilEligible": true,
+        "power_score": 2.2,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ab0aea13-1dbc-424a-ab7e-cdb303036a56",
+        "scryfallId": "09c8cf4b-8e65-4a1c-b458-28b5ab56b390",
+        "name": "High Stride",
+        "typeLine": "Instant",
+        "manaCost": "{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/9/09c8cf4b-8e65-4a1c-b458-28b5ab56b390.jpg?1783910809",
+        "foilEligible": true,
+        "power_score": 1.8,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7ed4afc9-959a-4868-8f4a-2221bea1ba32",
+        "scryfallId": "4d70b99d-c8bf-4a56-8957-cf587fe60b81",
+        "name": "Intrepid Rabbit",
+        "typeLine": "Creature — Rabbit Soldier",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/d/4d70b99d-c8bf-4a56-8957-cf587fe60b81.jpg?1783910860",
+        "foilEligible": true,
+        "power_score": 1.74,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "b2c6aa39-2d2a-459c-a555-fb48ba993373",
+        "scryfallId": "106a5332-0104-4ec9-9e1f-806381ae4cad",
+        "name": "Island",
+        "typeLine": "Basic Land — Island",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/0/106a5332-0104-4ec9-9e1f-806381ae4cad.jpg?1783910780",
+        "foilEligible": true,
+        "power_score": 0.0,
+        "bread": "-",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0a2fbdd3-4940-4bbf-ae19-f6d00d7ff294",
+        "scryfallId": "918fd89b-5ab7-4ae2-920c-faca5e9da7b9",
+        "name": "Junkblade Bruiser",
+        "typeLine": "Creature — Raccoon Berserker",
+        "manaCost": "{3}{R/G}{R/G}",
+        "cmc": 5.0,
+        "colors": [
+          "G",
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/1/918fd89b-5ab7-4ae2-920c-faca5e9da7b9.jpg?1783910794",
+        "foilEligible": true,
+        "power_score": 1.84,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "980cd7d5-a511-49ab-bc52-08b71c65db76",
+        "scryfallId": "a839fba3-1b66-4dd1-bf43-9b015b44fc81",
+        "name": "Kindlespark Duo",
+        "typeLine": "Creature — Lizard Otter",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/8/a839fba3-1b66-4dd1-bf43-9b015b44fc81.jpg?1783910819",
+        "foilEligible": true,
+        "power_score": 2.5,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "63686c6b-9051-4002-aa8e-da8a3021330f",
+        "scryfallId": "ca543405-5e12-48a0-9a77-082ac9bcb2f2",
+        "name": "Lifecreed Duo",
+        "typeLine": "Creature — Bat Bird",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/a/ca543405-5e12-48a0-9a77-082ac9bcb2f2.jpg?1783910861",
+        "foilEligible": true,
+        "power_score": 2.04,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "ef8fab12-d7d2-4c21-8b8c-41627048ac8b",
+        "scryfallId": "2f00c834-b4a9-45b8-bb3f-22c2a42314a0",
+        "name": "Lightshell Duo",
+        "typeLine": "Creature — Rat Otter",
+        "manaCost": "{3}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/f/2f00c834-b4a9-45b8-bb3f-22c2a42314a0.jpg?1783910847",
+        "foilEligible": true,
+        "power_score": 1.44,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "adc8976a-0871-4fd6-9c4c-822ba9549b4b",
+        "scryfallId": "c7ef748c-b5e5-4e7d-bf2e-d3e6c08edb42",
+        "name": "Longstalk Brawl",
+        "typeLine": "Sorcery",
+        "manaCost": "{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/7/c7ef748c-b5e5-4e7d-bf2e-d3e6c08edb42.jpg?1783910805",
+        "foilEligible": true,
+        "power_score": 1.9,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "19b5c94b-b4fa-41a9-b649-51c4e6f03602",
+        "scryfallId": "509bf254-8a2b-4dfa-9ae5-386321b35e8b",
+        "name": "Might of the Meek",
+        "typeLine": "Instant",
+        "manaCost": "{R}",
+        "cmc": 1.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/0/509bf254-8a2b-4dfa-9ae5-386321b35e8b.jpg?1783910819",
+        "foilEligible": true,
+        "power_score": 1.95,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "3b10ab39-3050-475c-af8b-f293794d498c",
+        "scryfallId": "507ba708-ca9b-453e-b4c2-23b6650eb5a8",
+        "name": "Mind Drill Assailant",
+        "typeLine": "Creature — Rat Warlock",
+        "manaCost": "{2}{U/B}{U/B}",
+        "cmc": 4.0,
+        "colors": [
+          "B",
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/0/507ba708-ca9b-453e-b4c2-23b6650eb5a8.jpg?1783910793",
+        "foilEligible": true,
+        "power_score": 1.44,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "03e356ae-f1e8-4730-8d2b-b9e2f32db915",
+        "scryfallId": "7e24fe6a-607b-49b8-9fca-cecb1e40de7f",
+        "name": "Mind Spiral",
+        "typeLine": "Sorcery",
+        "manaCost": "{4}{U}",
+        "cmc": 5.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/e/7e24fe6a-607b-49b8-9fca-cecb1e40de7f.jpg?1783910846",
+        "foilEligible": true,
+        "power_score": 1.95,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d8067f42-68c0-42da-a1d6-859953939555",
+        "scryfallId": "35f2a71f-31e8-4b51-9dd4-51a5336b3b86",
+        "name": "Moonrise Cleric",
+        "typeLine": "Creature — Bat Cleric",
+        "manaCost": "{1}{W/B}{W/B}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/5/35f2a71f-31e8-4b51-9dd4-51a5336b3b86.jpg?1783910793",
+        "foilEligible": true,
+        "power_score": 2.04,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a3fb7228-e76b-4e96-a40e-20b5fed75685",
+        "scryfallId": "02244055-cbeb-4074-9482-42ec20721312",
+        "name": "Mountain",
+        "typeLine": "Basic Land — Mountain",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/2/02244055-cbeb-4074-9482-42ec20721312.jpg?1783910777",
+        "foilEligible": true,
+        "power_score": 0.0,
+        "bread": "-",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "9ac2dcb6-dacc-4fcb-b820-9fc6744ec503",
+        "scryfallId": "8c9c3cc3-2aa2-453e-a17c-2baeeaabe0a9",
+        "name": "Nettle Guard",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/c/8c9c3cc3-2aa2-453e-a17c-2baeeaabe0a9.jpg?1783910859",
+        "foilEligible": true,
+        "power_score": 2.72,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "99007c40-1eb5-4c3a-9889-6d12417d8191",
+        "scryfallId": "0928e04f-2568-41e8-b603-7a25cf5f94d0",
+        "name": "Nightwhorl Hermit",
+        "typeLine": "Creature — Rat Rogue",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/9/0928e04f-2568-41e8-b603-7a25cf5f94d0.jpg?1783910846",
+        "foilEligible": true,
+        "power_score": 1.59,
+        "bread": "F",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "ed7f64d1-69ba-40f5-9863-3edba10e23c7",
+        "scryfallId": "742c0409-9abd-4559-b52e-932cc90c531a",
+        "name": "Nocturnal Hunger",
+        "typeLine": "Instant",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/4/742c0409-9abd-4559-b52e-932cc90c531a.jpg?1783910832",
+        "foilEligible": true,
+        "power_score": 3.4,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "91ddd2bd-2dec-4670-8edb-e89c009b2187",
+        "scryfallId": "13cb9575-1138-4f99-8e90-0eaf00bdf4a1",
+        "name": "Pearl of Wisdom",
+        "typeLine": "Sorcery",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/3/13cb9575-1138-4f99-8e90-0eaf00bdf4a1.jpg?1783910846",
+        "foilEligible": true,
+        "power_score": 1.95,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0534e20d-8352-4d9f-a617-378070602673",
+        "scryfallId": "ae442cd6-c4df-4aad-9b1d-ccd936c5ec96",
+        "name": "Pileated Provisioner",
+        "typeLine": "Creature — Bird Scout",
+        "manaCost": "{4}{W}",
+        "cmc": 5.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/e/ae442cd6-c4df-4aad-9b1d-ccd936c5ec96.jpg?1783910857",
+        "foilEligible": true,
+        "power_score": 2.0,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "bc71ebf6-2056-41f7-be35-b2e5c34afa99",
+        "scryfallId": "11a94c04-b6d3-4118-b252-5146eedae4e8",
+        "name": "Plains",
+        "typeLine": "Basic Land — Plains",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/1/11a94c04-b6d3-4118-b252-5146eedae4e8.jpg?1783910780",
+        "foilEligible": true,
+        "power_score": 0.0,
+        "bread": "-",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "efd2a4ca-1bd0-4762-a997-f099326b1746",
+        "scryfallId": "6bc4963c-d90b-4588-bdb7-85956e42a623",
+        "name": "Polliwallop",
+        "typeLine": "Instant",
+        "manaCost": "{3}{G}",
+        "cmc": 4.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/b/6bc4963c-d90b-4588-bdb7-85956e42a623.jpg?1783910805",
+        "foilEligible": true,
+        "power_score": 1.6,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "6eabebdf-c1a3-4789-a67f-859f0957c5df",
+        "scryfallId": "fb959e74-61ea-453d-bb9f-ad0183c0e1b1",
+        "name": "Pond Prophet",
+        "typeLine": "Creature — Frog Advisor",
+        "manaCost": "{G/U}{G/U}",
+        "cmc": 2.0,
+        "colors": [
+          "G",
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/b/fb959e74-61ea-453d-bb9f-ad0183c0e1b1.jpg?1783910791",
+        "foilEligible": true,
+        "power_score": 1.55,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "3df4eb80-e8dd-4a9e-bd8a-b4b23fb9de6c",
+        "scryfallId": "df900308-8432-4a0a-be21-17482026012b",
+        "name": "Psychic Whorl",
+        "typeLine": "Sorcery",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/f/df900308-8432-4a0a-be21-17482026012b.jpg?1783910830",
+        "foilEligible": true,
+        "power_score": 1.8,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "9f7abd7d-1087-495c-8a52-2a2368cc1032",
+        "scryfallId": "c4ded450-346d-4917-917a-b62bc0267509",
+        "name": "Rabbit Response",
+        "typeLine": "Instant",
+        "manaCost": "{2}{W}{W}",
+        "cmc": 4.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/4/c4ded450-346d-4917-917a-b62bc0267509.jpg?1783910857",
+        "foilEligible": true,
+        "power_score": 3.3,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "50c038a4-6546-4a15-a117-176849edaa3d",
+        "scryfallId": "b5b5180f-5a1c-4df8-9019-195e65a50ce3",
+        "name": "Raccoon Rallier",
+        "typeLine": "Creature — Raccoon Bard",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/5/b5b5180f-5a1c-4df8-9019-195e65a50ce3.jpg?1783910818",
+        "foilEligible": true,
+        "power_score": 1.42,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "4c2e84dc-b4f5-4eca-af07-1c53a1caae7c",
+        "scryfallId": "874510be-7ecd-4eff-abad-b9594eb4821a",
+        "name": "Ravine Raider",
+        "typeLine": "Creature — Lizard Rogue",
+        "manaCost": "{B}",
+        "cmc": 1.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/7/874510be-7ecd-4eff-abad-b9594eb4821a.jpg?1783910831",
+        "foilEligible": true,
+        "power_score": 2.02,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0cc89c15-5a48-4998-b6df-21791b6ed9a3",
+        "scryfallId": "78cdcfb9-a247-4c2d-a098-5b57570f8cd5",
+        "name": "Roughshod Duo",
+        "typeLine": "Creature — Mouse Raccoon",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/8/78cdcfb9-a247-4c2d-a098-5b57570f8cd5.jpg?1783910816",
+        "foilEligible": true,
+        "power_score": 2.04,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "290faa28-450e-4797-9a8f-642d8af3f82a",
+        "scryfallId": "7cb7ec70-a5a4-4188-ba1a-e88b81bdbad0",
+        "name": "Run Away Together",
+        "typeLine": "Instant",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/c/7cb7ec70-a5a4-4188-ba1a-e88b81bdbad0.jpg?1783910846",
+        "foilEligible": true,
+        "power_score": 1.6,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "23878990-dcbd-4a2a-b4f7-ee7edb396c71",
+        "scryfallId": "c96b01f5-83de-4237-a68d-f946c53e31a6",
+        "name": "Rust-Shield Rampager",
+        "typeLine": "Creature — Raccoon Warrior",
+        "manaCost": "{3}{G}",
+        "cmc": 4.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/9/c96b01f5-83de-4237-a68d-f946c53e31a6.jpg?1783910806",
+        "foilEligible": true,
+        "power_score": 1.72,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "dfc1dc36-0cc2-47cc-b0dd-1cc7c31057aa",
+        "scryfallId": "1397f689-dca1-4d35-864b-92c5606afb9a",
+        "name": "Savor",
+        "typeLine": "Instant",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/3/1397f689-dca1-4d35-864b-92c5606afb9a.jpg?1783910831",
+        "foilEligible": true,
+        "power_score": 3.4,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ac7d1986-8388-4e4c-973e-d90382b12acf",
+        "scryfallId": "6d963080-b3ec-467d-82f7-39db6ecd6bbc",
+        "name": "Sazacap's Brew",
+        "typeLine": "Instant",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/d/6d963080-b3ec-467d-82f7-39db6ecd6bbc.jpg?1783910815",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "655a2b78-6a6c-4b9e-b7c0-48d3768978f5",
+        "scryfallId": "9ae14276-dbbd-4257-80e9-accd6c19f5b2",
+        "name": "Scales of Shale",
+        "typeLine": "Instant",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/a/9ae14276-dbbd-4257-80e9-accd6c19f5b2.jpg?1783910830",
+        "foilEligible": true,
+        "power_score": 1.8,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "e2f57e48-ff5b-4a42-9b7c-1bd23b0d78ed",
+        "scryfallId": "f3684577-51ce-490e-9b59-b19c733be466",
+        "name": "Seedpod Squire",
+        "typeLine": "Creature — Bird Scout",
+        "manaCost": "{3}{W/U}",
+        "cmc": 4.0,
+        "colors": [
+          "U",
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/3/f3684577-51ce-490e-9b59-b19c733be466.jpg?1783910791",
+        "foilEligible": true,
+        "power_score": 1.8,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "c9d8c983-2845-42e6-b6b8-bf7cf2729b23",
+        "scryfallId": "4dc3b49e-3674-494c-bdea-4374cefd10f4",
+        "name": "Shore Up",
+        "typeLine": "Instant",
+        "manaCost": "{U}",
+        "cmc": 1.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/d/4dc3b49e-3674-494c-bdea-4374cefd10f4.jpg?1783910845",
+        "foilEligible": true,
+        "power_score": 1.8,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a50db36c-948b-4132-a5e5-84aab1f42612",
+        "scryfallId": "d6844bad-ffbe-4c6e-b438-08562eccea52",
+        "name": "Skyskipper Duo",
+        "typeLine": "Creature — Bird Frog",
+        "manaCost": "{4}{U}",
+        "cmc": 5.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/6/d6844bad-ffbe-4c6e-b438-08562eccea52.jpg?1783910842",
+        "foilEligible": true,
+        "power_score": 1.8,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "d8c582bc-47de-47ec-8bf9-b2c848e27ab8",
+        "scryfallId": "a50da179-751f-47a8-a547-8c4a291ed381",
+        "name": "Sonar Strike",
+        "typeLine": "Instant",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/5/a50da179-751f-47a8-a547-8c4a291ed381.jpg?1783910855",
+        "foilEligible": true,
+        "power_score": 3.1,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0c0940c6-8126-4d58-809e-871cf8588ef9",
+        "scryfallId": "184c1eca-2991-438f-b5d2-cd2529b9c9b4",
+        "name": "Starlit Soothsayer",
+        "typeLine": "Creature — Bat Cleric",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/8/184c1eca-2991-438f-b5d2-cd2529b9c9b4.jpg?1783910829",
+        "foilEligible": true,
+        "power_score": 2.0,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "75237b2c-232b-479a-ab3a-e1566c8a9fe7",
+        "scryfallId": "03bf1296-e347-4070-8c6f-5c362c2f9364",
+        "name": "Steampath Charger",
+        "typeLine": "Creature — Lizard Warlock",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/3/03bf1296-e347-4070-8c6f-5c362c2f9364.jpg?1783910816",
+        "foilEligible": true,
+        "power_score": 2.84,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "899f0931-4e9b-4fa8-9f6d-d13a7de05334",
+        "scryfallId": "b5fa9651-b217-4f93-9c46-9bdb11feedcb",
+        "name": "Stickytongue Sentinel",
+        "typeLine": "Creature — Frog Warrior",
+        "manaCost": "{2}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/5/b5fa9651-b217-4f93-9c46-9bdb11feedcb.jpg?1783910804",
+        "foilEligible": true,
+        "power_score": 1.42,
+        "bread": "F",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "7a70faf5-cc04-402b-92e3-67746788f510",
+        "scryfallId": "7740abc5-54e1-478d-966e-0fa64e727995",
+        "name": "Sunshower Druid",
+        "typeLine": "Creature — Frog Druid",
+        "manaCost": "{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/7/7740abc5-54e1-478d-966e-0fa64e727995.jpg?1783910802",
+        "foilEligible": true,
+        "power_score": 1.82,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "56719f6a-1a6c-4c0a-8d21-18f7d7350b68",
+        "scryfallId": "0223cf7f-4c6e-487f-babb-a740a15e1f0c",
+        "name": "Swamp",
+        "typeLine": "Basic Land — Swamp",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/2/0223cf7f-4c6e-487f-babb-a740a15e1f0c.jpg?1783910777",
+        "foilEligible": true,
+        "power_score": 0.0,
+        "bread": "-",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "e07700e7-218a-45a3-9ee4-de2cc25cdc02",
+        "scryfallId": "7a1c6f00-af4c-4d35-b682-6c0e759df9a5",
+        "name": "Take Out the Trash",
+        "typeLine": "Instant",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/a/7a1c6f00-af4c-4d35-b682-6c0e759df9a5.jpg?1783910815",
+        "foilEligible": true,
+        "power_score": 3.25,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "60ac490c-b489-4ad2-bcc2-3babaabf8ccb",
+        "scryfallId": "850daae4-f0b7-4604-95e7-ad044ec165c3",
+        "name": "Tempest Angler",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{1}{U/R}{U/R}",
+        "cmc": 3.0,
+        "colors": [
+          "R",
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/5/850daae4-f0b7-4604-95e7-ad044ec165c3.jpg?1783910789",
+        "foilEligible": true,
+        "power_score": 1.06,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7054c42b-48dd-4887-b878-69c005259d27",
+        "scryfallId": "afa8d83f-8586-4127-8b55-9715e9547488",
+        "name": "Thistledown Players",
+        "typeLine": "Creature — Mouse Bard",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/f/afa8d83f-8586-4127-8b55-9715e9547488.jpg?1783910855",
+        "foilEligible": true,
+        "power_score": 1.42,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "33b6555e-035d-4241-a341-a9b9139ca6f0",
+        "scryfallId": "42f66c4a-feaa-4ba6-aa56-955b43329a9e",
+        "name": "Thornplate Intimidator",
+        "typeLine": "Creature — Rat Rogue",
+        "manaCost": "{3}{B}",
+        "cmc": 4.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/2/42f66c4a-feaa-4ba6-aa56-955b43329a9e.jpg?1783910827",
+        "foilEligible": true,
+        "power_score": 1.54,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "33f4fcd5-4eea-4146-a564-da5511a8ee0a",
+        "scryfallId": "44b0d83b-cc41-4f82-892c-ef6d3293228a",
+        "name": "Thought Shucker",
+        "typeLine": "Creature — Rat Rogue",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/4/44b0d83b-cc41-4f82-892c-ef6d3293228a.jpg?1783910840",
+        "foilEligible": true,
+        "power_score": 1.77,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "6cb9d153-4eaa-4f32-8930-bd68cd99c128",
+        "scryfallId": "aaced75b-6e07-457c-8ea2-f74d99710d15",
+        "name": "Three Tree Mascot",
+        "typeLine": "Artifact Creature — Shapeshifter",
+        "manaCost": "{2}",
+        "cmc": 2.0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/a/aaced75b-6e07-457c-8ea2-f74d99710d15.jpg?1783910785",
+        "foilEligible": true,
+        "power_score": 1.24,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d17d4003-e1c9-42be-ac76-3b5500fad485",
+        "scryfallId": "d1ab6e14-26e0-4174-b5c6-bc0f5c26b177",
+        "name": "Three Tree Rootweaver",
+        "typeLine": "Creature — Mole Druid",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/1/d1ab6e14-26e0-4174-b5c6-bc0f5c26b177.jpg?1783910801",
+        "foilEligible": true,
+        "power_score": 1.42,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d7dfb4d5-8510-4904-abb7-834ec65d9bf3",
+        "scryfallId": "89c8456e-c971-42b7-abf3-ff5ae1320abe",
+        "name": "Treeguard Duo",
+        "typeLine": "Creature — Frog Rabbit",
+        "manaCost": "{3}{G}",
+        "cmc": 4.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/9/89c8456e-c971-42b7-abf3-ff5ae1320abe.jpg?1783910801",
+        "foilEligible": true,
+        "power_score": 2.74,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5bf5739a-6322-4e6e-b41e-e7bdbb11b1ce",
+        "scryfallId": "e16d4d6e-1fe5-4ff6-9877-8c849a24f5e0",
+        "name": "Treetop Sentries",
+        "typeLine": "Creature — Squirrel Archer",
+        "manaCost": "{3}{G}",
+        "cmc": 4.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/1/e16d4d6e-1fe5-4ff6-9877-8c849a24f5e0.jpg?1783910800",
+        "foilEligible": true,
+        "power_score": 1.55,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d23c3613-bc5e-4fc5-939c-62a090c53a79",
+        "scryfallId": "68b90f54-d629-4126-82cc-13b51d6c1c3e",
+        "name": "Uncharted Haven",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/8/68b90f54-d629-4126-82cc-13b51d6c1c3e.jpg?1783910781",
+        "foilEligible": true,
+        "power_score": 1.6,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "2313a3f9-3eac-4684-a25e-6a6ae445a723",
+        "scryfallId": "3db43c46-b616-4ef8-80ed-0fab345ab3d0",
+        "name": "Veteran Guardmouse",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{3}{R/W}",
+        "cmc": 4.0,
+        "colors": [
+          "R",
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/d/3db43c46-b616-4ef8-80ed-0fab345ab3d0.jpg?1783910790",
+        "foilEligible": true,
+        "power_score": 1.44,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "54702a84-3125-41a7-a875-fe2ec870836d",
+        "scryfallId": "105964a7-88b7-4340-aa66-e908189a3638",
+        "name": "War Squeak",
+        "typeLine": "Enchantment — Aura",
+        "manaCost": "{R}",
+        "cmc": 1.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/0/105964a7-88b7-4340-aa66-e908189a3638.jpg?1783910814",
+        "foilEligible": true,
+        "power_score": 1.6,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "33fcb05b-246d-4b82-8b0f-44d5f891b612",
+        "scryfallId": "4bf20069-5a20-4f95-976b-6af2b69f3ad0",
+        "name": "Warren Elder",
+        "typeLine": "Creature — Rabbit Cleric",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/b/4bf20069-5a20-4f95-976b-6af2b69f3ad0.jpg?1783910855",
+        "foilEligible": true,
+        "power_score": 2.92,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5e11386f-4667-47f7-b280-eabd927e4a46",
+        "scryfallId": "35898b39-98e2-405b-8f18-0e054bd2c29e",
+        "name": "Waterspout Warden",
+        "typeLine": "Creature — Frog Soldier",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/5/35898b39-98e2-405b-8f18-0e054bd2c29e.jpg?1783910840",
+        "foilEligible": true,
+        "power_score": 1.24,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "426dbe89-0cbb-4a3b-8812-d9761d063373",
+        "scryfallId": "d90ea719-5320-46c6-a347-161853a14776",
+        "name": "Wax-Wane Witness",
+        "typeLine": "Creature — Bat Cleric",
+        "manaCost": "{3}{W}",
+        "cmc": 4.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/9/d90ea719-5320-46c6-a347-161853a14776.jpg?1783910853",
+        "foilEligible": true,
+        "power_score": 2.15,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "cb1e1acc-3805-418b-bed1-65838ddb1d62",
+        "scryfallId": "da653996-9bd4-40bd-afb4-48c7e070a269",
+        "name": "Whiskerquill Scribe",
+        "typeLine": "Creature — Mouse Citizen",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "common",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/a/da653996-9bd4-40bd-afb4-48c7e070a269.jpg?1783910814",
+        "foilEligible": true,
+        "power_score": 1.77,
+        "bread": "D",
+        "narrow_synergy": false
+      }
+    ],
+    "uncommon": [
+      {
+        "oracleId": "bcbe879a-4609-4493-bd7d-47c26d27e83c",
+        "scryfallId": "485dc8d8-9e44-4a0f-9ff6-fa448e232290",
+        "name": "Bandit's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/8/485dc8d8-9e44-4a0f-9ff6-fa448e232290.jpg?1783910839",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "08e173e3-4c28-49d2-bb57-ccf533f20daf",
+        "scryfallId": "582637a9-6aa0-4824-bed7-d5fc91bda35e",
+        "name": "Bark-Knuckle Boxer",
+        "typeLine": "Creature — Raccoon Berserker",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/8/582637a9-6aa0-4824-bed7-d5fc91bda35e.jpg?1783910812",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "9fdad42a-9db5-4d91-9e80-9d5ce19038b8",
+        "scryfallId": "4bb318fa-481d-40a7-978e-f01b49101ae0",
+        "name": "Blacksmith's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{R}",
+        "cmc": 1.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/b/4bb318fa-481d-40a7-978e-f01b49101ae0.jpg?1783910826",
+        "foilEligible": true,
+        "power_score": 2.4,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "2e5b8973-4f6e-4abe-bbbe-81fdca784997",
+        "scryfallId": "0cd92a83-cec3-4085-a929-3f204e3e0140",
+        "name": "Blooming Blast",
+        "typeLine": "Instant",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/c/0cd92a83-cec3-4085-a929-3f204e3e0140.jpg?1783910825",
+        "foilEligible": true,
+        "power_score": 3.7,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "be3c7e4c-81fd-49e7-8fb5-5eb83994dafd",
+        "scryfallId": "82defb87-237f-4b77-9673-5bf00607148f",
+        "name": "Bonecache Overseer",
+        "typeLine": "Creature — Squirrel Warlock",
+        "manaCost": "{B}",
+        "cmc": 1.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/2/82defb87-237f-4b77-9673-5bf00607148f.jpg?1783910838",
+        "foilEligible": true,
+        "power_score": 2.27,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "104baa4e-a3f3-45dc-979d-4c58b659ba1a",
+        "scryfallId": "e200b8bf-f2f3-4157-8e04-02baf07a963e",
+        "name": "Brambleguard Captain",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{3}{R}",
+        "cmc": 4.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/2/e200b8bf-f2f3-4157-8e04-02baf07a963e.jpg?1783910824",
+        "foilEligible": true,
+        "power_score": 1.38,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "bc9c7e1a-5155-431a-be21-fcbd18718980",
+        "scryfallId": "bac9f6f8-6797-4580-9fc4-9a825872e017",
+        "name": "Brambleguard Veteran",
+        "typeLine": "Creature — Raccoon Warrior",
+        "manaCost": "{1}{G}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/a/bac9f6f8-6797-4580-9fc4-9a825872e017.jpg?1783910811",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f93dc9cc-3dd2-4e2b-b972-217ab9d89dfe",
+        "scryfallId": "78b55a58-c669-4dc6-aa63-5d9dff52e613",
+        "name": "Brazen Collector",
+        "typeLine": "Creature — Raccoon Rogue",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/8/78b55a58-c669-4dc6-aa63-5d9dff52e613.jpg?1783910824",
+        "foilEligible": true,
+        "power_score": 2.49,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f1d2f437-d474-4617-aea6-102daa5e5a15",
+        "scryfallId": "df7fea2e-7414-4bc8-adb0-9342e174c009",
+        "name": "Brightblade Stoat",
+        "typeLine": "Creature — Weasel Soldier",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/f/df7fea2e-7414-4bc8-adb0-9342e174c009.jpg?1783910865",
+        "foilEligible": true,
+        "power_score": 2.62,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0b19082c-8f80-448b-9e1b-0f324a159409",
+        "scryfallId": "15fa581a-724e-4196-a9a3-ff84c54bdb7d",
+        "name": "Builder's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/5/15fa581a-724e-4196-a9a3-ff84c54bdb7d.jpg?1783910866",
+        "foilEligible": true,
+        "power_score": 2.95,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f293da27-e42d-4e87-8b61-d3c27e4c6d71",
+        "scryfallId": "87138ace-3594-499e-bad5-ec76148613ea",
+        "name": "Burrowguard Mentor",
+        "typeLine": "Creature — Rabbit Soldier",
+        "manaCost": "{G}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "G",
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/7/87138ace-3594-499e-bad5-ec76148613ea.jpg?1783910800",
+        "foilEligible": true,
+        "power_score": 2.7,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5436bb0d-b5c7-43a9-8b3f-67cdc0dd0381",
+        "scryfallId": "0de60cf7-fa82-4b6f-9f88-6590fba5c863",
+        "name": "Bushy Bodyguard",
+        "typeLine": "Creature — Squirrel Warrior",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/d/0de60cf7-fa82-4b6f-9f88-6590fba5c863.jpg?1783910811",
+        "foilEligible": true,
+        "power_score": 2.04,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d605d9d1-c01a-4ef6-89f9-06fae8cd57e6",
+        "scryfallId": "178bc8b2-ffa0-4549-aead-aacb3db3cf19",
+        "name": "Calamitous Tide",
+        "typeLine": "Sorcery",
+        "manaCost": "{4}{U}{U}",
+        "cmc": 6.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/7/178bc8b2-ffa0-4549-aead-aacb3db3cf19.jpg?1783910852",
+        "foilEligible": true,
+        "power_score": 2.15,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "446db5a4-21b0-44c1-b12b-d365313dd67a",
+        "scryfallId": "662d3bcc-65f3-4c69-8ea1-446870a1193d",
+        "name": "Clifftop Lookout",
+        "typeLine": "Creature — Frog Scout",
+        "manaCost": "{2}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/6/662d3bcc-65f3-4c69-8ea1-446870a1193d.jpg?1783910811",
+        "foilEligible": true,
+        "power_score": 1.38,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "b548578c-4910-402c-8e78-498924e0a9be",
+        "scryfallId": "e50acc41-3517-42db-b1d3-1bdfd7294d84",
+        "name": "Consumed by Greed",
+        "typeLine": "Instant",
+        "manaCost": "{1}{B}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/5/e50acc41-3517-42db-b1d3-1bdfd7294d84.jpg?1783910837",
+        "foilEligible": true,
+        "power_score": 2.8,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "88bb91b5-2ccd-4ce9-8cd4-e54d63c12abf",
+        "scryfallId": "dc2c1de0-6233-469a-be72-a050b97d2c8f",
+        "name": "Coruscation Mage",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/c/dc2c1de0-6233-469a-be72-a050b97d2c8f.jpg?1783910824",
+        "foilEligible": true,
+        "power_score": 2.22,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "30af656a-99ab-4e0a-81fe-3cdb0ea6a0cc",
+        "scryfallId": "64653b4a-e139-45f9-a915-ab49afb6b795",
+        "name": "Curious Forager",
+        "typeLine": "Creature — Squirrel Druid",
+        "manaCost": "{2}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/4/64653b4a-e139-45f9-a915-ab49afb6b795.jpg?1783910811",
+        "foilEligible": true,
+        "power_score": 2.09,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "e4d52559-7624-48b2-96ba-e52ada6c507a",
+        "scryfallId": "19422406-0c1a-497e-bed1-708bc556491a",
+        "name": "Daring Waverider",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{4}{U}{U}",
+        "cmc": 6.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/9/19422406-0c1a-497e-bed1-708bc556491a.jpg?1783910852",
+        "foilEligible": true,
+        "power_score": 1.2,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "07634620-a83a-4ca0-8a60-2a21368a2661",
+        "scryfallId": "666aefc2-44e0-4c27-88d5-7906f245a71f",
+        "name": "Dewdrop Cure",
+        "typeLine": "Sorcery",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/6/666aefc2-44e0-4c27-88d5-7906f245a71f.jpg?1783910862",
+        "foilEligible": true,
+        "power_score": 2.8,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "1e0a2709-2cd2-4954-81ca-60654ab03d7c",
+        "scryfallId": "55cfd628-933a-4d3d-b2e5-70bc86960d1c",
+        "name": "Downwind Ambusher",
+        "typeLine": "Creature — Skunk Assassin",
+        "manaCost": "{3}{B}",
+        "cmc": 4.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/5/55cfd628-933a-4d3d-b2e5-70bc86960d1c.jpg?1783910835",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f76a86f3-568a-40b3-8e2c-f84db4141293",
+        "scryfallId": "d7ab2de3-3aea-461a-a74f-fb742cf8a198",
+        "name": "Driftgloom Coyote",
+        "typeLine": "Creature — Elemental Coyote",
+        "manaCost": "{3}{W}{W}",
+        "cmc": 5.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/7/d7ab2de3-3aea-461a-a74f-fb742cf8a198.jpg?1783910861",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "3c345e24-1726-45ac-91ca-e348d1e7acfe",
+        "scryfallId": "e6d45abe-4962-47d9-a54e-7e623ea8647c",
+        "name": "Eddymurk Crab",
+        "typeLine": "Creature — Elemental Crab",
+        "manaCost": "{5}{U}{U}",
+        "cmc": 7.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/6/e6d45abe-4962-47d9-a54e-7e623ea8647c.jpg?1783910850",
+        "foilEligible": true,
+        "power_score": 1.2,
+        "bread": "F",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "c61b05b8-00f1-4371-9856-c65852b4ca02",
+        "scryfallId": "9fb41503-8632-4bf1-9bfe-6d9b9993c337",
+        "name": "Feather of Flight",
+        "typeLine": "Enchantment — Aura",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/f/9fb41503-8632-4bf1-9bfe-6d9b9993c337.jpg?1783910862",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "c338eedb-9b70-4b77-b5d6-8ea74b7bea3e",
+        "scryfallId": "7e017ff8-2936-4a1b-bece-00004cfbad06",
+        "name": "Feed the Cycle",
+        "typeLine": "Instant",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/e/7e017ff8-2936-4a1b-bece-00004cfbad06.jpg?1783910835",
+        "foilEligible": true,
+        "power_score": 3.4,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "8f968470-ce00-43a3-95f5-2e3fe987be19",
+        "scryfallId": "c96ac326-de44-470b-a592-a4c2a052c091",
+        "name": "Fell",
+        "typeLine": "Sorcery",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/9/c96ac326-de44-470b-a592-a4c2a052c091.jpg?1783910835",
+        "foilEligible": true,
+        "power_score": 3.4,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "b173245e-2009-48ff-ac42-5f28d12aec79",
+        "scryfallId": "b78fbaa3-c580-4290-9c28-b74169aab2fc",
+        "name": "Fireglass Mentor",
+        "typeLine": "Creature — Lizard Warlock",
+        "manaCost": "{B}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "B",
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/7/b78fbaa3-c580-4290-9c28-b74169aab2fc.jpg?1783910796",
+        "foilEligible": true,
+        "power_score": 1.74,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d767463b-0fc9-43fc-a85f-e60f030f9b96",
+        "scryfallId": "fb8e7c97-8393-41b8-bb0b-3983dcc5e7f4",
+        "name": "Flamecache Gecko",
+        "typeLine": "Creature — Lizard Warlock",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/b/fb8e7c97-8393-41b8-bb0b-3983dcc5e7f4.jpg?1783910821",
+        "foilEligible": true,
+        "power_score": 2.67,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "523d075d-b577-4f24-8c14-9a76761a2eaf",
+        "scryfallId": "97ff118f-9c3c-43a2-8085-980c7fe7d227",
+        "name": "Flowerfoot Swordmaster",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{W}",
+        "cmc": 1.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/7/97ff118f-9c3c-43a2-8085-980c7fe7d227.jpg?1783910861",
+        "foilEligible": true,
+        "power_score": 2.4,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "b0747a4f-d041-4750-aef5-a5d101696f65",
+        "scryfallId": "58706bd8-558a-43b9-9f1e-c1ff0044203b",
+        "name": "Galewind Moose",
+        "typeLine": "Creature — Elemental Elk",
+        "manaCost": "{4}{G}{G}",
+        "cmc": 6.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/8/58706bd8-558a-43b9-9f1e-c1ff0044203b.jpg?1783910810",
+        "foilEligible": true,
+        "power_score": 2.87,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "96e6d220-87db-4dab-abaa-e80c9577d89a",
+        "scryfallId": "b299889a-03d6-4659-b0e1-f0830842e40f",
+        "name": "Gossip's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/2/b299889a-03d6-4659-b0e1-f0830842e40f.jpg?1783910850",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "fb8f7047-280b-464f-aca2-6add3e21df8f",
+        "scryfallId": "b56beeb6-88ca-475e-8654-1d4e8b4aa3c0",
+        "name": "Harnesser of Storms",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/5/b56beeb6-88ca-475e-8654-1d4e8b4aa3c0.jpg?1783910821",
+        "foilEligible": true,
+        "power_score": 2.09,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "56208bdc-2eed-4ccc-8c34-c0eba9db0aa9",
+        "scryfallId": "41762689-0c13-4d45-9d81-ba2afad980f8",
+        "name": "Harvestrite Host",
+        "typeLine": "Creature — Rabbit Citizen",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/1/41762689-0c13-4d45-9d81-ba2afad980f8.jpg?1783910861",
+        "foilEligible": true,
+        "power_score": 2.47,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "f40cb1af-3db6-4e90-830f-86ff4b60e239",
+        "scryfallId": "e2882982-b3a3-4762-a550-6b82db1038e8",
+        "name": "Hazardroot Herbalist",
+        "typeLine": "Creature — Rabbit Druid",
+        "manaCost": "{2}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/2/e2882982-b3a3-4762-a550-6b82db1038e8.jpg?1783910810",
+        "foilEligible": true,
+        "power_score": 1.94,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "2a74a055-ff7f-434b-8dfb-d9fb72579cee",
+        "scryfallId": "239363df-4de8-4b64-80fc-a1f4b5c36027",
+        "name": "Hazel's Nocturne",
+        "typeLine": "Instant",
+        "manaCost": "{3}{B}",
+        "cmc": 4.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/3/239363df-4de8-4b64-80fc-a1f4b5c36027.jpg?1783910834",
+        "foilEligible": true,
+        "power_score": 2.85,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "49e1e202-37bf-46ed-93d1-1adb13726039",
+        "scryfallId": "48ace959-66b2-40c8-9bff-fd7ed9c99a82",
+        "name": "Heartfire Hero",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{R}",
+        "cmc": 1.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/8/48ace959-66b2-40c8-9bff-fd7ed9c99a82.jpg?1783910820",
+        "foilEligible": true,
+        "power_score": 1.92,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "43037ef5-09e8-4881-beff-ed38cf7574c6",
+        "scryfallId": "7839ce48-0175-494a-ab89-9bdfb7a50cb1",
+        "name": "Heirloom Epic",
+        "typeLine": "Artifact — Book",
+        "manaCost": "{1}",
+        "cmc": 1.0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/8/7839ce48-0175-494a-ab89-9bdfb7a50cb1.jpg?1783910786",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "312be209-dba5-4e6c-938e-1287642f67d4",
+        "scryfallId": "821970a3-a291-4fe9-bb13-dfc54f9c3caf",
+        "name": "Hivespine Wolverine",
+        "typeLine": "Creature — Elemental Wolverine",
+        "manaCost": "{3}{G}{G}",
+        "cmc": 5.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/2/821970a3-a291-4fe9-bb13-dfc54f9c3caf.jpg?1783910809",
+        "foilEligible": true,
+        "power_score": 3.24,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "75f7d9c7-5d52-4bfe-a730-62fef187b8b8",
+        "scryfallId": "c2ed5079-07b4-4575-a2c8-5f0cbff888c3",
+        "name": "Hoarder's Overflow",
+        "typeLine": "Enchantment",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/2/c2ed5079-07b4-4575-a2c8-5f0cbff888c3.jpg?1783910820",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "44bffa3e-4d31-4f9b-829c-e2066ab2f641",
+        "scryfallId": "bc5ee537-52e1-474a-9326-dfacc2a758ab",
+        "name": "Honored Dreyleader",
+        "typeLine": "Creature — Squirrel Warrior",
+        "manaCost": "{2}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/c/bc5ee537-52e1-474a-9326-dfacc2a758ab.jpg?1783910808",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "e8a9350a-07c1-47ed-8c4f-88e4b3b17545",
+        "scryfallId": "ee7207f8-5daa-42af-aeea-7a489047110b",
+        "name": "Hop to It",
+        "typeLine": "Sorcery",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/e/ee7207f8-5daa-42af-aeea-7a489047110b.jpg?1783910862",
+        "foilEligible": true,
+        "power_score": 3.9,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a8a9b103-0cb8-4810-a2d7-42f6a10f80bd",
+        "scryfallId": "e9a31863-9649-4a4f-99e4-c93729938bd7",
+        "name": "Hunter's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/9/e9a31863-9649-4a4f-99e4-c93729938bd7.jpg?1783910808",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "faefb352-575c-49f7-9f7a-96f2279a077b",
+        "scryfallId": "ed2f61d7-4eb0-41c5-8a34-a0793c2abc51",
+        "name": "Huskburster Swarm",
+        "typeLine": "Creature — Elemental Insect",
+        "manaCost": "{7}{B}",
+        "cmc": 8.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/d/ed2f61d7-4eb0-41c5-8a34-a0793c2abc51.jpg?1783910834",
+        "foilEligible": true,
+        "power_score": 2.65,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "8cb36a67-9206-4665-a03f-64f52ba559c4",
+        "scryfallId": "50b9575a-53d9-4df7-b86c-cda021107d3f",
+        "name": "Into the Flood Maw",
+        "typeLine": "Instant",
+        "manaCost": "{U}",
+        "cmc": 1.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/0/50b9575a-53d9-4df7-b86c-cda021107d3f.jpg?1783910850",
+        "foilEligible": true,
+        "power_score": 2.4,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "8e22bf51-1b1b-459b-af78-91188b6e3f09",
+        "scryfallId": "0eab51d6-ba17-4a8c-8834-25db363f2b6b",
+        "name": "Jolly Gerbils",
+        "typeLine": "Creature — Hamster Citizen",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/e/0eab51d6-ba17-4a8c-8834-25db363f2b6b.jpg?1783910860",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "cb2d222c-df42-41a7-a517-0a41e47a4280",
+        "scryfallId": "c7fb7f4f-2153-4527-8f11-adbf508d3533",
+        "name": "Knightfisher",
+        "typeLine": "Creature — Bird Knight",
+        "manaCost": "{3}{U}{U}",
+        "cmc": 5.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/7/c7fb7f4f-2153-4527-8f11-adbf508d3533.jpg?1783910849",
+        "foilEligible": true,
+        "power_score": 2.64,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "5bb06e6f-e3af-4caa-b66d-77248ad46b61",
+        "scryfallId": "7e95a7cc-ed77-4ca4-80db-61c0fc68bf50",
+        "name": "Lilypad Village",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/e/7e95a7cc-ed77-4ca4-80db-61c0fc68bf50.jpg?1783910783",
+        "foilEligible": true,
+        "power_score": 2.7,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "20194297-f2a4-4473-95bc-7c6835e5b6b3",
+        "scryfallId": "64de7b1f-a03e-4407-91f1-e108a2f26735",
+        "name": "Lilysplash Mentor",
+        "typeLine": "Creature — Frog Druid",
+        "manaCost": "{2}{G}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "G",
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/4/64de7b1f-a03e-4407-91f1-e108a2f26735.jpg?1783910795",
+        "foilEligible": true,
+        "power_score": 1.92,
+        "bread": "F",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "c65c4d01-29da-47e6-993c-a265cf1f198c",
+        "scryfallId": "7c267719-cd03-4003-b281-e732d5e42a1e",
+        "name": "Long River Lurker",
+        "typeLine": "Creature — Frog Scout",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/c/7c267719-cd03-4003-b281-e732d5e42a1e.jpg?1783910847",
+        "foilEligible": true,
+        "power_score": 2.09,
+        "bread": "F",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "f1993767-1d07-49c8-b8dc-04ec9840a999",
+        "scryfallId": "1c81d0fa-81a1-4f9b-a5fd-5a648fd01dea",
+        "name": "Long River's Pull",
+        "typeLine": "Instant",
+        "manaCost": "{U}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/c/1c81d0fa-81a1-4f9b-a5fd-5a648fd01dea.jpg?1783910847",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "b6c7c708-5212-4100-b954-b77855b27915",
+        "scryfallId": "8ab9d56f-9178-4ec9-a5f6-b934f50d8d9d",
+        "name": "Lupinflower Village",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/a/8ab9d56f-9178-4ec9-a5f6-b934f50d8d9d.jpg?1783910784",
+        "foilEligible": true,
+        "power_score": 2.5,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "c657626f-7444-4c26-842c-dda9b9656fa3",
+        "scryfallId": "5cfcf83f-089c-4e35-855e-b61b98bb1cd8",
+        "name": "Mabel's Mettle",
+        "typeLine": "Instant",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/c/5cfcf83f-089c-4e35-855e-b61b98bb1cd8.jpg?1783910860",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f823b122-94ac-42ba-b511-9e54d64db112",
+        "scryfallId": "aaa10f34-5bfd-4d87-8f07-58de3b0f5663",
+        "name": "Mindwhisker",
+        "typeLine": "Creature — Rat Wizard",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/a/aaa10f34-5bfd-4d87-8f07-58de3b0f5663.jpg?1783910846",
+        "foilEligible": true,
+        "power_score": 3.44,
+        "bread": "B",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "fcae4f9d-8f81-42f9-93a3-82a482851bdd",
+        "scryfallId": "59e4aa8d-1d06-48db-b205-aa2f1392bbcb",
+        "name": "Moonstone Harbinger",
+        "typeLine": "Creature — Bat Warrior",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/9/59e4aa8d-1d06-48db-b205-aa2f1392bbcb.jpg?1783910833",
+        "foilEligible": true,
+        "power_score": 2.65,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5b0a4530-6e19-41a2-9ea6-e4c8cf85b6c4",
+        "scryfallId": "8ba1bc5a-03e7-44ec-893e-44042cbc02ef",
+        "name": "Mouse Trapper",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/b/8ba1bc5a-03e7-44ec-893e-44042cbc02ef.jpg?1783910860",
+        "foilEligible": true,
+        "power_score": 1.74,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "aeeab1df-0b8b-4bc4-a5f9-aac413449bec",
+        "scryfallId": "53ec4ad3-9cf0-4f1b-a9db-d63feee594ab",
+        "name": "Mudflat Village",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/3/53ec4ad3-9cf0-4f1b-a9db-d63feee594ab.jpg?1783910783",
+        "foilEligible": true,
+        "power_score": 2.85,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "177b7fe4-8565-4631-b4d9-8b2b4282f3ac",
+        "scryfallId": "0d49b016-b02b-459f-85e9-c04f6bdcb94e",
+        "name": "Oakhollow Village",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/d/0d49b016-b02b-459f-85e9-c04f6bdcb94e.jpg?1783910782",
+        "foilEligible": true,
+        "power_score": 2.5,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "43a6de3e-152e-4af1-acec-53405742425c",
+        "scryfallId": "3ff83ff7-e428-4ccc-8341-f223dab76bd1",
+        "name": "Otterball Antics",
+        "typeLine": "Sorcery",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/f/3ff83ff7-e428-4ccc-8341-f223dab76bd1.jpg?1783910845",
+        "foilEligible": true,
+        "power_score": 2.4,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "c8c3a293-ae6d-4c52-be2d-2d4b6a8edb66",
+        "scryfallId": "079e979f-b618-4625-989c-e0ea5b61ed8a",
+        "name": "Overprotect",
+        "typeLine": "Instant",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/7/079e979f-b618-4625-989c-e0ea5b61ed8a.jpg?1783910806",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "367bb252-41e1-4f98-9d22-442dd332cccf",
+        "scryfallId": "1086e826-94b8-4398-8a38-d8eacca56a43",
+        "name": "Parting Gust",
+        "typeLine": "Instant",
+        "manaCost": "{W}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/0/1086e826-94b8-4398-8a38-d8eacca56a43.jpg?1783910858",
+        "foilEligible": true,
+        "power_score": 3.7,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "4fb00dbe-1f82-4ba6-b18c-97e816d10d3a",
+        "scryfallId": "a8a982c8-bc08-44ba-b3ed-9e4b124615d6",
+        "name": "Patchwork Banner",
+        "typeLine": "Artifact",
+        "manaCost": "{3}",
+        "cmc": 3.0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/8/a8a982c8-bc08-44ba-b3ed-9e4b124615d6.jpg?1783910786",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "fa99cf82-ebf1-4526-ab9c-b24eb2970f2a",
+        "scryfallId": "b82c20ad-0f69-4822-ae76-770832cccdf7",
+        "name": "Pawpatch Formation",
+        "typeLine": "Instant",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/8/b82c20ad-0f69-4822-ae76-770832cccdf7.jpg?1783910805",
+        "foilEligible": true,
+        "power_score": 4.25,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "938c03fc-8adf-4c7a-8ae1-eca8401f7a83",
+        "scryfallId": "5f72466c-505b-4371-9366-0fde525a37e6",
+        "name": "Peerless Recycling",
+        "typeLine": "Instant",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/f/5f72466c-505b-4371-9366-0fde525a37e6.jpg?1783910805",
+        "foilEligible": true,
+        "power_score": 2.8,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "77eb76cf-a361-44e0-aeee-e8ef4b695799",
+        "scryfallId": "8b900c71-713b-4b7e-b4be-ad9f4aa0c139",
+        "name": "Persistent Marshstalker",
+        "typeLine": "Creature — Rat Berserker",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/b/8b900c71-713b-4b7e-b4be-ad9f4aa0c139.jpg?1783910832",
+        "foilEligible": true,
+        "power_score": 2.27,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "2094fb68-3859-401f-97f2-c8bae64a4822",
+        "scryfallId": "07956edf-34c1-4218-9784-ddbca13e380c",
+        "name": "Playful Shove",
+        "typeLine": "Sorcery",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/7/07956edf-34c1-4218-9784-ddbca13e380c.jpg?1783910820",
+        "foilEligible": true,
+        "power_score": 3.75,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "04669a6f-6299-465b-a26e-6cae37cdc081",
+        "scryfallId": "f71320ed-2f30-49ce-bcb0-19aebba3f0e8",
+        "name": "Plumecreed Escort",
+        "typeLine": "Creature — Bird Scout",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/7/f71320ed-2f30-49ce-bcb0-19aebba3f0e8.jpg?1783910845",
+        "foilEligible": true,
+        "power_score": 2.34,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0eb8983e-4e44-4bfe-81dd-ddb41007a166",
+        "scryfallId": "b1aa988f-547e-449a-9f1a-296c01d68d96",
+        "name": "Plumecreed Mentor",
+        "typeLine": "Creature — Bird Scout",
+        "manaCost": "{1}{W}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U",
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/1/b1aa988f-547e-449a-9f1a-296c01d68d96.jpg?1783910791",
+        "foilEligible": true,
+        "power_score": 2.54,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "6fbaa853-48d4-4a3b-b22d-27415cc266d7",
+        "scryfallId": "2f2b7fd3-a139-49ea-8a89-b64261e868ef",
+        "name": "Quaketusk Boar",
+        "typeLine": "Creature — Elemental Boar",
+        "manaCost": "{3}{R}{R}",
+        "cmc": 5.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/f/2f2b7fd3-a139-49ea-8a89-b64261e868ef.jpg?1783910819",
+        "foilEligible": true,
+        "power_score": 2.52,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "077ae62d-ed94-4365-a8b7-97fd99cff028",
+        "scryfallId": "2f815bae-820a-49f6-8eed-46f658e7b6ff",
+        "name": "Rabid Gnaw",
+        "typeLine": "Instant",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/f/2f815bae-820a-49f6-8eed-46f658e7b6ff.jpg?1783910819",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ba58f508-8036-496c-8a2f-c1e410165e93",
+        "scryfallId": "d068192a-6270-4981-819d-4945fa4a2b83",
+        "name": "Repel Calamity",
+        "typeLine": "Instant",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/0/d068192a-6270-4981-819d-4945fa4a2b83.jpg?1783910857",
+        "foilEligible": true,
+        "power_score": 3.4,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a12a66b5-ea4a-4a58-b0f0-13152598b7e6",
+        "scryfallId": "81dec453-c9d7-42cb-980a-c82f82bede76",
+        "name": "Reptilian Recruiter",
+        "typeLine": "Creature — Lizard Warrior",
+        "manaCost": "{3}{R}{R}",
+        "cmc": 5.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/1/81dec453-c9d7-42cb-980a-c82f82bede76.jpg?1783910816",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7e103748-3f76-42ce-a063-d0256b2dce2b",
+        "scryfallId": "62799d24-39a6-4e66-8ac3-7cafa99e6e6d",
+        "name": "Rockface Village",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/2/62799d24-39a6-4e66-8ac3-7cafa99e6e6d.jpg?1783910782",
+        "foilEligible": true,
+        "power_score": 2.5,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a82ea8f2-e576-46cd-aa08-9c98d6029db4",
+        "scryfallId": "c7f4360c-8d68-4058-b9ec-da9948cb060d",
+        "name": "Ruthless Negotiation",
+        "typeLine": "Sorcery",
+        "manaCost": "{B}",
+        "cmc": 1.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/7/c7f4360c-8d68-4058-b9ec-da9948cb060d.jpg?1783910830",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5bf1dbb6-ed65-4968-8edd-b98e9bd19d4d",
+        "scryfallId": "90873995-876f-4e89-8bc7-41a74f4d931f",
+        "name": "Seasoned Warrenguard",
+        "typeLine": "Creature — Rabbit Warrior",
+        "manaCost": "{W}",
+        "cmc": 1.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/0/90873995-876f-4e89-8bc7-41a74f4d931f.jpg?1783910856",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f50bbe5e-a839-40e1-ba79-1e96f91bd218",
+        "scryfallId": "d21c3e41-0636-49a3-8c9c-384c5e5c9c3e",
+        "name": "Seedglaive Mentor",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{1}{R}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "R",
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/2/d21c3e41-0636-49a3-8c9c-384c5e5c9c3e.jpg?1783910791",
+        "foilEligible": true,
+        "power_score": 2.09,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "c15cad77-e70f-42cc-a9f5-50e1fd8c9c96",
+        "scryfallId": "d5bf8cf0-419a-4dc9-9342-aad55c1af05a",
+        "name": "Shoreline Looter",
+        "typeLine": "Creature — Rat Rogue",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/5/d5bf8cf0-419a-4dc9-9342-aad55c1af05a.jpg?1783910842",
+        "foilEligible": true,
+        "power_score": 2.05,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "ce5f5ff9-13f7-41eb-ada0-7f73de42acef",
+        "scryfallId": "51d8b72b-fa8f-48d3-bddc-d3ce9b8ba2ea",
+        "name": "Short Bow",
+        "typeLine": "Artifact — Equipment",
+        "manaCost": "{2}",
+        "cmc": 2.0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/1/51d8b72b-fa8f-48d3-bddc-d3ce9b8ba2ea.jpg?1783910786",
+        "foilEligible": true,
+        "power_score": 2.1,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d014b02f-a8b8-4b97-96e0-f588792069f0",
+        "scryfallId": "306fec2c-d8b7-4f4b-8f58-10e3b9f3158f",
+        "name": "Shrike Force",
+        "typeLine": "Creature — Bird Knight",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/0/306fec2c-d8b7-4f4b-8f58-10e3b9f3158f.jpg?1783910856",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ae8003eb-9f19-4f23-be3b-0ac3ddc03a72",
+        "scryfallId": "2a15e06c-2608-4e7a-a16c-d35417669d86",
+        "name": "Sinister Monolith",
+        "typeLine": "Artifact",
+        "manaCost": "{3}{B}",
+        "cmc": 4.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/a/2a15e06c-2608-4e7a-a16c-d35417669d86.jpg?1783910829",
+        "foilEligible": true,
+        "power_score": 2.85,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7db31623-5dea-4165-8593-fbac568bf5b4",
+        "scryfallId": "f6f6620a-1d40-429d-9a0c-aaeb62adaa71",
+        "name": "Spellgyre",
+        "typeLine": "Instant",
+        "manaCost": "{2}{U}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/6/f6f6620a-1d40-429d-9a0c-aaeb62adaa71.jpg?1783910843",
+        "foilEligible": true,
+        "power_score": 2.65,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0d0c4c91-683a-4563-a0b0-39f3c04f6307",
+        "scryfallId": "362ee125-35a0-46cd-a201-e6797d12d33a",
+        "name": "Splash Lasher",
+        "typeLine": "Creature — Frog Wizard",
+        "manaCost": "{3}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/6/362ee125-35a0-46cd-a201-e6797d12d33a.jpg?1783910841",
+        "foilEligible": true,
+        "power_score": 2.0,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "29b537f5-4d9f-40ed-b38b-e8faa2b5af7d",
+        "scryfallId": "adbaa356-28ba-487f-930a-a957d9960ab0",
+        "name": "Splash Portal",
+        "typeLine": "Sorcery",
+        "manaCost": "{U}",
+        "cmc": 1.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/d/adbaa356-28ba-487f-930a-a957d9960ab0.jpg?1783910841",
+        "foilEligible": true,
+        "power_score": 3.75,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "578ddb51-e128-43e5-a115-471f0cae1222",
+        "scryfallId": "0e209237-00f7-4bf0-8287-ccde02ce8e8d",
+        "name": "Star Charter",
+        "typeLine": "Creature — Bat Cleric",
+        "manaCost": "{3}{W}",
+        "cmc": 4.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/e/0e209237-00f7-4bf0-8287-ccde02ce8e8d.jpg?1783910856",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "2cdc1d82-30dc-4f0a-af20-33dde90269b1",
+        "scryfallId": "c23d8e96-b972-4c6c-b0c4-b6627621f048",
+        "name": "Starforged Sword",
+        "typeLine": "Artifact — Equipment",
+        "manaCost": "{4}",
+        "cmc": 4.0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/2/c23d8e96-b972-4c6c-b0c4-b6627621f048.jpg?1783910785",
+        "foilEligible": true,
+        "power_score": 2.4,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "db8b4869-f898-40ad-bbad-62390a02d1b1",
+        "scryfallId": "777fc599-8de7-44d2-8fdd-9bddf5948a0c",
+        "name": "Stargaze",
+        "typeLine": "Sorcery",
+        "manaCost": "{X}{B}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/7/777fc599-8de7-44d2-8fdd-9bddf5948a0c.jpg?1783910829",
+        "foilEligible": true,
+        "power_score": 3.1,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "8d72ddb3-ef6e-4847-b6d4-5d85b1dd5802",
+        "scryfallId": "53a938a7-0154-4350-87cb-00da24ec3824",
+        "name": "Starscape Cleric",
+        "typeLine": "Creature — Bat Cleric",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/3/53a938a7-0154-4350-87cb-00da24ec3824.jpg?1783910828",
+        "foilEligible": true,
+        "power_score": 2.84,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "12a165c4-229b-458b-8fc7-c1b7cba35a8e",
+        "scryfallId": "6b2f6dc5-9fe8-49c1-b24c-1d99ce1da619",
+        "name": "Starseer Mentor",
+        "typeLine": "Creature — Bat Warlock",
+        "manaCost": "{3}{W}{B}",
+        "cmc": 5.0,
+        "colors": [
+          "B",
+          "W"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/b/6b2f6dc5-9fe8-49c1-b24c-1d99ce1da619.jpg?1783910791",
+        "foilEligible": true,
+        "power_score": 2.65,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "068b370f-a358-4244-8050-6c81680c55c7",
+        "scryfallId": "50e95c7b-f0b2-4276-8c5e-4191b7ba35d1",
+        "name": "Stocking the Pantry",
+        "typeLine": "Enchantment",
+        "manaCost": "{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/0/50e95c7b-f0b2-4276-8c5e-4191b7ba35d1.jpg?1783910803",
+        "foilEligible": true,
+        "power_score": 2.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "b2252471-01ca-4d58-aa99-4ab0aa5eae12",
+        "scryfallId": "99754055-6d67-4fde-aff3-41f6af6ea764",
+        "name": "Stormcatch Mentor",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{U}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R",
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/9/99754055-6d67-4fde-aff3-41f6af6ea764.jpg?1783910790",
+        "foilEligible": true,
+        "power_score": 1.56,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "1caa8c8a-ff45-4eee-a834-6e5e1fb54721",
+        "scryfallId": "fcacbe71-efb0-49e1-b2d0-3ee65ec6cf8b",
+        "name": "Sugar Coat",
+        "typeLine": "Enchantment — Aura",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/c/fcacbe71-efb0-49e1-b2d0-3ee65ec6cf8b.jpg?1783910840",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0d81ea20-5e7d-4eea-b0ba-fe688f27df94",
+        "scryfallId": "258ef349-5042-4992-bae9-9f8f54b55db0",
+        "name": "Tangle Tumbler",
+        "typeLine": "Artifact — Vehicle",
+        "manaCost": "{3}",
+        "cmc": 3.0,
+        "colors": [],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/5/258ef349-5042-4992-bae9-9f8f54b55db0.jpg?1783910785",
+        "foilEligible": true,
+        "power_score": 2.65,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5ba19dbe-9dbb-4cc9-81a3-18c26f27bd0f",
+        "scryfallId": "30506844-349f-4b68-8cc1-d028c1611cc7",
+        "name": "Teapot Slinger",
+        "typeLine": "Creature — Raccoon Warrior",
+        "manaCost": "{3}{R}",
+        "cmc": 4.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/0/30506844-349f-4b68-8cc1-d028c1611cc7.jpg?1783910815",
+        "foilEligible": true,
+        "power_score": 2.34,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "25a63171-a1a0-4c61-ac61-49bb59fe83c1",
+        "scryfallId": "42e80284-d489-493b-ae92-95b742d07cb3",
+        "name": "Thought-Stalker Warlock",
+        "typeLine": "Creature — Lizard Warlock",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/2/42e80284-d489-493b-ae92-95b742d07cb3.jpg?1783910826",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7d2a7741-1dff-4fac-92d8-abea24f23f97",
+        "scryfallId": "ea2ca1b3-4c1a-4be5-b321-f57db5ff0528",
+        "name": "Three Tree Scribe",
+        "typeLine": "Creature — Frog Druid",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/a/ea2ca1b3-4c1a-4be5-b321-f57db5ff0528.jpg?1783910801",
+        "foilEligible": true,
+        "power_score": 2.3,
+        "bread": "A",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "e75e40a5-a9ae-4789-96c1-0e19d1ce59c5",
+        "scryfallId": "fa10ffac-7cc2-41ef-b8a0-9431923c0542",
+        "name": "Tidecaller Mentor",
+        "typeLine": "Creature — Rat Wizard",
+        "manaCost": "{1}{U}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "U"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/a/fa10ffac-7cc2-41ef-b8a0-9431923c0542.jpg?1783910789",
+        "foilEligible": true,
+        "power_score": 2.52,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "5b919920-b1b6-499b-a7fe-c630778a7831",
+        "scryfallId": "b6178258-1ad6-4122-a56f-6eb7d0611e84",
+        "name": "Valley Rally",
+        "typeLine": "Instant",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/6/b6178258-1ad6-4122-a56f-6eb7d0611e84.jpg?1783910814",
+        "foilEligible": true,
+        "power_score": 4.1,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "db649e15-24ca-4fd8-9f0b-f1df28c9c57d",
+        "scryfallId": "29b615ba-45c4-42a1-8525-1535f0b55300",
+        "name": "Vinereap Mentor",
+        "typeLine": "Creature — Squirrel Druid",
+        "manaCost": "{B}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "B",
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/9/29b615ba-45c4-42a1-8525-1535f0b55300.jpg?1783910790",
+        "foilEligible": true,
+        "power_score": 2.6,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "9d14c7bd-7802-401c-b02b-c7f3c51b007f",
+        "scryfallId": "8c399a55-d02e-41ed-b827-8784b738c118",
+        "name": "Wandertale Mentor",
+        "typeLine": "Creature — Raccoon Bard",
+        "manaCost": "{R}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G",
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/c/8c399a55-d02e-41ed-b827-8784b738c118.jpg?1783910788",
+        "foilEligible": true,
+        "power_score": 2.32,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "27905301-333e-4cdd-90cf-188159fcf8e9",
+        "scryfallId": "fded2b83-3b7d-4c8c-83c4-0624a1069628",
+        "name": "Wear Down",
+        "typeLine": "Sorcery",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/d/fded2b83-3b7d-4c8c-83c4-0624a1069628.jpg?1783910800",
+        "foilEligible": true,
+        "power_score": 3.05,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "29423a9a-31a6-4605-8b49-a75895038a3a",
+        "scryfallId": "5fa0c53d-fe7b-4b8b-ad81-7967ca318ff7",
+        "name": "Wick's Patrol",
+        "typeLine": "Creature — Rat Warlock",
+        "manaCost": "{4}{B}{B}",
+        "cmc": 6.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/f/5fa0c53d-fe7b-4b8b-ad81-7967ca318ff7.jpg?1783910825",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "04fd8c1f-80e5-4b3d-b63e-7af6ccafbbaa",
+        "scryfallId": "7392d397-9836-4df2-944d-c930c9566811",
+        "name": "Wildfire Howl",
+        "typeLine": "Sorcery",
+        "manaCost": "{1}{R}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "uncommon",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/3/7392d397-9836-4df2-944d-c930c9566811.jpg?1783910813",
+        "foilEligible": true,
+        "power_score": 4.55,
+        "bread": "B",
+        "narrow_synergy": false
+      }
+    ],
+    "rare": [
+      {
+        "oracleId": "63d50d5e-56de-44c4-b906-b2a21a56e3f3",
+        "scryfallId": "436d6a84-4cea-4ca7-94aa-9d08280652af",
+        "name": "Alania, Divergent Storm",
+        "typeLine": "Legendary Creature — Otter Wizard",
+        "manaCost": "{3}{U}{R}",
+        "cmc": 5.0,
+        "colors": [
+          "R",
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/3/436d6a84-4cea-4ca7-94aa-9d08280652af.jpg?1783910801",
+        "foilEligible": true,
+        "power_score": 2.75,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "ea734863-5793-49d6-b10e-109432aec0a3",
+        "scryfallId": "8b9e51d9-189b-4dd6-87cb-628ea6373e81",
+        "name": "Artist's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/b/8b9e51d9-189b-4dd6-87cb-628ea6373e81.jpg?1783910825",
+        "foilEligible": true,
+        "power_score": 3.15,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7bb51602-60e8-4730-b11c-2870d6b42e20",
+        "scryfallId": "211af1bf-910b-41a5-b928-f378188d1871",
+        "name": "Azure Beastbinder",
+        "typeLine": "Creature — Rat Rogue",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/1/211af1bf-910b-41a5-b928-f378188d1871.jpg?1783910852",
+        "foilEligible": true,
+        "power_score": 2.97,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "73dc28a7-37ac-4b16-aa00-967c9c44d979",
+        "scryfallId": "00e93be2-e06b-4774-8ba5-ccf82a6da1d8",
+        "name": "Baylen, the Haymaker",
+        "typeLine": "Legendary Creature — Rabbit Warrior",
+        "manaCost": "{R}{G}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "G",
+          "R",
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/0/00e93be2-e06b-4774-8ba5-ccf82a6da1d8.jpg?1783910800",
+        "foilEligible": true,
+        "power_score": 3.15,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a864b032-6e1a-4211-ad6e-54a5a5c7321b",
+        "scryfallId": "f41fc718-641b-4f32-a8c1-3e5591a05bf8",
+        "name": "Byway Barterer",
+        "typeLine": "Creature — Raccoon Rogue",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/4/f41fc718-641b-4f32-a8c1-3e5591a05bf8.jpg?1783910824",
+        "foilEligible": true,
+        "power_score": 3.57,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "312c7a7b-2084-42b0-9b13-0a6d3e43a73d",
+        "scryfallId": "2c16eaec-924c-42f6-9fea-07edd7ed93b9",
+        "name": "Camellia, the Seedmiser",
+        "typeLine": "Legendary Creature — Squirrel Warlock",
+        "manaCost": "{1}{B}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/c/2c16eaec-924c-42f6-9fea-07edd7ed93b9.jpg?1783910799",
+        "foilEligible": true,
+        "power_score": 3.52,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "c97957a2-8310-4cff-8aad-871b7901d124",
+        "scryfallId": "ad5ea98a-e36e-4ab9-b4da-cc572f3777db",
+        "name": "Caretaker's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/d/ad5ea98a-e36e-4ab9-b4da-cc572f3777db.jpg?1783910865",
+        "foilEligible": true,
+        "power_score": 3.45,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "57ce5ebd-cfac-4bb9-b010-04d0c285be27",
+        "scryfallId": "7028130c-c91d-4bf7-b0b0-450f71107d7a",
+        "name": "Clement, the Worrywort",
+        "typeLine": "Legendary Creature — Frog Druid",
+        "manaCost": "{1}{G}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "G",
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/0/7028130c-c91d-4bf7-b0b0-450f71107d7a.jpg?1783910799",
+        "foilEligible": true,
+        "power_score": 3.37,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "27a91ebd-39f4-432d-b6cc-cd86b4a3979a",
+        "scryfallId": "96d5de3e-0440-4dd1-899c-ab40c0752343",
+        "name": "Coiling Rebirth",
+        "typeLine": "Sorcery",
+        "manaCost": "{3}{B}{B}",
+        "cmc": 5.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/6/96d5de3e-0440-4dd1-899c-ab40c0752343.jpg?1783910837",
+        "foilEligible": true,
+        "power_score": 3.5,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7a0bc265-6b40-48d6-a588-c9624df7d1bc",
+        "scryfallId": "cab4539a-0157-4cbe-b50f-6e2575df74e9",
+        "name": "Cruelclaw's Heist",
+        "typeLine": "Sorcery",
+        "manaCost": "{B}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/a/cab4539a-0157-4cbe-b50f-6e2575df74e9.jpg?1783910836",
+        "foilEligible": true,
+        "power_score": 3.15,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "67d2a021-a042-4e5f-b6e4-39cb35514794",
+        "scryfallId": "1c603751-1e2b-4c8e-a8d2-5c0876e7254f",
+        "name": "Darkstar Augur",
+        "typeLine": "Creature — Bat Warlock",
+        "manaCost": "{2}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/c/1c603751-1e2b-4c8e-a8d2-5c0876e7254f.jpg?1783910836",
+        "foilEligible": true,
+        "power_score": 3.54,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "37c06f89-db36-4937-9404-2b07cd22e1a6",
+        "scryfallId": "8f72bfa0-efef-48ce-aff8-d5818ed71ba6",
+        "name": "Dawn's Truce",
+        "typeLine": "Instant",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/f/8f72bfa0-efef-48ce-aff8-d5818ed71ba6.jpg?1783910863",
+        "foilEligible": true,
+        "power_score": 3.15,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "cf58e309-00e8-438e-813e-2e1c1002db23",
+        "scryfallId": "6402133e-eed1-4a46-9667-8b7a310362c1",
+        "name": "Dour Port-Mage",
+        "typeLine": "Creature — Frog Wizard",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/4/6402133e-eed1-4a46-9667-8b7a310362c1.jpg?1783910852",
+        "foilEligible": true,
+        "power_score": 2.97,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "b6b2d63f-5b8c-47ee-8712-58596e0e9e94",
+        "scryfallId": "26bd6b0d-8606-4a37-8be3-a852f1a8e99c",
+        "name": "Dreamdew Entrancer",
+        "typeLine": "Creature — Frog Wizard",
+        "manaCost": "{2}{G}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "G",
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/6/26bd6b0d-8606-4a37-8be3-a852f1a8e99c.jpg?1783910797",
+        "foilEligible": true,
+        "power_score": 2.79,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5b4b21ed-c24e-4038-83fb-bd7f3c3426cd",
+        "scryfallId": "0035082e-bb86-4f95-be48-ffc87fe5286d",
+        "name": "Emberheart Challenger",
+        "typeLine": "Creature — Mouse Warrior",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/0/0035082e-bb86-4f95-be48-ffc87fe5286d.jpg?1783910821",
+        "foilEligible": true,
+        "power_score": 2.97,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "1473580d-7cb2-48f5-a77d-08f49244c5e8",
+        "scryfallId": "5aaf7e4c-4d5d-4acc-a834-e6c4a7629408",
+        "name": "Essence Channeler",
+        "typeLine": "Creature — Bat Cleric",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/a/5aaf7e4c-4d5d-4acc-a834-e6c4a7629408.jpg?1783910861",
+        "foilEligible": true,
+        "power_score": 2.44,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0c85b8f7-0bd0-4680-9ec5-d4b110460a54",
+        "scryfallId": "8809830f-d8e1-4603-9652-0ad8b00234e9",
+        "name": "Fabled Passage",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/8/8809830f-d8e1-4603-9652-0ad8b00234e9.jpg?1783910785",
+        "foilEligible": true,
+        "power_score": 3.2,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "a090be5a-b0f2-4c17-8f7d-e742f9de8f6b",
+        "scryfallId": "80b3e815-0e2e-4325-b1d5-5531b7b92da6",
+        "name": "Fecund Greenshell",
+        "typeLine": "Creature — Elemental Turtle",
+        "manaCost": "{3}{G}{G}",
+        "cmc": 5.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/0/80b3e815-0e2e-4325-b1d5-5531b7b92da6.jpg?1783910810",
+        "foilEligible": true,
+        "power_score": 4.12,
+        "bread": "B",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "2de138b0-3159-4a0c-a474-a4e5600b2e51",
+        "scryfallId": "4433ee12-2013-4fdc-979f-ae065f63a527",
+        "name": "Festival of Embers",
+        "typeLine": "Enchantment",
+        "manaCost": "{4}{R}",
+        "cmc": 5.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/4/4433ee12-2013-4fdc-979f-ae065f63a527.jpg?1783910820",
+        "foilEligible": true,
+        "power_score": 2.5,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "69924636-138e-4baa-a378-0fd7df5b847d",
+        "scryfallId": "0dee197d-c313-4364-b52c-f83d5f579bc3",
+        "name": "Finneas, Ace Archer",
+        "typeLine": "Legendary Creature — Rabbit Archer",
+        "manaCost": "{G}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "G",
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/d/0dee197d-c313-4364-b52c-f83d5f579bc3.jpg?1783910796",
+        "foilEligible": true,
+        "power_score": 3.32,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "de6e4aa2-23f1-46e5-a061-05522944e0c6",
+        "scryfallId": "3ec72a27-b622-47d7-bdf3-970ccaef0d2a",
+        "name": "For the Common Good",
+        "typeLine": "Sorcery",
+        "manaCost": "{X}{X}{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/e/3ec72a27-b622-47d7-bdf3-970ccaef0d2a.jpg?1783910810",
+        "foilEligible": true,
+        "power_score": 3.3,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "94e8b0a9-44a1-4dce-8d44-78681ae638a1",
+        "scryfallId": "658cfcb7-81b7-48c6-9dd2-1663d06108cf",
+        "name": "Fountainport",
+        "typeLine": "Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/5/658cfcb7-81b7-48c6-9dd2-1663d06108cf.jpg?1783910785",
+        "foilEligible": true,
+        "power_score": 3.85,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "77b832a8-a3af-44fe-bc67-72510d292667",
+        "scryfallId": "131ea976-289e-4f32-896d-27bbfd423ba9",
+        "name": "Gev, Scaled Scorch",
+        "typeLine": "Legendary Creature — Lizard Mercenary",
+        "manaCost": "{B}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "B",
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/3/131ea976-289e-4f32-896d-27bbfd423ba9.jpg?1783910797",
+        "foilEligible": true,
+        "power_score": 4.45,
+        "bread": "R",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "beb02f49-95a6-49bf-b176-4e4b2ab5b651",
+        "scryfallId": "bef1cf5c-9738-4062-8cb1-87a372d36687",
+        "name": "Hearthborn Battler",
+        "typeLine": "Creature — Lizard Warlock",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/e/bef1cf5c-9738-4062-8cb1-87a372d36687.jpg?1783910820",
+        "foilEligible": true,
+        "power_score": 3.74,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "031cfc7d-8bda-454b-b88a-15d3f5fe47e2",
+        "scryfallId": "1ae41080-0d67-4719-adb2-49bf2a268b6c",
+        "name": "Hired Claw",
+        "typeLine": "Creature — Lizard Mercenary",
+        "manaCost": "{R}",
+        "cmc": 1.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/a/1ae41080-0d67-4719-adb2-49bf2a268b6c.jpg?1783910820",
+        "foilEligible": true,
+        "power_score": 4.1,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "915b75d1-b5e3-4aca-a54c-beaccef0a2e4",
+        "scryfallId": "941b0afc-0e8f-45f2-ae7f-07595e164611",
+        "name": "Innkeeper's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/4/941b0afc-0e8f-45f2-ae7f-07595e164611.jpg?1784634092",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "A",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "4f8c4927-46c2-4c18-b5af-c6288dbaff6d",
+        "scryfallId": "b2bc854c-4e72-48e0-a098-e3451d6e511d",
+        "name": "Iridescent Vinelasher",
+        "typeLine": "Creature — Lizard Assassin",
+        "manaCost": "{B}",
+        "cmc": 1.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/2/b2bc854c-4e72-48e0-a098-e3451d6e511d.jpg?1783910833",
+        "foilEligible": true,
+        "power_score": 4.4,
+        "bread": "R",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "9e31ef54-b2f2-4f3f-9779-151b74470ce4",
+        "scryfallId": "121af600-6143-450a-9f87-12ce4833f1ec",
+        "name": "Jackdaw Savior",
+        "typeLine": "Creature — Bird Cleric",
+        "manaCost": "{2}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/2/121af600-6143-450a-9f87-12ce4833f1ec.jpg?1783910860",
+        "foilEligible": true,
+        "power_score": 3.35,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "ced5fe9a-4237-4c89-9dd6-b133b966ebcc",
+        "scryfallId": "ebf68793-22a2-4a59-9d37-6791584edca1",
+        "name": "Kastral, the Windcrested",
+        "typeLine": "Legendary Creature — Bird Scout",
+        "manaCost": "{3}{W}{U}",
+        "cmc": 5.0,
+        "colors": [
+          "U",
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/b/ebf68793-22a2-4a59-9d37-6791584edca1.jpg?1783910795",
+        "foilEligible": true,
+        "power_score": 3.39,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "46ce3698-e4e6-44e9-8b99-2b12a703e91e",
+        "scryfallId": "8cf33d80-0704-4dc4-8e8d-1dcbcbc35add",
+        "name": "Keen-Eyed Curator",
+        "typeLine": "Creature — Raccoon Scout",
+        "manaCost": "{G}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/c/8cf33d80-0704-4dc4-8e8d-1dcbcbc35add.jpg?1783910807",
+        "foilEligible": true,
+        "power_score": 4.28,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a1bd1e83-40ac-449f-838c-ef308f275a5d",
+        "scryfallId": "085be5d1-fd85-46d1-ad39-a8aa75a06a96",
+        "name": "Kitnap",
+        "typeLine": "Enchantment — Aura",
+        "manaCost": "{2}{U}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/0/8/085be5d1-fd85-46d1-ad39-a8aa75a06a96.jpg?1783910850",
+        "foilEligible": true,
+        "power_score": 3.15,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "cb68d1e4-36aa-4a00-b671-8959e7d526d4",
+        "scryfallId": "a9ee50d4-c878-457b-964d-29c039ce9852",
+        "name": "Lunar Convocation",
+        "typeLine": "Enchantment",
+        "manaCost": "{W}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B",
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/9/a9ee50d4-c878-457b-964d-29c039ce9852.jpg?1783910794",
+        "foilEligible": true,
+        "power_score": 3.65,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "4b11e435-5888-4e3b-a255-db817392163f",
+        "scryfallId": "be6627fd-729d-44f2-b6bf-5299f49d1e3d",
+        "name": "Mabel, Heir to Cragflame",
+        "typeLine": "Legendary Creature — Mouse Soldier",
+        "manaCost": "{1}{R}{W}",
+        "cmc": 3.0,
+        "colors": [
+          "R",
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/e/be6627fd-729d-44f2-b6bf-5299f49d1e3d.jpg?1783910794",
+        "foilEligible": true,
+        "power_score": 2.92,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "b254ca74-2a96-4590-91bc-650f407daf5d",
+        "scryfallId": "db3832b5-e83f-4569-bd49-fb7b86fa2d47",
+        "name": "Manifold Mouse",
+        "typeLine": "Creature — Mouse Soldier",
+        "manaCost": "{1}{R}",
+        "cmc": 2.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/b/db3832b5-e83f-4569-bd49-fb7b86fa2d47.jpg?1783910819",
+        "foilEligible": true,
+        "power_score": 2.74,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "bf9221f5-a4b2-4074-901c-0fa3c2bda80c",
+        "scryfallId": "e5246540-5a84-41d8-9e30-8e7a6c0e84e1",
+        "name": "Mistbreath Elder",
+        "typeLine": "Creature — Frog Warrior",
+        "manaCost": "{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/5/e5246540-5a84-41d8-9e30-8e7a6c0e84e1.jpg?1783910806",
+        "foilEligible": true,
+        "power_score": 2.98,
+        "bread": "A",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "b9df2cdf-397c-458d-89cf-911568737ffa",
+        "scryfallId": "ade32396-8841-4ba4-8852-d11146607f21",
+        "name": "Mockingbird",
+        "typeLine": "Creature — Bird Bard",
+        "manaCost": "{X}{U}",
+        "cmc": 1.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/d/ade32396-8841-4ba4-8852-d11146607f21.jpg?1783910846",
+        "foilEligible": true,
+        "power_score": 3.22,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "c115159c-6991-4812-b3b6-6ed80221cab4",
+        "scryfallId": "b40e4658-fd68-46d0-9a89-25570a023d19",
+        "name": "Muerra, Trash Tactician",
+        "typeLine": "Legendary Creature — Raccoon Warrior",
+        "manaCost": "{1}{R}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G",
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/4/b40e4658-fd68-46d0-9a89-25570a023d19.jpg?1783910792",
+        "foilEligible": true,
+        "power_score": 3.22,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "791cbb7c-7935-4902-b050-9ea9d030e9fa",
+        "scryfallId": "7d8238dd-858f-466c-96de-986bd66861d7",
+        "name": "Osteomancer Adept",
+        "typeLine": "Creature — Squirrel Warlock",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/d/7d8238dd-858f-466c-96de-986bd66861d7.jpg?1783910831",
+        "foilEligible": true,
+        "power_score": 2.97,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "50ab0194-c7dc-4f11-abc0-1a82393cc42e",
+        "scryfallId": "7d4d88ba-0ee4-4f66-995b-2e50614f50ee",
+        "name": "Pawpatch Recruit",
+        "typeLine": "Creature — Rabbit Warrior",
+        "manaCost": "{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/d/7d4d88ba-0ee4-4f66-995b-2e50614f50ee.jpg?1783910805",
+        "foilEligible": true,
+        "power_score": 3.9,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0d49187a-1c37-4c3a-afc2-fac2bbc6b29a",
+        "scryfallId": "8599e2dd-9164-4da3-814f-adccef3b9497",
+        "name": "Portent of Calamity",
+        "typeLine": "Sorcery",
+        "manaCost": "{X}{U}",
+        "cmc": 1.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/5/8599e2dd-9164-4da3-814f-adccef3b9497.jpg?1783910845",
+        "foilEligible": true,
+        "power_score": 2.8,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0f68ae67-1671-4281-8b6b-3e52fdd4915f",
+        "scryfallId": "b2656160-d319-4530-a6e5-c418596c3f12",
+        "name": "Salvation Swan",
+        "typeLine": "Creature — Bird Cleric",
+        "manaCost": "{3}{W}",
+        "cmc": 4.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/2/b2656160-d319-4530-a6e5-c418596c3f12.jpg?1783910856",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "aefea339-8a0d-4531-8a62-afaecc88d078",
+        "scryfallId": "9a52b7fe-87ae-425b-85fd-b24e6e0395f1",
+        "name": "Scavenger's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{B}",
+        "cmc": 1.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/a/9a52b7fe-87ae-425b-85fd-b24e6e0395f1.jpg?1783910829",
+        "foilEligible": true,
+        "power_score": 3.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "235e3231-c5e5-4696-a867-705b2c4158fe",
+        "scryfallId": "c42ab407-e72d-4c48-9a9e-2055b5e71c69",
+        "name": "Scrapshooter",
+        "typeLine": "Creature — Raccoon Archer",
+        "manaCost": "{1}{G}{G}",
+        "cmc": 3.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/4/c42ab407-e72d-4c48-9a9e-2055b5e71c69.jpg?1783910803",
+        "foilEligible": true,
+        "power_score": 4.63,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7024532b-f99b-43a7-b0ed-5b3e7ec7592b",
+        "scryfallId": "2aea38e6-ec58-4091-b27c-2761bdd12b13",
+        "name": "Starfall Invocation",
+        "typeLine": "Sorcery",
+        "manaCost": "{3}{W}{W}",
+        "cmc": 5.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/a/2aea38e6-ec58-4091-b27c-2761bdd12b13.jpg?1783910855",
+        "foilEligible": true,
+        "power_score": 4.35,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "00c1788d-c52f-4839-9cd8-11fb86c418b6",
+        "scryfallId": "a36e682d-b43d-4e08-bf5b-70d7e924dbe5",
+        "name": "Stormchaser's Talent",
+        "typeLine": "Enchantment — Class",
+        "manaCost": "{U}",
+        "cmc": 1.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/3/a36e682d-b43d-4e08-bf5b-70d7e924dbe5.jpg?1783910842",
+        "foilEligible": true,
+        "power_score": 3.45,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "479adf64-f42c-4cb6-bf25-648c044bca8b",
+        "scryfallId": "8995ceaf-b7e0-423c-8f3e-25212d522502",
+        "name": "Sunspine Lynx",
+        "typeLine": "Creature — Elemental Cat",
+        "manaCost": "{2}{R}{R}",
+        "cmc": 4.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/9/8995ceaf-b7e0-423c-8f3e-25212d522502.jpg?1783910815",
+        "foilEligible": true,
+        "power_score": 2.8,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "74868bc0-6081-4f46-a2c6-9521cd5465aa",
+        "scryfallId": "6b8bfa91-adb0-4596-8c16-d8bb64fdb26d",
+        "name": "Tender Wildguide",
+        "typeLine": "Creature — Possum Druid",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/b/6b8bfa91-adb0-4596-8c16-d8bb64fdb26d.jpg?1783910802",
+        "foilEligible": true,
+        "power_score": 2.92,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "7b18cfad-a1cf-46c2-bcdd-7762c13d50e5",
+        "scryfallId": "8c2d6b02-a453-40f9-992a-5c5542987cfb",
+        "name": "Thornvault Forager",
+        "typeLine": "Creature — Squirrel Ranger",
+        "manaCost": "{1}{G}",
+        "cmc": 2.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/c/8c2d6b02-a453-40f9-992a-5c5542987cfb.jpg?1783910802",
+        "foilEligible": true,
+        "power_score": 3.02,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "da3b17a2-e1e1-44e9-b9b1-ae54a92037db",
+        "scryfallId": "56f88a48-cced-4a9d-8c19-e4f105f0d8a2",
+        "name": "Three Tree City",
+        "typeLine": "Legendary Land",
+        "manaCost": "",
+        "cmc": 0,
+        "colors": [],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/6/56f88a48-cced-4a9d-8c19-e4f105f0d8a2.jpg?1783910782",
+        "foilEligible": true,
+        "power_score": 3.2,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "d0be5969-0442-4557-a5fc-bee56e1835c2",
+        "scryfallId": "9cf3af94-b7c8-415c-a5a1-d89967fd0bba",
+        "name": "Thundertrap Trainer",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/c/9cf3af94-b7c8-415c-a5a1-d89967fd0bba.jpg?1783910839",
+        "foilEligible": true,
+        "power_score": 2.74,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "60654004-7d9a-47ac-a70d-b246dd1728d3",
+        "scryfallId": "a0812db4-b7d1-4cf7-aaa5-9c0e784079a1",
+        "name": "Valley Flamecaller",
+        "typeLine": "Creature — Lizard Warlock",
+        "manaCost": "{2}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/0/a0812db4-b7d1-4cf7-aaa5-9c0e784079a1.jpg?1783910814",
+        "foilEligible": true,
+        "power_score": 2.62,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "4879c8f0-8832-4290-bc71-9838940f75cd",
+        "scryfallId": "90b12da0-f666-471d-95f5-15d8c9b31c92",
+        "name": "Valley Floodcaller",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{2}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/9/0/90b12da0-f666-471d-95f5-15d8c9b31c92.jpg?1783910840",
+        "foilEligible": true,
+        "power_score": 2.26,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "16e9c452-6288-4da8-813d-2eb6b7a538c3",
+        "scryfallId": "7256451f-0122-452a-88e8-0fb0f6bea3f3",
+        "name": "Valley Mightcaller",
+        "typeLine": "Creature — Frog Warrior",
+        "manaCost": "{G}",
+        "cmc": 1.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/2/7256451f-0122-452a-88e8-0fb0f6bea3f3.jpg?1783910800",
+        "foilEligible": true,
+        "power_score": 3.22,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "81c509b2-3164-47e9-94b3-bdba0487d2f1",
+        "scryfallId": "ba629ca8-a368-4282-8a61-9bf6a5c217f0",
+        "name": "Valley Questcaller",
+        "typeLine": "Creature — Rabbit Warrior",
+        "manaCost": "{1}{W}",
+        "cmc": 2.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/a/ba629ca8-a368-4282-8a61-9bf6a5c217f0.jpg?1783910855",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "8da0599a-8f63-4dba-857f-b4e10b7191b6",
+        "scryfallId": "4da80a9a-b1d5-4fc5-92f7-36946195d0c7",
+        "name": "Valley Rotcaller",
+        "typeLine": "Creature — Squirrel Warlock",
+        "manaCost": "{1}{B}",
+        "cmc": 2.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/d/4da80a9a-b1d5-4fc5-92f7-36946195d0c7.jpg?1783910826",
+        "foilEligible": true,
+        "power_score": 3.22,
+        "bread": "E",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "1216900e-93e3-41a4-b354-9c81938639c2",
+        "scryfallId": "6506277d-f031-4db5-9d16-bf2389094785",
+        "name": "Vren, the Relentless",
+        "typeLine": "Legendary Creature — Rat Rogue",
+        "manaCost": "{2}{U}{B}",
+        "cmc": 4.0,
+        "colors": [
+          "B",
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/5/6506277d-f031-4db5-9d16-bf2389094785.jpg?1783910791",
+        "foilEligible": true,
+        "power_score": 3.09,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "861e427f-cbb4-4ed5-8356-747ac638ac34",
+        "scryfallId": "60a78d59-af31-4af9-95aa-2573fe553925",
+        "name": "Whiskervale Forerunner",
+        "typeLine": "Creature — Mouse Bard",
+        "manaCost": "{3}{W}",
+        "cmc": 4.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/6/0/60a78d59-af31-4af9-95aa-2573fe553925.jpg?1783910853",
+        "foilEligible": true,
+        "power_score": 2.44,
+        "bread": "F",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "5af729e8-8a40-4991-8270-612e377451de",
+        "scryfallId": "29089810-d7fb-4abe-b729-bfabed6aed2b",
+        "name": "Wick, the Whorled Mind",
+        "typeLine": "Legendary Creature — Rat Warlock",
+        "manaCost": "{3}{B}",
+        "cmc": 4.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/2/9/29089810-d7fb-4abe-b729-bfabed6aed2b.jpg?1783910825",
+        "foilEligible": true,
+        "power_score": 2.7,
+        "bread": "D",
+        "narrow_synergy": true
+      },
+      {
+        "oracleId": "78dbbc15-9304-4178-b9b2-1db6c64ca11a",
+        "scryfallId": "edeb20aa-b253-49b8-9947-c397a3a4002a",
+        "name": "Wishing Well",
+        "typeLine": "Artifact",
+        "manaCost": "{3}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/d/edeb20aa-b253-49b8-9947-c397a3a4002a.jpg?1783910839",
+        "foilEligible": true,
+        "power_score": 2.8,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5a775f50-20f8-4a8f-868c-8907305bfad6",
+        "scryfallId": "b7f99fd5-5298-4b27-923d-9d31203c931a",
+        "name": "Zoraline, Cosmos Caller",
+        "typeLine": "Legendary Creature — Bat Cleric",
+        "manaCost": "{1}{W}{B}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "W"
+        ],
+        "rarity": "rare",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/7/b7f99fd5-5298-4b27-923d-9d31203c931a.jpg?1783910787",
+        "foilEligible": true,
+        "power_score": 4.12,
+        "bread": "E",
+        "narrow_synergy": false
+      }
+    ],
+    "mythic": [
+      {
+        "oracleId": "020de6d7-f5a2-4036-ad25-451e5977b4d4",
+        "scryfallId": "fc310a26-b6a0-4e42-98ab-bdfd7b06cb63",
+        "name": "Beza, the Bounding Spring",
+        "typeLine": "Legendary Creature — Elemental Elk",
+        "manaCost": "{2}{W}{W}",
+        "cmc": 4.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/c/fc310a26-b6a0-4e42-98ab-bdfd7b06cb63.jpg?1783910866",
+        "foilEligible": true,
+        "power_score": 5.0,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "f7f435bc-1716-4412-9505-a1f2f2d83d08",
+        "scryfallId": "8659789c-6a2c-439f-a348-b9b1b06c55b8",
+        "name": "Dragonhawk, Fate's Tempest",
+        "typeLine": "Legendary Creature — Bird Dragon",
+        "manaCost": "{3}{R}{R}",
+        "cmc": 5.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/6/8659789c-6a2c-439f-a348-b9b1b06c55b8.jpg?1783910824",
+        "foilEligible": true,
+        "power_score": 5.0,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "027989e7-20c4-4773-b6b4-20337cc5fe8c",
+        "scryfallId": "1f2bf6ba-cd1a-4382-9572-6dfbcf6ed0c6",
+        "name": "Eluge, the Shoreless Sea",
+        "typeLine": "Legendary Creature — Elemental Fish",
+        "manaCost": "{1}{U}{U}{U}",
+        "cmc": 4.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/1/f/1f2bf6ba-cd1a-4382-9572-6dfbcf6ed0c6.jpg?1783910850",
+        "foilEligible": true,
+        "power_score": 3.3,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "df9409e6-bd6d-4b5b-b807-fcf347ee940a",
+        "scryfallId": "ffc70b2d-5a3a-49ea-97db-175a62248302",
+        "name": "Glarb, Calamity's Augur",
+        "typeLine": "Legendary Creature — Frog Wizard Noble",
+        "manaCost": "{B}{G}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "G",
+          "U"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/f/ffc70b2d-5a3a-49ea-97db-175a62248302.jpg?1783910796",
+        "foilEligible": true,
+        "power_score": 3.67,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "0a0d25a8-4f28-453b-9270-4d449fe0ca65",
+        "scryfallId": "40339715-22d0-4f99-822b-a00d9824f27a",
+        "name": "Helga, Skittish Seer",
+        "typeLine": "Legendary Creature — Frog Druid",
+        "manaCost": "{G}{W}{U}",
+        "cmc": 3.0,
+        "colors": [
+          "G",
+          "U",
+          "W"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/4/0/40339715-22d0-4f99-822b-a00d9824f27a.jpg?1783910795",
+        "foilEligible": true,
+        "power_score": 3.25,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "3c5c227a-335b-4995-9821-d4269a0a233a",
+        "scryfallId": "f09d7f4a-c947-4389-befa-1d547d0d1237",
+        "name": "Hugs, Grisly Guardian",
+        "typeLine": "Legendary Creature — Badger Warrior",
+        "manaCost": "{X}{R}{R}{G}{G}",
+        "cmc": 4.0,
+        "colors": [
+          "G",
+          "R"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/0/f09d7f4a-c947-4389-befa-1d547d0d1237.jpg?1783910795",
+        "foilEligible": true,
+        "power_score": 4.08,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "16414460-11ce-481d-ab54-6f0e0ea7d83d",
+        "scryfallId": "c8ff751a-ec64-41d5-b22c-2a483ad9a9b2",
+        "name": "Kitsa, Otterball Elite",
+        "typeLine": "Legendary Creature — Otter Wizard",
+        "manaCost": "{1}{U}",
+        "cmc": 2.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/8/c8ff751a-ec64-41d5-b22c-2a483ad9a9b2.jpg?1783910847",
+        "foilEligible": true,
+        "power_score": 3.82,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "97a84e9d-bfc4-4ca2-b1e8-908dba56ccdb",
+        "scryfallId": "ae4f3aaf-3960-48cd-b34b-32e4ae5ae088",
+        "name": "Lumra, Bellow of the Woods",
+        "typeLine": "Legendary Creature — Elemental Bear",
+        "manaCost": "{4}{G}{G}",
+        "cmc": 6.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/e/ae4f3aaf-3960-48cd-b34b-32e4ae5ae088.jpg?1785161492",
+        "foilEligible": true,
+        "power_score": 4.0,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "129476ae-9dab-4e04-8e8e-f249afd56ff9",
+        "scryfallId": "cf3320ec-c4e8-405a-982d-e009c58c9e21",
+        "name": "Maha, Its Feathers Night",
+        "typeLine": "Legendary Creature — Elemental Bird",
+        "manaCost": "{3}{B}{B}",
+        "cmc": 5.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/f/cf3320ec-c4e8-405a-982d-e009c58c9e21.jpg?1783910833",
+        "foilEligible": true,
+        "power_score": 4.85,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "3c970f43-17da-4187-a084-efd53b579067",
+        "scryfallId": "acfde780-899a-4c5b-a39b-f4a3ff129103",
+        "name": "Ral, Crackling Wit",
+        "typeLine": "Legendary Planeswalker — Ral",
+        "manaCost": "{2}{U}{R}",
+        "cmc": 4.0,
+        "colors": [
+          "R",
+          "U"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/a/c/acfde780-899a-4c5b-a39b-f4a3ff129103.jpg?1783910791",
+        "foilEligible": true,
+        "power_score": 5.0,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "2c75623c-59f4-4449-ab43-9d1225185ad9",
+        "scryfallId": "735e79b1-a3a9-4ddf-8bbc-f756c8a0452b",
+        "name": "Rottenmouth Viper",
+        "typeLine": "Creature — Elemental Snake",
+        "manaCost": "{5}{B}",
+        "cmc": 6.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/3/735e79b1-a3a9-4ddf-8bbc-f756c8a0452b.jpg?1783910830",
+        "foilEligible": true,
+        "power_score": 3.32,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "3ea060d8-449c-4a5e-8883-b45bd7707b5b",
+        "scryfallId": "71dd3c27-e0d5-434e-a0f3-4a95245e21c2",
+        "name": "Season of Gathering",
+        "typeLine": "Sorcery",
+        "manaCost": "{4}{G}{G}",
+        "cmc": 6.0,
+        "colors": [
+          "G"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/7/1/71dd3c27-e0d5-434e-a0f3-4a95245e21c2.jpg?1783910804",
+        "foilEligible": true,
+        "power_score": 3.0,
+        "bread": "F",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "31b5d0ad-3a4d-4f43-b0a9-c9f7a362680f",
+        "scryfallId": "cc540652-916b-45c5-ae5a-0a0bc557cee1",
+        "name": "Season of Loss",
+        "typeLine": "Sorcery",
+        "manaCost": "{3}{B}{B}",
+        "cmc": 5.0,
+        "colors": [
+          "B"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/c/c/cc540652-916b-45c5-ae5a-0a0bc557cee1.jpg?1783910829",
+        "foilEligible": true,
+        "power_score": 3.35,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "4b473a42-a0c5-43d5-93f9-c599e963a06b",
+        "scryfallId": "f5713bb4-bdd9-4253-b6b9-e590532ed773",
+        "name": "Season of Weaving",
+        "typeLine": "Sorcery",
+        "manaCost": "{4}{U}{U}",
+        "cmc": 6.0,
+        "colors": [
+          "U"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/f/5/f5713bb4-bdd9-4253-b6b9-e590532ed773.jpg?1783910844",
+        "foilEligible": true,
+        "power_score": 3.65,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "5fe29c25-a7ad-4c79-a5a5-da1bbc832141",
+        "scryfallId": "84352565-558b-4f9b-a411-532147806a78",
+        "name": "Season of the Bold",
+        "typeLine": "Sorcery",
+        "manaCost": "{3}{R}{R}",
+        "cmc": 5.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/8/4/84352565-558b-4f9b-a411-532147806a78.jpg?1783910816",
+        "foilEligible": true,
+        "power_score": 3.3,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "8e013e51-1684-4f58-8fe1-3588b6fbb5b5",
+        "scryfallId": "33bf9c60-4e58-48a4-8e53-abef7ab3b671",
+        "name": "Season of the Burrow",
+        "typeLine": "Sorcery",
+        "manaCost": "{3}{W}{W}",
+        "cmc": 5.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/3/3/33bf9c60-4e58-48a4-8e53-abef7ab3b671.jpg?1783910856",
+        "foilEligible": true,
+        "power_score": 5.0,
+        "bread": "R",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "4a9ae0d9-5ee7-4289-9333-ef0bcc3079ca",
+        "scryfallId": "56f214d3-6b93-40db-a693-55e491c8a283",
+        "name": "Stormsplitter",
+        "typeLine": "Creature — Otter Wizard",
+        "manaCost": "{3}{R}",
+        "cmc": 4.0,
+        "colors": [
+          "R"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/5/6/56f214d3-6b93-40db-a693-55e491c8a283.jpg?1783910816",
+        "foilEligible": true,
+        "power_score": 3.2,
+        "bread": "D",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "e229d55c-9513-437d-bd67-015ac46aaa18",
+        "scryfallId": "dc6c9196-6d28-4cc2-9748-60e9632a502b",
+        "name": "The Infamous Cruelclaw",
+        "typeLine": "Legendary Creature — Weasel Mercenary",
+        "manaCost": "{1}{B}{R}",
+        "cmc": 3.0,
+        "colors": [
+          "B",
+          "R"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/d/c/dc6c9196-6d28-4cc2-9748-60e9632a502b.jpg?1783910796",
+        "foilEligible": true,
+        "power_score": 3.72,
+        "bread": "E",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "a7e7059e-83f8-4124-9cc0-64ba150b5d96",
+        "scryfallId": "eb5237a0-5ac3-4ded-9f92-5f782a7bbbd7",
+        "name": "Warren Warleader",
+        "typeLine": "Creature — Rabbit Knight",
+        "manaCost": "{2}{W}{W}",
+        "cmc": 4.0,
+        "colors": [
+          "W"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/e/b/eb5237a0-5ac3-4ded-9f92-5f782a7bbbd7.jpg?1783910855",
+        "foilEligible": true,
+        "power_score": 4.92,
+        "bread": "B",
+        "narrow_synergy": false
+      },
+      {
+        "oracleId": "62511d43-8eaf-405a-9c81-7bd593d3a01e",
+        "scryfallId": "b9ac7673-eae8-4c4b-889e-5025213a6151",
+        "name": "Ygra, Eater of All",
+        "typeLine": "Legendary Creature — Elemental Cat",
+        "manaCost": "{3}{B}{G}",
+        "cmc": 5.0,
+        "colors": [
+          "B",
+          "G"
+        ],
+        "rarity": "mythic",
+        "imageUrl": "https://cards.scryfall.io/normal/front/b/9/b9ac7673-eae8-4c4b-889e-5025213a6151.jpg?1783910790",
+        "foilEligible": true,
+        "power_score": 4.03,
+        "bread": "D",
+        "narrow_synergy": false
+      }
+    ]
+  }
+}

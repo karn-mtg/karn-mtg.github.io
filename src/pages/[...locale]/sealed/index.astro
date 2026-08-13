@@ -1,0 +1,1738 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import SiteNav from '../../../components/SiteNav.astro'
+import { locales, t } from '../../../i18n'
+
+export function getStaticPaths() {
+  return locales.map(({ locale, lang }) => ({ params: { locale }, props: { lang } }))
+}
+
+const { lang } = Astro.props
+const i18n = t(lang)
+
+// Legacy site B.R.E.A.D. scores (bomb/removal/evasion/aggro/diversity/overall/tags),
+// keyed by set code -> oracleId -> bread, embedded for whichever sets already have a
+// prerelease-data entry. Sets without one simply won't have a matching key client-side,
+// and only Karn's power_score renders for those cards.
+const legacyBreadEntries = await getCollection('prerelease-data')
+const legacyBreadBySet: Record<string, Record<string, unknown>> = {}
+for (const entry of legacyBreadEntries) {
+  legacyBreadBySet[entry.data.setCode.toUpperCase()] = Object.fromEntries(
+    entry.data.cards.map(c => [c.oracleId, c.bread])
+  )
+}
+---
+
+<BaseLayout title={i18n.sealedPageTitle} description={i18n.sealedPageDescription} lang={lang}>
+  <div style="background-image: radial-gradient(circle, rgba(43,46,51,0.6) 1px, transparent 1px); background-size: 24px 24px; min-height: 100vh;">
+
+    <SiteNav lang={lang} activePage="sealed" />
+
+    <script type="application/json" id="legacy-bread-data" set:html={JSON.stringify(legacyBreadBySet)} />
+
+    <!-- STAGE 1: Setup -->
+    <main id="sealed-setup-stage" class="min-h-screen flex flex-col items-center justify-center pt-20 pb-10 px-6">
+      <div class="max-w-3xl mx-auto text-center mb-8">
+        <h1 class="text-4xl sm:text-5xl font-bold text-on-surface leading-tight mb-4">{i18n.sealedHeading}</h1>
+        <p class="text-on-surface-variant text-lg">{i18n.sealedSub}</p>
+        <p class="text-xs text-on-surface-variant/50 mt-3">{i18n.sealedDisclaimer}</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="max-w-4xl mx-auto glass-panel rounded-2xl p-6 flex flex-wrap items-end gap-4 justify-center">
+        <label class="flex flex-col gap-1 text-sm">
+          <span class="text-xs uppercase tracking-widest text-on-surface-variant/60">{i18n.sealedSetLabel}</span>
+          <select id="sealed-set-select" class="bg-surface border border-white/10 rounded-lg px-3 py-2 text-on-surface text-sm min-w-[180px]"></select>
+        </label>
+        <label class="flex flex-col gap-1 text-sm">
+          <span class="text-xs uppercase tracking-widest text-on-surface-variant/60">{i18n.sealedPackCountLabel}</span>
+          <input id="sealed-pack-count" type="number" min="1" max="6" value="6" class="bg-surface border border-white/10 rounded-lg px-3 py-2 text-on-surface text-sm w-24" />
+        </label>
+        <button id="sealed-generate-btn" class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-colors">
+          {i18n.sealedGenerateButton}
+        </button>
+        <button id="sealed-resume-btn" class="hidden px-5 py-2.5 rounded-xl border border-primary/40 text-primary font-bold text-sm hover:bg-primary/10 transition-colors">
+          {i18n.sealedResumeButton}
+        </button>
+      </div>
+      <p id="sealed-resume-hint" class="hidden max-w-4xl mx-auto text-center text-xs text-on-surface-variant/50 mt-3">
+        {i18n.sealedResumeHint}
+      </p>
+    </main>
+
+    <!-- STAGE 2: Board (full screen) -->
+    <div id="sealed-board-stage" class="hidden fixed inset-0 pt-20 flex flex-col">
+      <!-- Toolbar -->
+      <div class="flex flex-wrap items-center gap-4 px-4 py-2.5 border-b border-white/10 bg-surface/90 backdrop-blur">
+        <button id="sealed-back-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors">
+          ← {i18n.sealedSetLabel}
+        </button>
+        <div class="h-6 w-px bg-white/10"></div>
+        <div id="sealed-stats" class="flex items-center gap-4">
+          <div id="sealed-pool-count-tile" class="flex items-baseline gap-1.5"><span class="text-lg font-bold text-primary">0</span><span class="text-[11px] uppercase tracking-widest text-on-surface-variant/60">{i18n.sealedCardCountLabel}</span></div>
+          <div id="sealed-placed-count-tile" class="flex items-baseline gap-1.5"><span class="text-lg font-bold text-primary">0</span><span class="text-[11px] uppercase tracking-widest text-on-surface-variant/60">{i18n.sealedPlacedCountLabel}</span></div>
+          <div id="sealed-deck-count-tile" class="flex items-baseline gap-1.5"><span class="text-lg font-bold text-primary">0</span><span class="text-[11px] uppercase tracking-widest text-on-surface-variant/60">{i18n.sealedDeckCountLabel}</span></div>
+          <div id="sealed-sideboard-count-tile" class="flex items-baseline gap-1.5"><span class="text-lg font-bold text-primary">0</span><span class="text-[11px] uppercase tracking-widest text-on-surface-variant/60">{i18n.sealedSideboardCountLabel}</span></div>
+        </div>
+        <button
+          id="sealed-autobuild-btn"
+          class="ml-auto px-4 py-1.5 rounded-lg border border-primary/40 text-primary font-bold text-xs hover:bg-primary/10 transition-colors disabled:opacity-50 disabled:cursor-wait"
+        >
+          {i18n.sealedAutoBuildButton}
+        </button>
+        <span id="sealed-autobuild-summary" class="text-[11px] text-on-surface-variant/60"></span>
+        <button
+          id="sealed-blind-toggle"
+          class="px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors"
+          aria-pressed="false"
+        >
+          {i18n.sealedBlindModeActivateLabel}
+        </button>
+        <button id="sealed-regenerate-btn" class="px-4 py-1.5 rounded-lg bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors">
+          {i18n.sealedRegenerateButton}
+        </button>
+        <button id="sealed-export-btn" class="px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors">
+          {i18n.sealedExportArenaButton}
+        </button>
+        <button
+          id="sealed-info-btn"
+          aria-label={i18n.sealedInfoButton}
+          class="w-7 h-7 flex items-center justify-center rounded-full border border-white/10 text-xs font-bold text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-colors"
+        >?</button>
+        <p id="sealed-lands-note" class="w-full text-center text-[11px] text-on-surface-variant/50 sm:hidden">
+          {i18n.sealedLandsNote}
+        </p>
+      </div>
+
+      <!-- Canvas + drawer -->
+      <div class="relative flex-1 min-h-0">
+        <div
+          id="sealed-viewport"
+          class="relative overflow-hidden bg-black/20 h-full w-full"
+        >
+          <div id="sealed-canvas" class="absolute top-0 left-0" style="transform-origin: 0 0; width: 1px; height: 1px;"></div>
+
+          <p id="sealed-canvas-empty" class="absolute inset-0 flex items-center justify-center text-center text-sm text-on-surface-variant/40 px-8 pointer-events-none">
+            {i18n.sealedCanvasEmpty}
+          </p>
+
+          <!-- Canvas toolbar -->
+          <div class="absolute top-3 left-3 flex items-center gap-2 z-20 flex-wrap">
+            <span id="sealed-zoom-label" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant">100%</span>
+            <button id="sealed-reset-view-btn" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">
+              {i18n.sealedResetView}
+            </button>
+            <span class="w-px h-5 bg-white/10"></span>
+            <button id="sealed-add-note-btn" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">
+              📝 {i18n.sealedAddSticky}
+            </button>
+            <button id="sealed-add-curve-widget-btn" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">
+              📈 {i18n.sealedAddCurveWidget}
+            </button>
+            <button id="sealed-add-types-widget-btn" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">
+              🥧 {i18n.sealedAddTypesWidget}
+            </button>
+            <button id="sealed-add-draw-widget-btn" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">
+              🎲 {i18n.sealedAddDrawWidget}
+            </button>
+            <span class="px-2.5 py-1 rounded-full bg-surface/60 border border-white/10 text-[11px] text-on-surface-variant/50 hidden lg:inline-block">
+              {i18n.sealedPanHint}
+            </span>
+          </div>
+        </div>
+
+        <!-- Drawer toggle tab -->
+        <button
+          id="sealed-drawer-toggle"
+          class="absolute top-1/2 -translate-y-1/2 right-0 z-30 px-3 py-4 rounded-l-xl bg-primary text-on-primary font-bold text-xs [writing-mode:vertical-rl] hover:bg-primary-container transition-colors"
+        >
+          {i18n.sealedDrawerToggle} (<span id="sealed-drawer-count">0</span>)
+        </button>
+
+        <!-- Drawer panel -->
+        <aside
+          id="sealed-drawer"
+          class="absolute top-0 right-0 h-full w-full sm:w-[360px] bg-surface border-l border-white/10 overflow-y-auto z-40 transition-transform duration-200 translate-x-full"
+        >
+          <div class="sticky top-0 bg-surface/95 backdrop-blur px-4 py-3 border-b border-white/10 flex items-center justify-between">
+            <h3 class="font-bold text-sm text-on-surface">{i18n.sealedDrawerToggle}</h3>
+            <button id="sealed-drawer-close" class="text-on-surface-variant hover:text-on-surface text-sm px-2">✕</button>
+          </div>
+          <div id="sealed-drawer-list" class="p-3 flex flex-col gap-2"></div>
+          <p id="sealed-drawer-empty" class="hidden text-center text-sm text-on-surface-variant/50 py-10 px-4">{i18n.sealedDrawerEmpty}</p>
+        </aside>
+
+        <!-- Sideboard toggle tab -->
+        <button
+          id="sealed-sideboard-toggle"
+          class="absolute top-1/2 -translate-y-1/2 left-0 z-30 px-3 py-4 rounded-r-xl bg-surface border border-white/10 text-on-surface-variant font-bold text-xs [writing-mode:vertical-rl] hover:text-on-surface transition-colors"
+        >
+          {i18n.sealedSideboardToggle} (<span id="sealed-sideboard-count">0</span>)
+        </button>
+
+        <!-- Sideboard panel -->
+        <aside
+          id="sealed-sideboard"
+          class="absolute top-0 left-0 h-full w-full sm:w-[360px] bg-surface border-r border-white/10 overflow-y-auto z-40 transition-transform duration-200 -translate-x-full"
+        >
+          <div class="sticky top-0 bg-surface/95 backdrop-blur px-4 py-3 border-b border-white/10 flex items-center justify-between">
+            <h3 class="font-bold text-sm text-on-surface">{i18n.sealedSideboardToggle}</h3>
+            <button id="sealed-sideboard-close" class="text-on-surface-variant hover:text-on-surface text-sm px-2">✕</button>
+          </div>
+          <div id="sealed-sideboard-list" class="p-3 flex flex-col gap-2"></div>
+          <p id="sealed-sideboard-empty" class="hidden text-center text-sm text-on-surface-variant/50 py-10 px-4">{i18n.sealedSideboardEmpty}</p>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Auto-build: deck option picker -->
+    <div id="sealed-autobuild-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-6">
+      <div class="glass-panel rounded-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto p-6">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="text-lg font-bold text-on-surface">{i18n.sealedAutoBuildChooseTitle}</h3>
+          <button id="sealed-autobuild-modal-close" class="text-on-surface-variant hover:text-on-surface text-sm px-2">✕</button>
+        </div>
+        <p class="text-xs text-on-surface-variant/60 mb-4">{i18n.sealedAutoBuildChooseSub}</p>
+        <div id="sealed-autobuild-options" class="grid gap-3 sm:grid-cols-2"></div>
+      </div>
+    </div>
+
+    <!-- Export to MTG Arena -->
+    <div id="sealed-export-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-6">
+      <div class="glass-panel rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="text-lg font-bold text-on-surface">{i18n.sealedExportModalTitle}</h3>
+          <button id="sealed-export-modal-close" class="text-on-surface-variant hover:text-on-surface text-sm px-2">✕</button>
+        </div>
+        <p class="text-xs text-on-surface-variant/60 mb-3">{i18n.sealedExportModalSub}</p>
+        <textarea
+          id="sealed-export-textarea"
+          readonly
+          class="w-full h-64 bg-black/30 border border-white/10 rounded-lg p-3 text-xs text-on-surface font-mono resize-none"
+        ></textarea>
+        <button id="sealed-export-copy-btn" class="mt-3 px-4 py-2 rounded-lg bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors">
+          {i18n.sealedExportCopyButton}
+        </button>
+      </div>
+    </div>
+
+    <!-- Legend: score pills + quadrant tags + grades explained -->
+    <div id="sealed-info-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-6">
+      <div class="glass-panel rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-bold text-on-surface">{i18n.sealedInfoTitle}</h3>
+          <button id="sealed-info-modal-close" class="text-on-surface-variant hover:text-on-surface text-sm px-2">✕</button>
+        </div>
+        <div class="flex flex-col gap-5 text-sm text-on-surface-variant">
+          <section>
+            <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60 mb-2">{i18n.sealedInfoScoreHeading}</h4>
+            <ul class="flex flex-col gap-2">
+              <li><span class="font-semibold text-on-surface">{i18n.sealedKarnScoreLabel}</span> — {i18n.sealedInfoLimitedScoreDesc}</li>
+              <li><span class="font-semibold text-on-surface">{i18n.sealedSiteScoreLabel}</span> — {i18n.sealedInfoBreadScoreDesc}</li>
+            </ul>
+          </section>
+          <section>
+            <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60 mb-2">{i18n.sealedInfoQuadrantHeading}</h4>
+            <p class="text-xs text-on-surface-variant/70 mb-2">{i18n.sealedInfoQuadrantIntro}</p>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2">
+                <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold border bg-emerald-500 text-white border-emerald-200/60">D</span>
+                <span><span class="font-semibold text-on-surface">{i18n.sealedQuadrantDevelopLabel}</span> — {i18n.sealedQuadrantDevelopDesc}</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold border bg-sky-500 text-white border-sky-200/60">P</span>
+                <span><span class="font-semibold text-on-surface">{i18n.sealedQuadrantParityLabel}</span> — {i18n.sealedQuadrantParityDesc}</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold border bg-orange-500 text-white border-orange-200/60">A</span>
+                <span><span class="font-semibold text-on-surface">{i18n.sealedQuadrantAheadLabel}</span> — {i18n.sealedQuadrantAheadDesc}</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold border bg-primary text-on-primary border-primary/60">B</span>
+                <span><span class="font-semibold text-on-surface">{i18n.sealedQuadrantBehindLabel}</span> — {i18n.sealedQuadrantBehindDesc}</span>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60 mb-2">{i18n.sealedInfoGradeHeading}</h4>
+            <p>{i18n.sealedInfoGradeDesc}</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style is:global>
+    #sealed-board-stage.blind-mode .card-scores {
+      display: none;
+    }
+    /* Let our own pointer handlers own pan/zoom/drag instead of the browser's
+       native touch scrolling — required for pinch-zoom and finger-drag on tablets. */
+    #sealed-viewport, .canvas-card, .canvas-note, .canvas-widget {
+      touch-action: none;
+    }
+    .canvas-card img {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    #sealed-hover-preview {
+      transition: opacity 0.1s ease;
+    }
+  </style>
+
+  <script
+    define:vars={{
+      i18n: {
+        karnScoreLabel: i18n.sealedKarnScoreLabel,
+        siteScoreLabel: i18n.sealedSiteScoreLabel,
+        breadBombLabel: i18n.breadBombLabel,
+        breadRemovalLabel: i18n.breadRemovalLabel,
+        breadEvasionLabel: i18n.breadEvasionLabel,
+        breadAggroLabel: i18n.breadAggroLabel,
+        breadDiversityLabel: i18n.breadDiversityLabel,
+        breadOverallLabel: i18n.breadOverallLabel,
+        markAsDeck: i18n.sealedMarkAsDeck,
+        inDeck: i18n.sealedInDeck,
+        toSideboard: i18n.sealedToSideboard,
+        blindModeActivateLabel: i18n.sealedBlindModeActivateLabel,
+        blindModeDeactivateLabel: i18n.sealedBlindModeDeactivateLabel,
+        autoBuildLabel: i18n.sealedAutoBuildButton,
+        autoBuildBuilding: i18n.sealedAutoBuildBuilding,
+        autoBuildUseDeck: i18n.sealedAutoBuildUseDeck,
+        autoBuildAvgScoreLabel: i18n.sealedAutoBuildAvgScoreLabel,
+        autoBuildDeckSizeLabel: i18n.sealedAutoBuildDeckSizeLabel,
+        quadrantDevelopLabel: i18n.sealedQuadrantDevelopLabel,
+        quadrantParityLabel: i18n.sealedQuadrantParityLabel,
+        quadrantAheadLabel: i18n.sealedQuadrantAheadLabel,
+        quadrantBehindLabel: i18n.sealedQuadrantBehindLabel,
+        addToCanvas: i18n.sealedAddToCanvas,
+        toPool: i18n.sealedToPool,
+        exportCopyButton: i18n.sealedExportCopyButton,
+        exportCopied: i18n.sealedExportCopied,
+        autoBuildSimilarityLabel: i18n.sealedAutoBuildSimilarityLabel,
+        autoBuildSwapOutLabel: i18n.sealedAutoBuildSwapOutLabel,
+        autoBuildSwapInLabel: i18n.sealedAutoBuildSwapInLabel,
+        autoBuildConfirmWarning: i18n.sealedAutoBuildConfirmWarning,
+        autoBuildConfirmReplace: i18n.sealedAutoBuildConfirmReplace,
+        autoBuildCancel: i18n.sealedAutoBuildCancel,
+        breadFillerLabel: i18n.breadFillerLabel,
+        widgetCurveTitle: i18n.sealedWidgetCurveTitle,
+        widgetTypesTitle: i18n.sealedWidgetTypesTitle,
+        widgetDrawTitle: i18n.sealedWidgetDrawTitle,
+        typeCreatureLabel: i18n.sealedTypeCreatureLabel,
+        typeSpellLabel: i18n.sealedTypeSpellLabel,
+        typeLandLabel: i18n.sealedTypeLandLabel,
+      },
+    }}
+  >
+    // ---- Config ----
+    const MIN_SCALE = 0.2
+    const MAX_SCALE = 2.5
+    const ZOOM_IN_FACTOR = 1.12
+    const ZOOM_OUT_FACTOR = 0.88
+    const DEFAULT_VIEW = { tx: 80, ty: 60, sc: 1 }
+    const TILE_WIDTH = 140
+    const TILE_HEIGHT = 210
+    const RARITY_ORDER = ['common', 'uncommon', 'rare', 'mythic']
+
+    const legacyBreadDataEl = document.getElementById('legacy-bread-data')
+    const legacyBreadBySet = legacyBreadDataEl ? JSON.parse(legacyBreadDataEl.textContent || '{}') : {}
+
+    const setupStage = document.getElementById('sealed-setup-stage')
+    const boardStage = document.getElementById('sealed-board-stage')
+    const setSelect = document.getElementById('sealed-set-select')
+    const packCountInput = document.getElementById('sealed-pack-count')
+    const generateBtn = document.getElementById('sealed-generate-btn')
+    const resumeBtn = document.getElementById('sealed-resume-btn')
+    const resumeHint = document.getElementById('sealed-resume-hint')
+    const regenerateBtn = document.getElementById('sealed-regenerate-btn')
+    const autoBuildBtn = document.getElementById('sealed-autobuild-btn')
+    const autoBuildSummary = document.getElementById('sealed-autobuild-summary')
+    const backBtn = document.getElementById('sealed-back-btn')
+    const blindToggleBtn = document.getElementById('sealed-blind-toggle')
+    const viewport = document.getElementById('sealed-viewport')
+    const canvas = document.getElementById('sealed-canvas')
+    const canvasEmptyMsg = document.getElementById('sealed-canvas-empty')
+    const zoomLabel = document.getElementById('sealed-zoom-label')
+    const resetViewBtn = document.getElementById('sealed-reset-view-btn')
+    const addNoteBtn = document.getElementById('sealed-add-note-btn')
+    const addCurveWidgetBtn = document.getElementById('sealed-add-curve-widget-btn')
+    const addTypesWidgetBtn = document.getElementById('sealed-add-types-widget-btn')
+    const addDrawWidgetBtn = document.getElementById('sealed-add-draw-widget-btn')
+    const drawerToggle = document.getElementById('sealed-drawer-toggle')
+    const drawerClose = document.getElementById('sealed-drawer-close')
+    const drawer = document.getElementById('sealed-drawer')
+    const drawerList = document.getElementById('sealed-drawer-list')
+    const drawerEmpty = document.getElementById('sealed-drawer-empty')
+    const drawerCountEl = document.getElementById('sealed-drawer-count')
+    const sideboardToggle = document.getElementById('sealed-sideboard-toggle')
+    const sideboardClose = document.getElementById('sealed-sideboard-close')
+    const sideboard = document.getElementById('sealed-sideboard')
+    const sideboardList = document.getElementById('sealed-sideboard-list')
+    const sideboardEmpty = document.getElementById('sealed-sideboard-empty')
+    const sideboardCountEl = document.getElementById('sealed-sideboard-count')
+    const autoBuildModal = document.getElementById('sealed-autobuild-modal')
+    const autoBuildModalClose = document.getElementById('sealed-autobuild-modal-close')
+    const autoBuildOptions = document.getElementById('sealed-autobuild-options')
+    const infoBtn = document.getElementById('sealed-info-btn')
+    const infoModal = document.getElementById('sealed-info-modal')
+    const infoModalClose = document.getElementById('sealed-info-modal-close')
+    const exportBtn = document.getElementById('sealed-export-btn')
+    const exportModal = document.getElementById('sealed-export-modal')
+    const exportModalClose = document.getElementById('sealed-export-modal-close')
+    const exportTextarea = document.getElementById('sealed-export-textarea')
+    const exportCopyBtn = document.getElementById('sealed-export-copy-btn')
+
+    let currentSetCode = null
+    let poolDataCache = {}
+    let cardsByOracleId = {}
+    let scryfallDetailsCache = {}
+    let view = { ...DEFAULT_VIEW }
+    let panState = null // { startX, startY, tx0, ty0 } for a single-pointer pan
+
+    // ---- Stage switching ----
+    function showSetupStage() {
+      boardStage.classList.add('hidden')
+      setupStage.classList.remove('hidden')
+    }
+    function showBoardStage() {
+      setupStage.classList.add('hidden')
+      boardStage.classList.remove('hidden')
+    }
+
+    backBtn.addEventListener('click', () => {
+      showSetupStage()
+      selectSetOnSetup(setSelect.value)
+    })
+
+    // ---- Legend / info modal ----
+    infoBtn.addEventListener('click', () => infoModal.classList.remove('hidden'))
+    infoModalClose.addEventListener('click', () => infoModal.classList.add('hidden'))
+    infoModal.addEventListener('click', e => {
+      if (e.target === infoModal) infoModal.classList.add('hidden')
+    })
+
+    // ---- Blind mode (hide score pills to practice drafting/deckbuilding blind) ----
+    const BLIND_MODE_KEY = 'karn-sealed-blind-mode'
+    function applyBlindMode(active) {
+      boardStage.classList.toggle('blind-mode', active)
+      blindToggleBtn.textContent = active ? i18n.blindModeDeactivateLabel : i18n.blindModeActivateLabel
+      blindToggleBtn.setAttribute('aria-pressed', String(active))
+    }
+    let blindMode = localStorage.getItem(BLIND_MODE_KEY) === '1'
+    applyBlindMode(blindMode)
+    blindToggleBtn.addEventListener('click', () => {
+      blindMode = !blindMode
+      localStorage.setItem(BLIND_MODE_KEY, blindMode ? '1' : '0')
+      applyBlindMode(blindMode)
+    })
+
+    // ---- Hover-to-enlarge card preview (pointer devices with real hover only —
+    // avoids fighting with touch dragging on tablets) ----
+    const HOVER_TARGETS = '.canvas-card, .card-item'
+    if (window.matchMedia('(hover: hover)').matches) {
+      const hoverPreview = document.createElement('div')
+      hoverPreview.id = 'sealed-hover-preview'
+      hoverPreview.className = 'fixed z-[999] pointer-events-none hidden rounded-xl overflow-hidden shadow-2xl border border-white/20'
+      hoverPreview.style.width = '260px'
+      document.body.appendChild(hoverPreview)
+
+      document.addEventListener('mouseover', e => {
+        const target = e.target.closest(HOVER_TARGETS)
+        if (!target) return
+        const card = cardsByOracleId[target.dataset.oracleId]
+        if (!card || !card.imageUrl) return
+        hoverPreview.innerHTML = `<img src="${card.imageUrl}" alt="${card.name}" class="w-full h-auto block" />`
+        hoverPreview.classList.remove('hidden')
+      })
+
+      document.addEventListener('mousemove', e => {
+        if (hoverPreview.classList.contains('hidden')) return
+        const margin = 20
+        const previewW = 260
+        const previewH = 360
+        let x = e.clientX + margin
+        let y = Math.min(e.clientY - previewH / 2, window.innerHeight - previewH - margin)
+        y = Math.max(y, margin)
+        if (x + previewW > window.innerWidth - margin) x = e.clientX - previewW - margin
+        hoverPreview.style.left = x + 'px'
+        hoverPreview.style.top = y + 'px'
+      })
+
+      document.addEventListener('mouseout', e => {
+        const from = e.target.closest(HOVER_TARGETS)
+        if (!from) return
+        const to = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest(HOVER_TARGETS) : null
+        if (to === from) return
+        hoverPreview.classList.add('hidden')
+      })
+
+      document.addEventListener('pointerdown', e => {
+        if (e.target.closest(HOVER_TARGETS)) hoverPreview.classList.add('hidden')
+      })
+    }
+
+    // ---- View transform (ported from DeckView.tsx: s2c / zoomAt / applyT) ----
+    function s2c(sx, sy) {
+      const r = viewport.getBoundingClientRect()
+      return { x: (sx - r.left - view.tx) / view.sc, y: (sy - r.top - view.ty) / view.sc }
+    }
+
+    function applyT() {
+      canvas.style.transform = `translate3d(${view.tx}px,${view.ty}px,0) scale(${view.sc})`
+      zoomLabel.textContent = Math.round(view.sc * 100) + '%'
+    }
+
+    function zoomAt(cx, cy, factor) {
+      const ns = Math.min(MAX_SCALE, Math.max(MIN_SCALE, view.sc * factor))
+      const ratio = ns / view.sc
+      view.tx = cx - (cx - view.tx) * ratio
+      view.ty = cy - (cy - view.ty) * ratio
+      view.sc = ns
+      applyT()
+      persistCurrentState()
+    }
+
+    viewport.addEventListener('wheel', e => {
+      e.preventDefault()
+      const r = viewport.getBoundingClientRect()
+      zoomAt(e.clientX - r.left, e.clientY - r.top, e.deltaY < 0 ? ZOOM_IN_FACTOR : ZOOM_OUT_FACTOR)
+    }, { passive: false })
+
+    // ---- Pan (single pointer drag on empty canvas) + pinch-zoom (two pointers) ----
+    // Pointer Events unify mouse/touch/pen, so this drives both desktop dragging
+    // and tablet finger panning/pinching without a physical keyboard (no Space key).
+    const activePointers = new Map() // pointerId -> { x, y }
+    let pinchStartDist = null
+    let pinchStartScale = null
+    let pinchAnchor = null // canvas-space point pinch is zooming around
+
+    function pointerDist(a, b) {
+      return Math.hypot(a.x - b.x, a.y - b.y)
+    }
+    function pointerMid(a, b) {
+      return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }
+    }
+
+    viewport.addEventListener('pointerdown', e => {
+      if (e.target.closest('.canvas-card, .canvas-note, .canvas-widget')) return
+      viewport.setPointerCapture(e.pointerId)
+      activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (activePointers.size === 1) {
+        panState = { startX: e.clientX, startY: e.clientY, tx0: view.tx, ty0: view.ty }
+        viewport.style.cursor = 'grabbing'
+      } else if (activePointers.size === 2) {
+        panState = null
+        const pts = Array.from(activePointers.values())
+        pinchStartDist = pointerDist(pts[0], pts[1])
+        pinchStartScale = view.sc
+        const r = viewport.getBoundingClientRect()
+        const mid = pointerMid(pts[0], pts[1])
+        pinchAnchor = { x: mid.x - r.left, y: mid.y - r.top }
+      }
+    })
+
+    viewport.addEventListener('pointermove', e => {
+      if (!activePointers.has(e.pointerId)) return
+      activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (activePointers.size >= 2 && pinchStartDist) {
+        const pts = Array.from(activePointers.values())
+        const dist = pointerDist(pts[0], pts[1])
+        const ns = Math.min(MAX_SCALE, Math.max(MIN_SCALE, pinchStartScale * (dist / pinchStartDist)))
+        const ratio = ns / view.sc
+        view.tx = pinchAnchor.x - (pinchAnchor.x - view.tx) * ratio
+        view.ty = pinchAnchor.y - (pinchAnchor.y - view.ty) * ratio
+        view.sc = ns
+        applyT()
+        return
+      }
+
+      if (panState) {
+        view.tx = panState.tx0 + (e.clientX - panState.startX)
+        view.ty = panState.ty0 + (e.clientY - panState.startY)
+        applyT()
+      }
+    })
+
+    function endViewportPointer(e) {
+      activePointers.delete(e.pointerId)
+      if (activePointers.size < 2) pinchStartDist = null
+
+      if (activePointers.size === 0) {
+        if (panState) {
+          panState = null
+          viewport.style.cursor = ''
+          persistCurrentState()
+        }
+      } else if (activePointers.size === 1) {
+        // One finger lifted mid-pinch — resume panning with the remaining finger.
+        const [remaining] = activePointers.values()
+        panState = { startX: remaining.x, startY: remaining.y, tx0: view.tx, ty0: view.ty }
+      }
+    }
+    viewport.addEventListener('pointerup', endViewportPointer)
+    viewport.addEventListener('pointercancel', endViewportPointer)
+
+    resetViewBtn.addEventListener('click', () => {
+      view = { ...DEFAULT_VIEW }
+      applyT()
+      persistCurrentState()
+    })
+
+    // ---- Drawer / sideboard open/close ----
+    function openDrawer() { drawer.classList.remove('translate-x-full') }
+    function closeDrawer() { drawer.classList.add('translate-x-full') }
+    drawerToggle.addEventListener('click', () => {
+      drawer.classList.contains('translate-x-full') ? openDrawer() : closeDrawer()
+    })
+    drawerClose.addEventListener('click', closeDrawer)
+
+    function openSideboard() { sideboard.classList.remove('-translate-x-full') }
+    function closeSideboard() { sideboard.classList.add('-translate-x-full') }
+    sideboardToggle.addEventListener('click', () => {
+      sideboard.classList.contains('-translate-x-full') ? openSideboard() : closeSideboard()
+    })
+    sideboardClose.addEventListener('click', closeSideboard)
+
+    // ---- Booster simulation ----
+    function sampleN(arr, n) {
+      const picked = []
+      const pool = arr.slice()
+      for (let i = 0; i < n && pool.length > 0; i++) {
+        const idx = Math.floor(Math.random() * pool.length)
+        picked.push(pool[idx])
+        pool.splice(idx, 1)
+      }
+      return picked
+    }
+
+    function openBooster(rarities) {
+      const cards = []
+      cards.push(...sampleN(rarities.common || [], 10))
+      cards.push(...sampleN(rarities.uncommon || [], 3))
+      const rareOrMythic = Math.random() < 0.125 && (rarities.mythic || []).length > 0
+        ? sampleN(rarities.mythic, 1)
+        : sampleN(rarities.rare || [], 1)
+      cards.push(...rareOrMythic)
+      return cards
+    }
+
+    function generatePoolIds(setData, packCount) {
+      const rarities = {}
+      for (const rarity of RARITY_ORDER) {
+        rarities[rarity] = (setData.rarities[rarity] || []).filter(c => c.bread !== '-')
+      }
+      const pool = []
+      for (let i = 0; i < packCount; i++) pool.push(...openBooster(rarities))
+      return pool.map(c => c.oracleId)
+    }
+
+    function buildCardsByOracleId(setData) {
+      const map = {}
+      for (const rarity of RARITY_ORDER) {
+        for (const card of setData.rarities[rarity] || []) map[card.oracleId] = card
+      }
+      return map
+    }
+
+    // ---- Rendering ----
+    function breadPillClass(tag) {
+      const map = {
+        B: 'bg-primary/15 text-primary border-primary/30',
+        R: 'bg-red-400/15 text-red-300 border-red-400/30',
+        E: 'bg-sky-400/15 text-sky-300 border-sky-400/30',
+        D: 'bg-emerald-400/15 text-emerald-300 border-emerald-400/30',
+        A: 'bg-orange-400/15 text-orange-300 border-orange-400/30',
+        F: 'bg-white/5 text-on-surface-variant/60 border-white/10',
+      }
+      return map[tag] || map.F
+    }
+
+    function manaCostIcons(manaCost) {
+      const symbols = manaCost ? manaCost.match(/\{[^}]+\}/g) : null
+      if (!symbols) return ''
+      return symbols.map(sym => {
+        const slug = sym.slice(1, -1).toLowerCase().replace(/\//g, '')
+        return `<i class="ms ms-${slug} ms-cost" aria-label="${sym}"></i>`
+      }).join('')
+    }
+
+    function pillHtml(code, text, title) {
+      return `<span title="${title}" class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-semibold border ${breadPillClass(code)}">${text}</span>`
+    }
+
+    function scorePillsHtml(card) {
+      const limitedPill = pillHtml(card.bread, `${i18n.karnScoreLabel} ${Number(card.power_score).toFixed(1)}`, i18n.karnScoreLabel)
+
+      const legacy = legacyBreadBySet[currentSetCode] && legacyBreadBySet[currentSetCode][card.oracleId]
+      if (!legacy) return limitedPill
+
+      const subPills = [
+        ['B', i18n.breadBombLabel, legacy.bomb],
+        ['R', i18n.breadRemovalLabel, legacy.removal],
+        ['E', i18n.breadEvasionLabel, legacy.evasion],
+        ['A', i18n.breadAggroLabel, legacy.aggro],
+        ['D', i18n.breadDiversityLabel, legacy.diversity],
+      ].map(([code, label, value]) => pillHtml(code, `${code} ${Number(value).toFixed(1)}`, label)).join('')
+      const overallPill = pillHtml('F', `${i18n.breadOverallLabel} ${Number(legacy.overall).toFixed(1)}`, i18n.breadOverallLabel)
+
+      return `${limitedPill}${subPills}${overallPill}`
+    }
+
+    function makeListRow(card) {
+      const el = document.createElement('div')
+      el.className = 'card-item glass-panel rounded-xl overflow-hidden flex gap-3 p-2.5 cursor-grab'
+      el.draggable = true
+      el.dataset.oracleId = card.oracleId
+      const img = card.imageUrl
+        ? `<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-black/30"><img src="${card.imageUrl}" alt="${card.name}" class="w-full h-full object-cover object-top" loading="lazy" /></div>`
+        : ''
+      el.innerHTML = `
+        ${img}
+        <div class="min-w-0 flex-1">
+          <div class="flex items-baseline justify-between gap-2">
+            <h4 class="font-semibold text-xs text-on-surface truncate">${card.name}</h4>
+            <span class="flex items-center gap-0.5 flex-shrink-0 text-[11px]">${manaCostIcons(card.manaCost)}</span>
+          </div>
+          <div class="card-scores flex flex-wrap items-center gap-1 mt-1">${scorePillsHtml(card)}</div>
+          <div class="flex items-center gap-1.5 mt-1.5">
+            <button type="button" class="add-to-canvas-btn px-2 py-1 rounded-md text-[10px] font-bold bg-primary/15 text-primary border border-primary/30 hover:bg-primary/25 transition-colors">${i18n.addToCanvas}</button>
+            <button type="button" class="move-list-btn px-2 py-1 rounded-md text-[10px] font-bold bg-white/5 text-on-surface-variant border border-white/10 hover:text-on-surface transition-colors"></button>
+          </div>
+        </div>
+      `
+      // Native HTML5 drag still works for desktop mouse users; the buttons above
+      // are the tablet/touch-friendly path since dragstart is unreliable on touch.
+      el.addEventListener('dragstart', e => {
+        e.dataTransfer.effectAllowed = 'move'
+        e.dataTransfer.setData('text/plain', card.oracleId)
+      })
+
+      el.querySelector('.add-to-canvas-btn').addEventListener('click', e => {
+        e.stopPropagation()
+        addCardToCanvasDefault(card)
+        el.remove()
+        updateDrawerEmptyState()
+        updateSideboardEmptyState()
+        updateStats()
+        persistCurrentState()
+      })
+
+      el.querySelector('.move-list-btn').addEventListener('click', e => {
+        e.stopPropagation()
+        const targetList = el.closest('#sealed-sideboard-list') ? drawerList : sideboardList
+        targetList.appendChild(el)
+        refreshMoveButtonLabel(el)
+        updateDrawerEmptyState()
+        updateSideboardEmptyState()
+        updateStats()
+        persistCurrentState()
+      })
+
+      return el
+    }
+
+    function refreshMoveButtonLabel(el) {
+      const btn = el.querySelector('.move-list-btn')
+      const inSideboard = !!el.closest('#sealed-sideboard-list')
+      btn.textContent = inSideboard ? i18n.toPool : i18n.toSideboard
+    }
+
+    function appendListRow(container, card) {
+      const el = makeListRow(card)
+      container.appendChild(el)
+      refreshMoveButtonLabel(el)
+      return el
+    }
+
+    function viewportCenterCanvasPoint() {
+      const r = viewport.getBoundingClientRect()
+      const jitterX = (Math.random() - 0.5) * 40
+      const jitterY = (Math.random() - 0.5) * 40
+      return s2c(r.left + r.width / 2 + jitterX, r.top + r.height / 2 + jitterY)
+    }
+
+    function addCardToCanvasDefault(card) {
+      const center = viewportCenterCanvasPoint()
+      canvas.appendChild(makeCanvasCardEl(card, center.x - TILE_WIDTH / 2, center.y - TILE_HEIGHT / 2, false))
+      canvasEmptyMsg.classList.add('hidden')
+    }
+
+    // ---- Sticky notes ----
+    function makeStickyNoteEl(id, x, y, text) {
+      const el = document.createElement('div')
+      el.className = 'canvas-note absolute rounded-lg shadow-xl p-2 cursor-grab select-none'
+      el.style.left = x + 'px'
+      el.style.top = y + 'px'
+      el.style.width = '160px'
+      el.style.minHeight = '120px'
+      el.style.background = '#f2ca83'
+      el.dataset.noteId = id
+      el.innerHTML = `
+        <button type="button" class="delete-note-btn absolute top-1 right-1 w-5 h-5 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black/60 text-xs font-bold">×</button>
+        <div class="note-text outline-none pr-5 text-xs text-black/80 whitespace-pre-wrap" contenteditable="true" spellcheck="false">${text || ''}</div>
+      `
+      el.querySelector('.delete-note-btn').addEventListener('click', e => {
+        e.stopPropagation()
+        el.remove()
+        persistCurrentState()
+      })
+      const textEl = el.querySelector('.note-text')
+      textEl.addEventListener('input', () => persistCurrentState())
+      textEl.addEventListener('pointerdown', e => e.stopPropagation())
+      makeCanvasItemDraggable(el, '.delete-note-btn, .note-text')
+      return el
+    }
+
+    function addStickyNote() {
+      const center = viewportCenterCanvasPoint()
+      const el = makeStickyNoteEl(`note-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, center.x - 80, center.y - 60, '')
+      canvas.appendChild(el)
+      canvasEmptyMsg.classList.add('hidden')
+      el.querySelector('.note-text').focus()
+      persistCurrentState()
+    }
+    addNoteBtn.addEventListener('click', addStickyNote)
+
+    // ---- Widgets (Mana Curve / Deck Composition / Draw Chances) — live panels
+    // reflecting whatever is currently marked "In deck" on the canvas ----
+    function currentDeckCards() {
+      return Array.from(canvas.querySelectorAll('.canvas-card[data-in-deck="1"]'))
+        .map(el => cardsByOracleId[el.dataset.oracleId])
+        .filter(Boolean)
+    }
+
+    function manaCurveWidgetHtml() {
+      const deck = currentDeckCards()
+      const buckets = {}
+      deck.forEach(c => {
+        const b = Math.min(Math.max(Math.round(c.cmc), 0), 7)
+        buckets[b] = (buckets[b] || 0) + 1
+      })
+      const max = Math.max(1, ...Object.values(buckets))
+      const cols = [0, 1, 2, 3, 4, 5, 6, 7].map(b => {
+        const count = buckets[b] || 0
+        const heightPct = count > 0 ? Math.max(Math.round((count / max) * 100), 10) : 0
+        const label = b === 7 ? '7+' : String(b)
+        return `
+          <div class="flex flex-col items-center gap-1 flex-1">
+            <div class="w-full flex items-end justify-center" style="height:56px;">
+              <div class="w-3.5 rounded-t bg-primary/80" style="height:${heightPct}%;" title="${count}"></div>
+            </div>
+            <span class="text-[9px] text-on-surface-variant/60">${label}</span>
+          </div>
+        `
+      }).join('')
+      return `<div class="flex items-end gap-1">${cols}</div>`
+    }
+
+    function typeBucketsFor(deck) {
+      let creature = 0, land = 0, spell = 0
+      deck.forEach(c => {
+        const type = c.typeLine || ''
+        if (type.includes('Land')) land++
+        else if (type.includes('Creature')) creature++
+        else spell++
+      })
+      return { creature, land, spell }
+    }
+
+    function typesWidgetHtml() {
+      const deck = currentDeckCards()
+      const { creature, land, spell } = typeBucketsFor(deck)
+      const total = creature + land + spell
+      const segments = [
+        { value: creature, color: '#34d399' },
+        { value: spell, color: '#38bdf8' },
+        { value: land, color: '#f2ca83' },
+      ].filter(s => s.value > 0)
+
+      const cx = 100, cy = 92, r = 76, sw = 16
+      let f = 0
+      const arcs = segments.map(seg => {
+        const f0 = f
+        f += total > 0 ? seg.value / total : 0
+        const a0 = (180 - 180 * f0) * Math.PI / 180
+        const a1 = (180 - 180 * f) * Math.PI / 180
+        const p0 = { x: cx + r * Math.cos(a0), y: cy - r * Math.sin(a0) }
+        const p1 = { x: cx + r * Math.cos(a1), y: cy - r * Math.sin(a1) }
+        return `<path d="M ${p0.x.toFixed(1)} ${p0.y.toFixed(1)} A ${r} ${r} 0 0 1 ${p1.x.toFixed(1)} ${p1.y.toFixed(1)}" stroke="${seg.color}" stroke-width="${sw}" fill="none" />`
+      }).join('')
+
+      return `
+        <svg viewBox="0 0 200 104" class="w-full">
+          <path d="M ${cx - r} ${cy} A ${r} ${r} 0 0 1 ${cx + r} ${cy}" stroke="rgba(255,255,255,0.08)" stroke-width="${sw}" fill="none" />
+          ${arcs}
+          <text x="${cx}" y="${cy - 6}" text-anchor="middle" fill="currentColor" class="text-on-surface" style="font-size:24px;font-weight:700;">${total}</text>
+        </svg>
+        <div class="flex flex-col gap-1 text-[10px] mt-1">
+          <div class="flex items-center justify-between"><span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background:#34d399"></span>${i18n.typeCreatureLabel}</span><span class="font-semibold text-on-surface">${creature} <span class="text-on-surface-variant/50">(15–17)</span></span></div>
+          <div class="flex items-center justify-between"><span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background:#38bdf8"></span>${i18n.typeSpellLabel}</span><span class="font-semibold text-on-surface">${spell} <span class="text-on-surface-variant/50">(5–8)</span></span></div>
+          <div class="flex items-center justify-between"><span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background:#f2ca83"></span>${i18n.typeLandLabel}</span><span class="font-semibold text-on-surface">${land} <span class="text-on-surface-variant/50">(~17)</span></span></div>
+        </div>
+      `
+    }
+
+    // Hypergeometric P(draw >= 1 card of a K-sized group in an n-card hand from
+    // an N-card deck), computed via the complement (probability of drawing zero).
+    function probAtLeastOne(N, K, n) {
+      if (K <= 0) return 0
+      if (N - K < n) return 1
+      let pZero = 1
+      for (let i = 0; i < n; i++) pZero *= (N - K - i) / (N - i)
+      return 1 - pZero
+    }
+
+    function drawWidgetHtml() {
+      const deck = currentDeckCards()
+      const DECK_SIZE_ASSUMED = 40
+      const HAND_SIZE = 7
+      const groups = ['B', 'R', 'E', 'A', 'D', 'F']
+      const labels = {
+        B: i18n.breadBombLabel, R: i18n.breadRemovalLabel, E: i18n.breadEvasionLabel,
+        A: i18n.breadAggroLabel, D: i18n.breadDiversityLabel, F: i18n.breadFillerLabel,
+      }
+      const rows = groups.map(g => {
+        const count = deck.filter(c => c.bread === g).length
+        if (count === 0) return ''
+        const pct = Math.round(probAtLeastOne(DECK_SIZE_ASSUMED, count, HAND_SIZE) * 100)
+        return `
+          <div class="flex items-center justify-between gap-2 text-[11px]">
+            <span title="${labels[g]}" class="inline-flex items-center gap-1.5 border rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${breadPillClass(g)}">${g}</span>
+            <span class="flex-1 text-on-surface-variant/70 truncate">${labels[g]} <span class="text-on-surface-variant/40">(${count})</span></span>
+            <span class="font-semibold text-on-surface">${pct}%</span>
+          </div>
+        `
+      }).filter(Boolean).join('')
+      return rows || `<p class="text-[10px] text-on-surface-variant/50">—</p>`
+    }
+
+    const WIDGET_RENDERERS = {
+      curve: { title: () => i18n.widgetCurveTitle, body: manaCurveWidgetHtml },
+      types: { title: () => i18n.widgetTypesTitle, body: typesWidgetHtml },
+      draw: { title: () => i18n.widgetDrawTitle, body: drawWidgetHtml },
+    }
+
+    function renderWidgetContent(el) {
+      const kind = el.dataset.widgetKind
+      const renderer = WIDGET_RENDERERS[kind]
+      if (!renderer) return
+      el.querySelector('.widget-title').textContent = renderer.title()
+      el.querySelector('.widget-body').innerHTML = renderer.body()
+    }
+
+    function refreshCanvasWidgets() {
+      canvas.querySelectorAll('.canvas-widget').forEach(renderWidgetContent)
+    }
+
+    function makeWidgetEl(id, x, y, kind) {
+      const el = document.createElement('div')
+      el.className = 'canvas-widget absolute rounded-xl shadow-xl bg-surface border border-white/10 p-3 cursor-grab select-none'
+      el.style.left = x + 'px'
+      el.style.top = y + 'px'
+      el.style.width = '200px'
+      el.dataset.widgetId = id
+      el.dataset.widgetKind = kind
+      el.innerHTML = `
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="widget-title text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/70"></h4>
+          <button type="button" class="delete-widget-btn w-5 h-5 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-on-surface-variant text-xs font-bold">×</button>
+        </div>
+        <div class="widget-body"></div>
+      `
+      el.querySelector('.delete-widget-btn').addEventListener('click', e => {
+        e.stopPropagation()
+        el.remove()
+        persistCurrentState()
+      })
+      renderWidgetContent(el)
+      makeCanvasItemDraggable(el, '.delete-widget-btn')
+      return el
+    }
+
+    function addWidget(kind) {
+      const center = viewportCenterCanvasPoint()
+      const el = makeWidgetEl(`widget-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, center.x - 100, center.y - 90, kind)
+      canvas.appendChild(el)
+      canvasEmptyMsg.classList.add('hidden')
+      persistCurrentState()
+    }
+    addCurveWidgetBtn.addEventListener('click', () => addWidget('curve'))
+    addTypesWidgetBtn.addEventListener('click', () => addWidget('types'))
+    addDrawWidgetBtn.addEventListener('click', () => addWidget('draw'))
+
+    const QUADRANT_LETTER = { Develop: 'D', Parity: 'P', Ahead: 'A', Behind: 'B' }
+    const QUADRANT_NAME = {
+      Develop: i18n.quadrantDevelopLabel,
+      Parity: i18n.quadrantParityLabel,
+      Ahead: i18n.quadrantAheadLabel,
+      Behind: i18n.quadrantBehindLabel,
+    }
+    const QUADRANT_CLASS = {
+      Develop: 'bg-emerald-500 text-white border-emerald-200/60',
+      Parity: 'bg-sky-500 text-white border-sky-200/60',
+      Ahead: 'bg-orange-500 text-white border-orange-200/60',
+      Behind: 'bg-primary text-on-primary border-primary/60',
+    }
+
+    function makeCanvasCardEl(card, x, y, inDeck, quadrant) {
+      const el = document.createElement('div')
+      el.className = 'canvas-card absolute rounded-xl overflow-hidden shadow-2xl cursor-grab select-none'
+      el.style.left = x + 'px'
+      el.style.top = y + 'px'
+      el.style.width = TILE_WIDTH + 'px'
+      el.dataset.oracleId = card.oracleId
+      el.dataset.inDeck = inDeck ? '1' : '0'
+      if (quadrant) el.dataset.quadrant = quadrant
+
+      const img = card.imageUrl
+        ? `<img src="${card.imageUrl}" alt="${card.name}" class="w-full h-auto rounded-t-xl pointer-events-none" draggable="false" />`
+        : `<div class="w-full flex items-center justify-center bg-surface" style="height:${TILE_HEIGHT}px">?</div>`
+
+      const quadrantBadge = quadrant
+        ? `<span title="${QUADRANT_NAME[quadrant]}" class="absolute top-1.5 left-1.5 z-10 inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold border shadow-md ${QUADRANT_CLASS[quadrant]}">${QUADRANT_LETTER[quadrant]}</span>`
+        : ''
+
+      el.innerHTML = `
+        ${quadrantBadge}
+        <div class="bg-[#1a1d22] rounded-xl border-2 border-transparent transition-colors" data-ring>
+          ${img}
+          <div class="card-scores p-1.5 flex flex-wrap items-center gap-1">${scorePillsHtml(card)}</div>
+        </div>
+        <div class="absolute top-1.5 right-1.5 flex flex-col items-end gap-1">
+          <button
+            type="button"
+            class="mark-deck-btn px-2 py-0.5 rounded-full text-[9px] font-bold border transition-colors ${inDeck ? 'bg-primary text-on-primary border-primary' : 'bg-black/50 text-white border-white/30'}"
+          >${inDeck ? i18n.inDeck : i18n.markAsDeck}</button>
+          <button
+            type="button"
+            class="to-sideboard-btn px-2 py-0.5 rounded-full text-[9px] font-bold border bg-black/50 text-white border-white/30 hover:bg-black/70 transition-colors"
+          >${i18n.toSideboard}</button>
+        </div>
+      `
+      updateCanvasCardRing(el)
+
+      el.querySelector('.mark-deck-btn').addEventListener('click', e => {
+        e.stopPropagation()
+        const nowInDeck = el.dataset.inDeck !== '1'
+        el.dataset.inDeck = nowInDeck ? '1' : '0'
+        const btn = e.currentTarget
+        btn.textContent = nowInDeck ? i18n.inDeck : i18n.markAsDeck
+        btn.className = `mark-deck-btn px-2 py-0.5 rounded-full text-[9px] font-bold border transition-colors ${nowInDeck ? 'bg-primary text-on-primary border-primary' : 'bg-black/50 text-white border-white/30'}`
+        updateCanvasCardRing(el)
+        updateStats()
+        persistCurrentState()
+      })
+
+      el.querySelector('.to-sideboard-btn').addEventListener('click', e => {
+        e.stopPropagation()
+        el.remove()
+        appendListRow(sideboardList, card)
+        canvasEmptyMsg.classList.toggle('hidden', canvas.querySelectorAll('.canvas-card').length > 0)
+        updateSideboardEmptyState()
+        updateStats()
+        persistCurrentState()
+      })
+
+      makeCanvasCardDraggable(el)
+      return el
+    }
+
+    function updateCanvasCardRing(el) {
+      const ring = el.querySelector('[data-ring]')
+      ring.style.borderColor = el.dataset.inDeck === '1' ? 'var(--color-primary, #f2ca83)' : 'transparent'
+    }
+
+    // ---- In-canvas dragging (Pointer Events so it works for mouse, touch, and pen alike) ----
+    function makeCanvasCardDraggable(el) {
+      makeCanvasItemDraggable(el, '.mark-deck-btn, .to-sideboard-btn')
+    }
+
+    // Shared by MTG cards, sticky notes, and widgets — anything positioned
+    // absolutely on the canvas. excludeSelector opts specific child controls
+    // (buttons, editable text) out of starting a drag.
+    function makeCanvasItemDraggable(el, excludeSelector) {
+      let dragOffset = null
+      let dragPointerId = null
+
+      el.addEventListener('pointerdown', e => {
+        if (excludeSelector && e.target.closest(excludeSelector)) return
+        e.preventDefault()
+        e.stopPropagation()
+        dragPointerId = e.pointerId
+        el.setPointerCapture(dragPointerId)
+        const left = parseFloat(el.style.left) || 0
+        const top = parseFloat(el.style.top) || 0
+        const cp = s2c(e.clientX, e.clientY)
+        dragOffset = { ox: cp.x - left, oy: cp.y - top }
+        el.style.cursor = 'grabbing'
+        el.style.zIndex = '50'
+      })
+
+      el.addEventListener('pointermove', e => {
+        if (!dragOffset || e.pointerId !== dragPointerId) return
+        const p = s2c(e.clientX, e.clientY)
+        el.style.left = (p.x - dragOffset.ox) + 'px'
+        el.style.top = (p.y - dragOffset.oy) + 'px'
+      })
+
+      function endDrag(e) {
+        if (e.pointerId !== dragPointerId) return
+        dragOffset = null
+        dragPointerId = null
+        el.style.cursor = 'grab'
+        el.style.zIndex = ''
+        persistCurrentState()
+      }
+      el.addEventListener('pointerup', endDrag)
+      el.addEventListener('pointercancel', endDrag)
+    }
+
+    // ---- Drawer / sideboard <-> canvas drag & drop ----
+    function removeListRow(oracleId) {
+      const row = drawerList.querySelector(`[data-oracle-id="${CSS.escape(oracleId)}"]`)
+        || sideboardList.querySelector(`[data-oracle-id="${CSS.escape(oracleId)}"]`)
+      if (row) row.remove()
+    }
+
+    viewport.addEventListener('dragover', e => {
+      e.preventDefault()
+      e.dataTransfer.dropEffect = 'move'
+    })
+    viewport.addEventListener('drop', e => {
+      e.preventDefault()
+      const oracleId = e.dataTransfer.getData('text/plain')
+      if (!oracleId) return
+      const card = cardsByOracleId[oracleId]
+      if (!card) return
+      const p = s2c(e.clientX, e.clientY)
+      const x = p.x - TILE_WIDTH / 2
+      const y = p.y - TILE_HEIGHT / 2
+      canvas.appendChild(makeCanvasCardEl(card, x, y, false))
+
+      removeListRow(oracleId)
+
+      canvasEmptyMsg.classList.add('hidden')
+      updateDrawerEmptyState()
+      updateSideboardEmptyState()
+      updateStats()
+      persistCurrentState()
+    })
+
+    // Dragging a Pool row onto the Sideboard panel (or vice versa) moves it between lists.
+    function wireListDropTarget(panelEl, targetList) {
+      panelEl.addEventListener('dragover', e => {
+        e.preventDefault()
+        e.dataTransfer.dropEffect = 'move'
+      })
+      panelEl.addEventListener('drop', e => {
+        e.preventDefault()
+        const oracleId = e.dataTransfer.getData('text/plain')
+        if (!oracleId) return
+        const card = cardsByOracleId[oracleId]
+        if (!card) return
+        if (targetList.querySelector(`[data-oracle-id="${CSS.escape(oracleId)}"]`)) return
+        removeListRow(oracleId)
+        appendListRow(targetList, card)
+        updateDrawerEmptyState()
+        updateSideboardEmptyState()
+        updateStats()
+        persistCurrentState()
+      })
+    }
+    wireListDropTarget(drawer, drawerList, updateDrawerEmptyState)
+    wireListDropTarget(sideboard, sideboardList, updateSideboardEmptyState)
+
+    // ---- Stats / persistence ----
+    function updateDrawerEmptyState() {
+      const count = drawerList.children.length
+      drawerCountEl.textContent = String(count)
+      drawerEmpty.classList.toggle('hidden', count > 0)
+    }
+
+    function updateSideboardEmptyState() {
+      const count = sideboardList.children.length
+      sideboardCountEl.textContent = String(count)
+      sideboardEmpty.classList.toggle('hidden', count > 0)
+    }
+
+    function updateStats() {
+      const poolCount = drawerList.children.length
+      const canvasCards = canvas.querySelectorAll('.canvas-card')
+      const placedCount = canvasCards.length
+      const deckCount = Array.from(canvasCards).filter(el => el.dataset.inDeck === '1').length
+      const sideboardCount = sideboardList.children.length
+      document.querySelector('#sealed-pool-count-tile .text-lg').textContent = String(poolCount)
+      document.querySelector('#sealed-placed-count-tile .text-lg').textContent = String(placedCount)
+      document.querySelector('#sealed-deck-count-tile .text-lg').textContent = String(deckCount)
+      document.querySelector('#sealed-sideboard-count-tile .text-lg').textContent = String(sideboardCount)
+      refreshCanvasWidgets()
+    }
+
+    function storageKey(setCode) {
+      return `karn-sealed-${setCode}`
+    }
+
+    function persistCurrentState() {
+      if (!currentSetCode) return
+      const drawerIds = Array.from(drawerList.children).map(el => el.dataset.oracleId)
+      const sideboardIds = Array.from(sideboardList.children).map(el => el.dataset.oracleId)
+      const canvasCards = Array.from(canvas.querySelectorAll('.canvas-card')).map(el => ({
+        oracleId: el.dataset.oracleId,
+        x: parseFloat(el.style.left) || 0,
+        y: parseFloat(el.style.top) || 0,
+        inDeck: el.dataset.inDeck === '1',
+        quadrant: el.dataset.quadrant || null,
+      }))
+      const notes = Array.from(canvas.querySelectorAll('.canvas-note')).map(el => ({
+        id: el.dataset.noteId,
+        x: parseFloat(el.style.left) || 0,
+        y: parseFloat(el.style.top) || 0,
+        text: el.querySelector('.note-text').textContent,
+      }))
+      const widgets = Array.from(canvas.querySelectorAll('.canvas-widget')).map(el => ({
+        id: el.dataset.widgetId,
+        x: parseFloat(el.style.left) || 0,
+        y: parseFloat(el.style.top) || 0,
+        kind: el.dataset.widgetKind,
+      }))
+      localStorage.setItem(storageKey(currentSetCode), JSON.stringify({ drawer: drawerIds, sideboard: sideboardIds, canvas: canvasCards, notes, widgets, view }))
+    }
+
+    function loadState(setCode) {
+      const raw = localStorage.getItem(storageKey(setCode))
+      if (!raw) return null
+      let parsed
+      try { parsed = JSON.parse(raw) } catch { return null }
+      // Guard against the old grid-based schema ({pool, deck}) left over in
+      // localStorage from a previous version of this page -- treat as absent
+      // rather than crashing renderState.
+      if (!parsed || !Array.isArray(parsed.drawer) || !Array.isArray(parsed.canvas)) return null
+      if (!Array.isArray(parsed.sideboard)) parsed.sideboard = []
+      if (!Array.isArray(parsed.notes)) parsed.notes = []
+      if (!Array.isArray(parsed.widgets)) parsed.widgets = []
+      return parsed
+    }
+
+    function clearBoard() {
+      drawerList.innerHTML = ''
+      sideboardList.innerHTML = ''
+      canvas.querySelectorAll('.canvas-card, .canvas-note, .canvas-widget').forEach(el => el.remove())
+    }
+
+    function renderState(state) {
+      clearBoard()
+      state.drawer.forEach(id => {
+        const card = cardsByOracleId[id]
+        if (card) appendListRow(drawerList, card)
+      })
+      state.sideboard.forEach(id => {
+        const card = cardsByOracleId[id]
+        if (card) appendListRow(sideboardList, card)
+      })
+      state.canvas.forEach(({ oracleId, x, y, inDeck, quadrant }) => {
+        const card = cardsByOracleId[oracleId]
+        if (card) canvas.appendChild(makeCanvasCardEl(card, x, y, inDeck, quadrant))
+      })
+      ;(state.notes || []).forEach(({ id, x, y, text }) => {
+        canvas.appendChild(makeStickyNoteEl(id, x, y, text))
+      })
+      ;(state.widgets || []).forEach(({ id, x, y, kind }) => {
+        canvas.appendChild(makeWidgetEl(id, x, y, kind))
+      })
+      view = state.view ? { ...state.view } : { ...DEFAULT_VIEW }
+      applyT()
+      canvasEmptyMsg.classList.toggle('hidden', state.canvas.length > 0)
+      updateDrawerEmptyState()
+      updateSideboardEmptyState()
+      updateStats()
+    }
+
+    async function loadManifest() {
+      const res = await fetch('/pool-data/manifest.json')
+      const manifest = await res.json()
+      setSelect.innerHTML = manifest.map(s => `<option value="${s.code}">${s.name} (${s.code})</option>`).join('')
+      return manifest
+    }
+
+    async function loadSetPool(code) {
+      if (poolDataCache[code]) return poolDataCache[code]
+      const res = await fetch(`/pool-data/${code}.json`)
+      const data = await res.json()
+      poolDataCache[code] = data
+      return data
+    }
+
+    async function switchToSet(code) {
+      currentSetCode = code
+      const setData = await loadSetPool(code)
+      cardsByOracleId = buildCardsByOracleId(setData)
+      const stored = loadState(code)
+      if (stored) {
+        renderState(stored)
+        showBoardStage()
+      } else {
+        clearBoard()
+        view = { ...DEFAULT_VIEW }
+        applyT()
+        canvasEmptyMsg.classList.remove('hidden')
+        updateDrawerEmptyState()
+        updateSideboardEmptyState()
+        updateStats()
+        showSetupStage()
+      }
+    }
+
+    async function generateAndRender() {
+      const code = setSelect.value
+      const setData = await loadSetPool(code)
+      const packCount = Math.max(1, Math.min(6, Number(packCountInput.value) || 6))
+      const poolIds = generatePoolIds(setData, packCount)
+      view = { ...DEFAULT_VIEW }
+      autoBuildSummary.textContent = ''
+      renderState({ drawer: poolIds, sideboard: [], canvas: [], view })
+      persistCurrentState()
+      showBoardStage()
+      openDrawer()
+    }
+
+    // Picking a set from the setup screen must never silently jump back into a
+    // saved board — that's the "← Set" flow's whole purpose (start a new pool),
+    // and auto-resuming here made it look like there was no way to reach
+    // Generate Pool once a set already had saved state. Resuming that saved
+    // pool is still one click away via the Resume button.
+    async function selectSetOnSetup(code) {
+      currentSetCode = code
+      const setData = await loadSetPool(code)
+      cardsByOracleId = buildCardsByOracleId(setData)
+      const stored = loadState(code)
+      resumeBtn.classList.toggle('hidden', !stored)
+      resumeHint.classList.toggle('hidden', !stored)
+    }
+
+    resumeBtn.addEventListener('click', () => {
+      const stored = loadState(currentSetCode)
+      if (!stored) return
+      renderState(stored)
+      showBoardStage()
+    })
+
+    generateBtn.addEventListener('click', generateAndRender)
+    regenerateBtn.addEventListener('click', generateAndRender)
+    setSelect.addEventListener('change', () => selectSetOnSetup(setSelect.value))
+
+    // ---- Auto-build: color pair + curve fill + Quadrant Theory tagging ----
+    // Quadrant rows loosely follow the classic Develop/Parity/Ahead/Behind
+    // split (BREAD pick-order + Quadrant Theory + CABS curve weighting), using
+    // keywords/oracle text/power-toughness fetched live from Scryfall since the
+    // local pool data doesn't carry that detail.
+    const DEVELOP_KEYWORDS = new Set(['first strike', 'flash'])
+    const AHEAD_KEYWORDS = new Set(['flying', 'haste', 'trample', 'menace', 'double strike'])
+    const BEHIND_KEYWORDS = new Set(['deathtouch', 'reach', 'lifelink', 'defender'])
+    const PARITY_KEYWORDS = new Set(['vigilance'])
+    const BEHIND_TEXT = /destroy target creature|exile target creature|destroy all creatures|-\d+\/-\d+ to each|deals? \d+ damage to each creature|gains? \d+ life|prevent all combat damage/i
+    const PARITY_TEXT = /draw a card/i
+    const DEVELOP_TEXT = /create an? .*token|when .* enters the battlefield/i
+    const AHEAD_TEXT = /can't be blocked|deals? \d+ damage to (target player|each opponent|any target)/i
+    const COLORS = ['W', 'U', 'B', 'R', 'G']
+    const DECK_SIZE = 23
+    const CURVE_TARGETS = [[1, 2], [2, 6], [3, 5], [4, 4], [5, 3], [6, 2], [7, 1]]
+
+    async function fetchScryfallDetails(cards) {
+      const missing = cards.filter(c => c.scryfallId && !scryfallDetailsCache[c.scryfallId])
+      for (let i = 0; i < missing.length; i += 75) {
+        const chunk = missing.slice(i, i + 75)
+        try {
+          const res = await fetch('https://api.scryfall.com/cards/collection', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ identifiers: chunk.map(c => ({ id: c.scryfallId })) }),
+          })
+          const data = await res.json()
+          for (const sc of data.data || []) scryfallDetailsCache[sc.id] = sc
+        } catch (err) {
+          console.error('Scryfall lookup failed, quadrant tagging will fall back to Parity', err)
+        }
+      }
+    }
+
+    function scryfallFace(sc) {
+      if (!sc) return {}
+      if (sc.oracle_text || sc.power) return sc
+      if (sc.card_faces && sc.card_faces[0]) return sc.card_faces[0]
+      return sc
+    }
+
+    function classifyQuadrant(card) {
+      const sc = scryfallDetailsCache[card.scryfallId]
+      const keywords = (sc?.keywords || []).map(k => k.toLowerCase())
+      for (const kw of keywords) {
+        if (DEVELOP_KEYWORDS.has(kw)) return 'Develop'
+        if (AHEAD_KEYWORDS.has(kw)) return 'Ahead'
+        if (BEHIND_KEYWORDS.has(kw)) return 'Behind'
+        if (PARITY_KEYWORDS.has(kw)) return 'Parity'
+      }
+      const text = scryfallFace(sc).oracle_text || ''
+      if (BEHIND_TEXT.test(text)) return 'Behind'
+      if (PARITY_TEXT.test(text)) return 'Parity'
+      if (DEVELOP_TEXT.test(text)) return 'Develop'
+      if (AHEAD_TEXT.test(text)) return 'Ahead'
+      const power = Number(scryfallFace(sc).power)
+      const toughness = Number(scryfallFace(sc).toughness)
+      if (Number.isFinite(power) && Number.isFinite(toughness)) {
+        if (toughness > power) return 'Behind'
+        if (power > toughness) return 'Develop'
+      }
+      return 'Parity'
+    }
+
+    // Playables-per-color-pair scan, roughly mirroring the framework's Sheet 1/2
+    // tallies: for every 2-color combo, sum the power_score of its best ~23 fits
+    // (mono cards of either color, colorless, and exact-pair gold cards). Returns
+    // every combo ranked best-first so autoBuildDeck can offer a few options.
+    function rankColorPairs(cards) {
+      const results = []
+      for (let i = 0; i < COLORS.length; i++) {
+        for (let j = i + 1; j < COLORS.length; j++) {
+          const pair = [COLORS[i], COLORS[j]]
+          const eligible = cards.filter(c => (c.colors || []).every(col => pair.includes(col)))
+          const ranked = eligible.slice().sort((a, b) => b.power_score - a.power_score)
+          const score = ranked.slice(0, DECK_SIZE).reduce((s, c) => s + c.power_score, 0)
+          results.push({ pair, eligible, score })
+        }
+      }
+      return results.sort((a, b) => b.score - a.score)
+    }
+
+    function gradeFor(avgScore) {
+      if (avgScore >= 3.2) return 'A'
+      if (avgScore >= 2.6) return 'B'
+      if (avgScore >= 2.0) return 'C'
+      if (avgScore >= 1.4) return 'D'
+      return 'F'
+    }
+
+    function tallyQuadrants(deckCards) {
+      const tally = { Develop: 0, Parity: 0, Ahead: 0, Behind: 0 }
+      deckCards.forEach(card => { tally[classifyQuadrant(card)]++ })
+      return tally
+    }
+
+    // CABS-weighted curve fill: hit the 2s/3s targets first with the best card
+    // available at each CMC, then top off with the highest remaining scores.
+    function pickDeckCards(eligible) {
+      const byCmc = {}
+      for (const c of eligible) {
+        const bucket = Math.min(Math.max(Math.round(c.cmc), 1), 7)
+        ;(byCmc[bucket] = byCmc[bucket] || []).push(c)
+      }
+      for (const b in byCmc) byCmc[b].sort((a, b2) => b2.power_score - a.power_score)
+
+      const picked = []
+      const pickedIds = new Set()
+      for (const [bucket, need] of CURVE_TARGETS) {
+        const available = byCmc[bucket] || []
+        for (let k = 0; k < need && k < available.length; k++) {
+          picked.push(available[k])
+          pickedIds.add(available[k].oracleId)
+        }
+      }
+      const remaining = DECK_SIZE - picked.length
+      if (remaining > 0) {
+        const rest = eligible
+          .filter(c => !pickedIds.has(c.oracleId))
+          .sort((a, b) => b.power_score - a.power_score)
+          .slice(0, remaining)
+        picked.push(...rest)
+      }
+      return picked
+    }
+
+    const GRADE_CLASS = {
+      A: 'bg-emerald-500 text-white border-emerald-200/60',
+      B: 'bg-sky-500 text-white border-sky-200/60',
+      C: 'bg-amber-500 text-white border-amber-200/60',
+      D: 'bg-orange-500 text-white border-orange-200/60',
+      F: 'bg-red-500 text-white border-red-200/60',
+    }
+    const QUADRANT_DOT_CLASS = {
+      Develop: 'bg-emerald-400',
+      Parity: 'bg-sky-400',
+      Ahead: 'bg-orange-400',
+      Behind: 'bg-primary',
+    }
+
+    let autoBuildCandidates = []
+    let autoBuildPoolSnapshot = []
+    let autoBuildHasExistingDeck = false
+
+    // Diff view only kicks in above this match threshold — below it the two
+    // decks are different enough that a swap-list stops being a useful nudge.
+    const AUTOBUILD_DIFF_THRESHOLD = 0.8
+
+    function autoBuildOptionHtml(candidate, index, confirmingIndex) {
+      const colorIcons = candidate.pair.map(c => `<i class="ms ms-${c.toLowerCase()} ms-cost"></i>`).join(' ')
+      const quadrantSummary = ['Develop', 'Parity', 'Ahead', 'Behind'].map(q => `
+        <span title="${QUADRANT_NAME[q]}" class="inline-flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full ${QUADRANT_DOT_CLASS[q]}"></span>${QUADRANT_LETTER[q]} ${candidate.quadrants[q] || 0}
+        </span>
+      `).join('')
+
+      const similarityHtml = candidate.similarity !== null
+        ? `<div>${i18n.autoBuildSimilarityLabel}: <span class="text-on-surface font-semibold">${Math.round(candidate.similarity * 100)}%</span></div>`
+        : ''
+
+      const showDiff = candidate.similarity !== null
+        && candidate.similarity >= AUTOBUILD_DIFF_THRESHOLD
+        && (candidate.toRemove.length > 0 || candidate.toAdd.length > 0)
+      const diffHtml = showDiff ? `
+        <div class="rounded-lg bg-black/20 border border-white/10 p-2 text-[10px] flex flex-col gap-1">
+          ${candidate.toRemove.length ? `<div><span class="text-red-300 font-semibold">${i18n.autoBuildSwapOutLabel}:</span> <span class="text-on-surface-variant">${candidate.toRemove.map(c => c.name).join(', ')}</span></div>` : ''}
+          ${candidate.toAdd.length ? `<div><span class="text-emerald-300 font-semibold">${i18n.autoBuildSwapInLabel}:</span> <span class="text-on-surface-variant">${candidate.toAdd.map(c => c.name).join(', ')}</span></div>` : ''}
+        </div>
+      ` : ''
+
+      const actionHtml = index === confirmingIndex ? `
+        <p class="text-[10px] text-red-300">${i18n.autoBuildConfirmWarning}</p>
+        <div class="flex gap-2">
+          <button data-candidate-index="${index}" class="confirm-candidate-btn flex-1 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors">${i18n.autoBuildConfirmReplace}</button>
+          <button class="cancel-candidate-btn px-3 py-1.5 rounded-lg border border-white/10 text-on-surface-variant text-xs font-semibold hover:text-on-surface transition-colors">${i18n.autoBuildCancel}</button>
+        </div>
+      ` : `
+        <button data-candidate-index="${index}" class="use-candidate-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-bold text-xs hover:bg-primary-container transition-colors">${i18n.autoBuildUseDeck}</button>
+      `
+
+      return `
+        <div class="rounded-xl border border-white/10 bg-surface/60 p-4 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl flex items-center gap-1">${colorIcons}</span>
+            <span class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm border ${GRADE_CLASS[candidate.grade]}">${candidate.grade}</span>
+          </div>
+          <div class="text-xs text-on-surface-variant/70 flex flex-col gap-0.5">
+            <div>${i18n.autoBuildAvgScoreLabel}: <span class="text-on-surface font-semibold">${candidate.avg.toFixed(2)}</span></div>
+            <div>${i18n.autoBuildDeckSizeLabel}: <span class="text-on-surface font-semibold">${candidate.deckCards.length}</span></div>
+            ${similarityHtml}
+          </div>
+          <div class="flex flex-wrap gap-3 text-[10px] text-on-surface-variant/70">${quadrantSummary}</div>
+          ${diffHtml}
+          <div class="mt-1 flex flex-col gap-1.5">${actionHtml}</div>
+        </div>
+      `
+    }
+
+    function renderAutoBuildOptions(confirmingIndex) {
+      autoBuildOptions.innerHTML = autoBuildCandidates
+        .map((c, i) => autoBuildOptionHtml(c, i, confirmingIndex))
+        .join('')
+    }
+
+    function closeAutoBuildModal() {
+      autoBuildModal.classList.add('hidden')
+    }
+
+    function showAutoBuildModal(candidates, pool, hasExistingDeck) {
+      autoBuildCandidates = candidates
+      autoBuildPoolSnapshot = pool
+      autoBuildHasExistingDeck = hasExistingDeck
+      renderAutoBuildOptions(null)
+      autoBuildModal.classList.remove('hidden')
+    }
+
+    // Delegated once — survives the innerHTML re-renders triggered by confirm/cancel.
+    autoBuildOptions.addEventListener('click', e => {
+      const useBtn = e.target.closest('.use-candidate-btn')
+      const confirmBtn = e.target.closest('.confirm-candidate-btn')
+      const cancelBtn = e.target.closest('.cancel-candidate-btn')
+
+      if (useBtn) {
+        const idx = Number(useBtn.dataset.candidateIndex)
+        if (autoBuildHasExistingDeck) {
+          renderAutoBuildOptions(idx)
+        } else {
+          applyAutoBuildCandidate(autoBuildCandidates[idx], autoBuildPoolSnapshot)
+          closeAutoBuildModal()
+        }
+        return
+      }
+      if (confirmBtn) {
+        const idx = Number(confirmBtn.dataset.candidateIndex)
+        applyAutoBuildCandidate(autoBuildCandidates[idx], autoBuildPoolSnapshot)
+        closeAutoBuildModal()
+        return
+      }
+      if (cancelBtn) {
+        renderAutoBuildOptions(null)
+      }
+    })
+
+    autoBuildModalClose.addEventListener('click', closeAutoBuildModal)
+    autoBuildModal.addEventListener('click', e => {
+      if (e.target === autoBuildModal) closeAutoBuildModal()
+    })
+
+    function applyAutoBuildCandidate(candidate, pool) {
+      const deckIds = new Set(candidate.deckCards.map(c => c.oracleId))
+      const leftovers = pool.filter(c => !deckIds.has(c.oracleId))
+
+      clearBoard()
+      view = { ...DEFAULT_VIEW }
+      applyT()
+
+      const COLUMN_GAP = 24
+      const ROW_STEP = 42
+      const BASE_X = 40
+      const BASE_Y = 30
+      const columnCounts = {}
+      candidate.deckCards
+        .slice()
+        .sort((a, b) => a.cmc - b.cmc || b.power_score - a.power_score)
+        .forEach(card => {
+          const col = Math.min(Math.max(Math.round(card.cmc), 0), 7)
+          const idx = columnCounts[col] || 0
+          columnCounts[col] = idx + 1
+          const x = BASE_X + col * (TILE_WIDTH + COLUMN_GAP)
+          const y = BASE_Y + idx * ROW_STEP
+          const quadrant = classifyQuadrant(card)
+          canvas.appendChild(makeCanvasCardEl(card, x, y, true, quadrant))
+        })
+
+      leftovers.forEach(card => appendListRow(sideboardList, card))
+
+      canvasEmptyMsg.classList.toggle('hidden', candidate.deckCards.length > 0)
+      updateDrawerEmptyState()
+      updateSideboardEmptyState()
+      updateStats()
+      persistCurrentState()
+      autoBuildSummary.textContent = `${candidate.pair.join('')} · ${candidate.grade} · ${candidate.deckCards.length}`
+    }
+
+    const AUTOBUILD_OPTION_COUNT = 4
+
+    async function autoBuildDeck() {
+      autoBuildBtn.disabled = true
+      autoBuildBtn.textContent = i18n.autoBuildBuilding
+      try {
+        const allIds = new Set([
+          ...Array.from(drawerList.children).map(el => el.dataset.oracleId),
+          ...Array.from(canvas.querySelectorAll('.canvas-card')).map(el => el.dataset.oracleId),
+          ...Array.from(sideboardList.children).map(el => el.dataset.oracleId),
+        ])
+        const pool = Array.from(allIds).map(id => cardsByOracleId[id]).filter(Boolean)
+        if (pool.length === 0) return
+
+        await fetchScryfallDetails(pool)
+
+        // Snapshot the deck the user has already marked, so each option can be
+        // graded on how close it is to what you built — and, above the diff
+        // threshold, show exactly which cards would swap.
+        const currentDeckCards = Array.from(canvas.querySelectorAll('.canvas-card[data-in-deck="1"]'))
+          .map(el => cardsByOracleId[el.dataset.oracleId])
+          .filter(Boolean)
+        const currentDeckIds = new Set(currentDeckCards.map(c => c.oracleId))
+        const hasExistingDeck = currentDeckCards.length > 0
+
+        const candidates = rankColorPairs(pool)
+          .filter(c => c.eligible.length > 0)
+          .slice(0, AUTOBUILD_OPTION_COUNT)
+          .map(({ pair, eligible }) => {
+            const deckCards = pickDeckCards(eligible)
+            const avg = deckCards.length ? deckCards.reduce((s, c) => s + c.power_score, 0) / deckCards.length : 0
+            const candidateIds = new Set(deckCards.map(c => c.oracleId))
+
+            let similarity = null
+            let toRemove = []
+            let toAdd = []
+            if (hasExistingDeck) {
+              const overlap = deckCards.filter(c => currentDeckIds.has(c.oracleId)).length
+              const unionSize = new Set([...currentDeckIds, ...candidateIds]).size
+              similarity = unionSize > 0 ? overlap / unionSize : 0
+              toRemove = currentDeckCards.filter(c => !candidateIds.has(c.oracleId))
+              toAdd = deckCards.filter(c => !currentDeckIds.has(c.oracleId))
+            }
+
+            return { pair, deckCards, avg, grade: gradeFor(avg), quadrants: tallyQuadrants(deckCards), similarity, toRemove, toAdd }
+          })
+
+        showAutoBuildModal(candidates, pool, hasExistingDeck)
+      } finally {
+        autoBuildBtn.disabled = false
+        autoBuildBtn.textContent = i18n.autoBuildLabel
+      }
+    }
+
+    autoBuildBtn.addEventListener('click', autoBuildDeck)
+
+    // ---- Export to MTG Arena ----
+    // Deck = cards marked "In deck" on canvas. Sideboard = everything else in the
+    // current pool (Sideboard panel + unmarked canvas cards + Pool drawer), so the
+    // rest of the pool is still available in Arena's builder for adjustments.
+    function arenaLine(card) {
+      const sc = scryfallDetailsCache[card.scryfallId]
+      if (sc && sc.set && sc.collector_number) {
+        return `1 ${sc.name} (${sc.set.toUpperCase()}) ${sc.collector_number}`
+      }
+      return `1 ${card.name}`
+    }
+
+    async function buildArenaExportText() {
+      const canvasCards = Array.from(canvas.querySelectorAll('.canvas-card'))
+      const deckCards = canvasCards
+        .filter(el => el.dataset.inDeck === '1')
+        .map(el => cardsByOracleId[el.dataset.oracleId])
+        .filter(Boolean)
+      const sideboardCards = [
+        ...canvasCards.filter(el => el.dataset.inDeck !== '1').map(el => cardsByOracleId[el.dataset.oracleId]),
+        ...Array.from(sideboardList.children).map(el => cardsByOracleId[el.dataset.oracleId]),
+        ...Array.from(drawerList.children).map(el => cardsByOracleId[el.dataset.oracleId]),
+      ].filter(Boolean)
+
+      await fetchScryfallDetails([...deckCards, ...sideboardCards])
+
+      const lines = ['Deck', ...deckCards.map(arenaLine)]
+      if (sideboardCards.length) {
+        lines.push('', 'Sideboard', ...sideboardCards.map(arenaLine))
+      }
+      return lines.join('\n')
+    }
+
+    async function openExportModal() {
+      exportBtn.disabled = true
+      try {
+        exportTextarea.value = await buildArenaExportText()
+        exportModal.classList.remove('hidden')
+      } finally {
+        exportBtn.disabled = false
+      }
+    }
+
+    exportBtn.addEventListener('click', openExportModal)
+    exportModalClose.addEventListener('click', () => exportModal.classList.add('hidden'))
+    exportModal.addEventListener('click', e => {
+      if (e.target === exportModal) exportModal.classList.add('hidden')
+    })
+    exportCopyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(exportTextarea.value)
+      } catch {
+        exportTextarea.select()
+        document.execCommand('copy')
+      }
+      exportCopyBtn.textContent = i18n.exportCopied
+      setTimeout(() => { exportCopyBtn.textContent = i18n.exportCopyButton }, 1500)
+    })
+
+    async function init() {
+      applyT()
+      await loadManifest()
+      if (setSelect.options.length > 0) {
+        await switchToSet(setSelect.value)
+      }
+    }
+
+    init()
+  </script>
+</BaseLayout>
