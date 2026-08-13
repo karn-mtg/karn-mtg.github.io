@@ -1,5 +1,6 @@
 [
   { "code": "FIN", "name": "Final Fantasy" },
   { "code": "BLB", "name": "Bloomburrow" },
-  { "code": "EOE", "name": "Edge of Eternities" }
+  { "code": "EOE", "name": "Edge of Eternities" },
+  { "code": "HOB", "name": "The Hobbit" }
 ]
