@@ -144,6 +144,9 @@ for (const entry of legacyBreadEntries) {
             <button id="sealed-add-draw-widget-btn" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">
               🎲 {i18n.sealedAddDrawWidget}
             </button>
+            <button id="sealed-add-lands-widget-btn" class="px-2.5 py-1 rounded-full bg-surface/80 border border-white/10 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">
+              🏔️ {i18n.sealedAddLandsWidget}
+            </button>
             <span class="px-2.5 py-1 rounded-full bg-surface/60 border border-white/10 text-[11px] text-on-surface-variant/50 hidden lg:inline-block">
               {i18n.sealedPanHint}
             </span>
@@ -337,6 +340,9 @@ for (const entry of legacyBreadEntries) {
         autoBuildCoverageLabel: i18n.sealedAutoBuildCoverageLabel,
         autoBuildSynergyLabel: i18n.sealedAutoBuildSynergyLabel,
         selectedLabel: i18n.sealedSelectedLabel,
+        widgetLandsTitle: i18n.sealedWidgetLandsTitle,
+        fillSuggestedLands: i18n.sealedFillSuggestedLands,
+        landsNeedSpells: i18n.sealedLandsNeedSpells,
         quadrantDevelopLabel: i18n.sealedQuadrantDevelopLabel,
         quadrantParityLabel: i18n.sealedQuadrantParityLabel,
         quadrantAheadLabel: i18n.sealedQuadrantAheadLabel,
@@ -401,6 +407,7 @@ for (const entry of legacyBreadEntries) {
     const addCurveWidgetBtn = document.getElementById('sealed-add-curve-widget-btn')
     const addTypesWidgetBtn = document.getElementById('sealed-add-types-widget-btn')
     const addDrawWidgetBtn = document.getElementById('sealed-add-draw-widget-btn')
+    const addLandsWidgetBtn = document.getElementById('sealed-add-lands-widget-btn')
     const drawerToggle = document.getElementById('sealed-drawer-toggle')
     const drawerClose = document.getElementById('sealed-drawer-close')
     const drawer = document.getElementById('sealed-drawer')
@@ -429,6 +436,7 @@ for (const entry of legacyBreadEntries) {
     let poolDataCache = {}
     let cardsByOracleId = {}
     let scryfallDetailsCache = {}
+    let basicLandsCache = {}
     let view = { ...DEFAULT_VIEW }
     let panState = null // { startX, startY, tx0, ty0 } for a single-pointer pan
 
@@ -748,6 +756,57 @@ for (const entry of legacyBreadEntries) {
       return map
     }
 
+    // Basics aren't part of the drafted pool (unlimited supply, same as real
+    // Sealed), so they need their own lookup entries — fetched once per set
+    // from Scryfall using that set's own printing, so the art matches the
+    // rest of the pool instead of a generic default basic.
+    const BASIC_LAND_NAMES = { W: 'Plains', U: 'Island', B: 'Swamp', R: 'Mountain', G: 'Forest' }
+
+    async function fetchBasicLandsForSet(code) {
+      if (basicLandsCache[code]) return basicLandsCache[code]
+      const entries = {}
+      await Promise.all(Object.entries(BASIC_LAND_NAMES).map(async ([color, name]) => {
+        let sc = null
+        try {
+          const res = await fetch(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&set=${code.toLowerCase()}`)
+          if (res.ok) sc = await res.json()
+        } catch { /* fall through to the unset-scoped lookup below */ }
+        if (!sc) {
+          try {
+            const res = await fetch(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}`)
+            if (res.ok) sc = await res.json()
+          } catch { /* leave this color out if Scryfall is unreachable */ }
+        }
+        if (!sc) return
+        scryfallDetailsCache[sc.id] = sc
+        entries[`basic-${color.toLowerCase()}`] = {
+          oracleId: `basic-${color.toLowerCase()}`,
+          scryfallId: sc.id,
+          name: sc.name,
+          typeLine: sc.type_line,
+          manaCost: '',
+          cmc: 0,
+          colors: [],
+          rarity: 'land',
+          imageUrl: (sc.image_uris && sc.image_uris.normal) || (sc.card_faces && sc.card_faces[0] && sc.card_faces[0].image_uris && sc.card_faces[0].image_uris.normal) || '',
+          foilEligible: true,
+          power_score: 0,
+          bread: 'F',
+          narrow_synergy: false,
+          isBasic: true,
+        }
+      }))
+      basicLandsCache[code] = entries
+      return entries
+    }
+
+    async function loadCardsByOracleId(code, setData) {
+      const map = buildCardsByOracleId(setData)
+      const basics = await fetchBasicLandsForSet(code)
+      Object.assign(map, basics)
+      return map
+    }
+
     // ---- Rendering ----
     function breadPillClass(tag) {
       const map = {
@@ -775,6 +834,7 @@ for (const entry of legacyBreadEntries) {
     }
 
     function scorePillsHtml(card) {
+      if (card.isBasic) return ''
       const limitedPill = pillHtml(card.bread, `${i18n.karnScoreLabel} ${Number(card.power_score).toFixed(1)}`, i18n.karnScoreLabel)
 
       const legacy = legacyBreadBySet[currentSetCode] && legacyBreadBySet[currentSetCode][card.oracleId]
@@ -1043,10 +1103,75 @@ for (const entry of legacyBreadEntries) {
       return rows || `<p class="text-[10px] text-on-surface-variant/50">—</p>`
     }
 
+    // Standard pip-counting mana base: each color's share of 17 lands tracks
+    // its share of colored mana symbols across the deck's spells (largest
+    // remainder method so the total always lands on exactly 17).
+    function suggestedLandCounts(deckCards, totalLands = 17) {
+      const pips = { W: 0, U: 0, B: 0, R: 0, G: 0 }
+      deckCards.forEach(c => {
+        const symbols = (c.manaCost || '').match(/\{[^}]+\}/g) || []
+        symbols.forEach(sym => {
+          const inner = sym.slice(1, -1).toUpperCase()
+          if (pips[inner] !== undefined) pips[inner]++
+          else if (inner.includes('/')) {
+            inner.split('/').forEach(part => { if (pips[part] !== undefined) pips[part] += 0.5 })
+          }
+        })
+      })
+      const totalPips = Object.values(pips).reduce((a, b) => a + b, 0)
+      if (totalPips === 0) return {}
+      const raw = {}
+      Object.keys(pips).forEach(c => { if (pips[c] > 0) raw[c] = (pips[c] / totalPips) * totalLands })
+      const floors = {}
+      let assigned = 0
+      Object.keys(raw).forEach(c => { floors[c] = Math.floor(raw[c]); assigned += floors[c] })
+      const remainders = Object.keys(raw)
+        .map(c => [c, raw[c] - floors[c]])
+        .sort((a, b) => b[1] - a[1])
+      for (let i = 0; i < totalLands - assigned; i++) floors[remainders[i % remainders.length][0]]++
+      return floors
+    }
+
+    function currentBasicLandCounts(deckCards) {
+      const counts = {}
+      deckCards.forEach(c => {
+        if (!c.isBasic) return
+        const color = c.oracleId.replace('basic-', '').toUpperCase()
+        counts[color] = (counts[color] || 0) + 1
+      })
+      return counts
+    }
+
+    function landsWidgetHtml() {
+      const deck = currentDeckCards()
+      const nonLandDeck = deck.filter(c => !c.isBasic)
+      const suggested = suggestedLandCounts(nonLandDeck, 17)
+      const have = currentBasicLandCounts(deck)
+      const colors = Object.keys(BASIC_LAND_NAMES).filter(c => suggested[c] || have[c])
+
+      if (colors.length === 0) {
+        return `<p class="text-[10px] text-on-surface-variant/50">${i18n.landsNeedSpells}</p>`
+      }
+
+      const rows = colors.map(color => `
+        <div class="flex items-center justify-between gap-2 text-[11px]">
+          <span class="inline-flex items-center gap-1.5"><i class="ms ms-${color.toLowerCase()} ms-cost"></i> ${BASIC_LAND_NAMES[color]}</span>
+          <span class="text-on-surface-variant/50">${have[color] || 0}/${suggested[color] || 0}</span>
+          <button data-land-color="${color}" class="add-land-btn px-2 py-0.5 rounded-md bg-primary/15 text-primary border border-primary/30 text-[10px] font-bold hover:bg-primary/25 transition-colors">+1</button>
+        </div>
+      `).join('')
+
+      return `
+        <div class="flex flex-col gap-1.5">${rows}</div>
+        <button class="fill-lands-btn mt-2 w-full px-2 py-1.5 rounded-lg bg-primary text-on-primary font-bold text-[10px] hover:bg-primary-container transition-colors">${i18n.fillSuggestedLands}</button>
+      `
+    }
+
     const WIDGET_RENDERERS = {
       curve: { title: () => i18n.widgetCurveTitle, body: manaCurveWidgetHtml },
       types: { title: () => i18n.widgetTypesTitle, body: typesWidgetHtml },
       draw: { title: () => i18n.widgetDrawTitle, body: drawWidgetHtml },
+      lands: { title: () => i18n.widgetLandsTitle, body: landsWidgetHtml },
     }
 
     function renderWidgetContent(el) {
@@ -1082,9 +1207,47 @@ for (const entry of legacyBreadEntries) {
         persistCurrentState()
       })
       renderWidgetContent(el)
-      makeCanvasItemDraggable(el, '.delete-widget-btn')
+      makeCanvasItemDraggable(el, '.delete-widget-btn, .add-land-btn, .fill-lands-btn')
       return el
     }
+
+    // Basics are unlimited (same as real Sealed) and never touch the drafted
+    // pool — adding one just drops a new canvas card using that set's own
+    // printed art, looked up from the cache built in loadCardsByOracleId.
+    async function addBasicLand(color) {
+      const basics = await fetchBasicLandsForSet(currentSetCode)
+      const card = basics[`basic-${color.toLowerCase()}`]
+      if (!card) return
+      const center = nextCardPoint()
+      canvas.appendChild(makeCanvasCardEl(card, center.x - TILE_WIDTH / 2, center.y - TILE_HEIGHT / 2, true))
+      canvasEmptyMsg.classList.add('hidden')
+      updateStats()
+      persistCurrentState()
+    }
+
+    async function fillSuggestedLands() {
+      const deck = currentDeckCards()
+      const suggested = suggestedLandCounts(deck.filter(c => !c.isBasic), 17)
+      const have = currentBasicLandCounts(deck)
+      for (const color of Object.keys(suggested)) {
+        const need = suggested[color] - (have[color] || 0)
+        for (let i = 0; i < need; i++) await addBasicLand(color)
+      }
+    }
+
+    canvas.addEventListener('click', e => {
+      const addBtn = e.target.closest('.add-land-btn')
+      if (addBtn) {
+        e.stopPropagation()
+        addBasicLand(addBtn.dataset.landColor)
+        return
+      }
+      const fillBtn = e.target.closest('.fill-lands-btn')
+      if (fillBtn) {
+        e.stopPropagation()
+        fillSuggestedLands()
+      }
+    })
 
     function addWidget(kind) {
       const center = nextAnnotationPoint()
@@ -1096,6 +1259,7 @@ for (const entry of legacyBreadEntries) {
     addCurveWidgetBtn.addEventListener('click', () => addWidget('curve'))
     addTypesWidgetBtn.addEventListener('click', () => addWidget('types'))
     addDrawWidgetBtn.addEventListener('click', () => addWidget('draw'))
+    addLandsWidgetBtn.addEventListener('click', () => addWidget('lands'))
 
     const QUADRANT_LETTER = { Develop: 'D', Parity: 'P', Ahead: 'A', Behind: 'B' }
     const QUADRANT_NAME = {
@@ -1412,7 +1576,7 @@ for (const entry of legacyBreadEntries) {
     async function switchToSet(code) {
       currentSetCode = code
       const setData = await loadSetPool(code)
-      cardsByOracleId = buildCardsByOracleId(setData)
+      cardsByOracleId = await loadCardsByOracleId(code, setData)
       const stored = loadState(code)
       if (stored) {
         renderState(stored)
@@ -1450,7 +1614,7 @@ for (const entry of legacyBreadEntries) {
     async function selectSetOnSetup(code) {
       currentSetCode = code
       const setData = await loadSetPool(code)
-      cardsByOracleId = buildCardsByOracleId(setData)
+      cardsByOracleId = await loadCardsByOracleId(code, setData)
       const stored = loadState(code)
       resumeBtn.classList.toggle('hidden', !stored)
       resumeHint.classList.toggle('hidden', !stored)
