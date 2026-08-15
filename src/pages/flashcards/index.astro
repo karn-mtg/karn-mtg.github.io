@@ -6,7 +6,7 @@ import { t, blogBase } from '../../i18n'
 const i18n = t('en')
 
 const title = 'Flashcards — Karn Forge'
-const description = 'An Anki-style trainer: drill B.R.E.A.D. card evaluation on real cards from every scored set until the read is automatic.'
+const description = 'An Anki-style trainer: drill B.R.E.A.D. card evaluation and Quadrant Theory on real cards from every scored set until the read is automatic.'
 
 const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
 ---
@@ -20,13 +20,13 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
       <div id="fc-dashboard">
         <div class="text-center mb-6">
           <h1 class="text-3xl sm:text-4xl font-bold text-on-surface leading-tight mb-3">Sealed Flashcards</h1>
-          <p class="text-on-surface-variant">
-            Train your B.R.E.A.D. eye on real cards from every scored set — Anki-style spaced repetition, until the read is automatic.
-          </p>
-          <p class="text-xs text-on-surface-variant/50 mt-3">
-            Power scores and B.R.E.A.D. tags are heuristic estimates from Karn's card scoring —
-            <a href={breadArticleHref} class="text-primary hover:underline">read the B.R.E.A.D. explainer</a>.
-          </p>
+          <p class="text-on-surface-variant" id="fc-intro-text"></p>
+          <p class="text-xs text-on-surface-variant/50 mt-3" id="fc-intro-sub"></p>
+        </div>
+
+        <div class="flex gap-2 mb-4" id="fc-mode-toggle">
+          <button data-mode="bread" class="fc-mode-btn flex-1 px-3 py-2.5 rounded-xl text-sm font-bold border transition-colors">B.R.E.A.D.</button>
+          <button data-mode="quadrant" class="fc-mode-btn flex-1 px-3 py-2.5 rounded-xl text-sm font-bold border transition-colors">Quadrant</button>
         </div>
 
         <div class="glass-panel rounded-2xl p-5 mb-4">
@@ -60,7 +60,7 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
           </div>
         </div>
 
-        <div class="text-xs uppercase tracking-widest text-on-surface-variant/60 mb-2">By category</div>
+        <div class="text-xs uppercase tracking-widest text-on-surface-variant/60 mb-2" id="fc-category-heading">By category</div>
         <div id="fc-category-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-2"></div>
       </div>
 
@@ -77,6 +77,7 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
   </div>
 
   <script define:vars={{
+    breadArticleHref,
     breadMeta: {
       B: { label: i18n.breadBombLabel, def: i18n.breadBombDef, badge: 'bg-primary/15 text-primary border-primary/30' },
       R: { label: i18n.breadRemovalLabel, def: i18n.breadRemovalDef, badge: 'bg-red-400/15 text-red-300 border-red-400/30' },
@@ -85,20 +86,120 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
       D: { label: i18n.breadDiversityLabel, def: i18n.breadDiversityDef, badge: 'bg-emerald-400/15 text-emerald-300 border-emerald-400/30' },
       F: { label: i18n.breadFillerLabel, def: 'Replaceable role-players with a reasonable rate but no standout upside — the cards that round out a curve rather than win the game.', badge: 'bg-white/5 text-on-surface-variant/70 border-white/10' },
     },
+    quadrantMeta: {
+      Develop: { label: i18n.sealedQuadrantDevelopLabel, def: i18n.sealedQuadrantDevelopDesc, badge: 'bg-emerald-400/15 text-emerald-300 border-emerald-400/30' },
+      Parity: { label: i18n.sealedQuadrantParityLabel, def: i18n.sealedQuadrantParityDesc, badge: 'bg-sky-400/15 text-sky-300 border-sky-400/30' },
+      Ahead: { label: i18n.sealedQuadrantAheadLabel, def: i18n.sealedQuadrantAheadDesc, badge: 'bg-orange-400/15 text-orange-300 border-orange-400/30' },
+      Behind: { label: i18n.sealedQuadrantBehindLabel, def: i18n.sealedQuadrantBehindDesc, badge: 'bg-primary/15 text-primary border-primary/30' },
+    },
   }}>
     const BREAD_ORDER = ['B', 'R', 'E', 'A', 'D', 'F']
+    const QUADRANT_ORDER = ['Develop', 'Parity', 'Ahead', 'Behind']
     const BOX_INTERVALS_MS = [0, 1 * 86400000, 3 * 86400000, 7 * 86400000, 14 * 86400000]
-    const PROGRESS_KEY = 'karn-flashcards-progress-v1'
     const SESSION_KEY = 'karn-flashcards-sessions-v1'
+    const MODE_KEY = 'karn-flashcards-mode-v1'
 
+    // Ported verbatim from the Sealed Simulator's Auto-Build quadrant tagging
+    // (src/pages/[...locale]/sealed/index.astro) so both features teach the
+    // exact same Develop/Parity/Ahead/Behind read — pool-data doesn't carry
+    // keywords/oracle text/power/toughness, so this fetches them live from
+    // Scryfall's collection endpoint, same as Sealed already does.
+    const DEVELOP_KEYWORDS = new Set(['first strike', 'flash'])
+    const AHEAD_KEYWORDS = new Set(['flying', 'haste', 'trample', 'menace', 'double strike'])
+    const BEHIND_KEYWORDS = new Set(['deathtouch', 'reach', 'lifelink', 'defender'])
+    const PARITY_KEYWORDS = new Set(['vigilance'])
+    const BEHIND_TEXT = /destroy target creature|exile target creature|destroy all creatures|-\d+\/-\d+ to each|deals? \d+ damage to each creature|gains? \d+ life|prevent all combat damage/i
+    const PARITY_TEXT = /draw a card/i
+    const DEVELOP_TEXT = /create an? .*token|when .* enters the battlefield/i
+    const AHEAD_TEXT = /can't be blocked|deals? \d+ damage to (target player|each opponent|any target)/i
+
+    let scryfallDetailsCache = {}
+
+    async function fetchScryfallDetails(cards) {
+      const missing = cards.filter(c => c.scryfallId && !scryfallDetailsCache[c.scryfallId])
+      for (let i = 0; i < missing.length; i += 75) {
+        const chunk = missing.slice(i, i + 75)
+        try {
+          const res = await fetch('https://api.scryfall.com/cards/collection', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ identifiers: chunk.map(c => ({ id: c.scryfallId })) }),
+          })
+          const data = await res.json()
+          for (const sc of data.data || []) scryfallDetailsCache[sc.id] = sc
+        } catch (e) { /* quadrant tagging falls back to Parity for these cards */ }
+      }
+    }
+
+    function scryfallFace(sc) {
+      if (!sc) return {}
+      if (sc.oracle_text || sc.power) return sc
+      if (sc.card_faces && sc.card_faces[0]) return sc.card_faces[0]
+      return sc
+    }
+
+    function classifyQuadrant(card) {
+      const sc = scryfallDetailsCache[card.scryfallId]
+      const keywords = (sc?.keywords || []).map(k => k.toLowerCase())
+      for (const kw of keywords) {
+        if (DEVELOP_KEYWORDS.has(kw)) return 'Develop'
+        if (AHEAD_KEYWORDS.has(kw)) return 'Ahead'
+        if (BEHIND_KEYWORDS.has(kw)) return 'Behind'
+        if (PARITY_KEYWORDS.has(kw)) return 'Parity'
+      }
+      const text = scryfallFace(sc).oracle_text || ''
+      if (BEHIND_TEXT.test(text)) return 'Behind'
+      if (PARITY_TEXT.test(text)) return 'Parity'
+      if (DEVELOP_TEXT.test(text)) return 'Develop'
+      if (AHEAD_TEXT.test(text)) return 'Ahead'
+      const power = Number(scryfallFace(sc).power)
+      const toughness = Number(scryfallFace(sc).toughness)
+      if (Number.isFinite(power) && Number.isFinite(toughness)) {
+        if (toughness > power) return 'Behind'
+        if (power > toughness) return 'Develop'
+      }
+      return 'Parity'
+    }
+
+    async function ensureQuadrantData(cards) {
+      await fetchScryfallDetails(cards)
+      cards.forEach(c => { if (!c.quadrant) c.quadrant = classifyQuadrant(c) })
+    }
+
+    const MODES = {
+      bread: {
+        order: BREAD_ORDER,
+        meta: breadMeta,
+        progressKey: 'karn-flashcards-progress-v1',
+        question: "What's its B.R.E.A.D. category?",
+        categoryHeading: 'By category',
+        intro: 'Train your B.R.E.A.D. eye on real cards from every scored set — Anki-style spaced repetition, until the read is automatic.',
+        introSub: `Power scores and B.R.E.A.D. tags are heuristic estimates from Karn's card scoring — <a href="${breadArticleHref}" class="text-primary hover:underline">read the B.R.E.A.D. explainer</a>.`,
+        needsPrefetch: false,
+        getCategory: c => c.bread,
+      },
+      quadrant: {
+        order: QUADRANT_ORDER,
+        meta: quadrantMeta,
+        progressKey: 'karn-flashcards-quadrant-progress-v1',
+        question: 'Which quadrant does it fit best?',
+        categoryHeading: 'By quadrant',
+        intro: 'Train Quadrant Theory on real cards — which part of the game a card actually wins: developing your board, grinding at parity, closing out a lead, or stabilizing from behind.',
+        introSub: 'Quadrant tags are computed live the same way the Sealed Simulator\'s Auto-Build does — from card keywords, oracle text, and power/toughness.',
+        needsPrefetch: true,
+        getCategory: c => c.quadrant,
+      },
+    }
+
+    let currentMode = 'bread'
     let manifest = []
     let poolCache = {}
-    let progress = {}
+    let progressByMode = { bread: {}, quadrant: {} }
     let sessionLog = { totalSessions: 0, streak: 0, lastSessionDay: null }
     let currentScopeCards = []
     let queue = []
     let current = null
-    let pickedBread = null
+    let picked = null
     let answered = false
 
     const dashboardEl = document.getElementById('fc-dashboard')
@@ -109,6 +210,10 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
     const duePill = document.getElementById('fc-due-pill')
     const cardPanel = document.getElementById('fc-card-panel')
     const categoryGrid = document.getElementById('fc-category-grid')
+    const categoryHeading = document.getElementById('fc-category-heading')
+    const introText = document.getElementById('fc-intro-text')
+    const introSub = document.getElementById('fc-intro-sub')
+    const modeToggle = document.getElementById('fc-mode-toggle')
 
     function storageGet(key, fallback) {
       try {
@@ -128,11 +233,12 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
       return `${setCode}:${oracleId}`
     }
     function getProgress(key) {
-      if (!progress[key]) progress[key] = { box: 0, lastReviewed: null, seen: 0, correct: 0 }
-      return progress[key]
+      const store = progressByMode[currentMode]
+      if (!store[key]) store[key] = { box: 0, lastReviewed: null, seen: 0, correct: 0 }
+      return store[key]
     }
     function isDue(key) {
-      const p = progress[key]
+      const p = progressByMode[currentMode][key]
       if (!p || !p.lastReviewed) return true
       return (Date.now() - p.lastReviewed) >= BOX_INTERVALS_MS[Math.min(p.box, 4)]
     }
@@ -152,7 +258,7 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
       const cards = []
       for (const rarity of Object.keys(data.rarities)) {
         for (const c of data.rarities[rarity]) {
-          if (!BREAD_ORDER.includes(c.bread) || !c.imageUrl) continue
+          if (!BREAD_ORDER.includes(c.bread) || !c.imageUrl || !c.scryfallId) continue
           cards.push({ ...c, rarity, setCode: data.set_code.toUpperCase(), setName: data.set_name, key: cardKey(data.set_code.toUpperCase(), c.oracleId) })
         }
       }
@@ -181,11 +287,28 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
       }).join(' ')
     }
 
+    function applyModeChrome() {
+      const mode = MODES[currentMode]
+      introText.textContent = mode.intro
+      introSub.innerHTML = mode.introSub
+      categoryHeading.textContent = mode.categoryHeading
+      modeToggle.querySelectorAll('.fc-mode-btn').forEach(btn => {
+        const active = btn.dataset.mode === currentMode
+        btn.classList.toggle('bg-primary', active)
+        btn.classList.toggle('text-on-primary', active)
+        btn.classList.toggle('border-transparent', active)
+        btn.classList.toggle('bg-white/[0.02]', !active)
+        btn.classList.toggle('text-on-surface-variant', !active)
+        btn.classList.toggle('border-white/10', !active)
+      })
+    }
+
     function refreshStats() {
-      const seenKeys = currentScopeCards.map(c => c.key)
+      const mode = MODES[currentMode]
+      const store = progressByMode[currentMode]
       let totalSeen = 0, totalCorrect = 0, mastered = 0, due = 0
       for (const c of currentScopeCards) {
-        const p = progress[c.key]
+        const p = store[c.key]
         if (p) {
           totalSeen += p.seen
           totalCorrect += p.correct
@@ -203,12 +326,12 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
         ? `Start Session — ${due} due`
         : `Practice Full Deck (${currentScopeCards.length} cards)`
 
-      categoryGrid.innerHTML = BREAD_ORDER.map(letter => {
-        const cardsOfType = currentScopeCards.filter(c => c.bread === letter)
+      categoryGrid.innerHTML = mode.order.map(catKey => {
+        const cardsOfType = currentScopeCards.filter(c => mode.getCategory(c) === catKey)
         const total = cardsOfType.length
         const avgBox = total ? cardsOfType.reduce((s, c) => s + getProgress(c.key).box, 0) / total / 4 * 100 : 0
         const masteredCount = cardsOfType.filter(c => getProgress(c.key).box >= 4).length
-        const meta = breadMeta[letter]
+        const meta = mode.meta[catKey]
         return `
           <div class="glass-panel rounded-lg p-2.5">
             <div class="text-[11px] font-semibold mb-1.5 truncate" title="${meta.def}">${meta.label}</div>
@@ -225,6 +348,10 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
       startBtn.disabled = true
       startBtn.textContent = 'Loading…'
       currentScopeCards = await loadScopeCards(scope)
+      if (MODES[currentMode].needsPrefetch) {
+        startBtn.textContent = 'Reading card text…'
+        await ensureQuadrantData(currentScopeCards)
+      }
       refreshStats()
     }
 
@@ -265,7 +392,7 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
 
     function nextCard() {
       answered = false
-      pickedBread = null
+      picked = null
       if (queue.length === 0) {
         showDashboard()
         return
@@ -277,6 +404,8 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
 
     function renderStudyCard() {
       const c = current
+      const mode = MODES[currentMode]
+      const gridCols = mode.order.length > 4 ? 'grid-cols-3' : 'grid-cols-2'
       cardPanel.innerHTML = `
         <div class="flex justify-center mb-3">
           <img src="${c.imageUrl}" alt="${c.name}" class="rounded-xl shadow-lg max-h-80 w-auto" loading="eager" />
@@ -289,11 +418,11 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
           <span>&middot;</span>
           <span class="capitalize">${c.rarity}</span>
         </div>
-        <div class="text-[11px] uppercase tracking-widest text-on-surface-variant/60 mb-2">What's its B.R.E.A.D. category?</div>
-        <div class="grid grid-cols-3 gap-2 mb-4" id="fc-bread-grid">
-          ${BREAD_ORDER.map(letter => `
-            <button data-bread="${letter}" class="fc-bread-btn px-2 py-3 rounded-lg border border-white/10 bg-white/[0.02] text-on-surface text-sm font-semibold hover:bg-white/[0.06] transition-colors">
-              ${breadMeta[letter].label}
+        <div class="text-[11px] uppercase tracking-widest text-on-surface-variant/60 mb-2">${mode.question}</div>
+        <div class="grid ${gridCols} gap-2 mb-4" id="fc-cat-grid">
+          ${mode.order.map(catKey => `
+            <button data-cat="${catKey}" class="fc-cat-btn px-2 py-3 rounded-lg border border-white/10 bg-white/[0.02] text-on-surface text-sm font-semibold hover:bg-white/[0.06] transition-colors">
+              ${mode.meta[catKey].label}
             </button>
           `).join('')}
         </div>
@@ -303,11 +432,11 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
           </button>
         </div>
       `
-      cardPanel.querySelectorAll('.fc-bread-btn').forEach(btn => {
+      cardPanel.querySelectorAll('.fc-cat-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           if (answered) return
-          pickedBread = btn.dataset.bread
-          cardPanel.querySelectorAll('.fc-bread-btn').forEach(b => {
+          picked = btn.dataset.cat
+          cardPanel.querySelectorAll('.fc-cat-btn').forEach(b => {
             b.classList.toggle('ring-2', b === btn)
             b.classList.toggle('ring-primary', b === btn)
           })
@@ -318,31 +447,33 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
     }
 
     function confirmAnswer() {
-      if (answered || !pickedBread) return
+      if (answered || !picked) return
       answered = true
       const c = current
-      const correct = pickedBread === c.bread
+      const mode = MODES[currentMode]
+      const actual = mode.getCategory(c)
+      const correct = picked === actual
       const p = getProgress(c.key)
       p.seen += 1
       if (correct) p.correct += 1
       p.lastReviewed = Date.now()
       p.box = correct ? Math.min(4, p.box + 1) : 0
-      storageSet(PROGRESS_KEY, progress)
+      storageSet(mode.progressKey, progressByMode[currentMode])
 
-      cardPanel.querySelectorAll('.fc-bread-btn').forEach(btn => {
-        const letter = btn.dataset.bread
+      cardPanel.querySelectorAll('.fc-cat-btn').forEach(btn => {
+        const catKey = btn.dataset.cat
         btn.classList.remove('ring-2', 'ring-primary')
-        if (letter === c.bread) btn.classList.add('ring-2', 'ring-emerald-400')
-        else if (letter === pickedBread) btn.classList.add('ring-2', 'ring-red-400')
+        if (catKey === actual) btn.classList.add('ring-2', 'ring-emerald-400')
+        else if (catKey === picked) btn.classList.add('ring-2', 'ring-red-400')
         btn.disabled = true
       })
 
-      const meta = breadMeta[c.bread]
+      const meta = mode.meta[actual]
       document.getElementById('fc-action-row').innerHTML = `
         <div class="mb-2 font-bold ${correct ? 'text-emerald-400' : 'text-red-400'}">${correct ? 'Correct' : 'Not quite'}</div>
         <div class="text-sm text-on-surface-variant mb-1">
           Actual: <span class="font-semibold ${correct ? 'text-emerald-300' : 'text-primary'}">${meta.label}</span>
-          &middot; Karn power score <span class="font-semibold text-on-surface">${Number(c.power_score).toFixed(1)}</span>
+          ${currentMode === 'bread' ? `&middot; Karn power score <span class="font-semibold text-on-surface">${Number(c.power_score).toFixed(1)}</span>` : ''}
         </div>
         <p class="text-sm text-on-surface-variant/80 leading-snug mb-3">${meta.def}</p>
         <a href="${scryfallSearchUrl(c.name)}" target="_blank" rel="noopener" class="block text-center text-xs italic text-on-surface-variant hover:text-primary transition-colors mb-3">View on Scryfall &#8599;</a>
@@ -351,13 +482,28 @@ const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
       document.getElementById('fc-next-btn').addEventListener('click', nextCard)
     }
 
+    async function switchMode(nextMode) {
+      if (nextMode === currentMode) return
+      currentMode = nextMode
+      storageSet(MODE_KEY, currentMode)
+      applyModeChrome()
+      await refreshDashboardForScope(setSelect.value)
+    }
+
+    modeToggle.querySelectorAll('.fc-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => switchMode(btn.dataset.mode))
+    })
     setSelect.addEventListener('change', () => refreshDashboardForScope(setSelect.value))
     startBtn.addEventListener('click', startSession)
     backBtn.addEventListener('click', showDashboard)
 
     ;(async function init() {
-      progress = storageGet(PROGRESS_KEY, {})
+      currentMode = storageGet(MODE_KEY, 'bread')
+      if (!MODES[currentMode]) currentMode = 'bread'
+      progressByMode.bread = storageGet(MODES.bread.progressKey, {})
+      progressByMode.quadrant = storageGet(MODES.quadrant.progressKey, {})
       sessionLog = storageGet(SESSION_KEY, sessionLog)
+      applyModeChrome()
       await loadManifest()
       setSelect.value = 'ALL'
       await refreshDashboardForScope('ALL')
