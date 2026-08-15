@@ -24,14 +24,18 @@
     "utilityBonus": 2
   },
   "removal": {
-    "_comment": "Weights halved vs. their original 4/6/5/8/8/3 values to bring removal's typical score onto the same scale as bomb — see refactor.md discussion. Relative ranking (exile > destroy > board wipe > temp exile > -X/-X) is unchanged.",
+    "_comment": "Weights halved vs. their original 4/6/5/8/8/3 values to bring removal's typical score onto the same scale as bomb — see refactor.md discussion. Relative ranking (exile > destroy > board wipe > temp exile > -X/-X) is unchanged. fight/damage/lockdown added later — flat weights, not scaled by the actual damage/counter amount printed, consistent with how -X/-X already treats every magnitude the same.",
     "patterns": [
       { "pattern": "exile .{0,40}?until .{0,40}?leaves", "flags": "i", "weight": 2, "note": "temporary exile — reversible, weakest of the three" },
       { "pattern": "destroy target", "flags": "i", "weight": 3, "note": "destroy — can be regenerated/reanimated" },
       { "pattern": "destroy (all|each) (target )?creatures?", "flags": "i", "weight": 2.5, "note": "board wipe — strong but not targeted" },
       { "pattern": "exile target", "flags": "i", "weight": 4, "note": "permanent exile — strongest, skip if already matched exile-until-leaves" },
       { "pattern": "exile (it|that (creature|permanent|card))", "flags": "i", "weight": 4, "note": "permanent exile via trigger" },
-      { "pattern": "-\\d+/-\\d+", "flags": "i", "weight": 1.5, "note": "-X/-X removal, softer than hard removal" }
+      { "pattern": "-\\d+/-\\d+", "flags": "i", "weight": 1.5, "note": "-X/-X removal, softer than hard removal" },
+      { "pattern": "fights? .{0,25}target creature", "flags": "i", "weight": 2.5, "note": "fight — conditional removal, needs your own creature already in play and risks it" },
+      { "pattern": "deals? (\\d+|x) damage to target creature", "flags": "i", "weight": 2.5, "note": "damage-based removal (burn) — conditional on the target's toughness" },
+      { "pattern": "deals? (\\d+|x) damage to any target", "flags": "i", "weight": 2, "note": "flexible burn — can remove a small creature or go to the face; also see aggro's matching pattern" },
+      { "pattern": "can't attack or block", "flags": "i", "weight": 2.5, "note": "Pacifism-style lockdown — permanent and doesn't require your own creature, but leaves the creature on board" }
     ]
   },
   "evasion": {
@@ -50,8 +54,10 @@
     "_comment": "Weights doubled vs. their original 2/2/1 + 2/1/2/1 values — the old max (3) barely cleared tagThreshold, so almost nothing tagged aggro. Now on the same scale as bomb/removal/evasion.",
     "patterns": [
       { "pattern": "deals? \\d+ damage to (each opponent|target (player|opponent))", "flags": "i", "weight": 4 },
+      { "pattern": "deals? \\d+ damage to any target", "flags": "i", "weight": 4, "note": "reach — can also go to the face; matching pattern in removal covers the creature-facing read" },
       { "pattern": "(opponent|each opponent) loses \\d+ life", "flags": "i", "weight": 4 },
-      { "pattern": "gets? \\+\\d+/\\+\\d+", "flags": "i", "weight": 2 }
+      { "pattern": "gets? \\+\\d+/\\+\\d+", "flags": "i", "weight": 2 },
+      { "pattern": "puts? .{0,20}\\+1/\\+1 counters? on", "flags": "i", "weight": 2, "note": "permanent pump via counters — same weight as the temporary 'gets +X/+X' pattern" }
     ],
     "keywordBonuses": {
       "Haste": 4,
