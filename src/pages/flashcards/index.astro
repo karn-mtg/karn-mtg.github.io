@@ -1,0 +1,366 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import SiteNav from '../../components/SiteNav.astro'
+import { t, blogBase } from '../../i18n'
+
+const i18n = t('en')
+
+const title = 'Flashcards — Karn Forge'
+const description = 'An Anki-style trainer: drill B.R.E.A.D. card evaluation on real cards from every scored set until the read is automatic.'
+
+const breadArticleHref = `${blogBase('en')}/${i18n.breadArticleSlug}`
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div style="background-image: radial-gradient(circle, rgba(43,46,51,0.6) 1px, transparent 1px); background-size: 24px 24px; min-height: 100vh;">
+    <SiteNav lang="en" />
+
+    <main class="max-w-xl mx-auto pt-28 pb-16 px-4 sm:px-6">
+      <!-- ============ DASHBOARD ============ -->
+      <div id="fc-dashboard">
+        <div class="text-center mb-6">
+          <h1 class="text-3xl sm:text-4xl font-bold text-on-surface leading-tight mb-3">Sealed Flashcards</h1>
+          <p class="text-on-surface-variant">
+            Train your B.R.E.A.D. eye on real cards from every scored set — Anki-style spaced repetition, until the read is automatic.
+          </p>
+          <p class="text-xs text-on-surface-variant/50 mt-3">
+            Power scores and B.R.E.A.D. tags are heuristic estimates from Karn's card scoring —
+            <a href={breadArticleHref} class="text-primary hover:underline">read the B.R.E.A.D. explainer</a>.
+          </p>
+        </div>
+
+        <div class="glass-panel rounded-2xl p-5 mb-4">
+          <label class="flex flex-col gap-1.5 text-sm mb-4">
+            <span class="text-xs uppercase tracking-widest text-on-surface-variant/60">Set</span>
+            <select id="fc-set-select" class="bg-surface border border-white/10 rounded-lg px-3 py-2 text-on-surface text-sm w-full">
+              <option value="ALL">Loading sets…</option>
+            </select>
+          </label>
+          <button id="fc-start-btn" class="w-full px-5 py-3 rounded-xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-colors disabled:opacity-40 disabled:cursor-wait" disabled>
+            Loading card pool…
+          </button>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 mb-4">
+          <div class="glass-panel rounded-xl p-3 text-center">
+            <div class="text-xl font-bold text-primary" id="fc-stat-sessions">0</div>
+            <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/60">Sessions</div>
+          </div>
+          <div class="glass-panel rounded-xl p-3 text-center">
+            <div class="text-xl font-bold text-primary" id="fc-stat-streak">0</div>
+            <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/60">Streak</div>
+          </div>
+          <div class="glass-panel rounded-xl p-3 text-center">
+            <div class="text-xl font-bold text-primary" id="fc-stat-accuracy">–</div>
+            <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/60">Accuracy</div>
+          </div>
+          <div class="glass-panel rounded-xl p-3 text-center">
+            <div class="text-xl font-bold text-primary" id="fc-stat-mastered">0/0</div>
+            <div class="text-[10px] uppercase tracking-wide text-on-surface-variant/60">Mastered</div>
+          </div>
+        </div>
+
+        <div class="text-xs uppercase tracking-widest text-on-surface-variant/60 mb-2">By category</div>
+        <div id="fc-category-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-2"></div>
+      </div>
+
+      <!-- ============ STUDY ============ -->
+      <div id="fc-study" class="hidden">
+        <div class="flex items-center justify-between mb-4">
+          <button id="fc-back-btn" class="text-sm italic text-on-surface-variant hover:text-on-surface transition-colors">&lsaquo; Flashcards</button>
+          <span id="fc-due-pill" class="text-xs text-on-surface-variant border border-white/10 rounded-full px-3 py-1"></span>
+        </div>
+
+        <div class="glass-panel rounded-2xl p-4" id="fc-card-panel"></div>
+      </div>
+    </main>
+  </div>
+
+  <script define:vars={{
+    breadMeta: {
+      B: { label: i18n.breadBombLabel, def: i18n.breadBombDef, badge: 'bg-primary/15 text-primary border-primary/30' },
+      R: { label: i18n.breadRemovalLabel, def: i18n.breadRemovalDef, badge: 'bg-red-400/15 text-red-300 border-red-400/30' },
+      E: { label: i18n.breadEvasionLabel, def: i18n.breadEvasionDef, badge: 'bg-sky-400/15 text-sky-300 border-sky-400/30' },
+      A: { label: i18n.breadAggroLabel, def: i18n.breadAggroDef, badge: 'bg-orange-400/15 text-orange-300 border-orange-400/30' },
+      D: { label: i18n.breadDiversityLabel, def: i18n.breadDiversityDef, badge: 'bg-emerald-400/15 text-emerald-300 border-emerald-400/30' },
+      F: { label: i18n.breadFillerLabel, def: 'Replaceable role-players with a reasonable rate but no standout upside — the cards that round out a curve rather than win the game.', badge: 'bg-white/5 text-on-surface-variant/70 border-white/10' },
+    },
+  }}>
+    const BREAD_ORDER = ['B', 'R', 'E', 'A', 'D', 'F']
+    const BOX_INTERVALS_MS = [0, 1 * 86400000, 3 * 86400000, 7 * 86400000, 14 * 86400000]
+    const PROGRESS_KEY = 'karn-flashcards-progress-v1'
+    const SESSION_KEY = 'karn-flashcards-sessions-v1'
+
+    let manifest = []
+    let poolCache = {}
+    let progress = {}
+    let sessionLog = { totalSessions: 0, streak: 0, lastSessionDay: null }
+    let currentScopeCards = []
+    let queue = []
+    let current = null
+    let pickedBread = null
+    let answered = false
+
+    const dashboardEl = document.getElementById('fc-dashboard')
+    const studyEl = document.getElementById('fc-study')
+    const setSelect = document.getElementById('fc-set-select')
+    const startBtn = document.getElementById('fc-start-btn')
+    const backBtn = document.getElementById('fc-back-btn')
+    const duePill = document.getElementById('fc-due-pill')
+    const cardPanel = document.getElementById('fc-card-panel')
+    const categoryGrid = document.getElementById('fc-category-grid')
+
+    function storageGet(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key)
+        return raw ? JSON.parse(raw) : fallback
+      } catch (e) {
+        return fallback
+      }
+    }
+    function storageSet(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value))
+      } catch (e) { /* storage unavailable — progress just won't persist */ }
+    }
+
+    function cardKey(setCode, oracleId) {
+      return `${setCode}:${oracleId}`
+    }
+    function getProgress(key) {
+      if (!progress[key]) progress[key] = { box: 0, lastReviewed: null, seen: 0, correct: 0 }
+      return progress[key]
+    }
+    function isDue(key) {
+      const p = progress[key]
+      if (!p || !p.lastReviewed) return true
+      return (Date.now() - p.lastReviewed) >= BOX_INTERVALS_MS[Math.min(p.box, 4)]
+    }
+
+    async function loadManifest() {
+      const res = await fetch('/pool-data/manifest.json')
+      manifest = await res.json()
+      setSelect.innerHTML =
+        `<option value="ALL">All Sets (Mixed)</option>` +
+        manifest.map(s => `<option value="${s.code}">${s.name} (${s.code})</option>`).join('')
+    }
+
+    async function loadSetPool(code) {
+      if (poolCache[code]) return poolCache[code]
+      const res = await fetch(`/pool-data/${code}.json`)
+      const data = await res.json()
+      const cards = []
+      for (const rarity of Object.keys(data.rarities)) {
+        for (const c of data.rarities[rarity]) {
+          if (!BREAD_ORDER.includes(c.bread) || !c.imageUrl) continue
+          cards.push({ ...c, rarity, setCode: data.set_code.toUpperCase(), setName: data.set_name, key: cardKey(data.set_code.toUpperCase(), c.oracleId) })
+        }
+      }
+      poolCache[code] = cards
+      return cards
+    }
+
+    async function loadScopeCards(scope) {
+      if (scope === 'ALL') {
+        const all = await Promise.all(manifest.map(s => loadSetPool(s.code)))
+        return all.flat()
+      }
+      return loadSetPool(scope)
+    }
+
+    function scryfallSearchUrl(name) {
+      return `https://scryfall.com/search?q=!${encodeURIComponent('"' + name + '"')}`
+    }
+
+    function manaCostIcons(manaCost) {
+      const symbols = manaCost ? manaCost.match(/\{[^}]+\}/g) : null
+      if (!symbols) return ''
+      return symbols.map(sym => {
+        const slug = sym.slice(1, -1).toLowerCase().replace(/\//g, '')
+        return `<i class="ms ms-${slug} ms-cost"></i>`
+      }).join(' ')
+    }
+
+    function refreshStats() {
+      const seenKeys = currentScopeCards.map(c => c.key)
+      let totalSeen = 0, totalCorrect = 0, mastered = 0, due = 0
+      for (const c of currentScopeCards) {
+        const p = progress[c.key]
+        if (p) {
+          totalSeen += p.seen
+          totalCorrect += p.correct
+          if (p.box >= 4) mastered += 1
+        }
+        if (isDue(c.key)) due += 1
+      }
+      document.getElementById('fc-stat-sessions').textContent = String(sessionLog.totalSessions)
+      document.getElementById('fc-stat-streak').textContent = String(sessionLog.streak)
+      document.getElementById('fc-stat-accuracy').textContent = totalSeen ? `${Math.round((100 * totalCorrect) / totalSeen)}%` : '–'
+      document.getElementById('fc-stat-mastered').textContent = `${mastered}/${currentScopeCards.length}`
+
+      startBtn.disabled = false
+      startBtn.textContent = due > 0
+        ? `Start Session — ${due} due`
+        : `Practice Full Deck (${currentScopeCards.length} cards)`
+
+      categoryGrid.innerHTML = BREAD_ORDER.map(letter => {
+        const cardsOfType = currentScopeCards.filter(c => c.bread === letter)
+        const total = cardsOfType.length
+        const avgBox = total ? cardsOfType.reduce((s, c) => s + getProgress(c.key).box, 0) / total / 4 * 100 : 0
+        const masteredCount = cardsOfType.filter(c => getProgress(c.key).box >= 4).length
+        const meta = breadMeta[letter]
+        return `
+          <div class="glass-panel rounded-lg p-2.5">
+            <div class="text-[11px] font-semibold mb-1.5 truncate" title="${meta.def}">${meta.label}</div>
+            <div class="h-1.5 rounded-full bg-white/5 overflow-hidden mb-1">
+              <div class="h-full bg-primary" style="width:${avgBox.toFixed(0)}%"></div>
+            </div>
+            <div class="text-[10px] text-on-surface-variant/70">${masteredCount}/${total} mastered</div>
+          </div>
+        `
+      }).join('')
+    }
+
+    async function refreshDashboardForScope(scope) {
+      startBtn.disabled = true
+      startBtn.textContent = 'Loading…'
+      currentScopeCards = await loadScopeCards(scope)
+      refreshStats()
+    }
+
+    function showDashboard() {
+      studyEl.classList.add('hidden')
+      dashboardEl.classList.remove('hidden')
+      refreshStats()
+    }
+
+    function showStudy() {
+      dashboardEl.classList.add('hidden')
+      studyEl.classList.remove('hidden')
+    }
+
+    function buildQueue() {
+      const due = currentScopeCards.filter(c => isDue(c.key))
+      const pool = due.length > 0 ? due.slice() : currentScopeCards.slice()
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[pool[i], pool[j]] = [pool[j], pool[i]]
+      }
+      return pool
+    }
+
+    function startSession() {
+      queue = buildQueue()
+      const today = new Date().toDateString()
+      if (sessionLog.lastSessionDay !== today) {
+        const yesterday = new Date(Date.now() - 86400000).toDateString()
+        sessionLog.streak = sessionLog.lastSessionDay === yesterday ? sessionLog.streak + 1 : 1
+        sessionLog.totalSessions += 1
+        sessionLog.lastSessionDay = today
+        storageSet(SESSION_KEY, sessionLog)
+      }
+      showStudy()
+      nextCard()
+    }
+
+    function nextCard() {
+      answered = false
+      pickedBread = null
+      if (queue.length === 0) {
+        showDashboard()
+        return
+      }
+      current = queue.shift()
+      duePill.textContent = `${queue.length + 1} left`
+      renderStudyCard()
+    }
+
+    function renderStudyCard() {
+      const c = current
+      cardPanel.innerHTML = `
+        <div class="flex justify-center mb-3">
+          <img src="${c.imageUrl}" alt="${c.name}" class="rounded-xl shadow-lg max-h-80 w-auto" loading="eager" />
+        </div>
+        <div class="text-lg font-bold text-on-surface mb-0.5">${c.name}</div>
+        <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-4">
+          <span class="flex items-center gap-1">${manaCostIcons(c.manaCost)}</span>
+          <span>&middot;</span>
+          <span class="capitalize">${c.typeLine}</span>
+          <span>&middot;</span>
+          <span class="capitalize">${c.rarity}</span>
+        </div>
+        <div class="text-[11px] uppercase tracking-widest text-on-surface-variant/60 mb-2">What's its B.R.E.A.D. category?</div>
+        <div class="grid grid-cols-3 gap-2 mb-4" id="fc-bread-grid">
+          ${BREAD_ORDER.map(letter => `
+            <button data-bread="${letter}" class="fc-bread-btn px-2 py-3 rounded-lg border border-white/10 bg-white/[0.02] text-on-surface text-sm font-semibold hover:bg-white/[0.06] transition-colors">
+              ${breadMeta[letter].label}
+            </button>
+          `).join('')}
+        </div>
+        <div id="fc-action-row">
+          <button id="fc-confirm-btn" class="w-full px-4 py-3 rounded-xl bg-primary text-on-primary font-bold text-sm disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+            Confirm
+          </button>
+        </div>
+      `
+      cardPanel.querySelectorAll('.fc-bread-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (answered) return
+          pickedBread = btn.dataset.bread
+          cardPanel.querySelectorAll('.fc-bread-btn').forEach(b => {
+            b.classList.toggle('ring-2', b === btn)
+            b.classList.toggle('ring-primary', b === btn)
+          })
+          document.getElementById('fc-confirm-btn').disabled = false
+        })
+      })
+      document.getElementById('fc-confirm-btn').addEventListener('click', confirmAnswer)
+    }
+
+    function confirmAnswer() {
+      if (answered || !pickedBread) return
+      answered = true
+      const c = current
+      const correct = pickedBread === c.bread
+      const p = getProgress(c.key)
+      p.seen += 1
+      if (correct) p.correct += 1
+      p.lastReviewed = Date.now()
+      p.box = correct ? Math.min(4, p.box + 1) : 0
+      storageSet(PROGRESS_KEY, progress)
+
+      cardPanel.querySelectorAll('.fc-bread-btn').forEach(btn => {
+        const letter = btn.dataset.bread
+        btn.classList.remove('ring-2', 'ring-primary')
+        if (letter === c.bread) btn.classList.add('ring-2', 'ring-emerald-400')
+        else if (letter === pickedBread) btn.classList.add('ring-2', 'ring-red-400')
+        btn.disabled = true
+      })
+
+      const meta = breadMeta[c.bread]
+      document.getElementById('fc-action-row').innerHTML = `
+        <div class="mb-2 font-bold ${correct ? 'text-emerald-400' : 'text-red-400'}">${correct ? 'Correct' : 'Not quite'}</div>
+        <div class="text-sm text-on-surface-variant mb-1">
+          Actual: <span class="font-semibold ${correct ? 'text-emerald-300' : 'text-primary'}">${meta.label}</span>
+          &middot; Karn power score <span class="font-semibold text-on-surface">${Number(c.power_score).toFixed(1)}</span>
+        </div>
+        <p class="text-sm text-on-surface-variant/80 leading-snug mb-3">${meta.def}</p>
+        <a href="${scryfallSearchUrl(c.name)}" target="_blank" rel="noopener" class="block text-center text-xs italic text-on-surface-variant hover:text-primary transition-colors mb-3">View on Scryfall &#8599;</a>
+        <button id="fc-next-btn" class="w-full px-4 py-3 rounded-xl bg-primary text-on-primary font-bold text-sm">Next card</button>
+      `
+      document.getElementById('fc-next-btn').addEventListener('click', nextCard)
+    }
+
+    setSelect.addEventListener('change', () => refreshDashboardForScope(setSelect.value))
+    startBtn.addEventListener('click', startSession)
+    backBtn.addEventListener('click', showDashboard)
+
+    ;(async function init() {
+      progress = storageGet(PROGRESS_KEY, {})
+      sessionLog = storageGet(SESSION_KEY, sessionLog)
+      await loadManifest()
+      setSelect.value = 'ALL'
+      await refreshDashboardForScope('ALL')
+    })()
+  </script>
+</BaseLayout>
